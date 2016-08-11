@@ -24,4 +24,8 @@
 
         End Try
     End Sub
+
+    Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
+
+    End Sub
 End Class
