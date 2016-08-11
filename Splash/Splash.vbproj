@@ -113,12 +113,6 @@
     <Compile Include="2.InputData\Clients_Customers\rFormTambahCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="2.InputData\Invoice\FormTambahInvoice.Designer.vb">
-      <DependentUpon>FormTambahInvoice.vb</DependentUpon>
-    </Compile>
-    <Compile Include="2.InputData\Invoice\FormTambahInvoice.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="2.InputData\Invoice\rFormDaftarPembayaran.Designer.vb">
       <DependentUpon>rFormDaftarPembayaran.vb</DependentUpon>
     </Compile>
@@ -298,9 +292,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="2.InputData\Clients_Customers\rFormTambahCustomer.resx">
       <DependentUpon>rFormTambahCustomer.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="2.InputData\Invoice\FormTambahInvoice.resx">
-      <DependentUpon>FormTambahInvoice.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="2.InputData\Invoice\rFormDaftarPembayaran.resx">
       <DependentUpon>rFormDaftarPembayaran.vb</DependentUpon>
