@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7B7738C-00EA-4F5E-A92A-F7698482DBAF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Splash.My.MyApplication</StartupObject>
+    <RootNamespace>Splash</RootNamespace>
+    <AssemblyName>Splash</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Splash.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Splash.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\myIco.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AMS.Profile">
+      <HintPath>bin\Release\Libs\AMS.Profile.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySqlBackup">
+      <HintPath>..\packages\MySqlBackup.NET.2.0.9.4\lib\net45\MySqlBackup.dll</HintPath>
+    </Reference>
+    <Reference Include="PasswordMeter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Libs\PasswordMeter.dll</HintPath>
+    </Reference>
+    <Reference Include="Setting">
+      <HintPath>bin\Release\Libs\Setting.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Telerik.WinControls, Version=2016.2.608.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2016.2.608.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2013Dark, Version=2016.2.608.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2016.2.608.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2016.2.608.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="2.InputData\Clients_Customers\rFormListPelanggan.Designer.vb">
+      <DependentUpon>rFormListPelanggan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="2.InputData\Clients_Customers\rFormListPelanggan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2.InputData\Clients_Customers\rFormTambahCustomer.Designer.vb">
+      <DependentUpon>rFormTambahCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="2.InputData\Clients_Customers\rFormTambahCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2.InputData\Invoice\FormTambahInvoice.Designer.vb">
+      <DependentUpon>FormTambahInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="2.InputData\Invoice\FormTambahInvoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2.InputData\Invoice\rFormDaftarPembayaran.Designer.vb">
+      <DependentUpon>rFormDaftarPembayaran.vb</DependentUpon>
+    </Compile>
+    <Compile Include="2.InputData\Invoice\rFormDaftarPembayaran.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2.InputData\Invoice\rFormKonfirmasiPembayaran.Designer.vb">
+      <DependentUpon>rFormKonfirmasiPembayaran.vb</DependentUpon>
+    </Compile>
+    <Compile Include="2.InputData\Invoice\rFormKonfirmasiPembayaran.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3.WorkOrder\FormBAST.Designer.vb">
+      <DependentUpon>FormBAST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="3.WorkOrder\FormBAST.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5.Administrasi\5.3.Users\rFormGantiPassword.Designer.vb">
+      <DependentUpon>rFormGantiPassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="5.Administrasi\5.3.Users\rFormGantiPassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5.Administrasi\5.3.Users\rFormTambahUser.Designer.vb">
+      <DependentUpon>rFormTambahUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="5.Administrasi\5.3.Users\rFormTambahUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5.Administrasi\5.3.Users\rFormUsersList.Designer.vb">
+      <DependentUpon>rFormUsersList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="5.Administrasi\5.3.Users\rFormUsersList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5.Administrasi\rFormBackupdb.Designer.vb">
+      <DependentUpon>rFormBackupdb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="5.Administrasi\rFormBackupdb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2.InputData\Clients_Customers\FrmCustomerReference.Designer.vb">
+      <DependentUpon>FrmCustomerReference.vb</DependentUpon>
+    </Compile>
+    <Compile Include="2.InputData\Clients_Customers\FrmCustomerReference.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportImportArrange\clsCSV.vb" />
+    <Compile Include="ExportImportArrange\frmArrangeColumns.Designer.vb">
+      <DependentUpon>frmArrangeColumns.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExportImportArrange\frmArrangeColumns.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportImportArrange\frmCustomFilter.Designer.vb">
+      <DependentUpon>frmCustomFilter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExportImportArrange\frmCustomFilter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportImportArrange\frmImportPartner.Designer.vb">
+      <DependentUpon>frmImportPartner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExportImportArrange\frmImportPartner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportImportArrange\rFormExporCSV.Designer.vb">
+      <DependentUpon>rFormExporCSV.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExportImportArrange\rFormExporCSV.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2.InputData\Invoice\rFormInvoice.Designer.vb">
+      <DependentUpon>rFormInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="2.InputData\Invoice\rFormInvoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2.InputData\Invoice\rFormDataListInvoice.Designer.vb">
+      <DependentUpon>rFormDataListInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="2.InputData\Invoice\rFormDataListInvoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.Main\rFormInisialisasiKoneksi.Designer.vb">
+      <DependentUpon>rFormInisialisasiKoneksi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="1.Main\rFormInisialisasiKoneksi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.Main\rFormMain.Designer.vb">
+      <DependentUpon>rFormMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="1.Main\rFormMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.Main\rFormDatabaseSetup.Designer.vb">
+      <DependentUpon>rFormDatabaseSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="1.Main\rFormDatabaseSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.Main\rFormPermission.Designer.vb">
+      <DependentUpon>rFormPermission.vb</DependentUpon>
+    </Compile>
+    <Compile Include="1.Main\rFormPermission.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportImportArrange\rFormImport.Designer.vb">
+      <DependentUpon>rFormImport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExportImportArrange\rFormImport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_.Module\clsExportToCSV.vb" />
+    <Compile Include="_.Module\common.vb" />
+    <Compile Include="_.Module\FormDataBackup.Designer.vb">
+      <DependentUpon>FormDataBackup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="_.Module\FormDataBackup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_.Module\InisialisasiPasswordMeter.Designer.vb">
+      <DependentUpon>InisialisasiPasswordMeter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="_.Module\InisialisasiPasswordMeter.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_.Module\mdlCom.vb" />
+    <Compile Include="_.Module\mdlstring.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="rFormContoh.Designer.vb">
+      <DependentUpon>rFormContoh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="rFormContoh.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.Main\rFormLogin.Designer.vb">
+      <DependentUpon>rFormLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="1.Main\rFormLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_.Module\PassMeter.vb" />
+    <Compile Include="_.Module\RadFormExportProgress.Designer.vb">
+      <DependentUpon>RadFormExportProgress.vb</DependentUpon>
+    </Compile>
+    <Compile Include="_.Module\RadFormExportProgress.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_.Module\Version.vb" />
+    <Compile Include="3.WorkOrder\rFormAddWorkorderRecord.Designer.vb">
+      <DependentUpon>rFormAddWorkorderRecord.vb</DependentUpon>
+    </Compile>
+    <Compile Include="3.WorkOrder\rFormAddWorkorderRecord.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3.WorkOrder\rFormListWorkOrder.Designer.vb">
+      <DependentUpon>rFormListWorkOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="3.WorkOrder\rFormListWorkOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="2.InputData\Clients_Customers\rFormListPelanggan.resx">
+      <DependentUpon>rFormListPelanggan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2.InputData\Clients_Customers\rFormTambahCustomer.resx">
+      <DependentUpon>rFormTambahCustomer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2.InputData\Invoice\FormTambahInvoice.resx">
+      <DependentUpon>FormTambahInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2.InputData\Invoice\rFormDaftarPembayaran.resx">
+      <DependentUpon>rFormDaftarPembayaran.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2.InputData\Invoice\rFormKonfirmasiPembayaran.resx">
+      <DependentUpon>rFormKonfirmasiPembayaran.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3.WorkOrder\FormBAST.resx">
+      <DependentUpon>FormBAST.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5.Administrasi\5.3.Users\rFormGantiPassword.resx">
+      <DependentUpon>rFormGantiPassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5.Administrasi\5.3.Users\rFormTambahUser.resx">
+      <DependentUpon>rFormTambahUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5.Administrasi\5.3.Users\rFormUsersList.resx">
+      <DependentUpon>rFormUsersList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5.Administrasi\rFormBackupdb.resx">
+      <DependentUpon>rFormBackupdb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2.InputData\Clients_Customers\FrmCustomerReference.resx">
+      <DependentUpon>FrmCustomerReference.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportImportArrange\frmArrangeColumns.resx">
+      <DependentUpon>frmArrangeColumns.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportImportArrange\frmCustomFilter.resx">
+      <DependentUpon>frmCustomFilter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportImportArrange\frmImportPartner.resx">
+      <DependentUpon>frmImportPartner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportImportArrange\rFormExporCSV.resx">
+      <DependentUpon>rFormExporCSV.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2.InputData\Invoice\rFormInvoice.resx">
+      <DependentUpon>rFormInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2.InputData\Invoice\rFormDataListInvoice.resx">
+      <DependentUpon>rFormDataListInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1.Main\rFormInisialisasiKoneksi.resx">
+      <DependentUpon>rFormInisialisasiKoneksi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1.Main\rFormPermission.resx">
+      <DependentUpon>rFormPermission.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportImportArrange\rFormImport.resx">
+      <DependentUpon>rFormImport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="1.Main\rFormMain.resx">
+      <DependentUpon>rFormMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1.Main\rFormDatabaseSetup.resx">
+      <DependentUpon>rFormDatabaseSetup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rFormContoh.resx">
+      <DependentUpon>rFormContoh.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1.Main\rFormLogin.resx">
+      <DependentUpon>rFormLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3.WorkOrder\rFormAddWorkorderRecord.resx">
+      <DependentUpon>rFormAddWorkorderRecord.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3.WorkOrder\rFormListWorkOrder.resx">
+      <DependentUpon>rFormListWorkOrder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_.Module\FormDataBackup.resx">
+      <DependentUpon>FormDataBackup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_.Module\InisialisasiPasswordMeter.resx">
+      <DependentUpon>InisialisasiPasswordMeter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_.Module\RadFormExportProgress.resx">
+      <DependentUpon>RadFormExportProgress.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\myIco.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="4.Teknis\" />
+    <Folder Include="5.Administrasi\5.1.Items\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

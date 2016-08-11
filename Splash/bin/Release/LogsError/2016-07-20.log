@@ -1,0 +1,40 @@
+[2016-07-20 02:08:27]Tidak dapat tersambung ke database.Message: MySqlCommand.Connection is not initialized. Object not set to an instance of an object.
+
+[2016-07-20 02:08:36]Tidak dapat tersambung ke database.Message: MySqlCommand.Connection is not initialized. Object not set to an instance of an object.
+
+[2016-07-20 02:12:06]Tidak dapat tersambung ke database.Message: Entry point was not found.
+
+[2016-07-20 02:16:16]Tidak dapat tersambung ke database.Message: Entry point was not found.
+
+[2016-07-20 02:17:21]Tidak dapat tersambung ke database.Message: Entry point was not found.
+
+[2016-07-20 02:18:47]Tidak dapat tersambung ke database.Message: Entry point was not found.
+
+[2016-07-20 02:18:57]Tidak dapat tersambung ke database.Message: Entry point was not found.
+
+[2016-07-20 02:20:00]Tidak dapat tersambung ke database.Message: Entry point was not found.
+
+[2016-07-20 02:20:09]Tidak dapat tersambung ke database.Message: Entry point was not found.
+
+[2016-07-20 02:20:17]Tidak dapat tersambung ke database.Message: Entry point was not found.
+
+[2016-07-20 02:20:29]Tidak dapat tersambung ke database.Message: Entry point was not found.
+
+[2016-07-20 02:21:02]Tidak dapat tersambung ke database.Message: Entry point was not found.
+
+[2016-07-20 02:33:30]Tidak dapat tersambung ke database.Message: Entry point was not found.
+
+[2016-07-20 06:12:11]Tidak dapat tersambung ke database.Message: Entry point was not found.
+
+[2016-07-20 06:33:21]Error.Message: Entry point was not found.
+
+[2016-07-20 08:42:15]Tidak dapat tersambung ke database.Message: Authentication to host 'Localhost' for user 'SUPERVISOR' using method 'mysql_native_password' failed with message: Access denied for user 'SUPERVISOR'@'localhost' (using password: YES)
+
+[2016-07-20 08:44:14]Error.Message: Entry point was not found.
+
+[2016-07-20 08:44:28]Error.Message: Entry point was not found.
+
+[2016-07-20 20:52:00]Tidak dapat tersambung ke database.Message: Authentication to host 'Localhost' for user 'SUPERVISOR' using method 'mysql_native_password' failed with message: Access denied for user 'SUPERVISOR'@'localhost' (using password: YES)
+
+[2016-07-20 20:52:20]Tidak dapat tersambung ke database.Message: Authentication to host 'Localhost' for user 'SUPERVISOR' using method 'mysql_native_password' failed with message: Access denied for user 'SUPERVISOR'@'localhost' (using password: YES)
+

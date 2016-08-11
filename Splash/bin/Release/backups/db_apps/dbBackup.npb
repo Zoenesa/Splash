@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BackupProfile Ver="1.0">
+  <General ConnectionName="NewDatabase" DatabaseName="db_apps" SchemaName="" Compressed="True" LockAllTables="False" UseSpecifyFileName="True" FileName="dbBackups" Comments=""/>
+</BackupProfile>

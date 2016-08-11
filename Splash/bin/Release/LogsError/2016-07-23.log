@@ -1,0 +1,25 @@
+[2016-07-23 00:01:00]Failed (edit_delete). Message : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+[2016-07-23 01:21:30]Failed (get_password). Message : You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '` WHERE `Username` = 'AgungJawata'' at line 1
+
+[2016-07-23 01:24:32]Failed (get_password). Message : You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '` WHERE `Username` = 'AgungJawata'' at line 1
+
+[2016-07-23 01:25:31]Failed(LoadUserData).Message:Conversion from type 'DBNull' to type 'String' is not valid.
+
+[2016-07-23 01:26:04]Failed(LoadUserData).Message:Conversion from type 'DBNull' to type 'String' is not valid.
+
+[2016-07-23 18:25:36]Failed(LoadUserData).Message:Conversion from type 'DBNull' to type 'String' is not valid.
+
+[2016-07-23 18:25:47]Failed(LoadUserData).Message:Conversion from type 'DBNull' to type 'String' is not valid.
+
+[2016-07-23 18:26:24]Failed(LoadUserData).Message:Conversion from type 'DBNull' to type 'String' is not valid.
+
+[2016-07-23 18:27:34]Failed(LoadUserData).Message:Conversion from type 'DBNull' to type 'String' is not valid.
+
+[2016-07-23 18:27:38]Failed(LoadUserData).Message:Conversion from type 'DBNull' to type 'String' is not valid.
+
+[2016-07-23 18:41:30]Failed(LoadUserData).Message:Conversion from type 'DBNull' to type 'String' is not valid.
+
+[2016-07-23 18:41:55]Failed(LoadUserData).Message:Conversion from type 'DBNull' to type 'String' is not valid.
+

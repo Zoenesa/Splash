@@ -1,0 +1,6 @@
+[2016-07-18 15:40:53]Tidak dapat tersambung ke database.Message: Authentication to host 'Localhost' for user 'root' using method 'mysql_native_password' failed with message: Access denied for user 'root'@'localhost' (using password: YES)
+
+[2016-07-18 15:41:09]Tidak dapat tersambung ke database.Message: Table 'db_apps.datatemp' doesn't exist
+
+[2016-07-18 15:41:32]Tidak dapat tersambung ke database.Message: Table 'db_apps.datatemp' doesn't exist
+
