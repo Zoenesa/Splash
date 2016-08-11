@@ -126,3 +126,7 @@ D:\VB\Splash\Splash\obj\Debug\Splash.exe
 D:\VB\Splash\Splash\obj\Debug\Splash.xml
 D:\VB\Splash\Splash\obj\Debug\Splash.pdb
 D:\VB\Splash\Splash\obj\Debug\Splash.FormTambahInvoice.resources
+C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\bin\Release\Splash.exe.config
+C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\obj\Debug\Splash.exe
+C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\obj\Debug\Splash.xml
+C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\obj\Debug\Splash.pdb
