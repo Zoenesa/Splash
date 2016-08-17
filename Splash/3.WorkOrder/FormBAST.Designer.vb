@@ -23,8 +23,6 @@ Partial Class FormBAST
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
@@ -37,14 +35,6 @@ Partial Class FormBAST
         Me.rTxMaskDate = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.RadLabel6 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
-        Me.dgWo = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RadTextBox1 = New Telerik.WinControls.UI.RadTextBox()
         Me.RadRadioButton2 = New Telerik.WinControls.UI.RadRadioButton()
         Me.RadRadioButton1 = New Telerik.WinControls.UI.RadRadioButton()
@@ -63,7 +53,6 @@ Partial Class FormBAST
         CType(Me.rTxMaskDate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgWo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadRadioButton2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadRadioButton1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -113,7 +102,7 @@ Partial Class FormBAST
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.btnClose, 0, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 262)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 319)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -183,112 +172,8 @@ Partial Class FormBAST
         Me.RadLabel1.TabIndex = 19
         Me.RadLabel1.Text = "Nomor Invoice"
         '
-        'dgWo
-        '
-        Me.dgWo.AllowUserToAddRows = False
-        Me.dgWo.AllowUserToDeleteRows = False
-        Me.dgWo.AllowUserToResizeRows = False
-        Me.dgWo.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgWo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgWo.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgWo.ColumnHeadersHeight = 28
-        Me.dgWo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgWo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Col2, Me.Col3, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
-        Me.dgWo.Location = New System.Drawing.Point(3, 85)
-        Me.dgWo.MultiSelect = False
-        Me.dgWo.Name = "dgWo"
-        Me.RadContextMenuManager1.SetRadContextMenu(Me.dgWo, Me.RadContextMenu1)
-        Me.dgWo.ReadOnly = True
-        Me.dgWo.RowHeadersVisible = False
-        Me.dgWo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgWo.Size = New System.Drawing.Size(656, 90)
-        Me.dgWo.TabIndex = 21
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column1.FillWeight = 45.0!
-        Me.Column1.HeaderText = "No"
-        Me.Column1.MinimumWidth = 25
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 45
-        '
-        'Col2
-        '
-        Me.Col2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Col2.FillWeight = 175.0!
-        Me.Col2.HeaderText = "No BAST"
-        Me.Col2.MinimumWidth = 155
-        Me.Col2.Name = "Col2"
-        Me.Col2.ReadOnly = True
-        Me.Col2.Width = 184
-        '
-        'Col3
-        '
-        Me.Col3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle2.Format = "d"
-        DataGridViewCellStyle2.NullValue = "__/__/____"
-        Me.Col3.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Col3.FillWeight = 125.0!
-        Me.Col3.HeaderText = "Tanggal"
-        Me.Col3.MinimumWidth = 95
-        Me.Col3.Name = "Col3"
-        Me.Col3.ReadOnly = True
-        Me.Col3.Width = 125
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column2.FillWeight = 195.0!
-        Me.Column2.HeaderText = "Nama Pelanggan"
-        Me.Column2.MinimumWidth = 180
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 220
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column3.FillWeight = 220.0!
-        Me.Column3.HeaderText = "Deskripsi"
-        Me.Column3.MinimumWidth = 190
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 220
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column4.FillWeight = 190.0!
-        Me.Column4.HeaderText = "Keterangan"
-        Me.Column4.MinimumWidth = 190
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 190
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column5.FillWeight = 220.0!
-        Me.Column5.HeaderText = ""
-        Me.Column5.MinimumWidth = 220
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 220
-        '
         'RadTextBox1
         '
-        Me.RadTextBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadTextBox1.AutoSize = False
         Me.RadTextBox1.BackColor = System.Drawing.Color.Transparent
         Me.RadTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -305,7 +190,6 @@ Partial Class FormBAST
         '
         'RadRadioButton2
         '
-        Me.RadRadioButton2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadRadioButton2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadRadioButton2.ForeColor = System.Drawing.Color.Black
         Me.RadRadioButton2.Location = New System.Drawing.Point(113, 60)
@@ -317,7 +201,6 @@ Partial Class FormBAST
         '
         'RadRadioButton1
         '
-        Me.RadRadioButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadRadioButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadRadioButton1.ForeColor = System.Drawing.Color.Black
         Me.RadRadioButton1.Location = New System.Drawing.Point(20, 60)
@@ -329,7 +212,6 @@ Partial Class FormBAST
         '
         'btnBack
         '
-        Me.btnBack.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnBack.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.btnBack.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBack.Font = New System.Drawing.Font("Segoe UI", 9.0!)
@@ -353,7 +235,6 @@ Partial Class FormBAST
         '
         'RadButton1
         '
-        Me.RadButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadButton1.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.RadButton1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.RadButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
@@ -381,20 +262,31 @@ Partial Class FormBAST
         '
         'RadGridView1
         '
-        Me.RadGridView1.AllowShowFocusCues = True
-        Me.RadGridView1.Location = New System.Drawing.Point(3, 181)
+        Me.RadGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadGridView1.EnableAnalytics = False
+        Me.RadGridView1.EnableGestures = False
+        Me.RadGridView1.EnterKeyMode = Telerik.WinControls.UI.RadGridViewEnterKeyMode.EnterMovesToNextRow
+        Me.RadGridView1.Location = New System.Drawing.Point(3, 85)
         '
         '
         '
+        Me.RadGridView1.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom
         Me.RadGridView1.MasterTemplate.AllowAddNewRow = False
+        Me.RadGridView1.MasterTemplate.AllowCellContextMenu = False
+        Me.RadGridView1.MasterTemplate.AllowColumnChooser = False
+        Me.RadGridView1.MasterTemplate.AllowColumnHeaderContextMenu = False
         Me.RadGridView1.MasterTemplate.AllowColumnReorder = False
         Me.RadGridView1.MasterTemplate.AllowDeleteRow = False
         Me.RadGridView1.MasterTemplate.AllowDragToGroup = False
         Me.RadGridView1.MasterTemplate.AllowEditRow = False
         Me.RadGridView1.MasterTemplate.AllowRowHeaderContextMenu = False
+        Me.RadGridView1.MasterTemplate.AutoGenerateColumns = False
+        Me.RadGridView1.MasterTemplate.ClipboardPasteMode = Telerik.WinControls.UI.GridViewClipboardPasteMode.Disable
         GridViewTextBoxColumn1.HeaderText = "No"
         GridViewTextBoxColumn1.Name = "column1"
-        GridViewTextBoxColumn1.Width = 25
+        GridViewTextBoxColumn1.Width = 45
         GridViewTextBoxColumn2.HeaderText = "No BAST"
         GridViewTextBoxColumn2.Name = "column2"
         GridViewTextBoxColumn2.Width = 165
@@ -405,13 +297,19 @@ Partial Class FormBAST
         GridViewTextBoxColumn4.Name = "column4"
         GridViewTextBoxColumn4.Width = 225
         Me.RadGridView1.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4})
+        Me.RadGridView1.MasterTemplate.EnableAlternatingRowColor = True
+        Me.RadGridView1.MasterTemplate.EnableGrouping = False
         Me.RadGridView1.MasterTemplate.ShowRowHeaderColumn = False
         Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.RadGridView1.Name = "RadGridView1"
         Me.RadContextMenuManager1.SetRadContextMenu(Me.RadGridView1, Me.RadContextMenu1)
+        Me.RadGridView1.ReadOnly = True
+        Me.RadGridView1.ShowCellErrors = False
         Me.RadGridView1.ShowGroupPanel = False
         Me.RadGridView1.ShowGroupPanelScrollbars = False
-        Me.RadGridView1.Size = New System.Drawing.Size(656, 75)
+        Me.RadGridView1.ShowNoDataText = False
+        Me.RadGridView1.ShowRowErrors = False
+        Me.RadGridView1.Size = New System.Drawing.Size(656, 228)
         Me.RadGridView1.TabIndex = 25
         Me.RadGridView1.Text = "RadGridView1"
         Me.RadGridView1.ThemeName = "Office2010Black"
@@ -420,13 +318,12 @@ Partial Class FormBAST
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(662, 293)
+        Me.ClientSize = New System.Drawing.Size(662, 350)
         Me.Controls.Add(Me.RadGridView1)
         Me.Controls.Add(Me.RadButton1)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.RadRadioButton2)
         Me.Controls.Add(Me.RadRadioButton1)
-        Me.Controls.Add(Me.dgWo)
         Me.Controls.Add(Me.rTxMaskDate)
         Me.Controls.Add(Me.RadLabel6)
         Me.Controls.Add(Me.TableLayoutPanel1)
@@ -451,7 +348,6 @@ Partial Class FormBAST
         CType(Me.rTxMaskDate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgWo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadRadioButton2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadRadioButton1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -472,20 +368,12 @@ Partial Class FormBAST
     Friend WithEvents rTxMaskDate As Telerik.WinControls.UI.RadMaskedEditBox
     Friend WithEvents RadLabel6 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel1 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents dgWo As System.Windows.Forms.DataGridView
     Friend WithEvents RadTextBox1 As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadRadioButton2 As Telerik.WinControls.UI.RadRadioButton
     Friend WithEvents RadRadioButton1 As Telerik.WinControls.UI.RadRadioButton
     Friend WithEvents btnBack As Telerik.WinControls.UI.RadButton
     Friend WithEvents RadLabel2 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadButton1 As Telerik.WinControls.UI.RadButton
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Col3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents RadContextMenuManager1 As Telerik.WinControls.UI.RadContextMenuManager
     Friend WithEvents RadContextMenu1 As Telerik.WinControls.UI.RadContextMenu
     Friend WithEvents RadMenuItem1 As Telerik.WinControls.UI.RadMenuItem

@@ -45,7 +45,7 @@ Public Class FormBAST
 
     Private Sub LoadDataBAST(Optional ByVal Opsi As String = "")
         Try
-            dgWo.Rows.Clear()
+            RadGridView1.Rows.Clear()
             Dim common As New common
             Dim dt As New DataTable
             Dim errMsg As String = Nothing
@@ -59,7 +59,7 @@ Public Class FormBAST
                     FieldNames(1) = Conversions.ToString(row.Item("NOBAST"))
                     FieldNames(2) = Conversions.ToString(row.Item("Tanggal"))
                     FieldNames(3) = Conversions.ToString(row.Item("NamaPelanggan"))
-                    dgWo.Rows.Add(FieldNames)
+                    RadGridView1.Rows.Add(FieldNames)
                     Interlocked.Increment(i)
                 Loop
             Else
@@ -82,7 +82,7 @@ Public Class FormBAST
 
     End Sub
 
-    Private Sub dgWo_CellContextMenuStripNeeded(sender As Object, e As DataGridViewCellContextMenuStripNeededEventArgs) Handles dgWo.CellContextMenuStripNeeded
+    Private Sub dgWo_CellContextMenuStripNeeded(sender As Object, e As DataGridViewCellContextMenuStripNeededEventArgs)
 
     End Sub
 End Class
