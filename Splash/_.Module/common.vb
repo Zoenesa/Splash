@@ -391,6 +391,28 @@ Public Class common
         Return flag
     End Function
 
+    Public Function GetDataBAST(ByVal errMsg As String, ByRef dt As DataTable, Optional ByVal Opsi As String = "") As Boolean
+        Dim flag As Boolean
+        Try
+            Dim sqladapter As New MySqlDataAdapter(("SELECT * FROM `BAST` " & Opsi), mdlCom.vConn)
+            dt = New DataTable
+            sqladapter.Fill(dt)
+            flag = True
+        Catch ex As Exception
+            ProjectData.SetProjectError(ex)
+            Dim excep As Exception = ex
+            errMsg = ("Failed(common_get_BAST).Message:" & ex.Message)
+            mdlCom.INSERTLOG(errMsg, "")
+            flag = False
+            ProjectData.ClearProjectError()
+            Return flag
+            ProjectData.ClearProjectError()
+        End Try
+        Return flag
+    End Function
+
+
+
     Public Function ValidasiTanggal(ByVal tgl As String) As Boolean
         Dim flag As Boolean
         Try

@@ -76,6 +76,7 @@ Partial Class rFormMain
         Me.CommandBarSeparator2 = New Telerik.WinControls.UI.CommandBarSeparator()
         Me.RadDateAndTimeStatus = New Telerik.WinControls.UI.RadLabelElement()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
+        Me.RadMenuItemBAST = New Telerik.WinControls.UI.RadMenuItem()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,8 +84,6 @@ Partial Class rFormMain
         '
         'rMainMenu
         '
-        Me.rMainMenu.AccessibleDescription = "&Main"
-        Me.rMainMenu.AccessibleName = "&Main"
         Me.rMainMenu.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMenuKoneksiDb, Me.rMenuLogout, Me.rMenuSetingdb, Me.RadMenuSeparatorItem1, Me.rMenuExit})
         Me.rMainMenu.Name = "rMainMenu"
         Me.rMainMenu.Padding = New System.Windows.Forms.Padding(18, 1, 8, 1)
@@ -100,8 +99,6 @@ Partial Class rFormMain
         '
         'rMenuLogout
         '
-        Me.rMenuLogout.AccessibleDescription = "&Sign Out"
-        Me.rMenuLogout.AccessibleName = "&Sign Out"
         Me.rMenuLogout.Enabled = False
         Me.rMenuLogout.Name = "rMenuLogout"
         Me.rMenuLogout.Text = "&Sign Out"
@@ -116,8 +113,6 @@ Partial Class rFormMain
         '
         'RadMenuSeparatorItem1
         '
-        Me.RadMenuSeparatorItem1.AccessibleDescription = "RadMenuSeparatorItem1"
-        Me.RadMenuSeparatorItem1.AccessibleName = "RadMenuSeparatorItem1"
         Me.RadMenuSeparatorItem1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadMenuSeparatorItem1.Name = "RadMenuSeparatorItem1"
         Me.RadMenuSeparatorItem1.Text = "RadMenuSeparatorItem1"
@@ -158,18 +153,14 @@ Partial Class rFormMain
         '
         'rMenuExportPurchaseItem
         '
-        Me.rMenuExportPurchaseItem.AccessibleDescription = "&Export CSV"
-        Me.rMenuExportPurchaseItem.AccessibleName = "&Export CSV"
         Me.rMenuExportPurchaseItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.rMenuExportPurchaseItem.Name = "rMenuExportPurchaseItem"
         Me.rMenuExportPurchaseItem.Text = "&Export CSV"
         '
         'rMenuWorkSalesOrder
         '
-        Me.rMenuWorkSalesOrder.AccessibleDescription = "&Work Order/Sales Order/SPK"
-        Me.rMenuWorkSalesOrder.AccessibleName = "&Work Order/Sales Order/SPK"
         Me.rMenuWorkSalesOrder.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.rMenuWorkSalesOrder.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMenuSalesOrderItem, Me.rMenuWorkOrderItem, Me.RadMenuSeparatorItem4, Me.rMenuImportWOSPKItem, Me.rMenuExportWOSPKItem})
+        Me.rMenuWorkSalesOrder.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMenuSalesOrderItem, Me.rMenuWorkOrderItem, Me.RadMenuItemBAST, Me.RadMenuSeparatorItem4, Me.rMenuImportWOSPKItem, Me.rMenuExportWOSPKItem})
         Me.rMenuWorkSalesOrder.Name = "rMenuWorkSalesOrder"
         Me.rMenuWorkSalesOrder.Text = "&Work Order/Sales Order/SPK"
         '
@@ -190,8 +181,6 @@ Partial Class rFormMain
         '
         'RadMenuSeparatorItem4
         '
-        Me.RadMenuSeparatorItem4.AccessibleDescription = "RadMenuSeparatorItem4"
-        Me.RadMenuSeparatorItem4.AccessibleName = "RadMenuSeparatorItem4"
         Me.RadMenuSeparatorItem4.Name = "RadMenuSeparatorItem4"
         Me.RadMenuSeparatorItem4.Text = "RadMenuSeparatorItem4"
         Me.RadMenuSeparatorItem4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
@@ -206,8 +195,6 @@ Partial Class rFormMain
         '
         'rMenuExportWOSPKItem
         '
-        Me.rMenuExportWOSPKItem.AccessibleDescription = "&Export CSV"
-        Me.rMenuExportWOSPKItem.AccessibleName = "&Export CSV"
         Me.rMenuExportWOSPKItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.rMenuExportWOSPKItem.Name = "rMenuExportWOSPKItem"
         Me.rMenuExportWOSPKItem.Text = "&Export CSV"
@@ -223,8 +210,6 @@ Partial Class rFormMain
         '
         'rMenuInvoiceData
         '
-        Me.rMenuInvoiceData.AccessibleDescription = "Data &Invoice"
-        Me.rMenuInvoiceData.AccessibleName = "Data &Invoice"
         Me.rMenuInvoiceData.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.rMenuInvoiceData.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMenuInvoiceItem, Me.rMenuPembayaran, Me.rMenuImportInvoiceItem, Me.rMenuExportInvoiceItem})
         Me.rMenuInvoiceData.Name = "rMenuInvoiceData"
@@ -232,24 +217,18 @@ Partial Class rFormMain
         '
         'rMenuInvoiceItem
         '
-        Me.rMenuInvoiceItem.AccessibleDescription = "&Daftar Invoice"
-        Me.rMenuInvoiceItem.AccessibleName = "&Daftar Invoice"
         Me.rMenuInvoiceItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rMenuInvoiceItem.Name = "rMenuInvoiceItem"
         Me.rMenuInvoiceItem.Text = "&Daftar Invoice"
         '
         'rMenuPembayaran
         '
-        Me.rMenuPembayaran.AccessibleDescription = "&Pembayaran"
-        Me.rMenuPembayaran.AccessibleName = "&Pembayaran"
         Me.rMenuPembayaran.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rMenuPembayaran.Name = "rMenuPembayaran"
         Me.rMenuPembayaran.Text = "&Pembayaran"
         '
         'rMenuImportInvoiceItem
         '
-        Me.rMenuImportInvoiceItem.AccessibleDescription = "&Import Data"
-        Me.rMenuImportInvoiceItem.AccessibleName = "&Import Data"
         Me.rMenuImportInvoiceItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rMenuImportInvoiceItem.Name = "rMenuImportInvoiceItem"
         Me.rMenuImportInvoiceItem.Text = "&Import Data"
@@ -264,8 +243,6 @@ Partial Class rFormMain
         '
         'rMenuCustomer
         '
-        Me.rMenuCustomer.AccessibleDescription = "Data &Customer"
-        Me.rMenuCustomer.AccessibleName = "Data &Customer"
         Me.rMenuCustomer.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.rMenuCustomer.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMenuCustomerListItem, Me.rMenuImportCustomerItem, Me.rMenuExportCustomerItem})
         Me.rMenuCustomer.Name = "rMenuCustomer"
@@ -273,32 +250,24 @@ Partial Class rFormMain
         '
         'rMenuCustomerListItem
         '
-        Me.rMenuCustomerListItem.AccessibleDescription = "Daftar &Customer"
-        Me.rMenuCustomerListItem.AccessibleName = "Daftar &Customer"
         Me.rMenuCustomerListItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rMenuCustomerListItem.Name = "rMenuCustomerListItem"
         Me.rMenuCustomerListItem.Text = "Daftar &Customer"
         '
         'rMenuImportCustomerItem
         '
-        Me.rMenuImportCustomerItem.AccessibleDescription = "&Import Customer"
-        Me.rMenuImportCustomerItem.AccessibleName = "&Import Customer"
         Me.rMenuImportCustomerItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rMenuImportCustomerItem.Name = "rMenuImportCustomerItem"
         Me.rMenuImportCustomerItem.Text = "&Import Customer"
         '
         'rMenuExportCustomerItem
         '
-        Me.rMenuExportCustomerItem.AccessibleDescription = "&Export CSV"
-        Me.rMenuExportCustomerItem.AccessibleName = "&Export CSV"
         Me.rMenuExportCustomerItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rMenuExportCustomerItem.Name = "rMenuExportCustomerItem"
         Me.rMenuExportCustomerItem.Text = "&Export CSV"
         '
         'rDataTeknis
         '
-        Me.rDataTeknis.AccessibleDescription = "Data &Teknis"
-        Me.rDataTeknis.AccessibleName = "Data &Teknis"
         Me.rDataTeknis.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMenuDataProject, Me.rMenuResumeOrder})
         Me.rDataTeknis.Name = "rDataTeknis"
         Me.rDataTeknis.Padding = New System.Windows.Forms.Padding(8, 1, 8, 1)
@@ -306,8 +275,6 @@ Partial Class rFormMain
         '
         'rMenuDataProject
         '
-        Me.rMenuDataProject.AccessibleDescription = "Data &Project"
-        Me.rMenuDataProject.AccessibleName = "Data &Project"
         Me.rMenuDataProject.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.rMenuDataProject.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMenuDaftarProjectItem, Me.rMenuSwitchProjectItem})
         Me.rMenuDataProject.Name = "rMenuDataProject"
@@ -331,8 +298,6 @@ Partial Class rFormMain
         '
         'rMenuResumeOrder
         '
-        Me.rMenuResumeOrder.AccessibleDescription = "&Resume Order / Penawaran"
-        Me.rMenuResumeOrder.AccessibleName = "&Resume Order / Penawaran"
         Me.rMenuResumeOrder.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.rMenuResumeOrder.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMenuCreatePenawaranItem})
         Me.rMenuResumeOrder.Name = "rMenuResumeOrder"
@@ -348,8 +313,6 @@ Partial Class rFormMain
         '
         'rMenuAdministrasi
         '
-        Me.rMenuAdministrasi.AccessibleDescription = "&Administrasi"
-        Me.rMenuAdministrasi.AccessibleName = "&Administrasi"
         Me.rMenuAdministrasi.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMenuItemBarang, Me.rMenuRefCustomer, Me.RadMenuSeparatorItem3, Me.rMenuAdmUser, Me.rMenudbUtility})
         Me.rMenuAdministrasi.Name = "rMenuAdministrasi"
         Me.rMenuAdministrasi.Padding = New System.Windows.Forms.Padding(8, 1, 8, 1)
@@ -373,8 +336,6 @@ Partial Class rFormMain
         '
         'RadMenuSeparatorItem3
         '
-        Me.RadMenuSeparatorItem3.AccessibleDescription = "RadMenuSeparatorItem3"
-        Me.RadMenuSeparatorItem3.AccessibleName = "RadMenuSeparatorItem3"
         Me.RadMenuSeparatorItem3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadMenuSeparatorItem3.Name = "RadMenuSeparatorItem3"
         Me.RadMenuSeparatorItem3.Text = "RadMenuSeparatorItem3"
@@ -407,8 +368,6 @@ Partial Class rFormMain
         '
         'rMenudbUtility
         '
-        Me.rMenudbUtility.AccessibleDescription = "Database U&tility"
-        Me.rMenudbUtility.AccessibleName = "Database U&tility"
         Me.rMenudbUtility.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.rMenudbUtility.Name = "rMenudbUtility"
         Me.rMenudbUtility.Text = "Database U&tility"
@@ -440,8 +399,6 @@ Partial Class rFormMain
         '
         'RadMenuSeparatorItem2
         '
-        Me.RadMenuSeparatorItem2.AccessibleDescription = "RadMenuSeparatorItem2"
-        Me.RadMenuSeparatorItem2.AccessibleName = "RadMenuSeparatorItem2"
         Me.RadMenuSeparatorItem2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadMenuSeparatorItem2.Name = "RadMenuSeparatorItem2"
         Me.RadMenuSeparatorItem2.Text = "RadMenuSeparatorItem2"
@@ -468,8 +425,6 @@ Partial Class rFormMain
         '
         'StatusVersi
         '
-        Me.StatusVersi.AccessibleDescription = "Status"
-        Me.StatusVersi.AccessibleName = "Status"
         Me.StatusVersi.Name = "StatusVersi"
         Me.StatusVersi.Padding = New System.Windows.Forms.Padding(12, 0, 12, 0)
         Me.RadStatusStrip1.SetSpring(Me.StatusVersi, False)
@@ -486,8 +441,6 @@ Partial Class rFormMain
         '
         'RadStatusDeskripsi
         '
-        Me.RadStatusDeskripsi.AccessibleDescription = "Deskripsi"
-        Me.RadStatusDeskripsi.AccessibleName = "Deskripsi"
         Me.RadStatusDeskripsi.Name = "RadStatusDeskripsi"
         Me.RadStatusDeskripsi.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.RadStatusStrip1.SetSpring(Me.RadStatusDeskripsi, True)
@@ -504,8 +457,6 @@ Partial Class rFormMain
         '
         'RadDateAndTimeStatus
         '
-        Me.RadDateAndTimeStatus.AccessibleDescription = "DateAndTime"
-        Me.RadDateAndTimeStatus.AccessibleName = "DateAndTime"
         Me.RadDateAndTimeStatus.Name = "RadDateAndTimeStatus"
         Me.RadStatusStrip1.SetSpring(Me.RadDateAndTimeStatus, False)
         Me.RadDateAndTimeStatus.Text = "DateAndTime"
@@ -521,6 +472,12 @@ Partial Class rFormMain
         Me.RadMenu1.TabIndex = 3
         Me.RadMenu1.Text = "RadMenu1"
         Me.RadMenu1.ThemeName = "Office2010Black"
+        '
+        'RadMenuItemBAST
+        '
+        Me.RadMenuItemBAST.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadMenuItemBAST.Name = "RadMenuItemBAST"
+        Me.RadMenuItemBAST.Text = "BA&ST"
         '
         'rFormMain
         '
@@ -601,4 +558,5 @@ Partial Class rFormMain
     Friend WithEvents rMenuPembayaran As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents rMenuWorkOrderItem As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents RadMenuSeparatorItem4 As Telerik.WinControls.UI.RadMenuSeparatorItem
+    Friend WithEvents RadMenuItemBAST As Telerik.WinControls.UI.RadMenuItem
 End Class

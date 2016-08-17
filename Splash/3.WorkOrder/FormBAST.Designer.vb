@@ -22,8 +22,14 @@ Partial Class FormBAST
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.RadDropDownList1 = New Telerik.WinControls.UI.RadDropDownList()
         Me.txDefaultCharset = New Telerik.WinControls.UI.RadTextBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
@@ -45,6 +51,11 @@ Partial Class FormBAST
         Me.btnBack = New Telerik.WinControls.UI.RadButton()
         Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
         Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
+        Me.RadContextMenuManager1 = New Telerik.WinControls.UI.RadContextMenuManager()
+        Me.RadContextMenu1 = New Telerik.WinControls.UI.RadContextMenu(Me.components)
+        Me.RadMenuItem1 = New Telerik.WinControls.UI.RadMenuItem()
+        Me.RadMenuItem2 = New Telerik.WinControls.UI.RadMenuItem()
+        Me.RadGridView1 = New Telerik.WinControls.UI.RadGridView()
         CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txDefaultCharset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -59,6 +70,8 @@ Partial Class FormBAST
         CType(Me.btnBack, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadGridView1.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -155,9 +168,9 @@ Partial Class FormBAST
         Me.RadLabel6.ForeColor = System.Drawing.Color.Black
         Me.RadLabel6.Location = New System.Drawing.Point(441, 2)
         Me.RadLabel6.Name = "RadLabel6"
-        Me.RadLabel6.Size = New System.Drawing.Size(74, 19)
+        Me.RadLabel6.Size = New System.Drawing.Size(92, 19)
         Me.RadLabel6.TabIndex = 19
-        Me.RadLabel6.Text = "Invoice Date"
+        Me.RadLabel6.Text = "Tanggal Invoice"
         '
         'RadLabel1
         '
@@ -166,9 +179,9 @@ Partial Class FormBAST
         Me.RadLabel1.ForeColor = System.Drawing.Color.Black
         Me.RadLabel1.Location = New System.Drawing.Point(223, 2)
         Me.RadLabel1.Name = "RadLabel1"
-        Me.RadLabel1.Size = New System.Drawing.Size(74, 19)
+        Me.RadLabel1.Size = New System.Drawing.Size(87, 19)
         Me.RadLabel1.TabIndex = 19
-        Me.RadLabel1.Text = "Invoice Date"
+        Me.RadLabel1.Text = "Nomor Invoice"
         '
         'dgWo
         '
@@ -181,7 +194,7 @@ Partial Class FormBAST
         Me.dgWo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -193,10 +206,11 @@ Partial Class FormBAST
         Me.dgWo.Location = New System.Drawing.Point(3, 85)
         Me.dgWo.MultiSelect = False
         Me.dgWo.Name = "dgWo"
+        Me.RadContextMenuManager1.SetRadContextMenu(Me.dgWo, Me.RadContextMenu1)
         Me.dgWo.ReadOnly = True
         Me.dgWo.RowHeadersVisible = False
         Me.dgWo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgWo.Size = New System.Drawing.Size(656, 171)
+        Me.dgWo.Size = New System.Drawing.Size(656, 90)
         Me.dgWo.TabIndex = 21
         '
         'Column1
@@ -350,11 +364,64 @@ Partial Class FormBAST
         Me.RadButton1.Text = "&Tambah Baru"
         Me.RadButton1.ThemeName = "Office2010Black"
         '
-        'FormPerintahKerja
+        'RadContextMenu1
+        '
+        Me.RadContextMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RadMenuItem1, Me.RadMenuItem2})
+        Me.RadContextMenu1.ThemeName = "Office2010Black"
+        '
+        'RadMenuItem1
+        '
+        Me.RadMenuItem1.Name = "RadMenuItem1"
+        Me.RadMenuItem1.Text = "&Edit"
+        '
+        'RadMenuItem2
+        '
+        Me.RadMenuItem2.Name = "RadMenuItem2"
+        Me.RadMenuItem2.Text = "&Hapus"
+        '
+        'RadGridView1
+        '
+        Me.RadGridView1.AllowShowFocusCues = True
+        Me.RadGridView1.Location = New System.Drawing.Point(3, 181)
+        '
+        '
+        '
+        Me.RadGridView1.MasterTemplate.AllowAddNewRow = False
+        Me.RadGridView1.MasterTemplate.AllowColumnReorder = False
+        Me.RadGridView1.MasterTemplate.AllowDeleteRow = False
+        Me.RadGridView1.MasterTemplate.AllowDragToGroup = False
+        Me.RadGridView1.MasterTemplate.AllowEditRow = False
+        Me.RadGridView1.MasterTemplate.AllowRowHeaderContextMenu = False
+        GridViewTextBoxColumn1.HeaderText = "No"
+        GridViewTextBoxColumn1.Name = "column1"
+        GridViewTextBoxColumn1.Width = 25
+        GridViewTextBoxColumn2.HeaderText = "No BAST"
+        GridViewTextBoxColumn2.Name = "column2"
+        GridViewTextBoxColumn2.Width = 165
+        GridViewTextBoxColumn3.HeaderText = "Tanggal"
+        GridViewTextBoxColumn3.Name = "column3"
+        GridViewTextBoxColumn3.Width = 105
+        GridViewTextBoxColumn4.HeaderText = "Nama Pelanggan"
+        GridViewTextBoxColumn4.Name = "column4"
+        GridViewTextBoxColumn4.Width = 225
+        Me.RadGridView1.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4})
+        Me.RadGridView1.MasterTemplate.ShowRowHeaderColumn = False
+        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.RadGridView1.Name = "RadGridView1"
+        Me.RadContextMenuManager1.SetRadContextMenu(Me.RadGridView1, Me.RadContextMenu1)
+        Me.RadGridView1.ShowGroupPanel = False
+        Me.RadGridView1.ShowGroupPanelScrollbars = False
+        Me.RadGridView1.Size = New System.Drawing.Size(656, 75)
+        Me.RadGridView1.TabIndex = 25
+        Me.RadGridView1.Text = "RadGridView1"
+        Me.RadGridView1.ThemeName = "Office2010Black"
+        '
+        'FormBAST
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(662, 293)
+        Me.Controls.Add(Me.RadGridView1)
         Me.Controls.Add(Me.RadButton1)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.RadRadioButton2)
@@ -368,8 +435,9 @@ Partial Class FormBAST
         Me.Controls.Add(Me.RadDropDownList1)
         Me.Controls.Add(Me.RadLabel2)
         Me.Controls.Add(Me.RadLabel1)
+        Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Name = "FormPerintahKerja"
+        Me.Name = "FormBAST"
         '
         '
         '
@@ -390,6 +458,8 @@ Partial Class FormBAST
         CType(Me.btnBack, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadGridView1.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -416,5 +486,10 @@ Partial Class FormBAST
     Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents RadContextMenuManager1 As Telerik.WinControls.UI.RadContextMenuManager
+    Friend WithEvents RadContextMenu1 As Telerik.WinControls.UI.RadContextMenu
+    Friend WithEvents RadMenuItem1 As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents RadMenuItem2 As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents RadGridView1 As Telerik.WinControls.UI.RadGridView
 End Class
 

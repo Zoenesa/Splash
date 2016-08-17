@@ -426,6 +426,6 @@ errhandle:
 
     Private Sub btnCariBAST_Click(sender As Object, e As EventArgs) Handles btnCariBAST.Click
         Dim rBAS As New FormBAST
-
+        rBAS.ShowDialog()
     End Sub
 End Class

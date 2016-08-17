@@ -58,7 +58,7 @@ Public Class rFormUsersList
             Dim comon As New common
             Dim dt As New DataTable
             Dim errMsg As String = Nothing
-            If comon.getUsers(errMsg, dt, "") Then
+            If comon.getUsers(errMsg, dt, opsi) Then
                 Dim values As String() = New String(((5 + Me.JumRole) + 1) - 1) {}
                 Dim num2 As Integer = (dt.Rows.Count - 1)
                 Dim i As Integer = 0

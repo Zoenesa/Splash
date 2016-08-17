@@ -162,3 +162,9 @@ C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\obj\Debug\Spl
 C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\obj\Debug\Splash.RadFormExportProgress.resources
 C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\obj\Debug\Splash.vbproj.GenerateResource.Cache
 C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\obj\Debug\Splash.exe.licenses
+C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\bin\Release\Splash.exe
+C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\bin\Release\Splash.pdb
+C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\bin\Release\Splash.xml
+C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\bin\Release\MySql.Data.dll
+C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\bin\Release\MySqlBackup.dll
+C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\bin\Release\PasswordMeter.dll

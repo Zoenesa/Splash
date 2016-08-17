@@ -312,7 +312,6 @@ Public Class rFormMain
         Dim rFormBackup As New rFormBackupdb
         rFormBackup.ShowDialog()
     End Sub
- 
 
     Private Sub RadMenuItem1_Click_1(sender As Object, e As EventArgs)
         BukaFormChild(frmImportPartner)
@@ -328,5 +327,8 @@ Public Class rFormMain
         BukaFormChild(rFormKonfirmasiPembayaran)
     End Sub
 
-    
+    Private Sub RadMenuItemBAST_Click(sender As Object, e As EventArgs) Handles RadMenuItemBAST.Click
+        BukaFormChild(FormBAST)
+    End Sub
+
 End Class
