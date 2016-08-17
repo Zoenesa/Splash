@@ -301,7 +301,7 @@ Public Class rFormMain
     End Sub
 
     Private Sub rAppInfo_Click(sender As Object, e As EventArgs) Handles rAppInfo.Click
-        RFormContoh.ShowDialog()
+
     End Sub
 
     Private Sub rMenuDataProject_Click(sender As Object, e As EventArgs) Handles rMenuDataProject.Click
