@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormPerintahKerja
+Partial Class FormBAST
     Inherits Telerik.WinControls.UI.RadForm
 
     'Form overrides dispose to clean up the component list.
@@ -32,12 +32,6 @@ Partial Class FormPerintahKerja
         Me.RadLabel6 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
         Me.dgWo = New System.Windows.Forms.DataGridView()
-        Me.RadTextBox1 = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadRadioButton2 = New Telerik.WinControls.UI.RadRadioButton()
-        Me.RadRadioButton1 = New Telerik.WinControls.UI.RadRadioButton()
-        Me.btnBack = New Telerik.WinControls.UI.RadButton()
-        Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Col2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Col3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -45,6 +39,12 @@ Partial Class FormPerintahKerja
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RadTextBox1 = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadRadioButton2 = New Telerik.WinControls.UI.RadRadioButton()
+        Me.RadRadioButton1 = New Telerik.WinControls.UI.RadRadioButton()
+        Me.btnBack = New Telerik.WinControls.UI.RadButton()
+        Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
         CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txDefaultCharset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -73,6 +73,7 @@ Partial Class FormPerintahKerja
         Me.RadDropDownList1.Size = New System.Drawing.Size(214, 23)
         Me.RadDropDownList1.TabIndex = 13
         Me.RadDropDownList1.ThemeName = "Office2010Black"
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadDropDownListEditableAreaElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         '
@@ -119,6 +120,7 @@ Partial Class FormPerintahKerja
         Me.btnClose.TabIndex = 1
         Me.btnClose.Text = "&Keluar"
         Me.btnClose.ThemeName = "Office2010Black"
+        CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Keluar"
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         CType(Me.btnClose.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         CType(Me.btnClose.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
@@ -197,6 +199,79 @@ Partial Class FormPerintahKerja
         Me.dgWo.Size = New System.Drawing.Size(656, 171)
         Me.dgWo.TabIndex = 21
         '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column1.FillWeight = 45.0!
+        Me.Column1.HeaderText = "No"
+        Me.Column1.MinimumWidth = 25
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 45
+        '
+        'Col2
+        '
+        Me.Col2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Col2.FillWeight = 175.0!
+        Me.Col2.HeaderText = "No BAST"
+        Me.Col2.MinimumWidth = 155
+        Me.Col2.Name = "Col2"
+        Me.Col2.ReadOnly = True
+        Me.Col2.Width = 184
+        '
+        'Col3
+        '
+        Me.Col3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        DataGridViewCellStyle2.Format = "d"
+        DataGridViewCellStyle2.NullValue = "__/__/____"
+        Me.Col3.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Col3.FillWeight = 125.0!
+        Me.Col3.HeaderText = "Tanggal"
+        Me.Col3.MinimumWidth = 95
+        Me.Col3.Name = "Col3"
+        Me.Col3.ReadOnly = True
+        Me.Col3.Width = 125
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column2.FillWeight = 195.0!
+        Me.Column2.HeaderText = "Nama Pelanggan"
+        Me.Column2.MinimumWidth = 180
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 220
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column3.FillWeight = 220.0!
+        Me.Column3.HeaderText = "Deskripsi"
+        Me.Column3.MinimumWidth = 190
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 220
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column4.FillWeight = 190.0!
+        Me.Column4.HeaderText = "Keterangan"
+        Me.Column4.MinimumWidth = 190
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 190
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column5.FillWeight = 220.0!
+        Me.Column5.HeaderText = ""
+        Me.Column5.MinimumWidth = 220
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 220
+        '
         'RadTextBox1
         '
         Me.RadTextBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
@@ -274,79 +349,6 @@ Partial Class FormPerintahKerja
         Me.RadButton1.TabIndex = 24
         Me.RadButton1.Text = "&Tambah Baru"
         Me.RadButton1.ThemeName = "Office2010Black"
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column1.FillWeight = 45.0!
-        Me.Column1.HeaderText = "No"
-        Me.Column1.MinimumWidth = 25
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 45
-        '
-        'Col2
-        '
-        Me.Col2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Col2.FillWeight = 175.0!
-        Me.Col2.HeaderText = "No BAST"
-        Me.Col2.MinimumWidth = 155
-        Me.Col2.Name = "Col2"
-        Me.Col2.ReadOnly = True
-        Me.Col2.Width = 184
-        '
-        'Col3
-        '
-        Me.Col3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle2.Format = "d"
-        DataGridViewCellStyle2.NullValue = "__/__/____"
-        Me.Col3.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Col3.FillWeight = 125.0!
-        Me.Col3.HeaderText = "Tanggal"
-        Me.Col3.MinimumWidth = 95
-        Me.Col3.Name = "Col3"
-        Me.Col3.ReadOnly = True
-        Me.Col3.Width = 125
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column2.FillWeight = 195.0!
-        Me.Column2.HeaderText = "Nama Pelanggan"
-        Me.Column2.MinimumWidth = 180
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 220
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column3.FillWeight = 220.0!
-        Me.Column3.HeaderText = "Deskripsi"
-        Me.Column3.MinimumWidth = 190
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 220
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column4.FillWeight = 190.0!
-        Me.Column4.HeaderText = "Keterangan"
-        Me.Column4.MinimumWidth = 190
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 190
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column5.FillWeight = 220.0!
-        Me.Column5.HeaderText = ""
-        Me.Column5.MinimumWidth = 220
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 220
         '
         'FormPerintahKerja
         '

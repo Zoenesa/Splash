@@ -1,4 +1,4 @@
-﻿Public Class FormPerintahKerja
+﻿Public Class FormBAST
     Private isPilih As Boolean
 
     Public Function BukaDialogBAST(ByVal ModePilih As Boolean) As DialogResult

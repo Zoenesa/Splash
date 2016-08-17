@@ -22,9 +22,9 @@ Partial Class rFormInvoice
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.RadRadioButton2 = New Telerik.WinControls.UI.RadRadioButton()
         Me.RadRadioButton1 = New Telerik.WinControls.UI.RadRadioButton()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
@@ -1039,10 +1039,10 @@ Partial Class rFormInvoice
         Me.rDropInvoiceType.AutoSize = False
         Me.rDropInvoiceType.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.rDropInvoiceType.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RadListDataItem3.Text = "Normal"
-        RadListDataItem4.Text = "Revisions"
-        Me.rDropInvoiceType.Items.Add(RadListDataItem3)
-        Me.rDropInvoiceType.Items.Add(RadListDataItem4)
+        RadListDataItem1.Text = "Normal"
+        RadListDataItem2.Text = "Revisions"
+        Me.rDropInvoiceType.Items.Add(RadListDataItem1)
+        Me.rDropInvoiceType.Items.Add(RadListDataItem2)
         Me.rDropInvoiceType.Location = New System.Drawing.Point(104, 92)
         Me.rDropInvoiceType.Name = "rDropInvoiceType"
         Me.rDropInvoiceType.NullText = "Normal / Revisions"
@@ -1186,9 +1186,9 @@ Partial Class rFormInvoice
         '
         'Col3
         '
-        DataGridViewCellStyle2.Format = "d"
-        DataGridViewCellStyle2.NullValue = "__/__/____"
-        Me.Col3.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Format = "d"
+        DataGridViewCellStyle1.NullValue = "__/__/____"
+        Me.Col3.DefaultCellStyle = DataGridViewCellStyle1
         Me.Col3.FillWeight = 60.0!
         Me.Col3.HeaderText = "Date"
         Me.Col3.Name = "Col3"
