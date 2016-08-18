@@ -333,13 +333,22 @@ Public Class rFormMain
         BukaFormChild(FormBAST)
     End Sub
 
-    Private Sub Countersql(Optional ByVal Opsi As String = "")
+    Private Sub Countersql(ByVal NamaField As String, ByVal tableName As String, Optional ByVal Opsi As String = "")
         Dim sqlCommand As New MySqlCommand
-        sqlCommand.CommandText = String.Format("SELECT COUNT({0}) FROM `{1}`" & Opsi)
+        sqlCommand.CommandText = String.Format("SELECT COUNT({0}) FROM `{1}`" & Opsi, NamaField, tableName)
         sqlCommand.Connection = mdlCom.vConn
         Dim sqlReader As MySqlDataReader
-        sqlReader = sqlCommand.ExecuteScalar
+        Dim int As Integer = sqlCommand.ExecuteNonQuery
+        sqlReader = sqlCommand.ExecuteReader
+        Dim Values As String() = New String(2) {}
 
+        Do While sqlReader.Read
+            Values(0) = NamaField
+            Values(1) = tableName
+            Values(2) = int
+            RadGridView1.Rows.Add(Values)
+        Loop
+        sqlReader.Close()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -347,6 +356,6 @@ Public Class rFormMain
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
+        Countersql("`invoiceNo`", "invoicedata")
     End Sub
 End Class
