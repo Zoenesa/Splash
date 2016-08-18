@@ -37,6 +37,7 @@ Partial Class rFormMain
         Me.rMenuWorkSalesOrder = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuSalesOrderItem = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuWorkOrderItem = New Telerik.WinControls.UI.RadMenuItem()
+        Me.RadMenuItemBAST = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenuSeparatorItem4 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         Me.rMenuImportWOSPKItem = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuExportWOSPKItem = New Telerik.WinControls.UI.RadMenuItem()
@@ -76,7 +77,6 @@ Partial Class rFormMain
         Me.CommandBarSeparator2 = New Telerik.WinControls.UI.CommandBarSeparator()
         Me.RadDateAndTimeStatus = New Telerik.WinControls.UI.RadLabelElement()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
-        Me.RadMenuItemBAST = New Telerik.WinControls.UI.RadMenuItem()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -178,6 +178,12 @@ Partial Class rFormMain
         Me.rMenuWorkOrderItem.AccessibleName = "&WOrk Order"
         Me.rMenuWorkOrderItem.Name = "rMenuWorkOrderItem"
         Me.rMenuWorkOrderItem.Text = "&Work Order"
+        '
+        'RadMenuItemBAST
+        '
+        Me.RadMenuItemBAST.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadMenuItemBAST.Name = "RadMenuItemBAST"
+        Me.RadMenuItemBAST.Text = "BA&ST"
         '
         'RadMenuSeparatorItem4
         '
@@ -472,12 +478,6 @@ Partial Class rFormMain
         Me.RadMenu1.TabIndex = 3
         Me.RadMenu1.Text = "RadMenu1"
         Me.RadMenu1.ThemeName = "Office2010Black"
-        '
-        'RadMenuItemBAST
-        '
-        Me.RadMenuItemBAST.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadMenuItemBAST.Name = "RadMenuItemBAST"
-        Me.RadMenuItemBAST.Text = "BA&ST"
         '
         'rFormMain
         '
