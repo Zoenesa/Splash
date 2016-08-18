@@ -1,5 +1,7 @@
 ﻿Imports Telerik, Telerik.WinControls, Telerik.WinControls.UI
 Imports Microsoft.VisualBasic.CompilerServices
+Imports MySql.Data.MySqlClient
+
 Public Class rFormMain
 
     Public Shared tempForm As Form
@@ -331,4 +333,20 @@ Public Class rFormMain
         BukaFormChild(FormBAST)
     End Sub
 
+    Private Sub Countersql(Optional ByVal Opsi As String = "")
+        Dim sqlCommand As New MySqlCommand
+        sqlCommand.CommandText = String.Format("SELECT COUNT({0}) FROM `{1}`" & Opsi)
+        sqlCommand.Connection = mdlCom.vConn
+        Dim sqlReader As MySqlDataReader
+        sqlReader = sqlCommand.ExecuteScalar
+
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+    End Sub
 End Class
