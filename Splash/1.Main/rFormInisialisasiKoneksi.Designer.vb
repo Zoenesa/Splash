@@ -53,7 +53,7 @@ Partial Class rFormInisialisasiKoneksi
         Me.TableLayoutPanel1.ColumnCount = 3
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.77946!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.22053!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Button3, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Button1, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Button2, 2, 0)
@@ -76,6 +76,8 @@ Partial Class rFormInisialisasiKoneksi
         Me.Button3.TabIndex = 0
         Me.Button3.Text = "Cek &Koneksi"
         Me.Button3.ThemeName = "Office2010Black"
+        CType(Me.Button3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.Button3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'Button1
         '
@@ -86,10 +88,12 @@ Partial Class rFormInisialisasiKoneksi
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Button1.Location = New System.Drawing.Point(191, 3)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(92, 28)
+        Me.Button1.Size = New System.Drawing.Size(91, 28)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "&OK"
         Me.Button1.ThemeName = "Office2010Black"
+        CType(Me.Button1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.Button1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'Button2
         '
@@ -98,12 +102,14 @@ Partial Class rFormInisialisasiKoneksi
         Me.Button2.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Button2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Button2.Location = New System.Drawing.Point(289, 3)
+        Me.Button2.Location = New System.Drawing.Point(288, 3)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(91, 28)
+        Me.Button2.Size = New System.Drawing.Size(92, 28)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "&Batal"
         Me.Button2.ThemeName = "Office2010Black"
+        CType(Me.Button2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.Button2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'Label1
         '
@@ -147,6 +153,51 @@ Partial Class rFormInisialisasiKoneksi
         Me.txdbname.Size = New System.Drawing.Size(186, 23)
         Me.txdbname.TabIndex = 1
         Me.txdbname.ThemeName = "Office2010Black"
+        CType(Me.txdbname.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txdbname.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.[Default]
+        CType(Me.txdbname.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Opacity = 1.0R
+        CType(Me.txdbname.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(2, 2, 2, 3)
+        CType(Me.txdbname.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Margin = New System.Windows.Forms.Padding(1)
+        CType(Me.txdbname.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).ShouldPaint = False
+        CType(Me.txdbname.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).ClipDrawing = False
+        CType(Me.txdbname.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).AngleTransform = 0.0!
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "database"
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.[Default]
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Opacity = 1.0R
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Padding = New System.Windows.Forms.Padding(0)
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Margin = New System.Windows.Forms.Padding(0)
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).ShouldPaint = False
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor2 = System.Drawing.SystemColors.ControlDark
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor3 = System.Drawing.Color.Transparent
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor4 = System.Drawing.Color.Transparent
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).NumberOfColors = 1
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientAngle = 90.0!
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientPercentage = 0.5!
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientPercentage2 = 0.666!
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).Opacity = 1.0R
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).Padding = New System.Windows.Forms.Padding(0)
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).Margin = New System.Windows.Forms.Padding(0)
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).Width = 1.0!
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BottomWidth = 1.0!
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BottomColor = System.Drawing.SystemColors.ControlDark
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).PaintUsingParentShape = True
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).ForeColor4 = System.Drawing.Color.Transparent
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).InnerColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).InnerColor2 = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).InnerColor4 = System.Drawing.Color.Transparent
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).ForeColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BackColor = System.Drawing.SystemColors.ActiveBorder
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).Opacity = 1.0R
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).Padding = New System.Windows.Forms.Padding(0)
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).Margin = New System.Windows.Forms.Padding(-1)
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).Alignment = System.Drawing.ContentAlignment.TopLeft
+        CType(Me.txdbname.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).ClipDrawing = False
         '
         'txserver
         '
@@ -160,6 +211,16 @@ Partial Class rFormInisialisasiKoneksi
         Me.txserver.Size = New System.Drawing.Size(276, 23)
         Me.txserver.TabIndex = 3
         Me.txserver.ThemeName = "Office2010Black"
+        CType(Me.txserver.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txserver.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        CType(Me.txserver.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor2 = System.Drawing.SystemColors.ControlDark
+        CType(Me.txserver.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor3 = System.Drawing.SystemColors.ControlDark
+        CType(Me.txserver.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor4 = System.Drawing.SystemColors.ControlLightLight
+        CType(Me.txserver.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        CType(Me.txserver.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientAngle = 90.0!
+        CType(Me.txserver.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientPercentage = 0.5!
+        CType(Me.txserver.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientPercentage2 = 0.666!
+        CType(Me.txserver.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txUser
         '
@@ -187,6 +248,9 @@ Partial Class rFormInisialisasiKoneksi
         Me.txPort.Size = New System.Drawing.Size(89, 23)
         Me.txPort.TabIndex = 5
         Me.txPort.ThemeName = "Office2010Black"
+        CType(Me.txPort.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txPort.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        CType(Me.txPort.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txPass
         '
