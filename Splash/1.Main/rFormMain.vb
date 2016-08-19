@@ -138,6 +138,8 @@ Public Class rFormMain
         StatusVersi.Text = My.Application.Info.Title.ToString & " V" & My.Application.Info.Version.ToString
         RadDateAndTimeStatus.Text = DateTime.Now.ToString("dddd, dd-MM-yy")
         Call rMenuKoneksiDb_Click(Me, e)
+        Timer1.Start()
+        RadDateTimePicker1.Text = DateTime.Now.ToString("dd/MM/yyyy")
     End Sub
 
     Private Sub UpdateToolStripMenuItem_Click(sender As Object, e As EventArgs)
@@ -381,12 +383,52 @@ Public Class rFormMain
             RadMessageBox.Show(ex.Message)
         End Try
     End Sub
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        ToolWindow1.Text = Mid(ToolWindow1.Text, 2) & Strings.Left(ToolWindow1.Text, 1)
+    End Sub
+
+    Private Sub LoopCountRowsTables()
+        Dim sqlDS As New DataSet
+        Dim sqlCmd As New MySqlCommand
+        Dim sqlAdapter As MySqlDataAdapter
+        Dim dbName As New DataTable
+        Dim tables As New DataTable
+        Try
+            sqlAdapter = New MySqlDataAdapter("SELECT TABLE_NAME, TABLE_ROWS FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = '" _
+                                              & mdlstring.ADD_QUOTE_ON_SQL(mdlCom.cDbname) & _
+                                              "' AND TABLE_NAME NOT IN('data_customer','districts','provinces','datatemp','patch','user','ref_user','databast','ref_profile','regencies','villages')", mdlCom.vConn)
+
+            sqlAdapter.Fill(dbName)
+            Dim num As Integer = dbName.Rows.Count - 1
+            Dim i As Integer = 0
+            Dim values As String() = New String(3 - 1) {}
+            dgcounter.Rows.Clear()
+            Do While (i <= num)
+                Dim row As DataRow = dbName.Rows.Item(i)
+                values(0) = row.Item("table_name")
+                values(1) = row.Item("table_rows")
+                Dim sqlreader As MySqlDataReader
+                Dim StrTable As String = dbName.Rows(i)(0).ToString
+                sqlCmd.CommandText = "SELECT COUNT(*) AS HITUNG FROM `" & StrTable & "` WHERE TanggalUpdate = '" & RadDateTimePicker1.Text & "'"
+                sqlCmd.Connection = mdlCom.vConn
+                sqlreader = sqlCmd.ExecuteReader
+                sqlreader.Read()
+                values(2) = sqlreader.Item("HITUNG")
+                sqlreader.Close()
+                Interlocked.Increment(i)
+                dgcounter.Rows.Add(values)
+            Loop
+            dbName.Dispose()
+            sqlAdapter.Dispose()
+
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message)
+        End Try
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        'Countersql("", "")
-        getTableSchema("'db_apps'")
+        LoopCountRowsTables()
+
     End Sub
 End Class

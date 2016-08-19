@@ -86,21 +86,23 @@ Partial Class rFormMain
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.RadDock1 = New Telerik.WinControls.UI.Docking.RadDock()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.MasterTemplate = New Telerik.WinControls.UI.RadGridView()
-        Me.DocumentContainer1 = New Telerik.WinControls.UI.Docking.DocumentContainer()
         Me.ToolWindow1 = New Telerik.WinControls.UI.Docking.ToolWindow()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.dgcounter = New Telerik.WinControls.UI.RadGridView()
+        Me.DocumentContainer1 = New Telerik.WinControls.UI.Docking.DocumentContainer()
         Me.ToolTabStrip1 = New Telerik.WinControls.UI.Docking.ToolTabStrip()
+        Me.RadDateTimePicker1 = New Telerik.WinControls.UI.RadDateTimePicker()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadDock1.SuspendLayout()
-        CType(Me.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MasterTemplate.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DocumentContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolWindow1.SuspendLayout()
+        CType(Me.dgcounter, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgcounter.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DocumentContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ToolTabStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolTabStrip1.SuspendLayout()
+        CType(Me.RadDateTimePicker1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -503,6 +505,7 @@ Partial Class rFormMain
         '
         'Timer1
         '
+        Me.Timer1.Interval = 150
         '
         'RadDock1
         '
@@ -536,40 +539,53 @@ Partial Class rFormMain
         Me.RadDock1.ThemeName = "Office2010Black"
         Me.RadDock1.ToolTabsAlignment = Telerik.WinControls.UI.TabStripAlignment.Top
         '
+        'ToolWindow1
+        '
+        Me.ToolWindow1.Caption = Nothing
+        Me.ToolWindow1.Controls.Add(Me.RadDateTimePicker1)
+        Me.ToolWindow1.Controls.Add(Me.Button1)
+        Me.ToolWindow1.Controls.Add(Me.dgcounter)
+        Me.ToolWindow1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolWindow1.Location = New System.Drawing.Point(1, 22)
+        Me.ToolWindow1.Name = "ToolWindow1"
+        Me.ToolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked
+        Me.ToolWindow1.Size = New System.Drawing.Size(993, 370)
+        Me.ToolWindow1.Text = "DATABASE COUNTER                                    "
+        '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(6, 197)
+        Me.Button1.Location = New System.Drawing.Point(122, 201)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(347, 30)
+        Me.Button1.Size = New System.Drawing.Size(231, 23)
         Me.Button1.TabIndex = 9
         Me.Button1.Text = "&REFRESH COUNTER"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'MasterTemplate
+        'dgcounter
         '
-        Me.MasterTemplate.AllowShowFocusCues = True
-        Me.MasterTemplate.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.MasterTemplate.Cursor = System.Windows.Forms.Cursors.Default
-        Me.MasterTemplate.EnableAnalytics = False
-        Me.MasterTemplate.EnableGestures = False
-        Me.MasterTemplate.EnterKeyMode = Telerik.WinControls.UI.RadGridViewEnterKeyMode.EnterMovesToNextRow
-        Me.MasterTemplate.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MasterTemplate.ForeColor = System.Drawing.Color.Black
-        Me.MasterTemplate.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.MasterTemplate.Location = New System.Drawing.Point(6, 23)
+        Me.dgcounter.AllowShowFocusCues = True
+        Me.dgcounter.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.dgcounter.Cursor = System.Windows.Forms.Cursors.Default
+        Me.dgcounter.EnableAnalytics = False
+        Me.dgcounter.EnableGestures = False
+        Me.dgcounter.EnterKeyMode = Telerik.WinControls.UI.RadGridViewEnterKeyMode.EnterMovesToNextRow
+        Me.dgcounter.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgcounter.ForeColor = System.Drawing.Color.Black
+        Me.dgcounter.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.dgcounter.Location = New System.Drawing.Point(6, 23)
         '
-        'MasterTemplate
         '
-        Me.MasterTemplate.MasterTemplate.AllowAddNewRow = False
-        Me.MasterTemplate.MasterTemplate.AllowCellContextMenu = False
-        Me.MasterTemplate.MasterTemplate.AllowColumnChooser = False
-        Me.MasterTemplate.MasterTemplate.AllowColumnHeaderContextMenu = False
-        Me.MasterTemplate.MasterTemplate.AllowColumnReorder = False
-        Me.MasterTemplate.MasterTemplate.AllowDeleteRow = False
-        Me.MasterTemplate.MasterTemplate.AllowDragToGroup = False
-        Me.MasterTemplate.MasterTemplate.AllowEditRow = False
-        Me.MasterTemplate.MasterTemplate.AllowRowHeaderContextMenu = False
-        Me.MasterTemplate.MasterTemplate.AllowSearchRow = True
+        '
+        Me.dgcounter.MasterTemplate.AllowAddNewRow = False
+        Me.dgcounter.MasterTemplate.AllowCellContextMenu = False
+        Me.dgcounter.MasterTemplate.AllowColumnChooser = False
+        Me.dgcounter.MasterTemplate.AllowColumnHeaderContextMenu = False
+        Me.dgcounter.MasterTemplate.AllowColumnReorder = False
+        Me.dgcounter.MasterTemplate.AllowDeleteRow = False
+        Me.dgcounter.MasterTemplate.AllowDragToGroup = False
+        Me.dgcounter.MasterTemplate.AllowEditRow = False
+        Me.dgcounter.MasterTemplate.AllowRowHeaderContextMenu = False
+        Me.dgcounter.MasterTemplate.AllowSearchRow = True
         GridViewTextBoxColumn1.EnableExpressionEditor = False
         GridViewTextBoxColumn1.HeaderText = "Data TABLE"
         GridViewTextBoxColumn1.Name = "column1"
@@ -591,25 +607,25 @@ Partial Class rFormMain
         GridViewTextBoxColumn4.ReadOnly = True
         GridViewTextBoxColumn4.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending
         GridViewTextBoxColumn4.Width = 101
-        Me.MasterTemplate.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4})
-        Me.MasterTemplate.MasterTemplate.EnableAlternatingRowColor = True
-        Me.MasterTemplate.MasterTemplate.EnableGrouping = False
-        Me.MasterTemplate.MasterTemplate.ShowHeaderCellButtons = True
+        Me.dgcounter.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4})
+        Me.dgcounter.MasterTemplate.EnableAlternatingRowColor = True
+        Me.dgcounter.MasterTemplate.EnableGrouping = False
+        Me.dgcounter.MasterTemplate.ShowHeaderCellButtons = True
         SortDescriptor1.PropertyName = "column3"
-        Me.MasterTemplate.MasterTemplate.SortDescriptors.AddRange(New Telerik.WinControls.Data.SortDescriptor() {SortDescriptor1})
-        Me.MasterTemplate.MasterTemplate.ViewDefinition = TableViewDefinition1
-        Me.MasterTemplate.Name = "MasterTemplate"
-        Me.MasterTemplate.ReadOnly = True
-        Me.MasterTemplate.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.MasterTemplate.ShowGroupPanel = False
-        Me.MasterTemplate.ShowGroupPanelScrollbars = False
-        Me.MasterTemplate.ShowHeaderCellButtons = True
-        Me.MasterTemplate.ShowRowErrors = False
-        Me.MasterTemplate.Size = New System.Drawing.Size(347, 168)
-        Me.MasterTemplate.TabIndex = 0
-        Me.MasterTemplate.Text = "RadGridView1"
-        Me.MasterTemplate.ThemeName = "Office2010Black"
-        Me.MasterTemplate.UseScrollbarsInHierarchy = True
+        Me.dgcounter.MasterTemplate.SortDescriptors.AddRange(New Telerik.WinControls.Data.SortDescriptor() {SortDescriptor1})
+        Me.dgcounter.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.dgcounter.Name = "dgcounter"
+        Me.dgcounter.ReadOnly = True
+        Me.dgcounter.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.dgcounter.ShowGroupPanel = False
+        Me.dgcounter.ShowGroupPanelScrollbars = False
+        Me.dgcounter.ShowHeaderCellButtons = True
+        Me.dgcounter.ShowRowErrors = False
+        Me.dgcounter.Size = New System.Drawing.Size(347, 168)
+        Me.dgcounter.TabIndex = 0
+        Me.dgcounter.Text = "RadGridView1"
+        Me.dgcounter.ThemeName = "Office2010Black"
+        Me.dgcounter.UseScrollbarsInHierarchy = True
         '
         'DocumentContainer1
         '
@@ -624,18 +640,6 @@ Partial Class rFormMain
         Me.DocumentContainer1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill
         Me.DocumentContainer1.ThemeName = "Office2010Black"
         '
-        'ToolWindow1
-        '
-        Me.ToolWindow1.Caption = Nothing
-        Me.ToolWindow1.Controls.Add(Me.Button1)
-        Me.ToolWindow1.Controls.Add(Me.MasterTemplate)
-        Me.ToolWindow1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolWindow1.Location = New System.Drawing.Point(1, 22)
-        Me.ToolWindow1.Name = "ToolWindow1"
-        Me.ToolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked
-        Me.ToolWindow1.Size = New System.Drawing.Size(359, 370)
-        Me.ToolWindow1.Text = "ToolWindow1"
-        '
         'ToolTabStrip1
         '
         Me.ToolTabStrip1.AutoHidePosition = Telerik.WinControls.UI.Docking.AutoHidePosition.Right
@@ -647,7 +651,7 @@ Partial Class rFormMain
         '
         '
         '
-        Me.ToolTabStrip1.RootElement.MinSize = New System.Drawing.Size(25, 25)
+        Me.ToolTabStrip1.RootElement.MinSize = New System.Drawing.Size(0, 0)
         Me.ToolTabStrip1.SelectedIndex = 0
         Me.ToolTabStrip1.Size = New System.Drawing.Size(361, 394)
         Me.ToolTabStrip1.TabIndex = 1
@@ -655,6 +659,20 @@ Partial Class rFormMain
         Me.ToolTabStrip1.TabStripAlignment = Telerik.WinControls.UI.TabStripAlignment.Top
         Me.ToolTabStrip1.TabStripTextOrientation = Telerik.WinControls.UI.TabStripTextOrientation.Horizontal
         Me.ToolTabStrip1.ThemeName = "Office2010Black"
+        '
+        'RadDateTimePicker1
+        '
+        Me.RadDateTimePicker1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.RadDateTimePicker1.Location = New System.Drawing.Point(6, 202)
+        Me.RadDateTimePicker1.MaxDate = New Date(2090, 12, 31, 0, 0, 0, 0)
+        Me.RadDateTimePicker1.Name = "RadDateTimePicker1"
+        Me.RadDateTimePicker1.Size = New System.Drawing.Size(110, 21)
+        Me.RadDateTimePicker1.TabIndex = 10
+        Me.RadDateTimePicker1.TabStop = False
+        Me.RadDateTimePicker1.Text = "19/08/2016"
+        Me.RadDateTimePicker1.ThemeName = "Office2010Black"
+        Me.RadDateTimePicker1.Value = New Date(2016, 8, 19, 23, 19, 16, 894)
         '
         'rFormMain
         '
@@ -680,12 +698,14 @@ Partial Class rFormMain
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadDock1.ResumeLayout(False)
-        CType(Me.MasterTemplate.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DocumentContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolWindow1.ResumeLayout(False)
+        Me.ToolWindow1.PerformLayout()
+        CType(Me.dgcounter.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgcounter, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DocumentContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ToolTabStrip1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolTabStrip1.ResumeLayout(False)
+        CType(Me.RadDateTimePicker1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -752,5 +772,6 @@ Partial Class rFormMain
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents ToolWindow1 As Telerik.WinControls.UI.Docking.ToolWindow
     Friend WithEvents ToolTabStrip1 As Telerik.WinControls.UI.Docking.ToolTabStrip
-    Friend WithEvents MasterTemplate As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents dgcounter As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents RadDateTimePicker1 As Telerik.WinControls.UI.RadDateTimePicker
 End Class
