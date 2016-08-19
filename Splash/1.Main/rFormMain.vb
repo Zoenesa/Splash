@@ -1,6 +1,7 @@
 ﻿Imports Telerik, Telerik.WinControls, Telerik.WinControls.UI
 Imports Microsoft.VisualBasic.CompilerServices
 Imports MySql.Data.MySqlClient
+Imports System.Threading
 
 Public Class rFormMain
 
@@ -335,7 +336,7 @@ Public Class rFormMain
 
     Private Sub Countersql(ByVal NamaField As String, ByVal tableName As String, Optional ByVal Opsi As String = "")
         Dim sqlCommand As New MySqlCommand
-        sqlCommand.CommandText = String.Format("SELECT TABLE_NAME, TABLE_ROWS, CREATE_TIME,  FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'db_apps'" & Opsi)
+        sqlCommand.CommandText = String.Format("SELECT TABLE_NAME, TABLE_ROWS, CREATE_TIME,  FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = " & Opsi)
         sqlCommand.Connection = mdlCom.vConn
         Dim sqlreader As MySqlDataReader
         sqlreader = sqlCommand.ExecuteReader
@@ -350,34 +351,42 @@ Public Class rFormMain
         sqlreader.Close()
     End Sub
 
-    Private Sub getTableSchema(ByVal NamaSchema As String, Optional ByVal Opsi As String)
+    Private Sub getTableSchema(ByVal NamaSchema As String, Optional ByVal Opsi As String = "")
         Dim errmsg As String = Nothing
         Try
             RadGridView1.Rows.Clear()
             Dim dt As New DataTable
             Dim common As New common
             If common.LoadTableSchema(errmsg, dt, NamaSchema, Opsi) Then
-                Dim values As String() = New String() {}
+                Dim values As String() = New String(2 - 1) {}
                 Dim num As Integer = (dt.Rows.Count - 1)
                 Dim i As Integer = 0
-                Dim values2 As String() = New String() {}
+
                 Do While (i <= num)
                     Dim row As DataRow = dt.Rows.Item(i)
-                    Dim sqlcmd As New MySqlCommand(("SELECT COUNT(*) FROM " & Conversions.ToString(dt.Rows.Item(i))), mdlCom.vConn)
                     values(0) = Conversions.ToString(row.Item("TABLE_NAME"))
                     values(1) = Conversions.ToString(row.Item("TABLE_ROWS"))
+                    Dim cmd As New MySqlCommand("SELECT COUNT(*) FROM " & dt.Rows.Count, mdlCom.vConn)
+                    Dim sqlreader As MySqlDataReader
+                    sqlreader = cmd.ExecuteReader
+                    sqlreader.Read()
+                    values(2) = sqlreader.Item("")
+                    Interlocked.Increment(i)
+                    RadGridView1.Rows.Add(values)
                 Loop
             Else
                 mdlCom.ShowError(errmsg)
             End If
         Catch ex As Exception
-
+            RadMessageBox.Show(ex.Message)
         End Try
+    End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Countersql("", "")
+        'Countersql("", "")
+        getTableSchema("'db_apps'")
     End Sub
 End Class

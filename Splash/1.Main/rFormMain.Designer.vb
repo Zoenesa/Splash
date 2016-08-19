@@ -87,7 +87,7 @@ Partial Class rFormMain
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.RadDock1 = New Telerik.WinControls.UI.Docking.RadDock()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.RadGridView1 = New Telerik.WinControls.UI.RadGridView()
+        Me.MasterTemplate = New Telerik.WinControls.UI.RadGridView()
         Me.DocumentContainer1 = New Telerik.WinControls.UI.Docking.DocumentContainer()
         Me.ToolWindow1 = New Telerik.WinControls.UI.Docking.ToolWindow()
         Me.ToolTabStrip1 = New Telerik.WinControls.UI.Docking.ToolTabStrip()
@@ -95,8 +95,8 @@ Partial Class rFormMain
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadDock1.SuspendLayout()
-        CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadGridView1.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MasterTemplate.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DocumentContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolWindow1.SuspendLayout()
         CType(Me.ToolTabStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -540,38 +540,36 @@ Partial Class rFormMain
         '
         Me.Button1.Location = New System.Drawing.Point(6, 197)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(347, 23)
+        Me.Button1.Size = New System.Drawing.Size(347, 30)
         Me.Button1.TabIndex = 9
         Me.Button1.Text = "&REFRESH COUNTER"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'RadGridView1
+        'MasterTemplate
         '
-        Me.RadGridView1.AllowShowFocusCues = True
-        Me.RadGridView1.AutoSizeRows = True
-        Me.RadGridView1.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.RadGridView1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.RadGridView1.EnableAnalytics = False
-        Me.RadGridView1.EnableGestures = False
-        Me.RadGridView1.EnterKeyMode = Telerik.WinControls.UI.RadGridViewEnterKeyMode.EnterMovesToNextRow
-        Me.RadGridView1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadGridView1.ForeColor = System.Drawing.Color.Black
-        Me.RadGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.RadGridView1.Location = New System.Drawing.Point(6, 23)
+        Me.MasterTemplate.AllowShowFocusCues = True
+        Me.MasterTemplate.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.MasterTemplate.Cursor = System.Windows.Forms.Cursors.Default
+        Me.MasterTemplate.EnableAnalytics = False
+        Me.MasterTemplate.EnableGestures = False
+        Me.MasterTemplate.EnterKeyMode = Telerik.WinControls.UI.RadGridViewEnterKeyMode.EnterMovesToNextRow
+        Me.MasterTemplate.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MasterTemplate.ForeColor = System.Drawing.Color.Black
+        Me.MasterTemplate.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.MasterTemplate.Location = New System.Drawing.Point(6, 23)
         '
+        'MasterTemplate
         '
-        '
-        Me.RadGridView1.MasterTemplate.AllowAddNewRow = False
-        Me.RadGridView1.MasterTemplate.AllowCellContextMenu = False
-        Me.RadGridView1.MasterTemplate.AllowColumnChooser = False
-        Me.RadGridView1.MasterTemplate.AllowColumnHeaderContextMenu = False
-        Me.RadGridView1.MasterTemplate.AllowColumnReorder = False
-        Me.RadGridView1.MasterTemplate.AllowDeleteRow = False
-        Me.RadGridView1.MasterTemplate.AllowDragToGroup = False
-        Me.RadGridView1.MasterTemplate.AllowEditRow = False
-        Me.RadGridView1.MasterTemplate.AllowRowHeaderContextMenu = False
-        Me.RadGridView1.MasterTemplate.AllowSearchRow = True
-        Me.RadGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill
+        Me.MasterTemplate.MasterTemplate.AllowAddNewRow = False
+        Me.MasterTemplate.MasterTemplate.AllowCellContextMenu = False
+        Me.MasterTemplate.MasterTemplate.AllowColumnChooser = False
+        Me.MasterTemplate.MasterTemplate.AllowColumnHeaderContextMenu = False
+        Me.MasterTemplate.MasterTemplate.AllowColumnReorder = False
+        Me.MasterTemplate.MasterTemplate.AllowDeleteRow = False
+        Me.MasterTemplate.MasterTemplate.AllowDragToGroup = False
+        Me.MasterTemplate.MasterTemplate.AllowEditRow = False
+        Me.MasterTemplate.MasterTemplate.AllowRowHeaderContextMenu = False
+        Me.MasterTemplate.MasterTemplate.AllowSearchRow = True
         GridViewTextBoxColumn1.EnableExpressionEditor = False
         GridViewTextBoxColumn1.HeaderText = "Data TABLE"
         GridViewTextBoxColumn1.Name = "column1"
@@ -586,29 +584,32 @@ Partial Class rFormMain
         GridViewTextBoxColumn2.Width = 65
         GridViewTextBoxColumn3.HeaderText = "Tanggal Pembuatan"
         GridViewTextBoxColumn3.Name = "column4"
-        GridViewTextBoxColumn3.Width = 44
+        GridViewTextBoxColumn3.Width = 43
         GridViewTextBoxColumn4.EnableExpressionEditor = False
         GridViewTextBoxColumn4.HeaderText = "Tanggal Update"
         GridViewTextBoxColumn4.Name = "column3"
         GridViewTextBoxColumn4.ReadOnly = True
         GridViewTextBoxColumn4.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending
-        GridViewTextBoxColumn4.Width = 100
-        Me.RadGridView1.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4})
-        Me.RadGridView1.MasterTemplate.EnableAlternatingRowColor = True
-        Me.RadGridView1.MasterTemplate.EnableGrouping = False
-        Me.RadGridView1.MasterTemplate.ShowRowHeaderColumn = False
+        GridViewTextBoxColumn4.Width = 101
+        Me.MasterTemplate.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4})
+        Me.MasterTemplate.MasterTemplate.EnableAlternatingRowColor = True
+        Me.MasterTemplate.MasterTemplate.EnableGrouping = False
+        Me.MasterTemplate.MasterTemplate.ShowHeaderCellButtons = True
         SortDescriptor1.PropertyName = "column3"
-        Me.RadGridView1.MasterTemplate.SortDescriptors.AddRange(New Telerik.WinControls.Data.SortDescriptor() {SortDescriptor1})
-        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition1
-        Me.RadGridView1.Name = "RadGridView1"
-        Me.RadGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.RadGridView1.ShowGroupPanel = False
-        Me.RadGridView1.ShowGroupPanelScrollbars = False
-        Me.RadGridView1.ShowRowErrors = False
-        Me.RadGridView1.Size = New System.Drawing.Size(347, 168)
-        Me.RadGridView1.TabIndex = 0
-        Me.RadGridView1.Text = "RadGridView1"
-        Me.RadGridView1.ThemeName = "Office2010Black"
+        Me.MasterTemplate.MasterTemplate.SortDescriptors.AddRange(New Telerik.WinControls.Data.SortDescriptor() {SortDescriptor1})
+        Me.MasterTemplate.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.MasterTemplate.Name = "MasterTemplate"
+        Me.MasterTemplate.ReadOnly = True
+        Me.MasterTemplate.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.MasterTemplate.ShowGroupPanel = False
+        Me.MasterTemplate.ShowGroupPanelScrollbars = False
+        Me.MasterTemplate.ShowHeaderCellButtons = True
+        Me.MasterTemplate.ShowRowErrors = False
+        Me.MasterTemplate.Size = New System.Drawing.Size(347, 168)
+        Me.MasterTemplate.TabIndex = 0
+        Me.MasterTemplate.Text = "RadGridView1"
+        Me.MasterTemplate.ThemeName = "Office2010Black"
+        Me.MasterTemplate.UseScrollbarsInHierarchy = True
         '
         'DocumentContainer1
         '
@@ -627,7 +628,7 @@ Partial Class rFormMain
         '
         Me.ToolWindow1.Caption = Nothing
         Me.ToolWindow1.Controls.Add(Me.Button1)
-        Me.ToolWindow1.Controls.Add(Me.RadGridView1)
+        Me.ToolWindow1.Controls.Add(Me.MasterTemplate)
         Me.ToolWindow1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolWindow1.Location = New System.Drawing.Point(1, 22)
         Me.ToolWindow1.Name = "ToolWindow1"
@@ -679,8 +680,8 @@ Partial Class rFormMain
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadDock1.ResumeLayout(False)
-        CType(Me.RadGridView1.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MasterTemplate.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DocumentContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolWindow1.ResumeLayout(False)
         CType(Me.ToolTabStrip1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -751,4 +752,5 @@ Partial Class rFormMain
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents ToolWindow1 As Telerik.WinControls.UI.Docking.ToolWindow
     Friend WithEvents ToolTabStrip1 As Telerik.WinControls.UI.Docking.ToolTabStrip
+    Friend WithEvents MasterTemplate As Telerik.WinControls.UI.RadGridView
 End Class
