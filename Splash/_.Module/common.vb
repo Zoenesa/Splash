@@ -272,7 +272,7 @@ Public Class common
         errMsg = ""
         Dim flag As Boolean
         Try
-            Dim sqlAdapter As New MySqlDataAdapter("SELECT TABLE_NAME, TABLE_ROWS FROM `" & schema & "` " + opsi, mdlCom.vConn)
+            Dim sqlAdapter As New MySqlDataAdapter("SELECT TABLE_NAME, TABLE_ROWS FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = " & schema & opsi, mdlCom.vConn)
             dt = New DataTable()
             DirectCast(sqlAdapter, DbDataAdapter).Fill(dt)
             flag = True
