@@ -22,8 +22,8 @@ Partial Class rFormDatabaseSetup
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.cbProfile = New System.Windows.Forms.ComboBox()
         Me.listTbl = New System.Windows.Forms.ListBox()
@@ -40,11 +40,6 @@ Partial Class rFormDatabaseSetup
         Me.ofd = New System.Windows.Forms.OpenFileDialog()
         Me.sfd = New System.Windows.Forms.SaveFileDialog()
         Me.RadPageView1 = New Telerik.WinControls.UI.RadPageView()
-        Me.RadPageViewPage1 = New Telerik.WinControls.UI.RadPageViewPage()
-        Me.cbDropDbFile = New Telerik.WinControls.UI.RadDropDownList()
-        Me.btnNewBackupSystem = New Telerik.WinControls.UI.RadButton()
-        Me.btnSetFolder = New Telerik.WinControls.UI.RadButton()
-        Me.txBackupFolderPath = New Telerik.WinControls.UI.RadTextBox()
         Me.RadPageViewPage2 = New Telerik.WinControls.UI.RadPageViewPage()
         Me.RadCheckBox1 = New Telerik.WinControls.UI.RadCheckBox()
         Me.cbSection = New Telerik.WinControls.UI.RadDropDownList()
@@ -60,37 +55,42 @@ Partial Class rFormDatabaseSetup
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.RadPageViewPage1 = New Telerik.WinControls.UI.RadPageViewPage()
+        Me.cbDropDbFile = New Telerik.WinControls.UI.RadDropDownList()
+        Me.btnNewBackupSystem = New Telerik.WinControls.UI.RadButton()
+        Me.btnSetFolder = New Telerik.WinControls.UI.RadButton()
+        Me.txBackupFolderPath = New Telerik.WinControls.UI.RadTextBox()
         Me.RadPageViewPage3 = New Telerik.WinControls.UI.RadPageViewPage()
-        Me.TableLayoutPanel2.SuspendLayout
-        CType(Me.btnBackup,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.btnRestore,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TableLayoutPanel1.SuspendLayout
-        CType(Me.Button4,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.Button2,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.btnSave,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.RadPageView1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.RadPageView1.SuspendLayout
-        Me.RadPageViewPage1.SuspendLayout
-        CType(Me.cbDropDbFile,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.btnNewBackupSystem,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.btnSetFolder,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txBackupFolderPath,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.RadPageViewPage2.SuspendLayout
-        CType(Me.RadCheckBox1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.cbSection,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.RadToggleSwitch1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txPort,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txPass,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txUser,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txHost,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txdbname,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txConStr,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.SuspendLayout
+        Me.TableLayoutPanel2.SuspendLayout()
+        CType(Me.btnBackup, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnRestore, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel1.SuspendLayout()
+        CType(Me.Button4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Button2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnSave, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPageView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPageView1.SuspendLayout()
+        Me.RadPageViewPage2.SuspendLayout()
+        CType(Me.RadCheckBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cbSection, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadToggleSwitch1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txPort, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txPass, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txUser, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txHost, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txdbname, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txConStr, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPageViewPage1.SuspendLayout()
+        CType(Me.cbDropDbFile, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnNewBackupSystem, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnSetFolder, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txBackupFolderPath, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
         '
         'Label8
         '
-        Me.Label8.AutoSize = true
+        Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(78, 155)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(28, 13)
@@ -100,16 +100,16 @@ Partial Class rFormDatabaseSetup
         '
         'cbProfile
         '
-        Me.cbProfile.FormattingEnabled = true
+        Me.cbProfile.FormattingEnabled = True
         Me.cbProfile.Location = New System.Drawing.Point(325, 94)
         Me.cbProfile.Name = "cbProfile"
         Me.cbProfile.Size = New System.Drawing.Size(153, 21)
         Me.cbProfile.TabIndex = 12
-        Me.cbProfile.Visible = false
+        Me.cbProfile.Visible = False
         '
         'listTbl
         '
-        Me.listTbl.FormattingEnabled = true
+        Me.listTbl.FormattingEnabled = True
         Me.listTbl.Location = New System.Drawing.Point(112, 63)
         Me.listTbl.Name = "listTbl"
         Me.listTbl.Size = New System.Drawing.Size(273, 121)
@@ -117,8 +117,8 @@ Partial Class rFormDatabaseSetup
         '
         'Label9
         '
-        Me.Label9.AutoSize = true
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Label9.Location = New System.Drawing.Point(35, 63)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(63, 15)
@@ -128,8 +128,8 @@ Partial Class rFormDatabaseSetup
         '
         'Label6
         '
-        Me.Label6.AutoSize = true
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Label6.Location = New System.Drawing.Point(22, 37)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(76, 15)
@@ -139,8 +139,8 @@ Partial Class rFormDatabaseSetup
         '
         'Label5
         '
-        Me.Label5.AutoSize = true
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Label5.Location = New System.Drawing.Point(3, 11)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(95, 15)
@@ -151,16 +151,16 @@ Partial Class rFormDatabaseSetup
         'TableLayoutPanel2
         '
         Me.TableLayoutPanel2.ColumnCount = 2
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.btnBackup, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.btnRestore, 1, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 189)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 199)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 1
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(494, 32)
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(504, 32)
         Me.TableLayoutPanel2.TabIndex = 4
         '
         'btnBackup
@@ -168,10 +168,10 @@ Partial Class rFormDatabaseSetup
         Me.btnBackup.BackColor = System.Drawing.Color.Transparent
         Me.btnBackup.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBackup.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnBackup.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.btnBackup.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnBackup.Location = New System.Drawing.Point(3, 3)
         Me.btnBackup.Name = "btnBackup"
-        Me.btnBackup.Size = New System.Drawing.Size(241, 26)
+        Me.btnBackup.Size = New System.Drawing.Size(246, 26)
         Me.btnBackup.TabIndex = 12
         Me.btnBackup.Text = "&Backup database"
         Me.btnBackup.ThemeName = "Office2010Black"
@@ -181,29 +181,29 @@ Partial Class rFormDatabaseSetup
         Me.btnRestore.BackColor = System.Drawing.Color.Transparent
         Me.btnRestore.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRestore.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnRestore.Font = New System.Drawing.Font("Segoe UI", 9!)
-        Me.btnRestore.Location = New System.Drawing.Point(250, 3)
+        Me.btnRestore.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnRestore.Location = New System.Drawing.Point(255, 3)
         Me.btnRestore.Name = "btnRestore"
-        Me.btnRestore.Size = New System.Drawing.Size(241, 26)
+        Me.btnRestore.Size = New System.Drawing.Size(246, 26)
         Me.btnRestore.TabIndex = 12
         Me.btnRestore.Text = "&Restore database"
         Me.btnRestore.ThemeName = "Office2010Black"
         '
         'TableLayoutPanel1
         '
-        Me.TableLayoutPanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel1.ColumnCount = 4
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 236!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 236.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Button4, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Button2, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnSave, 2, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(5, 258)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(595, 32)
         Me.TableLayoutPanel1.TabIndex = 1
         '
@@ -212,7 +212,7 @@ Partial Class rFormDatabaseSetup
         Me.Button4.BackColor = System.Drawing.Color.Transparent
         Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button4.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Button4.Location = New System.Drawing.Point(455, 3)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(137, 26)
@@ -225,7 +225,7 @@ Partial Class rFormDatabaseSetup
         Me.Button2.BackColor = System.Drawing.Color.Transparent
         Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Button2.Location = New System.Drawing.Point(3, 3)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(230, 26)
@@ -238,7 +238,7 @@ Partial Class rFormDatabaseSetup
         Me.btnSave.BackColor = System.Drawing.Color.Transparent
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSave.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnSave.Location = New System.Drawing.Point(313, 3)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(136, 26)
@@ -252,83 +252,16 @@ Partial Class rFormDatabaseSetup
         Me.RadPageView1.Controls.Add(Me.RadPageViewPage1)
         Me.RadPageView1.Controls.Add(Me.RadPageViewPage3)
         Me.RadPageView1.DefaultPage = Me.RadPageViewPage2
-        Me.RadPageView1.ItemSizeMode = CType((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth Or Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight),Telerik.WinControls.UI.PageViewItemSizeMode)
+        Me.RadPageView1.ItemSizeMode = CType((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth Or Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight), Telerik.WinControls.UI.PageViewItemSizeMode)
         Me.RadPageView1.Location = New System.Drawing.Point(-1, -3)
         Me.RadPageView1.Name = "RadPageView1"
-        Me.RadPageView1.SelectedPage = Me.RadPageViewPage2
+        Me.RadPageView1.SelectedPage = Me.RadPageViewPage1
         Me.RadPageView1.Size = New System.Drawing.Size(606, 265)
         Me.RadPageView1.TabIndex = 3
         Me.RadPageView1.Text = "RadPageView1"
         Me.RadPageView1.ThemeName = "Office2010Black"
         Me.RadPageView1.ViewMode = Telerik.WinControls.UI.PageViewMode.Stack
-        CType(Me.RadPageView1.GetChildAt(0),Telerik.WinControls.UI.RadPageViewStackElement).StackPosition = Telerik.WinControls.UI.StackViewPosition.Left
-        '
-        'RadPageViewPage1
-        '
-        Me.RadPageViewPage1.Controls.Add(Me.cbDropDbFile)
-        Me.RadPageViewPage1.Controls.Add(Me.TableLayoutPanel2)
-        Me.RadPageViewPage1.Controls.Add(Me.btnNewBackupSystem)
-        Me.RadPageViewPage1.Controls.Add(Me.btnSetFolder)
-        Me.RadPageViewPage1.Controls.Add(Me.txBackupFolderPath)
-        Me.RadPageViewPage1.Controls.Add(Me.listTbl)
-        Me.RadPageViewPage1.Controls.Add(Me.Label5)
-        Me.RadPageViewPage1.Controls.Add(Me.Label9)
-        Me.RadPageViewPage1.Controls.Add(Me.Label6)
-        Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(27!, 233!)
-        Me.RadPageViewPage1.Location = New System.Drawing.Point(98, 30)
-        Me.RadPageViewPage1.Name = "RadPageViewPage1"
-        Me.RadPageViewPage1.Size = New System.Drawing.Size(494, 221)
-        Me.RadPageViewPage1.Text = "Utilities"
-        '
-        'cbDropDbFile
-        '
-        Me.cbDropDbFile.AutoSize = false
-        Me.cbDropDbFile.BackColor = System.Drawing.Color.Transparent
-        Me.cbDropDbFile.Font = New System.Drawing.Font("Segoe UI", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.cbDropDbFile.Location = New System.Drawing.Point(112, 34)
-        Me.cbDropDbFile.Name = "cbDropDbFile"
-        Me.cbDropDbFile.NullText = "--Select Database--"
-        Me.cbDropDbFile.Size = New System.Drawing.Size(273, 23)
-        Me.cbDropDbFile.TabIndex = 19
-        Me.cbDropDbFile.ThemeName = "Office2010Black"
-        '
-        'btnNewBackupSystem
-        '
-        Me.btnNewBackupSystem.BackColor = System.Drawing.Color.Transparent
-        Me.btnNewBackupSystem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNewBackupSystem.Font = New System.Drawing.Font("Segoe UI", 9!)
-        Me.btnNewBackupSystem.Location = New System.Drawing.Point(391, 63)
-        Me.btnNewBackupSystem.Name = "btnNewBackupSystem"
-        Me.btnNewBackupSystem.Size = New System.Drawing.Size(128, 23)
-        Me.btnNewBackupSystem.TabIndex = 12
-        Me.btnNewBackupSystem.Text = "&New Backup System"
-        Me.btnNewBackupSystem.ThemeName = "Office2010Black"
-        '
-        'btnSetFolder
-        '
-        Me.btnSetFolder.BackColor = System.Drawing.Color.Transparent
-        Me.btnSetFolder.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSetFolder.Font = New System.Drawing.Font("Segoe UI", 9!)
-        Me.btnSetFolder.Location = New System.Drawing.Point(453, 5)
-        Me.btnSetFolder.Name = "btnSetFolder"
-        Me.btnSetFolder.Size = New System.Drawing.Size(66, 23)
-        Me.btnSetFolder.TabIndex = 12
-        Me.btnSetFolder.Text = "&Set Folder"
-        Me.btnSetFolder.ThemeName = "Office2010Black"
-        '
-        'txBackupFolderPath
-        '
-        Me.txBackupFolderPath.AutoSize = false
-        Me.txBackupFolderPath.BackColor = System.Drawing.Color.Transparent
-        Me.txBackupFolderPath.Font = New System.Drawing.Font("Segoe UI", 9!)
-        Me.txBackupFolderPath.Location = New System.Drawing.Point(112, 5)
-        Me.txBackupFolderPath.Name = "txBackupFolderPath"
-        Me.txBackupFolderPath.NullText = "/"
-        Me.txBackupFolderPath.Padding = New System.Windows.Forms.Padding(6, 0, 4, 0)
-        Me.txBackupFolderPath.ReadOnly = true
-        Me.txBackupFolderPath.Size = New System.Drawing.Size(335, 23)
-        Me.txBackupFolderPath.TabIndex = 18
-        Me.txBackupFolderPath.ThemeName = "Office2010Black"
+        CType(Me.RadPageView1.GetChildAt(0), Telerik.WinControls.UI.RadPageViewStackElement).StackPosition = Telerik.WinControls.UI.StackViewPosition.Left
         '
         'RadPageViewPage2
         '
@@ -348,15 +281,15 @@ Partial Class rFormDatabaseSetup
         Me.RadPageViewPage2.Controls.Add(Me.Label13)
         Me.RadPageViewPage2.Controls.Add(Me.Label14)
         Me.RadPageViewPage2.Controls.Add(Me.cbProfile)
-        Me.RadPageViewPage2.ItemSize = New System.Drawing.SizeF(27!, 233!)
-        Me.RadPageViewPage2.Location = New System.Drawing.Point(98, 30)
+        Me.RadPageViewPage2.ItemSize = New System.Drawing.SizeF(32.0!, 241.0!)
+        Me.RadPageViewPage2.Location = New System.Drawing.Point(97, 29)
         Me.RadPageViewPage2.Name = "RadPageViewPage2"
-        Me.RadPageViewPage2.Size = New System.Drawing.Size(494, 221)
+        Me.RadPageViewPage2.Size = New System.Drawing.Size(504, 231)
         Me.RadPageViewPage2.Text = "General"
         '
         'RadCheckBox1
         '
-        Me.RadCheckBox1.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.RadCheckBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadCheckBox1.Location = New System.Drawing.Point(299, 181)
         Me.RadCheckBox1.Name = "RadCheckBox1"
         Me.RadCheckBox1.Size = New System.Drawing.Size(97, 19)
@@ -366,13 +299,13 @@ Partial Class rFormDatabaseSetup
         '
         'cbSection
         '
-        Me.cbSection.AutoSize = false
+        Me.cbSection.AutoSize = False
         Me.cbSection.BackColor = System.Drawing.Color.Transparent
-        Me.cbSection.Font = New System.Drawing.Font("Segoe UI", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        RadListDataItem3.Text = "Normal"
-        RadListDataItem4.Text = "Revisions"
-        Me.cbSection.Items.Add(RadListDataItem3)
-        Me.cbSection.Items.Add(RadListDataItem4)
+        Me.cbSection.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        RadListDataItem1.Text = "Normal"
+        RadListDataItem2.Text = "Revisions"
+        Me.cbSection.Items.Add(RadListDataItem1)
+        Me.cbSection.Items.Add(RadListDataItem2)
         Me.cbSection.Location = New System.Drawing.Point(112, 179)
         Me.cbSection.Name = "cbSection"
         Me.cbSection.Size = New System.Drawing.Size(178, 23)
@@ -381,8 +314,8 @@ Partial Class rFormDatabaseSetup
         '
         'RadToggleSwitch1
         '
-        Me.RadToggleSwitch1.AllowShowFocusCues = true
-        Me.RadToggleSwitch1.Font = New System.Drawing.Font("Segoe UI", 7!)
+        Me.RadToggleSwitch1.AllowShowFocusCues = True
+        Me.RadToggleSwitch1.Font = New System.Drawing.Font("Segoe UI", 7.0!)
         Me.RadToggleSwitch1.Location = New System.Drawing.Point(225, 122)
         Me.RadToggleSwitch1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RadToggleSwitch1.Name = "RadToggleSwitch1"
@@ -393,19 +326,19 @@ Partial Class rFormDatabaseSetup
         Me.RadToggleSwitch1.Text = "Toggle"
         Me.RadToggleSwitch1.ThemeName = "Office2010Black"
         Me.RadToggleSwitch1.ThumbTickness = 25
-        CType(Me.RadToggleSwitch1.GetChildAt(0),Telerik.WinControls.UI.RadToggleSwitchElement).ThumbTickness = 25
-        CType(Me.RadToggleSwitch1.GetChildAt(0),Telerik.WinControls.UI.RadToggleSwitchElement).ThumbOffset = 33
-        CType(Me.RadToggleSwitch1.GetChildAt(0).GetChildAt(1),Telerik.WinControls.UI.ToggleSwitchPartElement).BackColor2 = System.Drawing.Color.FromArgb(CType(CType(243,Byte),Integer), CType(CType(179,Byte),Integer), CType(CType(48,Byte),Integer))
-        CType(Me.RadToggleSwitch1.GetChildAt(0).GetChildAt(1),Telerik.WinControls.UI.ToggleSwitchPartElement).BackColor3 = System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(243,Byte),Integer), CType(CType(151,Byte),Integer))
-        CType(Me.RadToggleSwitch1.GetChildAt(0).GetChildAt(1),Telerik.WinControls.UI.ToggleSwitchPartElement).Text = "HIDE"
-        CType(Me.RadToggleSwitch1.GetChildAt(0).GetChildAt(1),Telerik.WinControls.UI.ToggleSwitchPartElement).ForeColor = System.Drawing.Color.FromArgb(CType(CType(100,Byte),Integer), CType(CType(100,Byte),Integer), CType(CType(100,Byte),Integer))
-        CType(Me.RadToggleSwitch1.GetChildAt(0).GetChildAt(1),Telerik.WinControls.UI.ToggleSwitchPartElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(251,Byte),Integer), CType(CType(215,Byte),Integer), CType(CType(90,Byte),Integer))
+        CType(Me.RadToggleSwitch1.GetChildAt(0), Telerik.WinControls.UI.RadToggleSwitchElement).ThumbTickness = 25
+        CType(Me.RadToggleSwitch1.GetChildAt(0), Telerik.WinControls.UI.RadToggleSwitchElement).ThumbOffset = 33
+        CType(Me.RadToggleSwitch1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.UI.ToggleSwitchPartElement).BackColor2 = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(48, Byte), Integer))
+        CType(Me.RadToggleSwitch1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.UI.ToggleSwitchPartElement).BackColor3 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(151, Byte), Integer))
+        CType(Me.RadToggleSwitch1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.UI.ToggleSwitchPartElement).Text = "HIDE"
+        CType(Me.RadToggleSwitch1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.UI.ToggleSwitchPartElement).ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
+        CType(Me.RadToggleSwitch1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.UI.ToggleSwitchPartElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(90, Byte), Integer))
         '
         'txPort
         '
-        Me.txPort.AutoSize = false
+        Me.txPort.AutoSize = False
         Me.txPort.BackColor = System.Drawing.Color.Transparent
-        Me.txPort.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.txPort.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txPort.Location = New System.Drawing.Point(112, 150)
         Me.txPort.Name = "txPort"
         Me.txPort.Padding = New System.Windows.Forms.Padding(6, 0, 4, 0)
@@ -416,9 +349,9 @@ Partial Class rFormDatabaseSetup
         '
         'txPass
         '
-        Me.txPass.AutoSize = false
+        Me.txPass.AutoSize = False
         Me.txPass.BackColor = System.Drawing.Color.Transparent
-        Me.txPass.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.txPass.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txPass.Location = New System.Drawing.Point(112, 121)
         Me.txPass.Margin = New System.Windows.Forms.Padding(3, 3, 60, 3)
         Me.txPass.Name = "txPass"
@@ -428,13 +361,13 @@ Partial Class rFormDatabaseSetup
         Me.txPass.TabIndex = 19
         Me.txPass.Text = "1234567890000000000"
         Me.txPass.ThemeName = "Office2010Black"
-        Me.txPass.UseSystemPasswordChar = true
+        Me.txPass.UseSystemPasswordChar = True
         '
         'txUser
         '
-        Me.txUser.AutoSize = false
+        Me.txUser.AutoSize = False
         Me.txUser.BackColor = System.Drawing.Color.Transparent
-        Me.txUser.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.txUser.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txUser.Location = New System.Drawing.Point(112, 92)
         Me.txUser.Name = "txUser"
         Me.txUser.Padding = New System.Windows.Forms.Padding(6, 0, 4, 0)
@@ -445,9 +378,9 @@ Partial Class rFormDatabaseSetup
         '
         'txHost
         '
-        Me.txHost.AutoSize = false
+        Me.txHost.AutoSize = False
         Me.txHost.BackColor = System.Drawing.Color.Transparent
-        Me.txHost.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.txHost.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txHost.Location = New System.Drawing.Point(112, 63)
         Me.txHost.Name = "txHost"
         Me.txHost.Padding = New System.Windows.Forms.Padding(6, 0, 4, 0)
@@ -458,9 +391,9 @@ Partial Class rFormDatabaseSetup
         '
         'txdbname
         '
-        Me.txdbname.AutoSize = false
+        Me.txdbname.AutoSize = False
         Me.txdbname.BackColor = System.Drawing.Color.Transparent
-        Me.txdbname.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.txdbname.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txdbname.Location = New System.Drawing.Point(112, 34)
         Me.txdbname.Name = "txdbname"
         Me.txdbname.Padding = New System.Windows.Forms.Padding(6, 0, 4, 0)
@@ -471,9 +404,9 @@ Partial Class rFormDatabaseSetup
         '
         'txConStr
         '
-        Me.txConStr.AutoSize = false
+        Me.txConStr.AutoSize = False
         Me.txConStr.BackColor = System.Drawing.Color.Transparent
-        Me.txConStr.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.txConStr.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txConStr.Location = New System.Drawing.Point(112, 5)
         Me.txConStr.Name = "txConStr"
         Me.txConStr.Padding = New System.Windows.Forms.Padding(6, 0, 4, 0)
@@ -484,8 +417,8 @@ Partial Class rFormDatabaseSetup
         '
         'Label10
         '
-        Me.Label10.AutoSize = true
-        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Label10.Location = New System.Drawing.Point(49, 125)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(57, 15)
@@ -495,8 +428,8 @@ Partial Class rFormDatabaseSetup
         '
         'Label11
         '
-        Me.Label11.AutoSize = true
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Label11.Location = New System.Drawing.Point(46, 96)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(60, 15)
@@ -506,8 +439,8 @@ Partial Class rFormDatabaseSetup
         '
         'Label12
         '
-        Me.Label12.AutoSize = true
-        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Label12.Location = New System.Drawing.Point(51, 38)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(55, 15)
@@ -517,8 +450,8 @@ Partial Class rFormDatabaseSetup
         '
         'Label13
         '
-        Me.Label13.AutoSize = true
-        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Label13.Location = New System.Drawing.Point(31, 67)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(75, 15)
@@ -528,8 +461,8 @@ Partial Class rFormDatabaseSetup
         '
         'Label14
         '
-        Me.Label14.AutoSize = true
-        Me.Label14.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Label14.Location = New System.Drawing.Point(2, 9)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(104, 15)
@@ -537,9 +470,76 @@ Partial Class rFormDatabaseSetup
         Me.Label14.Text = "Connection Name"
         Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'RadPageViewPage1
+        '
+        Me.RadPageViewPage1.Controls.Add(Me.cbDropDbFile)
+        Me.RadPageViewPage1.Controls.Add(Me.TableLayoutPanel2)
+        Me.RadPageViewPage1.Controls.Add(Me.btnNewBackupSystem)
+        Me.RadPageViewPage1.Controls.Add(Me.btnSetFolder)
+        Me.RadPageViewPage1.Controls.Add(Me.txBackupFolderPath)
+        Me.RadPageViewPage1.Controls.Add(Me.listTbl)
+        Me.RadPageViewPage1.Controls.Add(Me.Label5)
+        Me.RadPageViewPage1.Controls.Add(Me.Label9)
+        Me.RadPageViewPage1.Controls.Add(Me.Label6)
+        Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(32.0!, 241.0!)
+        Me.RadPageViewPage1.Location = New System.Drawing.Point(97, 29)
+        Me.RadPageViewPage1.Name = "RadPageViewPage1"
+        Me.RadPageViewPage1.Size = New System.Drawing.Size(504, 231)
+        Me.RadPageViewPage1.Text = "Utilities"
+        '
+        'cbDropDbFile
+        '
+        Me.cbDropDbFile.AutoSize = False
+        Me.cbDropDbFile.BackColor = System.Drawing.Color.Transparent
+        Me.cbDropDbFile.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbDropDbFile.Location = New System.Drawing.Point(112, 34)
+        Me.cbDropDbFile.Name = "cbDropDbFile"
+        Me.cbDropDbFile.NullText = "--Select Database--"
+        Me.cbDropDbFile.Size = New System.Drawing.Size(273, 23)
+        Me.cbDropDbFile.TabIndex = 19
+        Me.cbDropDbFile.ThemeName = "Office2010Black"
+        '
+        'btnNewBackupSystem
+        '
+        Me.btnNewBackupSystem.BackColor = System.Drawing.Color.Transparent
+        Me.btnNewBackupSystem.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNewBackupSystem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnNewBackupSystem.Location = New System.Drawing.Point(391, 63)
+        Me.btnNewBackupSystem.Name = "btnNewBackupSystem"
+        Me.btnNewBackupSystem.Size = New System.Drawing.Size(128, 23)
+        Me.btnNewBackupSystem.TabIndex = 12
+        Me.btnNewBackupSystem.Text = "&New Backup System"
+        Me.btnNewBackupSystem.ThemeName = "Office2010Black"
+        '
+        'btnSetFolder
+        '
+        Me.btnSetFolder.BackColor = System.Drawing.Color.Transparent
+        Me.btnSetFolder.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSetFolder.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnSetFolder.Location = New System.Drawing.Point(453, 5)
+        Me.btnSetFolder.Name = "btnSetFolder"
+        Me.btnSetFolder.Size = New System.Drawing.Size(66, 23)
+        Me.btnSetFolder.TabIndex = 12
+        Me.btnSetFolder.Text = "&Set Folder"
+        Me.btnSetFolder.ThemeName = "Office2010Black"
+        '
+        'txBackupFolderPath
+        '
+        Me.txBackupFolderPath.AutoSize = False
+        Me.txBackupFolderPath.BackColor = System.Drawing.Color.Transparent
+        Me.txBackupFolderPath.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txBackupFolderPath.Location = New System.Drawing.Point(112, 5)
+        Me.txBackupFolderPath.Name = "txBackupFolderPath"
+        Me.txBackupFolderPath.NullText = "/"
+        Me.txBackupFolderPath.Padding = New System.Windows.Forms.Padding(6, 0, 4, 0)
+        Me.txBackupFolderPath.ReadOnly = True
+        Me.txBackupFolderPath.Size = New System.Drawing.Size(335, 23)
+        Me.txBackupFolderPath.TabIndex = 18
+        Me.txBackupFolderPath.ThemeName = "Office2010Black"
+        '
         'RadPageViewPage3
         '
-        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(27!, 233!)
+        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(32.0!, 241.0!)
         Me.RadPageViewPage3.Location = New System.Drawing.Point(98, 30)
         Me.RadPageViewPage3.Name = "RadPageViewPage3"
         Me.RadPageViewPage3.Size = New System.Drawing.Size(494, 221)
@@ -547,51 +547,51 @@ Partial Class rFormDatabaseSetup
         '
         'rFormDatabaseSetup
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(600, 291)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.RadPageView1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.MaximizeBox = false
-        Me.MinimizeBox = false
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "rFormDatabaseSetup"
         '
         '
         '
-        Me.RootElement.ApplyShapeToControl = true
-        Me.ShowIcon = false
+        Me.RootElement.ApplyShapeToControl = True
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.Text = "Database Tools                                                                   "& _ 
+        Me.Text = "Database Tools                                                                   " & _
     "         "
         Me.ThemeName = "Office2010Black"
-        Me.TableLayoutPanel2.ResumeLayout(false)
-        CType(Me.btnBackup,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.btnRestore,System.ComponentModel.ISupportInitialize).EndInit
-        Me.TableLayoutPanel1.ResumeLayout(false)
-        CType(Me.Button4,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.Button2,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.btnSave,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.RadPageView1,System.ComponentModel.ISupportInitialize).EndInit
-        Me.RadPageView1.ResumeLayout(false)
-        Me.RadPageViewPage1.ResumeLayout(false)
-        Me.RadPageViewPage1.PerformLayout
-        CType(Me.cbDropDbFile,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.btnNewBackupSystem,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.btnSetFolder,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txBackupFolderPath,System.ComponentModel.ISupportInitialize).EndInit
-        Me.RadPageViewPage2.ResumeLayout(false)
-        Me.RadPageViewPage2.PerformLayout
-        CType(Me.RadCheckBox1,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.cbSection,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.RadToggleSwitch1,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txPort,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txPass,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txUser,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txHost,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txdbname,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txConStr,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me,System.ComponentModel.ISupportInitialize).EndInit
+        Me.TableLayoutPanel2.ResumeLayout(False)
+        CType(Me.btnBackup, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnRestore, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        CType(Me.Button4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Button2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnSave, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPageView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPageView1.ResumeLayout(False)
+        Me.RadPageViewPage2.ResumeLayout(False)
+        Me.RadPageViewPage2.PerformLayout()
+        CType(Me.RadCheckBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cbSection, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadToggleSwitch1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txPort, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txPass, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txUser, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txHost, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txdbname, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txConStr, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPageViewPage1.ResumeLayout(False)
+        Me.RadPageViewPage1.PerformLayout()
+        CType(Me.cbDropDbFile, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnNewBackupSystem, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnSetFolder, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txBackupFolderPath, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(false)
 
 End Sub

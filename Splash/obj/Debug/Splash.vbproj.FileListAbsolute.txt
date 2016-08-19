@@ -165,6 +165,46 @@ C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\obj\Debug\Spl
 C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\bin\Release\Splash.exe
 C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\bin\Release\Splash.pdb
 C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\bin\Release\Splash.xml
-C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\bin\Release\MySql.Data.dll
 C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\bin\Release\MySqlBackup.dll
 C:\Users\agung\Documents\Visual Studio 2015\Projects\Splash\Splash\bin\Release\PasswordMeter.dll
+H:\VB\Git\Splash\Splash\Splash\bin\Release\Splash.exe.config
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.exe
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.xml
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.pdb
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.vbprojResolveAssemblyReference.cache
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.vbproj.Splash.exe.config
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormListPelanggan.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormTambahCustomer.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormDaftarPembayaran.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormKonfirmasiPembayaran.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.FormBAST.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormTambahUser.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormUsersList.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormBackupdb.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.FrmCustomerReference.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.FrmArrangeColumns.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.FrmCustomFilter.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.frmImportPartner.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormExportCSV.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormInvoice.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormDataListInvoice.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormInisialisasiKoneksi.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormPermission.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormImport.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormMain.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormDatabaseSetup.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.Resources.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormLogin.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormAddWorkorderRecord.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormListWorkOrder.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.FormDataBackup.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.InisialisasiPasswordMeter.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.RadFormExportProgress.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.vbproj.GenerateResource.Cache
+H:\VB\Git\Splash\Splash\Splash\bin\Release\Splash.exe
+H:\VB\Git\Splash\Splash\Splash\bin\Release\Splash.pdb
+H:\VB\Git\Splash\Splash\Splash\bin\Release\Splash.xml
+H:\VB\Git\Splash\Splash\Splash\bin\Release\MySqlBackup.dll
+H:\VB\Git\Splash\Splash\Splash\bin\Release\PasswordMeter.dll
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.rFormGantiPassword.resources
+H:\VB\Git\Splash\Splash\Splash\obj\Debug\Splash.exe.licenses
