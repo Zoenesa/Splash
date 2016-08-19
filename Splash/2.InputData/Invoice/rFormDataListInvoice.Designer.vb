@@ -28,6 +28,9 @@ Partial Class rFormDataListInvoice
         Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.dg = New System.Windows.Forms.DataGridView()
+        Me.Col1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Col2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Col3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txFilter = New Telerik.WinControls.UI.RadTextBox()
         Me.RadDropDownList1 = New Telerik.WinControls.UI.RadDropDownList()
         Me.btnEdit = New Telerik.WinControls.UI.RadButton()
@@ -44,9 +47,6 @@ Partial Class rFormDataListInvoice
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txTemp = New Telerik.WinControls.UI.RadTextBox()
-        Me.Col1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Col2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txFilter, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,6 +89,30 @@ Partial Class rFormDataListInvoice
         Me.dg.Size = New System.Drawing.Size(919, 240)
         Me.dg.TabIndex = 0
         '
+        'Col1
+        '
+        Me.Col1.HeaderText = "Select"
+        Me.Col1.MinimumWidth = 45
+        Me.Col1.Name = "Col1"
+        Me.Col1.ReadOnly = True
+        Me.Col1.Width = 45
+        '
+        'Col2
+        '
+        Me.Col2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Col2.HeaderText = "Record No."
+        Me.Col2.MinimumWidth = 45
+        Me.Col2.Name = "Col2"
+        Me.Col2.ReadOnly = True
+        Me.Col2.Width = 50
+        '
+        'Col3
+        '
+        Me.Col3.HeaderText = "Invoice No."
+        Me.Col3.Name = "Col3"
+        Me.Col3.ReadOnly = True
+        Me.Col3.Width = 92
+        '
         'txFilter
         '
         Me.txFilter.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -105,6 +129,9 @@ Partial Class rFormDataListInvoice
         Me.txFilter.Size = New System.Drawing.Size(669, 23)
         Me.txFilter.TabIndex = 2
         Me.txFilter.ThemeName = "Office2010Black"
+        CType(Me.txFilter.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txFilter.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(3, 0, 0, 1)
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadDropDownList1
         '
@@ -124,6 +151,7 @@ Partial Class rFormDataListInvoice
         Me.RadDropDownList1.Name = "RadDropDownList1"
         Me.RadDropDownList1.Size = New System.Drawing.Size(155, 23)
         Me.RadDropDownList1.TabIndex = 1
+        Me.RadDropDownList1.ThemeName = "Office2010Black"
         '
         'btnEdit
         '
@@ -136,6 +164,8 @@ Partial Class rFormDataListInvoice
         Me.btnEdit.TabIndex = 1
         Me.btnEdit.Text = "&Edit"
         Me.btnEdit.ThemeName = "Office2010Black"
+        CType(Me.btnEdit.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnEdit.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnClose
         '
@@ -148,6 +178,8 @@ Partial Class rFormDataListInvoice
         Me.btnClose.TabIndex = 4
         Me.btnClose.Text = "&Close"
         Me.btnClose.ThemeName = "Office2010Black"
+        CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnPDF
         '
@@ -160,6 +192,8 @@ Partial Class rFormDataListInvoice
         Me.btnPDF.TabIndex = 3
         Me.btnPDF.Text = "&PDF"
         Me.btnPDF.ThemeName = "Office2010Black"
+        CType(Me.btnPDF.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnPDF.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnAdd
         '
@@ -172,6 +206,8 @@ Partial Class rFormDataListInvoice
         Me.btnAdd.TabIndex = 0
         Me.btnAdd.Text = "Ad&d"
         Me.btnAdd.ThemeName = "Office2010Black"
+        CType(Me.btnAdd.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnAdd.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadPanel1
         '
@@ -198,6 +234,8 @@ Partial Class rFormDataListInvoice
         Me.btnFilter.TabIndex = 3
         Me.btnFilter.Text = "[F3] Filter"
         Me.btnFilter.ThemeName = "Office2010Black"
+        CType(Me.btnFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadStatusStrip1
         '
@@ -220,6 +258,8 @@ Partial Class rFormDataListInvoice
         Me.btnErase.TabIndex = 2
         Me.btnErase.Text = "&Erase"
         Me.btnErase.ThemeName = "Office2010Black"
+        CType(Me.btnErase.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnErase.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'Panel1
         '
@@ -311,30 +351,6 @@ Partial Class rFormDataListInvoice
         Me.txTemp.TabIndex = 3
         Me.txTemp.TabStop = False
         Me.txTemp.ThemeName = "Office2010Black"
-        '
-        'Col1
-        '
-        Me.Col1.HeaderText = "Select"
-        Me.Col1.MinimumWidth = 45
-        Me.Col1.Name = "Col1"
-        Me.Col1.ReadOnly = True
-        Me.Col1.Width = 45
-        '
-        'Col2
-        '
-        Me.Col2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Col2.HeaderText = "Record No."
-        Me.Col2.MinimumWidth = 45
-        Me.Col2.Name = "Col2"
-        Me.Col2.ReadOnly = True
-        Me.Col2.Width = 50
-        '
-        'Col3
-        '
-        Me.Col3.HeaderText = "Invoice No."
-        Me.Col3.Name = "Col3"
-        Me.Col3.ReadOnly = True
-        Me.Col3.Width = 92
         '
         'rFormDataListInvoice
         '

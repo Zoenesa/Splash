@@ -397,7 +397,9 @@ Public Class rFormMain
         Try
             sqlAdapter = New MySqlDataAdapter("SELECT TABLE_NAME, TABLE_ROWS FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = '" _
                                               & mdlstring.ADD_QUOTE_ON_SQL(mdlCom.cDbname) & _
-                                              "' AND TABLE_NAME NOT IN('data_customer','districts','provinces','datatemp','patch','user','ref_user','databast','ref_profile','regencies','villages')", mdlCom.vConn)
+                                              "' AND TABLE_NAME NOT IN('data_customer','districts'," &
+                                              "'provinces','datatemp','patch','user','ref_user','databast'," &
+                                              "'ref_profile','regencies','villages','temp_subproject','temp_workorder')", mdlCom.vConn)
 
             sqlAdapter.Fill(dbName)
             Dim num As Integer = dbName.Rows.Count - 1
@@ -421,7 +423,7 @@ Public Class rFormMain
             Loop
             dbName.Dispose()
             sqlAdapter.Dispose()
-
+            dgcounter.Columns.Item(2).HeaderText = "Per Tanggal " & RadDateTimePicker1.Text
         Catch ex As Exception
             RadMessageBox.Show(ex.Message)
         End Try

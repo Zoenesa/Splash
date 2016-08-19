@@ -70,7 +70,7 @@ Public Class rFormDataListInvoice
             Dim command As MySqlCommand = New MySqlCommand(("SELECT `RecordNo`, `InvoiceNo`, `InvoiceDate`, `InvoiceType`, `InvoiceClient`" & _
                                                                  ", `InvoiceWorkOrderSPK`, `InvoiceLisence`, `InvoiceProgress`, `InvoiceTerm`, `InvoiceItemsRecords`" & _
                                                                  ", `InvoiceTotalItems`, `InvoicePaymentsRecord`, `InvoiceAfterTermyn`, `InvoiceTaxPrice`, `InvoiceTerbilang`" & _
-                                                                 ", `IndexProject`, `UserInput`, `CreateDate`, `UserEdit`, `DateUpdate` FROM `invoicedata`" & _
+                                                                 ", `IndexProject`, `UserPerekam`, `TanggalRekam`, `UserUpdate`, `TanggalUpdate` FROM `invoicedata`" & _
                                                                  opsi & " ORDER BY `RecordNo` ASC"), mdlCom.vConn)
             Dim values As String() = New String((20 + 1) - 1) {}
             sqlreader = command.ExecuteReader
@@ -92,10 +92,10 @@ Public Class rFormDataListInvoice
                 values(14) = FormatNumber(sqlreader.Item("InvoiceTaxPrice"), 2, TriState.True, TriState.True, TriState.True)
                 values(15) = Conversions.ToString(sqlreader.Item("InvoiceTerbilang"))
                 values(16) = Conversions.ToString(sqlreader.Item("IndexProject"))
-                values(17) = Conversions.ToString(sqlreader.Item("UserInput"))
-                values(18) = Conversions.ToString(sqlreader.Item("CreateDate"))
-                values(19) = Conversions.ToString(sqlreader.Item("UserEdit"))
-                values(20) = Conversions.ToString(sqlreader.Item("DateUpdate"))
+                values(17) = Conversions.ToString(sqlreader.Item("UserPerekam"))
+                values(18) = Conversions.ToString(sqlreader.Item("TanggalRekam"))
+                values(19) = Conversions.ToString(sqlreader.Item("UserUpdate"))
+                values(20) = Conversions.ToString(sqlreader.Item("TanggalUpdate"))
                 dg.Rows.Add(values)
             Loop
 
