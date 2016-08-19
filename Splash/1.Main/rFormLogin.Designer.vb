@@ -45,6 +45,10 @@ Partial Class rFormLogin
         Me.rTxUsername.Size = New System.Drawing.Size(282, 23)
         Me.rTxUsername.TabIndex = 0
         Me.rTxUsername.ThemeName = "Office2010Black"
+        CType(Me.rTxUsername.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Username"
+        CType(Me.rTxUsername.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.rTxUsername.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.rTxUsername.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'rTxPassword
         '
@@ -59,6 +63,10 @@ Partial Class rFormLogin
         Me.rTxPassword.TabIndex = 1
         Me.rTxPassword.ThemeName = "Office2010Black"
         Me.rTxPassword.UseSystemPasswordChar = True
+        CType(Me.rTxPassword.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Password"
+        CType(Me.rTxPassword.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.rTxPassword.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.rTxPassword.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'Button1
         '
@@ -71,6 +79,8 @@ Partial Class rFormLogin
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "&Sign In"
         Me.Button1.ThemeName = "Office2010Black"
+        CType(Me.Button1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.Button1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'Button2
         '
@@ -83,6 +93,8 @@ Partial Class rFormLogin
         Me.Button2.TabIndex = 3
         Me.Button2.Text = "&Cancel"
         Me.Button2.ThemeName = "Office2010Black"
+        CType(Me.Button2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.Button2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'LinkLabel1
         '
