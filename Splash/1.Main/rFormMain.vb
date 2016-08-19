@@ -335,20 +335,18 @@ Public Class rFormMain
 
     Private Sub Countersql(ByVal NamaField As String, ByVal tableName As String, Optional ByVal Opsi As String = "")
         Dim sqlCommand As New MySqlCommand
-        sqlCommand.CommandText = String.Format("SELECT COUNT({0}) FROM `{1}`" & Opsi, NamaField, tableName)
+        sqlCommand.CommandText = String.Format("SELECT TABLE_NAME, TABLE_ROWS FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'db_apps'" & Opsi)
         sqlCommand.Connection = mdlCom.vConn
-        Dim sqlReader As MySqlDataReader
-        Dim int As Integer = sqlCommand.ExecuteNonQuery
-        sqlReader = sqlCommand.ExecuteReader
-        Dim Values As String() = New String(2) {}
-
-        Do While sqlReader.Read
-            Values(0) = NamaField
-            Values(1) = tableName
-            Values(2) = int
-            RadGridView1.Rows.Add(Values)
+        Dim sqlreader As MySqlDataReader
+        sqlreader = sqlCommand.ExecuteReader
+        Dim fieldNames As String() = New String(3 - 1) {}
+        RadGridView1.Rows.Clear()
+        Do While sqlreader.Read
+            fieldNames(0) = sqlreader.Item("TABLE_NAME")
+            fieldNames(1) = sqlreader.Item("TABLE_ROWS")
+            RadGridView1.Rows.Add(fieldNames)
         Loop
-        sqlReader.Close()
+        sqlreader.Close()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -356,6 +354,6 @@ Public Class rFormMain
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Countersql("`invoiceNo`", "invoicedata")
+        Countersql("", "")
     End Sub
 End Class
