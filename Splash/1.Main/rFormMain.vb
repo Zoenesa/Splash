@@ -335,12 +335,13 @@ Public Class rFormMain
 
     Private Sub Countersql(ByVal NamaField As String, ByVal tableName As String, Optional ByVal Opsi As String = "")
         Dim sqlCommand As New MySqlCommand
-        sqlCommand.CommandText = String.Format("SELECT TABLE_NAME, TABLE_ROWS FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'db_apps'" & Opsi)
+        sqlCommand.CommandText = String.Format("SELECT TABLE_NAME, TABLE_ROWS, CREATE_TIME,  FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'db_apps'" & Opsi)
         sqlCommand.Connection = mdlCom.vConn
         Dim sqlreader As MySqlDataReader
         sqlreader = sqlCommand.ExecuteReader
         Dim fieldNames As String() = New String(3 - 1) {}
         RadGridView1.Rows.Clear()
+        Dim dt As New DataTable
         Do While sqlreader.Read
             fieldNames(0) = sqlreader.Item("TABLE_NAME")
             fieldNames(1) = sqlreader.Item("TABLE_ROWS")
@@ -349,6 +350,29 @@ Public Class rFormMain
         sqlreader.Close()
     End Sub
 
+    Private Sub getTableSchema(ByVal NamaSchema As String, Optional ByVal Opsi As String)
+        Dim errmsg As String = Nothing
+        Try
+            RadGridView1.Rows.Clear()
+            Dim dt As New DataTable
+            Dim common As New common
+            If common.LoadTableSchema(errmsg, dt, NamaSchema, Opsi) Then
+                Dim values As String() = New String() {}
+                Dim num As Integer = (dt.Rows.Count - 1)
+                Dim i As Integer = 0
+                Dim values2 As String() = New String() {}
+                Do While (i <= num)
+                    Dim row As DataRow = dt.Rows.Item(i)
+                    Dim sqlcmd As New MySqlCommand(("SELECT COUNT(*) FROM " & Conversions.ToString(dt.Rows.Item(i))), mdlCom.vConn)
+                    values(0) = Conversions.ToString(row.Item("TABLE_NAME"))
+                    values(1) = Conversions.ToString(row.Item("TABLE_ROWS"))
+                Loop
+            Else
+                mdlCom.ShowError(errmsg)
+            End If
+        Catch ex As Exception
+
+        End Try
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
     End Sub

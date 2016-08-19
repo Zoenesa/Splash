@@ -26,6 +26,7 @@ Partial Class rFormMain
         Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim SortDescriptor1 As Telerik.WinControls.Data.SortDescriptor = New Telerik.WinControls.Data.SortDescriptor()
         Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rFormMain))
@@ -576,20 +577,23 @@ Partial Class rFormMain
         GridViewTextBoxColumn1.Name = "column1"
         GridViewTextBoxColumn1.ReadOnly = True
         GridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn1.Width = 160
+        GridViewTextBoxColumn1.Width = 140
         GridViewTextBoxColumn2.EnableExpressionEditor = False
         GridViewTextBoxColumn2.HeaderText = "Total"
         GridViewTextBoxColumn2.Name = "column2"
         GridViewTextBoxColumn2.ReadOnly = True
         GridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn2.Width = 74
-        GridViewTextBoxColumn3.EnableExpressionEditor = False
-        GridViewTextBoxColumn3.HeaderText = "Data Masuk Hari Ini"
-        GridViewTextBoxColumn3.Name = "column3"
-        GridViewTextBoxColumn3.ReadOnly = True
-        GridViewTextBoxColumn3.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending
-        GridViewTextBoxColumn3.Width = 114
-        Me.RadGridView1.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3})
+        GridViewTextBoxColumn2.Width = 65
+        GridViewTextBoxColumn3.HeaderText = "Tanggal Pembuatan"
+        GridViewTextBoxColumn3.Name = "column4"
+        GridViewTextBoxColumn3.Width = 44
+        GridViewTextBoxColumn4.EnableExpressionEditor = False
+        GridViewTextBoxColumn4.HeaderText = "Tanggal Update"
+        GridViewTextBoxColumn4.Name = "column3"
+        GridViewTextBoxColumn4.ReadOnly = True
+        GridViewTextBoxColumn4.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending
+        GridViewTextBoxColumn4.Width = 100
+        Me.RadGridView1.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4})
         Me.RadGridView1.MasterTemplate.EnableAlternatingRowColor = True
         Me.RadGridView1.MasterTemplate.EnableGrouping = False
         Me.RadGridView1.MasterTemplate.ShowRowHeaderColumn = False
