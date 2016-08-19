@@ -260,7 +260,7 @@ Public Class common
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim exception As Exception = ex
-            errMsg = "Failed (common_get_user). Message : " + exception.Message
+            errMsg = "Failed (common_get_table). Message : " + exception.Message
             mdlCom.INSERTLOG(errMsg, "")
             flag = False
             ProjectData.ClearProjectError()
@@ -268,6 +268,24 @@ Public Class common
         Return flag
     End Function
 
+    Public Function LoadTableSchema(ByRef errMsg As String, ByRef dt As DataTable, ByVal schema As String, Optional ByVal opsi As String = "") As Boolean
+        errMsg = ""
+        Dim flag As Boolean
+        Try
+            Dim sqlAdapter As New MySqlDataAdapter("SELECT TABLE_NAME, TABLE_ROWS FROM `" & schema & "` " + opsi, mdlCom.vConn)
+            dt = New DataTable()
+            DirectCast(sqlAdapter, DbDataAdapter).Fill(dt)
+            flag = True
+        Catch ex As Exception
+            ProjectData.SetProjectError(ex)
+            Dim exception As Exception = ex
+            errMsg = "Failed (common_get_dataSchema). Message : " + exception.Message
+            mdlCom.INSERTLOG(errMsg, "")
+            flag = False
+            ProjectData.ClearProjectError()
+        End Try
+        Return flag
+    End Function
     Public Function getCustomerSupplier(ByRef errmsg As String, ByRef dt As DataTable, Optional Opsi As String = "") As Boolean
         errmsg = ""
         Dim flag As Boolean
