@@ -2,6 +2,7 @@
 Imports Microsoft.VisualBasic.CompilerServices
 Imports MySql.Data.MySqlClient
 Imports System.Threading
+Imports System.Text
 
 Public Class rFormMain
 
@@ -385,9 +386,19 @@ Public Class rFormMain
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        ToolWindow1.Text = Mid(ToolWindow1.Text, 2) & Strings.Left(ToolWindow1.Text, 1)
+        ToolWindow1.Caption = Mid(ToolWindow1.Caption, 2) & Strings.Left(ToolWindow1.Caption, 1)
     End Sub
 
+    Private sList As New List(Of String)
+    Private Sub KoleksiDatatable()
+        Dim i As Integer = dgcounter.Rows.Count - 1
+        Dim num As Integer = 0
+        sList.Clear()
+        For j As Integer = 0 To i
+            Dim str As String = String.Format("Table: {0}, Total Data: {1}, Data Masuk PerTanggal {2}: {3}", dgcounter.Rows(j).Cells(0).Value, dgcounter.Rows(j).Cells(1).Value, RadDateTimePicker1.Text, dgcounter.Rows(j).Cells(2).Value)
+            sList.Add(str)
+        Next j
+    End Sub
     Private Sub LoopCountRowsTables()
         Dim sqlDS As New DataSet
         Dim sqlCmd As New MySqlCommand
@@ -424,13 +435,30 @@ Public Class rFormMain
             dbName.Dispose()
             sqlAdapter.Dispose()
             dgcounter.Columns.Item(2).HeaderText = "Per Tanggal " & RadDateTimePicker1.Text
+
         Catch ex As Exception
             RadMessageBox.Show(ex.Message)
         End Try
     End Sub
 
+    Private sBuilderString As String
+    Private Sub StrBuilder()
+        If sList.Count > 0 Then
+            Dim sb As New StringBuilder
+            For Each sTemp As String In sList
+                sb.Append(sTemp).Append(" ")
+            Next
+            sBuilderString = sb.ToString
+        End If
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         LoopCountRowsTables()
+        ToolWindow1.Text = ""
+        ToolWindow1.Caption = ""
+        KoleksiDatatable()
+        StrBuilder()
+        ToolWindow1.Caption = sBuilderString
 
     End Sub
 End Class
