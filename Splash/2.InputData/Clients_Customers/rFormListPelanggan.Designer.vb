@@ -93,6 +93,8 @@ Partial Class rFormListPelanggan
         Me.rDropInvoiceType.Size = New System.Drawing.Size(128, 23)
         Me.rDropInvoiceType.TabIndex = 0
         Me.rDropInvoiceType.ThemeName = "Office2010Black"
+        CType(Me.rDropInvoiceType.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.rDropInvoiceType.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnFilter
         '
@@ -106,6 +108,8 @@ Partial Class rFormListPelanggan
         Me.btnFilter.TabIndex = 2
         Me.btnFilter.Text = "[F2] Filter"
         Me.btnFilter.ThemeName = "Office2010Black"
+        CType(Me.btnFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadStatusStrip1
         '
@@ -178,6 +182,8 @@ Partial Class rFormListPelanggan
         Me.btnRefresh.TabIndex = 0
         Me.btnRefresh.Text = "[F5] Refresh"
         Me.btnRefresh.ThemeName = "Office2010Black"
+        CType(Me.btnRefresh.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnRefresh.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'TableLayoutPanel1
         '
@@ -212,6 +218,8 @@ Partial Class rFormListPelanggan
         Me.btnBukaFormTambahCustomer.TabIndex = 0
         Me.btnBukaFormTambahCustomer.Text = "&Tambah"
         Me.btnBukaFormTambahCustomer.ThemeName = "Office2010Black"
+        CType(Me.btnBukaFormTambahCustomer.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnBukaFormTambahCustomer.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnEdit
         '
@@ -225,6 +233,8 @@ Partial Class rFormListPelanggan
         Me.btnEdit.TabIndex = 1
         Me.btnEdit.Text = "&Ubah"
         Me.btnEdit.ThemeName = "Office2010Black"
+        CType(Me.btnEdit.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnEdit.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnErase
         '
@@ -238,6 +248,8 @@ Partial Class rFormListPelanggan
         Me.btnErase.TabIndex = 2
         Me.btnErase.Text = "&Hapus"
         Me.btnErase.ThemeName = "Office2010Black"
+        CType(Me.btnErase.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnErase.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnSelect
         '
@@ -252,6 +264,8 @@ Partial Class rFormListPelanggan
         Me.btnSelect.Text = "&Select"
         Me.btnSelect.ThemeName = "Office2010Black"
         Me.btnSelect.Visible = False
+        CType(Me.btnSelect.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnSelect.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnClose
         '
@@ -265,6 +279,8 @@ Partial Class rFormListPelanggan
         Me.btnClose.TabIndex = 4
         Me.btnClose.Text = "&Close"
         Me.btnClose.ThemeName = "Office2010Black"
+        CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'rFormListPelanggan
         '

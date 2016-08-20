@@ -62,10 +62,10 @@ Public Class rFormListPelanggan
                     DataField(4) = Conversions.ToString((strAlamat))
                     DataField(5) = Conversions.ToString((row.Item("client_phone")))
                     DataField(6) = Conversions.ToString((row.Item("client_mail")))
-                    DataField(7) = Conversions.ToString(row.Item("client_userinput"))
-                    DataField(8) = Conversions.ToString(row.Item("client_inputdate"))
-                    DataField(9) = Conversions.ToString(row.Item("client_useredit"))
-                    DataField(10) = Conversions.ToString(row.Item("client_update"))
+                    DataField(7) = Conversions.ToString(row.Item("UserPerekam"))
+                    DataField(8) = Conversions.ToString(row.Item("TanggalRekam"))
+                    DataField(9) = Conversions.ToString(row.Item("UserUpdate"))
+                    DataField(10) = Conversions.ToString(row.Item("TanggalUpdate"))
                     dg.Rows.Add(DataField)
                     Interlocked.Increment(i)
                 Loop
@@ -89,7 +89,7 @@ Public Class rFormListPelanggan
             KolomHeader(4) = "Email"
             KolomHeader(5) = "User Perekam"
             KolomHeader(6) = "Tanggal Rekam"
-            KolomHeader(7) = "User Edit"
+            KolomHeader(7) = "User Update"
             KolomHeader(8) = "Tanggal Update"
             Dim num1 As Integer = 0
             Dim num2 As Integer = (KolomHeader.Length)
