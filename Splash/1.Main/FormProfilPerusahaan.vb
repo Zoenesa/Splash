@@ -73,6 +73,7 @@ Public Class FormProfilPerusahaan
             txKodePos.Text = List.Item(7)
             txTelpon1.Text = List.Item(9)
             txEmail.Text = List.Item(8)
+
         End If
     End Sub
 End Class
