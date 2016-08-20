@@ -40,7 +40,6 @@ Partial Class rFormTambahCustomer
         Me.RadGroupBox3 = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
         Me.txNomorRecord = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadTextBox5 = New Telerik.WinControls.UI.RadTextBox()
         CType(Me.txName, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Propinsi, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txAlamat, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,7 +60,6 @@ Partial Class rFormTambahCustomer
         Me.RadGroupBox3.SuspendLayout()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txNomorRecord, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -77,6 +75,11 @@ Partial Class rFormTambahCustomer
         Me.txName.Size = New System.Drawing.Size(425, 23)
         Me.txName.TabIndex = 10
         Me.txName.ThemeName = "Office2010Black"
+        CType(Me.txName.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Nama Customer / Supplier"
+        CType(Me.txName.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txName.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txName.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        CType(Me.txName.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'Propinsi
         '
@@ -92,6 +95,8 @@ Partial Class rFormTambahCustomer
         Me.Propinsi.TabIndex = 13
         Me.Propinsi.ThemeName = "Office2010Black"
         Me.Propinsi.ValueMember = "id"
+        CType(Me.Propinsi.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.Propinsi.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txAlamat
         '
@@ -105,6 +110,10 @@ Partial Class rFormTambahCustomer
         Me.txAlamat.Size = New System.Drawing.Size(425, 23)
         Me.txAlamat.TabIndex = 10
         Me.txAlamat.ThemeName = "Office2010Black"
+        CType(Me.txAlamat.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Alamat"
+        CType(Me.txAlamat.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txAlamat.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txAlamat.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txKodePos
         '
@@ -119,6 +128,10 @@ Partial Class rFormTambahCustomer
         Me.txKodePos.Size = New System.Drawing.Size(109, 23)
         Me.txKodePos.TabIndex = 10
         Me.txKodePos.ThemeName = "Office2010Black"
+        CType(Me.txKodePos.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Kode Pos"
+        CType(Me.txKodePos.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txKodePos.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txKodePos.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txEmail
         '
@@ -133,6 +146,11 @@ Partial Class rFormTambahCustomer
         Me.txEmail.Size = New System.Drawing.Size(425, 23)
         Me.txEmail.TabIndex = 10
         Me.txEmail.ThemeName = "Office2010Black"
+        CType(Me.txEmail.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "email"
+        CType(Me.txEmail.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txEmail.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txEmail.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txEmail.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txTelpon2
         '
@@ -146,6 +164,10 @@ Partial Class rFormTambahCustomer
         Me.txTelpon2.Size = New System.Drawing.Size(137, 23)
         Me.txTelpon2.TabIndex = 10
         Me.txTelpon2.ThemeName = "Office2010Black"
+        CType(Me.txTelpon2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Telpon 2"
+        CType(Me.txTelpon2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txTelpon2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txTelpon2.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'Kecamatan
         '
@@ -161,6 +183,8 @@ Partial Class rFormTambahCustomer
         Me.Kecamatan.TabIndex = 14
         Me.Kecamatan.ThemeName = "Office2010Black"
         Me.Kecamatan.ValueMember = "id"
+        CType(Me.Kecamatan.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        CType(Me.Kecamatan.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'Kabupaten
         '
@@ -176,6 +200,8 @@ Partial Class rFormTambahCustomer
         Me.Kabupaten.TabIndex = 15
         Me.Kabupaten.ThemeName = "Office2010Black"
         Me.Kabupaten.ValueMember = "id"
+        CType(Me.Kabupaten.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        CType(Me.Kabupaten.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txTelpon1
         '
@@ -189,6 +215,8 @@ Partial Class rFormTambahCustomer
         Me.txTelpon1.Size = New System.Drawing.Size(137, 23)
         Me.txTelpon1.TabIndex = 10
         Me.txTelpon1.ThemeName = "Office2010Black"
+        CType(Me.txTelpon1.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txTelpon1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txNPWP
         '
@@ -212,6 +240,7 @@ Partial Class rFormTambahCustomer
         Me.txNPWP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txNPWP.ThemeName = "Office2010Black"
         Me.txNPWP.UseGenericBorderPaint = True
+        CType(Me.txNPWP.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).PaintUsingParentShape = True
         '
         'RadLabel1
         '
@@ -236,7 +265,7 @@ Partial Class rFormTambahCustomer
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(766, 33)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(458, 33)
         Me.TableLayoutPanel1.TabIndex = 17
         '
         'btnSave
@@ -247,7 +276,7 @@ Partial Class rFormTambahCustomer
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnSave.Location = New System.Drawing.Point(3, 3)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(377, 27)
+        Me.btnSave.Size = New System.Drawing.Size(223, 27)
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "&Simpan Data"
         Me.btnSave.ThemeName = "Office2010Black"
@@ -258,9 +287,9 @@ Partial Class rFormTambahCustomer
         Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnClose.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnClose.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnClose.Location = New System.Drawing.Point(386, 3)
+        Me.btnClose.Location = New System.Drawing.Point(232, 3)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(377, 27)
+        Me.btnClose.Size = New System.Drawing.Size(223, 27)
         Me.btnClose.TabIndex = 1
         Me.btnClose.Text = "&Keluar"
         Me.btnClose.ThemeName = "Office2010Black"
@@ -279,9 +308,9 @@ Partial Class rFormTambahCustomer
         Me.RadGroupBox2.Controls.Add(Me.txKodePos)
         Me.RadGroupBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadGroupBox2.HeaderText = " Detail Alamat Customer "
-        Me.RadGroupBox2.Location = New System.Drawing.Point(7, 98)
+        Me.RadGroupBox2.Location = New System.Drawing.Point(3, 98)
         Me.RadGroupBox2.Name = "RadGroupBox2"
-        Me.RadGroupBox2.Size = New System.Drawing.Size(449, 188)
+        Me.RadGroupBox2.Size = New System.Drawing.Size(452, 188)
         Me.RadGroupBox2.TabIndex = 1
         Me.RadGroupBox2.Text = " Detail Alamat Customer "
         Me.RadGroupBox2.ThemeName = "Office2010Black"
@@ -298,9 +327,9 @@ Partial Class rFormTambahCustomer
         Me.RadGroupBox3.Controls.Add(Me.txNomorRecord)
         Me.RadGroupBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadGroupBox3.HeaderText = " Invoice Name "
-        Me.RadGroupBox3.Location = New System.Drawing.Point(7, 4)
+        Me.RadGroupBox3.Location = New System.Drawing.Point(3, 4)
         Me.RadGroupBox3.Name = "RadGroupBox3"
-        Me.RadGroupBox3.Size = New System.Drawing.Size(449, 88)
+        Me.RadGroupBox3.Size = New System.Drawing.Size(452, 88)
         Me.RadGroupBox3.TabIndex = 1
         Me.RadGroupBox3.Text = " Invoice Name "
         Me.RadGroupBox3.ThemeName = "Office2010Black"
@@ -331,30 +360,19 @@ Partial Class rFormTambahCustomer
         Me.txNomorRecord.Size = New System.Drawing.Size(109, 23)
         Me.txNomorRecord.TabIndex = 10
         Me.txNomorRecord.ThemeName = "Office2010Black"
-        '
-        'RadTextBox5
-        '
-        Me.RadTextBox5.AllowShowFocusCues = True
-        Me.RadTextBox5.AutoSize = False
-        Me.RadTextBox5.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadTextBox5.Location = New System.Drawing.Point(464, 183)
-        Me.RadTextBox5.MaxLength = 800
-        Me.RadTextBox5.Multiline = True
-        Me.RadTextBox5.Name = "RadTextBox5"
-        Me.RadTextBox5.NullText = "email"
-        Me.RadTextBox5.Size = New System.Drawing.Size(299, 103)
-        Me.RadTextBox5.TabIndex = 10
-        Me.RadTextBox5.ThemeName = "Office2010Black"
+        CType(Me.txNomorRecord.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Record No."
+        CType(Me.txNomorRecord.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txNomorRecord.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txNomorRecord.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        CType(Me.txNomorRecord.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'rFormTambahCustomer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(766, 324)
+        Me.ClientSize = New System.Drawing.Size(458, 324)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.RadGroupBox2)
-        Me.Controls.Add(Me.RadTextBox5)
         Me.Controls.Add(Me.RadGroupBox3)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Name = "rFormTambahCustomer"
@@ -386,7 +404,6 @@ Partial Class rFormTambahCustomer
         Me.RadGroupBox3.PerformLayout()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txNomorRecord, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -407,7 +424,6 @@ Partial Class rFormTambahCustomer
     Friend WithEvents btnClose As Telerik.WinControls.UI.RadButton
     Friend WithEvents RadGroupBox2 As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents RadGroupBox3 As Telerik.WinControls.UI.RadGroupBox
-    Friend WithEvents RadTextBox5 As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel2 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents txNomorRecord As Telerik.WinControls.UI.RadTextBox
 End Class

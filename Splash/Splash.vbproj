@@ -100,6 +100,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="1.Main\FormProfilPerusahaan.Designer.vb">
+      <DependentUpon>FormProfilPerusahaan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="1.Main\FormProfilPerusahaan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="2.InputData\Clients_Customers\rFormListPelanggan.Designer.vb">
       <DependentUpon>rFormListPelanggan.vb</DependentUpon>
     </Compile>
@@ -287,6 +293,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="1.Main\FormProfilPerusahaan.resx">
+      <DependentUpon>FormProfilPerusahaan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="2.InputData\Clients_Customers\rFormListPelanggan.resx">
       <DependentUpon>rFormListPelanggan.vb</DependentUpon>
     </EmbeddedResource>

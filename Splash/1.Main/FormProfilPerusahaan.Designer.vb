@@ -120,7 +120,7 @@ Partial Class FormProfilPerusahaan
         Me.RadTextBox1.Location = New System.Drawing.Point(11, 21)
         Me.RadTextBox1.Name = "RadTextBox1"
         Me.RadTextBox1.NullText = "Alamat"
-        Me.RadTextBox1.Size = New System.Drawing.Size(425, 23)
+        Me.RadTextBox1.Size = New System.Drawing.Size(444, 23)
         Me.RadTextBox1.TabIndex = 10
         Me.RadTextBox1.ThemeName = "Office2010Black"
         CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Alamat"
@@ -184,10 +184,10 @@ Partial Class FormProfilPerusahaan
         Me.Kabupaten.BackColor = System.Drawing.Color.Transparent
         Me.Kabupaten.DisplayMember = "name"
         Me.Kabupaten.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Kabupaten.Location = New System.Drawing.Point(233, 53)
+        Me.Kabupaten.Location = New System.Drawing.Point(235, 53)
         Me.Kabupaten.Name = "Kabupaten"
         Me.Kabupaten.NullText = "Kabupaten"
-        Me.Kabupaten.Size = New System.Drawing.Size(203, 23)
+        Me.Kabupaten.Size = New System.Drawing.Size(220, 23)
         Me.Kabupaten.TabIndex = 15
         Me.Kabupaten.ThemeName = "Office2010Black"
         Me.Kabupaten.ValueMember = "id"
@@ -275,6 +275,8 @@ Partial Class FormProfilPerusahaan
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "&Simpan Data"
         Me.btnSave.ThemeName = "Office2010Black"
+        CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnClose
         '
@@ -288,6 +290,8 @@ Partial Class FormProfilPerusahaan
         Me.btnClose.TabIndex = 1
         Me.btnClose.Text = "&Keluar"
         Me.btnClose.ThemeName = "Office2010Black"
+        CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadDropDownList1
         '

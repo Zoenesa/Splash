@@ -23,11 +23,11 @@ Partial Class rFormMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim SortDescriptor3 As Telerik.WinControls.Data.SortDescriptor = New Telerik.WinControls.Data.SortDescriptor()
-        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim SortDescriptor1 As Telerik.WinControls.Data.SortDescriptor = New Telerik.WinControls.Data.SortDescriptor()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rFormMain))
         Me.rMainMenu = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuKoneksiDb = New Telerik.WinControls.UI.RadMenuItem()
@@ -92,6 +92,7 @@ Partial Class rFormMain
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DocumentContainer1 = New Telerik.WinControls.UI.Docking.DocumentContainer()
         Me.ToolTabStrip1 = New Telerik.WinControls.UI.Docking.ToolTabStrip()
+        Me.RadMenuItemCompanyProfile = New Telerik.WinControls.UI.RadMenuItem()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -344,7 +345,7 @@ Partial Class rFormMain
         '
         'rMenuAdministrasi
         '
-        Me.rMenuAdministrasi.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMenuItemBarang, Me.rMenuRefCustomer, Me.RadMenuSeparatorItem3, Me.rMenuAdmUser, Me.rMenudbUtility})
+        Me.rMenuAdministrasi.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMenuItemBarang, Me.rMenuRefCustomer, Me.RadMenuSeparatorItem3, Me.rMenuAdmUser, Me.rMenudbUtility, Me.RadMenuItemCompanyProfile})
         Me.rMenuAdministrasi.Name = "rMenuAdministrasi"
         Me.rMenuAdministrasi.Padding = New System.Windows.Forms.Padding(8, 1, 8, 1)
         Me.rMenuAdministrasi.Text = "&Administrasi"
@@ -449,7 +450,7 @@ Partial Class rFormMain
         Me.RadStatusStrip1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.StatusVersi, Me.CommandBarSeparator1, Me.RadStatusDeskripsi, Me.CommandBarSeparator2, Me.RadDateAndTimeStatus})
         Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 416)
         Me.RadStatusStrip1.Name = "RadStatusStrip1"
-        Me.RadStatusStrip1.Size = New System.Drawing.Size(995, 22)
+        Me.RadStatusStrip1.Size = New System.Drawing.Size(1229, 22)
         Me.RadStatusStrip1.TabIndex = 5
         Me.RadStatusStrip1.Text = "RadStatusStrip1"
         Me.RadStatusStrip1.ThemeName = "Office2010Black"
@@ -499,7 +500,7 @@ Partial Class rFormMain
         Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMainMenu, Me.rMenuInputData, Me.rDataTeknis, Me.rMenuAdministrasi, Me.rAbout})
         Me.RadMenu1.Location = New System.Drawing.Point(0, 0)
         Me.RadMenu1.Name = "RadMenu1"
-        Me.RadMenu1.Size = New System.Drawing.Size(995, 22)
+        Me.RadMenu1.Size = New System.Drawing.Size(1229, 22)
         Me.RadMenu1.TabIndex = 3
         Me.RadMenu1.Text = "RadMenu1"
         Me.RadMenu1.ThemeName = "Office2010Black"
@@ -511,8 +512,8 @@ Partial Class rFormMain
         'RadDock1
         '
         Me.RadDock1.ActiveWindow = Me.ToolWindow1
-        Me.RadDock1.AutoDetectMdiChildren = True
         Me.RadDock1.AutoHideAnimation = Telerik.WinControls.UI.Docking.AutoHideAnimateMode.Both
+        Me.RadDock1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.RadDock1.CausesValidation = False
         Me.RadDock1.Controls.Add(Me.DocumentContainer1)
         Me.RadDock1.Controls.Add(Me.ToolTabStrip1)
@@ -522,10 +523,9 @@ Partial Class rFormMain
         Me.RadDock1.EnableFloatingWindowSnapping = True
         Me.RadDock1.EnableGestures = False
         Me.RadDock1.IsCleanUpTarget = True
-        Me.RadDock1.Location = New System.Drawing.Point(630, 22)
+        Me.RadDock1.Location = New System.Drawing.Point(864, 22)
         Me.RadDock1.MainDocumentContainer = Me.DocumentContainer1
         Me.RadDock1.MainDocumentContainerVisible = False
-        Me.RadDock1.MdiChildrenDockType = Telerik.WinControls.UI.Docking.DockType.ToolWindow
         Me.RadDock1.Name = "RadDock1"
         Me.RadDock1.Padding = New System.Windows.Forms.Padding(0)
         '
@@ -534,15 +534,16 @@ Partial Class rFormMain
         Me.RadDock1.RootElement.MinSize = New System.Drawing.Size(0, 0)
         Me.RadDock1.SingleScreen = True
         Me.RadDock1.Size = New System.Drawing.Size(365, 394)
-        Me.RadDock1.SplitterWidth = 2
         Me.RadDock1.TabIndex = 7
         Me.RadDock1.TabStop = False
         Me.RadDock1.Text = "RadDock1"
         Me.RadDock1.ThemeName = "Office2010Black"
         Me.RadDock1.ToolTabsAlignment = Telerik.WinControls.UI.TabStripAlignment.Top
+        Me.RadDock1.UseSplitterButtons = True
         '
         'ToolWindow1
         '
+        Me.ToolWindow1.AutoScroll = True
         Me.ToolWindow1.Caption = "DATABASE COUNTER                                    "
         Me.ToolWindow1.Controls.Add(Me.Panel1)
         Me.ToolWindow1.DefaultFloatingSize = New System.Drawing.Size(350, 300)
@@ -552,7 +553,7 @@ Partial Class rFormMain
         Me.ToolWindow1.Location = New System.Drawing.Point(1, 22)
         Me.ToolWindow1.Name = "ToolWindow1"
         Me.ToolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked
-        Me.ToolWindow1.Size = New System.Drawing.Size(198, 176)
+        Me.ToolWindow1.Size = New System.Drawing.Size(363, 370)
         Me.ToolWindow1.Text = "DATABASE COUNTER                                    "
         Me.ToolWindow1.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.AutoHide
         '
@@ -612,28 +613,28 @@ Partial Class rFormMain
         Me.dgcounter.MasterTemplate.AllowRowHeaderContextMenu = False
         Me.dgcounter.MasterTemplate.AllowSearchRow = True
         Me.dgcounter.MasterTemplate.CaseSensitive = True
-        GridViewTextBoxColumn7.EnableExpressionEditor = False
-        GridViewTextBoxColumn7.HeaderText = "Data TABLE"
-        GridViewTextBoxColumn7.Name = "column1"
-        GridViewTextBoxColumn7.ReadOnly = True
-        GridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn7.Width = 165
-        GridViewTextBoxColumn8.EnableExpressionEditor = False
-        GridViewTextBoxColumn8.HeaderText = "Total"
-        GridViewTextBoxColumn8.Name = "column2"
-        GridViewTextBoxColumn8.ReadOnly = True
-        GridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn8.Width = 55
-        GridViewTextBoxColumn9.HeaderText = "Tanggal Update"
-        GridViewTextBoxColumn9.Name = "column4"
-        GridViewTextBoxColumn9.Width = 115
-        Me.dgcounter.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewTextBoxColumn9})
+        GridViewTextBoxColumn1.EnableExpressionEditor = False
+        GridViewTextBoxColumn1.HeaderText = "Data TABLE"
+        GridViewTextBoxColumn1.Name = "column1"
+        GridViewTextBoxColumn1.ReadOnly = True
+        GridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn1.Width = 165
+        GridViewTextBoxColumn2.EnableExpressionEditor = False
+        GridViewTextBoxColumn2.HeaderText = "Total"
+        GridViewTextBoxColumn2.Name = "column2"
+        GridViewTextBoxColumn2.ReadOnly = True
+        GridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn2.Width = 55
+        GridViewTextBoxColumn3.HeaderText = "Tanggal Update"
+        GridViewTextBoxColumn3.Name = "column4"
+        GridViewTextBoxColumn3.Width = 115
+        Me.dgcounter.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3})
         Me.dgcounter.MasterTemplate.EnableAlternatingRowColor = True
         Me.dgcounter.MasterTemplate.EnableGrouping = False
         Me.dgcounter.MasterTemplate.ShowHeaderCellButtons = True
-        SortDescriptor3.PropertyName = "column3"
-        Me.dgcounter.MasterTemplate.SortDescriptors.AddRange(New Telerik.WinControls.Data.SortDescriptor() {SortDescriptor3})
-        Me.dgcounter.MasterTemplate.ViewDefinition = TableViewDefinition3
+        SortDescriptor1.PropertyName = "column3"
+        Me.dgcounter.MasterTemplate.SortDescriptors.AddRange(New Telerik.WinControls.Data.SortDescriptor() {SortDescriptor1})
+        Me.dgcounter.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.dgcounter.Name = "dgcounter"
         Me.dgcounter.ReadOnly = True
         Me.dgcounter.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -669,7 +670,6 @@ Partial Class rFormMain
         '
         Me.DocumentContainer1.RootElement.MinSize = New System.Drawing.Size(0, 0)
         Me.DocumentContainer1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill
-        Me.DocumentContainer1.SplitterWidth = 2
         Me.DocumentContainer1.ThemeName = "Office2010Black"
         '
         'ToolTabStrip1
@@ -677,9 +677,6 @@ Partial Class rFormMain
         Me.ToolTabStrip1.AutoHidePosition = Telerik.WinControls.UI.Docking.AutoHidePosition.Right
         Me.ToolTabStrip1.CanUpdateChildIndex = True
         Me.ToolTabStrip1.Controls.Add(Me.ToolWindow1)
-        Me.ToolTabStrip1.EnableGestures = False
-        Me.ToolTabStrip1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.ToolTabStrip1.ForeColor = System.Drawing.Color.Blue
         Me.ToolTabStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolTabStrip1.Name = "ToolTabStrip1"
         '
@@ -690,39 +687,21 @@ Partial Class rFormMain
         Me.ToolTabStrip1.Size = New System.Drawing.Size(365, 394)
         Me.ToolTabStrip1.SizeInfo.AbsoluteSize = New System.Drawing.Size(350, 450)
         Me.ToolTabStrip1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Absolute
-        Me.ToolTabStrip1.TabIndex = 1
+        Me.ToolTabStrip1.TabIndex = 3
         Me.ToolTabStrip1.TabStop = False
         Me.ToolTabStrip1.TabStripAlignment = Telerik.WinControls.UI.TabStripAlignment.Top
-        Me.ToolTabStrip1.TabStripTextOrientation = Telerik.WinControls.UI.TabStripTextOrientation.Horizontal
         Me.ToolTabStrip1.ThemeName = "Office2010Black"
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(227, Byte), Integer))
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).ToolTipText = "Close Window"
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Visibility = Telerik.WinControls.ElementVisibility.Collapsed
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(147, Byte), Integer), CType(CType(147, Byte), Integer))
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(3), Telerik.WinControls.Primitives.TextPrimitive).Text = "DATABASE COUNTER                                    "
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(2).GetChildAt(3), Telerik.WinControls.Primitives.TextPrimitive).BackColor = System.Drawing.Color.Blue
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadPageViewTabStripElement).ItemContentOrientation = Telerik.WinControls.UI.PageViewContentOrientation.Horizontal
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0), Telerik.WinControls.UI.StripViewItemContainer).Visibility = Telerik.WinControls.ElementVisibility.Collapsed
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.TabStripItem).Text = "DATABASE COUNTER                                    "
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.UI.TabStripPinButtonItem).Visibility = Telerik.WinControls.ElementVisibility.Collapsed
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.Blue
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Visibility = Telerik.WinControls.ElementVisibility.Collapsed
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.UI.TabStripButtonItem).Visibility = Telerik.WinControls.ElementVisibility.Collapsed
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(1).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.Blue
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(1).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0).GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(1).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Visibility = Telerik.WinControls.ElementVisibility.Collapsed
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2), Telerik.WinControls.UI.RadPageViewLabelElement).Text = "DATABASE COUNTER                                    "
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2), Telerik.WinControls.UI.RadPageViewLabelElement).BackColor = System.Drawing.Color.Blue
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(3), Telerik.WinControls.UI.RadPageViewLabelElement).Text = "DATABASE COUNTER                                    "
-        CType(Me.ToolTabStrip1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(3), Telerik.WinControls.UI.RadPageViewLabelElement).BackColor = System.Drawing.Color.Blue
+        '
+        'RadMenuItemCompanyProfile
+        '
+        Me.RadMenuItemCompanyProfile.Name = "RadMenuItemCompanyProfile"
+        Me.RadMenuItemCompanyProfile.Text = "&Company Profile"
         '
         'rFormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(995, 438)
+        Me.ClientSize = New System.Drawing.Size(1229, 438)
         Me.Controls.Add(Me.RadDock1)
         Me.Controls.Add(Me.RadStatusStrip1)
         Me.Controls.Add(Me.RadMenu1)
@@ -816,8 +795,9 @@ Partial Class rFormMain
     Friend WithEvents RadGridView1 As Telerik.WinControls.UI.RadGridView
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents ToolWindow1 As Telerik.WinControls.UI.Docking.ToolWindow
-    Friend WithEvents ToolTabStrip1 As Telerik.WinControls.UI.Docking.ToolTabStrip
     Friend WithEvents dgcounter As Telerik.WinControls.UI.RadGridView
     Friend WithEvents RadDateTimePicker1 As Telerik.WinControls.UI.RadDateTimePicker
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents ToolTabStrip1 As Telerik.WinControls.UI.Docking.ToolTabStrip
+    Friend WithEvents RadMenuItemCompanyProfile As Telerik.WinControls.UI.RadMenuItem
 End Class

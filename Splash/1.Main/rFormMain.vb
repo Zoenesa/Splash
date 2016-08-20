@@ -461,4 +461,11 @@ Public Class rFormMain
         ToolWindow1.Caption = sBuilderString
 
     End Sub
+
+    Private Sub RadMenuItemCompanyProfile_Click(sender As Object, e As EventArgs) Handles RadMenuItemCompanyProfile.Click
+        Dim formCompany As New FormProfilPerusahaan
+        formCompany.ModeBuka(False)
+        formCompany.Dispose()
+        formCompany = Nothing
+    End Sub
 End Class
