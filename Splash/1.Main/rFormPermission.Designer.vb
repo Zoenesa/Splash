@@ -22,6 +22,7 @@ Partial Class rFormPermission
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rFormPermission))
         Me.Button1 = New Telerik.WinControls.UI.RadButton()
         Me.rTxPassword = New Telerik.WinControls.UI.RadTextBox()
         Me.rTxUsername = New Telerik.WinControls.UI.RadTextBox()
@@ -44,6 +45,8 @@ Partial Class rFormPermission
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "&OK"
         Me.Button1.ThemeName = "Office2010Black"
+        CType(Me.Button1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.Button1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'rTxPassword
         '
@@ -59,6 +62,11 @@ Partial Class rFormPermission
         Me.rTxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.rTxPassword.ThemeName = "Office2010Black"
         Me.rTxPassword.UseSystemPasswordChar = True
+        CType(Me.rTxPassword.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Password"
+        CType(Me.rTxPassword.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.rTxPassword.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.rTxPassword.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.rTxPassword.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'rTxUsername
         '
@@ -75,6 +83,10 @@ Partial Class rFormPermission
         Me.rTxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.rTxUsername.ThemeName = "Office2010Black"
         Me.rTxUsername.WordWrap = False
+        CType(Me.rTxUsername.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.rTxUsername.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.rTxUsername.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.rTxUsername.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'TableLayoutPanel1
         '
@@ -101,6 +113,7 @@ Partial Class rFormPermission
         Me.Controls.Add(Me.rTxUsername)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "rFormPermission"
@@ -108,7 +121,6 @@ Partial Class rFormPermission
         '
         '
         Me.RootElement.ApplyShapeToControl = True
-        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Akses Permission"
         Me.ThemeName = "Office2010Black"

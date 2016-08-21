@@ -22,6 +22,7 @@ Partial Class FormProfilPerusahaan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormProfilPerusahaan))
         Me.txNPWP = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.RadGroupBox2 = New Telerik.WinControls.UI.RadGroupBox()
@@ -275,6 +276,7 @@ Partial Class FormProfilPerusahaan
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "&Simpan Data"
         Me.btnSave.ThemeName = "Office2010Black"
+        CType(Me.btnSave.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Simpan Data"
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -290,6 +292,7 @@ Partial Class FormProfilPerusahaan
         Me.btnClose.TabIndex = 1
         Me.btnClose.Text = "&Keluar"
         Me.btnClose.ThemeName = "Office2010Black"
+        CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Keluar"
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -321,11 +324,13 @@ Partial Class FormProfilPerusahaan
         Me.Controls.Add(Me.txNPWP)
         Me.Controls.Add(Me.RadDropDownList1)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormProfilPerusahaan"
         '
         '
         '
         Me.RootElement.ApplyShapeToControl = True
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Company Profile"
         Me.ThemeName = "Office2010Black"

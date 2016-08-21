@@ -27,6 +27,7 @@ Partial Class FrmCustomerReference
         Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmCustomerReference))
         Me.RadGroupBox2 = New Telerik.WinControls.UI.RadGroupBox()
         Me.txFilter = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.rDropInvoiceType = New Telerik.WinControls.UI.RadDropDownList()
@@ -410,6 +411,7 @@ Partial Class FrmCustomerReference
         Me.Controls.Add(Me.RadGroupBox2)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.MinimizeBox = False
         Me.Name = "FrmCustomerReference"

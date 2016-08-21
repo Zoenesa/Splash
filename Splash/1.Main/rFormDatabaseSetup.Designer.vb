@@ -24,6 +24,7 @@ Partial Class rFormDatabaseSetup
     Private Sub InitializeComponent()
         Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rFormDatabaseSetup))
         Me.Label8 = New System.Windows.Forms.Label()
         Me.cbProfile = New System.Windows.Forms.ComboBox()
         Me.listTbl = New System.Windows.Forms.ListBox()
@@ -255,7 +256,7 @@ Partial Class rFormDatabaseSetup
         Me.RadPageView1.ItemSizeMode = CType((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth Or Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight), Telerik.WinControls.UI.PageViewItemSizeMode)
         Me.RadPageView1.Location = New System.Drawing.Point(-1, -3)
         Me.RadPageView1.Name = "RadPageView1"
-        Me.RadPageView1.SelectedPage = Me.RadPageViewPage1
+        Me.RadPageView1.SelectedPage = Me.RadPageViewPage2
         Me.RadPageView1.Size = New System.Drawing.Size(606, 265)
         Me.RadPageView1.TabIndex = 3
         Me.RadPageView1.Text = "RadPageView1"
@@ -281,10 +282,10 @@ Partial Class rFormDatabaseSetup
         Me.RadPageViewPage2.Controls.Add(Me.Label13)
         Me.RadPageViewPage2.Controls.Add(Me.Label14)
         Me.RadPageViewPage2.Controls.Add(Me.cbProfile)
-        Me.RadPageViewPage2.ItemSize = New System.Drawing.SizeF(32.0!, 241.0!)
-        Me.RadPageViewPage2.Location = New System.Drawing.Point(97, 29)
+        Me.RadPageViewPage2.ItemSize = New System.Drawing.SizeF(27.0!, 233.0!)
+        Me.RadPageViewPage2.Location = New System.Drawing.Point(98, 30)
         Me.RadPageViewPage2.Name = "RadPageViewPage2"
-        Me.RadPageViewPage2.Size = New System.Drawing.Size(504, 231)
+        Me.RadPageViewPage2.Size = New System.Drawing.Size(494, 221)
         Me.RadPageViewPage2.Text = "General"
         '
         'RadCheckBox1
@@ -481,7 +482,7 @@ Partial Class rFormDatabaseSetup
         Me.RadPageViewPage1.Controls.Add(Me.Label5)
         Me.RadPageViewPage1.Controls.Add(Me.Label9)
         Me.RadPageViewPage1.Controls.Add(Me.Label6)
-        Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(32.0!, 241.0!)
+        Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(27.0!, 233.0!)
         Me.RadPageViewPage1.Location = New System.Drawing.Point(97, 29)
         Me.RadPageViewPage1.Name = "RadPageViewPage1"
         Me.RadPageViewPage1.Size = New System.Drawing.Size(504, 231)
@@ -539,7 +540,7 @@ Partial Class rFormDatabaseSetup
         '
         'RadPageViewPage3
         '
-        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(32.0!, 241.0!)
+        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(27.0!, 233.0!)
         Me.RadPageViewPage3.Location = New System.Drawing.Point(98, 30)
         Me.RadPageViewPage3.Name = "RadPageViewPage3"
         Me.RadPageViewPage3.Size = New System.Drawing.Size(494, 221)
@@ -553,6 +554,7 @@ Partial Class rFormDatabaseSetup
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.RadPageView1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "rFormDatabaseSetup"
@@ -560,9 +562,8 @@ Partial Class rFormDatabaseSetup
         '
         '
         Me.RootElement.ApplyShapeToControl = True
-        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.Text = "Database Tools                                                                   " & _
+        Me.Text = "Database Tools                                                                   " &
     "         "
         Me.ThemeName = "Office2010Black"
         Me.TableLayoutPanel2.ResumeLayout(False)

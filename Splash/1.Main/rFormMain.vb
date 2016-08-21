@@ -21,6 +21,14 @@ Public Class rFormMain
         Me.Logout()
     End Sub
 
+    Public Shared Sub LoadIcon(ByVal showIcon As Boolean)
+        Dim FilePath As String = ""
+        Dim ImgIcon As Image = Nothing
+
+
+    End Sub
+
+
     Public Sub KeluarAplikasi()
         Dim errMsg As String = ""
         Try

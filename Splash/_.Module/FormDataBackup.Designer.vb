@@ -25,6 +25,7 @@ Partial Class FormDataBackup
         Me.components = New System.ComponentModel.Container()
         Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormDataBackup))
         Me.txPath = New Telerik.WinControls.UI.RadTextBox()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnBackup = New Telerik.WinControls.UI.RadButton()
@@ -66,6 +67,7 @@ Partial Class FormDataBackup
         Me.chAutoSave = New Telerik.WinControls.UI.RadCheckBox()
         Me.RadStatusStrippp = New Telerik.WinControls.UI.RadStatusStrip()
         Me.lbCurrentTableName = New Telerik.WinControls.UI.RadLabelElement()
+        Me.pbtable = New Telerik.WinControls.UI.RadProgressBarElement()
         Me.label2 = New Telerik.WinControls.UI.RadLabelElement()
         Me.pbRowInCurTable = New Telerik.WinControls.UI.RadProgressBarElement()
         Me.RadLabelElement3 = New Telerik.WinControls.UI.RadLabelElement()
@@ -74,7 +76,6 @@ Partial Class FormDataBackup
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.lbTotalRows_Tables = New Telerik.WinControls.UI.RadLabel()
         Me.bwExport = New System.ComponentModel.BackgroundWorker()
-        Me.pbtable = New Telerik.WinControls.UI.RadProgressBarElement()
         CType(Me.txPath, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.btnBackup, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -135,6 +136,11 @@ Partial Class FormDataBackup
         Me.txPath.Size = New System.Drawing.Size(588, 23)
         Me.txPath.TabIndex = 8
         Me.txPath.ThemeName = "Office2010Black"
+        CType(Me.txPath.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Backup Filename Path"
+        CType(Me.txPath.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txPath.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txPath.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txPath.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'TableLayoutPanel2
         '
@@ -161,6 +167,8 @@ Partial Class FormDataBackup
         Me.btnBackup.TabIndex = 0
         Me.btnBackup.Text = "Execute &Backup"
         Me.btnBackup.ThemeName = "Office2010Black"
+        CType(Me.btnBackup.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnBackup.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadGroupBox1
         '
@@ -238,6 +246,7 @@ Partial Class FormDataBackup
         Me.RadDropDownList1.Size = New System.Drawing.Size(214, 23)
         Me.RadDropDownList1.TabIndex = 13
         Me.RadDropDownList1.ThemeName = "Office2010Black"
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txEncryptPass
         '
@@ -250,6 +259,10 @@ Partial Class FormDataBackup
         Me.txEncryptPass.Size = New System.Drawing.Size(132, 23)
         Me.txEncryptPass.TabIndex = 12
         Me.txEncryptPass.ThemeName = "Office2010Black"
+        CType(Me.txEncryptPass.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txEncryptPass.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CType(Me.txEncryptPass.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txEncryptPass.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadLabel1
         '
@@ -396,6 +409,8 @@ Partial Class FormDataBackup
         Me.btnBrowse.TabIndex = 7
         Me.btnBrowse.Text = "&Browse"
         Me.btnBrowse.ThemeName = "Office2010Black"
+        CType(Me.btnBrowse.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnBrowse.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadGroupBox2
         '
@@ -445,6 +460,8 @@ Partial Class FormDataBackup
         Me.btnRestore.TabIndex = 0
         Me.btnRestore.Text = "Execute &Restore"
         Me.btnRestore.ThemeName = "Office2010Black"
+        CType(Me.btnRestore.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnRestore.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'Panel2
         '
@@ -480,6 +497,11 @@ Partial Class FormDataBackup
         Me.txDefaultCharset.Size = New System.Drawing.Size(212, 23)
         Me.txDefaultCharset.TabIndex = 12
         Me.txDefaultCharset.ThemeName = "Office2010Black"
+        CType(Me.txDefaultCharset.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Optional Charset"
+        CType(Me.txDefaultCharset.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txDefaultCharset.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CType(Me.txDefaultCharset.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txDefaultCharset.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txTargetDb
         '
@@ -493,6 +515,10 @@ Partial Class FormDataBackup
         Me.txTargetDb.Size = New System.Drawing.Size(212, 23)
         Me.txTargetDb.TabIndex = 12
         Me.txTargetDb.ThemeName = "Office2010Black"
+        CType(Me.txTargetDb.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Nama Target Database"
+        CType(Me.txTargetDb.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txTargetDb.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CType(Me.txTargetDb.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txErrLogPath
         '
@@ -507,6 +533,11 @@ Partial Class FormDataBackup
         Me.txErrLogPath.Size = New System.Drawing.Size(197, 23)
         Me.txErrLogPath.TabIndex = 12
         Me.txErrLogPath.ThemeName = "Office2010Black"
+        CType(Me.txErrLogPath.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Save Error Log"
+        CType(Me.txErrLogPath.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txErrLogPath.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CType(Me.txErrLogPath.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txErrLogPath.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnSaveLog
         '
@@ -520,6 +551,8 @@ Partial Class FormDataBackup
         Me.btnSaveLog.TabIndex = 7
         Me.btnSaveLog.Text = "&Save Log"
         Me.btnSaveLog.ThemeName = "Office2010Black"
+        CType(Me.btnSaveLog.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnSaveLog.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txDecryptPass
         '
@@ -532,6 +565,9 @@ Partial Class FormDataBackup
         Me.txDecryptPass.Size = New System.Drawing.Size(132, 23)
         Me.txDecryptPass.TabIndex = 12
         Me.txDecryptPass.ThemeName = "Office2010Black"
+        CType(Me.txDecryptPass.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txDecryptPass.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CType(Me.txDecryptPass.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadLabel5
         '
@@ -589,6 +625,8 @@ Partial Class FormDataBackup
         Me.btnSelectSQL.TabIndex = 0
         Me.btnSelectSQL.Text = "Select &SQL"
         Me.btnSelectSQL.ThemeName = "Office2010Black"
+        CType(Me.btnSelectSQL.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnSelectSQL.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txSQLFile
         '
@@ -602,6 +640,11 @@ Partial Class FormDataBackup
         Me.txSQLFile.Size = New System.Drawing.Size(588, 23)
         Me.txSQLFile.TabIndex = 8
         Me.txSQLFile.ThemeName = "Office2010Black"
+        CType(Me.txSQLFile.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Select Sql File"
+        CType(Me.txSQLFile.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txSQLFile.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txSQLFile.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txSQLFile.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txSettingKoneksi
         '
@@ -615,6 +658,11 @@ Partial Class FormDataBackup
         Me.txSettingKoneksi.Size = New System.Drawing.Size(589, 23)
         Me.txSettingKoneksi.TabIndex = 8
         Me.txSettingKoneksi.ThemeName = "Office2010Black"
+        CType(Me.txSettingKoneksi.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Format Koneksi (server;user;password;database)"
+        CType(Me.txSettingKoneksi.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txSettingKoneksi.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txSettingKoneksi.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txSettingKoneksi.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'chAutoSave
         '
@@ -648,6 +696,26 @@ Partial Class FormDataBackup
         Me.RadStatusStrippp.SetSpring(Me.lbCurrentTableName, False)
         Me.lbCurrentTableName.Text = "Table"
         Me.lbCurrentTableName.TextWrap = True
+        '
+        'pbtable
+        '
+        Me.pbtable.AutoSize = False
+        Me.pbtable.Bounds = New System.Drawing.Rectangle(0, 0, 102, 19)
+        Me.pbtable.GradientStyle = Telerik.WinControls.GradientStyles.Vista
+        Me.pbtable.Name = "pbtable"
+        Me.pbtable.SeparatorColor1 = System.Drawing.Color.White
+        Me.pbtable.SeparatorColor2 = System.Drawing.Color.White
+        Me.pbtable.SeparatorColor3 = System.Drawing.Color.White
+        Me.pbtable.SeparatorColor4 = System.Drawing.Color.White
+        Me.pbtable.SeparatorGradientAngle = 0
+        Me.pbtable.SeparatorGradientPercentage1 = 0.4!
+        Me.pbtable.SeparatorGradientPercentage2 = 0.6!
+        Me.pbtable.SeparatorNumberOfColors = 2
+        Me.RadStatusStrippp.SetSpring(Me.pbtable, False)
+        Me.pbtable.Step = 1
+        Me.pbtable.StepWidth = 5
+        Me.pbtable.SweepAngle = 90
+        Me.pbtable.Text = ""
         '
         'label2
         '
@@ -744,26 +812,6 @@ Partial Class FormDataBackup
         Me.bwExport.WorkerReportsProgress = True
         Me.bwExport.WorkerSupportsCancellation = True
         '
-        'pbtable
-        '
-        Me.pbtable.AutoSize = False
-        Me.pbtable.Bounds = New System.Drawing.Rectangle(0, 0, 102, 19)
-        Me.pbtable.GradientStyle = Telerik.WinControls.GradientStyles.Vista
-        Me.pbtable.Name = "pbtable"
-        Me.pbtable.SeparatorColor1 = System.Drawing.Color.White
-        Me.pbtable.SeparatorColor2 = System.Drawing.Color.White
-        Me.pbtable.SeparatorColor3 = System.Drawing.Color.White
-        Me.pbtable.SeparatorColor4 = System.Drawing.Color.White
-        Me.pbtable.SeparatorGradientAngle = 0
-        Me.pbtable.SeparatorGradientPercentage1 = 0.4!
-        Me.pbtable.SeparatorGradientPercentage2 = 0.6!
-        Me.pbtable.SeparatorNumberOfColors = 2
-        Me.RadStatusStrippp.SetSpring(Me.pbtable, False)
-        Me.pbtable.Step = 1
-        Me.pbtable.StepWidth = 5
-        Me.pbtable.SweepAngle = 90
-        Me.pbtable.Text = ""
-        '
         'FormDataBackup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -781,6 +829,7 @@ Partial Class FormDataBackup
         Me.Controls.Add(Me.chAutoSave)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormDataBackup"
@@ -788,7 +837,6 @@ Partial Class FormDataBackup
         '
         '
         Me.RootElement.ApplyShapeToControl = True
-        Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Export & Import Database"

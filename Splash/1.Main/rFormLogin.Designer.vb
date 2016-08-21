@@ -22,6 +22,7 @@ Partial Class rFormLogin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rFormLogin))
         Me.rTxUsername = New Telerik.WinControls.UI.RadTextBox()
         Me.rTxPassword = New Telerik.WinControls.UI.RadTextBox()
         Me.Button1 = New Telerik.WinControls.UI.RadButton()
@@ -45,6 +46,7 @@ Partial Class rFormLogin
         Me.rTxUsername.Size = New System.Drawing.Size(282, 23)
         Me.rTxUsername.TabIndex = 0
         Me.rTxUsername.ThemeName = "Office2010Black"
+        CType(Me.rTxUsername.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(8, 3, 0, 2)
         CType(Me.rTxUsername.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Username"
         CType(Me.rTxUsername.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.rTxUsername.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
@@ -63,6 +65,7 @@ Partial Class rFormLogin
         Me.rTxPassword.TabIndex = 1
         Me.rTxPassword.ThemeName = "Office2010Black"
         Me.rTxPassword.UseSystemPasswordChar = True
+        CType(Me.rTxPassword.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(8, 3, 0, 2)
         CType(Me.rTxPassword.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Password"
         CType(Me.rTxPassword.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.rTxPassword.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
@@ -79,6 +82,7 @@ Partial Class rFormLogin
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "&Sign In"
         Me.Button1.ThemeName = "Office2010Black"
+        CType(Me.Button1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Sign In"
         CType(Me.Button1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.Button1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -93,6 +97,7 @@ Partial Class rFormLogin
         Me.Button2.TabIndex = 3
         Me.Button2.Text = "&Cancel"
         Me.Button2.ThemeName = "Office2010Black"
+        CType(Me.Button2.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Cancel"
         CType(Me.Button2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.Button2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -117,6 +122,7 @@ Partial Class rFormLogin
         Me.Controls.Add(Me.rTxPassword)
         Me.Controls.Add(Me.rTxUsername)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "rFormLogin"

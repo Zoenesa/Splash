@@ -22,6 +22,7 @@ Partial Class rFormInisialisasiKoneksi
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rFormInisialisasiKoneksi))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Button3 = New Telerik.WinControls.UI.RadButton()
         Me.Button1 = New Telerik.WinControls.UI.RadButton()
@@ -53,7 +54,7 @@ Partial Class rFormInisialisasiKoneksi
         Me.TableLayoutPanel1.ColumnCount = 3
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.77946!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.22053!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Button3, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Button1, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Button2, 2, 0)
@@ -72,10 +73,11 @@ Partial Class rFormInisialisasiKoneksi
         Me.Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Button3.Location = New System.Drawing.Point(3, 3)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(182, 28)
+        Me.Button3.Size = New System.Drawing.Size(181, 28)
         Me.Button3.TabIndex = 0
         Me.Button3.Text = "Cek &Koneksi"
         Me.Button3.ThemeName = "Office2010Black"
+        CType(Me.Button3.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "Cek &Koneksi"
         CType(Me.Button3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.Button3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -86,12 +88,13 @@ Partial Class rFormInisialisasiKoneksi
         Me.Button1.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Button1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Button1.Location = New System.Drawing.Point(191, 3)
+        Me.Button1.Location = New System.Drawing.Point(190, 3)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(91, 28)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "&OK"
         Me.Button1.ThemeName = "Office2010Black"
+        CType(Me.Button1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&OK"
         CType(Me.Button1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.Button1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -102,12 +105,13 @@ Partial Class rFormInisialisasiKoneksi
         Me.Button2.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Button2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Button2.Location = New System.Drawing.Point(288, 3)
+        Me.Button2.Location = New System.Drawing.Point(287, 3)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(92, 28)
+        Me.Button2.Size = New System.Drawing.Size(93, 28)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "&Batal"
         Me.Button2.ThemeName = "Office2010Black"
+        CType(Me.Button2.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Batal"
         CType(Me.Button2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.Button2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -160,7 +164,7 @@ Partial Class rFormInisialisasiKoneksi
         CType(Me.txdbname.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Margin = New System.Windows.Forms.Padding(1)
         CType(Me.txdbname.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).ShouldPaint = False
         CType(Me.txdbname.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).ClipDrawing = False
-        CType(Me.txdbname.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).AngleTransform = 0.0!
+        CType(Me.txdbname.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).AngleTransform = 0!
         CType(Me.txdbname.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "database"
         CType(Me.txdbname.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.txdbname.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
@@ -285,6 +289,7 @@ Partial Class rFormInisialisasiKoneksi
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "rFormInisialisasiKoneksi"
