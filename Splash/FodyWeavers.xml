@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Weavers>
+  <Costura CreateTemporaryAssemblies='true' />
+  <Costura IncludeDebugSymbols='false' />
+  <Costura>
+    <IncludeAssemblies>
+      PasswordMeter
+      Setting.Config.Profile
+      TelerikCommon
+      Telerik.WinControls
+      Telerik.WinControls.UI
+      Telerik.WinControls.Themes.Office2010Black
+      Telerik.WinControls.GridView
+      Telerik.WinControls.RadDock
+    </IncludeAssemblies>
+  </Costura>
+  
+</Weavers>
