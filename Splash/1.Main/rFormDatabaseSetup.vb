@@ -1,8 +1,8 @@
 ﻿Imports Splash.mdlCom
 Imports MySql.Data.MySqlClient
-Imports Setting.IniFile
+'Imports Setting.IniFile
 Imports System.IO, Microsoft.VisualBasic.CompilerServices
-Imports AMS.Profile.Profile
+Imports Setting.Config.Profile.Profile
 Imports Telerik, Telerik.WinControls, Telerik.WinControls.UI
 
 Public Class rFormDatabaseSetup
@@ -19,8 +19,8 @@ Public Class rFormDatabaseSetup
 
     End Sub
 
-    Dim settingaplikasi As New Setting.IniFile(My.Application.Info.DirectoryPath & "\Config.ini")
-    Dim configFile As String
+    'Dim settingaplikasi As New Setting.IniFile(My.Application.Info.DirectoryPath & "\Config.ini")
+    'Dim configFile As String
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim flag As Boolean = mdlCom.CekKoneksiSql
@@ -60,11 +60,18 @@ Public Class rFormDatabaseSetup
 
     Private Sub ReadConfig()
 
-        txConStr.Text = settingaplikasi.ReadValue("General", "ConnectionName")
-        txdbName.Text = settingaplikasi.ReadValue("General", "DatabaseName")
-        txHost.Text = settingaplikasi.ReadValue("General", "Server")
-        txUser.Text = settingaplikasi.ReadValue("General", "User")
-        txPass.Text = settingaplikasi.ReadValue("General", "Password")
+        txConStr.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "ConnectionName")
+        txdbname.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "DatabaseName")
+        txHost.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "Server")
+        txUser.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "User")
+        txPass.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "Password")
+        txBackupFolderPath.Text = Me.SelectedProfile.GetValue("General", "BackupLocation")
+
+        'txConStr.Text = settingaplikasi.ReadValue("General", "ConnectionName")
+        'txdbName.Text = settingaplikasi.ReadValue("General", "DatabaseName")
+        'txHost.Text = settingaplikasi.ReadValue("General", "Server")
+        'txUser.Text = settingaplikasi.ReadValue("General", "User")
+        'txPass.Text = settingaplikasi.ReadValue("General", "Password")
 
     End Sub
 
@@ -72,9 +79,9 @@ Public Class rFormDatabaseSetup
 
         Me.RadPageView1.SelectedPage = RadPageView1.Pages.Item(0)
 
-        Me.MProfiles = New AMS.Profile.Profile(1 - 1) {}
+        Me.MProfiles = New Setting.Config.Profile.Profile(1 - 1) {}
 
-        Me.MProfiles(0) = New AMS.Profile.Ini
+        Me.MProfiles(0) = New Setting.Config.Profile.Ini
 
         cbProfile.Items.Add("INI--" & Me.MProfiles(0).Name)
 
@@ -97,10 +104,10 @@ Public Class rFormDatabaseSetup
 
     End Sub
 
-    Private MProfiles As AMS.Profile.Profile()
+    Private MProfiles As Setting.Config.Profile.Profile()
     Public Shared StrProfile As Integer
 
-    Private ReadOnly Property SelectedProfile As AMS.Profile.Profile
+    Private ReadOnly Property SelectedProfile As Setting.Config.Profile.Profile
         Get
             Return Me.MProfiles(Me.cbProfile.SelectedIndex)
         End Get

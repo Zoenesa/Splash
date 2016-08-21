@@ -1,4 +1,4 @@
-﻿Imports AMS.Profile.Profile
+﻿Imports Setting.Config.Profile.Profile
 Imports Telerik, Telerik.WinControls, Telerik.WinControls.UI
 
 Public Class rFormInisialisasiKoneksi
@@ -44,7 +44,7 @@ Public Class rFormInisialisasiKoneksi
 
     Private Sub LoadSetting()
 
-        Dim mprofile As AMS.Profile.Ini = New AMS.Profile.Ini
+        Dim mprofile As Setting.Config.Profile.Ini = New Setting.Config.Profile.Ini
 
         Dim strSection As String = Nothing
 
