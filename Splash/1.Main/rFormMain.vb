@@ -3,6 +3,7 @@ Imports Microsoft.VisualBasic.CompilerServices
 Imports MySql.Data.MySqlClient
 Imports System.Threading, System.Reflection
 Imports System.Text
+Imports System.IO
 
 Public Class rFormMain
 
@@ -22,7 +23,7 @@ Public Class rFormMain
     End Sub
 
     Public Shared Sub LoadIcon(ByVal flagIcon As Boolean, ByVal form As RadForm)
-        Dim FilePath As String = IO.Path.GetFullPath(Environment.CurrentDirectory & "\Resources\myIco.ico")
+        Dim FilePath As String = IO.Path.GetFullPath(Environment.CurrentDirectory & "\Images\myIco.ico")
         Dim ImgIcon As Icon = Nothing
         Dim mprofile As Setting.Config.Profile.Ini = New Setting.Config.Profile.Ini
         Dim Entry As String = "Icons"
@@ -32,15 +33,17 @@ Public Class rFormMain
             form.ShowIcon = True
             If Not (IO.File.Exists(FilePath)) Then
 
-                IO.Directory.CreateDirectory(Environment.CurrentDirectory & "\Resources\")
+                IO.Directory.CreateDirectory(Environment.CurrentDirectory & "\Images\")
+
+                SaveResource("myIco.ico", FilePath)
 
                 mprofile.SetValue("General", Entry, "myIco.ico")
 
-                SaveEmbedResource("myico.ico", FilePath)
+                'SaveEmbedResource("myico.ico", FilePath)
 
             Else
 
-                ImgIcon = New Icon(IO.Path.Combine(Environment.CurrentDirectory, "Resources", "myico.ico"))
+                ImgIcon = New Icon(IO.Path.Combine(Environment.CurrentDirectory, "Images", "myico.ico"))
 
                 form.Icon = ImgIcon
 
@@ -53,25 +56,54 @@ Public Class rFormMain
 
     End Sub
 
-    Public Shared Sub SaveEmbedResource(ByVal fileResc As String, ByVal fileLocation As String)
-        Dim rescFileStream As IO.Stream
-        Dim eAssembly As System.Reflection.Assembly = Assembly.GetExecutingAssembly
-        Dim mynameSpace As String = eAssembly.GetName().Name.ToString()
-        Try
-            Dim xCount As Integer
-            rescFileStream = eAssembly.GetManifestResourceStream(mynameSpace & "." & fileResc)
-            Dim writeResc As New IO.FileStream(fileLocation, IO.FileMode.OpenOrCreate)
-            For xCount = 1 To rescFileStream.Length
-                writeResc.WriteByte(rescFileStream.ReadByte)
-            Next
-            writeResc.Close()
-            rescFileStream.Close()
-        Catch nu As NullReferenceException
-            RadMessageBox.Show(nu.Message.ToString, "Error", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
-        Catch ex As Exception
-            RadMessageBox.Show(ex.Message.ToString, "Error", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
-        End Try
+    Public Shared Sub SaveResource(ByVal resName As String, filename As String)
+        ' Get a reference to the running application.
+        Dim assy As [Assembly] = [Assembly].GetExecutingAssembly()
+        ' Loop through each resource, looking for the image name (case-insensitive).
+        For Each resource As String In assy.GetManifestResourceNames()
+            If resource.ToLower().IndexOf(resName.ToLower) <> -1 Then
+                ' Get the embedded file from the assembly as a MemoryStream.
+                Using resourceStream As System.IO.Stream = assy.GetManifestResourceStream(resource)
+                    If resourceStream IsNot Nothing Then
+                        Using reader As New BinaryReader(resourceStream)
+                            ' Read the bytes from the input stream.
+                            Dim buffer() As Byte = reader.ReadBytes(CInt(resourceStream.Length))
+                            Using outputStream As New FileStream(filename, FileMode.Create)
+                                Using writer As New BinaryWriter(outputStream)
+                                    ' Write the bytes to the output stream.
+                                    writer.Write(buffer)
+                                End Using
+                            End Using
+                        End Using
+                    End If
+                End Using
+                Exit For
+            End If
+        Next resource
+        'Subrutin / Caller
+        'SaveToDisk([Resource Name with Extension-use the same case as used in the filename], [Output path with FileName & extension])
     End Sub
+
+    'Public Shared Sub SaveEmbedResource(ByVal fileResc As String, ByVal fileLocation As String)
+    '    Dim rescFileStream As IO.Stream
+    '    Dim eAssembly As System.Reflection.Assembly = Assembly.GetExecutingAssembly
+    '    Dim mynameSpace As String = eAssembly.GetName().Name.ToString()
+    '    Try
+    '        Dim xCount As Integer
+    '        rescFileStream = eAssembly.GetManifestResourceStream(mynameSpace & "." & fileResc)
+    '        Dim writeResc As New IO.FileStream(fileLocation, IO.FileMode.OpenOrCreate)
+    '        For xCount = 1 To rescFileStream.Length
+    '            writeResc.WriteByte(rescFileStream.ReadByte)
+    '        Next
+    '        writeResc.Close()
+    '        rescFileStream.Close()
+    '    Catch nu As NullReferenceException
+    '        RadMessageBox.Show(nu.Message.ToString, "Error", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
+    '    Catch ex As Exception
+    '        RadMessageBox.Show(ex.Message.ToString, "Error", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
+    '    End Try
+    'End Sub
+
     Public Sub KeluarAplikasi()
         Dim errMsg As String = ""
         Try
