@@ -1,7 +1,7 @@
 ﻿Imports Telerik, Telerik.WinControls, Telerik.WinControls.UI
 Imports Microsoft.VisualBasic.CompilerServices
 Imports MySql.Data.MySqlClient
-Imports System.Threading
+Imports System.Threading, System.Reflection
 Imports System.Text
 
 Public Class rFormMain
@@ -21,14 +21,57 @@ Public Class rFormMain
         Me.Logout()
     End Sub
 
-    Public Shared Sub LoadIcon(ByVal showIcon As Boolean)
-        Dim FilePath As String = ""
-        Dim ImgIcon As Image = Nothing
+    Public Shared Sub LoadIcon(ByVal flagIcon As Boolean, ByVal form As RadForm)
+        Dim FilePath As String = IO.Path.GetFullPath(Environment.CurrentDirectory & "\Resources\myIco.ico")
+        Dim ImgIcon As Icon = Nothing
+        Dim mprofile As Setting.Config.Profile.Ini = New Setting.Config.Profile.Ini
+        Dim Entry As String = "Icons"
+        Dim settingValue As String = "myico.ico"
 
+        If flagIcon Then
+            form.ShowIcon = True
+            If Not (IO.File.Exists(FilePath)) Then
+
+                IO.Directory.CreateDirectory(Environment.CurrentDirectory & "\Resources\")
+
+                mprofile.SetValue("General", Entry, "myIco.ico")
+
+                SaveEmbedResource("myico.ico", FilePath)
+
+            Else
+
+                ImgIcon = New Icon(IO.Path.Combine(Environment.CurrentDirectory, "Resources", "myico.ico"))
+
+                form.Icon = ImgIcon
+
+                mprofile.GetValue("General", Entry)
+
+            End If
+        Else
+            form.ShowIcon = False
+        End If
 
     End Sub
 
-
+    Public Shared Sub SaveEmbedResource(ByVal fileResc As String, ByVal fileLocation As String)
+        Dim rescFileStream As IO.Stream
+        Dim eAssembly As System.Reflection.Assembly = Assembly.GetExecutingAssembly
+        Dim mynameSpace As String = eAssembly.GetName().Name.ToString()
+        Try
+            Dim xCount As Integer
+            rescFileStream = eAssembly.GetManifestResourceStream(mynameSpace & "." & fileResc)
+            Dim writeResc As New IO.FileStream(fileLocation, IO.FileMode.OpenOrCreate)
+            For xCount = 1 To rescFileStream.Length
+                writeResc.WriteByte(rescFileStream.ReadByte)
+            Next
+            writeResc.Close()
+            rescFileStream.Close()
+        Catch nu As NullReferenceException
+            RadMessageBox.Show(nu.Message.ToString, "Error", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message.ToString, "Error", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+    End Sub
     Public Sub KeluarAplikasi()
         Dim errMsg As String = ""
         Try
@@ -143,9 +186,12 @@ Public Class rFormMain
     End Sub
 
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.SuspendLayout()
+        LoadIcon(True, Me)
         StatusVersi.Text = ""
         StatusVersi.Text = My.Application.Info.Title.ToString & " V" & My.Application.Info.Version.ToString
         RadDateAndTimeStatus.Text = DateTime.Now.ToString("dddd, dd-MM-yy")
+        Me.ResumeLayout()
         Call rMenuKoneksiDb_Click(Me, e)
         Timer1.Start()
         RadDateTimePicker1.Text = DateTime.Now.ToString("dd/MM/yyyy")

@@ -28,7 +28,6 @@ Partial Class rFormMain
         Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim SortDescriptor1 As Telerik.WinControls.Data.SortDescriptor = New Telerik.WinControls.Data.SortDescriptor()
         Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rFormMain))
         Me.rMainMenu = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuKoneksiDb = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuLogout = New Telerik.WinControls.UI.RadMenuItem()
@@ -71,6 +70,7 @@ Partial Class rFormMain
         Me.rMenuUserDataItem = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuChangePassword = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenudbUtility = New Telerik.WinControls.UI.RadMenuItem()
+        Me.RadMenuItemCompanyProfile = New Telerik.WinControls.UI.RadMenuItem()
         Me.rAbout = New Telerik.WinControls.UI.RadMenuItem()
         Me.rHelp = New Telerik.WinControls.UI.RadMenuItem()
         Me.rUpdate = New Telerik.WinControls.UI.RadMenuItem()
@@ -92,7 +92,6 @@ Partial Class rFormMain
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DocumentContainer1 = New Telerik.WinControls.UI.Docking.DocumentContainer()
         Me.ToolTabStrip1 = New Telerik.WinControls.UI.Docking.ToolTabStrip()
-        Me.RadMenuItemCompanyProfile = New Telerik.WinControls.UI.RadMenuItem()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -404,6 +403,11 @@ Partial Class rFormMain
         Me.rMenudbUtility.Name = "rMenudbUtility"
         Me.rMenudbUtility.Text = "Database U&tility"
         '
+        'RadMenuItemCompanyProfile
+        '
+        Me.RadMenuItemCompanyProfile.Name = "RadMenuItemCompanyProfile"
+        Me.RadMenuItemCompanyProfile.Text = "&Company Profile"
+        '
         'rAbout
         '
         Me.rAbout.AccessibleDescription = "&About"
@@ -692,11 +696,6 @@ Partial Class rFormMain
         Me.ToolTabStrip1.TabStripAlignment = Telerik.WinControls.UI.TabStripAlignment.Top
         Me.ToolTabStrip1.ThemeName = "Office2010Black"
         '
-        'RadMenuItemCompanyProfile
-        '
-        Me.RadMenuItemCompanyProfile.Name = "RadMenuItemCompanyProfile"
-        Me.RadMenuItemCompanyProfile.Text = "&Company Profile"
-        '
         'rFormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -706,7 +705,6 @@ Partial Class rFormMain
         Me.Controls.Add(Me.RadStatusStrip1)
         Me.Controls.Add(Me.RadMenu1)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.Name = "rFormMain"
         '
