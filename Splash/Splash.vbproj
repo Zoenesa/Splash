@@ -431,6 +431,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
+    <Content Include="Libs\Telerik.WinControls.dll" />
+    <Content Include="Libs\Telerik.WinControls.GridView.dll" />
+    <Content Include="Libs\Telerik.WinControls.RadDock.dll" />
+    <Content Include="Libs\Telerik.WinControls.Themes.Office2010Black.dll" />
+    <Content Include="Libs\Telerik.WinControls.UI.dll" />
+    <Content Include="Libs\TelerikCommon.dll" />
     <Content Include="Resources\160820004354.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
