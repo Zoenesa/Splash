@@ -3,6 +3,7 @@ Imports MySql.Data.MySqlClient
 'Imports Setting.IniFile
 Imports System.IO, Microsoft.VisualBasic.CompilerServices
 Imports Setting.Config.Profile.Profile
+Imports System.Windows.Forms
 Imports Telerik, Telerik.WinControls, Telerik.WinControls.UI
 
 Public Class rFormDatabaseSetup
@@ -194,7 +195,7 @@ Public Class rFormDatabaseSetup
         OpenFile.InitialDirectory = My.Application.Info.DirectoryPath & "\backups\"
         Dim newfiledb As String
 
-        If OpenFile.ShowDialog = Windows.Forms.DialogResult.OK Then
+        If OpenFile.ShowDialog = System.Windows.Forms.DialogResult.OK Then
             newfiledb = OpenFile.FileName
             Environment.SetEnvironmentVariable("sql_Res", newfiledb, EnvironmentVariableTarget.User)
         End If
@@ -325,7 +326,7 @@ Public Class rFormDatabaseSetup
         nOFDialog.Description = "Pilih Folder backup"
         nOFDialog.ShowNewFolderButton = True
 
-        If nOFDialog.ShowDialog = Windows.Forms.DialogResult.OK Then
+        If nOFDialog.ShowDialog = System.Windows.Forms.DialogResult.OK Then
             txBackupFolderPath.Text = nOFDialog.SelectedPath
         End If
 

@@ -45,7 +45,7 @@ Public Class rFormGantiPassword
         Beep()
         Dim result As DialogResult = RadMessageBox.Show("Anda akan merubah password lama dengan password baru!" & vbNewLine & _
                                                         "Untuk menyimpan pilih Yes, No untuk mengulang?", "Konfirmasi", MessageBoxButtons.YesNo, RadMessageIcon.Question, MessageBoxDefaultButton.Button1)
-        If result = Windows.Forms.DialogResult.Yes Then
+        If result = System.Windows.Forms.DialogResult.Yes Then
             Dim comon As New common
             Dim errMsg As String = ""
             If comon.passwordOke(errMsg, txoldPass.Text.Trim(), mdlCom.UserLogin) Then

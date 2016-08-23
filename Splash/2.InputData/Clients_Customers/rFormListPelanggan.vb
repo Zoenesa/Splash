@@ -162,7 +162,7 @@ Public Class rFormListPelanggan
                 Exit Select
         End Select
         If (e.Modifiers = Keys.Alt) AndAlso e.KeyCode = Keys.C Then
-            Me.DialogResult = Windows.Forms.DialogResult.No
+            Me.DialogResult = System.Windows.Forms.DialogResult.No
             Me.Close()
         End If
        

@@ -61,7 +61,7 @@ Public Class rFormLogin
             })
         ElseIf (errmsg = "0") Then
             If (retmsg = "ProfileNull") Then
-                Me.DialogResult = Windows.Forms.DialogResult.Yes
+                Me.DialogResult = System.Windows.Forms.DialogResult.Yes
             Else
                 If retmsg = "Password tidak sesuai." Then
                     Dim num As Integer = DirectCast(RadMessageBox.Show(retmsg, "Perhatian", MessageBoxButtons.OK, RadMessageIcon.Exclamation, MessageBoxDefaultButton.Button1), Integer)
@@ -88,7 +88,7 @@ Public Class rFormLogin
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        DialogResult = Windows.Forms.DialogResult.Cancel
+        DialogResult = System.Windows.Forms.DialogResult.Cancel
         rFormInisialisasiKoneksi.PilihDb(False)
         Me.Dispose()
 

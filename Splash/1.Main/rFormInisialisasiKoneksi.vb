@@ -36,9 +36,9 @@ Public Class rFormInisialisasiKoneksi
 
     Private Sub FrmInisialisasiKoneksi_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         If Me.isOk Then
-            Me.DialogResult = Windows.Forms.DialogResult.OK
+            Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Else
-            Me.DialogResult = Windows.Forms.DialogResult.Cancel
+            Me.DialogResult = System.Windows.Forms.DialogResult.Cancel
         End If
     End Sub
 

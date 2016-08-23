@@ -31,7 +31,7 @@ Public Class rFormPermission
                     Beep()
                     Dim Result As DialogResult = RadMessageBox.Show("Password Administrator Anda Salah!                 " & vbNewLine & _
                     "Apakah anda ingin mengulang lagi?                 ", "Perhatian", MessageBoxButtons.YesNo, RadMessageIcon.Question)
-                    If Result = Windows.Forms.DialogResult.Yes Then
+                    If Result = System.Windows.Forms.DialogResult.Yes Then
                         rTxPassword.Focus()
                         rTxPassword.SelectAll()
                         sqlreader.Close()

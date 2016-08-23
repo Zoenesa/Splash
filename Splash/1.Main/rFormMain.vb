@@ -109,7 +109,7 @@ Public Class rFormMain
         Try
             If mdlCom.CloseDb(errMsg) Then
                 KeluarAplikasi()
-            ElseIf RadMessageBox.Show("Gagal menutup koneksi database." & errMsg & vbNewLine & "Apakah anda tetap keluar?", "Konfirmasi", MessageBoxButtons.OKCancel, RadMessageIcon.Question, MessageBoxDefaultButton.Button2) <> Windows.Forms.DialogResult.OK Then
+            ElseIf RadMessageBox.Show("Gagal menutup koneksi database." & errMsg & vbNewLine & "Apakah anda tetap keluar?", "Konfirmasi", MessageBoxButtons.OKCancel, RadMessageIcon.Question, MessageBoxDefaultButton.Button2) <> System.Windows.Forms.DialogResult.OK Then
                 KeluarAplikasi()
             End If
         Catch ex As Exception
@@ -121,15 +121,15 @@ Public Class rFormMain
     Public Sub BukaPilihanKoneksi()
         If mdlCom.IsLogin Then
             Beep()
-            If (RadMessageBox.Show("Dengan Memilih database lain, session ini akan otomatis logout," & vbNewLine & "Apakah anda ingin logout?", "Perhatian", MessageBoxButtons.YesNo, RadMessageIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes) AndAlso Me.Logout Then
+            If (RadMessageBox.Show("Dengan Memilih database lain, session ini akan otomatis logout," & vbNewLine & "Apakah anda ingin logout?", "Perhatian", MessageBoxButtons.YesNo, RadMessageIcon.Question, MessageBoxDefaultButton.Button2) = System.Windows.Forms.DialogResult.Yes) AndAlso Me.Logout Then
                 Dim formPilih As New rFormInisialisasiKoneksi
-                If (formPilih.ShowDialog() = Windows.Forms.DialogResult.OK) Then
+                If (formPilih.ShowDialog() = System.Windows.Forms.DialogResult.OK) Then
                     Me.SetMenu()
                 End If
                 formPilih.Dispose()
                 formPilih = Nothing
             End If
-        ElseIf (My.Forms.rFormInisialisasiKoneksi.ShowDialog() = Windows.Forms.DialogResult.OK) Then
+        ElseIf (My.Forms.rFormInisialisasiKoneksi.ShowDialog() = System.Windows.Forms.DialogResult.OK) Then
             Me.SetMenu()
         End If
     End Sub
@@ -248,7 +248,7 @@ Public Class rFormMain
             Dim Result As DialogResult = RadMessageBox.Show("Anda memerlukan Permission dari Administrator!" & vbNewLine & _
                                                             "Dengan memilih Yes, Silahkan hubungi Administrator untuk input Permission" & vbNewLine _
                                                             & "Pilih No untuk membatalkan", "Perhatian", MessageBoxButtons.OKCancel, RadMessageIcon.Question, MessageBoxDefaultButton.Button2)
-            If Result = Windows.Forms.DialogResult.Cancel Then
+            If Result = System.Windows.Forms.DialogResult.Cancel Then
                 Return
             Else
                 Dim rShowPermission As New rFormPermission
@@ -287,7 +287,7 @@ Public Class rFormMain
             Dim Result As DialogResult = RadMessageBox.Show("Anda memerlukan Permission dari Administrator!" & vbNewLine & _
                                                                        "Dengan memilih Yes, Silahkan hubungi Administrator untuk input Permission" & vbNewLine _
                                                                        & "Pilih No untuk membatalkan", "Perhatian", MessageBoxButtons.OKCancel, RadMessageIcon.Question, MessageBoxDefaultButton.Button2)
-            If Result = Windows.Forms.DialogResult.Cancel Then
+            If Result = System.Windows.Forms.DialogResult.Cancel Then
                 Return
             Else
                 Dim rShowPermission As New rFormPermission
@@ -553,5 +553,9 @@ Public Class rFormMain
         formCompany.ModeBuka(False)
         formCompany.Dispose()
         formCompany = Nothing
+    End Sub
+
+    Private Sub rMenudbUtility_Click(sender As Object, e As EventArgs) Handles rMenudbUtility.Click
+
     End Sub
 End Class

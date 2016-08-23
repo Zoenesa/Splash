@@ -234,7 +234,7 @@ Public Class FormDataBackup
         Dim dialog As New SaveFileDialog With {
             .Filter = "txt|*.txt|*.*|*.*", _
             .Title = "Save log File", .FileName = "Restore Error Log.txt"}
-        If (dialog.ShowDialog = Windows.Forms.DialogResult.OK) Then
+        If (dialog.ShowDialog = System.Windows.Forms.DialogResult.OK) Then
             Me.txErrLogPath.Text = dialog.FileName
         End If
 

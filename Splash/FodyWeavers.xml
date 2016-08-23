@@ -4,6 +4,7 @@
   <Costura IncludeDebugSymbols='false' />
   <Costura>
     <IncludeAssemblies>
+      FastColoredTextBox
       PasswordMeter
       Setting.Config.Profile
       TelerikCommon

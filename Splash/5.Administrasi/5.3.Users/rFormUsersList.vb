@@ -240,7 +240,7 @@ Public Class rFormUsersList
         Beep()
         Dim Result As DialogResult = RadMessageBox.Show("Anda yakin akan menghapus record database dipilih.?", "Konfirmasi Hapus", MessageBoxButtons.YesNo, RadMessageIcon.Question, MessageBoxDefaultButton.Button2)
         Try
-            If Result = Windows.Forms.DialogResult.Yes Then
+            If Result = System.Windows.Forms.DialogResult.Yes Then
                 Dim num As Integer = 0
                 Dim command As New MySqlCommand With {
                     .Connection = mdlCom.vConn}
