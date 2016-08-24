@@ -963,9 +963,9 @@ Partial Class FormAdvancedSqlBackup
         Me.RadPageViewPage5.Controls.Add(Me.Panel6)
         Me.RadPageViewPage5.Controls.Add(Me.TableLayoutPanel4)
         Me.RadPageViewPage5.ItemSize = New System.Drawing.SizeF(124.0!, 30.0!)
-        Me.RadPageViewPage5.Location = New System.Drawing.Point(7, 35)
+        Me.RadPageViewPage5.Location = New System.Drawing.Point(8, 36)
         Me.RadPageViewPage5.Name = "RadPageViewPage5"
-        Me.RadPageViewPage5.Size = New System.Drawing.Size(615, 396)
+        Me.RadPageViewPage5.Size = New System.Drawing.Size(613, 394)
         Me.RadPageViewPage5.Text = "Sql Content Viewer"
         '
         'Panel6
@@ -978,7 +978,7 @@ Partial Class FormAdvancedSqlBackup
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel6.Location = New System.Drawing.Point(0, 0)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(615, 34)
+        Me.Panel6.Size = New System.Drawing.Size(613, 34)
         Me.Panel6.TabIndex = 3
         '
         'Button4
@@ -1041,7 +1041,7 @@ Partial Class FormAdvancedSqlBackup
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(614, 359)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(612, 357)
         Me.TableLayoutPanel4.TabIndex = 2
         '
         'FastColoredTextBox1
@@ -1049,7 +1049,7 @@ Partial Class FormAdvancedSqlBackup
         Me.FastColoredTextBox1.AutoCompleteBrackets = True
         Me.FastColoredTextBox1.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
         Me.FastColoredTextBox1.AutoIndentCharsPatterns = ""
-        Me.FastColoredTextBox1.AutoScrollMinSize = New System.Drawing.Size(230, 43)
+        Me.FastColoredTextBox1.AutoScrollMinSize = New System.Drawing.Size(6, 17)
         Me.FastColoredTextBox1.BackBrush = Nothing
         Me.FastColoredTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.FastColoredTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
@@ -1072,10 +1072,8 @@ Partial Class FormAdvancedSqlBackup
         Me.FastColoredTextBox1.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.FastColoredTextBox1.ShowLineNumbers = False
         Me.FastColoredTextBox1.ShowScrollBars = False
-        Me.FastColoredTextBox1.Size = New System.Drawing.Size(608, 320)
+        Me.FastColoredTextBox1.Size = New System.Drawing.Size(606, 318)
         Me.FastColoredTextBox1.TabIndex = 1
-        Me.FastColoredTextBox1.Text = "SELECT & FROM DATATABLE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE tableName = 'Baru'" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "AND tabletanggal = '12 Mei 201" &
-    "6'"
         Me.FastColoredTextBox1.Zoom = 100
         '
         'Panel5
@@ -1083,9 +1081,9 @@ Partial Class FormAdvancedSqlBackup
         Me.TableLayoutPanel4.SetColumnSpan(Me.Panel5, 2)
         Me.Panel5.Controls.Add(Me.tsFile)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel5.Location = New System.Drawing.Point(3, 329)
+        Me.Panel5.Location = New System.Drawing.Point(3, 327)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(608, 27)
+        Me.Panel5.Size = New System.Drawing.Size(606, 27)
         Me.Panel5.TabIndex = 3
         '
         'tsFile
@@ -1094,7 +1092,7 @@ Partial Class FormAdvancedSqlBackup
         Me.tsFile.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tsFile.Location = New System.Drawing.Point(0, 0)
         Me.tsFile.Name = "tsFile"
-        Me.tsFile.Size = New System.Drawing.Size(608, 27)
+        Me.tsFile.Size = New System.Drawing.Size(606, 27)
         Me.tsFile.TabIndex = 2
         Me.tsFile.Text = "Status"
         '
