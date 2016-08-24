@@ -445,6 +445,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
+    <Content Include="Libs\FastColoredTextBox.dll" />
     <Content Include="Libs\Telerik.WinControls.dll" />
     <Content Include="Libs\Telerik.WinControls.GridView.dll" />
     <Content Include="Libs\Telerik.WinControls.RadDock.dll" />

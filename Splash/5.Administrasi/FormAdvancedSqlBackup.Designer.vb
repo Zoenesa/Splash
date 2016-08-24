@@ -23,8 +23,8 @@ Partial Class FormAdvancedSqlBackup
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAdvancedSqlBackup))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.chAutoSave = New Telerik.WinControls.UI.RadCheckBox()
@@ -299,7 +299,7 @@ Partial Class FormAdvancedSqlBackup
         Me.RadPageView1.Location = New System.Drawing.Point(0, 0)
         Me.RadPageView1.Name = "RadPageView1"
         Me.RadPageView1.Padding = New System.Windows.Forms.Padding(2)
-        Me.RadPageView1.SelectedPage = Me.RadPageViewPage1
+        Me.RadPageView1.SelectedPage = Me.RadPageViewPage3
         Me.RadPageView1.Size = New System.Drawing.Size(629, 438)
         Me.RadPageView1.TabIndex = 0
         Me.RadPageView1.Text = "RadPageView1"
@@ -569,10 +569,10 @@ Partial Class FormAdvancedSqlBackup
         Me.RadDropDownList1.AutoSize = False
         Me.RadDropDownList1.BackColor = System.Drawing.Color.Transparent
         Me.RadDropDownList1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RadListDataItem1.Text = "Normal"
-        RadListDataItem2.Text = "Revisions"
-        Me.RadDropDownList1.Items.Add(RadListDataItem1)
-        Me.RadDropDownList1.Items.Add(RadListDataItem2)
+        RadListDataItem3.Text = "Normal"
+        RadListDataItem4.Text = "Revisions"
+        Me.RadDropDownList1.Items.Add(RadListDataItem3)
+        Me.RadDropDownList1.Items.Add(RadListDataItem4)
         Me.RadDropDownList1.Location = New System.Drawing.Point(6, 6)
         Me.RadDropDownList1.Name = "RadDropDownList1"
         Me.RadDropDownList1.NullText = "Row Export Mode"
@@ -772,7 +772,7 @@ Partial Class FormAdvancedSqlBackup
         Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(143.0!, 30.0!)
         Me.RadPageViewPage3.Location = New System.Drawing.Point(8, 36)
         Me.RadPageViewPage3.Name = "RadPageViewPage3"
-        Me.RadPageViewPage3.Size = New System.Drawing.Size(613, 388)
+        Me.RadPageViewPage3.Size = New System.Drawing.Size(613, 394)
         Me.RadPageViewPage3.Text = "Exclude Tables & Rows"
         '
         'RadCheckedListBox1
@@ -851,7 +851,7 @@ Partial Class FormAdvancedSqlBackup
         Me.RadPageViewPage4.ItemSize = New System.Drawing.SizeF(101.0!, 30.0!)
         Me.RadPageViewPage4.Location = New System.Drawing.Point(8, 36)
         Me.RadPageViewPage4.Name = "RadPageViewPage4"
-        Me.RadPageViewPage4.Size = New System.Drawing.Size(613, 388)
+        Me.RadPageViewPage4.Size = New System.Drawing.Size(613, 394)
         Me.RadPageViewPage4.Text = "Query Browser"
         '
         'DataGridView1
@@ -862,7 +862,7 @@ Partial Class FormAdvancedSqlBackup
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(1, 141)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(612, 247)
+        Me.DataGridView1.Size = New System.Drawing.Size(612, 253)
         Me.DataGridView1.TabIndex = 3
         '
         'TableLayoutPanel1
@@ -871,7 +871,7 @@ Partial Class FormAdvancedSqlBackup
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.30376!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.69624!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.RadSpinEditor1, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.RadButton7, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.RadTextBox2, 0, 1)
@@ -889,13 +889,13 @@ Partial Class FormAdvancedSqlBackup
         Me.RadSpinEditor1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RadSpinEditor1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadSpinEditor1.Increment = New Decimal(New Integer() {150, 0, 0, 0})
-        Me.RadSpinEditor1.Location = New System.Drawing.Point(515, 4)
+        Me.RadSpinEditor1.Location = New System.Drawing.Point(514, 4)
         Me.RadSpinEditor1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 3)
         Me.RadSpinEditor1.Maximum = New Decimal(New Integer() {800, 0, 0, 0})
         Me.RadSpinEditor1.Minimum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.RadSpinEditor1.Name = "RadSpinEditor1"
         Me.RadSpinEditor1.Padding = New System.Windows.Forms.Padding(8, 1, 0, 1)
-        Me.RadSpinEditor1.Size = New System.Drawing.Size(94, 23)
+        Me.RadSpinEditor1.Size = New System.Drawing.Size(95, 23)
         Me.RadSpinEditor1.TabIndex = 4
         Me.RadSpinEditor1.TabStop = False
         Me.RadSpinEditor1.ThemeName = "Office2010Black"
@@ -953,7 +953,7 @@ Partial Class FormAdvancedSqlBackup
         Me.RadLabel8.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadLabel8.Location = New System.Drawing.Point(98, 3)
         Me.RadLabel8.Name = "RadLabel8"
-        Me.RadLabel8.Size = New System.Drawing.Size(411, 24)
+        Me.RadLabel8.Size = New System.Drawing.Size(410, 24)
         Me.RadLabel8.TabIndex = 0
         Me.RadLabel8.Text = "[Ctrl] + [Enter] = Execute SQL,  [ESC] = Clear      Default Column Width:"
         Me.RadLabel8.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft

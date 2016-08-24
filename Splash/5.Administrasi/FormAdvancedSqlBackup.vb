@@ -4,8 +4,10 @@ Imports System.ComponentModel
 Imports System.Data
 Imports System.Drawing
 Imports System.Text
+Imports System.Threading
 Imports System.Windows.Forms
 Imports FastColoredTextBoxNS
+Imports MySql.Data.MySqlClient
 Imports Telerik
 Imports Telerik.WinControls
 Imports Telerik.WinControls.UI
@@ -25,7 +27,7 @@ Public Class FormAdvancedSqlBackup
         Telerik.WinControls.RadMessageBox.ShowInTaskbar = False
         Telerik.WinControls.RadMessageBox.ThemeName = rFormMain.Office2010BlackTheme1.ThemeName
 
-        Me.Text += ",MySqlBackup.DLL Version: " + MySql.Data.MySqlClient.MySqlBackup.Version
+        Me.Text += " ,MySqlBackup.DLL Version: " + MySql.Data.MySqlClient.MySqlBackup.Version
 
         LoadSetting()
 
@@ -209,5 +211,32 @@ Public Class FormAdvancedSqlBackup
         tsFile.Text = ""
     End Sub
 
+    Private Sub RadButton3_Click(sender As Object, e As EventArgs) Handles RadButton3.Click
+        Using conn As MySqlConnection = New MySqlConnection(ModuleBackupRestore.SqldbConnectionString)
+            Using cmd As MySqlCommand = New MySqlCommand()
+                cmd.Connection = conn
+                conn.Open()
+                Dim dt As DataTable = QueryExpress.GetTable(cmd, "show tables")
+                RadCheckedListBox1.Items.Clear()
+                For Each dr As DataRow In dt.Rows
+                    RadCheckedListBox1.Items.Add(dr(0) & "", False)
+                Next
+            End Using
+        End Using
+        RadLabel4.Text = "Total Tables: " & RadCheckedListBox1.Items.Count
+    End Sub
 
+    Private Sub RadButton4_Click(sender As Object, e As EventArgs) Handles RadButton4.Click
+
+        RadCheckedListBox1.CheckAllItems()
+
+    End Sub
+
+    Private Sub RadButton5_Click(sender As Object, e As EventArgs) Handles RadButton5.Click
+
+
+
+
+
+    End Sub
 End Class
