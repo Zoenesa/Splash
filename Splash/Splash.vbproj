@@ -301,6 +301,7 @@
     <Compile Include="1.Main\rFormLogin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="_.Module\ModuleBackupRestore.vb" />
     <Compile Include="_.Module\PassMeter.vb" />
     <Compile Include="_.Module\RadFormExportProgress.Designer.vb">
       <DependentUpon>RadFormExportProgress.vb</DependentUpon>

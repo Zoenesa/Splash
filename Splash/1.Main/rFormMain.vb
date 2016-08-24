@@ -556,6 +556,7 @@ Public Class rFormMain
     End Sub
 
     Private Sub rMenudbUtility_Click(sender As Object, e As EventArgs) Handles rMenudbUtility.Click
-
+        Dim advDBbackup As New FormAdvancedSqlBackup
+        BukaFormChild(advDBbackup)
     End Sub
 End Class
