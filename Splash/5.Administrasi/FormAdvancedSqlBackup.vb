@@ -28,7 +28,6 @@ Public Class FormAdvancedSqlBackup
         Telerik.WinControls.RadMessageBox.ThemeName = rFormMain.Office2010BlackTheme1.ThemeName
 
         Me.Text += " ,MySqlBackup.DLL Version: " + MySql.Data.MySqlClient.MySqlBackup.Version
-
         'DataGridView1.VirtualMode = True
         RadGridView1.VirtualMode = True
 
@@ -337,7 +336,6 @@ Public Class FormAdvancedSqlBackup
             For Each dc As DataColumn In sqlDT.Columns
                 Dim dgvTB As New DataGridViewTextBoxColumn()
                 dgvTB.HeaderText = dc.ColumnName
-
                 'DataGridView1.Columns.Add(dgvTB)
 
                 RadGridView1.Columns.Add(dgvTB.Name, dgvTB.HeaderText)
@@ -350,20 +348,20 @@ Public Class FormAdvancedSqlBackup
                     dgvTB.Width = RadSpinEditor1.Value
                 End If
             Next
-
             'DataGridView1.RowTemplate.Height = 25
 
             If sqlDT.Rows.Count > 0 Then
-
                 'DataGridView1.Rows.Add(sqlDT.Rows.Count)
-
                 For Each gridrow As DataRow In sqlDT.Rows
                     RadGridView1.Rows.Add(gridrow)
                 Next
 
                 RadGridView1.BestFitColumns()
-            End If
 
+                Dim rwCount As String = sqlDT.Rows.Count
+                RadLabel1.Text = ""
+                RadLabel1.Text = String.Format("Total Rows: {0} on Table: {1}", rwCount, sqlDT.TableName.ToString)
+            End If
             'dataGridView1.ClearSelection()
             RadGridView1.ClearSelection()
 
@@ -387,7 +385,6 @@ Public Class FormAdvancedSqlBackup
             dgvTB.HeaderText = "Error"
 
             'DataGridView1.Columns.Add(dgvTB)
-
             'DataGridView1.Rows.Add(1)
 
             RadGridView1.Columns.Add(dgvTB.Name)

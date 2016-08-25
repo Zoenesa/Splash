@@ -23,9 +23,9 @@ Partial Class FormAdvancedSqlBackup
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAdvancedSqlBackup))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.chAutoSave = New Telerik.WinControls.UI.RadCheckBox()
@@ -93,6 +93,7 @@ Partial Class FormAdvancedSqlBackup
         Me.FastColoredTextBox1 = New FastColoredTextBoxNS.FastColoredTextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.tsFile = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
         Me.Panel1.SuspendLayout()
         CType(Me.chAutoSave, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txPilihFileSql, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -158,6 +159,7 @@ Partial Class FormAdvancedSqlBackup
         CType(Me.FastColoredTextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         CType(Me.tsFile, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -305,7 +307,7 @@ Partial Class FormAdvancedSqlBackup
         Me.RadPageView1.Location = New System.Drawing.Point(0, 0)
         Me.RadPageView1.Name = "RadPageView1"
         Me.RadPageView1.Padding = New System.Windows.Forms.Padding(2)
-        Me.RadPageView1.SelectedPage = Me.RadPageViewPage1
+        Me.RadPageView1.SelectedPage = Me.RadPageViewPage4
         Me.RadPageView1.Size = New System.Drawing.Size(629, 438)
         Me.RadPageView1.TabIndex = 0
         Me.RadPageView1.Text = "RadPageView1"
@@ -611,10 +613,10 @@ Partial Class FormAdvancedSqlBackup
         Me.RadDropDownList1.AutoSize = False
         Me.RadDropDownList1.BackColor = System.Drawing.Color.Transparent
         Me.RadDropDownList1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RadListDataItem1.Text = "Normal"
-        RadListDataItem2.Text = "Revisions"
-        Me.RadDropDownList1.Items.Add(RadListDataItem1)
-        Me.RadDropDownList1.Items.Add(RadListDataItem2)
+        RadListDataItem3.Text = "Normal"
+        RadListDataItem4.Text = "Revisions"
+        Me.RadDropDownList1.Items.Add(RadListDataItem3)
+        Me.RadDropDownList1.Items.Add(RadListDataItem4)
         Me.RadDropDownList1.Location = New System.Drawing.Point(9, 267)
         Me.RadDropDownList1.Name = "RadDropDownList1"
         Me.RadDropDownList1.NullText = "Row Export Mode"
@@ -841,6 +843,7 @@ Partial Class FormAdvancedSqlBackup
         '
         'RadPageViewPage4
         '
+        Me.RadPageViewPage4.Controls.Add(Me.RadLabel1)
         Me.RadPageViewPage4.Controls.Add(Me.RadGridView1)
         Me.RadPageViewPage4.Controls.Add(Me.TableLayoutPanel1)
         Me.RadPageViewPage4.ItemSize = New System.Drawing.SizeF(101.0!, 30.0!)
@@ -866,10 +869,10 @@ Partial Class FormAdvancedSqlBackup
         Me.RadGridView1.MasterTemplate.ClipboardPasteMode = Telerik.WinControls.UI.GridViewClipboardPasteMode.EnableWithNotifications
         Me.RadGridView1.MasterTemplate.MultiSelect = True
         Me.RadGridView1.MasterTemplate.SummaryRowsBottom.Add(New Telerik.WinControls.UI.GridViewSummaryRowItem(New Telerik.WinControls.UI.GridViewSummaryItem(-1) {}))
-        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition3
+        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition2
         Me.RadGridView1.Name = "RadGridView1"
         Me.RadGridView1.ReadOnly = True
-        Me.RadGridView1.Size = New System.Drawing.Size(606, 258)
+        Me.RadGridView1.Size = New System.Drawing.Size(606, 238)
         Me.RadGridView1.TabIndex = 4
         Me.RadGridView1.Text = "RadGridView1"
         Me.RadGridView1.ThemeName = "Office2010Black"
@@ -1073,6 +1076,7 @@ Partial Class FormAdvancedSqlBackup
         Me.FastColoredTextBox1.CommentPrefix = "--"
         Me.FastColoredTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.FastColoredTextBox1.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.FastColoredTextBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FastColoredTextBox1.Font = New System.Drawing.Font("Courier New", 9.0!)
         Me.FastColoredTextBox1.IsReplaceMode = False
         Me.FastColoredTextBox1.Language = FastColoredTextBoxNS.Language.SQL
@@ -1084,7 +1088,7 @@ Partial Class FormAdvancedSqlBackup
         Me.TableLayoutPanel4.SetRowSpan(Me.FastColoredTextBox1, 2)
         Me.FastColoredTextBox1.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.FastColoredTextBox1.ShowLineNumbers = False
-        Me.FastColoredTextBox1.Size = New System.Drawing.Size(606, 104)
+        Me.FastColoredTextBox1.Size = New System.Drawing.Size(606, 318)
         Me.FastColoredTextBox1.TabIndex = 1
         Me.FastColoredTextBox1.Zoom = 100
         '
@@ -1107,6 +1111,15 @@ Partial Class FormAdvancedSqlBackup
         Me.tsFile.Size = New System.Drawing.Size(606, 27)
         Me.tsFile.TabIndex = 2
         Me.tsFile.Text = "Status"
+        '
+        'RadLabel1
+        '
+        Me.RadLabel1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadLabel1.Location = New System.Drawing.Point(1, 374)
+        Me.RadLabel1.Name = "RadLabel1"
+        Me.RadLabel1.Size = New System.Drawing.Size(82, 19)
+        Me.RadLabel1.TabIndex = 5
+        Me.RadLabel1.Text = "Total Rows : 0"
         '
         'FormAdvancedSqlBackup
         '
@@ -1184,6 +1197,7 @@ Partial Class FormAdvancedSqlBackup
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnRefresh, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadPageViewPage4.ResumeLayout(False)
+        Me.RadPageViewPage4.PerformLayout()
         CType(Me.RadGridView1.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
@@ -1198,6 +1212,7 @@ Partial Class FormAdvancedSqlBackup
         CType(Me.FastColoredTextBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         CType(Me.tsFile, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -1270,5 +1285,6 @@ Partial Class FormAdvancedSqlBackup
     Friend WithEvents chExcludedb As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents txSqlCommandText As FastColoredTextBoxNS.FastColoredTextBox
     Friend WithEvents RadGridView1 As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents RadLabel1 As Telerik.WinControls.UI.RadLabel
 End Class
 
