@@ -55,6 +55,10 @@
     <ApplicationIcon>Resources\myIco.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CodeLibs, Version=2.1.3.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\CodeLibs.dll</HintPath>
+    </Reference>
     <Reference Include="FastColoredTextBox">
       <HintPath>..\..\..\..\Visual Studio 2013\Projects\GUIDPOGOKonfigurasi\GUIDPOGOKonfigurasi\bin\Debug\FastColoredTextBox.dll</HintPath>
     </Reference>

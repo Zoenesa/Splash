@@ -232,12 +232,11 @@ Public Class FormDataBackup
 
     Private Sub btnSaveLog_Click(sender As Object, e As EventArgs) Handles btnSaveLog.Click
         Dim dialog As New SaveFileDialog With {
-            .Filter = "txt|*.txt|*.*|*.*", _
+            .Filter = "txt|*.txt|*.*|*.*",
             .Title = "Save log File", .FileName = "Restore Error Log.txt"}
         If (dialog.ShowDialog = System.Windows.Forms.DialogResult.OK) Then
             Me.txErrLogPath.Text = dialog.FileName
         End If
-
     End Sub
 
     Private Sub chAutoSave_CheckStateChanged(sender As Object, e As EventArgs) Handles chAutoSave.CheckStateChanged

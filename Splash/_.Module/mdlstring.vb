@@ -2,6 +2,7 @@
 Imports System.Threading
 Imports System.Security.Cryptography
 Imports System.Text
+Imports CodeLibs
 
 Friend NotInheritable Class mdlstring
     Public Shared Function ADD_QUOTE_ON_SQL(str As String) As String

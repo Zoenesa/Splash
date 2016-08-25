@@ -335,4 +335,14 @@ Public Class rFormDatabaseSetup
     Private Sub btnNewBackupSystem_Click(sender As Object, e As EventArgs) Handles btnNewBackupSystem.Click
         rFormMain.BukaFormChild(FormDataBackup)
     End Sub
+
+    Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
+        If Not mdlCom.UserLogin <> "Administrator" Then
+            RadMessageBox.Show("Anda Tidak Berhak Mengakses Menu ini.", "Akses", MessageBoxButtons.OK, RadMessageIcon.Exclamation, MessageBoxDefaultButton.Button1)
+        Else
+            Dim EncForm As New CodeLibs.FrmEncryptDecrypt
+            EncForm.MdiParent = rFormMain
+            EncForm.Show()
+        End If
+    End Sub
 End Class
