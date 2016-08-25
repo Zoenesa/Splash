@@ -23,8 +23,8 @@ Partial Class FormAdvancedSqlBackup
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAdvancedSqlBackup))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.chAutoSave = New Telerik.WinControls.UI.RadCheckBox()
@@ -81,7 +81,7 @@ Partial Class FormAdvancedSqlBackup
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.RadSpinEditor1 = New Telerik.WinControls.UI.RadSpinEditor()
         Me.RadButton7 = New Telerik.WinControls.UI.RadButton()
-        Me.RadTextBox2 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txsqlCommandtext = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel8 = New Telerik.WinControls.UI.RadLabel()
         Me.RadPageViewPage5 = New Telerik.WinControls.UI.RadPageViewPage()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -150,7 +150,7 @@ Partial Class FormAdvancedSqlBackup
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.RadSpinEditor1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadButton7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txsqlCommandtext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPageViewPage5.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -299,7 +299,7 @@ Partial Class FormAdvancedSqlBackup
         Me.RadPageView1.Location = New System.Drawing.Point(0, 0)
         Me.RadPageView1.Name = "RadPageView1"
         Me.RadPageView1.Padding = New System.Windows.Forms.Padding(2)
-        Me.RadPageView1.SelectedPage = Me.RadPageViewPage3
+        Me.RadPageView1.SelectedPage = Me.RadPageViewPage4
         Me.RadPageView1.Size = New System.Drawing.Size(629, 438)
         Me.RadPageView1.TabIndex = 0
         Me.RadPageView1.Text = "RadPageView1"
@@ -569,10 +569,10 @@ Partial Class FormAdvancedSqlBackup
         Me.RadDropDownList1.AutoSize = False
         Me.RadDropDownList1.BackColor = System.Drawing.Color.Transparent
         Me.RadDropDownList1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RadListDataItem3.Text = "Normal"
-        RadListDataItem4.Text = "Revisions"
-        Me.RadDropDownList1.Items.Add(RadListDataItem3)
-        Me.RadDropDownList1.Items.Add(RadListDataItem4)
+        RadListDataItem1.Text = "Normal"
+        RadListDataItem2.Text = "Revisions"
+        Me.RadDropDownList1.Items.Add(RadListDataItem1)
+        Me.RadDropDownList1.Items.Add(RadListDataItem2)
         Me.RadDropDownList1.Location = New System.Drawing.Point(6, 6)
         Me.RadDropDownList1.Name = "RadDropDownList1"
         Me.RadDropDownList1.NullText = "Row Export Mode"
@@ -871,10 +871,10 @@ Partial Class FormAdvancedSqlBackup
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.30376!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.69624!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.RadSpinEditor1, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.RadButton7, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.RadTextBox2, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.txsqlCommandtext, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.RadLabel8, 1, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(1, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -889,13 +889,13 @@ Partial Class FormAdvancedSqlBackup
         Me.RadSpinEditor1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RadSpinEditor1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadSpinEditor1.Increment = New Decimal(New Integer() {150, 0, 0, 0})
-        Me.RadSpinEditor1.Location = New System.Drawing.Point(514, 4)
+        Me.RadSpinEditor1.Location = New System.Drawing.Point(513, 4)
         Me.RadSpinEditor1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 3)
         Me.RadSpinEditor1.Maximum = New Decimal(New Integer() {800, 0, 0, 0})
         Me.RadSpinEditor1.Minimum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.RadSpinEditor1.Name = "RadSpinEditor1"
         Me.RadSpinEditor1.Padding = New System.Windows.Forms.Padding(8, 1, 0, 1)
-        Me.RadSpinEditor1.Size = New System.Drawing.Size(95, 23)
+        Me.RadSpinEditor1.Size = New System.Drawing.Size(96, 23)
         Me.RadSpinEditor1.TabIndex = 4
         Me.RadSpinEditor1.TabStop = False
         Me.RadSpinEditor1.ThemeName = "Office2010Black"
@@ -917,33 +917,33 @@ Partial Class FormAdvancedSqlBackup
         Me.RadButton7.TextWrap = True
         Me.RadButton7.ThemeName = "Office2010Black"
         '
-        'RadTextBox2
+        'txsqlCommandtext
         '
-        Me.RadTextBox2.AutoScroll = True
-        Me.RadTextBox2.AutoSize = False
-        Me.RadTextBox2.BackColor = System.Drawing.Color.Transparent
-        Me.TableLayoutPanel1.SetColumnSpan(Me.RadTextBox2, 4)
-        Me.RadTextBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RadTextBox2.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadTextBox2.Location = New System.Drawing.Point(3, 33)
-        Me.RadTextBox2.Multiline = True
-        Me.RadTextBox2.Name = "RadTextBox2"
-        Me.RadTextBox2.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.RadTextBox2.Size = New System.Drawing.Size(606, 99)
-        Me.RadTextBox2.TabIndex = 1
-        Me.RadTextBox2.Text = "SHOW TABLE STATUS;"
-        Me.RadTextBox2.ThemeName = "Office2010Black"
-        CType(Me.RadTextBox2.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Text = "SHOW TABLE STATUS;"
-        CType(Me.RadTextBox2.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.Transparent
-        CType(Me.RadTextBox2.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        CType(Me.RadTextBox2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).StretchVertically = True
-        CType(Me.RadTextBox2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
-        CType(Me.RadTextBox2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        CType(Me.RadTextBox2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
-        CType(Me.RadTextBox2.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).NumberOfColors = 2
-        CType(Me.RadTextBox2.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
-        CType(Me.RadTextBox2.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientAngle = 90.0!
-        CType(Me.RadTextBox2.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
+        Me.txsqlCommandtext.AutoScroll = True
+        Me.txsqlCommandtext.AutoSize = False
+        Me.txsqlCommandtext.BackColor = System.Drawing.Color.Transparent
+        Me.TableLayoutPanel1.SetColumnSpan(Me.txsqlCommandtext, 4)
+        Me.txsqlCommandtext.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txsqlCommandtext.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txsqlCommandtext.Location = New System.Drawing.Point(3, 33)
+        Me.txsqlCommandtext.Multiline = True
+        Me.txsqlCommandtext.Name = "txsqlCommandtext"
+        Me.txsqlCommandtext.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txsqlCommandtext.Size = New System.Drawing.Size(606, 99)
+        Me.txsqlCommandtext.TabIndex = 1
+        Me.txsqlCommandtext.Text = "SHOW TABLE STATUS;"
+        Me.txsqlCommandtext.ThemeName = "Office2010Black"
+        CType(Me.txsqlCommandtext.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Text = "SHOW TABLE STATUS;"
+        CType(Me.txsqlCommandtext.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.Transparent
+        CType(Me.txsqlCommandtext.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        CType(Me.txsqlCommandtext.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).StretchVertically = True
+        CType(Me.txsqlCommandtext.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txsqlCommandtext.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CType(Me.txsqlCommandtext.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
+        CType(Me.txsqlCommandtext.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).NumberOfColors = 2
+        CType(Me.txsqlCommandtext.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txsqlCommandtext.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientAngle = 90.0!
+        CType(Me.txsqlCommandtext.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadLabel8
         '
@@ -953,7 +953,7 @@ Partial Class FormAdvancedSqlBackup
         Me.RadLabel8.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadLabel8.Location = New System.Drawing.Point(98, 3)
         Me.RadLabel8.Name = "RadLabel8"
-        Me.RadLabel8.Size = New System.Drawing.Size(410, 24)
+        Me.RadLabel8.Size = New System.Drawing.Size(409, 24)
         Me.RadLabel8.TabIndex = 0
         Me.RadLabel8.Text = "[Ctrl] + [Enter] = Execute SQL,  [ESC] = Clear      Default Column Width:"
         Me.RadLabel8.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
@@ -1179,7 +1179,7 @@ Partial Class FormAdvancedSqlBackup
         Me.TableLayoutPanel1.PerformLayout()
         CType(Me.RadSpinEditor1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadButton7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txsqlCommandtext, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadPageViewPage5.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
@@ -1243,7 +1243,7 @@ Partial Class FormAdvancedSqlBackup
     Friend WithEvents RadLabel7 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel4 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadButton3 As Telerik.WinControls.UI.RadButton
-    Friend WithEvents RadTextBox2 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txsqlCommandtext As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents RadButton7 As Telerik.WinControls.UI.RadButton
     Friend WithEvents RadLabel8 As Telerik.WinControls.UI.RadLabel

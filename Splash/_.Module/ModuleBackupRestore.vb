@@ -36,7 +36,7 @@ Public NotInheritable Class ModuleBackupRestore
     Public Shared FolderDefault As String = Nothing
     Public Shared TargetFile As String = ""
 
-    Public Function isTargetDirektoriValid() As Boolean
+    Public Shared Function isTargetDirektoriValid() As Boolean
         Try
             Dim dir As String = IO.Path.GetDirectoryName(ModuleBackupRestore.TargetFile)
             If Not (IO.Directory.Exists(dir)) Then
