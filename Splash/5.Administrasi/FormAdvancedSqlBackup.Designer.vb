@@ -268,9 +268,12 @@ Partial Class FormAdvancedSqlBackup
         '
         'tsStatus
         '
+        Me.tsStatus.Alignment = System.Drawing.ContentAlignment.MiddleLeft
+        Me.tsStatus.AutoSize = True
+        Me.tsStatus.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
         Me.tsStatus.Name = "tsStatus"
-        Me.tsStatus.Padding = New System.Windows.Forms.Padding(3, 0, 3, 0)
-        Me.RadStatusStrip1.SetSpring(Me.tsStatus, True)
+        Me.tsStatus.Padding = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.RadStatusStrip1.SetSpring(Me.tsStatus, False)
         Me.tsStatus.Text = ""
         Me.tsStatus.TextWrap = True
         '
@@ -299,7 +302,7 @@ Partial Class FormAdvancedSqlBackup
         Me.RadPageView1.Location = New System.Drawing.Point(0, 0)
         Me.RadPageView1.Name = "RadPageView1"
         Me.RadPageView1.Padding = New System.Windows.Forms.Padding(2)
-        Me.RadPageView1.SelectedPage = Me.RadPageViewPage4
+        Me.RadPageView1.SelectedPage = Me.RadPageViewPage3
         Me.RadPageView1.Size = New System.Drawing.Size(629, 438)
         Me.RadPageView1.TabIndex = 0
         Me.RadPageView1.Text = "RadPageView1"
@@ -856,14 +859,20 @@ Partial Class FormAdvancedSqlBackup
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(1, 141)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(612, 253)
         Me.DataGridView1.TabIndex = 3
+        Me.DataGridView1.VirtualMode = True
         '
         'TableLayoutPanel1
         '
@@ -871,7 +880,7 @@ Partial Class FormAdvancedSqlBackup
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.30376!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.69624!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.RadSpinEditor1, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.RadButton7, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.txsqlCommandtext, 0, 1)
@@ -889,13 +898,13 @@ Partial Class FormAdvancedSqlBackup
         Me.RadSpinEditor1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RadSpinEditor1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadSpinEditor1.Increment = New Decimal(New Integer() {150, 0, 0, 0})
-        Me.RadSpinEditor1.Location = New System.Drawing.Point(513, 4)
+        Me.RadSpinEditor1.Location = New System.Drawing.Point(512, 4)
         Me.RadSpinEditor1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 3)
         Me.RadSpinEditor1.Maximum = New Decimal(New Integer() {800, 0, 0, 0})
         Me.RadSpinEditor1.Minimum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.RadSpinEditor1.Name = "RadSpinEditor1"
         Me.RadSpinEditor1.Padding = New System.Windows.Forms.Padding(8, 1, 0, 1)
-        Me.RadSpinEditor1.Size = New System.Drawing.Size(96, 23)
+        Me.RadSpinEditor1.Size = New System.Drawing.Size(97, 23)
         Me.RadSpinEditor1.TabIndex = 4
         Me.RadSpinEditor1.TabStop = False
         Me.RadSpinEditor1.ThemeName = "Office2010Black"
@@ -953,7 +962,7 @@ Partial Class FormAdvancedSqlBackup
         Me.RadLabel8.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadLabel8.Location = New System.Drawing.Point(98, 3)
         Me.RadLabel8.Name = "RadLabel8"
-        Me.RadLabel8.Size = New System.Drawing.Size(409, 24)
+        Me.RadLabel8.Size = New System.Drawing.Size(408, 24)
         Me.RadLabel8.TabIndex = 0
         Me.RadLabel8.Text = "[Ctrl] + [Enter] = Execute SQL,  [ESC] = Clear      Default Column Width:"
         Me.RadLabel8.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
@@ -1046,9 +1055,10 @@ Partial Class FormAdvancedSqlBackup
         '
         'FastColoredTextBox1
         '
+        Me.FastColoredTextBox1.AllowMacroRecording = False
         Me.FastColoredTextBox1.AutoCompleteBrackets = True
         Me.FastColoredTextBox1.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
-        Me.FastColoredTextBox1.AutoIndentCharsPatterns = ""
+        Me.FastColoredTextBox1.AutoIndentCharsPatterns = " "
         Me.FastColoredTextBox1.AutoScrollMinSize = New System.Drawing.Size(6, 17)
         Me.FastColoredTextBox1.BackBrush = Nothing
         Me.FastColoredTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
@@ -1071,7 +1081,6 @@ Partial Class FormAdvancedSqlBackup
         Me.TableLayoutPanel4.SetRowSpan(Me.FastColoredTextBox1, 2)
         Me.FastColoredTextBox1.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.FastColoredTextBox1.ShowLineNumbers = False
-        Me.FastColoredTextBox1.ShowScrollBars = False
         Me.FastColoredTextBox1.Size = New System.Drawing.Size(606, 318)
         Me.FastColoredTextBox1.TabIndex = 1
         Me.FastColoredTextBox1.Zoom = 100
