@@ -4,6 +4,7 @@
   <Costura IncludeDebugSymbols='false' />
   <Costura>
     <IncludeAssemblies>
+      CodeLibs
       FastColoredTextBox
       PasswordMeter
       Setting.Config.Profile
