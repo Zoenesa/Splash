@@ -445,6 +445,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
+    <Content Include="Libs\CodeLibs.dll" />
     <Content Include="Libs\FastColoredTextBox.dll" />
     <Content Include="Libs\MySql.Data.dll" />
     <Content Include="Libs\MySqlBackup.dll" />
