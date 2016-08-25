@@ -47,49 +47,104 @@ Public Class rFormInisialisasiKoneksi
         Dim mprofile As Setting.Config.Profile.Ini = New Setting.Config.Profile.Ini
 
         Dim strSection As String = Nothing
-        If Not IO.File.Exists(IO.Path.Combine(Environment.CurrentDirectory, mprofile.Name)) Then
-            IO.File.Create(IO.Path.Combine(Environment.CurrentDirectory, mprofile.Name))
 
+        Try
+            If Not IO.File.Exists(IO.Path.Combine(Environment.CurrentDirectory, mprofile.Name)) Then
+                SetDefaultSettings(IO.Path.Combine(Environment.CurrentDirectory, mprofile.Name))
+
+                'Dim sw As New IO.StreamWriter(IO.Path.Combine(Environment.CurrentDirectory, mprofile.Name))
+                'sw.WriteLine("\\PROGRAM SPLASH DATA PROJECT")
+                'sw.WriteLine("\\DO NOT DELETE OR CHANGE CONTENT ON THIS CONFIG FILE")
+                'sw.WriteLine("\\RISK CHANGING OR DELETING WILL CAUSE DAMAGE OR CORRUPTION DATA")
+                'sw.WriteLine("\\DILARANG MERUBAH ATAUPUN MENGHAPUS KONTEN DI FILE CONFIG INI")
+                'sw.WriteLine("\\RESIKO MENGUBAH ATAUPUN MENGHAPUS KONTEN DI FILE INI AKAN MENYEBABKAN KERUSAKAN ATAUPUN DATA KORUP")
+                'sw.WriteLine("Aplikasi:" & My.Application.Info.AssemblyName)
+                'sw.WriteLine("Versi:" & My.Application.Info.Version.ToString)
+                'sw.WriteLine("OS:" & My.Computer.Info.OSFullName)
+                'sw.WriteLine("Komputer:" & My.Computer.Name)
+                'sw.WriteLine("[General]")
+                'sw.WriteLine("ConnectionName=Splash_Connection")
+                'sw.WriteLine("DatabaseName=db_apps")
+                'sw.WriteLine("Server=localhost")
+                'sw.WriteLine("User=SUPERVISOR")
+                'sw.WriteLine("Password=di5t0rti0n")
+                'sw.WriteLine("Port=3306")
+                'sw.WriteLine("defaultsetting=True")
+                'sw.WriteLine("SettingName=0")
+                'sw.WriteLine("SectionName=General")
+                'sw.WriteLine("BackupLocation=\backups")
+                'sw.WriteLine("Icons=myico.ico")
+                'sw.Flush()
+                'sw.Close()
+
+            End If
+
+            Dim strdefault As String = mprofile.GetValue("General", "defaultsetting")
+
+            If strdefault = "True" Then
+                strSection = mprofile.GetValue("General", "SectionName")
+            End If
+
+            txdbname.Text = mprofile.GetValue(strSection, "DatabaseName")
+            txserver.Text = mprofile.GetValue(strSection, "server")
+            txPort.Text = mprofile.GetValue(strSection, "port")
+            txUser.Text = mprofile.GetValue(strSection, "user")
+            txPass.Text = mprofile.GetValue(strSection, "password")
+        Catch ex As Exception
+            RadMessageBox.Show("Kesalahan, Kode: " & ex.Source & vbNewLine &
+                               ex.Message.ToString, "LOAD SETTING", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+    End Sub
+
+    Public Shared Sub SetDefaultSettings(ByVal filepath As String)
+        Dim fs As IO.FileStream
+        fs = IO.File.Create(filepath)
+        Try
+
+            WriteGeneralSetting(True, fs, "\\PROGRAM SPLASH DATA PROJECT")
+            WriteGeneralSetting(True, fs, "\\DO NOT DELETE OR CHANGE CONTENT ON THIS CONFIG FILE")
+            WriteGeneralSetting(True, fs, "\\RISK CHANGING OR DELETING WILL CAUSE DAMAGE OR CORRUPTION DATA")
+            WriteGeneralSetting(True, fs, "\\DILARANG MERUBAH ATAUPUN MENGHAPUS KONTEN DI FILE CONFIG INI")
+            WriteGeneralSetting(True, fs, "\\RESIKO MENGUBAH ATAUPUN MENGHAPUS KONTEN DI FILE INI AKAN MENYEBABKAN KERUSAKAN ATAUPUN DATA KORUP")
+            WriteGeneralSetting(True, fs, "Aplikasi:" & My.Application.Info.AssemblyName)
+            WriteGeneralSetting(True, fs, "Versi:" & My.Application.Info.Version.ToString)
+            WriteGeneralSetting(True, fs, "OS:" & My.Computer.Info.OSFullName)
+            WriteGeneralSetting(True, fs, "Komputer:" & My.Computer.Name)
+            WriteGeneralSetting(True, fs, "[General]")
+            WriteGeneralSetting(True, fs, "ConnectionName=Splash_Connection")
+            WriteGeneralSetting(True, fs, "DatabaseName=db_apps")
+            WriteGeneralSetting(True, fs, "Server=localhost")
+            WriteGeneralSetting(True, fs, "User=SUPERVISOR")
+            WriteGeneralSetting(True, fs, "Password=di5t0rti0n")
+            WriteGeneralSetting(True, fs, "Port=3306")
+            WriteGeneralSetting(True, fs, "defaultsetting=True")
+            WriteGeneralSetting(True, fs, "SettingName=0")
+            WriteGeneralSetting(True, fs, "SectionName=General")
+            WriteGeneralSetting(True, fs, "BackupLocation=\backups")
+            WriteGeneralSetting(True, fs, "Icons=myico.ico")
+
+            fs.Close()
+
+        Catch ex As Exception
+            fs.Close()
+            RadMessageBox.Show("Kesalahan Fatal!" & vbNewLine & "Error." & ex.Message.ToString, "SET DEFAULT SETTING", MessageBoxButtons.OK,
+                               RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+    End Sub
+
+    Private Overloads Shared Sub WriteGeneralSetting(ByVal fs As IO.FileStream, ByVal Value As String)
+        Dim b As Byte() = New System.Text.UTF8Encoding(True).GetBytes(Value)
+        fs.Write(b, 0, b.Length)
+    End Sub
+
+    Private Overloads Shared Sub WriteGeneralSetting(ByVal WithNewLine As Boolean, ByVal fs As IO.FileStream, ByVal Value As String)
+        If WithNewLine Then
+            Dim b As Byte() = New System.Text.UTF8Encoding(True).GetBytes(Value & vbNewLine)
+            fs.Write(b, 0, b.Length)
+        Else
+            Dim b As Byte() = New System.Text.UTF8Encoding(True).GetBytes(Value)
+            fs.Write(b, 0, b.Length)
         End If
-
-        'Dim Lines As String() = New String(18) {}
-        'Lines(0) = "\\SPLASH DataBase"
-        'Lines(1) = "\\DO NOT DELETE OR CHANGE ON THIS CONFIG FILE"
-        'Lines(2) = "\\RISK CHANGING OR DELETING WILL CAUSE DAMAGE OR CORRUPTION DATA"
-        'Lines(3) = My.Application.Info.AssemblyName
-        'Lines(4) = My.Application.Info.Version.Build
-        'Lines(5) = My.Computer.Info.OSFullName
-        'Lines(6) = My.Computer.Name
-        'Lines(7) = "[General]"
-        'Lines(8) = "ConnectionName=Splash_Connection"
-        'Lines(9) = "DatabaseName=db_apps"
-        'Lines(10) = "Server=localhost"
-        'Lines(11) = "Port=3306"
-        'Lines(12) = "User=SUPERVISOR"
-        'Lines(13) = "Password=di5t0rti0n"
-        'Lines(14) = "defaultsetting=True"
-        'Lines(15) = "SettingName=0"
-        'Lines(16) = "SectionName=General"
-        'Lines(17) = "BackupLocation=E:\VB\Splash\Splash\bin\Release\backups"
-        'Lines(18) = "Icons=myico.ico"
-        'IO.File.WriteAllLines(IO.Path.Combine(Environment.CurrentDirectory, mprofile.Name), Lines)
-
-
-        Dim cfgName As String = mprofile.Name
-
-
-
-        Dim strdefault As String = mprofile.GetValue("General", "defaultsetting")
-        If strdefault = "True" Then
-            strSection = mprofile.GetValue("General", "SectionName")
-        End If
-
-        txdbname.Text = mprofile.GetValue(strSection, "DatabaseName")
-        txserver.Text = mprofile.GetValue(strSection, "server")
-        txPort.Text = mprofile.GetValue(strSection, "port")
-        txUser.Text = mprofile.GetValue(strSection, "user")
-        txPass.Text = mprofile.GetValue(strSection, "password")
-
     End Sub
 
     Private Sub FrmInisialisasiKoneksi_Load(sender As Object, e As EventArgs) Handles Me.Load

@@ -31,6 +31,20 @@ Public Class FormAdvancedSqlBackup
         'DataGridView1.VirtualMode = True
         RadGridView1.VirtualMode = True
 
+        Me.RadDropDownList1.ValueMember = "id"
+        Me.RadDropDownList1.DisplayMember = "name"
+
+        Dim rowsexportDT As DataTable = New DataTable
+        rowsexportDT.Columns.Add("id", GetType(RowsDataExportMode))
+        rowsexportDT.Columns.Add("name")
+
+        For Each mode As RowsDataExportMode In [Enum].GetValues(GetType(RowsDataExportMode))
+            rowsexportDT.Rows.Add(mode, mode.ToString)
+        Next
+
+        Me.RadDropDownList1.DataSource = rowsexportDT
+        Me.RadDropDownList1.SelectedIndex = 0
+
         LoadSetting()
 
         If RadPageView1.SelectedPage Is RadPageViewPage5 Then
@@ -38,7 +52,6 @@ Public Class FormAdvancedSqlBackup
             tsFile.Text = ""
             tsStatus.Text = "                                                          "
         End If
-
 
     End Sub
 
@@ -265,6 +278,7 @@ Public Class FormAdvancedSqlBackup
         RadCheckedListBox1.UncheckAllItems()
     End Sub
 
+
     Private Sub RadButton6_Click(sender As Object, e As EventArgs) Handles RadButton6.Click
         If Not ModuleBackupRestore.isTargetDirektoriValid() Then
             Return
@@ -286,8 +300,10 @@ Public Class FormAdvancedSqlBackup
                         mb.ExportToFile(ModuleBackupRestore.TargetFile)
                     End Using
                 End Using
+                conn.Close()
             End Using
             RadMessageBox.Show("Berhasil dump sql.", "Backup", MessageBoxButtons.OK, RadMessageIcon.Info, MessageBoxDefaultButton.Button1)
+
         Catch ex As Exception
             RadMessageBox.Show(ex.Message.ToString, "Backup", MessageBoxButtons.OK, RadMessageIcon.Info, MessageBoxDefaultButton.Button1)
         End Try
@@ -360,7 +376,7 @@ Public Class FormAdvancedSqlBackup
 
                 Dim rwCount As String = sqlDT.Rows.Count
                 RadLabel1.Text = ""
-                RadLabel1.Text = String.Format("Total Rows: {0} on Table: {1}", rwCount, sqlDT.TableName.ToString)
+                RadLabel1.Text = String.Format("Total Rows: {0}", rwCount)
             End If
             'dataGridView1.ClearSelection()
             RadGridView1.ClearSelection()
@@ -455,6 +471,120 @@ Public Class FormAdvancedSqlBackup
             End If
         Catch ex As Exception
             RadMessageBox.Show("Error" & ex.Message.ToString)
+        End Try
+    End Sub
+
+    Private Sub btnBackup_Click(sender As Object, e As EventArgs) Handles btnBackup.Click
+        If Not ModuleBackupRestore.isTargetDirektoriValid() Then
+            Return
+        End If
+        Try
+            Using conn As MySqlConnection = New MySqlConnection(ModuleBackupRestore.SqldbConnectionString)
+                Using cmd As New MySqlCommand()
+                    cmd.Connection = conn
+                    conn.Open()
+#Region "backup command"
+                    Using mb As New MySqlBackup(cmd)
+                        If chExcludedb.Checked Then
+                            Dim lst1 As New List(Of String)()
+                            For Each item As ListViewDataItem In RadCheckedListBox1.CheckedItems
+                                lst1.Add(item.Text.ToString)
+                            Next
+                            mb.ExportInfo.ExcludeTables = lst1
+                            mb.ExportInfo.AddCreateDatabase = chCreatedb.Checked
+                            mb.ExportInfo.ExportTableStructure = chDropCreate.Checked
+
+                            mb.ExportInfo.ExportRows = chExportRows.Checked
+                            mb.ExportInfo.RecordDumpTime = chDumpTime.Checked
+                            mb.ExportInfo.ResetAutoIncrement = chResetIncrement.Checked
+                            mb.ExportInfo.EnableEncryption = chEncryption.Checked
+                            mb.ExportInfo.EncryptionPassword = txEncryptPass.Text.Trim()
+                            mb.ExportInfo.MaxSqlLength = CInt(numericSQL.Value)
+                            mb.ExportInfo.ExportFunctions = chExportProcedureFunct.Checked
+                            mb.ExportInfo.ExportTriggers = chExportProcedureFunct.Checked
+                            mb.ExportInfo.ExportProcedures = chExportProcedureFunct.Checked
+                            mb.ExportInfo.ExportEvents = chExportProcedureFunct.Checked
+                            mb.ExportInfo.ExportViews = chExportProcedureFunct.Checked
+                            mb.ExportInfo.ExportRoutinesWithoutDefiner = ExportRoutineWithoutDefiner.Checked
+                            mb.ExportInfo.RowsExportMode = DirectCast(RadDropDownList1.SelectedValue, RowsDataExportMode)
+                            mb.ExportInfo.WrapWithinTransaction = chWrapWithinTransaction.Checked
+
+                            mb.ExportToFile(ModuleBackupRestore.TargetFile)
+                        Else
+                            mb.ExportInfo.AddCreateDatabase = chCreatedb.Checked
+                            mb.ExportInfo.ExportTableStructure = chDropCreate.Checked
+                            mb.ExportInfo.ExportRows = chExportRows.Checked
+                            mb.ExportInfo.RecordDumpTime = chDumpTime.Checked
+                            mb.ExportInfo.ResetAutoIncrement = chResetIncrement.Checked
+                            mb.ExportInfo.EnableEncryption = chEncryption.Checked
+                            mb.ExportInfo.EncryptionPassword = txEncryptPass.Text.Trim()
+                            mb.ExportInfo.MaxSqlLength = CInt(numericSQL.Value)
+                            mb.ExportInfo.ExportFunctions = chExportProcedureFunct.Checked
+                            mb.ExportInfo.ExportTriggers = chExportProcedureFunct.Checked
+                            mb.ExportInfo.ExportProcedures = chExportProcedureFunct.Checked
+                            mb.ExportInfo.ExportEvents = chExportProcedureFunct.Checked
+                            mb.ExportInfo.ExportViews = chExportProcedureFunct.Checked
+                            mb.ExportInfo.ExportRoutinesWithoutDefiner = ExportRoutineWithoutDefiner.Checked
+                            mb.ExportInfo.RowsExportMode = DirectCast(RadDropDownList1.SelectedValue, RowsDataExportMode)
+                            mb.ExportInfo.WrapWithinTransaction = chWrapWithinTransaction.Checked
+
+                            mb.ExportToFile(ModuleBackupRestore.TargetFile)
+                        End If
+                    End Using
+                    conn.Close()
+                End Using
+            End Using
+#End Region
+            RadMessageBox.Show(("Sukses Backup database, tersimpan pada:" & vbNewLine & "" & ModuleBackupRestore.TargetFile), "Export/Backup Database",
+                               MessageBoxButtons.OK, RadMessageIcon.Info,
+                               MessageBoxDefaultButton.Button1)
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK,
+                               RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
+        End Try
+    End Sub
+
+    Private Sub btnRestore_Click(sender As Object, e As EventArgs) Handles btnRestore.Click
+        If Not ModuleBackupRestore.isSourceFileExists() Then
+            Return
+        End If
+
+        Dim Err As Exception = Nothing
+
+        Try
+            Using conn As New MySqlConnection(ModuleBackupRestore.SqldbConnectionString)
+                Using cmd As New MySqlCommand()
+                    cmd.Connection = conn
+                    conn.Open()
+
+                    Using mb As New MySqlBackup(cmd)
+                        mb.ImportInfo.EnableEncryption = chDecryption.Checked
+                        mb.ImportInfo.EncryptionPassword = txDecryptPass.Text.Trim()
+                        mb.ImportInfo.IgnoreSqlError = chIgnoreError.Checked
+                        mb.ImportInfo.TargetDatabase = txTargetDb.Text.Trim()
+                        mb.ImportInfo.DatabaseDefaultCharSet = txDefaultCharset.Text.Trim()
+                        mb.ImportInfo.ErrorLogFile = txErrLogPath.Text.Trim()
+
+                        mb.ImportFromFile(ModuleBackupRestore.TargetFile)
+
+                        Err = mb.LastError
+                    End Using
+                    conn.Close()
+                End Using
+            End Using
+
+            If Err Is Nothing Then
+                RadMessageBox.Show("Sukses Import Database.", "Import/Restore Database",
+                                   MessageBoxButtons.OK, RadMessageIcon.Info, MessageBoxDefaultButton.Button1)
+            Else
+                RadMessageBox.Show(("Sukses Import Database, terdapat Error." & Environment.NewLine &
+                                   Environment.NewLine & Err.ToString), "Perhatian",
+                                   MessageBoxButtons.OK, RadMessageIcon.Exclamation,
+                                   MessageBoxDefaultButton.Button1)
+            End If
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK,
+                               RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
         End Try
     End Sub
 End Class

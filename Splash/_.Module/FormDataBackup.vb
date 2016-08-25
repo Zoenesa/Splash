@@ -375,9 +375,13 @@ Public Class FormDataBackup
             Me.pbRowInAllTable.Text = (Me.pbRowInAllTable.Value1 & " of " & Me.pbRowInAllTable.Maximum)
             Me.pbTable.Text = (Me._currentTableIndex & " of " & Me._totalTables)
             Me.Refresh()
-            RadMessageBox.Show(("Sukses Dump database, tersimpan pada:" & vbNewLine & "" & FormDataBackup.targetFile), "Informasi", MessageBoxButtons.OK, RadMessageIcon.Info, MessageBoxDefaultButton.Button1)
+            RadMessageBox.Show(("Sukses Dump database, tersimpan pada:" & vbNewLine & "" & FormDataBackup.targetFile), "Informasi",
+                               MessageBoxButtons.OK, RadMessageIcon.Info,
+                               MessageBoxDefaultButton.Button1)
         Else
-            RadMessageBox.Show(("Sukses Dump database dengan error(s). " & Environment.NewLine & Environment.NewLine & Me.mb.LastError.ToString), "Perhatian", MessageBoxButtons.OK, RadMessageIcon.Exclamation, MessageBoxDefaultButton.Button1)
+            RadMessageBox.Show(("Sukses Dump database dengan error(s). " & Environment.NewLine & Environment.NewLine & Me.mb.LastError.ToString), "Perhatian",
+                               MessageBoxButtons.OK, RadMessageIcon.Exclamation,
+                               MessageBoxDefaultButton.Button1)
         End If
     End Sub
 
