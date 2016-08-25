@@ -38,8 +38,6 @@ Partial Class FormAdvancedSqlBackup
         Me.RadPageView1 = New Telerik.WinControls.UI.RadPageView()
         Me.RadPageViewPage1 = New Telerik.WinControls.UI.RadPageViewPage()
         Me.RadGroupBox2 = New Telerik.WinControls.UI.RadGroupBox()
-        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnRestore = New Telerik.WinControls.UI.RadButton()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
         Me.txDefaultCharset = New Telerik.WinControls.UI.RadTextBox()
@@ -51,13 +49,10 @@ Partial Class FormAdvancedSqlBackup
         Me.chIgnoreError = New Telerik.WinControls.UI.RadCheckBox()
         Me.chDecryption = New Telerik.WinControls.UI.RadCheckBox()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
-        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.chWrapExportMode = New Telerik.WinControls.UI.RadCheckBox()
-        Me.RadDropDownList1 = New Telerik.WinControls.UI.RadDropDownList()
         Me.txEncryptPass = New Telerik.WinControls.UI.RadTextBox()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnBackup = New Telerik.WinControls.UI.RadButton()
         Me.RadLabel3 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadDropDownList1 = New Telerik.WinControls.UI.RadDropDownList()
         Me.RadLabel6 = New Telerik.WinControls.UI.RadLabel()
         Me.numericSQL = New Telerik.WinControls.UI.RadSpinEditor()
         Me.chExportProcedureFunct = New Telerik.WinControls.UI.RadCheckBox()
@@ -93,6 +88,9 @@ Partial Class FormAdvancedSqlBackup
         Me.FastColoredTextBox1 = New FastColoredTextBoxNS.FastColoredTextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.tsFile = New Telerik.WinControls.UI.RadLabel()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnRestore = New Telerik.WinControls.UI.RadButton()
+        Me.btnBackup = New Telerik.WinControls.UI.RadButton()
         Me.Panel1.SuspendLayout()
         CType(Me.chAutoSave, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txPilihFileSql, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,8 +104,6 @@ Partial Class FormAdvancedSqlBackup
         Me.RadPageViewPage1.SuspendLayout()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox2.SuspendLayout()
-        Me.TableLayoutPanel3.SuspendLayout()
-        CType(Me.btnRestore, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txDefaultCharset, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -120,13 +116,10 @@ Partial Class FormAdvancedSqlBackup
         CType(Me.chDecryption, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox1.SuspendLayout()
-        Me.Panel4.SuspendLayout()
         CType(Me.chWrapExportMode, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txEncryptPass, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TableLayoutPanel2.SuspendLayout()
-        CType(Me.btnBackup, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numericSQL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chExportProcedureFunct, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -158,6 +151,9 @@ Partial Class FormAdvancedSqlBackup
         CType(Me.FastColoredTextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         CType(Me.tsFile, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel2.SuspendLayout()
+        CType(Me.btnRestore, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnBackup, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -273,9 +269,10 @@ Partial Class FormAdvancedSqlBackup
         Me.tsStatus.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
         Me.tsStatus.Name = "tsStatus"
         Me.tsStatus.Padding = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.RadStatusStrip1.SetSpring(Me.tsStatus, False)
+        Me.RadStatusStrip1.SetSpring(Me.tsStatus, True)
         Me.tsStatus.Text = ""
-        Me.tsStatus.TextWrap = True
+        Me.tsStatus.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        CType(Me.tsStatus.GetChildAt(2).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).TextAlignment = System.Drawing.ContentAlignment.TopLeft
         '
         'Panel2
         '
@@ -284,6 +281,7 @@ Partial Class FormAdvancedSqlBackup
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel2.Controls.Add(Me.RadPageView1)
+        Me.Panel2.Controls.Add(Me.TableLayoutPanel2)
         Me.Panel2.Location = New System.Drawing.Point(0, 68)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(633, 442)
@@ -302,8 +300,8 @@ Partial Class FormAdvancedSqlBackup
         Me.RadPageView1.Location = New System.Drawing.Point(0, 0)
         Me.RadPageView1.Name = "RadPageView1"
         Me.RadPageView1.Padding = New System.Windows.Forms.Padding(2)
-        Me.RadPageView1.SelectedPage = Me.RadPageViewPage3
-        Me.RadPageView1.Size = New System.Drawing.Size(629, 438)
+        Me.RadPageView1.SelectedPage = Me.RadPageViewPage1
+        Me.RadPageView1.Size = New System.Drawing.Size(629, 405)
         Me.RadPageView1.TabIndex = 0
         Me.RadPageView1.Text = "RadPageView1"
         Me.RadPageView1.ThemeName = "Office2010Black"
@@ -320,7 +318,7 @@ Partial Class FormAdvancedSqlBackup
         Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(114.0!, 30.0!)
         Me.RadPageViewPage1.Location = New System.Drawing.Point(8, 36)
         Me.RadPageViewPage1.Name = "RadPageViewPage1"
-        Me.RadPageViewPage1.Size = New System.Drawing.Size(613, 394)
+        Me.RadPageViewPage1.Size = New System.Drawing.Size(613, 361)
         Me.RadPageViewPage1.Text = "Advance Settings"
         '
         'RadGroupBox2
@@ -329,7 +327,6 @@ Partial Class FormAdvancedSqlBackup
         Me.RadGroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadGroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.RadGroupBox2.Controls.Add(Me.TableLayoutPanel3)
         Me.RadGroupBox2.Controls.Add(Me.Panel3)
         Me.RadGroupBox2.Controls.Add(Me.txErrLogPath)
         Me.RadGroupBox2.Controls.Add(Me.btnSaveLog)
@@ -341,40 +338,11 @@ Partial Class FormAdvancedSqlBackup
         Me.RadGroupBox2.HeaderText = "Restore/Import Options"
         Me.RadGroupBox2.Location = New System.Drawing.Point(314, 3)
         Me.RadGroupBox2.Name = "RadGroupBox2"
-        Me.RadGroupBox2.Size = New System.Drawing.Size(296, 391)
+        Me.RadGroupBox2.Size = New System.Drawing.Size(296, 358)
         Me.RadGroupBox2.TabIndex = 11
         Me.RadGroupBox2.Text = "Restore/Import Options"
         Me.RadGroupBox2.ThemeName = "Office2010Black"
         CType(Me.RadGroupBox2.GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
-        '
-        'TableLayoutPanel3
-        '
-        Me.TableLayoutPanel3.ColumnCount = 1
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.btnRestore, 0, 0)
-        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(2, 356)
-        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 1
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(292, 33)
-        Me.TableLayoutPanel3.TabIndex = 15
-        '
-        'btnRestore
-        '
-        Me.btnRestore.BackColor = System.Drawing.Color.Transparent
-        Me.btnRestore.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnRestore.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnRestore.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnRestore.Location = New System.Drawing.Point(3, 3)
-        Me.btnRestore.Name = "btnRestore"
-        Me.btnRestore.Size = New System.Drawing.Size(286, 27)
-        Me.btnRestore.TabIndex = 0
-        Me.btnRestore.Text = "Execute &Restore"
-        Me.btnRestore.ThemeName = "Office2010Black"
-        CType(Me.btnRestore.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "Execute &Restore"
-        CType(Me.btnRestore.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
-        CType(Me.btnRestore.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'Panel3
         '
@@ -524,10 +492,10 @@ Partial Class FormAdvancedSqlBackup
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadGroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.RadGroupBox1.Controls.Add(Me.Panel4)
+        Me.RadGroupBox1.Controls.Add(Me.chWrapExportMode)
         Me.RadGroupBox1.Controls.Add(Me.txEncryptPass)
-        Me.RadGroupBox1.Controls.Add(Me.TableLayoutPanel2)
         Me.RadGroupBox1.Controls.Add(Me.RadLabel3)
+        Me.RadGroupBox1.Controls.Add(Me.RadDropDownList1)
         Me.RadGroupBox1.Controls.Add(Me.RadLabel6)
         Me.RadGroupBox1.Controls.Add(Me.numericSQL)
         Me.RadGroupBox1.Controls.Add(Me.chExportProcedureFunct)
@@ -542,47 +510,20 @@ Partial Class FormAdvancedSqlBackup
         Me.RadGroupBox1.HeaderText = "Backup/Export Options"
         Me.RadGroupBox1.Location = New System.Drawing.Point(3, 3)
         Me.RadGroupBox1.Name = "RadGroupBox1"
-        Me.RadGroupBox1.Size = New System.Drawing.Size(307, 391)
+        Me.RadGroupBox1.Size = New System.Drawing.Size(307, 358)
         Me.RadGroupBox1.TabIndex = 12
         Me.RadGroupBox1.Text = "Backup/Export Options"
         Me.RadGroupBox1.ThemeName = "Office2010Black"
         CType(Me.RadGroupBox1.GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
         '
-        'Panel4
-        '
-        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Controls.Add(Me.chWrapExportMode)
-        Me.Panel4.Controls.Add(Me.RadDropDownList1)
-        Me.Panel4.Location = New System.Drawing.Point(9, 286)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(240, 58)
-        Me.Panel4.TabIndex = 14
-        '
         'chWrapExportMode
         '
         Me.chWrapExportMode.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chWrapExportMode.Location = New System.Drawing.Point(6, 34)
+        Me.chWrapExportMode.Location = New System.Drawing.Point(9, 315)
         Me.chWrapExportMode.Name = "chWrapExportMode"
         Me.chWrapExportMode.Size = New System.Drawing.Size(214, 19)
         Me.chWrapExportMode.TabIndex = 8
         Me.chWrapExportMode.Text = "Wrap Exported Rows In Transaction"
-        '
-        'RadDropDownList1
-        '
-        Me.RadDropDownList1.AutoSize = False
-        Me.RadDropDownList1.BackColor = System.Drawing.Color.Transparent
-        Me.RadDropDownList1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RadListDataItem1.Text = "Normal"
-        RadListDataItem2.Text = "Revisions"
-        Me.RadDropDownList1.Items.Add(RadListDataItem1)
-        Me.RadDropDownList1.Items.Add(RadListDataItem2)
-        Me.RadDropDownList1.Location = New System.Drawing.Point(6, 6)
-        Me.RadDropDownList1.Name = "RadDropDownList1"
-        Me.RadDropDownList1.NullText = "Row Export Mode"
-        Me.RadDropDownList1.Size = New System.Drawing.Size(193, 23)
-        Me.RadDropDownList1.TabIndex = 13
-        Me.RadDropDownList1.ThemeName = "Office2010Black"
-        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txEncryptPass
         '
@@ -601,35 +542,6 @@ Partial Class FormAdvancedSqlBackup
         CType(Me.txEncryptPass.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.txEncryptPass.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
-        'TableLayoutPanel2
-        '
-        Me.TableLayoutPanel2.ColumnCount = 1
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.btnBackup, 0, 0)
-        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(2, 356)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 1
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(303, 33)
-        Me.TableLayoutPanel2.TabIndex = 9
-        '
-        'btnBackup
-        '
-        Me.btnBackup.BackColor = System.Drawing.Color.Transparent
-        Me.btnBackup.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBackup.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnBackup.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnBackup.Location = New System.Drawing.Point(3, 3)
-        Me.btnBackup.Name = "btnBackup"
-        Me.btnBackup.Size = New System.Drawing.Size(297, 27)
-        Me.btnBackup.TabIndex = 0
-        Me.btnBackup.Text = "Execute &Backup"
-        Me.btnBackup.ThemeName = "Office2010Black"
-        CType(Me.btnBackup.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "Execute &Backup"
-        CType(Me.btnBackup.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
-        CType(Me.btnBackup.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
-        '
         'RadLabel3
         '
         Me.RadLabel3.BackColor = System.Drawing.Color.Transparent
@@ -640,6 +552,23 @@ Partial Class FormAdvancedSqlBackup
         Me.RadLabel3.Size = New System.Drawing.Size(58, 19)
         Me.RadLabel3.TabIndex = 11
         Me.RadLabel3.Text = "Password"
+        '
+        'RadDropDownList1
+        '
+        Me.RadDropDownList1.AutoSize = False
+        Me.RadDropDownList1.BackColor = System.Drawing.Color.Transparent
+        Me.RadDropDownList1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        RadListDataItem1.Text = "Normal"
+        RadListDataItem2.Text = "Revisions"
+        Me.RadDropDownList1.Items.Add(RadListDataItem1)
+        Me.RadDropDownList1.Items.Add(RadListDataItem2)
+        Me.RadDropDownList1.Location = New System.Drawing.Point(9, 286)
+        Me.RadDropDownList1.Name = "RadDropDownList1"
+        Me.RadDropDownList1.NullText = "Row Export Mode"
+        Me.RadDropDownList1.Size = New System.Drawing.Size(193, 23)
+        Me.RadDropDownList1.TabIndex = 13
+        Me.RadDropDownList1.ThemeName = "Office2010Black"
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadLabel6
         '
@@ -687,78 +616,71 @@ Partial Class FormAdvancedSqlBackup
         '
         'chCreatedb
         '
-        Me.chCreatedb.AutoSize = False
         Me.chCreatedb.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chCreatedb.Location = New System.Drawing.Point(9, 21)
+        Me.chCreatedb.Location = New System.Drawing.Point(196, 92)
         Me.chCreatedb.Name = "chCreatedb"
-        Me.chCreatedb.Size = New System.Drawing.Size(240, 18)
+        Me.chCreatedb.Size = New System.Drawing.Size(100, 19)
         Me.chCreatedb.TabIndex = 2
-        Me.chCreatedb.Text = "Add Create Database"
+        Me.chCreatedb.Text = "Exclude Tables"
         '
         'chEncryption
         '
-        Me.chEncryption.AutoSize = False
         Me.chEncryption.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chEncryption.Location = New System.Drawing.Point(9, 116)
         Me.chEncryption.Name = "chEncryption"
-        Me.chEncryption.Size = New System.Drawing.Size(240, 19)
+        Me.chEncryption.Size = New System.Drawing.Size(118, 19)
         Me.chEncryption.TabIndex = 7
         Me.chEncryption.Text = "Enable Encryption"
         '
         'chDumpTime
         '
-        Me.chDumpTime.AutoSize = False
         Me.chDumpTime.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chDumpTime.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chDumpTime.Location = New System.Drawing.Point(9, 262)
         Me.chDumpTime.Name = "chDumpTime"
-        Me.chDumpTime.Size = New System.Drawing.Size(240, 18)
+        Me.chDumpTime.Size = New System.Drawing.Size(126, 19)
         Me.chDumpTime.TabIndex = 7
         Me.chDumpTime.Text = "Record Dump Time"
         Me.chDumpTime.ToggleState = Telerik.WinControls.Enumerations.ToggleState.[On]
         '
         'ExportRoutin
         '
-        Me.ExportRoutin.AutoSize = False
         Me.ExportRoutin.CheckState = System.Windows.Forms.CheckState.Checked
         Me.ExportRoutin.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ExportRoutin.Location = New System.Drawing.Point(9, 238)
         Me.ExportRoutin.Name = "ExportRoutin"
-        Me.ExportRoutin.Size = New System.Drawing.Size(240, 18)
+        Me.ExportRoutin.Size = New System.Drawing.Size(197, 19)
         Me.ExportRoutin.TabIndex = 7
         Me.ExportRoutin.Text = "Export Routines Without Definer"
         Me.ExportRoutin.ToggleState = Telerik.WinControls.Enumerations.ToggleState.[On]
         '
         'chResetIncrement
         '
-        Me.chResetIncrement.AutoSize = False
         Me.chResetIncrement.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chResetIncrement.Location = New System.Drawing.Point(9, 92)
         Me.chResetIncrement.Name = "chResetIncrement"
-        Me.chResetIncrement.Size = New System.Drawing.Size(240, 18)
+        Me.chResetIncrement.Size = New System.Drawing.Size(138, 19)
         Me.chResetIncrement.TabIndex = 5
         Me.chResetIncrement.Text = "Reset Auto Increment"
         '
         'chExportRows
         '
-        Me.chExportRows.AutoSize = False
         Me.chExportRows.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chExportRows.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chExportRows.Location = New System.Drawing.Point(9, 68)
         Me.chExportRows.Name = "chExportRows"
-        Me.chExportRows.Size = New System.Drawing.Size(240, 18)
+        Me.chExportRows.Size = New System.Drawing.Size(88, 19)
         Me.chExportRows.TabIndex = 4
         Me.chExportRows.Text = "Export Rows"
         Me.chExportRows.ToggleState = Telerik.WinControls.Enumerations.ToggleState.[On]
         '
         'chDropCreate
         '
-        Me.chDropCreate.AutoSize = False
         Me.chDropCreate.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chDropCreate.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chDropCreate.Location = New System.Drawing.Point(9, 44)
         Me.chDropCreate.Name = "chDropCreate"
-        Me.chDropCreate.Size = New System.Drawing.Size(240, 18)
+        Me.chDropCreate.Size = New System.Drawing.Size(147, 19)
         Me.chDropCreate.TabIndex = 3
         Me.chDropCreate.Text = "Add Drop/Create Table"
         Me.chDropCreate.ToggleState = Telerik.WinControls.Enumerations.ToggleState.[On]
@@ -775,16 +697,19 @@ Partial Class FormAdvancedSqlBackup
         Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(143.0!, 30.0!)
         Me.RadPageViewPage3.Location = New System.Drawing.Point(8, 36)
         Me.RadPageViewPage3.Name = "RadPageViewPage3"
-        Me.RadPageViewPage3.Size = New System.Drawing.Size(613, 394)
+        Me.RadPageViewPage3.Size = New System.Drawing.Size(613, 361)
         Me.RadPageViewPage3.Text = "Exclude Tables & Rows"
         '
         'RadCheckedListBox1
         '
         Me.RadCheckedListBox1.AllowRemove = False
+        Me.RadCheckedListBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadCheckedListBox1.Location = New System.Drawing.Point(2, 59)
         Me.RadCheckedListBox1.MultiSelect = True
         Me.RadCheckedListBox1.Name = "RadCheckedListBox1"
-        Me.RadCheckedListBox1.Size = New System.Drawing.Size(611, 326)
+        Me.RadCheckedListBox1.Size = New System.Drawing.Size(611, 302)
         Me.RadCheckedListBox1.TabIndex = 2
         Me.RadCheckedListBox1.Text = "RadCheckedListBox1"
         Me.RadCheckedListBox1.ThemeName = "Office2010Black"
@@ -798,6 +723,7 @@ Partial Class FormAdvancedSqlBackup
         Me.RadButton6.Text = "Backup/Export Database"
         Me.RadButton6.TextWrap = True
         Me.RadButton6.ThemeName = "Office2010Black"
+        Me.RadButton6.Visible = False
         '
         'RadButton5
         '
@@ -854,7 +780,7 @@ Partial Class FormAdvancedSqlBackup
         Me.RadPageViewPage4.ItemSize = New System.Drawing.SizeF(101.0!, 30.0!)
         Me.RadPageViewPage4.Location = New System.Drawing.Point(8, 36)
         Me.RadPageViewPage4.Name = "RadPageViewPage4"
-        Me.RadPageViewPage4.Size = New System.Drawing.Size(613, 394)
+        Me.RadPageViewPage4.Size = New System.Drawing.Size(613, 361)
         Me.RadPageViewPage4.Text = "Query Browser"
         '
         'DataGridView1
@@ -870,7 +796,7 @@ Partial Class FormAdvancedSqlBackup
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(612, 253)
+        Me.DataGridView1.Size = New System.Drawing.Size(612, 220)
         Me.DataGridView1.TabIndex = 3
         Me.DataGridView1.VirtualMode = True
         '
@@ -880,7 +806,7 @@ Partial Class FormAdvancedSqlBackup
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.30376!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.69624!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.RadSpinEditor1, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.RadButton7, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.txsqlCommandtext, 0, 1)
@@ -898,13 +824,13 @@ Partial Class FormAdvancedSqlBackup
         Me.RadSpinEditor1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RadSpinEditor1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadSpinEditor1.Increment = New Decimal(New Integer() {150, 0, 0, 0})
-        Me.RadSpinEditor1.Location = New System.Drawing.Point(512, 4)
+        Me.RadSpinEditor1.Location = New System.Drawing.Point(510, 4)
         Me.RadSpinEditor1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 3)
         Me.RadSpinEditor1.Maximum = New Decimal(New Integer() {800, 0, 0, 0})
         Me.RadSpinEditor1.Minimum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.RadSpinEditor1.Name = "RadSpinEditor1"
         Me.RadSpinEditor1.Padding = New System.Windows.Forms.Padding(8, 1, 0, 1)
-        Me.RadSpinEditor1.Size = New System.Drawing.Size(97, 23)
+        Me.RadSpinEditor1.Size = New System.Drawing.Size(99, 23)
         Me.RadSpinEditor1.TabIndex = 4
         Me.RadSpinEditor1.TabStop = False
         Me.RadSpinEditor1.ThemeName = "Office2010Black"
@@ -962,7 +888,7 @@ Partial Class FormAdvancedSqlBackup
         Me.RadLabel8.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadLabel8.Location = New System.Drawing.Point(98, 3)
         Me.RadLabel8.Name = "RadLabel8"
-        Me.RadLabel8.Size = New System.Drawing.Size(408, 24)
+        Me.RadLabel8.Size = New System.Drawing.Size(406, 24)
         Me.RadLabel8.TabIndex = 0
         Me.RadLabel8.Text = "[Ctrl] + [Enter] = Execute SQL,  [ESC] = Clear      Default Column Width:"
         Me.RadLabel8.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
@@ -974,7 +900,7 @@ Partial Class FormAdvancedSqlBackup
         Me.RadPageViewPage5.ItemSize = New System.Drawing.SizeF(124.0!, 30.0!)
         Me.RadPageViewPage5.Location = New System.Drawing.Point(8, 36)
         Me.RadPageViewPage5.Name = "RadPageViewPage5"
-        Me.RadPageViewPage5.Size = New System.Drawing.Size(613, 394)
+        Me.RadPageViewPage5.Size = New System.Drawing.Size(613, 361)
         Me.RadPageViewPage5.Text = "Sql Content Viewer"
         '
         'Panel6
@@ -1050,7 +976,7 @@ Partial Class FormAdvancedSqlBackup
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(612, 357)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(612, 324)
         Me.TableLayoutPanel4.TabIndex = 2
         '
         'FastColoredTextBox1
@@ -1058,7 +984,7 @@ Partial Class FormAdvancedSqlBackup
         Me.FastColoredTextBox1.AllowMacroRecording = False
         Me.FastColoredTextBox1.AutoCompleteBrackets = True
         Me.FastColoredTextBox1.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
-        Me.FastColoredTextBox1.AutoIndentCharsPatterns = " "
+        Me.FastColoredTextBox1.AutoIndentCharsPatterns = ""
         Me.FastColoredTextBox1.AutoScrollMinSize = New System.Drawing.Size(6, 17)
         Me.FastColoredTextBox1.BackBrush = Nothing
         Me.FastColoredTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
@@ -1081,7 +1007,7 @@ Partial Class FormAdvancedSqlBackup
         Me.TableLayoutPanel4.SetRowSpan(Me.FastColoredTextBox1, 2)
         Me.FastColoredTextBox1.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.FastColoredTextBox1.ShowLineNumbers = False
-        Me.FastColoredTextBox1.Size = New System.Drawing.Size(606, 318)
+        Me.FastColoredTextBox1.Size = New System.Drawing.Size(606, 284)
         Me.FastColoredTextBox1.TabIndex = 1
         Me.FastColoredTextBox1.Zoom = 100
         '
@@ -1090,9 +1016,9 @@ Partial Class FormAdvancedSqlBackup
         Me.TableLayoutPanel4.SetColumnSpan(Me.Panel5, 2)
         Me.Panel5.Controls.Add(Me.tsFile)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel5.Location = New System.Drawing.Point(3, 327)
+        Me.Panel5.Location = New System.Drawing.Point(3, 293)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(606, 27)
+        Me.Panel5.Size = New System.Drawing.Size(606, 28)
         Me.Panel5.TabIndex = 3
         '
         'tsFile
@@ -1101,9 +1027,56 @@ Partial Class FormAdvancedSqlBackup
         Me.tsFile.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tsFile.Location = New System.Drawing.Point(0, 0)
         Me.tsFile.Name = "tsFile"
-        Me.tsFile.Size = New System.Drawing.Size(606, 27)
+        Me.tsFile.Size = New System.Drawing.Size(606, 28)
         Me.tsFile.TabIndex = 2
         Me.tsFile.Text = "Status"
+        '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.ColumnCount = 2
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.btnRestore, 1, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.btnBackup, 0, 0)
+        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 405)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 1
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(629, 33)
+        Me.TableLayoutPanel2.TabIndex = 9
+        '
+        'btnRestore
+        '
+        Me.btnRestore.BackColor = System.Drawing.Color.Transparent
+        Me.btnRestore.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRestore.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnRestore.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnRestore.Location = New System.Drawing.Point(317, 3)
+        Me.btnRestore.Name = "btnRestore"
+        Me.btnRestore.Size = New System.Drawing.Size(309, 27)
+        Me.btnRestore.TabIndex = 0
+        Me.btnRestore.Text = "Execute &Restore"
+        Me.btnRestore.ThemeName = "Office2010Black"
+        CType(Me.btnRestore.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "Execute &Restore"
+        CType(Me.btnRestore.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnRestore.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
+        '
+        'btnBackup
+        '
+        Me.btnBackup.BackColor = System.Drawing.Color.Transparent
+        Me.btnBackup.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBackup.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnBackup.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnBackup.Location = New System.Drawing.Point(3, 3)
+        Me.btnBackup.Name = "btnBackup"
+        Me.btnBackup.Size = New System.Drawing.Size(308, 27)
+        Me.btnBackup.TabIndex = 0
+        Me.btnBackup.Text = "Execute &Backup"
+        Me.btnBackup.ThemeName = "Office2010Black"
+        CType(Me.btnBackup.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "Execute &Backup"
+        CType(Me.btnBackup.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnBackup.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'FormAdvancedSqlBackup
         '
@@ -1139,8 +1112,6 @@ Partial Class FormAdvancedSqlBackup
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox2.ResumeLayout(False)
         Me.RadGroupBox2.PerformLayout()
-        Me.TableLayoutPanel3.ResumeLayout(False)
-        CType(Me.btnRestore, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1155,14 +1126,10 @@ Partial Class FormAdvancedSqlBackup
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox1.ResumeLayout(False)
         Me.RadGroupBox1.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
         CType(Me.chWrapExportMode, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txEncryptPass, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TableLayoutPanel2.ResumeLayout(False)
-        CType(Me.btnBackup, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.numericSQL, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chExportProcedureFunct, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1196,6 +1163,9 @@ Partial Class FormAdvancedSqlBackup
         CType(Me.FastColoredTextBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         CType(Me.tsFile, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel2.ResumeLayout(False)
+        CType(Me.btnRestore, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnBackup, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -1215,7 +1185,6 @@ Partial Class FormAdvancedSqlBackup
     Friend WithEvents RadPageViewPage4 As Telerik.WinControls.UI.RadPageViewPage
     Friend WithEvents RadPageViewPage5 As Telerik.WinControls.UI.RadPageViewPage
     Friend WithEvents RadGroupBox2 As Telerik.WinControls.UI.RadGroupBox
-    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents btnRestore As Telerik.WinControls.UI.RadButton
     Friend WithEvents Panel3 As Panel
     Friend WithEvents RadLabel2 As Telerik.WinControls.UI.RadLabel
@@ -1228,7 +1197,6 @@ Partial Class FormAdvancedSqlBackup
     Friend WithEvents chIgnoreError As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents chDecryption As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents RadGroupBox1 As Telerik.WinControls.UI.RadGroupBox
-    Friend WithEvents Panel4 As Panel
     Friend WithEvents chWrapExportMode As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents RadDropDownList1 As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents txEncryptPass As Telerik.WinControls.UI.RadTextBox

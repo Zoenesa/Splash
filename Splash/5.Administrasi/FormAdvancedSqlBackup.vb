@@ -32,9 +32,12 @@ Public Class FormAdvancedSqlBackup
         DataGridView1.VirtualMode = True
         LoadSetting()
 
-        FastColoredTextBox1.Text = ""
-        tsFile.Text = ""
-        tsStatus.Text = "(Tidak ada File yang dimuat.)"
+        If RadPageView1.SelectedPage Is RadPageViewPage5 Then
+            FastColoredTextBox1.Text = ""
+            tsFile.Text = ""
+            tsStatus.Text = "                                                          "
+        End If
+
 
     End Sub
 
@@ -71,7 +74,11 @@ Public Class FormAdvancedSqlBackup
     End Function
 
     Private Sub RadPageView1_SelectedPageChanged(sender As Object, e As EventArgs) Handles RadPageView1.SelectedPageChanged
-
+        If RadPageView1.SelectedPage Is RadPageViewPage5 Then
+            tsStatus.Text = "(Tidak Ada File yang dimuat.)"
+        Else
+            tsStatus.Text = ""
+        End If
     End Sub
 
     Private Sub FormAdvancedSqlBackup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -149,6 +156,11 @@ Public Class FormAdvancedSqlBackup
     End Sub
 
     Private Sub OpenFile(ByVal file As String)
+        If RadPageView1.SelectedPage Is RadPageViewPage5 Then
+            tsStatus.Text = "(Tidak Ada File yang dimuat.)"
+        Else
+
+        End If
         If file = "" Then
             tsFile.Text = ""
             FastColoredTextBox1.Text = ""
@@ -168,7 +180,9 @@ Public Class FormAdvancedSqlBackup
             Me.Refresh()
             Me.SuspendLayout()
             FastColoredTextBox1.Text = IO.File.ReadAllText(file)
-            tsFile.Text = file
+            Dim fileLines As String = FastColoredTextBox1.Lines.Count
+            Dim alltext As String = IO.File.ReadAllText(file).Length
+            tsFile.Text = "" & file & " | Lines: " & fileLines & " | Length: " & alltext
             tsStatus.Text = "File berhasil dimuat."
             Me.ResumeLayout()
         Catch ex As Exception
@@ -195,7 +209,12 @@ Public Class FormAdvancedSqlBackup
     End Sub
 
     Private Sub FastColoredTextBox1_TextChanged(sender As Object, e As TextChangedEventArgs) Handles FastColoredTextBox1.TextChanged
-        tsStatus.Text = "(Editing...)"
+        If RadPageView1.SelectedPage Is RadPageViewPage5 Then
+            tsStatus.Text = "(Editing...)"
+        Else
+            tsStatus.Text = ""
+        End If
+
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -246,8 +265,8 @@ Public Class FormAdvancedSqlBackup
         End If
         Try
             Dim lst As New List(Of String)()
-            For Each item As Object In RadCheckedListBox1.CheckedItems
-                lst.Add(item.ToString)
+            For Each item As ListViewDataItem In RadCheckedListBox1.CheckedItems
+                lst.Add(item.Text.ToString)
             Next
             Using conn As New MySqlConnection(ModuleBackupRestore.SqldbConnectionString)
                 Using cmd As New MySqlCommand()
@@ -363,4 +382,6 @@ Public Class FormAdvancedSqlBackup
             RadMessageBox.Show("Error" & ex.Message.ToString)
         End Try
     End Sub
+
+
 End Class
