@@ -29,7 +29,9 @@ Public Class FormAdvancedSqlBackup
 
         Me.Text += " ,MySqlBackup.DLL Version: " + MySql.Data.MySqlClient.MySqlBackup.Version
 
-        DataGridView1.VirtualMode = True
+        'DataGridView1.VirtualMode = True
+        RadGridView1.VirtualMode = True
+
         LoadSetting()
 
         If RadPageView1.SelectedPage Is RadPageViewPage5 Then
@@ -50,7 +52,7 @@ Public Class FormAdvancedSqlBackup
                 chAutoSave.Checked = False
             End If
         Catch ex As Exception
-
+            RadMessageBox.Show("Error." & ex.Message.ToString, "Error", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
         End Try
     End Sub
 
@@ -78,6 +80,12 @@ Public Class FormAdvancedSqlBackup
             tsStatus.Text = "(Tidak Ada File yang dimuat.)"
         Else
             tsStatus.Text = ""
+        End If
+        If RadPageView1.SelectedPage Is RadPageViewPage1 Then
+            TableLayoutPanel2.Parent = RadPageViewPage1
+        End If
+        If RadPageView1.SelectedPage Is RadPageViewPage3 Then
+            TableLayoutPanel2.Parent = RadPageViewPage3
         End If
     End Sub
 
@@ -192,6 +200,8 @@ Public Class FormAdvancedSqlBackup
 
     Private Sub CommandBarButton1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ofdd As OpenFileDialog = New OpenFileDialog()
+        ofdd.RestoreDirectory = True
+        ofdd.Title = "Pilih SQL Dump"
         If (ModuleBackupRestore.FolderDefault <> "") Then
             ofdd.InitialDirectory = ModuleBackupRestore.FolderDefault
         End If
@@ -232,7 +242,7 @@ Public Class FormAdvancedSqlBackup
         tsFile.Text = ""
     End Sub
 
-    Private Sub RadButton3_Click(sender As Object, e As EventArgs) Handles RadButton3.Click
+    Private Sub RadButton3_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
         Using conn As MySqlConnection = New MySqlConnection(ModuleBackupRestore.SqldbConnectionString)
             Using cmd As MySqlCommand = New MySqlCommand()
                 cmd.Connection = conn
@@ -292,8 +302,10 @@ Public Class FormAdvancedSqlBackup
 
     Private Sub ExecuteSql()
         Try
-            DataGridView1.Rows.Clear()
-            DataGridView1.Columns.Clear()
+            'DataGridView1.Rows.Clear()
+            'DataGridView1.Columns.Clear()
+            RadGridView1.Rows.Clear()
+            RadGridView1.Columns.Clear()
 
             sqlDT = New DataTable
             Dim sqlstring As String = txsqlCommandtext.Text.Trim()
@@ -321,44 +333,73 @@ Public Class FormAdvancedSqlBackup
                     conn.Close()
                 End Using
             End Using
+
             For Each dc As DataColumn In sqlDT.Columns
                 Dim dgvTB As New DataGridViewTextBoxColumn()
                 dgvTB.HeaderText = dc.ColumnName
-                DataGridView1.Columns.Add(dgvTB)
+
+                'DataGridView1.Columns.Add(dgvTB)
+
+                RadGridView1.Columns.Add(dgvTB.Name, dgvTB.HeaderText)
+
+                RadGridView1.BestFitColumns()
+
                 If isExecution Then
                     dgvTB.Width = 700
                 Else
                     dgvTB.Width = RadSpinEditor1.Value
                 End If
             Next
-            DataGridView1.RowTemplate.Height = 25
+
+            'DataGridView1.RowTemplate.Height = 25
+
             If sqlDT.Rows.Count > 0 Then
-                DataGridView1.Rows.Add(sqlDT.Rows.Count)
+
+                'DataGridView1.Rows.Add(sqlDT.Rows.Count)
+
+                For Each gridrow As DataRow In sqlDT.Rows
+                    RadGridView1.Rows.Add(gridrow)
+                Next
+
+                RadGridView1.BestFitColumns()
             End If
-            DataGridView1.ClearSelection()
+
+            'dataGridView1.ClearSelection()
+            RadGridView1.ClearSelection()
+
         Catch ex As Exception
-            DataGridView1.Rows.Clear()
-            DataGridView1.Columns.Clear()
+
+            'DataGridView1.Rows.Clear()
+            'DataGridView1.Columns.Clear()
+            RadGridView1.Rows.Clear()
+            RadGridView1.Columns.Clear()
 
             Dim err As String = ex.ToString()
             sqlDT = New DataTable()
             sqlDT.Columns.Add("Error")
             sqlDT.Rows.Add(err)
 
-            DataGridView1.RowTemplate.Height = 300
+            'DataGridView1.RowTemplate.Height = 300
 
             Dim dgvTB As New DataGridViewTextBoxColumn()
+
             dgvTB.Width = 750
             dgvTB.HeaderText = "Error"
-            DataGridView1.Columns.Add(dgvTB)
-            DataGridView1.Rows.Add(1)
 
-            DataGridView1.ClearSelection()
+            'DataGridView1.Columns.Add(dgvTB)
+
+            'DataGridView1.Rows.Add(1)
+
+            RadGridView1.Columns.Add(dgvTB.Name)
+            RadGridView1.Rows.Add(1)
+
+            'DataGridView1.ClearSelection()
+            RadGridView1.ClearSelection()
 
         End Try
     End Sub
 
-    Private Sub DataGridView1_CellValueNeeded(sender As Object, e As DataGridViewCellValueEventArgs) Handles DataGridView1.CellValueNeeded
+    Private Sub DataGridView1_CellValueNeeded(sender As Object, e As DataGridViewCellValueEventArgs)
         Try
             If e.RowIndex >= sqlDT.Rows.Count Then
                 Return
@@ -383,5 +424,40 @@ Public Class FormAdvancedSqlBackup
         End Try
     End Sub
 
+    Private Sub RadCheckBox1_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles chExcludedb.ToggleStateChanged
+        If args.ToggleState = Enumerations.ToggleState.On Then
+            RadPageView1.SelectedPage = RadPageViewPage3
+            TableLayoutPanel2.Parent = RadPageViewPage3
+            Me.SuspendLayout()
+            Call RadButton3_Click(chExcludedb, args)
+            Me.ResumeLayout()
+        Else
+            RadCheckedListBox1.Items.Clear()
+        End If
+    End Sub
 
+    Private Sub RadGridView1_CellValueNeeded(sender As Object, e As GridViewCellValueEventArgs) Handles RadGridView1.CellValueNeeded
+        Try
+            If e.RowIndex >= sqlDT.Rows.Count Then
+                Return
+            End If
+            If e.ColumnIndex >= sqlDT.Columns.Count Then
+                Return
+            End If
+            If (sqlDT.Rows(e.RowIndex)(e.ColumnIndex) Is Nothing) OrElse (TypeOf sqlDT.Rows(e.RowIndex)(e.ColumnIndex) Is DBNull) Then
+                e.Value = "null"
+                Return
+            End If
+            Dim dttype As Type = sqlDT.Columns(e.ColumnIndex).DataType
+            If dttype = GetType(Byte()) Then
+                e.Value = "blob/byte[]"
+            ElseIf dttype = GetType(DateTime) Then
+                e.Value = DirectCast(sqlDT.Rows(e.RowIndex)(e.ColumnIndex), DateTime).ToString("yyyy-MM-dd HH:mm:ss")
+            Else
+                e.Value = sqlDT.Rows(e.RowIndex)(e.ColumnIndex) & ""
+            End If
+        Catch ex As Exception
+            RadMessageBox.Show("Error" & ex.Message.ToString)
+        End Try
+    End Sub
 End Class

@@ -62,9 +62,8 @@
     <Reference Include="MySqlBackup">
       <HintPath>..\packages\MySqlBackup.NET.2.0.9.4\lib\net45\MySqlBackup.dll</HintPath>
     </Reference>
-    <Reference Include="PasswordMeter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Release\Libs\PasswordMeter.dll</HintPath>
+    <Reference Include="PasswordMeter">
+      <HintPath>H:\VB\Splash\Splash\bin\Release\PasswordMeter.dll</HintPath>
     </Reference>
     <Reference Include="Setting.Config.Profile, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc9895b3df706583, processorArchitecture=MSIL">
       <HintPath>bin\Release\Libs\Setting.Config.Profile.dll</HintPath>
