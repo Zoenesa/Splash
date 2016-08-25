@@ -423,6 +423,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Libs\Splash.vshost.exe.ini" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -446,6 +447,9 @@
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
     <Content Include="Libs\FastColoredTextBox.dll" />
+    <Content Include="Libs\MySql.Data.dll" />
+    <Content Include="Libs\MySqlBackup.dll" />
+    <Content Include="Libs\Setting.Config.Profile.dll" />
     <Content Include="Libs\Telerik.WinControls.dll" />
     <Content Include="Libs\Telerik.WinControls.GridView.dll" />
     <Content Include="Libs\Telerik.WinControls.RadDock.dll" />
