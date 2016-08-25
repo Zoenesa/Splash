@@ -47,6 +47,37 @@ Public Class rFormInisialisasiKoneksi
         Dim mprofile As Setting.Config.Profile.Ini = New Setting.Config.Profile.Ini
 
         Dim strSection As String = Nothing
+        If Not IO.File.Exists(IO.Path.Combine(Environment.CurrentDirectory, mprofile.Name)) Then
+            IO.File.Create(IO.Path.Combine(Environment.CurrentDirectory, mprofile.Name))
+
+        End If
+
+        'Dim Lines As String() = New String(18) {}
+        'Lines(0) = "\\SPLASH DataBase"
+        'Lines(1) = "\\DO NOT DELETE OR CHANGE ON THIS CONFIG FILE"
+        'Lines(2) = "\\RISK CHANGING OR DELETING WILL CAUSE DAMAGE OR CORRUPTION DATA"
+        'Lines(3) = My.Application.Info.AssemblyName
+        'Lines(4) = My.Application.Info.Version.Build
+        'Lines(5) = My.Computer.Info.OSFullName
+        'Lines(6) = My.Computer.Name
+        'Lines(7) = "[General]"
+        'Lines(8) = "ConnectionName=Splash_Connection"
+        'Lines(9) = "DatabaseName=db_apps"
+        'Lines(10) = "Server=localhost"
+        'Lines(11) = "Port=3306"
+        'Lines(12) = "User=SUPERVISOR"
+        'Lines(13) = "Password=di5t0rti0n"
+        'Lines(14) = "defaultsetting=True"
+        'Lines(15) = "SettingName=0"
+        'Lines(16) = "SectionName=General"
+        'Lines(17) = "BackupLocation=E:\VB\Splash\Splash\bin\Release\backups"
+        'Lines(18) = "Icons=myico.ico"
+        'IO.File.WriteAllLines(IO.Path.Combine(Environment.CurrentDirectory, mprofile.Name), Lines)
+
+
+        Dim cfgName As String = mprofile.Name
+
+
 
         Dim strdefault As String = mprofile.GetValue("General", "defaultsetting")
         If strdefault = "True" Then
