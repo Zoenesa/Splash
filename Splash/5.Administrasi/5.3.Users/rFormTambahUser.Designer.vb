@@ -22,8 +22,6 @@ Partial Class rFormTambahUser
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.RadPageView1 = New Telerik.WinControls.UI.RadPageView()
         Me.RadPageViewPage1 = New Telerik.WinControls.UI.RadPageViewPage()
         Me.InisialisasiPasswordMeter1 = New Splash.InisialisasiPasswordMeter()
@@ -34,14 +32,15 @@ Partial Class rFormTambahUser
         Me.txUsername = New Telerik.WinControls.UI.RadTextBox()
         Me.txPassword = New Telerik.WinControls.UI.RadTextBox()
         Me.RadPageViewPage2 = New Telerik.WinControls.UI.RadPageViewPage()
+        Me.rCbJobdesk = New Telerik.WinControls.UI.RadDropDownList()
         Me.RadLabel4 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel7 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel5 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel6 = New Telerik.WinControls.UI.RadLabel()
         Me.txAlamat = New Telerik.WinControls.UI.RadTextBox()
         Me.txUserFname = New Telerik.WinControls.UI.RadTextBox()
         Me.txJabatan = New Telerik.WinControls.UI.RadTextBox()
         Me.RadPageViewPage3 = New Telerik.WinControls.UI.RadPageViewPage()
-        Me.rCbJobdesk = New Telerik.WinControls.UI.RadDropDownList()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
         Me.rUser = New Telerik.WinControls.UI.RadRadioButton()
         Me.rAdmin = New Telerik.WinControls.UI.RadRadioButton()
@@ -54,7 +53,6 @@ Partial Class rFormTambahUser
         Me.chk4 = New Telerik.WinControls.UI.RadCheckBox()
         Me.chk3 = New Telerik.WinControls.UI.RadCheckBox()
         Me.chk2 = New Telerik.WinControls.UI.RadCheckBox()
-        Me.RadLabel7 = New Telerik.WinControls.UI.RadLabel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnSave = New Telerik.WinControls.UI.RadButton()
         Me.btnClose = New Telerik.WinControls.UI.RadButton()
@@ -70,14 +68,15 @@ Partial Class rFormTambahUser
         CType(Me.txUsername, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txPassword, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPageViewPage2.SuspendLayout()
+        CType(Me.rCbJobdesk, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txAlamat, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txUserFname, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txJabatan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPageViewPage3.SuspendLayout()
-        CType(Me.rCbJobdesk, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox1.SuspendLayout()
         CType(Me.rUser, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,7 +90,6 @@ Partial Class rFormTambahUser
         CType(Me.chk4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chk3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chk2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.btnSave, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -108,7 +106,7 @@ Partial Class rFormTambahUser
         Me.RadPageView1.DefaultPage = Me.RadPageViewPage1
         Me.RadPageView1.Location = New System.Drawing.Point(1, 2)
         Me.RadPageView1.Name = "RadPageView1"
-        Me.RadPageView1.SelectedPage = Me.RadPageViewPage3
+        Me.RadPageView1.SelectedPage = Me.RadPageViewPage2
         Me.RadPageView1.Size = New System.Drawing.Size(442, 254)
         Me.RadPageView1.TabIndex = 0
         Me.RadPageView1.Text = "RadPageView1"
@@ -125,10 +123,10 @@ Partial Class rFormTambahUser
         Me.RadPageViewPage1.Controls.Add(Me.txKonfirmasi)
         Me.RadPageViewPage1.Controls.Add(Me.txUsername)
         Me.RadPageViewPage1.Controls.Add(Me.txPassword)
-        Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(65.0!, 28.0!)
-        Me.RadPageViewPage1.Location = New System.Drawing.Point(10, 37)
+        Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(77.0!, 30.0!)
+        Me.RadPageViewPage1.Location = New System.Drawing.Point(12, 40)
         Me.RadPageViewPage1.Name = "RadPageViewPage1"
-        Me.RadPageViewPage1.Size = New System.Drawing.Size(421, 206)
+        Me.RadPageViewPage1.Size = New System.Drawing.Size(418, 202)
         Me.RadPageViewPage1.Text = "Data User"
         '
         'InisialisasiPasswordMeter1
@@ -192,6 +190,9 @@ Partial Class rFormTambahUser
         Me.txKonfirmasi.TabIndex = 5
         Me.txKonfirmasi.ThemeName = "Office2010Black"
         Me.txKonfirmasi.UseSystemPasswordChar = True
+        CType(Me.txKonfirmasi.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txKonfirmasi.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txKonfirmasi.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txUsername
         '
@@ -204,6 +205,10 @@ Partial Class rFormTambahUser
         Me.txUsername.Size = New System.Drawing.Size(215, 23)
         Me.txUsername.TabIndex = 1
         Me.txUsername.ThemeName = "Office2010Black"
+        CType(Me.txUsername.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txUsername.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txUsername.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txUsername.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txPassword
         '
@@ -218,6 +223,10 @@ Partial Class rFormTambahUser
         Me.txPassword.TabIndex = 3
         Me.txPassword.ThemeName = "Office2010Black"
         Me.txPassword.UseSystemPasswordChar = True
+        CType(Me.txPassword.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txPassword.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txPassword.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txPassword.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadPageViewPage2
         '
@@ -229,11 +238,24 @@ Partial Class rFormTambahUser
         Me.RadPageViewPage2.Controls.Add(Me.txAlamat)
         Me.RadPageViewPage2.Controls.Add(Me.txUserFname)
         Me.RadPageViewPage2.Controls.Add(Me.txJabatan)
-        Me.RadPageViewPage2.ItemSize = New System.Drawing.SizeF(71.0!, 28.0!)
-        Me.RadPageViewPage2.Location = New System.Drawing.Point(10, 37)
+        Me.RadPageViewPage2.ItemSize = New System.Drawing.SizeF(83.0!, 30.0!)
+        Me.RadPageViewPage2.Location = New System.Drawing.Point(12, 40)
         Me.RadPageViewPage2.Name = "RadPageViewPage2"
-        Me.RadPageViewPage2.Size = New System.Drawing.Size(421, 206)
+        Me.RadPageViewPage2.Size = New System.Drawing.Size(418, 202)
         Me.RadPageViewPage2.Text = "User Detail"
+        '
+        'rCbJobdesk
+        '
+        Me.rCbJobdesk.AutoSize = False
+        Me.rCbJobdesk.BackColor = System.Drawing.Color.Transparent
+        Me.rCbJobdesk.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rCbJobdesk.Location = New System.Drawing.Point(109, 72)
+        Me.rCbJobdesk.Name = "rCbJobdesk"
+        Me.rCbJobdesk.NullText = "Job Desk"
+        Me.rCbJobdesk.Size = New System.Drawing.Size(208, 23)
+        Me.rCbJobdesk.TabIndex = 11
+        Me.rCbJobdesk.ThemeName = "Office2010Black"
+        CType(Me.rCbJobdesk.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadLabel4
         '
@@ -245,6 +267,17 @@ Partial Class rFormTambahUser
         Me.RadLabel4.Size = New System.Drawing.Size(45, 19)
         Me.RadLabel4.TabIndex = 4
         Me.RadLabel4.Text = "Alamat"
+        '
+        'RadLabel7
+        '
+        Me.RadLabel7.BackColor = System.Drawing.Color.Transparent
+        Me.RadLabel7.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadLabel7.ForeColor = System.Drawing.Color.Black
+        Me.RadLabel7.Location = New System.Drawing.Point(109, 52)
+        Me.RadLabel7.Name = "RadLabel7"
+        Me.RadLabel7.Size = New System.Drawing.Size(64, 19)
+        Me.RadLabel7.TabIndex = 0
+        Me.RadLabel7.Text = "* Job Desk"
         '
         'RadLabel5
         '
@@ -280,6 +313,10 @@ Partial Class rFormTambahUser
         Me.txAlamat.Size = New System.Drawing.Size(406, 78)
         Me.txAlamat.TabIndex = 5
         Me.txAlamat.ThemeName = "Office2010Black"
+        CType(Me.txAlamat.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).StretchVertically = True
+        CType(Me.txAlamat.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txAlamat.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txAlamat.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txUserFname
         '
@@ -292,6 +329,10 @@ Partial Class rFormTambahUser
         Me.txUserFname.Size = New System.Drawing.Size(406, 23)
         Me.txUserFname.TabIndex = 1
         Me.txUserFname.ThemeName = "Office2010Black"
+        CType(Me.txUserFname.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txUserFname.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txUserFname.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txUserFname.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txJabatan
         '
@@ -304,31 +345,19 @@ Partial Class rFormTambahUser
         Me.txJabatan.Size = New System.Drawing.Size(97, 23)
         Me.txJabatan.TabIndex = 3
         Me.txJabatan.ThemeName = "Office2010Black"
+        CType(Me.txJabatan.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txJabatan.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txJabatan.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txJabatan.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadPageViewPage3
         '
         Me.RadPageViewPage3.Controls.Add(Me.RadGroupBox1)
-        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(103.0!, 28.0!)
-        Me.RadPageViewPage3.Location = New System.Drawing.Point(10, 37)
+        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(115.0!, 30.0!)
+        Me.RadPageViewPage3.Location = New System.Drawing.Point(12, 40)
         Me.RadPageViewPage3.Name = "RadPageViewPage3"
-        Me.RadPageViewPage3.Size = New System.Drawing.Size(421, 206)
+        Me.RadPageViewPage3.Size = New System.Drawing.Size(418, 202)
         Me.RadPageViewPage3.Text = "User Akses / Role"
-        '
-        'rCbJobdesk
-        '
-        Me.rCbJobdesk.AutoSize = False
-        Me.rCbJobdesk.BackColor = System.Drawing.Color.Transparent
-        Me.rCbJobdesk.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RadListDataItem3.Text = "Normal"
-        RadListDataItem4.Text = "Revisions"
-        Me.rCbJobdesk.Items.Add(RadListDataItem3)
-        Me.rCbJobdesk.Items.Add(RadListDataItem4)
-        Me.rCbJobdesk.Location = New System.Drawing.Point(109, 72)
-        Me.rCbJobdesk.Name = "rCbJobdesk"
-        Me.rCbJobdesk.NullText = "Normal / Revisions"
-        Me.rCbJobdesk.Size = New System.Drawing.Size(208, 23)
-        Me.rCbJobdesk.TabIndex = 11
-        Me.rCbJobdesk.ThemeName = "Office2010Black"
         '
         'RadGroupBox1
         '
@@ -359,7 +388,7 @@ Partial Class rFormTambahUser
         '
         Me.rUser.AutoSize = False
         Me.rUser.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rUser.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.rUser.ForeColor = System.Drawing.Color.Black
         Me.rUser.Location = New System.Drawing.Point(11, 60)
         Me.rUser.Name = "rUser"
         Me.rUser.Size = New System.Drawing.Size(162, 19)
@@ -373,7 +402,7 @@ Partial Class rFormTambahUser
         Me.rAdmin.AutoSize = False
         Me.rAdmin.CheckState = System.Windows.Forms.CheckState.Checked
         Me.rAdmin.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rAdmin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.rAdmin.ForeColor = System.Drawing.Color.Black
         Me.rAdmin.Location = New System.Drawing.Point(11, 21)
         Me.rAdmin.Name = "rAdmin"
         Me.rAdmin.Size = New System.Drawing.Size(148, 19)
@@ -454,17 +483,6 @@ Partial Class rFormTambahUser
         Me.chk2.TabIndex = 3
         Me.chk2.Text = "Edit Data"
         '
-        'RadLabel7
-        '
-        Me.RadLabel7.BackColor = System.Drawing.Color.Transparent
-        Me.RadLabel7.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadLabel7.ForeColor = System.Drawing.Color.Black
-        Me.RadLabel7.Location = New System.Drawing.Point(109, 52)
-        Me.RadLabel7.Name = "RadLabel7"
-        Me.RadLabel7.Size = New System.Drawing.Size(64, 19)
-        Me.RadLabel7.TabIndex = 0
-        Me.RadLabel7.Text = "* Job Desk"
-        '
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
@@ -493,6 +511,8 @@ Partial Class rFormTambahUser
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "&Tambah User"
         Me.btnSave.ThemeName = "Office2010Black"
+        CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnClose
         '
@@ -506,6 +526,8 @@ Partial Class rFormTambahUser
         Me.btnClose.TabIndex = 1
         Me.btnClose.Text = "&Close"
         Me.btnClose.ThemeName = "Office2010Black"
+        CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnNext
         '
@@ -519,6 +541,8 @@ Partial Class rFormTambahUser
         Me.btnNext.TabIndex = 12
         Me.btnNext.Text = " &Next > "
         Me.btnNext.ThemeName = "Office2010Black"
+        CType(Me.btnNext.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnNext.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnBack
         '
@@ -532,6 +556,8 @@ Partial Class rFormTambahUser
         Me.btnBack.TabIndex = 13
         Me.btnBack.Text = " < &Back "
         Me.btnBack.ThemeName = "Office2010Black"
+        CType(Me.btnBack.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnBack.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'rFormTambahUser
         '
@@ -568,14 +594,15 @@ Partial Class rFormTambahUser
         CType(Me.txPassword, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadPageViewPage2.ResumeLayout(False)
         Me.RadPageViewPage2.PerformLayout()
+        CType(Me.rCbJobdesk, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txAlamat, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txUserFname, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txJabatan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadPageViewPage3.ResumeLayout(False)
-        CType(Me.rCbJobdesk, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox1.ResumeLayout(False)
         Me.RadGroupBox1.PerformLayout()
@@ -590,7 +617,6 @@ Partial Class rFormTambahUser
         CType(Me.chk4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chk3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chk2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.btnSave, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()

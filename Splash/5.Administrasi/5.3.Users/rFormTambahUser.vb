@@ -67,14 +67,16 @@ Public Class rFormTambahUser
                          Operators.ConcatenateObject(Interaction.IIf(Me.chk8.Checked, "1", "0"), ";"))),
                          Operators.ConcatenateObject(Interaction.IIf(Me.chk9.Checked, "1", "0"), ";")))
             End If
+            Dim tempPass As String = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(txKonfirmasi.Text.Trim(), mdlstring.defaultKey)
             If Not Me.EditMode Then
                 If comon.unameOke(errMsg, Me.txUsername.Text.Trim) Then
-                    flag = comon.tambahUname(Me.txUsername.Text.Trim(), Me.txKonfirmasi.Text.Trim(), str2, txUserFname.Text.Trim(), rCbJobdesk.Text.Trim())
+
+                    flag = comon.tambahUname(Me.txUsername.Text.Trim(), tempPass, str2, txUserFname.Text.Trim(), rCbJobdesk.Text.Trim())
                 Else
                     mdlCom.ShowWarning("Username sudah terdaftar.")
                 End If
             Else
-                flag = comon.updateUser(Me.txKonfirmasi.Text.Trim(), Me.txUsername.Text.Trim(), str2)
+                flag = comon.updateUser(tempPass, Me.txUsername.Text.Trim(), str2)
             End If
             If flag Then
                 mdlCom.ShowInfo("Username berhasil disimpan.")

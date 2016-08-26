@@ -48,9 +48,11 @@ Public Class rFormGantiPassword
         If result = System.Windows.Forms.DialogResult.Yes Then
             Dim comon As New common
             Dim errMsg As String = ""
-            If comon.passwordOke(errMsg, txoldPass.Text.Trim(), mdlCom.UserLogin) Then
+            Dim tempOldPass As String = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(txoldPass.Text.Trim(), mdlstring.defaultKey)
+            If comon.passwordOke(errMsg, tempOldPass, mdlCom.UserLogin) Then
                 If (Me.txPassNew.Text.Trim() = Me.txPassNext.Text.Trim()) Then
-                    If comon.updatePassword(Me.txPassNew.Text.Trim(), mdlCom.UserLogin) Then
+                    Dim tempPass As String = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(txPassNew.Text.Trim(), mdlstring.defaultKey)
+                    If comon.updatePassword(tempPass, mdlCom.UserLogin) Then
                         mdlCom.ShowInfo("Password berhasil diubah.")
                         Me.Close()
                     Else

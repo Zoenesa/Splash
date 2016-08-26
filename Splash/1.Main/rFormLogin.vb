@@ -1,5 +1,6 @@
 ﻿Imports Telerik, Telerik.WinControls, Telerik.WinControls.UI
 Imports Microsoft.VisualBasic.CompilerServices
+Imports MySql.Data.MySqlClient
 
 Public Class rFormLogin
     Public Sub New()
@@ -49,12 +50,14 @@ Public Class rFormLogin
             rTxPassword.SelectAll()
             Exit Sub
         End If
+
         If mdlCom.DataLogin(sUser, sPass, retmsg, errmsg, False) Then
-            RadMessageBox.Show(rFormMain, "Welcome " & vbNewLine & mdlCom.UserLogin.ToString.ToUpper & vbNewLine & _
-                                 "Current Project are : ", "Splash DB" & Me.Text, MessageBoxButtons.OK, RadMessageIcon.Info, MessageBoxDefaultButton.Button1)
+            RadMessageBox.Show(rFormMain, "Welcome " & vbNewLine & mdlCom.UserLogin.ToString.ToUpper & vbNewLine,
+                               "Splash DB" & Me.Text, MessageBoxButtons.OK, RadMessageIcon.Info, MessageBoxDefaultButton.Button1)
+            '"Current Project are : ", "Splash DB" & Me.Text, MessageBoxButtons.OK, RadMessageIcon.Info, MessageBoxDefaultButton.Button1)
             Me.DialogResult = System.Windows.Forms.DialogResult.OK
             rFormMain.IsMdiContainer = True
-            rFormMain.RadStatusDeskripsi.Text = String.Concat(New String() { _
+            rFormMain.RadStatusDeskripsi.Text = String.Concat(New String() {
             "[", "Sign In As: ", Strings.UCase(mdlCom.UserLogin), "; ", "Nama: ", Strings.UCase(mdlCom.UserFName),
             "; Title: ", mdlCom.UserRole, "]",
             "; ", "[Server: ", mdlCom.uhost, "; Database: ", mdlCom.cDbname, "]"
@@ -77,8 +80,12 @@ Public Class rFormLogin
             Dim num1 As Integer = DirectCast(RadMessageBox.Show(retmsg, "Error", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1), Integer)
         End If
     End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Login(rTxUsername.Text.Trim(), rTxPassword.Text.Trim())
+        Dim tempPassword As String = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(rTxPassword.Text.Trim(), mdlstring.defaultKey)
+
+        'Login(rTxUsername.Text.Trim(), rTxPassword.Text.Trim())
+        Login(rTxUsername.Text.Trim(), tempPassword)
     End Sub
 
     Private Sub rFormLogin_Load(sender As Object, e As EventArgs) Handles Me.Load
