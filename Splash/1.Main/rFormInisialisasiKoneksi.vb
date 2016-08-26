@@ -85,11 +85,18 @@ Public Class rFormInisialisasiKoneksi
                 strSection = mprofile.GetValue("General", "SectionName")
             End If
 
+            Dim tempPass As String = mprofile.GetValue(strSection, "Password")
+
+            Dim ImportPassword As String = CodeLibs.CodeMethod.Decrypt_TRIPLEDES(tempPass, mdlstring.defaultKey)
+
             txdbname.Text = mprofile.GetValue(strSection, "DatabaseName")
             txserver.Text = mprofile.GetValue(strSection, "server")
             txPort.Text = mprofile.GetValue(strSection, "port")
             txUser.Text = mprofile.GetValue(strSection, "user")
-            txPass.Text = mprofile.GetValue(strSection, "password")
+
+            'txPass.Text = mprofile.GetValue(strSection, "password")
+            txPass.Text = ImportPassword
+
         Catch ex As Exception
             RadMessageBox.Show("Kesalahan, Kode: " & ex.Source & vbNewLine &
                                ex.Message.ToString, "LOAD SETTING", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)

@@ -43,7 +43,8 @@ Public Class rFormDatabaseSetup
             Me.SelectedProfile.SetValue(cbSection.Text, "Server", txHost.Text.Trim())
             Me.SelectedProfile.SetValue(cbSection.Text, "User", txUser.Text.Trim())
             Me.SelectedProfile.SetValue(cbSection.Text, "Port", txPort.Text.Trim())
-            Me.SelectedProfile.SetValue(cbSection.Text, "Password", txPass.Text.Trim())
+            Dim convertPassword As String = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(txPass.Text.Trim(), mdlstring.defaultKey)
+            Me.SelectedProfile.SetValue(cbSection.Text, "Password", convertPassword)
             Me.SelectedProfile.SetValue("General", "BackupLocation", txBackupFolderPath.Text.Trim())
 
             If RadCheckBox1.Checked Then
@@ -60,19 +61,17 @@ Public Class rFormDatabaseSetup
     End Sub
 
     Private Sub ReadConfig()
+        Dim tempPass As String = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "Password")
+
+        Dim ImportPassword As String = CodeLibs.CodeMethod.Decrypt_TRIPLEDES(tempPass, mdlstring.defaultKey)
 
         txConStr.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "ConnectionName")
         txdbname.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "DatabaseName")
         txHost.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "Server")
         txUser.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "User")
-        txPass.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "Password")
+        'txPass.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "Password")
+        txPass.Text = ImportPassword
         txBackupFolderPath.Text = Me.SelectedProfile.GetValue("General", "BackupLocation")
-
-        'txConStr.Text = settingaplikasi.ReadValue("General", "ConnectionName")
-        'txdbName.Text = settingaplikasi.ReadValue("General", "DatabaseName")
-        'txHost.Text = settingaplikasi.ReadValue("General", "Server")
-        'txUser.Text = settingaplikasi.ReadValue("General", "User")
-        'txPass.Text = settingaplikasi.ReadValue("General", "Password")
 
     End Sub
 

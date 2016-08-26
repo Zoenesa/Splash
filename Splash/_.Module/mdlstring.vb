@@ -5,6 +5,9 @@ Imports System.Text
 Imports CodeLibs
 
 Friend NotInheritable Class mdlstring
+
+    Public Shared defaultKey As String = "MyKey@AG"
+
     Public Shared Function ADD_QUOTE_ON_SQL(str As String) As String
         If Operators.CompareString(str.Trim(), "", False) = 0 Then
             Return ""

@@ -166,7 +166,6 @@ Public Class rFormMain
         Else
             rMenuLogout.Enabled = flag
 
-
         End If
         mdlCom.IsLogin = flag
     End Sub
