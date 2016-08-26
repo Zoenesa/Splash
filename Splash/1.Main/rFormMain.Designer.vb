@@ -92,6 +92,7 @@ Partial Class rFormMain
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DocumentContainer1 = New Telerik.WinControls.UI.Docking.DocumentContainer()
         Me.ToolTabStrip1 = New Telerik.WinControls.UI.Docking.ToolTabStrip()
+        Me.Splitter1 = New System.Windows.Forms.Splitter()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -523,15 +524,19 @@ Partial Class rFormMain
         Me.RadDock1.Controls.Add(Me.ToolTabStrip1)
         Me.RadDock1.Dock = System.Windows.Forms.DockStyle.Right
         Me.RadDock1.DragDropAllowedDockStates = Telerik.WinControls.UI.Docking.AllowedDockState.AutoHide
-        Me.RadDock1.EnableCollapsing = True
         Me.RadDock1.EnableFloatingWindowSnapping = True
         Me.RadDock1.EnableGestures = False
         Me.RadDock1.IsCleanUpTarget = True
         Me.RadDock1.Location = New System.Drawing.Point(864, 22)
         Me.RadDock1.MainDocumentContainer = Me.DocumentContainer1
         Me.RadDock1.MainDocumentContainerVisible = False
+        Me.RadDock1.MdiChildrenDockType = Telerik.WinControls.UI.Docking.DockType.ToolWindow
         Me.RadDock1.Name = "RadDock1"
         Me.RadDock1.Padding = New System.Windows.Forms.Padding(0)
+        Me.RadDock1.QuickNavigatorSettings.ColumnSpacing = 2
+        Me.RadDock1.QuickNavigatorSettings.ShowDocumentPanes = False
+        Me.RadDock1.QuickNavigatorSettings.ShowFooter = False
+        Me.RadDock1.QuickNavigatorSettings.ShowHeader = False
         '
         '
         '
@@ -543,7 +548,6 @@ Partial Class rFormMain
         Me.RadDock1.Text = "RadDock1"
         Me.RadDock1.ThemeName = "Office2010Black"
         Me.RadDock1.ToolTabsAlignment = Telerik.WinControls.UI.TabStripAlignment.Top
-        Me.RadDock1.UseSplitterButtons = True
         '
         'ToolWindow1
         '
@@ -696,11 +700,21 @@ Partial Class rFormMain
         Me.ToolTabStrip1.TabStripAlignment = Telerik.WinControls.UI.TabStripAlignment.Top
         Me.ToolTabStrip1.ThemeName = "Office2010Black"
         '
+        'Splitter1
+        '
+        Me.Splitter1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Splitter1.Location = New System.Drawing.Point(861, 22)
+        Me.Splitter1.Name = "Splitter1"
+        Me.Splitter1.Size = New System.Drawing.Size(3, 394)
+        Me.Splitter1.TabIndex = 9
+        Me.Splitter1.TabStop = False
+        '
         'rFormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1229, 438)
+        Me.Controls.Add(Me.Splitter1)
         Me.Controls.Add(Me.RadDock1)
         Me.Controls.Add(Me.RadStatusStrip1)
         Me.Controls.Add(Me.RadMenu1)
@@ -798,4 +812,5 @@ Partial Class rFormMain
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents ToolTabStrip1 As Telerik.WinControls.UI.Docking.ToolTabStrip
     Friend WithEvents RadMenuItemCompanyProfile As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents Splitter1 As Splitter
 End Class
