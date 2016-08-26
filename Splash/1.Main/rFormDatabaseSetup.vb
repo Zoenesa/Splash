@@ -277,7 +277,12 @@ Public Class rFormDatabaseSetup
             txdbname.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "DatabaseName")
             txHost.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "Server")
             txUser.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "User")
-            txPass.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "Password")
+            Dim tempPass As String = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "Password")
+
+            Dim ImportPassword As String = CodeLibs.CodeMethod.Decrypt_TRIPLEDES(tempPass, mdlstring.defaultKey)
+
+            'txPass.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "Password")
+            txPass.Text = ImportPassword
             txBackupFolderPath.Text = Me.SelectedProfile.GetValue("General", "BackupLocation")
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
