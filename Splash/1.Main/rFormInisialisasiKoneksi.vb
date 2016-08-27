@@ -28,7 +28,7 @@ Public Class rFormInisialisasiKoneksi
                 Me.Close()
             End If
         Else
-            Dim num As Integer = DirectCast(MessageBox.Show("Error." & errMsg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1), Integer)
+            Dim num As Integer = DirectCast(RadMessageBox.Show("Error." & errMsg, "Error", MessageBoxButtons.OK, RadMessageIcon.Exclamation, MessageBoxDefaultButton.Button1), Integer)
             Me.isOk = False
             txdbname.Focus()
         End If

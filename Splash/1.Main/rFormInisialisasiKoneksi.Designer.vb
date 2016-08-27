@@ -54,7 +54,7 @@ Partial Class rFormInisialisasiKoneksi
         Me.TableLayoutPanel1.ColumnCount = 3
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.77946!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.22053!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Button3, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Button1, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Button2, 2, 0)
@@ -73,7 +73,7 @@ Partial Class rFormInisialisasiKoneksi
         Me.Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Button3.Location = New System.Drawing.Point(3, 3)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(181, 28)
+        Me.Button3.Size = New System.Drawing.Size(180, 28)
         Me.Button3.TabIndex = 0
         Me.Button3.Text = "Cek &Koneksi"
         Me.Button3.ThemeName = "Office2010Black"
@@ -88,7 +88,7 @@ Partial Class rFormInisialisasiKoneksi
         Me.Button1.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Button1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Button1.Location = New System.Drawing.Point(190, 3)
+        Me.Button1.Location = New System.Drawing.Point(189, 3)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(91, 28)
         Me.Button1.TabIndex = 1
@@ -105,9 +105,9 @@ Partial Class rFormInisialisasiKoneksi
         Me.Button2.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Button2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Button2.Location = New System.Drawing.Point(287, 3)
+        Me.Button2.Location = New System.Drawing.Point(286, 3)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(93, 28)
+        Me.Button2.Size = New System.Drawing.Size(94, 28)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "&Batal"
         Me.Button2.ThemeName = "Office2010Black"
@@ -239,6 +239,11 @@ Partial Class rFormInisialisasiKoneksi
         Me.txUser.TabIndex = 6
         Me.txUser.ThemeName = "Office2010Black"
         Me.txUser.Visible = False
+        CType(Me.txUser.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "txUser"
+        CType(Me.txUser.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txUser.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txUser.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txUser.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txPort
         '
@@ -271,6 +276,11 @@ Partial Class rFormInisialisasiKoneksi
         Me.txPass.ThemeName = "Office2010Black"
         Me.txPass.UseSystemPasswordChar = True
         Me.txPass.Visible = False
+        CType(Me.txPass.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "txPass"
+        CType(Me.txPass.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txPass.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txPass.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txPass.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'rFormInisialisasiKoneksi
         '

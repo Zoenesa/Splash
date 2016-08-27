@@ -50,6 +50,7 @@ Public NotInheritable Class mdlCom
     Public Shared Function KoneksiString() As String
         Dim str As String = Nothing
         Dim strConn As String
+        Dim tempPass As String = cPass.Trim() '.CodeMethod.Encrypt_TRIPLEDES(cPass.Trim(), mdlstring.defaultKey)
         strConn = "server=" & uhost.Trim() &
             ";userid=" & cName.Trim() &
             ";password=" & cPass.Trim() &
@@ -75,6 +76,7 @@ Public NotInheritable Class mdlCom
         Dim flag As Boolean = False
         Try
             Dim strConn As String
+            Dim tempPass As String = cPass.Trim() '.CodeMethod.Encrypt_TRIPLEDES(cPass.Trim(), mdlstring.defaultKey)
             strConn = "server=" & uhost.Trim() &
                 ";userid=" & cName.Trim() &
                 ";password=" & cPass.Trim() &
@@ -106,9 +108,10 @@ Public NotInheritable Class mdlCom
     Public Shared Sub BukaKoneksi()
         Try
             Dim strConn As String
+            Dim tempPass As String = cPass.Trim() '.CodeMethod.Encrypt_TRIPLEDES(cPass.Trim(), mdlstring.defaultKey)
             strConn = "server=" & uhost.Trim() &
                 ";userid=" & cName.Trim() &
-                ";password=" & cPass.Trim() &
+                ";password=" & tempPass.Trim() &
                 ";Database=" & cDbname.Trim() &
                 ";port=" & cPort.Trim() & ";"
             If mdlCom.vConn Is Nothing Then
@@ -136,6 +139,7 @@ Public NotInheritable Class mdlCom
         Dim flag2 As Boolean
         Try
             Dim strConn As String
+            Dim tempPass As String = cPass.Trim() '.CodeMethod.Encrypt_TRIPLEDES(cPass.Trim(), mdlstring.defaultKey)
             strConn = "server=" & uhost.Trim() &
                 ";userid=" & cName.Trim() &
                 ";password=" & cPass.Trim() &
@@ -409,6 +413,24 @@ Public NotInheritable Class mdlCom
             mdlCom._connectionString = value
         End Set
     End Property
+
+    Private Shared convTempPassword As String
+    'Public Shared Property ConvertsqlPassword As String
+    '    Get
+    '        If String.IsNullOrEmpty(mdlCom.cPass) Then
+    '            Throw New Exception("Password no Result.")
+    '        End If
+    '        convTempPassword = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(mdlCom.cPass, mdlstring.defaultKey)
+    '        If CodeLibs.CodeMethod.Encrypt_TRIPLEDES(cPass, mdlstring.defaultKey) = convTempPassword Then
+
+    '        End If
+    '        Return mdlCom.cPass
+    '    End Get
+    '    Set(value As String)
+    '        value = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(mdlCom.cPass, mdlstring.defaultKey)
+    '        mdlCom.cPass = value
+    '    End Set
+    'End Property
 
 
 

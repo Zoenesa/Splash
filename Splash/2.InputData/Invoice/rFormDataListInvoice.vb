@@ -231,7 +231,8 @@ Public Class rFormDataListInvoice
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        rFormInvoice.ShowDialog()
+        'rFormInvoice.ShowDialog()
+        FormTambahInvoice.ShowDialog()
     End Sub
 
     Private Sub btnColumn_Click(sender As Object, e As EventArgs)

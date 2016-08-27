@@ -53,7 +53,7 @@ Partial Class rFormGantiPassword
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.RadButton1, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnSave, 0, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(2, 193)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(2, 186)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -71,6 +71,8 @@ Partial Class rFormGantiPassword
         Me.RadButton1.TabIndex = 1
         Me.RadButton1.Text = "&Batal"
         Me.RadButton1.ThemeName = "Office2010Black"
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnSave
         '
@@ -83,6 +85,8 @@ Partial Class rFormGantiPassword
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "&Simpan"
         Me.btnSave.ThemeName = "Office2010Black"
+        CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'txoldPass
         '
@@ -99,6 +103,11 @@ Partial Class rFormGantiPassword
         Me.txoldPass.TabIndex = 1
         Me.txoldPass.ThemeName = "Office2010Black"
         Me.txoldPass.UseSystemPasswordChar = True
+        CType(Me.txoldPass.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Password"
+        CType(Me.txoldPass.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txoldPass.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txoldPass.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txoldPass.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadLabel5
         '
@@ -137,6 +146,11 @@ Partial Class rFormGantiPassword
         Me.txPassNew.TabIndex = 3
         Me.txPassNew.ThemeName = "Office2010Black"
         Me.txPassNew.UseSystemPasswordChar = True
+        CType(Me.txPassNew.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Invoice Number"
+        CType(Me.txPassNew.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txPassNew.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txPassNew.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txPassNew.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadLabel2
         '
@@ -164,6 +178,11 @@ Partial Class rFormGantiPassword
         Me.txPassNext.TabIndex = 5
         Me.txPassNext.ThemeName = "Office2010Black"
         Me.txPassNext.UseSystemPasswordChar = True
+        CType(Me.txPassNext.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Invoice Number"
+        CType(Me.txPassNext.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txPassNext.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txPassNext.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txPassNext.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'PasswordStrengthControl1
         '
@@ -178,7 +197,7 @@ Partial Class rFormGantiPassword
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(302, 229)
+        Me.ClientSize = New System.Drawing.Size(302, 222)
         Me.Controls.Add(Me.PasswordStrengthControl1)
         Me.Controls.Add(Me.txPassNext)
         Me.Controls.Add(Me.RadLabel2)

@@ -19,6 +19,25 @@ Public Class FormTambahInvoice
 
     End Sub
 
+    Private Shared Sub LoadRefClient(ByVal Optional Opsi As String = "")
+        Using RefConn As MySqlConnection = New MySqlConnection()
+            Using cmd As MySqlCommand = New MySqlCommand
+                cmd.CommandText = "SELECT CLIENT_NAME FROM `ref_client` " & Opsi
+                cmd.Connection = mdlCom.vConn
+                RefConn.Open()
+                Dim sqlreader As MySqlDataReader = cmd.ExecuteReader
+                Do While sqlreader.Read
+                    FormTambahInvoice.RadDropDownPelanggan.Items.Add(sqlreader.Item("CLIENT_NAME"))
+                Loop
+                sqlreader.Close()
+            End Using
+            RefConn.Close()
+        End Using
+    End Sub
+
+    Private Sub FormTambahInvoice_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadRefClient()
+    End Sub
 
 
 End Class
