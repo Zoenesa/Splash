@@ -106,7 +106,7 @@ Partial Class rFormTambahUser
         Me.RadPageView1.DefaultPage = Me.RadPageViewPage1
         Me.RadPageView1.Location = New System.Drawing.Point(1, 2)
         Me.RadPageView1.Name = "RadPageView1"
-        Me.RadPageView1.SelectedPage = Me.RadPageViewPage2
+        Me.RadPageView1.SelectedPage = Me.RadPageViewPage1
         Me.RadPageView1.Size = New System.Drawing.Size(442, 254)
         Me.RadPageView1.TabIndex = 0
         Me.RadPageView1.Text = "RadPageView1"
@@ -190,6 +190,7 @@ Partial Class rFormTambahUser
         Me.txKonfirmasi.TabIndex = 5
         Me.txKonfirmasi.ThemeName = "Office2010Black"
         Me.txKonfirmasi.UseSystemPasswordChar = True
+        CType(Me.txKonfirmasi.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(6, 0, 6, 0)
         CType(Me.txKonfirmasi.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.txKonfirmasi.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
         CType(Me.txKonfirmasi.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
@@ -205,6 +206,7 @@ Partial Class rFormTambahUser
         Me.txUsername.Size = New System.Drawing.Size(215, 23)
         Me.txUsername.TabIndex = 1
         Me.txUsername.ThemeName = "Office2010Black"
+        CType(Me.txUsername.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(6, 0, 6, 0)
         CType(Me.txUsername.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.txUsername.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
         CType(Me.txUsername.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
@@ -223,6 +225,7 @@ Partial Class rFormTambahUser
         Me.txPassword.TabIndex = 3
         Me.txPassword.ThemeName = "Office2010Black"
         Me.txPassword.UseSystemPasswordChar = True
+        CType(Me.txPassword.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(6, 0, 6, 0)
         CType(Me.txPassword.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.txPassword.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
         CType(Me.txPassword.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
@@ -313,6 +316,7 @@ Partial Class rFormTambahUser
         Me.txAlamat.Size = New System.Drawing.Size(406, 78)
         Me.txAlamat.TabIndex = 5
         Me.txAlamat.ThemeName = "Office2010Black"
+        CType(Me.txAlamat.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(6, 0, 6, 0)
         CType(Me.txAlamat.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).StretchVertically = True
         CType(Me.txAlamat.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.txAlamat.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
@@ -329,6 +333,7 @@ Partial Class rFormTambahUser
         Me.txUserFname.Size = New System.Drawing.Size(406, 23)
         Me.txUserFname.TabIndex = 1
         Me.txUserFname.ThemeName = "Office2010Black"
+        CType(Me.txUserFname.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(6, 0, 6, 0)
         CType(Me.txUserFname.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.txUserFname.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
         CType(Me.txUserFname.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
@@ -345,6 +350,7 @@ Partial Class rFormTambahUser
         Me.txJabatan.Size = New System.Drawing.Size(97, 23)
         Me.txJabatan.TabIndex = 3
         Me.txJabatan.ThemeName = "Office2010Black"
+        CType(Me.txJabatan.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(6, 0, 6, 0)
         CType(Me.txJabatan.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.txJabatan.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
         CType(Me.txJabatan.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
@@ -511,6 +517,7 @@ Partial Class rFormTambahUser
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "&Tambah User"
         Me.btnSave.ThemeName = "Office2010Black"
+        CType(Me.btnSave.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Tambah User"
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -524,8 +531,9 @@ Partial Class rFormTambahUser
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(212, 27)
         Me.btnClose.TabIndex = 1
-        Me.btnClose.Text = "&Close"
+        Me.btnClose.Text = "&Batal"
         Me.btnClose.ThemeName = "Office2010Black"
+        CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Batal"
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -541,6 +549,8 @@ Partial Class rFormTambahUser
         Me.btnNext.TabIndex = 12
         Me.btnNext.Text = " &Next > "
         Me.btnNext.ThemeName = "Office2010Black"
+        Me.btnNext.Visible = False
+        CType(Me.btnNext.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = " &Next > "
         CType(Me.btnNext.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnNext.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -556,6 +566,8 @@ Partial Class rFormTambahUser
         Me.btnBack.TabIndex = 13
         Me.btnBack.Text = " < &Back "
         Me.btnBack.ThemeName = "Office2010Black"
+        Me.btnBack.Visible = False
+        CType(Me.btnBack.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = " < &Back "
         CType(Me.btnBack.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnBack.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '

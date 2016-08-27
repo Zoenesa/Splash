@@ -74,7 +74,11 @@ Partial Class rFormListPelanggan
         Me.txFilter.TabStop = False
         Me.txFilter.Text = Nothing
         Me.txFilter.ThemeName = "Office2010Black"
-        Me.txFilter.UseGenericBorderPaint = True
+        CType(Me.txFilter.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Padding = New System.Windows.Forms.Padding(2, 2, 2, 3)
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Filter Key"
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'rDropInvoiceType
         '
@@ -108,6 +112,7 @@ Partial Class rFormListPelanggan
         Me.btnFilter.TabIndex = 2
         Me.btnFilter.Text = "[F2] Filter"
         Me.btnFilter.ThemeName = "Office2010Black"
+        CType(Me.btnFilter.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "[F2] Filter"
         CType(Me.btnFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -182,6 +187,7 @@ Partial Class rFormListPelanggan
         Me.btnRefresh.TabIndex = 0
         Me.btnRefresh.Text = "[F5] Refresh"
         Me.btnRefresh.ThemeName = "Office2010Black"
+        CType(Me.btnRefresh.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "[F5] Refresh"
         CType(Me.btnRefresh.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnRefresh.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -218,6 +224,7 @@ Partial Class rFormListPelanggan
         Me.btnBukaFormTambahCustomer.TabIndex = 0
         Me.btnBukaFormTambahCustomer.Text = "&Tambah"
         Me.btnBukaFormTambahCustomer.ThemeName = "Office2010Black"
+        CType(Me.btnBukaFormTambahCustomer.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Tambah"
         CType(Me.btnBukaFormTambahCustomer.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnBukaFormTambahCustomer.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -233,6 +240,7 @@ Partial Class rFormListPelanggan
         Me.btnEdit.TabIndex = 1
         Me.btnEdit.Text = "&Ubah"
         Me.btnEdit.ThemeName = "Office2010Black"
+        CType(Me.btnEdit.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Ubah"
         CType(Me.btnEdit.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnEdit.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -248,6 +256,7 @@ Partial Class rFormListPelanggan
         Me.btnErase.TabIndex = 2
         Me.btnErase.Text = "&Hapus"
         Me.btnErase.ThemeName = "Office2010Black"
+        CType(Me.btnErase.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Hapus"
         CType(Me.btnErase.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnErase.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -261,9 +270,10 @@ Partial Class rFormListPelanggan
         Me.btnSelect.Name = "btnSelect"
         Me.btnSelect.Size = New System.Drawing.Size(120, 26)
         Me.btnSelect.TabIndex = 3
-        Me.btnSelect.Text = "&Select"
+        Me.btnSelect.Text = "&Pilih"
         Me.btnSelect.ThemeName = "Office2010Black"
         Me.btnSelect.Visible = False
+        CType(Me.btnSelect.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Pilih"
         CType(Me.btnSelect.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnSelect.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -277,8 +287,9 @@ Partial Class rFormListPelanggan
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(120, 26)
         Me.btnClose.TabIndex = 4
-        Me.btnClose.Text = "&Close"
+        Me.btnClose.Text = "&Keluar"
         Me.btnClose.ThemeName = "Office2010Black"
+        CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Keluar"
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -287,6 +298,7 @@ Partial Class rFormListPelanggan
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(630, 371)
+        Me.ControlBox = False
         Me.Controls.Add(Me.btnFilter)
         Me.Controls.Add(Me.txFilter)
         Me.Controls.Add(Me.TableLayoutPanel1)
@@ -303,7 +315,6 @@ Partial Class rFormListPelanggan
         '
         '
         Me.RootElement.ApplyShapeToControl = True
-        Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Daftar Pelanggan"

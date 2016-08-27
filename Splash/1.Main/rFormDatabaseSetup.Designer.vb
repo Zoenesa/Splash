@@ -57,12 +57,12 @@ Partial Class rFormDatabaseSetup
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.RadPageViewPage1 = New Telerik.WinControls.UI.RadPageViewPage()
+        Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
         Me.cbDropDbFile = New Telerik.WinControls.UI.RadDropDownList()
         Me.btnNewBackupSystem = New Telerik.WinControls.UI.RadButton()
         Me.btnSetFolder = New Telerik.WinControls.UI.RadButton()
         Me.txBackupFolderPath = New Telerik.WinControls.UI.RadTextBox()
         Me.RadPageViewPage3 = New Telerik.WinControls.UI.RadPageViewPage()
-        Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.btnBackup, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnRestore, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,11 +83,11 @@ Partial Class rFormDatabaseSetup
         CType(Me.txdbname, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txConStr, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPageViewPage1.SuspendLayout()
+        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbDropDbFile, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnNewBackupSystem, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnSetFolder, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txBackupFolderPath, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -159,11 +159,11 @@ Partial Class rFormDatabaseSetup
         Me.TableLayoutPanel2.Controls.Add(Me.btnBackup, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.btnRestore, 1, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 205)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 195)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 1
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(527, 32)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(517, 32)
         Me.TableLayoutPanel2.TabIndex = 4
         '
         'btnBackup
@@ -174,7 +174,7 @@ Partial Class rFormDatabaseSetup
         Me.btnBackup.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnBackup.Location = New System.Drawing.Point(3, 3)
         Me.btnBackup.Name = "btnBackup"
-        Me.btnBackup.Size = New System.Drawing.Size(257, 26)
+        Me.btnBackup.Size = New System.Drawing.Size(252, 26)
         Me.btnBackup.TabIndex = 12
         Me.btnBackup.Text = "&Backup database"
         Me.btnBackup.ThemeName = "Office2010Black"
@@ -188,9 +188,9 @@ Partial Class rFormDatabaseSetup
         Me.btnRestore.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRestore.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnRestore.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnRestore.Location = New System.Drawing.Point(266, 3)
+        Me.btnRestore.Location = New System.Drawing.Point(261, 3)
         Me.btnRestore.Name = "btnRestore"
-        Me.btnRestore.Size = New System.Drawing.Size(258, 26)
+        Me.btnRestore.Size = New System.Drawing.Size(253, 26)
         Me.btnRestore.TabIndex = 12
         Me.btnRestore.Text = "&Restore database"
         Me.btnRestore.ThemeName = "Office2010Black"
@@ -258,9 +258,9 @@ Partial Class rFormDatabaseSetup
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(155, 26)
         Me.btnSave.TabIndex = 24
-        Me.btnSave.Text = "&Save Setting"
+        Me.btnSave.Text = "&Simpan Seting"
         Me.btnSave.ThemeName = "Office2010Black"
-        CType(Me.btnSave.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Save Setting"
+        CType(Me.btnSave.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Simpan Seting"
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -302,10 +302,10 @@ Partial Class rFormDatabaseSetup
         Me.RadPageViewPage2.Controls.Add(Me.Label13)
         Me.RadPageViewPage2.Controls.Add(Me.Label14)
         Me.RadPageViewPage2.Controls.Add(Me.cbProfile)
-        Me.RadPageViewPage2.ItemSize = New System.Drawing.SizeF(32.0!, 247.0!)
-        Me.RadPageViewPage2.Location = New System.Drawing.Point(97, 29)
+        Me.RadPageViewPage2.ItemSize = New System.Drawing.SizeF(27.0!, 239.0!)
+        Me.RadPageViewPage2.Location = New System.Drawing.Point(98, 30)
         Me.RadPageViewPage2.Name = "RadPageViewPage2"
-        Me.RadPageViewPage2.Size = New System.Drawing.Size(493, 237)
+        Me.RadPageViewPage2.Size = New System.Drawing.Size(517, 227)
         Me.RadPageViewPage2.Text = "General"
         '
         'RadCheckBox1
@@ -549,11 +549,26 @@ Partial Class rFormDatabaseSetup
         Me.RadPageViewPage1.Controls.Add(Me.Label5)
         Me.RadPageViewPage1.Controls.Add(Me.Label9)
         Me.RadPageViewPage1.Controls.Add(Me.Label6)
-        Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(32.0!, 247.0!)
-        Me.RadPageViewPage1.Location = New System.Drawing.Point(97, 29)
+        Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(27.0!, 239.0!)
+        Me.RadPageViewPage1.Location = New System.Drawing.Point(98, 30)
         Me.RadPageViewPage1.Name = "RadPageViewPage1"
-        Me.RadPageViewPage1.Size = New System.Drawing.Size(527, 237)
+        Me.RadPageViewPage1.Size = New System.Drawing.Size(517, 227)
         Me.RadPageViewPage1.Text = "Utilities"
+        '
+        'RadButton1
+        '
+        Me.RadButton1.BackColor = System.Drawing.Color.Transparent
+        Me.RadButton1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RadButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadButton1.Location = New System.Drawing.Point(3, 161)
+        Me.RadButton1.Name = "RadButton1"
+        Me.RadButton1.Size = New System.Drawing.Size(117, 23)
+        Me.RadButton1.TabIndex = 20
+        Me.RadButton1.Text = "Open Form"
+        Me.RadButton1.ThemeName = "Office2010Black"
+        CType(Me.RadButton1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "Open Form"
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'cbDropDbFile
         '
@@ -619,26 +634,11 @@ Partial Class rFormDatabaseSetup
         '
         'RadPageViewPage3
         '
-        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(32.0!, 247.0!)
+        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(27.0!, 239.0!)
         Me.RadPageViewPage3.Location = New System.Drawing.Point(97, 29)
         Me.RadPageViewPage3.Name = "RadPageViewPage3"
         Me.RadPageViewPage3.Size = New System.Drawing.Size(493, 237)
         Me.RadPageViewPage3.Text = "Other"
-        '
-        'RadButton1
-        '
-        Me.RadButton1.BackColor = System.Drawing.Color.Transparent
-        Me.RadButton1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.RadButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadButton1.Location = New System.Drawing.Point(3, 161)
-        Me.RadButton1.Name = "RadButton1"
-        Me.RadButton1.Size = New System.Drawing.Size(117, 23)
-        Me.RadButton1.TabIndex = 20
-        Me.RadButton1.Text = "Open Form"
-        Me.RadButton1.ThemeName = "Office2010Black"
-        CType(Me.RadButton1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "Open Form"
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'rFormDatabaseSetup
         '
@@ -682,11 +682,11 @@ Partial Class rFormDatabaseSetup
         CType(Me.txConStr, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadPageViewPage1.ResumeLayout(False)
         Me.RadPageViewPage1.PerformLayout()
+        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cbDropDbFile, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnNewBackupSystem, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnSetFolder, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txBackupFolderPath, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(false)
 

@@ -239,8 +239,13 @@ Partial Class rFormTambahCustomer
         Me.txNPWP.Text = "__.___.___._-___.___"
         Me.txNPWP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txNPWP.ThemeName = "Office2010Black"
-        Me.txNPWP.UseGenericBorderPaint = True
+        CType(Me.txNPWP.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "__.___.___._-___.___"
+        CType(Me.txNPWP.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Padding = New System.Windows.Forms.Padding(2, 2, 2, 3)
+        CType(Me.txNPWP.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "_"
+        CType(Me.txNPWP.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txNPWP.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.txNPWP.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).PaintUsingParentShape = True
+        CType(Me.txNPWP.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadLabel1
         '
@@ -280,6 +285,9 @@ Partial Class rFormTambahCustomer
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "&Simpan Data"
         Me.btnSave.ThemeName = "Office2010Black"
+        CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor3 = System.Drawing.SystemColors.ControlDark
+        CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         '
         'btnClose
         '
@@ -293,6 +301,8 @@ Partial Class rFormTambahCustomer
         Me.btnClose.TabIndex = 1
         Me.btnClose.Text = "&Keluar"
         Me.btnClose.ThemeName = "Office2010Black"
+        CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         '
         'RadGroupBox2
         '
@@ -371,15 +381,19 @@ Partial Class rFormTambahCustomer
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(458, 324)
+        Me.ControlBox = False
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.RadGroupBox2)
         Me.Controls.Add(Me.RadGroupBox3)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "rFormTambahCustomer"
         '
         '
         '
         Me.RootElement.ApplyShapeToControl = True
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tambah Customer / Supplier"
         Me.ThemeName = "Office2010Black"

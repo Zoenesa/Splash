@@ -31,14 +31,12 @@ Partial Class rFormDaftarPembayaran
         Me.ClientSize = New System.Drawing.Size(614, 270)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "rFormDaftarPembayaran"
         '
         '
         '
         Me.RootElement.ApplyShapeToControl = True
-        Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Daftar Pembayaran"

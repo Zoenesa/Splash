@@ -30,17 +30,17 @@ Partial Class rFormKonfirmasiPembayaran
         Me.RadLabel4 = New Telerik.WinControls.UI.RadLabel()
         Me.RadTextBox1 = New Telerik.WinControls.UI.RadTextBox()
         Me.rCustomer = New Telerik.WinControls.UI.RadDropDownList()
-        Me.rDropWO = New Telerik.WinControls.UI.RadDropDownList()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnSave = New Telerik.WinControls.UI.RadButton()
         Me.btnClose = New Telerik.WinControls.UI.RadButton()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
         Me.txBAST = New Telerik.WinControls.UI.RadTextBox()
         Me.rTxMaskDate = New Telerik.WinControls.UI.RadMaskedEditBox()
+        Me.RadLabel6 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel5 = New Telerik.WinControls.UI.RadLabel()
         Me.RadRadioButton2 = New Telerik.WinControls.UI.RadRadioButton()
         Me.RadRadioButton1 = New Telerik.WinControls.UI.RadRadioButton()
-        Me.RadLabel6 = New Telerik.WinControls.UI.RadLabel()
+        Me.rDropWO = New Telerik.WinControls.UI.RadDropDownList()
         CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox4.SuspendLayout()
         CType(Me.RadMaskedEditBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,7 +50,6 @@ Partial Class rFormKonfirmasiPembayaran
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rCustomer, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.rDropWO, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.btnSave, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,10 +57,11 @@ Partial Class rFormKonfirmasiPembayaran
         Me.RadGroupBox1.SuspendLayout()
         CType(Me.txBAST, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rTxMaskDate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadRadioButton2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadRadioButton1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.rDropWO, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -75,12 +75,12 @@ Partial Class rFormKonfirmasiPembayaran
         Me.RadGroupBox4.Controls.Add(Me.RadLabel1)
         Me.RadGroupBox4.Controls.Add(Me.RadLabel4)
         Me.RadGroupBox4.Controls.Add(Me.RadTextBox1)
-        Me.RadGroupBox4.Controls.Add(Me.rCustomer)
         Me.RadGroupBox4.Controls.Add(Me.rDropWO)
+        Me.RadGroupBox4.Controls.Add(Me.rCustomer)
         Me.RadGroupBox4.HeaderText = "Detail Pembayaran"
         Me.RadGroupBox4.Location = New System.Drawing.Point(4, 2)
         Me.RadGroupBox4.Name = "RadGroupBox4"
-        Me.RadGroupBox4.Size = New System.Drawing.Size(550, 140)
+        Me.RadGroupBox4.Size = New System.Drawing.Size(550, 149)
         Me.RadGroupBox4.TabIndex = 0
         Me.RadGroupBox4.Text = "Detail Pembayaran"
         Me.RadGroupBox4.ThemeName = "Office2010Black"
@@ -89,21 +89,27 @@ Partial Class rFormKonfirmasiPembayaran
         'RadMaskedEditBox1
         '
         Me.RadMaskedEditBox1.AcceptsReturn = True
-        Me.RadMaskedEditBox1.AutoSize = False
         Me.RadMaskedEditBox1.BackColor = System.Drawing.Color.Transparent
         Me.RadMaskedEditBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadMaskedEditBox1.Location = New System.Drawing.Point(438, 40)
+        Me.RadMaskedEditBox1.Location = New System.Drawing.Point(438, 41)
         Me.RadMaskedEditBox1.Mask = "00/00/0000"
         Me.RadMaskedEditBox1.MaskType = Telerik.WinControls.UI.MaskType.Standard
         Me.RadMaskedEditBox1.Name = "RadMaskedEditBox1"
         Me.RadMaskedEditBox1.NullText = "_"
+        Me.RadMaskedEditBox1.Padding = New System.Windows.Forms.Padding(4, 2, 4, 3)
         Me.RadMaskedEditBox1.Size = New System.Drawing.Size(102, 23)
         Me.RadMaskedEditBox1.TabIndex = 5
         Me.RadMaskedEditBox1.TabStop = False
         Me.RadMaskedEditBox1.Text = "__/__/____"
         Me.RadMaskedEditBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.RadMaskedEditBox1.ThemeName = "Office2010Black"
-        Me.RadMaskedEditBox1.UseGenericBorderPaint = True
+        CType(Me.RadMaskedEditBox1.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "__/__/____"
+        CType(Me.RadMaskedEditBox1.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Padding = New System.Windows.Forms.Padding(4, 2, 4, 3)
+        CType(Me.RadMaskedEditBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "_"
+        CType(Me.RadMaskedEditBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.RadMaskedEditBox1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.RadMaskedEditBox1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).PaintUsingParentShape = True
+        CType(Me.RadMaskedEditBox1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadLabel2
         '
@@ -174,6 +180,11 @@ Partial Class rFormKonfirmasiPembayaran
         Me.RadTextBox1.TabStop = False
         Me.RadTextBox1.ThemeName = "Office2010Black"
         Me.RadTextBox1.WordWrap = False
+        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).StretchVertically = True
+        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'rCustomer
         '
@@ -187,42 +198,30 @@ Partial Class rFormKonfirmasiPembayaran
         Me.rCustomer.Location = New System.Drawing.Point(11, 41)
         Me.rCustomer.MaxDropDownItems = 8
         Me.rCustomer.Name = "rCustomer"
-        Me.rCustomer.NullText = "Nama Klien"
+        Me.rCustomer.NullText = "Nama Pelanggan"
+        Me.rCustomer.Padding = New System.Windows.Forms.Padding(4, 1, 0, 1)
         '
         '
         '
-        Me.rCustomer.RootElement.Alignment = System.Drawing.ContentAlignment.MiddleCenter
         Me.rCustomer.RootElement.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.WrapAroundChildren
-        Me.rCustomer.Size = New System.Drawing.Size(243, 21)
+        Me.rCustomer.Size = New System.Drawing.Size(243, 23)
         Me.rCustomer.TabIndex = 1
         Me.rCustomer.ThemeName = "Office2010Black"
+        CType(Me.rCustomer.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).Padding = New System.Windows.Forms.Padding(4, 1, 0, 1)
         CType(Me.rCustomer.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).Alignment = System.Drawing.ContentAlignment.MiddleCenter
         CType(Me.rCustomer.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.WrapAroundChildren
+        CType(Me.rCustomer.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.rCustomer.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).Margin = New System.Windows.Forms.Padding(0)
         CType(Me.rCustomer.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadDropDownTextBoxElement).Alignment = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'rDropWO
-        '
-        Me.rDropWO.AllowShowFocusCues = True
-        Me.rDropWO.AutoSizeItems = True
-        Me.rDropWO.BackColor = System.Drawing.Color.Transparent
-        Me.rDropWO.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.rDropWO.DropDownSizingMode = CType((Telerik.WinControls.UI.SizingMode.RightBottom Or Telerik.WinControls.UI.SizingMode.UpDown), Telerik.WinControls.UI.SizingMode)
-        Me.rDropWO.EnableAlternatingItemColor = True
-        Me.rDropWO.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rDropWO.Location = New System.Drawing.Point(260, 41)
-        Me.rDropWO.MaxDropDownItems = 8
-        Me.rDropWO.Name = "rDropWO"
-        Me.rDropWO.NullText = "No SPK"
-        '
-        '
-        '
-        Me.rDropWO.RootElement.Alignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.rDropWO.Size = New System.Drawing.Size(172, 21)
-        Me.rDropWO.TabIndex = 3
-        Me.rDropWO.ThemeName = "Office2010Black"
-        CType(Me.rDropWO.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).Alignment = System.Drawing.ContentAlignment.MiddleCenter
-        CType(Me.rDropWO.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
-        CType(Me.rDropWO.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadDropDownTextBoxElement).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.rCustomer.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).Margin = New System.Windows.Forms.Padding(0)
+        CType(Me.rCustomer.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).Margin = New System.Windows.Forms.Padding(0)
+        CType(Me.rCustomer.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.BorderPrimitive).Margin = New System.Windows.Forms.Padding(-1)
+        CType(Me.rCustomer.GetChildAt(0).GetChildAt(3).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).Padding = New System.Windows.Forms.Padding(-1)
+        CType(Me.rCustomer.GetChildAt(0).GetChildAt(3).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadDropDownListArrowButtonElement).Margin = New System.Windows.Forms.Padding(3)
+        CType(Me.rCustomer.GetChildAt(0).GetChildAt(3).GetChildAt(2).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).Margin = New System.Windows.Forms.Padding(1)
+        CType(Me.rCustomer.GetChildAt(0).GetChildAt(3).GetChildAt(2).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.BorderPrimitive).Margin = New System.Windows.Forms.Padding(0)
+        CType(Me.rCustomer.GetChildAt(0).GetChildAt(3).GetChildAt(2).GetChildAt(1).GetChildAt(3), Telerik.WinControls.Primitives.OverflowPrimitive).Margin = New System.Windows.Forms.Padding(0)
+        CType(Me.rCustomer.GetChildAt(0).GetChildAt(3).GetChildAt(2).GetChildAt(1).GetChildAt(4), Telerik.WinControls.Primitives.ImagePrimitive).Margin = New System.Windows.Forms.Padding(0)
         '
         'TableLayoutPanel1
         '
@@ -251,6 +250,8 @@ Partial Class rFormKonfirmasiPembayaran
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "&Simpan"
         Me.btnSave.ThemeName = "Office2010Black"
+        CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnClose
         '
@@ -262,8 +263,10 @@ Partial Class rFormKonfirmasiPembayaran
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(274, 27)
         Me.btnClose.TabIndex = 1
-        Me.btnClose.Text = "&Tutup"
+        Me.btnClose.Text = "&Batal"
         Me.btnClose.ThemeName = "Office2010Black"
+        CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadGroupBox1
         '
@@ -277,9 +280,9 @@ Partial Class rFormKonfirmasiPembayaran
         Me.RadGroupBox1.Controls.Add(Me.RadRadioButton1)
         Me.RadGroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadGroupBox1.HeaderText = "Jenis Pembayaran"
-        Me.RadGroupBox1.Location = New System.Drawing.Point(4, 149)
+        Me.RadGroupBox1.Location = New System.Drawing.Point(4, 157)
         Me.RadGroupBox1.Name = "RadGroupBox1"
-        Me.RadGroupBox1.Size = New System.Drawing.Size(550, 59)
+        Me.RadGroupBox1.Size = New System.Drawing.Size(550, 60)
         Me.RadGroupBox1.TabIndex = 1
         Me.RadGroupBox1.Text = "Jenis Pembayaran"
         Me.RadGroupBox1.ThemeName = "Office2010Black"
@@ -301,16 +304,22 @@ Partial Class rFormKonfirmasiPembayaran
         Me.txBAST.Modified = True
         Me.txBAST.Name = "txBAST"
         Me.txBAST.NullText = "0.00"
+        Me.txBAST.Padding = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.txBAST.Size = New System.Drawing.Size(151, 23)
         Me.txBAST.TabIndex = 4
         Me.txBAST.TabStop = False
+        Me.txBAST.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txBAST.ThemeName = "Office2010Black"
         Me.txBAST.WordWrap = False
+        CType(Me.txBAST.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "0.00"
+        CType(Me.txBAST.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txBAST.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.txBAST.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txBAST.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'rTxMaskDate
         '
         Me.rTxMaskDate.AcceptsReturn = True
-        Me.rTxMaskDate.AutoSize = False
         Me.rTxMaskDate.BackColor = System.Drawing.Color.Transparent
         Me.rTxMaskDate.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.rTxMaskDate.Location = New System.Drawing.Point(212, 23)
@@ -318,13 +327,31 @@ Partial Class rFormKonfirmasiPembayaran
         Me.rTxMaskDate.MaskType = Telerik.WinControls.UI.MaskType.Standard
         Me.rTxMaskDate.Name = "rTxMaskDate"
         Me.rTxMaskDate.NullText = "_"
+        Me.rTxMaskDate.Padding = New System.Windows.Forms.Padding(4, 2, 4, 3)
         Me.rTxMaskDate.Size = New System.Drawing.Size(102, 23)
         Me.rTxMaskDate.TabIndex = 2
         Me.rTxMaskDate.TabStop = False
         Me.rTxMaskDate.Text = "__/__/____"
         Me.rTxMaskDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.rTxMaskDate.ThemeName = "Office2010Black"
-        Me.rTxMaskDate.UseGenericBorderPaint = True
+        CType(Me.rTxMaskDate.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "__/__/____"
+        CType(Me.rTxMaskDate.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Padding = New System.Windows.Forms.Padding(4, 2, 4, 3)
+        CType(Me.rTxMaskDate.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "_"
+        CType(Me.rTxMaskDate.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.rTxMaskDate.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.rTxMaskDate.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
+        '
+        'RadLabel6
+        '
+        Me.RadLabel6.BackColor = System.Drawing.Color.Transparent
+        Me.RadLabel6.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadLabel6.ForeColor = System.Drawing.Color.Black
+        Me.RadLabel6.Location = New System.Drawing.Point(156, 25)
+        Me.RadLabel6.Name = "RadLabel6"
+        Me.RadLabel6.Size = New System.Drawing.Size(50, 19)
+        Me.RadLabel6.TabIndex = 3
+        Me.RadLabel6.Text = "Tanggal"
+        Me.RadLabel6.ThemeName = "Office2010Black"
         '
         'RadLabel5
         '
@@ -342,7 +369,7 @@ Partial Class rFormKonfirmasiPembayaran
         '
         Me.RadRadioButton2.AutoSize = False
         Me.RadRadioButton2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadRadioButton2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.RadRadioButton2.ForeColor = System.Drawing.Color.Black
         Me.RadRadioButton2.Location = New System.Drawing.Point(70, 25)
         Me.RadRadioButton2.Name = "RadRadioButton2"
         Me.RadRadioButton2.Size = New System.Drawing.Size(80, 19)
@@ -353,7 +380,7 @@ Partial Class rFormKonfirmasiPembayaran
         'RadRadioButton1
         '
         Me.RadRadioButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadRadioButton1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.RadRadioButton1.ForeColor = System.Drawing.Color.Black
         Me.RadRadioButton1.Location = New System.Drawing.Point(11, 25)
         Me.RadRadioButton1.Name = "RadRadioButton1"
         Me.RadRadioButton1.Size = New System.Drawing.Size(50, 19)
@@ -361,17 +388,43 @@ Partial Class rFormKonfirmasiPembayaran
         Me.RadRadioButton1.Text = "Tunai"
         Me.RadRadioButton1.ThemeName = "Office2010Black"
         '
-        'RadLabel6
+        'rDropWO
         '
-        Me.RadLabel6.BackColor = System.Drawing.Color.Transparent
-        Me.RadLabel6.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadLabel6.ForeColor = System.Drawing.Color.Black
-        Me.RadLabel6.Location = New System.Drawing.Point(156, 25)
-        Me.RadLabel6.Name = "RadLabel6"
-        Me.RadLabel6.Size = New System.Drawing.Size(50, 19)
-        Me.RadLabel6.TabIndex = 3
-        Me.RadLabel6.Text = "Tanggal"
-        Me.RadLabel6.ThemeName = "Office2010Black"
+        Me.rDropWO.AllowShowFocusCues = True
+        Me.rDropWO.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.rDropWO.BackColor = System.Drawing.Color.Transparent
+        Me.rDropWO.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.rDropWO.DropDownSizingMode = CType((Telerik.WinControls.UI.SizingMode.RightBottom Or Telerik.WinControls.UI.SizingMode.UpDown), Telerik.WinControls.UI.SizingMode)
+        Me.rDropWO.EnableAlternatingItemColor = True
+        Me.rDropWO.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rDropWO.Location = New System.Drawing.Point(263, 41)
+        Me.rDropWO.MaxDropDownItems = 8
+        Me.rDropWO.Name = "rDropWO"
+        Me.rDropWO.NullText = "Nama Pelanggan"
+        Me.rDropWO.Padding = New System.Windows.Forms.Padding(4, 1, 0, 1)
+        '
+        '
+        '
+        Me.rDropWO.RootElement.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.WrapAroundChildren
+        Me.rDropWO.Size = New System.Drawing.Size(169, 23)
+        Me.rDropWO.TabIndex = 1
+        Me.rDropWO.ThemeName = "Office2010Black"
+        CType(Me.rDropWO.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).Padding = New System.Windows.Forms.Padding(4, 1, 0, 1)
+        CType(Me.rDropWO.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.rDropWO.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.WrapAroundChildren
+        CType(Me.rDropWO.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.rDropWO.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).Margin = New System.Windows.Forms.Padding(0)
+        CType(Me.rDropWO.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadDropDownTextBoxElement).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.rDropWO.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).Margin = New System.Windows.Forms.Padding(0)
+        CType(Me.rDropWO.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).Margin = New System.Windows.Forms.Padding(0)
+        CType(Me.rDropWO.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.BorderPrimitive).Margin = New System.Windows.Forms.Padding(-1)
+        CType(Me.rDropWO.GetChildAt(0).GetChildAt(3), Telerik.WinControls.UI.RadDropDownListElement).Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        CType(Me.rDropWO.GetChildAt(0).GetChildAt(3).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).Padding = New System.Windows.Forms.Padding(-1)
+        CType(Me.rDropWO.GetChildAt(0).GetChildAt(3).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadDropDownListArrowButtonElement).Margin = New System.Windows.Forms.Padding(3)
+        CType(Me.rDropWO.GetChildAt(0).GetChildAt(3).GetChildAt(2).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).Margin = New System.Windows.Forms.Padding(1)
+        CType(Me.rDropWO.GetChildAt(0).GetChildAt(3).GetChildAt(2).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.BorderPrimitive).Margin = New System.Windows.Forms.Padding(0)
+        CType(Me.rDropWO.GetChildAt(0).GetChildAt(3).GetChildAt(2).GetChildAt(1).GetChildAt(3), Telerik.WinControls.Primitives.OverflowPrimitive).Margin = New System.Windows.Forms.Padding(0)
+        CType(Me.rDropWO.GetChildAt(0).GetChildAt(3).GetChildAt(2).GetChildAt(1).GetChildAt(4), Telerik.WinControls.Primitives.ImagePrimitive).Margin = New System.Windows.Forms.Padding(0)
         '
         'rFormKonfirmasiPembayaran
         '
@@ -391,7 +444,7 @@ Partial Class rFormKonfirmasiPembayaran
         '
         '
         Me.RootElement.ApplyShapeToControl = True
-        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Konfirmasi Pembayaran"
         Me.ThemeName = "Office2010Black"
@@ -405,7 +458,6 @@ Partial Class rFormKonfirmasiPembayaran
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rCustomer, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.rDropWO, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.btnSave, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()
@@ -414,10 +466,11 @@ Partial Class rFormKonfirmasiPembayaran
         Me.RadGroupBox1.PerformLayout()
         CType(Me.txBAST, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rTxMaskDate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadRadioButton2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadRadioButton1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.rDropWO, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -428,7 +481,6 @@ Partial Class rFormKonfirmasiPembayaran
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents btnSave As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnClose As Telerik.WinControls.UI.RadButton
-    Friend WithEvents rDropWO As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents RadGroupBox1 As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents RadRadioButton2 As Telerik.WinControls.UI.RadRadioButton
     Friend WithEvents RadRadioButton1 As Telerik.WinControls.UI.RadRadioButton
@@ -441,4 +493,5 @@ Partial Class rFormKonfirmasiPembayaran
     Friend WithEvents txBAST As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel5 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel6 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents rDropWO As Telerik.WinControls.UI.RadDropDownList
 End Class

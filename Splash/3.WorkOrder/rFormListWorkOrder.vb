@@ -42,18 +42,18 @@ Public Class rFormListWorkOrder
             Select Case num1
                 Case 0
                     Me.btnEdit.Enabled = False
-                    Me.btnPDF.Enabled = False
+                    'Me.btnPDF.Enabled = False
                     Me.btnErase.Enabled = False
                     Me.iduserEdit = "-1"
                     Exit Select
                 Case 1
                     Me.btnEdit.Enabled = True
-                    Me.btnPDF.Enabled = True
+                    'Me.btnPDF.Enabled = True
                     Me.btnErase.Enabled = True
                     Exit Select
                 Case Else
                     Me.btnEdit.Enabled = False
-                    Me.btnPDF.Enabled = False
+                    'Me.btnPDF.Enabled = False
                     Me.btnErase.Enabled = True
                     Me.iduserEdit = "-1"
                     Exit Select
@@ -131,7 +131,7 @@ Public Class rFormListWorkOrder
     End Sub
 
     Private Sub rFormListWorkOrder_Load(sender As Object, e As EventArgs) Handles Me.Load
-        btnPDF.Visible = False
+        'btnPDF.Visible = False
         Dim strTheme As String = rFormMain.Office2010BlackTheme1.ThemeName
         rFormMain.SetTheme(Me, strTheme)
         BufferMethod.DoubleBuffered(dg, True)

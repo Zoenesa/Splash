@@ -54,6 +54,7 @@ Public Class FormProfilPerusahaan
     End Sub
 
     Private Sub FormProfilPerusahaan_Load(sender As Object, e As EventArgs) Handles Me.Load
+        rFormMain.LoadIcon(True, Me)
         If Me.isEdit Then
             Me.Text = "Ubah Profil Perusahaan"
             btnSave.Text = "&Simpan"

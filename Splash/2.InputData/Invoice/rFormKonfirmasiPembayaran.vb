@@ -87,7 +87,7 @@ Public Class rFormKonfirmasiPembayaran
         GetClient()
     End Sub
 
-    Private Sub rCustomer_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles rCustomer.SelectedIndexChanged
+    Private Sub rCustomer_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles rCustomer.SelectedIndexChanged, rDropWO.SelectedIndexChanged
         'getInvoiceNo(" WHERE `invoiceClient` = '" & rCustomer.SelectedItem.Text & "'")
         datatableinvoice(" WHERE `invoiceClient` = '" & rCustomer.SelectedItem.Text & "'")
     End Sub

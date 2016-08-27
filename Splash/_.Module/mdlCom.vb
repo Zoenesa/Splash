@@ -414,24 +414,6 @@ Public NotInheritable Class mdlCom
         End Set
     End Property
 
-    Private Shared convTempPassword As String
-    'Public Shared Property ConvertsqlPassword As String
-    '    Get
-    '        If String.IsNullOrEmpty(mdlCom.cPass) Then
-    '            Throw New Exception("Password no Result.")
-    '        End If
-    '        convTempPassword = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(mdlCom.cPass, mdlstring.defaultKey)
-    '        If CodeLibs.CodeMethod.Encrypt_TRIPLEDES(cPass, mdlstring.defaultKey) = convTempPassword Then
-
-    '        End If
-    '        Return mdlCom.cPass
-    '    End Get
-    '    Set(value As String)
-    '        value = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(mdlCom.cPass, mdlstring.defaultKey)
-    '        mdlCom.cPass = value
-    '    End Set
-    'End Property
-
 
 
 End Class

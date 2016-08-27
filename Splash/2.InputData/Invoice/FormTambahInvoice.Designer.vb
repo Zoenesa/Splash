@@ -22,8 +22,8 @@ Partial Class FormTambahInvoice
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
         Me.rDropInvoiceType = New Telerik.WinControls.UI.RadDropDownList()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
@@ -119,10 +119,10 @@ Partial Class FormTambahInvoice
         Me.rDropInvoiceType.AutoSize = False
         Me.rDropInvoiceType.BackColor = System.Drawing.Color.Transparent
         Me.rDropInvoiceType.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RadListDataItem1.Text = "Baru"
-        RadListDataItem2.Text = "Revisi"
-        Me.rDropInvoiceType.Items.Add(RadListDataItem1)
-        Me.rDropInvoiceType.Items.Add(RadListDataItem2)
+        RadListDataItem3.Text = "Baru"
+        RadListDataItem4.Text = "Revisi"
+        Me.rDropInvoiceType.Items.Add(RadListDataItem3)
+        Me.rDropInvoiceType.Items.Add(RadListDataItem4)
         Me.rDropInvoiceType.Location = New System.Drawing.Point(340, 34)
         Me.rDropInvoiceType.Name = "rDropInvoiceType"
         Me.rDropInvoiceType.NullText = "Jenis Invoice"
@@ -650,19 +650,19 @@ Partial Class FormTambahInvoice
         '
         'RadPageViewPage3
         '
-        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(127.0!, 30.0!)
+        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(83.0!, 30.0!)
         Me.RadPageViewPage3.Location = New System.Drawing.Point(6, 34)
         Me.RadPageViewPage3.Name = "RadPageViewPage3"
         Me.RadPageViewPage3.Size = New System.Drawing.Size(711, 225)
-        Me.RadPageViewPage3.Text = "RadPageViewPage3"
+        Me.RadPageViewPage3.Text = "Invoice 3/4"
         '
         'RadPageViewPage4
         '
-        Me.RadPageViewPage4.ItemSize = New System.Drawing.SizeF(127.0!, 30.0!)
+        Me.RadPageViewPage4.ItemSize = New System.Drawing.SizeF(83.0!, 30.0!)
         Me.RadPageViewPage4.Location = New System.Drawing.Point(6, 34)
         Me.RadPageViewPage4.Name = "RadPageViewPage4"
         Me.RadPageViewPage4.Size = New System.Drawing.Size(711, 225)
-        Me.RadPageViewPage4.Text = "RadPageViewPage4"
+        Me.RadPageViewPage4.Text = "Invoice 4/4"
         '
         'Panel4
         '

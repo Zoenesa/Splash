@@ -22,11 +22,11 @@ Partial Class rFormListWorkOrder
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem6 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem7 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem8 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem9 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem10 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.RadPanel1 = New Telerik.WinControls.UI.RadPanel()
         Me.RadDropDownList1 = New Telerik.WinControls.UI.RadDropDownList()
         Me.txFilter = New Telerik.WinControls.UI.RadTextBox()
@@ -41,7 +41,6 @@ Partial Class rFormListWorkOrder
         Me.btnEdit = New Telerik.WinControls.UI.RadButton()
         Me.btnErase = New Telerik.WinControls.UI.RadButton()
         Me.btnClose = New Telerik.WinControls.UI.RadButton()
-        Me.btnPDF = New Telerik.WinControls.UI.RadButton()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPanel1.SuspendLayout()
         CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,7 +54,6 @@ Partial Class rFormListWorkOrder
         CType(Me.btnEdit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnErase, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnPDF, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -77,16 +75,16 @@ Partial Class rFormListWorkOrder
         '
         Me.RadDropDownList1.AutoSize = False
         Me.RadDropDownList1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RadListDataItem1.Text = "Type"
-        RadListDataItem2.Text = "Date"
-        RadListDataItem3.Text = "Client Name"
-        RadListDataItem4.Text = "Projects"
-        RadListDataItem5.Text = "Custom"
-        Me.RadDropDownList1.Items.Add(RadListDataItem1)
-        Me.RadDropDownList1.Items.Add(RadListDataItem2)
-        Me.RadDropDownList1.Items.Add(RadListDataItem3)
-        Me.RadDropDownList1.Items.Add(RadListDataItem4)
-        Me.RadDropDownList1.Items.Add(RadListDataItem5)
+        RadListDataItem6.Text = "Type"
+        RadListDataItem7.Text = "Date"
+        RadListDataItem8.Text = "Client Name"
+        RadListDataItem9.Text = "Projects"
+        RadListDataItem10.Text = "Custom"
+        Me.RadDropDownList1.Items.Add(RadListDataItem6)
+        Me.RadDropDownList1.Items.Add(RadListDataItem7)
+        Me.RadDropDownList1.Items.Add(RadListDataItem8)
+        Me.RadDropDownList1.Items.Add(RadListDataItem9)
+        Me.RadDropDownList1.Items.Add(RadListDataItem10)
         Me.RadDropDownList1.Location = New System.Drawing.Point(7, 8)
         Me.RadDropDownList1.Name = "RadDropDownList1"
         Me.RadDropDownList1.Size = New System.Drawing.Size(155, 23)
@@ -109,6 +107,11 @@ Partial Class rFormListWorkOrder
         Me.txFilter.Size = New System.Drawing.Size(426, 23)
         Me.txFilter.TabIndex = 2
         Me.txFilter.ThemeName = "Office2010Black"
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Filter"
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnFilter
         '
@@ -121,6 +124,8 @@ Partial Class rFormListWorkOrder
         Me.btnFilter.TabIndex = 3
         Me.btnFilter.Text = "[F3] Filter"
         Me.btnFilter.ThemeName = "Office2010Black"
+        CType(Me.btnFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         '
         'Panel1
         '
@@ -194,7 +199,6 @@ Partial Class rFormListWorkOrder
         Me.TableLayoutPanel1.Controls.Add(Me.btnEdit, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnErase, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnClose, 4, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.btnPDF, 3, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 299)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
@@ -211,8 +215,10 @@ Partial Class rFormListWorkOrder
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(130, 26)
         Me.btnAdd.TabIndex = 0
-        Me.btnAdd.Text = "Ad&d"
+        Me.btnAdd.Text = "&Tambah"
         Me.btnAdd.ThemeName = "Office2010Black"
+        CType(Me.btnAdd.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnAdd.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         '
         'btnEdit
         '
@@ -223,8 +229,10 @@ Partial Class rFormListWorkOrder
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(130, 26)
         Me.btnEdit.TabIndex = 1
-        Me.btnEdit.Text = "&Edit"
+        Me.btnEdit.Text = "&Ubah"
         Me.btnEdit.ThemeName = "Office2010Black"
+        CType(Me.btnEdit.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnEdit.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         '
         'btnErase
         '
@@ -235,8 +243,10 @@ Partial Class rFormListWorkOrder
         Me.btnErase.Name = "btnErase"
         Me.btnErase.Size = New System.Drawing.Size(130, 26)
         Me.btnErase.TabIndex = 2
-        Me.btnErase.Text = "&Erase"
+        Me.btnErase.Text = "&Hapus"
         Me.btnErase.ThemeName = "Office2010Black"
+        CType(Me.btnErase.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnErase.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         '
         'btnClose
         '
@@ -247,20 +257,10 @@ Partial Class rFormListWorkOrder
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(134, 26)
         Me.btnClose.TabIndex = 4
-        Me.btnClose.Text = "&Close"
+        Me.btnClose.Text = "&Keluar"
         Me.btnClose.ThemeName = "Office2010Black"
-        '
-        'btnPDF
-        '
-        Me.btnPDF.BackColor = System.Drawing.Color.Transparent
-        Me.btnPDF.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnPDF.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnPDF.Location = New System.Drawing.Point(411, 3)
-        Me.btnPDF.Name = "btnPDF"
-        Me.btnPDF.Size = New System.Drawing.Size(130, 26)
-        Me.btnPDF.TabIndex = 3
-        Me.btnPDF.Text = "&PDF"
-        Me.btnPDF.ThemeName = "Office2010Black"
+        CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         '
         'rFormListWorkOrder
         '
@@ -271,12 +271,14 @@ Partial Class rFormListWorkOrder
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.RadPanel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(700, 337)
         Me.Name = "rFormListWorkOrder"
         '
         '
         '
         Me.RootElement.ApplyShapeToControl = True
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Daftar WorkOrder / SPK / Sales Order"
         Me.ThemeName = "Office2010Black"
@@ -294,7 +296,6 @@ Partial Class rFormListWorkOrder
         CType(Me.btnEdit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnErase, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnPDF, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -311,7 +312,6 @@ Partial Class rFormListWorkOrder
     Friend WithEvents btnEdit As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnErase As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnClose As Telerik.WinControls.UI.RadButton
-    Friend WithEvents btnPDF As Telerik.WinControls.UI.RadButton
     Friend WithEvents Col1 As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents Col2 As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

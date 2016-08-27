@@ -58,6 +58,8 @@ Partial Class rFormAddWorkorderRecord
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "&Simpan"
         Me.btnSave.ThemeName = "Office2010Black"
+        CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         '
         'rTxID
         '
@@ -68,9 +70,14 @@ Partial Class rFormAddWorkorderRecord
         Me.rTxID.NullText = "No."
         Me.rTxID.Padding = New System.Windows.Forms.Padding(8, 3, 0, 2)
         Me.rTxID.ReadOnly = True
-        Me.rTxID.Size = New System.Drawing.Size(153, 23)
+        Me.rTxID.Size = New System.Drawing.Size(130, 23)
         Me.rTxID.TabIndex = 1
         Me.rTxID.ThemeName = "Office2010Black"
+        CType(Me.rTxID.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "No."
+        CType(Me.rTxID.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.rTxID.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.rTxID.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.rTxID.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'rWONum
         '
@@ -83,6 +90,11 @@ Partial Class rFormAddWorkorderRecord
         Me.rWONum.Size = New System.Drawing.Size(262, 23)
         Me.rWONum.TabIndex = 5
         Me.rWONum.ThemeName = "Office2010Black"
+        CType(Me.rWONum.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "No. Workorder/SPK/SalesOrder"
+        CType(Me.rWONum.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.rWONum.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.rWONum.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.rWONum.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'rTxMaskDate
         '
@@ -101,7 +113,12 @@ Partial Class rFormAddWorkorderRecord
         Me.rTxMaskDate.Text = "__/__/____"
         Me.rTxMaskDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.rTxMaskDate.ThemeName = "Office2010Black"
-        Me.rTxMaskDate.UseGenericBorderPaint = True
+        CType(Me.rTxMaskDate.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "__/__/____"
+        CType(Me.rTxMaskDate.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Padding = New System.Windows.Forms.Padding(2, 2, 2, 3)
+        CType(Me.rTxMaskDate.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "_"
+        CType(Me.rTxMaskDate.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.rTxMaskDate.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.rTxMaskDate.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'rCbClient
         '
@@ -114,6 +131,10 @@ Partial Class rFormAddWorkorderRecord
         Me.rCbClient.Size = New System.Drawing.Size(262, 23)
         Me.rCbClient.TabIndex = 3
         Me.rCbClient.ThemeName = "Office2010Black"
+        CType(Me.rCbClient.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor2 = System.Drawing.SystemColors.Control
+        CType(Me.rCbClient.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).NumberOfColors = 2
+        CType(Me.rCbClient.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.rCbClient.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadLabel1
         '
@@ -182,6 +203,8 @@ Partial Class rFormAddWorkorderRecord
         Me.RadButton1.TabIndex = 1
         Me.RadButton1.Text = "&Batal"
         Me.RadButton1.ThemeName = "Office2010Black"
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         '
         'rFormAddWorkorderRecord
         '
@@ -189,6 +212,7 @@ Partial Class rFormAddWorkorderRecord
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(146, Byte), Integer), CType(CType(146, Byte), Integer), CType(CType(146, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(412, 177)
+        Me.ControlBox = False
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.RadLabel3)
         Me.Controls.Add(Me.RadLabel4)

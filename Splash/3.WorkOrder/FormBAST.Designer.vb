@@ -42,10 +42,10 @@ Partial Class FormBAST
         Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
         Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
         Me.RadContextMenuManager1 = New Telerik.WinControls.UI.RadContextMenuManager()
+        Me.RadGridView1 = New Telerik.WinControls.UI.RadGridView()
         Me.RadContextMenu1 = New Telerik.WinControls.UI.RadContextMenu(Me.components)
         Me.RadMenuItem1 = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenuItem2 = New Telerik.WinControls.UI.RadMenuItem()
-        Me.RadGridView1 = New Telerik.WinControls.UI.RadGridView()
         CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txDefaultCharset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -145,10 +145,13 @@ Partial Class FormBAST
         Me.rTxMaskDate.Text = "__/__/____"
         Me.rTxMaskDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.rTxMaskDate.ThemeName = "Office2010Black"
-        Me.rTxMaskDate.UseGenericBorderPaint = True
         CType(Me.rTxMaskDate.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "__/__/____"
         CType(Me.rTxMaskDate.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        CType(Me.rTxMaskDate.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.rTxMaskDate.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Padding = New System.Windows.Forms.Padding(2, 2, 2, 3)
+        CType(Me.rTxMaskDate.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "_"
+        CType(Me.rTxMaskDate.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.rTxMaskDate.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.rTxMaskDate.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadLabel6
         '
@@ -212,7 +215,7 @@ Partial Class FormBAST
         '
         'btnBack
         '
-        Me.btnBack.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.btnBack.BackColor = System.Drawing.Color.Transparent
         Me.btnBack.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBack.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnBack.Location = New System.Drawing.Point(549, 56)
@@ -221,6 +224,8 @@ Partial Class FormBAST
         Me.btnBack.TabIndex = 24
         Me.btnBack.Text = "[F3] Cari"
         Me.btnBack.ThemeName = "Office2010Black"
+        CType(Me.btnBack.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnBack.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadLabel2
         '
@@ -235,7 +240,7 @@ Partial Class FormBAST
         '
         'RadButton1
         '
-        Me.RadButton1.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.RadButton1.BackColor = System.Drawing.Color.Transparent
         Me.RadButton1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.RadButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadButton1.Location = New System.Drawing.Point(549, 20)
@@ -244,21 +249,8 @@ Partial Class FormBAST
         Me.RadButton1.TabIndex = 24
         Me.RadButton1.Text = "&Tambah Baru"
         Me.RadButton1.ThemeName = "Office2010Black"
-        '
-        'RadContextMenu1
-        '
-        Me.RadContextMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RadMenuItem1, Me.RadMenuItem2})
-        Me.RadContextMenu1.ThemeName = "Office2010Black"
-        '
-        'RadMenuItem1
-        '
-        Me.RadMenuItem1.Name = "RadMenuItem1"
-        Me.RadMenuItem1.Text = "&Edit"
-        '
-        'RadMenuItem2
-        '
-        Me.RadMenuItem2.Name = "RadMenuItem2"
-        Me.RadMenuItem2.Text = "&Hapus"
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         '
         'RadGridView1
         '
@@ -313,6 +305,21 @@ Partial Class FormBAST
         Me.RadGridView1.TabIndex = 25
         Me.RadGridView1.Text = "RadGridView1"
         Me.RadGridView1.ThemeName = "Office2010Black"
+        '
+        'RadContextMenu1
+        '
+        Me.RadContextMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RadMenuItem1, Me.RadMenuItem2})
+        Me.RadContextMenu1.ThemeName = "Office2010Black"
+        '
+        'RadMenuItem1
+        '
+        Me.RadMenuItem1.Name = "RadMenuItem1"
+        Me.RadMenuItem1.Text = "&Edit"
+        '
+        'RadMenuItem2
+        '
+        Me.RadMenuItem2.Name = "RadMenuItem2"
+        Me.RadMenuItem2.Text = "&Hapus"
         '
         'FormBAST
         '

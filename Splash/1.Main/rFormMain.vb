@@ -39,7 +39,6 @@ Public Class rFormMain
 
                 mprofile.SetValue("General", Entry, "myIco.ico")
 
-                'SaveEmbedResource("myico.ico", FilePath)
 
             Else
 
@@ -83,26 +82,6 @@ Public Class rFormMain
         'Subrutin / Caller
         'SaveToDisk([Resource Name with Extension-use the same case as used in the filename], [Output path with FileName & extension])
     End Sub
-
-    'Public Shared Sub SaveEmbedResource(ByVal fileResc As String, ByVal fileLocation As String)
-    '    Dim rescFileStream As IO.Stream
-    '    Dim eAssembly As System.Reflection.Assembly = Assembly.GetExecutingAssembly
-    '    Dim mynameSpace As String = eAssembly.GetName().Name.ToString()
-    '    Try
-    '        Dim xCount As Integer
-    '        rescFileStream = eAssembly.GetManifestResourceStream(mynameSpace & "." & fileResc)
-    '        Dim writeResc As New IO.FileStream(fileLocation, IO.FileMode.OpenOrCreate)
-    '        For xCount = 1 To rescFileStream.Length
-    '            writeResc.WriteByte(rescFileStream.ReadByte)
-    '        Next
-    '        writeResc.Close()
-    '        rescFileStream.Close()
-    '    Catch nu As NullReferenceException
-    '        RadMessageBox.Show(nu.Message.ToString, "Error", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
-    '    Catch ex As Exception
-    '        RadMessageBox.Show(ex.Message.ToString, "Error", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
-    '    End Try
-    'End Sub
 
     Public Sub KeluarAplikasi()
         Dim errMsg As String = ""

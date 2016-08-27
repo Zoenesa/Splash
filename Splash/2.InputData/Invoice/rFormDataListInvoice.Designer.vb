@@ -22,11 +22,11 @@ Partial Class rFormDataListInvoice
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem6 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem7 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem8 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem9 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem10 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.dg = New System.Windows.Forms.DataGridView()
         Me.Col1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Col2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -137,16 +137,16 @@ Partial Class rFormDataListInvoice
         '
         Me.RadDropDownList1.AutoSize = False
         Me.RadDropDownList1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RadListDataItem1.Text = "Type"
-        RadListDataItem2.Text = "Date"
-        RadListDataItem3.Text = "Client Name"
-        RadListDataItem4.Text = "Projects"
-        RadListDataItem5.Text = "Custom"
-        Me.RadDropDownList1.Items.Add(RadListDataItem1)
-        Me.RadDropDownList1.Items.Add(RadListDataItem2)
-        Me.RadDropDownList1.Items.Add(RadListDataItem3)
-        Me.RadDropDownList1.Items.Add(RadListDataItem4)
-        Me.RadDropDownList1.Items.Add(RadListDataItem5)
+        RadListDataItem6.Text = "Type"
+        RadListDataItem7.Text = "Date"
+        RadListDataItem8.Text = "Client Name"
+        RadListDataItem9.Text = "Projects"
+        RadListDataItem10.Text = "Custom"
+        Me.RadDropDownList1.Items.Add(RadListDataItem6)
+        Me.RadDropDownList1.Items.Add(RadListDataItem7)
+        Me.RadDropDownList1.Items.Add(RadListDataItem8)
+        Me.RadDropDownList1.Items.Add(RadListDataItem9)
+        Me.RadDropDownList1.Items.Add(RadListDataItem10)
         Me.RadDropDownList1.Location = New System.Drawing.Point(7, 8)
         Me.RadDropDownList1.Name = "RadDropDownList1"
         Me.RadDropDownList1.Size = New System.Drawing.Size(155, 23)
@@ -162,8 +162,9 @@ Partial Class rFormDataListInvoice
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(181, 26)
         Me.btnEdit.TabIndex = 1
-        Me.btnEdit.Text = "&Edit"
+        Me.btnEdit.Text = "&Ubah"
         Me.btnEdit.ThemeName = "Office2010Black"
+        CType(Me.btnEdit.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Ubah"
         CType(Me.btnEdit.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnEdit.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -176,8 +177,9 @@ Partial Class rFormDataListInvoice
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(183, 26)
         Me.btnClose.TabIndex = 4
-        Me.btnClose.Text = "&Close"
+        Me.btnClose.Text = "&Keluar"
         Me.btnClose.ThemeName = "Office2010Black"
+        CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Keluar"
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -192,6 +194,7 @@ Partial Class rFormDataListInvoice
         Me.btnPDF.TabIndex = 3
         Me.btnPDF.Text = "&PDF"
         Me.btnPDF.ThemeName = "Office2010Black"
+        CType(Me.btnPDF.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&PDF"
         CType(Me.btnPDF.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnPDF.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -204,8 +207,9 @@ Partial Class rFormDataListInvoice
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(181, 26)
         Me.btnAdd.TabIndex = 0
-        Me.btnAdd.Text = "Ad&d"
+        Me.btnAdd.Text = "&Tambah"
         Me.btnAdd.ThemeName = "Office2010Black"
+        CType(Me.btnAdd.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Tambah"
         CType(Me.btnAdd.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnAdd.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -234,6 +238,7 @@ Partial Class rFormDataListInvoice
         Me.btnFilter.TabIndex = 3
         Me.btnFilter.Text = "[F3] Filter"
         Me.btnFilter.ThemeName = "Office2010Black"
+        CType(Me.btnFilter.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "[F3] Filter"
         CType(Me.btnFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -256,8 +261,9 @@ Partial Class rFormDataListInvoice
         Me.btnErase.Name = "btnErase"
         Me.btnErase.Size = New System.Drawing.Size(181, 26)
         Me.btnErase.TabIndex = 2
-        Me.btnErase.Text = "&Erase"
+        Me.btnErase.Text = "&Hapus"
         Me.btnErase.ThemeName = "Office2010Black"
+        CType(Me.btnErase.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Hapus"
         CType(Me.btnErase.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnErase.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '

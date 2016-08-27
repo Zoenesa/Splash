@@ -45,13 +45,13 @@ Partial Class rFormUsersList
         Me.btnClose = New Telerik.WinControls.UI.RadButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dg = New System.Windows.Forms.DataGridView()
-        Me.RadCheckBox1 = New Telerik.WinControls.UI.RadCheckBox()
         Me.Col1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Col3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Col2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Col5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nama = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Col7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RadCheckBox1 = New Telerik.WinControls.UI.RadCheckBox()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPanel1.SuspendLayout()
         CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,6 +100,7 @@ Partial Class rFormUsersList
         Me.RadDropDownList1.Name = "RadDropDownList1"
         Me.RadDropDownList1.Size = New System.Drawing.Size(155, 23)
         Me.RadDropDownList1.TabIndex = 1
+        Me.RadDropDownList1.ThemeName = "Office2010Black"
         '
         'txFilter
         '
@@ -117,6 +118,11 @@ Partial Class rFormUsersList
         Me.txFilter.Size = New System.Drawing.Size(593, 23)
         Me.txFilter.TabIndex = 2
         Me.txFilter.ThemeName = "Office2010Black"
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Filter"
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnFilter
         '
@@ -129,6 +135,8 @@ Partial Class rFormUsersList
         Me.btnFilter.TabIndex = 3
         Me.btnFilter.Text = "[F3] Filter"
         Me.btnFilter.ThemeName = "Office2010Black"
+        CType(Me.btnFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'TableLayoutPanel1
         '
@@ -161,6 +169,8 @@ Partial Class rFormUsersList
         Me.btnAdd.TabIndex = 0
         Me.btnAdd.Text = "&Tambah"
         Me.btnAdd.ThemeName = "Office2010Black"
+        CType(Me.btnAdd.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnAdd.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnEdit
         '
@@ -171,8 +181,10 @@ Partial Class rFormUsersList
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(207, 26)
         Me.btnEdit.TabIndex = 1
-        Me.btnEdit.Text = "&Edit"
+        Me.btnEdit.Text = "&Ubah"
         Me.btnEdit.ThemeName = "Office2010Black"
+        CType(Me.btnEdit.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnEdit.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnErase
         '
@@ -183,8 +195,10 @@ Partial Class rFormUsersList
         Me.btnErase.Name = "btnErase"
         Me.btnErase.Size = New System.Drawing.Size(207, 26)
         Me.btnErase.TabIndex = 2
-        Me.btnErase.Text = "&Erase"
+        Me.btnErase.Text = "&Hapus"
         Me.btnErase.ThemeName = "Office2010Black"
+        CType(Me.btnErase.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnErase.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnClose
         '
@@ -195,8 +209,10 @@ Partial Class rFormUsersList
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(208, 26)
         Me.btnClose.TabIndex = 4
-        Me.btnClose.Text = "&Close"
+        Me.btnClose.Text = "&Keluar"
         Me.btnClose.ThemeName = "Office2010Black"
+        CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'Panel1
         '
@@ -252,14 +268,6 @@ Partial Class rFormUsersList
         Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dg.Size = New System.Drawing.Size(843, 198)
         Me.dg.TabIndex = 0
-        '
-        'RadCheckBox1
-        '
-        Me.RadCheckBox1.Location = New System.Drawing.Point(11, 3)
-        Me.RadCheckBox1.Name = "RadCheckBox1"
-        Me.RadCheckBox1.Size = New System.Drawing.Size(66, 18)
-        Me.RadCheckBox1.TabIndex = 6
-        Me.RadCheckBox1.Text = "Select All"
         '
         'Col1
         '
@@ -323,6 +331,14 @@ Partial Class rFormUsersList
         Me.Col7.Name = "Col7"
         Me.Col7.ReadOnly = True
         Me.Col7.Width = 95
+        '
+        'RadCheckBox1
+        '
+        Me.RadCheckBox1.Location = New System.Drawing.Point(11, 3)
+        Me.RadCheckBox1.Name = "RadCheckBox1"
+        Me.RadCheckBox1.Size = New System.Drawing.Size(66, 18)
+        Me.RadCheckBox1.TabIndex = 6
+        Me.RadCheckBox1.Text = "Select All"
         '
         'rFormUsersList
         '

@@ -64,4 +64,35 @@ Public Class FormTambahInvoice
     Private Sub RadPageViewPage2_Paint(sender As Object, e As PaintEventArgs) Handles RadPageViewPage2.Paint
 
     End Sub
+
+    Private Sub btnTambahSalesOrder_Click(sender As Object, e As EventArgs) Handles btnTambahSalesOrder.Click
+
+    End Sub
+
+    Private Sub RadButton2_Click(sender As Object, e As EventArgs) Handles RadButton2.Click
+        If RadPageView1.SelectedPage Is RadPageViewPage1 Then
+            RadPageView1.SelectedPage = RadPageViewPage2
+            RadButton2.Text = "&Lanjut"
+        ElseIf RadPageView1.SelectedPage Is RadPageViewpage2 Then
+            RadPageView1.SelectedPage = RadPageViewPage3
+            RadButton2.Text = "&Lanjut"
+        ElseIf RadPageView1.SelectedPage Is RadPageViewPage3 Then
+            RadPageView1.SelectedPage = RadPageViewPage4
+            RadButton2.Text = "&Simpan"
+        End If
+    End Sub
+
+    Private Sub RadButton3_Click(sender As Object, e As EventArgs) Handles RadButton3.Click
+        If RadPageView1.SelectedPage Is RadPageViewPage4 Then
+            RadPageView1.SelectedPage = RadPageViewPage3
+            RadButton2.Text = "&Lanjut"
+        ElseIf RadPageView1.SelectedPage Is RadPageViewPage3 Then
+            RadPageView1.SelectedPage = RadPageViewPage2
+            RadButton2.Text = "&Lanjut"
+        ElseIf RadPageView1.SelectedPage Is RadPageViewPage2 Then
+            RadPageView1.SelectedPage = RadPageViewPage1
+            RadButton2.Text = "&Lanjut"
+        End If
+    End Sub
+
 End Class
