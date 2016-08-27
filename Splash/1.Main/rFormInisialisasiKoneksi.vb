@@ -108,27 +108,27 @@ Public Class rFormInisialisasiKoneksi
         fs = IO.File.Create(filepath)
         Try
 
-            WriteGeneralSetting(True, fs, "\\PROGRAM SPLASH DATA PROJECT")
-            WriteGeneralSetting(True, fs, "\\DO NOT DELETE OR CHANGE CONTENT ON THIS CONFIG FILE")
-            WriteGeneralSetting(True, fs, "\\RISK CHANGING OR DELETING WILL CAUSE DAMAGE OR CORRUPTION DATA")
-            WriteGeneralSetting(True, fs, "\\DILARANG MERUBAH ATAUPUN MENGHAPUS KONTEN DI FILE CONFIG INI")
-            WriteGeneralSetting(True, fs, "\\RESIKO MENGUBAH ATAUPUN MENGHAPUS KONTEN DI FILE INI AKAN MENYEBABKAN KERUSAKAN ATAUPUN DATA KORUP")
-            WriteGeneralSetting(True, fs, "Aplikasi:" & My.Application.Info.AssemblyName)
-            WriteGeneralSetting(True, fs, "Versi:" & My.Application.Info.Version.ToString)
-            WriteGeneralSetting(True, fs, "OS:" & My.Computer.Info.OSFullName)
-            WriteGeneralSetting(True, fs, "Komputer:" & My.Computer.Name)
-            WriteGeneralSetting(True, fs, "[General]")
-            WriteGeneralSetting(True, fs, "ConnectionName=Splash_Connection")
-            WriteGeneralSetting(True, fs, "DatabaseName=db_apps")
-            WriteGeneralSetting(True, fs, "Server=localhost")
-            WriteGeneralSetting(True, fs, "User=SUPERVISOR")
-            WriteGeneralSetting(True, fs, "Password=di5t0rti0n")
-            WriteGeneralSetting(True, fs, "Port=3306")
-            WriteGeneralSetting(True, fs, "defaultsetting=True")
-            WriteGeneralSetting(True, fs, "SettingName=0")
-            WriteGeneralSetting(True, fs, "SectionName=General")
-            WriteGeneralSetting(True, fs, "BackupLocation=\backups")
-            WriteGeneralSetting(True, fs, "Icons=myico.ico")
+            mdlstring.WriteGeneralSetting(True, fs, "\\PROGRAM SPLASH DATA PROJECT")
+            mdlstring.WriteGeneralSetting(True, fs, "\\DO NOT DELETE OR CHANGE CONTENT ON THIS CONFIG FILE")
+            mdlstring.WriteGeneralSetting(True, fs, "\\RISK CHANGING OR DELETING WILL CAUSE DAMAGE OR CORRUPTION DATA")
+            mdlstring.WriteGeneralSetting(True, fs, "\\DILARANG MERUBAH ATAUPUN MENGHAPUS KONTEN DI FILE CONFIG INI")
+            mdlstring.WriteGeneralSetting(True, fs, "\\RESIKO MENGUBAH ATAUPUN MENGHAPUS KONTEN DI FILE INI AKAN MENYEBABKAN KERUSAKAN ATAUPUN DATA KORUP")
+            mdlstring.WriteGeneralSetting(True, fs, "Aplikasi:" & My.Application.Info.AssemblyName)
+            mdlstring.WriteGeneralSetting(True, fs, "Versi:" & My.Application.Info.Version.ToString)
+            mdlstring.WriteGeneralSetting(True, fs, "OS:" & My.Computer.Info.OSFullName)
+            mdlstring.WriteGeneralSetting(True, fs, "Komputer:" & My.Computer.Name)
+            mdlstring.WriteGeneralSetting(True, fs, "[General]")
+            mdlstring.WriteGeneralSetting(True, fs, "ConnectionName=Splash_Connection")
+            mdlstring.WriteGeneralSetting(True, fs, "DatabaseName=db_apps")
+            mdlstring.WriteGeneralSetting(True, fs, "Server=localhost")
+            mdlstring.WriteGeneralSetting(True, fs, "User=SUPERVISOR")
+            mdlstring.WriteGeneralSetting(True, fs, "Password=di5t0rti0n")
+            mdlstring.WriteGeneralSetting(True, fs, "Port=3306")
+            mdlstring.WriteGeneralSetting(True, fs, "defaultsetting=True")
+            mdlstring.WriteGeneralSetting(True, fs, "SettingName=0")
+            mdlstring.WriteGeneralSetting(True, fs, "SectionName=General")
+            mdlstring.WriteGeneralSetting(True, fs, "BackupLocation=\backups")
+            mdlstring.WriteGeneralSetting(True, fs, "Icons=myico.ico")
 
             fs.Close()
 
@@ -137,21 +137,6 @@ Public Class rFormInisialisasiKoneksi
             RadMessageBox.Show("Kesalahan Fatal!" & vbNewLine & "Error." & ex.Message.ToString, "SET DEFAULT SETTING", MessageBoxButtons.OK,
                                RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
         End Try
-    End Sub
-
-    Private Overloads Shared Sub WriteGeneralSetting(ByVal fs As IO.FileStream, ByVal Value As String)
-        Dim b As Byte() = New System.Text.UTF8Encoding(True).GetBytes(Value)
-        fs.Write(b, 0, b.Length)
-    End Sub
-
-    Private Overloads Shared Sub WriteGeneralSetting(ByVal WithNewLine As Boolean, ByVal fs As IO.FileStream, ByVal Value As String)
-        If WithNewLine Then
-            Dim b As Byte() = New System.Text.UTF8Encoding(True).GetBytes(Value & vbNewLine)
-            fs.Write(b, 0, b.Length)
-        Else
-            Dim b As Byte() = New System.Text.UTF8Encoding(True).GetBytes(Value)
-            fs.Write(b, 0, b.Length)
-        End If
     End Sub
 
     Private Sub FrmInisialisasiKoneksi_Load(sender As Object, e As EventArgs) Handles Me.Load

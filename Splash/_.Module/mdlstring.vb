@@ -254,6 +254,22 @@ Friend NotInheritable Class mdlstring
     '    Next
     'End Sub
 
+    Public Overloads Shared Sub WriteGeneralSetting(ByVal fs As IO.FileStream, ByVal Value As String)
+        Dim b As Byte() = New System.Text.UTF8Encoding(True).GetBytes(Value)
+        fs.Write(b, 0, b.Length)
+    End Sub
+
+    Public Overloads Shared Sub WriteGeneralSetting(ByVal WithNewLine As Boolean, ByVal fs As IO.FileStream, ByVal Value As String)
+        If WithNewLine Then
+            Dim b As Byte() = New System.Text.UTF8Encoding(True).GetBytes(Value & vbNewLine)
+            fs.Write(b, 0, b.Length)
+        Else
+            Dim b As Byte() = New System.Text.UTF8Encoding(True).GetBytes(Value)
+            fs.Write(b, 0, b.Length)
+        End If
+    End Sub
+
+
     Public Shared Function AESERans(ByVal input As Byte(), ByVal key As String) As Byte()
         Dim managed As New RijndaelManaged
         managed.Key = New SHA256Cng().ComputeHash(Encoding.ASCII.GetBytes(key))
