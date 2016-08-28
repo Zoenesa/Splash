@@ -47,7 +47,6 @@ Public Class FormTambahInvoice
         If common.SqlCustomQuery(errMsg, "SELECT WO_NO FROM `listworkorder` ", dt, "WHERE WO_CLIENTNAME = '" & RadDropDownPelanggan.Text.Trim() & "'" & " ORDER BY ID ASC") Then
             RadDropDownList1.DataSource = dt
 
-            RadDropDownList1.SelectedItem = Nothing
         Else
             mdlCom.ShowWarning(errMsg)
         End If
@@ -111,21 +110,29 @@ Public Class FormTambahInvoice
 
     Private Sub RadDropDownList1_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles RadDropDownList1.SelectedIndexChanged
 
-    End Sub
-
-    Private Sub RadDropDownList1_SelectedValueChanged(sender As Object, e As EventArgs) Handles RadDropDownList1.SelectedValueChanged
         Dim errmsg As String = Nothing
         Dim common As New common
         Dim dt2 As New DataTable()
-        If common.SqlCustomQuery(errMsg, "SELECT WO_DATE FROM `listworkorder` ", dt2, "WHERE WO_NO = '" & RadDropDownList1.Text.Trim() & "'") Then
-            Dim dr As DataRow = dt2.Rows.Item(0)
+        RadDateTimePickerSO.ReadOnly = True
+        If common.SqlCustomQuery(errmsg, "SELECT WO_DATE FROM `listworkorder` ", dt2, "WHERE WO_NO = '" & RadDropDownList1.Text.Trim() & "'") Then
 
-            Dim tgl As String = Conversions.ToDate(dr.Item(0))
+            If dt2.Rows.Count > 0 Then
+                Dim dr As DataRow = dt2.Rows.Item(0)
 
-            rTanggalSO.Text = tgl
-            RadDateTimePickerSO.Text = tgl
+                Dim tgl As String = Conversions.ToDate(dr.Item(0))
+
+                rTanggalSO.Text = tgl
+                RadDateTimePickerSO.Text = tgl
+
+            End If
+
         Else
             mdlCom.ShowWarning(errmsg)
         End If
     End Sub
+
+    Private Sub RadDropDownList1_SelectedValueChanged(sender As Object, e As EventArgs) Handles RadDropDownList1.SelectedValueChanged
+
+    End Sub
+
 End Class
