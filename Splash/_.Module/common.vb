@@ -196,6 +196,25 @@ Public Class common
         Return flag
     End Function
 
+    Public Function SqlCustomQuery(ByRef errMsg As String, ByVal Command As String, ByRef dt As DataTable, ByVal Optional Opsi As String = "") As Boolean
+        errMsg = ""
+        Dim flag As Boolean
+        Try
+            Dim adapter As New MySqlDataAdapter(Command & " " & Opsi, mdlCom.vConn)
+            dt = New DataTable()
+            DirectCast(adapter, DbDataAdapter).Fill(dt)
+            flag = True
+        Catch ex As Exception
+            ProjectData.SetProjectError(ex)
+            Dim exception As Exception = ex
+            errMsg = "Failed (common_SQLQUERY). Message : " + exception.Message
+            mdlCom.INSERTLOG(errMsg, "")
+            flag = False
+            ProjectData.ClearProjectError()
+        End Try
+        Return flag
+    End Function
+
     Public Function getUsers(ByRef errMsg As String, ByRef dtUsers As DataTable, Optional opsi As String = "") As Boolean
         errMsg = ""
         Dim flag As Boolean

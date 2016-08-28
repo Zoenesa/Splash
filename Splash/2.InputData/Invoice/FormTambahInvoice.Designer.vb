@@ -62,6 +62,7 @@ Partial Class FormTambahInvoice
         Me.RadPageViewPage3 = New Telerik.WinControls.UI.RadPageViewPage()
         Me.RadPageViewPage4 = New Telerik.WinControls.UI.RadPageViewPage()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.rTanggalSO = New Telerik.WinControls.UI.RadMaskedEditBox()
         CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rDropInvoiceType, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,6 +101,7 @@ Partial Class FormTambahInvoice
         CType(Me.RadDropDownList3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
+        CType(Me.rTanggalSO, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -387,7 +389,7 @@ Partial Class FormTambahInvoice
         Me.RadPageView1.Dock = System.Windows.Forms.DockStyle.Top
         Me.RadPageView1.Location = New System.Drawing.Point(0, 0)
         Me.RadPageView1.Name = "RadPageView1"
-        Me.RadPageView1.SelectedPage = Me.RadPageViewPage1
+        Me.RadPageView1.SelectedPage = Me.RadPageViewPage2
         Me.RadPageView1.Size = New System.Drawing.Size(723, 265)
         Me.RadPageView1.TabIndex = 15
         Me.RadPageView1.Text = "RadPageView1"
@@ -425,6 +427,7 @@ Partial Class FormTambahInvoice
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.rTanggalSO)
         Me.Panel2.Controls.Add(Me.RadDateTimePicker1)
         Me.Panel2.Controls.Add(Me.RadDateTimePickerSO)
         Me.Panel2.Controls.Add(Me.RadTextBox2)
@@ -542,7 +545,7 @@ Partial Class FormTambahInvoice
         Me.btnTambahSalesOrder.Name = "btnTambahSalesOrder"
         Me.btnTambahSalesOrder.Size = New System.Drawing.Size(70, 24)
         Me.btnTambahSalesOrder.TabIndex = 11
-        Me.btnTambahSalesOrder.Text = "Buat Baru"
+        Me.btnTambahSalesOrder.Text = "Lookup"
         Me.btnTambahSalesOrder.ThemeName = "Office2010Black"
         '
         'btnWorkOrderSerahterima
@@ -552,7 +555,7 @@ Partial Class FormTambahInvoice
         Me.btnWorkOrderSerahterima.Name = "btnWorkOrderSerahterima"
         Me.btnWorkOrderSerahterima.Size = New System.Drawing.Size(70, 24)
         Me.btnWorkOrderSerahterima.TabIndex = 11
-        Me.btnWorkOrderSerahterima.Text = "Buat Baru"
+        Me.btnWorkOrderSerahterima.Text = "Lookup"
         Me.btnWorkOrderSerahterima.ThemeName = "Office2010Black"
         '
         'RadLabel6
@@ -675,6 +678,20 @@ Partial Class FormTambahInvoice
         Me.Panel4.Size = New System.Drawing.Size(723, 109)
         Me.Panel4.TabIndex = 16
         '
+        'rTanggalSO
+        '
+        Me.rTanggalSO.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.rTanggalSO.Location = New System.Drawing.Point(7, 84)
+        Me.rTanggalSO.Mask = "00/00/0000"
+        Me.rTanggalSO.MaskType = Telerik.WinControls.UI.MaskType.Standard
+        Me.rTanggalSO.Name = "rTanggalSO"
+        Me.rTanggalSO.Padding = New System.Windows.Forms.Padding(4, 2, 4, 3)
+        Me.rTanggalSO.Size = New System.Drawing.Size(106, 23)
+        Me.rTanggalSO.TabIndex = 13
+        Me.rTanggalSO.TabStop = False
+        Me.rTanggalSO.Text = "__/__/____"
+        Me.rTanggalSO.ThemeName = "Office2010Black"
+        '
         'FormTambahInvoice
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -738,6 +755,7 @@ Partial Class FormTambahInvoice
         CType(Me.RadDropDownList3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
+        CType(Me.rTanggalSO, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -782,5 +800,6 @@ Partial Class FormTambahInvoice
     Friend WithEvents RadLabel6 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadDateTimePickerSO As Telerik.WinControls.UI.RadDateTimePicker
     Friend WithEvents RadDateTimePicker1 As Telerik.WinControls.UI.RadDateTimePicker
+    Friend WithEvents rTanggalSO As Telerik.WinControls.UI.RadMaskedEditBox
 End Class
 

@@ -19,25 +19,39 @@ Public Class FormTambahInvoice
         RadLabel1.Text = String.Format("{0}", RadPageView1.SelectedPage.Text)
     End Sub
 
-    Private Shared Sub LoadRefClient(ByVal Optional Opsi As String = "")
+    Private Sub LoadRefClient(ByVal Optional Opsi As String = "")
         Try
-            Using RefConn As MySqlConnection = New MySqlConnection()
-                Using cmd As MySqlCommand = New MySqlCommand
-                    cmd.CommandText = "SELECT CLIENT_NAME FROM `ref_client` " & Opsi
-                    cmd.Connection = mdlCom.vConn
-                    'RefConn.Open()
-                    Dim sqlreader As MySqlDataReader = cmd.ExecuteReader
-                    Do While sqlreader.Read
-                        FormTambahInvoice.RadDropDownPelanggan.Items.Add(sqlreader.Item("CLIENT_NAME"))
-                    Loop
-                    sqlreader.Close()
-                End Using
-                'RefConn.Close()
-            End Using
+            'RadDropDownPelanggan.Items.Clear()
+            Dim errMsg As String = Nothing
+            Dim common As New common
+            Dim dt As New DataTable()
+            RadDropDownPelanggan.DisplayMember = "client_name"
+            If common.SqlCustomQuery(errMsg, "SELECT CLIENT_NAME FROM `REF_CLIENT` ", dt, " ORDER BY ID_NUM ASC") Then
+                RadDropDownPelanggan.DataSource = dt
 
+                RadDropDownPelanggan.SelectedItem = Nothing
+            Else
+                mdlCom.ShowWarning(errMsg)
+            End If
         Catch ex As Exception
-
+            RadMessageBox.Show(ex.Message, "Kesalahan", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
         End Try
+    End Sub
+
+    Private Sub LoadPurchaseOrder(ByVal Optional Opsi As String = "")
+        Dim errMsg As String = Nothing
+        Dim common As New common
+        Dim dt As New DataTable()
+        RadDropDownList1.DisplayMember = "WO_NO"
+
+        If common.SqlCustomQuery(errMsg, "SELECT WO_NO FROM `listworkorder` ", dt, "WHERE WO_CLIENTNAME = '" & RadDropDownPelanggan.Text.Trim() & "'" & " ORDER BY ID ASC") Then
+            RadDropDownList1.DataSource = dt
+
+            RadDropDownList1.SelectedItem = Nothing
+        Else
+            mdlCom.ShowWarning(errMsg)
+        End If
+
     End Sub
 
     Private Sub FormTambahInvoice_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -50,7 +64,7 @@ Public Class FormTambahInvoice
         End If
         If RadPageView1.SelectedPage Is RadPageViewPage2 Then
             Panel3.Parent = RadPageViewPage2
-
+            LoadPurchaseOrder()
         End If
         If RadPageView1.SelectedPage Is RadPageViewPage3 Then
             Panel3.Parent = RadPageViewPage3
@@ -95,4 +109,23 @@ Public Class FormTambahInvoice
         End If
     End Sub
 
+    Private Sub RadDropDownList1_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles RadDropDownList1.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub RadDropDownList1_SelectedValueChanged(sender As Object, e As EventArgs) Handles RadDropDownList1.SelectedValueChanged
+        Dim errmsg As String = Nothing
+        Dim common As New common
+        Dim dt2 As New DataTable()
+        If common.SqlCustomQuery(errMsg, "SELECT WO_DATE FROM `listworkorder` ", dt2, "WHERE WO_NO = '" & RadDropDownList1.Text.Trim() & "'") Then
+            Dim dr As DataRow = dt2.Rows.Item(0)
+
+            Dim tgl As String = Conversions.ToDate(dr.Item(0))
+
+            rTanggalSO.Text = tgl
+            RadDateTimePickerSO.Text = tgl
+        Else
+            mdlCom.ShowWarning(errmsg)
+        End If
+    End Sub
 End Class
