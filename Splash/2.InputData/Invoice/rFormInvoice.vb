@@ -32,11 +32,8 @@ Public Class rFormInvoice
     End Sub
 
     Private Sub frmInvoice_Load(sender As Object, e As EventArgs) Handles Me.Load
-        RadMessageBox.Instance.AllowTheming = True
-        Dim strTheme As String = ""
-        strTheme = rFormMain.Office2010BlackTheme1.ThemeName
-        RadMessageBox.Instance.ThemeName = strTheme
-        rFormMain.SetTheme(Me, strTheme)
+        rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        rFormMain.LoadIcon(True, Me)
         ' Me.Size = New Size(662, 577)
 
         btnNext.Parent = RadPageView1.Pages.Item(0)

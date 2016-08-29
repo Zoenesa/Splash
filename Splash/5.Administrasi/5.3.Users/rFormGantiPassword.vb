@@ -14,7 +14,8 @@ Public Class rFormGantiPassword
     End Sub
     Private Sub rFormGantiPassword_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PasswordStrengthControl1.Visible = False
-
+        rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        rFormMain.LoadIcon(True, Me)
     End Sub
 
     Private Sub txPassNext_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txPassNext.KeyPress

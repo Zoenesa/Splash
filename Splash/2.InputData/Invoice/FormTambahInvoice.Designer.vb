@@ -22,8 +22,8 @@ Partial Class FormTambahInvoice
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
         Me.rDropInvoiceType = New Telerik.WinControls.UI.RadDropDownList()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
@@ -47,6 +47,7 @@ Partial Class FormTambahInvoice
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.RadPageViewPage2 = New Telerik.WinControls.UI.RadPageViewPage()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.rTanggalSO = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.RadDateTimePicker1 = New Telerik.WinControls.UI.RadDateTimePicker()
         Me.RadDateTimePickerSO = New Telerik.WinControls.UI.RadDateTimePicker()
         Me.RadTextBox2 = New Telerik.WinControls.UI.RadTextBox()
@@ -62,7 +63,20 @@ Partial Class FormTambahInvoice
         Me.RadPageViewPage3 = New Telerik.WinControls.UI.RadPageViewPage()
         Me.RadPageViewPage4 = New Telerik.WinControls.UI.RadPageViewPage()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.rTanggalSO = New Telerik.WinControls.UI.RadMaskedEditBox()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.RadMaskedEditBox2 = New Telerik.WinControls.UI.RadMaskedEditBox()
+        Me.RadDateTimePicker2 = New Telerik.WinControls.UI.RadDateTimePicker()
+        Me.RadDateTimePicker3 = New Telerik.WinControls.UI.RadDateTimePicker()
+        Me.RadTextBox3 = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadLabel8 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadTextBox4 = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadButton5 = New Telerik.WinControls.UI.RadButton()
+        Me.RadButton6 = New Telerik.WinControls.UI.RadButton()
+        Me.RadLabel9 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel10 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel11 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadDropDownList2 = New Telerik.WinControls.UI.RadDropDownList()
+        Me.RadDropDownList4 = New Telerik.WinControls.UI.RadDropDownList()
         CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rDropInvoiceType, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,6 +102,7 @@ Partial Class FormTambahInvoice
         Me.Panel3.SuspendLayout()
         Me.RadPageViewPage2.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.rTanggalSO, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadDateTimePicker1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadDateTimePickerSO, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadTextBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,8 +115,22 @@ Partial Class FormTambahInvoice
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadDropDownList3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPageViewPage3.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        CType(Me.rTanggalSO, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel5.SuspendLayout()
+        CType(Me.RadMaskedEditBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadDateTimePicker2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadDateTimePicker3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadTextBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadTextBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadButton5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadButton6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadDropDownList2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadDropDownList4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -121,10 +150,10 @@ Partial Class FormTambahInvoice
         Me.rDropInvoiceType.AutoSize = False
         Me.rDropInvoiceType.BackColor = System.Drawing.Color.Transparent
         Me.rDropInvoiceType.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RadListDataItem3.Text = "Baru"
-        RadListDataItem4.Text = "Revisi"
-        Me.rDropInvoiceType.Items.Add(RadListDataItem3)
-        Me.rDropInvoiceType.Items.Add(RadListDataItem4)
+        RadListDataItem1.Text = "Baru"
+        RadListDataItem2.Text = "Revisi"
+        Me.rDropInvoiceType.Items.Add(RadListDataItem1)
+        Me.rDropInvoiceType.Items.Add(RadListDataItem2)
         Me.rDropInvoiceType.Location = New System.Drawing.Point(340, 34)
         Me.rDropInvoiceType.Name = "rDropInvoiceType"
         Me.rDropInvoiceType.NullText = "Jenis Invoice"
@@ -309,11 +338,11 @@ Partial Class FormTambahInvoice
         '
         'RadStatusStrip1
         '
-        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 420)
+        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 419)
         Me.RadStatusStrip1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.RadStatusStrip1.Name = "RadStatusStrip1"
         Me.RadStatusStrip1.Padding = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.RadStatusStrip1.Size = New System.Drawing.Size(723, 21)
+        Me.RadStatusStrip1.Size = New System.Drawing.Size(723, 22)
         Me.RadStatusStrip1.TabIndex = 13
         Me.RadStatusStrip1.Text = "RadStatusStrip1"
         Me.RadStatusStrip1.ThemeName = "Office2010Black"
@@ -386,10 +415,11 @@ Partial Class FormTambahInvoice
         Me.RadPageView1.Controls.Add(Me.RadPageViewPage2)
         Me.RadPageView1.Controls.Add(Me.RadPageViewPage3)
         Me.RadPageView1.Controls.Add(Me.RadPageViewPage4)
+        Me.RadPageView1.DefaultPage = Me.RadPageViewPage1
         Me.RadPageView1.Dock = System.Windows.Forms.DockStyle.Top
         Me.RadPageView1.Location = New System.Drawing.Point(0, 0)
         Me.RadPageView1.Name = "RadPageView1"
-        Me.RadPageView1.SelectedPage = Me.RadPageViewPage2
+        Me.RadPageView1.SelectedPage = Me.RadPageViewPage1
         Me.RadPageView1.Size = New System.Drawing.Size(723, 265)
         Me.RadPageView1.TabIndex = 15
         Me.RadPageView1.Text = "RadPageView1"
@@ -401,10 +431,10 @@ Partial Class FormTambahInvoice
         '
         Me.RadPageViewPage1.Controls.Add(Me.Panel3)
         Me.RadPageViewPage1.Controls.Add(Me.Panel1)
-        Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(83.0!, 30.0!)
-        Me.RadPageViewPage1.Location = New System.Drawing.Point(6, 34)
+        Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(71.0!, 28.0!)
+        Me.RadPageViewPage1.Location = New System.Drawing.Point(5, 32)
         Me.RadPageViewPage1.Name = "RadPageViewPage1"
-        Me.RadPageViewPage1.Size = New System.Drawing.Size(711, 225)
+        Me.RadPageViewPage1.Size = New System.Drawing.Size(713, 228)
         Me.RadPageViewPage1.Text = "Invoice 1/4"
         '
         'Panel3
@@ -419,10 +449,10 @@ Partial Class FormTambahInvoice
         'RadPageViewPage2
         '
         Me.RadPageViewPage2.Controls.Add(Me.Panel2)
-        Me.RadPageViewPage2.ItemSize = New System.Drawing.SizeF(83.0!, 30.0!)
-        Me.RadPageViewPage2.Location = New System.Drawing.Point(6, 34)
+        Me.RadPageViewPage2.ItemSize = New System.Drawing.SizeF(71.0!, 28.0!)
+        Me.RadPageViewPage2.Location = New System.Drawing.Point(5, 32)
         Me.RadPageViewPage2.Name = "RadPageViewPage2"
-        Me.RadPageViewPage2.Size = New System.Drawing.Size(711, 225)
+        Me.RadPageViewPage2.Size = New System.Drawing.Size(713, 228)
         Me.RadPageViewPage2.Text = "Invoice 2/4"
         '
         'Panel2
@@ -444,6 +474,20 @@ Partial Class FormTambahInvoice
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(695, 169)
         Me.Panel2.TabIndex = 12
+        '
+        'rTanggalSO
+        '
+        Me.rTanggalSO.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.rTanggalSO.Location = New System.Drawing.Point(7, 84)
+        Me.rTanggalSO.Mask = "00/00/0000"
+        Me.rTanggalSO.MaskType = Telerik.WinControls.UI.MaskType.Standard
+        Me.rTanggalSO.Name = "rTanggalSO"
+        Me.rTanggalSO.Padding = New System.Windows.Forms.Padding(4, 2, 4, 3)
+        Me.rTanggalSO.Size = New System.Drawing.Size(106, 23)
+        Me.rTanggalSO.TabIndex = 13
+        Me.rTanggalSO.TabStop = False
+        Me.rTanggalSO.Text = "__/__/____"
+        Me.rTanggalSO.ThemeName = "Office2010Black"
         '
         'RadDateTimePicker1
         '
@@ -613,6 +657,7 @@ Partial Class FormTambahInvoice
         CType(Me.RadDropDownList3.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Padding = New System.Windows.Forms.Padding(0)
         CType(Me.RadDropDownList3.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Margin = New System.Windows.Forms.Padding(0)
         CType(Me.RadDropDownList3.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.Transparent
+        CType(Me.RadDropDownList3.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.[Default]
         CType(Me.RadDropDownList3.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).Padding = New System.Windows.Forms.Padding(0)
         CType(Me.RadDropDownList3.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).Margin = New System.Windows.Forms.Padding(0)
         CType(Me.RadDropDownList3.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BackColor = System.Drawing.Color.Transparent
@@ -646,6 +691,7 @@ Partial Class FormTambahInvoice
         CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Padding = New System.Windows.Forms.Padding(0)
         CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Margin = New System.Windows.Forms.Padding(0)
         CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.Transparent
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.[Default]
         CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).Padding = New System.Windows.Forms.Padding(0)
         CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).Margin = New System.Windows.Forms.Padding(0)
         CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BackColor = System.Drawing.Color.Transparent
@@ -653,18 +699,19 @@ Partial Class FormTambahInvoice
         '
         'RadPageViewPage3
         '
-        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(83.0!, 30.0!)
-        Me.RadPageViewPage3.Location = New System.Drawing.Point(6, 34)
+        Me.RadPageViewPage3.Controls.Add(Me.Panel5)
+        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(71.0!, 28.0!)
+        Me.RadPageViewPage3.Location = New System.Drawing.Point(5, 32)
         Me.RadPageViewPage3.Name = "RadPageViewPage3"
-        Me.RadPageViewPage3.Size = New System.Drawing.Size(711, 225)
+        Me.RadPageViewPage3.Size = New System.Drawing.Size(713, 228)
         Me.RadPageViewPage3.Text = "Invoice 3/4"
         '
         'RadPageViewPage4
         '
-        Me.RadPageViewPage4.ItemSize = New System.Drawing.SizeF(83.0!, 30.0!)
-        Me.RadPageViewPage4.Location = New System.Drawing.Point(6, 34)
+        Me.RadPageViewPage4.ItemSize = New System.Drawing.SizeF(71.0!, 28.0!)
+        Me.RadPageViewPage4.Location = New System.Drawing.Point(5, 32)
         Me.RadPageViewPage4.Name = "RadPageViewPage4"
-        Me.RadPageViewPage4.Size = New System.Drawing.Size(711, 225)
+        Me.RadPageViewPage4.Size = New System.Drawing.Size(713, 228)
         Me.RadPageViewPage4.Text = "Invoice 4/4"
         '
         'Panel4
@@ -678,19 +725,247 @@ Partial Class FormTambahInvoice
         Me.Panel4.Size = New System.Drawing.Size(723, 109)
         Me.Panel4.TabIndex = 16
         '
-        'rTanggalSO
+        'Panel5
         '
-        Me.rTanggalSO.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.rTanggalSO.Location = New System.Drawing.Point(7, 84)
-        Me.rTanggalSO.Mask = "00/00/0000"
-        Me.rTanggalSO.MaskType = Telerik.WinControls.UI.MaskType.Standard
-        Me.rTanggalSO.Name = "rTanggalSO"
-        Me.rTanggalSO.Padding = New System.Windows.Forms.Padding(4, 2, 4, 3)
-        Me.rTanggalSO.Size = New System.Drawing.Size(106, 23)
-        Me.rTanggalSO.TabIndex = 13
-        Me.rTanggalSO.TabStop = False
-        Me.rTanggalSO.Text = "__/__/____"
-        Me.rTanggalSO.ThemeName = "Office2010Black"
+        Me.Panel5.Controls.Add(Me.RadMaskedEditBox2)
+        Me.Panel5.Controls.Add(Me.RadDateTimePicker2)
+        Me.Panel5.Controls.Add(Me.RadDateTimePicker3)
+        Me.Panel5.Controls.Add(Me.RadTextBox3)
+        Me.Panel5.Controls.Add(Me.RadLabel8)
+        Me.Panel5.Controls.Add(Me.RadTextBox4)
+        Me.Panel5.Controls.Add(Me.RadButton5)
+        Me.Panel5.Controls.Add(Me.RadButton6)
+        Me.Panel5.Controls.Add(Me.RadLabel9)
+        Me.Panel5.Controls.Add(Me.RadLabel10)
+        Me.Panel5.Controls.Add(Me.RadLabel11)
+        Me.Panel5.Controls.Add(Me.RadDropDownList2)
+        Me.Panel5.Controls.Add(Me.RadDropDownList4)
+        Me.Panel5.Location = New System.Drawing.Point(0, 42)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(695, 169)
+        Me.Panel5.TabIndex = 13
+        '
+        'RadMaskedEditBox2
+        '
+        Me.RadMaskedEditBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadMaskedEditBox2.Location = New System.Drawing.Point(7, 84)
+        Me.RadMaskedEditBox2.Mask = "00/00/0000"
+        Me.RadMaskedEditBox2.MaskType = Telerik.WinControls.UI.MaskType.Standard
+        Me.RadMaskedEditBox2.Name = "RadMaskedEditBox2"
+        Me.RadMaskedEditBox2.Padding = New System.Windows.Forms.Padding(4, 2, 4, 3)
+        Me.RadMaskedEditBox2.Size = New System.Drawing.Size(106, 23)
+        Me.RadMaskedEditBox2.TabIndex = 13
+        Me.RadMaskedEditBox2.TabStop = False
+        Me.RadMaskedEditBox2.Text = "__/__/____"
+        Me.RadMaskedEditBox2.ThemeName = "Office2010Black"
+        '
+        'RadDateTimePicker2
+        '
+        Me.RadDateTimePicker2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadDateTimePicker2.Location = New System.Drawing.Point(360, 55)
+        Me.RadDateTimePicker2.Name = "RadDateTimePicker2"
+        Me.RadDateTimePicker2.Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
+        Me.RadDateTimePicker2.Size = New System.Drawing.Size(164, 23)
+        Me.RadDateTimePicker2.TabIndex = 12
+        Me.RadDateTimePicker2.TabStop = False
+        Me.RadDateTimePicker2.Text = "27 Agustus 2016"
+        Me.RadDateTimePicker2.ThemeName = "Office2010Black"
+        Me.RadDateTimePicker2.Value = New Date(2016, 8, 27, 1, 1, 13, 19)
+        CType(Me.RadDateTimePicker2.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
+        CType(Me.RadDateTimePicker2.GetChildAt(0).GetChildAt(2).GetChildAt(2), Telerik.WinControls.UI.RadDateTimePickerArrowButtonElement).Padding = New System.Windows.Forms.Padding(2, 2, 2, 1)
+        CType(Me.RadDateTimePicker2.GetChildAt(0).GetChildAt(2).GetChildAt(2), Telerik.WinControls.UI.RadDateTimePickerArrowButtonElement).MinSize = New System.Drawing.Size(19, 6)
+        CType(Me.RadDateTimePicker2.GetChildAt(0).GetChildAt(2).GetChildAt(2).GetChildAt(1), Telerik.WinControls.Primitives.BorderPrimitive).Margin = New System.Windows.Forms.Padding(-1, -1, 0, -1)
+        '
+        'RadDateTimePicker3
+        '
+        Me.RadDateTimePicker3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadDateTimePicker3.Location = New System.Drawing.Point(7, 55)
+        Me.RadDateTimePicker3.Name = "RadDateTimePicker3"
+        Me.RadDateTimePicker3.Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
+        Me.RadDateTimePicker3.Size = New System.Drawing.Size(164, 23)
+        Me.RadDateTimePicker3.TabIndex = 12
+        Me.RadDateTimePicker3.TabStop = False
+        Me.RadDateTimePicker3.Text = "27 Agustus 2016"
+        Me.RadDateTimePicker3.ThemeName = "Office2010Black"
+        Me.RadDateTimePicker3.Value = New Date(2016, 8, 27, 1, 1, 13, 19)
+        CType(Me.RadDateTimePicker3.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
+        CType(Me.RadDateTimePicker3.GetChildAt(0).GetChildAt(2).GetChildAt(2), Telerik.WinControls.UI.RadDateTimePickerArrowButtonElement).Padding = New System.Windows.Forms.Padding(2, 2, 2, 1)
+        CType(Me.RadDateTimePicker3.GetChildAt(0).GetChildAt(2).GetChildAt(2), Telerik.WinControls.UI.RadDateTimePickerArrowButtonElement).MinSize = New System.Drawing.Size(19, 6)
+        CType(Me.RadDateTimePicker3.GetChildAt(0).GetChildAt(2).GetChildAt(2).GetChildAt(1), Telerik.WinControls.Primitives.BorderPrimitive).Margin = New System.Windows.Forms.Padding(-1, -1, 0, -1)
+        '
+        'RadTextBox3
+        '
+        Me.RadTextBox3.AutoSize = False
+        Me.RadTextBox3.BackColor = System.Drawing.Color.Transparent
+        Me.RadTextBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadTextBox3.Location = New System.Drawing.Point(521, 117)
+        Me.RadTextBox3.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
+        Me.RadTextBox3.MaxLength = 6
+        Me.RadTextBox3.Name = "RadTextBox3"
+        Me.RadTextBox3.NullText = "Termin"
+        Me.RadTextBox3.Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
+        Me.RadTextBox3.ReadOnly = True
+        Me.RadTextBox3.Size = New System.Drawing.Size(138, 23)
+        Me.RadTextBox3.TabIndex = 10
+        Me.RadTextBox3.TabStop = False
+        Me.RadTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.RadTextBox3.ThemeName = "Office2010Black"
+        CType(Me.RadTextBox3.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadTextBox3.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
+        CType(Me.RadTextBox3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Termin"
+        CType(Me.RadTextBox3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadTextBox3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.RadTextBox3.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        CType(Me.RadTextBox3.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        '
+        'RadLabel8
+        '
+        Me.RadLabel8.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadLabel8.Location = New System.Drawing.Point(521, 95)
+        Me.RadLabel8.Name = "RadLabel8"
+        Me.RadLabel8.Size = New System.Drawing.Size(112, 19)
+        Me.RadLabel8.TabIndex = 0
+        Me.RadLabel8.Text = "Termin Tagihan (%)"
+        '
+        'RadTextBox4
+        '
+        Me.RadTextBox4.AutoSize = False
+        Me.RadTextBox4.BackColor = System.Drawing.Color.Transparent
+        Me.RadTextBox4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadTextBox4.Location = New System.Drawing.Point(360, 117)
+        Me.RadTextBox4.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
+        Me.RadTextBox4.MaxLength = 6
+        Me.RadTextBox4.Name = "RadTextBox4"
+        Me.RadTextBox4.NullText = "Progress"
+        Me.RadTextBox4.Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
+        Me.RadTextBox4.ReadOnly = True
+        Me.RadTextBox4.Size = New System.Drawing.Size(138, 23)
+        Me.RadTextBox4.TabIndex = 10
+        Me.RadTextBox4.TabStop = False
+        Me.RadTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.RadTextBox4.ThemeName = "Office2010Black"
+        CType(Me.RadTextBox4.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadTextBox4.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
+        CType(Me.RadTextBox4.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Progress"
+        CType(Me.RadTextBox4.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadTextBox4.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.RadTextBox4.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        CType(Me.RadTextBox4.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        '
+        'RadButton5
+        '
+        Me.RadButton5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadButton5.Location = New System.Drawing.Point(272, 25)
+        Me.RadButton5.Name = "RadButton5"
+        Me.RadButton5.Size = New System.Drawing.Size(70, 24)
+        Me.RadButton5.TabIndex = 11
+        Me.RadButton5.Text = "Lookup"
+        Me.RadButton5.ThemeName = "Office2010Black"
+        '
+        'RadButton6
+        '
+        Me.RadButton6.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadButton6.Location = New System.Drawing.Point(591, 25)
+        Me.RadButton6.Name = "RadButton6"
+        Me.RadButton6.Size = New System.Drawing.Size(70, 24)
+        Me.RadButton6.TabIndex = 11
+        Me.RadButton6.Text = "Lookup"
+        Me.RadButton6.ThemeName = "Office2010Black"
+        '
+        'RadLabel9
+        '
+        Me.RadLabel9.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadLabel9.Location = New System.Drawing.Point(360, 95)
+        Me.RadLabel9.Name = "RadLabel9"
+        Me.RadLabel9.Size = New System.Drawing.Size(131, 19)
+        Me.RadLabel9.TabIndex = 0
+        Me.RadLabel9.Text = "Progress Pekerjaan (%)"
+        '
+        'RadLabel10
+        '
+        Me.RadLabel10.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadLabel10.Location = New System.Drawing.Point(360, 3)
+        Me.RadLabel10.Name = "RadLabel10"
+        Me.RadLabel10.Size = New System.Drawing.Size(154, 19)
+        Me.RadLabel10.TabIndex = 0
+        Me.RadLabel10.Text = "Work Order / Serah Terima"
+        '
+        'RadLabel11
+        '
+        Me.RadLabel11.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadLabel11.Location = New System.Drawing.Point(7, 3)
+        Me.RadLabel11.Name = "RadLabel11"
+        Me.RadLabel11.Size = New System.Drawing.Size(180, 19)
+        Me.RadLabel11.TabIndex = 0
+        Me.RadLabel11.Text = "Identitas Sales Order Pelanggan"
+        '
+        'RadDropDownList2
+        '
+        Me.RadDropDownList2.AutoSize = False
+        Me.RadDropDownList2.BackColor = System.Drawing.Color.Transparent
+        Me.RadDropDownList2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadDropDownList2.Location = New System.Drawing.Point(360, 26)
+        Me.RadDropDownList2.Name = "RadDropDownList2"
+        Me.RadDropDownList2.NullText = "Identitas Serah Terima"
+        '
+        '
+        '
+        Me.RadDropDownList2.RootElement.ControlDefaultSize = New System.Drawing.Size(0, 23)
+        Me.RadDropDownList2.Size = New System.Drawing.Size(226, 23)
+        Me.RadDropDownList2.TabIndex = 8
+        Me.RadDropDownList2.ThemeName = "Office2010Black"
+        CType(Me.RadDropDownList2.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).BackColor = System.Drawing.Color.Transparent
+        CType(Me.RadDropDownList2.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).Padding = New System.Windows.Forms.Padding(0)
+        CType(Me.RadDropDownList2.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).Margin = New System.Windows.Forms.Padding(0)
+        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).Padding = New System.Windows.Forms.Padding(0)
+        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Padding = New System.Windows.Forms.Padding(0)
+        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadDropDownListEditableAreaElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Identitas Serah Terima"
+        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Padding = New System.Windows.Forms.Padding(0)
+        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Margin = New System.Windows.Forms.Padding(0)
+        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.Transparent
+        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.[Default]
+        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).Padding = New System.Windows.Forms.Padding(0)
+        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).Margin = New System.Windows.Forms.Padding(0)
+        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BackColor = System.Drawing.Color.Transparent
+        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).Padding = New System.Windows.Forms.Padding(0)
+        '
+        'RadDropDownList4
+        '
+        Me.RadDropDownList4.AutoSize = False
+        Me.RadDropDownList4.BackColor = System.Drawing.Color.Transparent
+        Me.RadDropDownList4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadDropDownList4.Location = New System.Drawing.Point(7, 26)
+        Me.RadDropDownList4.Name = "RadDropDownList4"
+        Me.RadDropDownList4.NullText = "Purchase Order"
+        '
+        '
+        '
+        Me.RadDropDownList4.RootElement.ControlDefaultSize = New System.Drawing.Size(0, 23)
+        Me.RadDropDownList4.Size = New System.Drawing.Size(260, 23)
+        Me.RadDropDownList4.TabIndex = 8
+        Me.RadDropDownList4.ThemeName = "Office2010Black"
+        CType(Me.RadDropDownList4.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).BackColor = System.Drawing.Color.Transparent
+        CType(Me.RadDropDownList4.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).Padding = New System.Windows.Forms.Padding(0)
+        CType(Me.RadDropDownList4.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).Margin = New System.Windows.Forms.Padding(0)
+        CType(Me.RadDropDownList4.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadDropDownList4.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).Padding = New System.Windows.Forms.Padding(0)
+        CType(Me.RadDropDownList4.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadDropDownList4.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Padding = New System.Windows.Forms.Padding(0)
+        CType(Me.RadDropDownList4.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadDropDownListEditableAreaElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadDropDownList4.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Purchase Order"
+        CType(Me.RadDropDownList4.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadDropDownList4.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Padding = New System.Windows.Forms.Padding(0)
+        CType(Me.RadDropDownList4.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Margin = New System.Windows.Forms.Padding(0)
+        CType(Me.RadDropDownList4.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.Transparent
+        CType(Me.RadDropDownList4.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.[Default]
+        CType(Me.RadDropDownList4.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).Padding = New System.Windows.Forms.Padding(0)
+        CType(Me.RadDropDownList4.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).Margin = New System.Windows.Forms.Padding(0)
+        CType(Me.RadDropDownList4.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BackColor = System.Drawing.Color.Transparent
+        CType(Me.RadDropDownList4.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).Padding = New System.Windows.Forms.Padding(0)
         '
         'FormTambahInvoice
         '
@@ -742,6 +1017,7 @@ Partial Class FormTambahInvoice
         Me.RadPageViewPage2.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.rTanggalSO, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadDateTimePicker1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadDateTimePickerSO, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadTextBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -754,8 +1030,23 @@ Partial Class FormTambahInvoice
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadDropDownList3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPageViewPage3.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
-        CType(Me.rTanggalSO, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
+        CType(Me.RadMaskedEditBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadDateTimePicker2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadDateTimePicker3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadTextBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadTextBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadButton5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadButton6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadDropDownList2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadDropDownList4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -801,5 +1092,19 @@ Partial Class FormTambahInvoice
     Friend WithEvents RadDateTimePickerSO As Telerik.WinControls.UI.RadDateTimePicker
     Friend WithEvents RadDateTimePicker1 As Telerik.WinControls.UI.RadDateTimePicker
     Friend WithEvents rTanggalSO As Telerik.WinControls.UI.RadMaskedEditBox
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents RadMaskedEditBox2 As Telerik.WinControls.UI.RadMaskedEditBox
+    Friend WithEvents RadDateTimePicker2 As Telerik.WinControls.UI.RadDateTimePicker
+    Friend WithEvents RadDateTimePicker3 As Telerik.WinControls.UI.RadDateTimePicker
+    Friend WithEvents RadTextBox3 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents RadLabel8 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents RadTextBox4 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents RadButton5 As Telerik.WinControls.UI.RadButton
+    Friend WithEvents RadButton6 As Telerik.WinControls.UI.RadButton
+    Friend WithEvents RadLabel9 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents RadLabel10 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents RadLabel11 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents RadDropDownList2 As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents RadDropDownList4 As Telerik.WinControls.UI.RadDropDownList
 End Class
 

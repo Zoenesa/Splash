@@ -89,7 +89,8 @@ Public Class rFormLogin
     End Sub
 
     Private Sub rFormLogin_Load(sender As Object, e As EventArgs) Handles Me.Load
-
+        rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        rFormMain.LoadIcon(True, Me)
         rTxUsername.Focus()
         rTxUsername.SelectAll()
     End Sub

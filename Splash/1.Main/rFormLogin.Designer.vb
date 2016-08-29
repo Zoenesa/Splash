@@ -22,7 +22,6 @@ Partial Class rFormLogin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rFormLogin))
         Me.rTxUsername = New Telerik.WinControls.UI.RadTextBox()
         Me.rTxPassword = New Telerik.WinControls.UI.RadTextBox()
         Me.Button1 = New Telerik.WinControls.UI.RadButton()
@@ -122,7 +121,6 @@ Partial Class rFormLogin
         Me.Controls.Add(Me.rTxPassword)
         Me.Controls.Add(Me.rTxUsername)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "rFormLogin"

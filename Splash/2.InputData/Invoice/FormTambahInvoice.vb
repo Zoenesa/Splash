@@ -54,24 +54,35 @@ Public Class FormTambahInvoice
     End Sub
 
     Private Sub FormTambahInvoice_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        rFormMain.LoadIcon(True, Me)
+
         LoadRefClient()
+
+
     End Sub
 
     Private Sub RadPageView1_SelectedPageChanged(sender As Object, e As EventArgs) Handles RadPageView1.SelectedPageChanged
+        Dim strdetail As String = Nothing
         If RadPageView1.SelectedPage Is RadPageViewPage1 Then
+            strdetail = ""
+            strdetail = "Penanggalan Invoice"
             Panel3.Parent = RadPageViewPage1
-        End If
-        If RadPageView1.SelectedPage Is RadPageViewPage2 Then
+        ElseIf RadPageView1.SelectedPage Is RadPageViewPage2 Then
             Panel3.Parent = RadPageViewPage2
+            strdetail = ""
+            strdetail = "Register Sales Order && Serah Terima"
             LoadPurchaseOrder()
-        End If
-        If RadPageView1.SelectedPage Is RadPageViewPage3 Then
+        ElseIf RadPageView1.SelectedPage Is RadPageViewPage3 Then
             Panel3.Parent = RadPageViewPage3
-        End If
-        If RadPageView1.SelectedPage Is RadPageViewPage4 Then
+            strdetail = ""
+            strdetail = "Register Item Barang/Jasa"
+        ElseIf RadPageView1.SelectedPage Is RadPageViewPage4 Then
             Panel3.Parent = RadPageViewPage4
+            strdetail = ""
+            strdetail = "Register Pembayaran"
         End If
-        RadLabel1.Text = String.Format("{0}", RadPageView1.SelectedPage.Text)
+        RadLabel1.Text = String.Format("{0}: {1}", RadPageView1.SelectedPage.Text, strdetail)
     End Sub
 
     Private Sub RadPageViewPage2_Paint(sender As Object, e As PaintEventArgs) Handles RadPageViewPage2.Paint

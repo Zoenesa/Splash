@@ -3,6 +3,7 @@ Imports System, System.Threading, System.Runtime, System.Runtime.InteropServices
 Imports Microsoft, Microsoft.VisualBasic, Microsoft.VisualBasic.CompilerServices
 Imports System.Data.OleDb
 Imports MySql.Data.MySqlClient
+Imports System.ComponentModel
 
 Public Class FrmCustomerReference
     Private isEdit As Boolean
@@ -62,7 +63,7 @@ Public Class FrmCustomerReference
             Dim EKsepsi As Exception = ex
             mdlCom.ShowError("Failed (edit or delete)." & EKsepsi.Source _
                                & " : " & EKsepsi.Message)
-            mdlCom.InsertLog("Failed (edit or delete)." & EKsepsi.Source _
+            mdlCom.INSERTLOG("Failed (edit or delete)." & EKsepsi.Source _
                                & " : " & EKsepsi.Message)
             ProjectData.ClearProjectError()
         End Try
@@ -75,9 +76,9 @@ Public Class FrmCustomerReference
             EditDeleteEnable()
             dg.Rows.Clear()
             mdlCom.BukaKoneksi()
-            Dim command As String = "SELECT `ID_NUM`, `CLIENT_IDTAX`, `CLIENT_NAME`, `CLIENT_ADDRESS`, `CLIENT_STATE`," & _
-                            "`CLIENT_CITY`, `CLIENT_ZIPCODE`, `CLIENT_PHONE`, `CLIENT_MAIL`, `CLIENT_USERINPUT`," & _
-                            "`CLIENT_INPUTDATE`, `CLIENT_USEREDIT`, `CLIENT_UPDATE` FROM `ref_client`" & _
+            Dim command As String = "SELECT `ID_NUM`, `CLIENT_IDTAX`, `CLIENT_NAME`, `CLIENT_ADDRESS`, `CLIENT_STATE`," &
+                            "`CLIENT_CITY`, `CLIENT_ZIPCODE`, `CLIENT_PHONE`, `CLIENT_MAIL`, `CLIENT_USERINPUT`," &
+                            "`CLIENT_INPUTDATE`, `CLIENT_USEREDIT`, `CLIENT_UPDATE` FROM `ref_client`" &
                             Opsi & " ORDER BY `ID_NUM` ASC"
 
             sqlcommand.CommandText = command
@@ -87,40 +88,40 @@ Public Class FrmCustomerReference
 
             Dim StrCol As String() = New String((14 + 1) - 1) {}
             Dim num As Integer = 0
-            Do While sqldtReader.Read
+            Do While sqldTReader.Read
                 Dim strConcat As String
 
-                Dim strST_Addr As String = Conversions.ToString(sqldtReader.Item("CLIENT_ADDRESS"))
-                Dim strState As String = Conversions.ToString(sqldtReader.Item("CLIENT_STATE"))
-                Dim strCity As String = Conversions.ToString(sqldtReader.Item("CLIENT_CITY"))
-                Dim StrZipCode As String = Conversions.ToString(sqldtReader.Item("CLIENT_ZIPCODE"))
+                Dim strST_Addr As String = Conversions.ToString(sqldTReader.Item("CLIENT_ADDRESS"))
+                Dim strState As String = Conversions.ToString(sqldTReader.Item("CLIENT_STATE"))
+                Dim strCity As String = Conversions.ToString(sqldTReader.Item("CLIENT_CITY"))
+                Dim StrZipCode As String = Conversions.ToString(sqldTReader.Item("CLIENT_ZIPCODE"))
                 Dim valueAlamat As String
                 valueAlamat = String.Format("Jl. {0}; Kota/Kabupaten: {1}; Propinsi: {2};  {3} {4}", 0, 1, 2, 3, 4)
                 strConcat = String.Concat(New String() {strST_Addr, " ", "City :", strCity, " ", "State : ", strState, " ", "Zipcode : ", StrZipCode})
                 StrCol(0) = Conversions.ToString(False)
-                StrCol(1) = Conversions.ToString(sqldtReader.Item("ID_NUM"))
-                StrCol(2) = Conversions.ToString(mdlstring.FORMAT_NPWP(sqldtReader.Item("CLIENT_IDTAX")))
-                StrCol(3) = Conversions.ToString(sqldtReader.Item("CLIENT_NAME"))
+                StrCol(1) = Conversions.ToString(sqldTReader.Item("ID_NUM"))
+                StrCol(2) = Conversions.ToString(mdlstring.FORMAT_NPWP(sqldTReader.Item("CLIENT_IDTAX")))
+                StrCol(3) = Conversions.ToString(sqldTReader.Item("CLIENT_NAME"))
                 StrCol(4) = Conversions.ToString(strConcat)
                 'StrCol(4) = Conversions.ToString(sqldtReader.Item("CLIENT_ADDRESS"))
-                StrCol(5) = Conversions.ToString(sqldtReader.Item("CLIENT_STATE"))
-                StrCol(6) = Conversions.ToString(sqldtReader.Item("CLIENT_CITY"))
-                StrCol(7) = Conversions.ToString(sqldtReader.Item("CLIENT_ZIPCODE"))
-                StrCol(8) = Conversions.ToString(sqldtReader.Item("CLIENT_PHONE"))
-                StrCol(9) = Conversions.ToString(sqldtReader.Item("CLIENT_MAIL"))
-                StrCol(10) = Conversions.ToString(sqldtReader.Item("CLIENT_USERINPUT"))
-                StrCol(11) = Conversions.ToString(sqldtReader.Item("CLIENT_INPUTDATE"))
-                StrCol(12) = Conversions.ToString(sqldtReader.Item("CLIENT_USEREDIT"))
-                StrCol(13) = Conversions.ToString(sqldtReader.Item("CLIENT_UPDATE"))
+                StrCol(5) = Conversions.ToString(sqldTReader.Item("CLIENT_STATE"))
+                StrCol(6) = Conversions.ToString(sqldTReader.Item("CLIENT_CITY"))
+                StrCol(7) = Conversions.ToString(sqldTReader.Item("CLIENT_ZIPCODE"))
+                StrCol(8) = Conversions.ToString(sqldTReader.Item("CLIENT_PHONE"))
+                StrCol(9) = Conversions.ToString(sqldTReader.Item("CLIENT_MAIL"))
+                StrCol(10) = Conversions.ToString(sqldTReader.Item("CLIENT_USERINPUT"))
+                StrCol(11) = Conversions.ToString(sqldTReader.Item("CLIENT_INPUTDATE"))
+                StrCol(12) = Conversions.ToString(sqldTReader.Item("CLIENT_USEREDIT"))
+                StrCol(13) = Conversions.ToString(sqldTReader.Item("CLIENT_UPDATE"))
                 Me.dg.Rows.Add(StrCol)
             Loop
             If num > 0 Then Me.dg.Rows.Item(0).Selected = True
             GetDataRowCount()
-            sqldtReader.Close()
-            sqldtReader.Dispose()
+            sqldTReader.Close()
+            sqldTReader.Dispose()
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
-            RadMessageBox.Show("failed_getClientList : " & ex.Source & vbNewLine & _
+            RadMessageBox.Show("failed_getClientList : " & ex.Source & vbNewLine &
                                "See More on Details", "Get List Invoice", MessageBoxButtons.OK, RadMessageIcon.Error, ex.Message)
             ProjectData.ClearProjectError()
         End Try
@@ -170,8 +171,10 @@ Public Class FrmCustomerReference
     End Sub
 
     Private Sub FrmClientsRefrence_Load(sender As Object, e As EventArgs) Handles Me.Load
-        If RadMessageBox.Show("~ REF_CLIENT FIELD ID_NUM SET VALUES ROW BASED ON DATAGRIDVIEW ROWS COUNT" & vbNewLine & _
-                           vbNewLine & "~ REMOVING FIELD ID_NUM" & vbNewLine & _
+        rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        rFormMain.LoadIcon(True, Me)
+        If RadMessageBox.Show("~ REF_CLIENT FIELD ID_NUM SET VALUES ROW BASED ON DATAGRIDVIEW ROWS COUNT" & vbNewLine &
+                           vbNewLine & "~ REMOVING FIELD ID_NUM" & vbNewLine &
                            vbNewLine & "~ SET INDEX PRIMARYKEY AS CLIENT_IDTAX", "NEXT DEVELOPMENT", MessageBoxButtons.OK, RadMessageIcon.Exclamation) <> System.Windows.Forms.DialogResult.Yes Then
             Me.ShowIcon = True
             'Me.Icon = New Icon(My.Application.Info.DirectoryPath & "\Image\Icons\Customer.ico")
@@ -235,7 +238,7 @@ Public Class FrmCustomerReference
     End Sub
 
     Private Sub dg_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg.CellContentClick
-     
+
     End Sub
 
     Private Sub btnFilter_Click(sender As Object, e As EventArgs) Handles btnFilter.Click
@@ -283,7 +286,7 @@ Public Class FrmCustomerReference
             ProjectData.SetProjectError(ex)
             Dim exception As Exception = ex
             RadMessageBox.Show("Failed (delete_Client data). Message : " + exception.Message)
-            mdlCom.InsertLog("Failed (delete_Client data). Message : " + exception.Message, "")
+            mdlCom.INSERTLOG("Failed (delete_Client data). Message : " + exception.Message, "")
             ProjectData.ClearProjectError()
         End Try
     End Sub
@@ -347,8 +350,10 @@ Public Class FrmCustomerReference
         dg.MultiSelect = False
         dg.Rows(Me.dg.CurrentRow.Index).Selected = True
         Me.dg.CurrentRow.Cells(0).Value = RuntimeHelpers.GetObjectValue _
-            (Interaction.IIf(Conversions.ToBoolean(Me.dg.CurrentRow.Cells(0).Value), _
+            (Interaction.IIf(Conversions.ToBoolean(Me.dg.CurrentRow.Cells(0).Value),
                             DirectCast(False, Object), DirectCast(True, Object)))
         Me.EditDeleteEnable()
     End Sub
+
+
 End Class

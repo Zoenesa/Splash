@@ -107,6 +107,9 @@ Public Class frmImportPartner
     End Sub
 
     Private Sub frmImportPartner_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        rFormMain.LoadIcon(True, Me)
+
         LoadData()
     End Sub
 

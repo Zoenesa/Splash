@@ -131,6 +131,9 @@ Public Class rFormListWorkOrder
     End Sub
 
     Private Sub rFormListWorkOrder_Load(sender As Object, e As EventArgs) Handles Me.Load
+        rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        rFormMain.LoadIcon(True, Me)
+
         'btnPDF.Visible = False
         Dim strTheme As String = rFormMain.Office2010BlackTheme1.ThemeName
         rFormMain.SetTheme(Me, strTheme)

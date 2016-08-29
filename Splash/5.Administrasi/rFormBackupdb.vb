@@ -91,8 +91,8 @@ Public Class rFormBackupdb
         End If
     End Sub
 
-
     Private Sub rFormBackupdb_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        rFormMain.LoadIcon(True, Me)
     End Sub
 End Class

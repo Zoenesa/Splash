@@ -4,6 +4,15 @@ Imports System.Runtime, System.Runtime.CompilerServices, System.Runtime.InteropS
 Imports Telerik, Telerik.WinControls.UI
 
 Public Class FrmArrangeColumns
+    Public Sub New()
+
+        InitializeComponent()
+        Telerik.WinControls.RadMessageBox.Instance.AllowTheming = True
+        Telerik.WinControls.RadMessageBox.Instance.ControlBox = False
+        Telerik.WinControls.RadMessageBox.ShowInTaskbar = False
+        Telerik.WinControls.RadMessageBox.ThemeName = rFormMain.Office2010BlackTheme1.ThemeName
+
+    End Sub
 
     Private Sub FrmArrangeColumns_Load(sender As Object, e As EventArgs) Handles Me.Load
         'btnRemAll.Visible = False

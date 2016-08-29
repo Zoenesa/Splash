@@ -79,6 +79,7 @@ Public Class rFormPermission
  
     Private Sub rFormPermission_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        rFormMain.LoadIcon(True, Me)
 
         rTxPassword.Focus()
         rTxPassword.SelectAll()

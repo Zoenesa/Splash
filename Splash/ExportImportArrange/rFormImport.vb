@@ -63,7 +63,8 @@ Public Class rFormImport
     End Sub
 
     Private Sub rFormImport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        rFormMain.LoadIcon(True, Me)
     End Sub
 
     Private Sub RadTextBox3_KeyDown(sender As Object, e As KeyEventArgs) Handles RadTextBox3.KeyDown

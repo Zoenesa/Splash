@@ -169,6 +169,9 @@ Public Class rFormListPelanggan
     End Sub
 
     Private Sub rFormListPelanggan_Load(sender As Object, e As EventArgs) Handles Me.Load
+        rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        rFormMain.LoadIcon(True, Me)
+
         If Not Me.ModePilih Then
             Me.SuspendLayout()
             Me.Text = "List Data Pelanggan"

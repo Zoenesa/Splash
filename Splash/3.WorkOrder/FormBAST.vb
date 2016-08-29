@@ -39,6 +39,9 @@ Public Class FormBAST
     End Sub
 
     Private Sub FormPerintahKerja_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        rFormMain.LoadIcon(True, Me)
+
         LoadClientName()
         LoadDataBAST()
     End Sub

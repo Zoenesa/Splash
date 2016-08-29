@@ -182,6 +182,9 @@ Public Class rFormTambahUser
     End Sub
 
     Private Sub rFormTambahUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        rFormMain.LoadIcon(True, Me)
+
         InisialisasiPasswordMeter1.Visible = False
         Try
             If Me.EditMode Then

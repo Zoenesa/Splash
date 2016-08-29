@@ -41,6 +41,9 @@ Public Class rFormAddWorkorderRecord
     End Function
 
     Private Sub rFormAddWorkorderRecord_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        rFormMain.LoadIcon(True, Me)
+
         If Me.EditMode Then
             Me.Text = "Ubah Record"
             Dim cmn As New common

@@ -54,6 +54,7 @@ Public Class FormProfilPerusahaan
     End Sub
 
     Private Sub FormProfilPerusahaan_Load(sender As Object, e As EventArgs) Handles Me.Load
+        rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
         rFormMain.LoadIcon(True, Me)
         If Me.isEdit Then
             Me.Text = "Ubah Profil Perusahaan"

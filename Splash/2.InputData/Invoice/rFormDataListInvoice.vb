@@ -6,11 +6,23 @@ Imports Microsoft.VisualBasic, Microsoft.VisualBasic.CompilerServices
 Imports Telerik.WinControls
 
 Public Class rFormDataListInvoice
+
     Private isEdit As Boolean
     Private idUser As String
     Private idUserEdit As String
     Private IntCol As Integer
     Public Shared LastInvoiceCount As Integer
+
+    Public Sub New()
+
+        InitializeComponent()
+
+        Telerik.WinControls.RadMessageBox.Instance.AllowTheming = True
+        Telerik.WinControls.RadMessageBox.Instance.ControlBox = False
+        Telerik.WinControls.RadMessageBox.ShowInTaskbar = False
+        Telerik.WinControls.RadMessageBox.ThemeName = rFormMain.Office2010BlackTheme1.ThemeName
+
+    End Sub
 
     Private Sub BtnEditDeleteEnable()
         Dim num1 As Integer = 0
@@ -52,7 +64,7 @@ Public Class rFormDataListInvoice
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim exception As Exception = ex
-            mdlcom.ShowError("Failed (edit_delete). Message : " + exception.Message)
+            mdlCom.ShowError("Failed (edit_delete). Message : " + exception.Message)
             mdlCom.INSERTLOG("Failed (edit_delete). Message : " + exception.Message, "")
             ProjectData.ClearProjectError()
         End Try
@@ -67,10 +79,10 @@ Public Class rFormDataListInvoice
             If mdlCom.vConn.State = ConnectionState.Closed Then
                 mdlCom.BukaKoneksi()
             End If
-            Dim command As MySqlCommand = New MySqlCommand(("SELECT `RecordNo`, `InvoiceNo`, `InvoiceDate`, `InvoiceType`, `InvoiceClient`" & _
-                                                                 ", `InvoiceWorkOrderSPK`, `InvoiceLisence`, `InvoiceProgress`, `InvoiceTerm`, `InvoiceItemsRecords`" & _
-                                                                 ", `InvoiceTotalItems`, `InvoicePaymentsRecord`, `InvoiceAfterTermyn`, `InvoiceTaxPrice`, `InvoiceTerbilang`" & _
-                                                                 ", `IndexProject`, `UserPerekam`, `TanggalRekam`, `UserUpdate`, `TanggalUpdate` FROM `invoicedata`" & _
+            Dim command As MySqlCommand = New MySqlCommand(("SELECT `RecordNo`, `InvoiceNo`, `InvoiceDate`, `InvoiceType`, `InvoiceClient`" &
+                                                                 ", `InvoiceWorkOrderSPK`, `InvoiceLisence`, `InvoiceProgress`, `InvoiceTerm`, `InvoiceItemsRecords`" &
+                                                                 ", `InvoiceTotalItems`, `InvoicePaymentsRecord`, `InvoiceAfterTermyn`, `InvoiceTaxPrice`, `InvoiceTerbilang`" &
+                                                                 ", `IndexProject`, `UserPerekam`, `TanggalRekam`, `UserUpdate`, `TanggalUpdate` FROM `invoicedata`" &
                                                                  opsi & " ORDER BY `RecordNo` ASC"), mdlCom.vConn)
             Dim values As String() = New String((20 + 1) - 1) {}
             sqlreader = command.ExecuteReader
@@ -112,12 +124,12 @@ Public Class rFormDataListInvoice
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
 
-            RadMessageBox.Show("Error, failed_getlistInvoice : " & ex.Source & vbNewLine & _
+            RadMessageBox.Show("Error, failed_getlistInvoice : " & ex.Source & vbNewLine &
                                "Cek &Details Untuk Info Lengkap Error", "Get List Invoice", MessageBoxButtons.OK, RadMessageIcon.Error, ex.Message)
 
             ProjectData.ClearProjectError()
         End Try
-        
+
     End Sub
 
     Private Sub FrmListInvoiceKeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
@@ -127,12 +139,8 @@ Public Class rFormDataListInvoice
     End Sub
 
     Private Sub FrmListInvoiceLoad(sender As Object, e As EventArgs) Handles Me.Load
-        Telerik.WinControls.RadMessageBox.Instance.AllowTheming = True
-        Telerik.WinControls.RadMessageBox.Instance.BringToFront()
-        Telerik.WinControls.RadMessageBox.ShowInTaskbar = True
-        Telerik.WinControls.RadMessageBox.ThemeName = rFormMain.Office2010BlackTheme1.ThemeName
-        Dim strTheme As String = rFormMain.Office2010BlackTheme1.ThemeName
-        rFormMain.SetTheme(Me, strTheme)
+        rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        rFormMain.LoadIcon(True, Me)
         'Me.ShowIcon = True
         'Me.Icon = New Icon(My.Application.Info.DirectoryPath & "\Image\Icons\Invoice.ico")
         BufferMethod.DoubleBuffered(dg, True)
@@ -283,7 +291,7 @@ Public Class rFormDataListInvoice
             End If
             Me.LoadListInvoice(StrOpsi)
         Catch ex As Exception
-            RadMessageBox.Show("Could not filter!, " & _
+            RadMessageBox.Show("Could not filter!, " &
                                ex.Source & "." & ex.Message, "FILTER INVOICE", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
         End Try
     End Sub
@@ -292,7 +300,7 @@ Public Class rFormDataListInvoice
         dg.MultiSelect = False
         Me.dg.Rows(Me.dg.CurrentRow.Index).Selected = True
         Me.dg.CurrentRow.Cells(0).Value = RuntimeHelpers.GetObjectValue _
-        (Interaction.IIf(Conversions.ToBoolean(Me.dg.CurrentRow.Cells(0).Value), _
+        (Interaction.IIf(Conversions.ToBoolean(Me.dg.CurrentRow.Cells(0).Value),
         DirectCast(False, Object), DirectCast(True, Object)))
         BtnEditDeleteEnable()
     End Sub
@@ -374,16 +382,16 @@ Public Class rFormDataListInvoice
     End Sub
 
     Public Sub SelAllRow(ByVal GridView As DataGridView, ByVal ColumnName As String)
-        Dim UnCheckedItems = From Rows In GridView.Rows.Cast(Of DataGridViewRow)() _
-                    Where CBool(Rows.Cells(ColumnName).Value) = False
+        Dim UnCheckedItems = From Rows In GridView.Rows.Cast(Of DataGridViewRow)()
+                             Where CBool(Rows.Cells(ColumnName).Value) = False
         For Each item In UnCheckedItems
             item.Cells(ColumnName).Value = True
         Next
     End Sub
 
     Public Sub ClearAllRow(ByVal GridView As DataGridView, ByVal ColumnName As String)
-        Dim UnCheckedItems = From Rows In GridView.Rows.Cast(Of DataGridViewRow)() _
-                    Where CBool(Rows.Cells(ColumnName).Value) = True
+        Dim UnCheckedItems = From Rows In GridView.Rows.Cast(Of DataGridViewRow)()
+                             Where CBool(Rows.Cells(ColumnName).Value) = True
         For Each item In UnCheckedItems
             item.Cells(ColumnName).Value = False
         Next

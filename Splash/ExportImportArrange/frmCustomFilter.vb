@@ -8,8 +8,8 @@ Imports Telerik, Telerik.WinControls
 Public Class FrmCustomFilter
 
     Private Sub FrmCustomFilter_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Dim Strtheme As String = rFormMain.Office2010BlackTheme1.ThemeName
-        rFormMain.SetTheme(Me, Strtheme)
+        rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        rFormMain.LoadIcon(True, Me)
         'Me.ShowIcon = True
         'Me.Icon = New Icon(My.Application.Info.DirectoryPath & "\Image\Icons\accdb.ico")
         'LoadField(frmListInvoice, frmListInvoice.dg)
@@ -68,6 +68,19 @@ Public Class FrmCustomFilter
     End Sub
 
     Private eList As New List(Of Telerik.WinControls.UI.RadListDataItem)
+
+    Public Sub New()
+
+        InitializeComponent()
+
+        Telerik.WinControls.RadMessageBox.Instance.AllowTheming = True
+        Telerik.WinControls.RadMessageBox.Instance.ControlBox = False
+        Telerik.WinControls.RadMessageBox.ShowInTaskbar = False
+        Telerik.WinControls.RadMessageBox.ThemeName = rFormMain.Office2010BlackTheme1.ThemeName
+
+
+    End Sub
+
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Dispose()
     End Sub

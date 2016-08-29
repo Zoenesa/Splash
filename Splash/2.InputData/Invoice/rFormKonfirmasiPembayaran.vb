@@ -7,6 +7,17 @@ Imports Splash.mdlstring
 
 Public Class rFormKonfirmasiPembayaran
 
+    Public Sub New()
+
+        InitializeComponent()
+
+        Telerik.WinControls.RadMessageBox.Instance.AllowTheming = True
+        Telerik.WinControls.RadMessageBox.Instance.ControlBox = False
+        Telerik.WinControls.RadMessageBox.ShowInTaskbar = False
+        Telerik.WinControls.RadMessageBox.ThemeName = rFormMain.Office2010BlackTheme1.ThemeName
+
+    End Sub
+
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
     End Sub
@@ -84,6 +95,8 @@ Public Class rFormKonfirmasiPembayaran
     End Sub
 
     Private Sub rFormKonfirmasiPembayaran_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        rFormMain.LoadIcon(True, Me)
         GetClient()
     End Sub
 
