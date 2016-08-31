@@ -141,17 +141,16 @@ Public Class rFormDataListInvoice
     Private Sub FrmListInvoiceLoad(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
         rFormMain.LoadIcon(True, Me)
-        'Me.ShowIcon = True
-        'Me.Icon = New Icon(My.Application.Info.DirectoryPath & "\Image\Icons\Invoice.ico")
+
         BufferMethod.DoubleBuffered(dg, True)
         LoadData()
     End Sub
 
     Private Sub LoadData()
         Dim ColumnValues As String() = New String((17 + 1) - 1) {}
-        ColumnValues(0) = "Invoice Date"
-        ColumnValues(1) = "Invoice Type"
-        ColumnValues(2) = "Client Name"
+        ColumnValues(0) = "Tanggal Invoice"
+        ColumnValues(1) = "Tipe Invoice"
+        ColumnValues(2) = "Nama Pelanggan"
         ColumnValues(3) = "Work Order/SPK"
         ColumnValues(4) = "Work Order Terms"
         ColumnValues(5) = "Progress (%)"
@@ -163,10 +162,10 @@ Public Class rFormDataListInvoice
         ColumnValues(11) = "PPn (10%)"
         ColumnValues(12) = "Terbilang"
         ColumnValues(13) = "Project"
-        ColumnValues(14) = "User Input"
-        ColumnValues(15) = "Create Date"
-        ColumnValues(16) = "User Edit"
-        ColumnValues(17) = "Date Update"
+        ColumnValues(14) = "User Perekam"
+        ColumnValues(15) = "Tanggal Rekam"
+        ColumnValues(16) = "User Update"
+        ColumnValues(17) = "Tanggal Update"
         Dim num1 As Integer = 0
         Dim num2 As Integer = (ColumnValues.Length)
         Dim num3 As Integer = num1
@@ -188,7 +187,7 @@ Public Class rFormDataListInvoice
             Interlocked.Increment(num3)
 
             For Each dtCol As DataGridViewColumn In Me.dg.Columns
-                If dtCol.HeaderText.Contains("InvoiceDate") Then
+                If dtCol.HeaderText.Contains("Tanggal Invoice") Then
                     dtCol.DefaultCellStyle.Format = "d"
                     dtCol.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                 End If
@@ -239,14 +238,12 @@ Public Class rFormDataListInvoice
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        'rFormInvoice.ShowDialog()
+
         FormTambahInvoice.ShowDialog()
     End Sub
 
     Private Sub btnColumn_Click(sender As Object, e As EventArgs)
-        'RadMessageBox.Show(vbNewLine & "This Menu Button are under development" & vbNewLine, "AUTHOR - MESSAGE", MessageBoxButtons.OK, RadMessageIcon.Info)
-        'Return
-        'FrmArrangeColumns.ShowDialog()
+
         FrmCustomFilter.ShowDialog()
     End Sub
 
@@ -291,7 +288,7 @@ Public Class rFormDataListInvoice
             End If
             Me.LoadListInvoice(StrOpsi)
         Catch ex As Exception
-            RadMessageBox.Show("Could not filter!, " &
+            RadMessageBox.Show("Tidak dapat memfilter!, " &
                                ex.Source & "." & ex.Message, "FILTER INVOICE", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
         End Try
     End Sub

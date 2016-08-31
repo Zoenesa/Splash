@@ -4,16 +4,14 @@ Imports System.Runtime, System.Runtime.CompilerServices, System.Runtime.InteropS
 Imports Microsoft, Microsoft.VisualBasic, Microsoft.VisualBasic.CompilerServices
 Imports Telerik, Telerik.WinControls
 
-
 Public Class FrmCustomFilter
 
     Private Sub FrmCustomFilter_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
-        rFormMain.LoadIcon(True, Me)
-        'Me.ShowIcon = True
-        'Me.Icon = New Icon(My.Application.Info.DirectoryPath & "\Image\Icons\accdb.ico")
-        'LoadField(frmListInvoice, frmListInvoice.dg)
-        LoadDataColumn()
+        'rFormMain.LoadIcon(True, Me)
+
+        LoadField(rFormDataListInvoice, rFormDataListInvoice.dg)
+        'LoadDataColumn()
         RadDropDownList1.ReadOnly = False
         Dim strQryLoad As String()
         Dim StrFilter As String
@@ -27,14 +25,13 @@ Public Class FrmCustomFilter
         End If
     End Sub
 
-
     Private Sub LoadDataColumn()
         RadListControl1.Items.Clear()
         Dim Values As String() = New String((17 + 1) - 1) {}
         Dim Num1 As Integer = 0
         Dim Num2 As Integer = Values.Length
         Dim Num3 As Integer = Num1
-        Values(0) = Conversions.ToString(("InvoiceDate"))
+        Values(0) = Conversions.ToString(("Tanggal Invoice"))
         Values(1) = Conversions.ToString(("InvoiceType"))
         Values(2) = Conversions.ToString(("InvoiceClient"))
         Values(3) = Conversions.ToString(("InvoiceClientAddress"))
@@ -48,16 +45,15 @@ Public Class FrmCustomFilter
         Values(11) = Conversions.ToString(("InvoiceTaxPrice"))
         Values(12) = Conversions.ToString(("InvoiceTerbilang"))
         Values(13) = Conversions.ToString(("IndexProject"))
-        Values(14) = Conversions.ToString(("UserInput"))
-        Values(15) = Conversions.ToString(("CreateDate"))
-        Values(16) = Conversions.ToString(("UserEdit"))
-        Values(17) = Conversions.ToString(("DateUpdate"))
+        Values(14) = Conversions.ToString(("UserPerekam"))
+        Values(15) = Conversions.ToString(("Tanggal Rekam"))
+        Values(16) = Conversions.ToString(("User Update"))
+        Values(17) = Conversions.ToString(("Tanggal Update"))
         While Not Num3 = Num2
             RadListControl1.Items.Add(Values(Num3))
             Interlocked.Increment(Num3)
         End While
     End Sub
-
 
     Public Sub LoadField(ByVal frm As Form, ByVal grid As DataGridView)
         RadListControl1.Items.Clear()
@@ -77,7 +73,6 @@ Public Class FrmCustomFilter
         Telerik.WinControls.RadMessageBox.Instance.ControlBox = False
         Telerik.WinControls.RadMessageBox.ShowInTaskbar = False
         Telerik.WinControls.RadMessageBox.ThemeName = rFormMain.Office2010BlackTheme1.ThemeName
-
 
     End Sub
 

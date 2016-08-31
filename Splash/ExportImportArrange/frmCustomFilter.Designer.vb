@@ -71,6 +71,7 @@ Partial Class FrmCustomFilter
         Me.RadListControl1.Size = New System.Drawing.Size(201, 218)
         Me.RadListControl1.TabIndex = 0
         Me.RadListControl1.Text = "RadListControl1"
+        Me.RadListControl1.ThemeName = "Office2010Black"
         '
         'RadDropDownList1
         '
@@ -101,7 +102,9 @@ Partial Class FrmCustomFilter
         Me.RadDropDownList1.ReadOnly = True
         Me.RadDropDownList1.Size = New System.Drawing.Size(203, 24)
         Me.RadDropDownList1.TabIndex = 1
+        Me.RadDropDownList1.ThemeName = "Office2010Black"
         CType(Me.RadDropDownList1.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).Padding = New System.Windows.Forms.Padding(0, 2, 0, 2)
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadDropDownListArrowButtonElement).Padding = New System.Windows.Forms.Padding(2, 0, 2, 0)
         CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadDropDownListArrowButtonElement).Margin = New System.Windows.Forms.Padding(0, -1, 0, -1)
         '
@@ -116,6 +119,11 @@ Partial Class FrmCustomFilter
         Me.RadTextBox1.Name = "RadTextBox1"
         Me.RadTextBox1.Size = New System.Drawing.Size(203, 74)
         Me.RadTextBox1.TabIndex = 2
+        Me.RadTextBox1.ThemeName = "Office2010Black"
+        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).StretchVertically = True
+        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'Label1
         '
@@ -151,6 +159,11 @@ Partial Class FrmCustomFilter
         Me.TableLayoutPanel1.SetRowSpan(Me.txExpresion, 2)
         Me.txExpresion.Size = New System.Drawing.Size(203, 38)
         Me.txExpresion.TabIndex = 2
+        Me.txExpresion.ThemeName = "Office2010Black"
+        CType(Me.txExpresion.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).StretchVertically = True
+        CType(Me.txExpresion.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.txExpresion.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.txExpresion.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'Label3
         '
@@ -172,6 +185,9 @@ Partial Class FrmCustomFilter
         Me.RadButton1.Size = New System.Drawing.Size(65, 24)
         Me.RadButton1.TabIndex = 4
         Me.RadButton1.Text = "&DEL"
+        Me.RadButton1.ThemeName = "Office2010Black"
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'Label4
         '
@@ -207,7 +223,7 @@ Partial Class FrmCustomFilter
         Me.TableLayoutPanel1.Controls.Add(Me.RadTextBox1, 3, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.RadButton5, 4, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.Label3, 3, 4)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 2)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 3)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 12
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
@@ -235,6 +251,9 @@ Partial Class FrmCustomFilter
         Me.btnClose.Size = New System.Drawing.Size(203, 31)
         Me.btnClose.TabIndex = 7
         Me.btnClose.Text = "&Close"
+        Me.btnClose.ThemeName = "Office2010Black"
+        CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnSave
         '
@@ -246,6 +265,9 @@ Partial Class FrmCustomFilter
         Me.btnSave.Size = New System.Drawing.Size(201, 31)
         Me.btnSave.TabIndex = 6
         Me.btnSave.Text = "&Save"
+        Me.btnSave.ThemeName = "Office2010Black"
+        CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadListControl2
         '
@@ -258,6 +280,7 @@ Partial Class FrmCustomFilter
         Me.RadListControl2.Size = New System.Drawing.Size(410, 59)
         Me.RadListControl2.TabIndex = 5
         Me.RadListControl2.Text = "RadListControl1"
+        Me.RadListControl2.ThemeName = "Office2010Black"
         '
         'Label5
         '
@@ -280,6 +303,9 @@ Partial Class FrmCustomFilter
         Me.RadButton4.Size = New System.Drawing.Size(63, 24)
         Me.RadButton4.TabIndex = 4
         Me.RadButton4.Text = "&AND"
+        Me.RadButton4.ThemeName = "Office2010Black"
+        CType(Me.RadButton4.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.RadButton4.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadButton5
         '
@@ -290,12 +316,15 @@ Partial Class FrmCustomFilter
         Me.RadButton5.Size = New System.Drawing.Size(63, 24)
         Me.RadButton5.TabIndex = 4
         Me.RadButton5.Text = "&OR"
+        Me.RadButton5.ThemeName = "Office2010Black"
+        CType(Me.RadButton5.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.RadButton5.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'FrmCustomFilter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(440, 371)
+        Me.ClientSize = New System.Drawing.Size(440, 381)
         Me.ControlBox = False
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
@@ -310,6 +339,7 @@ Partial Class FrmCustomFilter
         Me.RootElement.ApplyShapeToControl = True
         Me.ShowInTaskbar = False
         Me.Text = "Query Expresion Builder"
+        Me.ThemeName = "Office2010Black"
         CType(Me.RadListControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).EndInit()

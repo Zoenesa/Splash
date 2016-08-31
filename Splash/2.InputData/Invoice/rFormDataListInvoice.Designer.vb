@@ -121,16 +121,20 @@ Partial Class rFormDataListInvoice
         Me.txFilter.BackColor = System.Drawing.Color.Transparent
         Me.txFilter.Enabled = False
         Me.txFilter.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txFilter.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.txFilter.ForeColor = System.Drawing.Color.Black
         Me.txFilter.Location = New System.Drawing.Point(168, 8)
         Me.txFilter.Name = "txFilter"
         Me.txFilter.NullText = "Filter"
         Me.txFilter.Padding = New System.Windows.Forms.Padding(3, 0, 0, 1)
-        Me.txFilter.Size = New System.Drawing.Size(669, 23)
+        Me.txFilter.Size = New System.Drawing.Size(611, 23)
         Me.txFilter.TabIndex = 2
         Me.txFilter.ThemeName = "Office2010Black"
         CType(Me.txFilter.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.SystemColors.Control
         CType(Me.txFilter.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(3, 0, 0, 1)
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Filter"
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).ForeColor = System.Drawing.Color.Black
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.txFilter.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'RadDropDownList1
@@ -232,9 +236,9 @@ Partial Class rFormDataListInvoice
         Me.btnFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnFilter.BackColor = System.Drawing.Color.Transparent
         Me.btnFilter.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFilter.Location = New System.Drawing.Point(843, 8)
+        Me.btnFilter.Location = New System.Drawing.Point(785, 8)
         Me.btnFilter.Name = "btnFilter"
-        Me.btnFilter.Size = New System.Drawing.Size(81, 23)
+        Me.btnFilter.Size = New System.Drawing.Size(139, 23)
         Me.btnFilter.TabIndex = 3
         Me.btnFilter.Text = "[F3] Filter"
         Me.btnFilter.ThemeName = "Office2010Black"
