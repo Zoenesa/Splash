@@ -4,6 +4,8 @@
   <Costura IncludeDebugSymbols='false' />
   <Costura>
     <IncludeAssemblies>
+      MySql.Data
+      MySqlBackup
       CodeLibs
       FastColoredTextBox
       PasswordMeter

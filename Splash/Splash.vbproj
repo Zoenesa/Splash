@@ -62,7 +62,9 @@
     <Reference Include="FastColoredTextBox">
       <HintPath>..\..\..\..\Visual Studio 2013\Projects\GUIDPOGOKonfigurasi\GUIDPOGOKonfigurasi\bin\Debug\FastColoredTextBox.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>Libs\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="MySqlBackup">
       <HintPath>..\packages\MySqlBackup.NET.2.0.9.4\lib\net45\MySqlBackup.dll</HintPath>
     </Reference>
@@ -494,8 +496,7 @@
       <Using xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Namespace="System" />
       <Using xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Namespace="System.IO" />
       <Using xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Namespace="System.Xml.Linq" />
-      <Code xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Type="Fragment" Language="cs">
-<![CDATA[
+      <Code xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Type="Fragment" Language="cs"><![CDATA[
 var config = XElement.Load(Config.ItemSpec).Elements("Costura").FirstOrDefault();
 
 if (config == null) return true;
@@ -514,8 +515,8 @@ var filesToCleanup = Files.Select(f => f.ItemSpec).Where(f => !excludedAssemblie
 
 foreach (var item in filesToCleanup)
   File.Delete(item);
-]]>
-      </Code></Task>
+]]></Code>
+    </Task>
   </UsingTask>
   <Target Name="CleanReferenceCopyLocalPaths" AfterTargets="AfterBuild;NonWinFodyTarget">
     <CosturaCleanup Config="FodyWeavers.xml" Files="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)%(Filename)%(Extension)')" />

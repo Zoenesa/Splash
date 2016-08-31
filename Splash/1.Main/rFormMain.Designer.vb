@@ -23,11 +23,11 @@ Partial Class rFormMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim GridViewTextBoxColumn13 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn14 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn15 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim SortDescriptor5 As Telerik.WinControls.Data.SortDescriptor = New Telerik.WinControls.Data.SortDescriptor()
-        Dim TableViewDefinition5 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim SortDescriptor1 As Telerik.WinControls.Data.SortDescriptor = New Telerik.WinControls.Data.SortDescriptor()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.rMainMenu = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuKoneksiDb = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuLogout = New Telerik.WinControls.UI.RadMenuItem()
@@ -619,28 +619,28 @@ Partial Class rFormMain
         Me.dgcounter.MasterTemplate.AllowRowHeaderContextMenu = False
         Me.dgcounter.MasterTemplate.AllowSearchRow = True
         Me.dgcounter.MasterTemplate.CaseSensitive = True
-        GridViewTextBoxColumn13.EnableExpressionEditor = False
-        GridViewTextBoxColumn13.HeaderText = "Data TABLE"
-        GridViewTextBoxColumn13.Name = "column1"
-        GridViewTextBoxColumn13.ReadOnly = True
-        GridViewTextBoxColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn13.Width = 165
-        GridViewTextBoxColumn14.EnableExpressionEditor = False
-        GridViewTextBoxColumn14.HeaderText = "Total"
-        GridViewTextBoxColumn14.Name = "column2"
-        GridViewTextBoxColumn14.ReadOnly = True
-        GridViewTextBoxColumn14.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn14.Width = 55
-        GridViewTextBoxColumn15.HeaderText = "Tanggal Update"
-        GridViewTextBoxColumn15.Name = "column4"
-        GridViewTextBoxColumn15.Width = 115
-        Me.dgcounter.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn13, GridViewTextBoxColumn14, GridViewTextBoxColumn15})
+        GridViewTextBoxColumn1.EnableExpressionEditor = False
+        GridViewTextBoxColumn1.HeaderText = "Data TABLE"
+        GridViewTextBoxColumn1.Name = "column1"
+        GridViewTextBoxColumn1.ReadOnly = True
+        GridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn1.Width = 165
+        GridViewTextBoxColumn2.EnableExpressionEditor = False
+        GridViewTextBoxColumn2.HeaderText = "Total"
+        GridViewTextBoxColumn2.Name = "column2"
+        GridViewTextBoxColumn2.ReadOnly = True
+        GridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn2.Width = 55
+        GridViewTextBoxColumn3.HeaderText = "Tanggal Update"
+        GridViewTextBoxColumn3.Name = "column4"
+        GridViewTextBoxColumn3.Width = 115
+        Me.dgcounter.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3})
         Me.dgcounter.MasterTemplate.EnableAlternatingRowColor = True
         Me.dgcounter.MasterTemplate.EnableGrouping = False
         Me.dgcounter.MasterTemplate.ShowHeaderCellButtons = True
-        SortDescriptor5.PropertyName = "column3"
-        Me.dgcounter.MasterTemplate.SortDescriptors.AddRange(New Telerik.WinControls.Data.SortDescriptor() {SortDescriptor5})
-        Me.dgcounter.MasterTemplate.ViewDefinition = TableViewDefinition5
+        SortDescriptor1.PropertyName = "column3"
+        Me.dgcounter.MasterTemplate.SortDescriptors.AddRange(New Telerik.WinControls.Data.SortDescriptor() {SortDescriptor1})
+        Me.dgcounter.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.dgcounter.Name = "dgcounter"
         Me.dgcounter.ReadOnly = True
         Me.dgcounter.RightToLeft = System.Windows.Forms.RightToLeft.No
