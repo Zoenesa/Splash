@@ -4,6 +4,7 @@ Imports System.Runtime, System.Runtime.CompilerServices, System.Runtime.InteropS
 Imports Microsoft, Microsoft.VisualBasic, Microsoft.VisualBasic.CompilerServices
 Imports MySql.Data.MySqlClient
 Imports Telerik, Telerik.WinControls
+Imports Telerik.WinControls.UI.Data
 
 Public Class FrmCustomFilter
 
@@ -153,12 +154,15 @@ Public Class FrmCustomFilter
         mdlstring.SqlFilter(sbFilter.ToString)
         Me.Dispose()
     End Sub
+    Dim FieldNamaKolom As New List(Of String)
+    Dim FieldKolomKomen As New List(Of String)
 
     Private Sub SqlSelectKolom(ByVal tableName As String, Optional ByVal Opsi As String = "")
         Dim sqlAdapter As MySqlDataReader = Nothing
-        Dim FieldNamaKolom As New List(Of String)
-        Dim FieldKolomKomen As New List(Of String)
+
         Try
+
+            RadListControl1.Items.Clear()
 
             Dim comandpilih As String = "SELECT Column_Name, Column_Comment FROM information_schema.Columns WHERE table_name = '" & tableName & "'" & Opsi
             Dim sqlCmd As New MySqlCommand()
@@ -174,11 +178,14 @@ Public Class FrmCustomFilter
                 FieldKolomKomen.Add(sqlAdapter.Item("Column_Comment"))
             Loop
 
+            RadListControl1.Items.AddRange(FieldNamaKolom)
 
         Catch ex As Exception
             sqlAdapter = Nothing
         End Try
     End Sub
 
-
+    Private Sub RadListControl1_SelectedIndexChanged(sender As Object, e As PositionChangedEventArgs) Handles RadListControl1.SelectedIndexChanged
+        RadTextBox1.Text = FieldKolomKomen.Item(RadListControl1.SelectedIndex)
+    End Sub
 End Class

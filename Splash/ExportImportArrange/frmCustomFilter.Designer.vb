@@ -121,6 +121,7 @@ Partial Class FrmCustomFilter
         Me.RadTextBox1.Location = New System.Drawing.Point(210, 73)
         Me.RadTextBox1.Multiline = True
         Me.RadTextBox1.Name = "RadTextBox1"
+        Me.RadTextBox1.ReadOnly = True
         Me.RadTextBox1.Size = New System.Drawing.Size(203, 74)
         Me.RadTextBox1.TabIndex = 2
         Me.RadTextBox1.ThemeName = "Office2010Black"
