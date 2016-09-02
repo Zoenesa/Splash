@@ -69,7 +69,7 @@ Partial Class rFormListPelanggan
         Me.txFilter.Location = New System.Drawing.Point(134, 3)
         Me.txFilter.Name = "txFilter"
         Me.txFilter.NullText = "Filter Key"
-        Me.txFilter.Size = New System.Drawing.Size(357, 23)
+        Me.txFilter.Size = New System.Drawing.Size(297, 23)
         Me.txFilter.TabIndex = 1
         Me.txFilter.TabStop = False
         Me.txFilter.Text = Nothing
@@ -106,9 +106,9 @@ Partial Class rFormListPelanggan
         Me.btnFilter.BackColor = System.Drawing.Color.Transparent
         Me.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnFilter.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnFilter.Location = New System.Drawing.Point(497, 3)
+        Me.btnFilter.Location = New System.Drawing.Point(437, 3)
         Me.btnFilter.Name = "btnFilter"
-        Me.btnFilter.Size = New System.Drawing.Size(128, 23)
+        Me.btnFilter.Size = New System.Drawing.Size(87, 23)
         Me.btnFilter.TabIndex = 2
         Me.btnFilter.Text = "[F2] Filter"
         Me.btnFilter.ThemeName = "Office2010Black"
@@ -134,10 +134,9 @@ Partial Class rFormListPelanggan
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.dg)
-        Me.Panel1.Controls.Add(Me.btnRefresh)
-        Me.Panel1.Location = New System.Drawing.Point(0, 34)
+        Me.Panel1.Location = New System.Drawing.Point(0, 28)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(630, 275)
+        Me.Panel1.Size = New System.Drawing.Size(630, 281)
         Me.Panel1.TabIndex = 3
         '
         'dg
@@ -150,13 +149,13 @@ Partial Class rFormListPelanggan
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Coll1, Me.Coll2})
-        Me.dg.Location = New System.Drawing.Point(3, 27)
+        Me.dg.Location = New System.Drawing.Point(3, 3)
         Me.dg.MultiSelect = False
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
         Me.dg.RowHeadersVisible = False
         Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(620, 241)
+        Me.dg.Size = New System.Drawing.Size(620, 271)
         Me.dg.TabIndex = 1
         '
         'Coll1
@@ -181,9 +180,9 @@ Partial Class rFormListPelanggan
         Me.btnRefresh.BackColor = System.Drawing.Color.Transparent
         Me.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRefresh.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnRefresh.Location = New System.Drawing.Point(495, 2)
+        Me.btnRefresh.Location = New System.Drawing.Point(530, 3)
         Me.btnRefresh.Name = "btnRefresh"
-        Me.btnRefresh.Size = New System.Drawing.Size(128, 23)
+        Me.btnRefresh.Size = New System.Drawing.Size(100, 23)
         Me.btnRefresh.TabIndex = 0
         Me.btnRefresh.Text = "[F5] Refresh"
         Me.btnRefresh.ThemeName = "Office2010Black"
@@ -300,6 +299,7 @@ Partial Class rFormListPelanggan
         Me.ClientSize = New System.Drawing.Size(630, 371)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnFilter)
+        Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.txFilter)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.rDropInvoiceType)

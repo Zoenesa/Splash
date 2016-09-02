@@ -5,6 +5,7 @@ Imports System.Data.OleDb
 Imports MySql.Data.MySqlClient
 Imports Splash.mdlstring
 Imports System.Data.Common
+Imports Telerik.WinControls.UI.Data
 
 Public Class rFormKonfirmasiPembayaran
 
@@ -40,7 +41,8 @@ Public Class rFormKonfirmasiPembayaran
                         Do While sqlreader.Read
                             Values(0) = sqlreader.Item("InvoiceNo")
                             Values(1) = sqlreader.Item("InvoiceClient")
-                            rDropWO.Items.Add(Values(0) & " | " & Values(1))
+                            rDropWO.Items.Add(Values(0)) ' & " | " & Values(1))
+                            rDropWO.DescriptionTextMember = "InvoiceClient"
                         Loop
                     End If
                     sqlreader.Close()
@@ -55,7 +57,7 @@ Public Class rFormKonfirmasiPembayaran
         Dim myreader As MySqlDataReader
         Try
             Dim command As MySqlCommand = New MySqlCommand(("SELECT * FROM `ref_client` " &
-                                                            opsi & ";"), mdlCom.vConn)
+                                                            opsi), mdlCom.vConn)
 
             myreader = command.ExecuteReader
             Dim values As String() = New String(1) {}
@@ -80,18 +82,20 @@ Public Class rFormKonfirmasiPembayaran
 
         DirectCast(sqladapter, DbDataAdapter).Fill(dt)
 
-        rDropWO.DataSource = dt
-        rDropWO.Update()
-        rDropWO.DisplayMember = dt.Columns(0).ColumnName
-        rDropWO.Refresh()
-        rDropWO.DescriptionTextMember = dt.Columns(1).ColumnName
-        rDropWO.Update()
-        rCustomer.SelectedIndex = 0
-        rCustomer.PerformLayout()
-        rDropWO.SelectedIndex = 0
-        rDropWO.PerformLayout()
-        rDropWO.ShowDropDown()
-        rDropWO.Update()
+        If dt.Rows.Count > 0 Then
+            rDropWO.DisplayMember = dt.Columns(0).ColumnName
+
+            rDropWO.ValueMember = "invoiceno"
+
+            rDropWO.DescriptionTextMember = dt.Columns(1).ColumnName
+
+            rDropWO.DataSource = dt
+
+            rDropWO.PerformLayout()
+
+            rDropWO.Update()
+        End If
+
     End Sub
 
     Private Sub rFormKonfirmasiPembayaran_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -100,8 +104,9 @@ Public Class rFormKonfirmasiPembayaran
         GetClient()
     End Sub
 
-    Private Sub rCustomer_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles rCustomer.SelectedIndexChanged, rDropWO.SelectedIndexChanged
+    Private Sub rCustomer_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles rCustomer.SelectedIndexChanged
         'getInvoiceNo(" WHERE `invoiceClient` = '" & rCustomer.SelectedItem.Text & "'")
-        datatableinvoice(" WHERE `invoiceClient` = '" & rCustomer.SelectedItem.Text & "'")
+        datatableinvoice(" WHERE `invoiceClient` = '" & rCustomer.SelectedItem.Text.Trim() & "'")
     End Sub
+
 End Class
