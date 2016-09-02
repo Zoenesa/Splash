@@ -9,7 +9,7 @@ Public Class FrmCustomFilter
     Private Sub FrmCustomFilter_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
         'rFormMain.LoadIcon(True, Me)
-
+        GetInvData()
         LoadField(rFormDataListInvoice, rFormDataListInvoice.dg)
         'LoadDataColumn()
         RadDropDownList1.ReadOnly = False
@@ -107,6 +107,25 @@ Public Class FrmCustomFilter
         eList.Remove(RadListControl2.SelectedItem)
     End Sub
 
+    Public ListTable As List(Of String)
+    Public Sub GetInvData(Optional ByVal Opsi As String = "")
+        Dim errMsg As String = ""
+        Dim Common As New common
+        Dim dt As New DataTable
+        ListTable = New List(Of String)
+        If Common.GetSqlInvoiceData(errMsg, dt, Opsi) Then
+            Dim num As Integer = 0
+            Dim num1 As Integer = dt.Columns.Count - 1
+            Dim num2 As Integer = num
+            Do While (num2 <= num1)
+                Dim strCol As String = dt.Columns.Item(num2).ColumnName
+                'ListTable.Add(strCol)
+                ListTable.Add(strCol)
+                Interlocked.Increment(num2)
+            Loop
+        End If
+    End Sub
+
     Public Function QrBuilderValue() As String
         Dim Sb As New StringBuilder()
         For Each Str2 As Telerik.WinControls.UI.RadListDataItem In RadListControl2.Items
@@ -122,4 +141,13 @@ Public Class FrmCustomFilter
         rFormDataListInvoice.txFilter.Text = LTrim(RTrim(Replace(rFormDataListInvoice.txTemp.Text, ";", " ", 1, -1, CompareMethod.Binary)))
         Me.Dispose()
     End Sub
+
+    Private Sub WriteQueryFilter()
+        Dim lines As String() = New String(RadListControl1.Items.Count - 1) {}
+
+        IO.File.WriteAllLines(IO.Path.Combine(Environment.CurrentDirectory & "Filter.txt"), lines)
+
+    End Sub
+
+
 End Class

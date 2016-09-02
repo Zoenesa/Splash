@@ -136,6 +136,7 @@ Partial Class FormDataBackup
         Me.txPath.Size = New System.Drawing.Size(588, 23)
         Me.txPath.TabIndex = 8
         Me.txPath.ThemeName = "Office2010Black"
+        CType(Me.txPath.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(6, 0, 6, 0)
         CType(Me.txPath.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Backup Filename Path"
         CType(Me.txPath.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.txPath.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
@@ -167,6 +168,7 @@ Partial Class FormDataBackup
         Me.btnBackup.TabIndex = 0
         Me.btnBackup.Text = "Execute &Backup"
         Me.btnBackup.ThemeName = "Office2010Black"
+        CType(Me.btnBackup.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "Execute &Backup"
         CType(Me.btnBackup.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnBackup.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -259,6 +261,7 @@ Partial Class FormDataBackup
         Me.txEncryptPass.Size = New System.Drawing.Size(132, 23)
         Me.txEncryptPass.TabIndex = 12
         Me.txEncryptPass.ThemeName = "Office2010Black"
+        CType(Me.txEncryptPass.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(6, 0, 6, 0)
         CType(Me.txEncryptPass.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.txEncryptPass.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         CType(Me.txEncryptPass.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
@@ -409,6 +412,7 @@ Partial Class FormDataBackup
         Me.btnBrowse.TabIndex = 7
         Me.btnBrowse.Text = "&Browse"
         Me.btnBrowse.ThemeName = "Office2010Black"
+        CType(Me.btnBrowse.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Browse"
         CType(Me.btnBrowse.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnBrowse.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -460,6 +464,7 @@ Partial Class FormDataBackup
         Me.btnRestore.TabIndex = 0
         Me.btnRestore.Text = "Execute &Restore"
         Me.btnRestore.ThemeName = "Office2010Black"
+        CType(Me.btnRestore.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "Execute &Restore"
         CType(Me.btnRestore.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnRestore.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -497,6 +502,7 @@ Partial Class FormDataBackup
         Me.txDefaultCharset.Size = New System.Drawing.Size(212, 23)
         Me.txDefaultCharset.TabIndex = 12
         Me.txDefaultCharset.ThemeName = "Office2010Black"
+        CType(Me.txDefaultCharset.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(6, 0, 6, 0)
         CType(Me.txDefaultCharset.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Optional Charset"
         CType(Me.txDefaultCharset.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.txDefaultCharset.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -515,6 +521,7 @@ Partial Class FormDataBackup
         Me.txTargetDb.Size = New System.Drawing.Size(212, 23)
         Me.txTargetDb.TabIndex = 12
         Me.txTargetDb.ThemeName = "Office2010Black"
+        CType(Me.txTargetDb.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(6, 0, 6, 0)
         CType(Me.txTargetDb.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Nama Target Database"
         CType(Me.txTargetDb.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.txTargetDb.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -533,6 +540,7 @@ Partial Class FormDataBackup
         Me.txErrLogPath.Size = New System.Drawing.Size(197, 23)
         Me.txErrLogPath.TabIndex = 12
         Me.txErrLogPath.ThemeName = "Office2010Black"
+        CType(Me.txErrLogPath.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(6, 0, 6, 0)
         CType(Me.txErrLogPath.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Save Error Log"
         CType(Me.txErrLogPath.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.txErrLogPath.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -551,6 +559,7 @@ Partial Class FormDataBackup
         Me.btnSaveLog.TabIndex = 7
         Me.btnSaveLog.Text = "&Save Log"
         Me.btnSaveLog.ThemeName = "Office2010Black"
+        CType(Me.btnSaveLog.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Save Log"
         CType(Me.btnSaveLog.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnSaveLog.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -565,6 +574,7 @@ Partial Class FormDataBackup
         Me.txDecryptPass.Size = New System.Drawing.Size(132, 23)
         Me.txDecryptPass.TabIndex = 12
         Me.txDecryptPass.ThemeName = "Office2010Black"
+        CType(Me.txDecryptPass.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(6, 0, 6, 0)
         CType(Me.txDecryptPass.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.txDecryptPass.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         CType(Me.txDecryptPass.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
@@ -625,6 +635,7 @@ Partial Class FormDataBackup
         Me.btnSelectSQL.TabIndex = 0
         Me.btnSelectSQL.Text = "Select &SQL"
         Me.btnSelectSQL.ThemeName = "Office2010Black"
+        CType(Me.btnSelectSQL.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "Select &SQL"
         CType(Me.btnSelectSQL.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnSelectSQL.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -658,6 +669,7 @@ Partial Class FormDataBackup
         Me.txSettingKoneksi.Size = New System.Drawing.Size(589, 23)
         Me.txSettingKoneksi.TabIndex = 8
         Me.txSettingKoneksi.ThemeName = "Office2010Black"
+        CType(Me.txSettingKoneksi.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(6, 0, 6, 0)
         CType(Me.txSettingKoneksi.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Format Koneksi (server;user;password;database)"
         CType(Me.txSettingKoneksi.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.txSettingKoneksi.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)

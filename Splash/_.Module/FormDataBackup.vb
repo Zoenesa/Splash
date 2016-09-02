@@ -401,4 +401,8 @@ Public Class FormDataBackup
             Me._totalTables = e.TotalTables
         End If
     End Sub
+
+    Private Sub chAutoSave_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles chAutoSave.ToggleStateChanged
+
+    End Sub
 End Class

@@ -279,7 +279,26 @@ Public Class common
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim exception As Exception = ex
-            errMsg = "Failed (common_get_table). Message : " + exception.Message
+            errMsg = "Failed (common_Load_table" & tablename & "). Message : " + exception.Message
+            mdlCom.INSERTLOG(errMsg, "")
+            flag = False
+            ProjectData.ClearProjectError()
+        End Try
+        Return flag
+    End Function
+
+    Public Function GetSqlInvoiceData(ByRef errMsg As String, ByRef dt As DataTable, Optional ByVal Opsi As String = "") As Boolean
+        errMsg = ""
+        Dim flag As Boolean
+        Try
+            Dim sqlAdapter As New MySqlDataAdapter("SELECT * FROM `invoicedata` " & Opsi, mdlCom.vConn)
+            dt = New DataTable()
+            DirectCast(sqlAdapter, DbDataAdapter).Fill(dt)
+            flag = True
+        Catch ex As Exception
+            ProjectData.SetProjectError(ex)
+            Dim exception As Exception = ex
+            errMsg = "Failed (common_getSqlInvoiceData). Message : " + exception.Message
             mdlCom.INSERTLOG(errMsg, "")
             flag = False
             ProjectData.ClearProjectError()

@@ -4,6 +4,7 @@ Imports Microsoft, Microsoft.VisualBasic, Microsoft.VisualBasic.CompilerServices
 Imports System.Data.OleDb
 Imports MySql.Data.MySqlClient
 Imports Splash.mdlstring
+Imports System.Data.Common
 
 Public Class rFormKonfirmasiPembayaran
 
@@ -72,14 +73,13 @@ Public Class rFormKonfirmasiPembayaran
 
     Private Sub datatableinvoice(Optional ByVal Opsi As String = "")
         Dim sqladapter As MySqlDataAdapter
-        Dim sqlcommand As MySqlCommand = New MySqlCommand(("SELECT `invoiceNo`, `invoiceClient` FROM `invoicedata`" & Opsi & " ORDER BY `RecordNo`;"))
+        Dim sqlcommand As MySqlCommand = New MySqlCommand(("SELECT `invoiceNo`, `invoiceClient` FROM `invoicedata` " & Opsi & " ORDER BY `RecordNo` ASC"))
         Dim dt As New DataTable
         sqlcommand.Connection = mdlCom.vConn
         sqladapter = New MySqlDataAdapter With {.SelectCommand = sqlcommand}
 
-        dt.BeginLoadData()
-        sqladapter.Fill(dt)
-        dt.EndLoadData()
+        DirectCast(sqladapter, DbDataAdapter).Fill(dt)
+
         rDropWO.DataSource = dt
         rDropWO.Update()
         rDropWO.DisplayMember = dt.Columns(0).ColumnName

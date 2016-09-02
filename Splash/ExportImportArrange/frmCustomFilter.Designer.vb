@@ -22,14 +22,14 @@ Partial Class FrmCustomFilter
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem6 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem7 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem8 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem9 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem10 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem11 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem12 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem13 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem14 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem15 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem16 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.RadListControl1 = New Telerik.WinControls.UI.RadListControl()
         Me.RadDropDownList1 = New Telerik.WinControls.UI.RadDropDownList()
         Me.RadTextBox1 = New Telerik.WinControls.UI.RadTextBox()
@@ -80,22 +80,22 @@ Partial Class FrmCustomFilter
         Me.RadDropDownList1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.RadDropDownList1.DefaultItemsCountInDropDown = 8
         Me.RadDropDownList1.Dock = System.Windows.Forms.DockStyle.Fill
-        RadListDataItem1.Text = "="
-        RadListDataItem2.Text = "<"
-        RadListDataItem3.Text = "<="
-        RadListDataItem4.Text = ">"
-        RadListDataItem5.Text = ">="
-        RadListDataItem6.Text = "<>"
-        RadListDataItem7.Text = "Like"
-        RadListDataItem8.Text = "Not Like"
-        Me.RadDropDownList1.Items.Add(RadListDataItem1)
-        Me.RadDropDownList1.Items.Add(RadListDataItem2)
-        Me.RadDropDownList1.Items.Add(RadListDataItem3)
-        Me.RadDropDownList1.Items.Add(RadListDataItem4)
-        Me.RadDropDownList1.Items.Add(RadListDataItem5)
-        Me.RadDropDownList1.Items.Add(RadListDataItem6)
-        Me.RadDropDownList1.Items.Add(RadListDataItem7)
-        Me.RadDropDownList1.Items.Add(RadListDataItem8)
+        RadListDataItem9.Text = "="
+        RadListDataItem10.Text = "<"
+        RadListDataItem11.Text = "<="
+        RadListDataItem12.Text = ">"
+        RadListDataItem13.Text = ">="
+        RadListDataItem14.Text = "<>"
+        RadListDataItem15.Text = "Like"
+        RadListDataItem16.Text = "Not Like"
+        Me.RadDropDownList1.Items.Add(RadListDataItem9)
+        Me.RadDropDownList1.Items.Add(RadListDataItem10)
+        Me.RadDropDownList1.Items.Add(RadListDataItem11)
+        Me.RadDropDownList1.Items.Add(RadListDataItem12)
+        Me.RadDropDownList1.Items.Add(RadListDataItem13)
+        Me.RadDropDownList1.Items.Add(RadListDataItem14)
+        Me.RadDropDownList1.Items.Add(RadListDataItem15)
+        Me.RadDropDownList1.Items.Add(RadListDataItem16)
         Me.RadDropDownList1.Location = New System.Drawing.Point(210, 23)
         Me.RadDropDownList1.Name = "RadDropDownList1"
         Me.RadDropDownList1.Padding = New System.Windows.Forms.Padding(0, 2, 0, 2)
@@ -107,6 +107,10 @@ Partial Class FrmCustomFilter
         CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadDropDownListArrowButtonElement).Padding = New System.Windows.Forms.Padding(2, 0, 2, 0)
         CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadDropDownListArrowButtonElement).Margin = New System.Windows.Forms.Padding(0, -1, 0, -1)
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).Padding = New System.Windows.Forms.Padding(0)
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).Margin = New System.Windows.Forms.Padding(-1)
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.BorderPrimitive).Padding = New System.Windows.Forms.Padding(0)
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.BorderPrimitive).Margin = New System.Windows.Forms.Padding(-2)
         '
         'RadTextBox1
         '
@@ -186,6 +190,7 @@ Partial Class FrmCustomFilter
         Me.RadButton1.TabIndex = 4
         Me.RadButton1.Text = "&DEL"
         Me.RadButton1.ThemeName = "Office2010Black"
+        CType(Me.RadButton1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&DEL"
         CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -223,7 +228,7 @@ Partial Class FrmCustomFilter
         Me.TableLayoutPanel1.Controls.Add(Me.RadTextBox1, 3, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.RadButton5, 4, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.Label3, 3, 4)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 3)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 5)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 12
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
@@ -236,9 +241,9 @@ Partial Class FrmCustomFilter
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(416, 366)
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(416, 383)
         Me.TableLayoutPanel1.TabIndex = 5
         '
         'btnClose
@@ -246,12 +251,13 @@ Partial Class FrmCustomFilter
         Me.btnClose.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.SetColumnSpan(Me.btnClose, 3)
         Me.btnClose.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnClose.Location = New System.Drawing.Point(210, 332)
+        Me.btnClose.Location = New System.Drawing.Point(210, 350)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(203, 31)
+        Me.btnClose.Size = New System.Drawing.Size(203, 30)
         Me.btnClose.TabIndex = 7
-        Me.btnClose.Text = "&Close"
+        Me.btnClose.Text = "&Keluar"
         Me.btnClose.ThemeName = "Office2010Black"
+        CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Keluar"
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -260,12 +266,13 @@ Partial Class FrmCustomFilter
         Me.btnSave.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.SetColumnSpan(Me.btnSave, 3)
         Me.btnSave.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnSave.Location = New System.Drawing.Point(3, 332)
+        Me.btnSave.Location = New System.Drawing.Point(3, 350)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(201, 31)
+        Me.btnSave.Size = New System.Drawing.Size(201, 30)
         Me.btnSave.TabIndex = 6
-        Me.btnSave.Text = "&Save"
+        Me.btnSave.Text = "&Simpan"
         Me.btnSave.ThemeName = "Office2010Black"
+        CType(Me.btnSave.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Simpan"
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -277,7 +284,7 @@ Partial Class FrmCustomFilter
         Me.RadListControl2.Location = New System.Drawing.Point(3, 267)
         Me.RadListControl2.Name = "RadListControl2"
         Me.TableLayoutPanel1.SetRowSpan(Me.RadListControl2, 2)
-        Me.RadListControl2.Size = New System.Drawing.Size(410, 59)
+        Me.RadListControl2.Size = New System.Drawing.Size(410, 77)
         Me.RadListControl2.TabIndex = 5
         Me.RadListControl2.Text = "RadListControl1"
         Me.RadListControl2.ThemeName = "Office2010Black"
@@ -304,6 +311,7 @@ Partial Class FrmCustomFilter
         Me.RadButton4.TabIndex = 4
         Me.RadButton4.Text = "&AND"
         Me.RadButton4.ThemeName = "Office2010Black"
+        CType(Me.RadButton4.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&AND"
         CType(Me.RadButton4.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.RadButton4.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -317,6 +325,7 @@ Partial Class FrmCustomFilter
         Me.RadButton5.TabIndex = 4
         Me.RadButton5.Text = "&OR"
         Me.RadButton5.ThemeName = "Office2010Black"
+        CType(Me.RadButton5.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&OR"
         CType(Me.RadButton5.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.RadButton5.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -324,7 +333,7 @@ Partial Class FrmCustomFilter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(440, 381)
+        Me.ClientSize = New System.Drawing.Size(440, 400)
         Me.ControlBox = False
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
