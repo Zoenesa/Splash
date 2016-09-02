@@ -23,7 +23,7 @@ Partial Class FormAdvancedSqlBackup
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAdvancedSqlBackup))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.chAutoSave = New Telerik.WinControls.UI.RadCheckBox()
@@ -75,6 +75,7 @@ Partial Class FormAdvancedSqlBackup
         Me.RadLabel4 = New Telerik.WinControls.UI.RadLabel()
         Me.btnRefresh = New Telerik.WinControls.UI.RadButton()
         Me.RadPageViewPage4 = New Telerik.WinControls.UI.RadPageViewPage()
+        Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
         Me.RadGridView1 = New Telerik.WinControls.UI.RadGridView()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.txSqlCommandText = New FastColoredTextBoxNS.FastColoredTextBox()
@@ -91,7 +92,6 @@ Partial Class FormAdvancedSqlBackup
         Me.FastColoredTextBox1 = New FastColoredTextBoxNS.FastColoredTextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.tsFile = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
         Me.Panel1.SuspendLayout()
         CType(Me.chAutoSave, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txPilihFileSql, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -144,6 +144,7 @@ Partial Class FormAdvancedSqlBackup
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnRefresh, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPageViewPage4.SuspendLayout()
+        CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGridView1.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -157,7 +158,6 @@ Partial Class FormAdvancedSqlBackup
         CType(Me.FastColoredTextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         CType(Me.tsFile, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -847,6 +847,15 @@ Partial Class FormAdvancedSqlBackup
         Me.RadPageViewPage4.Size = New System.Drawing.Size(637, 394)
         Me.RadPageViewPage4.Text = "Query Browser"
         '
+        'RadLabel1
+        '
+        Me.RadLabel1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadLabel1.Location = New System.Drawing.Point(4, 375)
+        Me.RadLabel1.Name = "RadLabel1"
+        Me.RadLabel1.Size = New System.Drawing.Size(82, 19)
+        Me.RadLabel1.TabIndex = 6
+        Me.RadLabel1.Text = "Total Rows : 0"
+        '
         'RadGridView1
         '
         Me.RadGridView1.Location = New System.Drawing.Point(4, 133)
@@ -864,7 +873,7 @@ Partial Class FormAdvancedSqlBackup
         Me.RadGridView1.MasterTemplate.ClipboardPasteMode = Telerik.WinControls.UI.GridViewClipboardPasteMode.EnableWithNotifications
         Me.RadGridView1.MasterTemplate.MultiSelect = True
         Me.RadGridView1.MasterTemplate.SummaryRowsBottom.Add(New Telerik.WinControls.UI.GridViewSummaryRowItem(New Telerik.WinControls.UI.GridViewSummaryItem(-1) {}))
-        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.RadGridView1.Name = "RadGridView1"
         Me.RadGridView1.ReadOnly = True
         Me.RadGridView1.Size = New System.Drawing.Size(633, 238)
@@ -879,7 +888,7 @@ Partial Class FormAdvancedSqlBackup
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.30376!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.69624!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 117.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.txSqlCommandText, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.RadSpinEditor1, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.RadButton7, 0, 0)
@@ -929,13 +938,13 @@ Partial Class FormAdvancedSqlBackup
         Me.RadSpinEditor1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RadSpinEditor1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadSpinEditor1.Increment = New Decimal(New Integer() {150, 0, 0, 0})
-        Me.RadSpinEditor1.Location = New System.Drawing.Point(522, 4)
+        Me.RadSpinEditor1.Location = New System.Drawing.Point(521, 4)
         Me.RadSpinEditor1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 3)
         Me.RadSpinEditor1.Maximum = New Decimal(New Integer() {800, 0, 0, 0})
         Me.RadSpinEditor1.Minimum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.RadSpinEditor1.Name = "RadSpinEditor1"
         Me.RadSpinEditor1.Padding = New System.Windows.Forms.Padding(8, 1, 0, 1)
-        Me.RadSpinEditor1.Size = New System.Drawing.Size(111, 23)
+        Me.RadSpinEditor1.Size = New System.Drawing.Size(112, 23)
         Me.RadSpinEditor1.TabIndex = 4
         Me.RadSpinEditor1.TabStop = False
         Me.RadSpinEditor1.ThemeName = "Office2010Black"
@@ -965,7 +974,7 @@ Partial Class FormAdvancedSqlBackup
         Me.RadLabel8.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadLabel8.Location = New System.Drawing.Point(98, 3)
         Me.RadLabel8.Name = "RadLabel8"
-        Me.RadLabel8.Size = New System.Drawing.Size(418, 24)
+        Me.RadLabel8.Size = New System.Drawing.Size(417, 24)
         Me.RadLabel8.TabIndex = 0
         Me.RadLabel8.Text = "[Ctrl] + [Enter] = Execute SQL,  [ESC] = Clear      Default Column Width:"
         Me.RadLabel8.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
@@ -1108,15 +1117,6 @@ Partial Class FormAdvancedSqlBackup
         Me.tsFile.TabIndex = 2
         Me.tsFile.Text = "Status"
         '
-        'RadLabel1
-        '
-        Me.RadLabel1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadLabel1.Location = New System.Drawing.Point(4, 375)
-        Me.RadLabel1.Name = "RadLabel1"
-        Me.RadLabel1.Size = New System.Drawing.Size(82, 19)
-        Me.RadLabel1.TabIndex = 6
-        Me.RadLabel1.Text = "Total Rows : 0"
-        '
         'FormAdvancedSqlBackup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1194,6 +1194,7 @@ Partial Class FormAdvancedSqlBackup
         CType(Me.btnRefresh, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadPageViewPage4.ResumeLayout(False)
         Me.RadPageViewPage4.PerformLayout()
+        CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGridView1.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
@@ -1208,7 +1209,6 @@ Partial Class FormAdvancedSqlBackup
         CType(Me.FastColoredTextBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         CType(Me.tsFile, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

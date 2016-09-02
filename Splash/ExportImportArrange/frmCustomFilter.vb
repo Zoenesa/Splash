@@ -2,6 +2,7 @@
 Imports System.Data, System.Data.OleDb
 Imports System.Runtime, System.Runtime.CompilerServices, System.Runtime.InteropServices
 Imports Microsoft, Microsoft.VisualBasic, Microsoft.VisualBasic.CompilerServices
+Imports MySql.Data.MySqlClient
 Imports Telerik, Telerik.WinControls
 
 Public Class FrmCustomFilter
@@ -82,23 +83,29 @@ Public Class FrmCustomFilter
 
     Private Sub RadButton4_Click(sender As Object, e As EventArgs) Handles RadButton4.Click
         Dim StrAdd As String = ""
+        Dim strTemp As String = ""
         If RadDropDownList1.SelectedItem.Text = "Like" Then
             StrAdd = String.Format("{0} {1} {2} '%{3}%'", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+            strTemp = String.Format("{0} {1} {2} {3}", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
         Else
             StrAdd = String.Format("{0} {1} {2} {3}", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+            strTemp = String.Format("{0} {1} {2} {3}", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
         End If
-        RadListControl2.Items.Add(StrAdd)
+        RadListControl2.Items.Add(strTemp)
         eList.AddRange(RadListControl2.Items)
     End Sub
 
     Private Sub RadButton5_Click(sender As Object, e As EventArgs) Handles RadButton5.Click
         Dim StrAdd As String = ""
+        Dim strTemp As String = ""
         If RadDropDownList1.SelectedItem.Text = "Like" Then
-            StrAdd = String.Format("{0} {1} {2} '%{3}%'", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+            StrAdd = String.Format("{0};{1};{2};'%{3}%'", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+            strTemp = String.Format("{0} {1} {2} {3}", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
         Else
-            StrAdd = String.Format("{0} {1} {2} {3}", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+            StrAdd = String.Format("{0};{1};{2};{3};", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+            strTemp = String.Format("{0} {1} {2} {3}", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
         End If
-        RadListControl2.Items.Add(StrAdd)
+        RadListControl2.Items.Add(strTemp)
         eList.AddRange(RadListControl2.Items)
     End Sub
 
@@ -139,14 +146,38 @@ Public Class FrmCustomFilter
         rFormDataListInvoice.txTemp.Text = QrBuilderValue()
         rFormDataListInvoice.txFilter.Clear()
         rFormDataListInvoice.txFilter.Text = LTrim(RTrim(Replace(rFormDataListInvoice.txTemp.Text, ";", " ", 1, -1, CompareMethod.Binary)))
+        Dim sbFilter As New StringBuilder
+        For Each st As Telerik.WinControls.UI.RadListDataItem In RadListControl2.Items
+            sbFilter.Append(st).Append(" ")
+        Next
+        mdlstring.SqlFilter(sbFilter.ToString)
         Me.Dispose()
     End Sub
 
-    Private Sub WriteQueryFilter()
-        Dim lines As String() = New String(RadListControl1.Items.Count - 1) {}
+    Private Sub SqlSelectKolom(ByVal tableName As String, Optional ByVal Opsi As String = "")
+        Dim sqlAdapter As MySqlDataReader = Nothing
+        Dim FieldNamaKolom As New List(Of String)
+        Dim FieldKolomKomen As New List(Of String)
+        Try
 
-        IO.File.WriteAllLines(IO.Path.Combine(Environment.CurrentDirectory & "Filter.txt"), lines)
+            Dim comandpilih As String = "SELECT Column_Name, Column_Comment FROM information_schema.Columns WHERE table_name = '" & tableName & "'" & Opsi
+            Dim sqlCmd As New MySqlCommand()
+            sqlCmd.CommandText = comandpilih
+            sqlCmd.Connection = mdlCom.vConn
+            Dim dt As New DataTable()
+            sqlAdapter = sqlCmd.ExecuteReader
+            FieldNamaKolom.Clear()
+            FieldKolomKomen.Clear()
 
+            Do While sqlAdapter.Read
+                FieldNamaKolom.Add(sqlAdapter.Item("Column_Name"))
+                FieldKolomKomen.Add(sqlAdapter.Item("Column_Comment"))
+            Loop
+
+
+        Catch ex As Exception
+            sqlAdapter = Nothing
+        End Try
     End Sub
 
 

@@ -590,4 +590,8 @@ Public Class FormAdvancedSqlBackup
                                RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
         End Try
     End Sub
+
+    Private Sub chAutoSave_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles chAutoSave.ToggleStateChanged
+
+    End Sub
 End Class

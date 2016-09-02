@@ -22,9 +22,8 @@ Partial Class rFormListPelanggan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem6 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.txFilter = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.rDropInvoiceType = New Telerik.WinControls.UI.RadDropDownList()
         Me.btnFilter = New Telerik.WinControls.UI.RadButton()
@@ -85,12 +84,10 @@ Partial Class rFormListPelanggan
         Me.rDropInvoiceType.AutoSize = False
         Me.rDropInvoiceType.BackColor = System.Drawing.Color.Transparent
         Me.rDropInvoiceType.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RadListDataItem4.Text = "Client ID Tax"
-        RadListDataItem5.Text = "Client Name"
-        RadListDataItem6.Text = "Address"
+        RadListDataItem3.Text = "Client ID Tax"
+        RadListDataItem4.Text = "Client Name"
+        Me.rDropInvoiceType.Items.Add(RadListDataItem3)
         Me.rDropInvoiceType.Items.Add(RadListDataItem4)
-        Me.rDropInvoiceType.Items.Add(RadListDataItem5)
-        Me.rDropInvoiceType.Items.Add(RadListDataItem6)
         Me.rDropInvoiceType.Location = New System.Drawing.Point(0, 3)
         Me.rDropInvoiceType.Name = "rDropInvoiceType"
         Me.rDropInvoiceType.NullText = "Filter Field"

@@ -22,14 +22,14 @@ Partial Class FrmCustomFilter
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim RadListDataItem9 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem10 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem11 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem12 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem13 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem14 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem15 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem16 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem6 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem7 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem8 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.RadListControl1 = New Telerik.WinControls.UI.RadListControl()
         Me.RadDropDownList1 = New Telerik.WinControls.UI.RadDropDownList()
         Me.RadTextBox1 = New Telerik.WinControls.UI.RadTextBox()
@@ -80,22 +80,22 @@ Partial Class FrmCustomFilter
         Me.RadDropDownList1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.RadDropDownList1.DefaultItemsCountInDropDown = 8
         Me.RadDropDownList1.Dock = System.Windows.Forms.DockStyle.Fill
-        RadListDataItem9.Text = "="
-        RadListDataItem10.Text = "<"
-        RadListDataItem11.Text = "<="
-        RadListDataItem12.Text = ">"
-        RadListDataItem13.Text = ">="
-        RadListDataItem14.Text = "<>"
-        RadListDataItem15.Text = "Like"
-        RadListDataItem16.Text = "Not Like"
-        Me.RadDropDownList1.Items.Add(RadListDataItem9)
-        Me.RadDropDownList1.Items.Add(RadListDataItem10)
-        Me.RadDropDownList1.Items.Add(RadListDataItem11)
-        Me.RadDropDownList1.Items.Add(RadListDataItem12)
-        Me.RadDropDownList1.Items.Add(RadListDataItem13)
-        Me.RadDropDownList1.Items.Add(RadListDataItem14)
-        Me.RadDropDownList1.Items.Add(RadListDataItem15)
-        Me.RadDropDownList1.Items.Add(RadListDataItem16)
+        RadListDataItem1.Text = "="
+        RadListDataItem2.Text = "<"
+        RadListDataItem3.Text = "<="
+        RadListDataItem4.Text = ">"
+        RadListDataItem5.Text = ">="
+        RadListDataItem6.Text = "<>"
+        RadListDataItem7.Text = "Like"
+        RadListDataItem8.Text = "Not Like"
+        Me.RadDropDownList1.Items.Add(RadListDataItem1)
+        Me.RadDropDownList1.Items.Add(RadListDataItem2)
+        Me.RadDropDownList1.Items.Add(RadListDataItem3)
+        Me.RadDropDownList1.Items.Add(RadListDataItem4)
+        Me.RadDropDownList1.Items.Add(RadListDataItem5)
+        Me.RadDropDownList1.Items.Add(RadListDataItem6)
+        Me.RadDropDownList1.Items.Add(RadListDataItem7)
+        Me.RadDropDownList1.Items.Add(RadListDataItem8)
         Me.RadDropDownList1.Location = New System.Drawing.Point(210, 23)
         Me.RadDropDownList1.Name = "RadDropDownList1"
         Me.RadDropDownList1.Padding = New System.Windows.Forms.Padding(0, 2, 0, 2)

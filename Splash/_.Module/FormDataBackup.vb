@@ -70,14 +70,14 @@ Public Class FormDataBackup
             End If
             If forceSave Then
                 File.WriteAllText(Me.KoneksiSettingFile, Me.txSettingKoneksi.Text.Trim())
-                mdlstring.EncryptRansText(Me.KoneksiSettingFile, "MyKey@AG")
+                mdlstring.EncryptRansText(Me.KoneksiSettingFile, mdlstring.defaultKey)
             ElseIf File.Exists(Me.KoneksiSettingFile) Then
                 File.WriteAllText(Me.KoneksiSettingFile, Me.txSettingKoneksi.Text.Trim())
-                mdlstring.EncryptRansText(Me.KoneksiSettingFile, "MyKey@AG")
+                mdlstring.EncryptRansText(Me.KoneksiSettingFile, mdlstring.defaultKey)
             End If
             Return True
         Catch ex As Exception
-            RadMessageBox.Show(("Gagal WriteSetting File" & _
+            RadMessageBox.Show(("Gagal menyimpan Setting Koneksi String" &
                             Environment.NewLine & Environment.NewLine & ex.Message), "Invalid Directory", MessageBoxButtons.OK, RadMessageIcon.Exclamation, MessageBoxDefaultButton.Button1)
             Return False
         End Try
@@ -85,7 +85,7 @@ Public Class FormDataBackup
 
     Private Sub LoadSettings()
         Try
-            mdlstring.DecryptRansText(Me.KoneksiSettingFile, "MyKey@AG")
+            mdlstring.DecryptRansText(Me.KoneksiSettingFile, mdlstring.defaultKey)
             If File.Exists(Me.KoneksiSettingFile) Then
                 Me.txSettingKoneksi.Text = File.ReadAllText(Me.KoneksiSettingFile)
                 Me.chAutoSave.Checked = True
@@ -402,7 +402,5 @@ Public Class FormDataBackup
         End If
     End Sub
 
-    Private Sub chAutoSave_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles chAutoSave.ToggleStateChanged
 
-    End Sub
 End Class

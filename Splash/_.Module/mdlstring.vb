@@ -304,4 +304,16 @@ Friend NotInheritable Class mdlstring
         End If
     End Sub
 
+    Public Shared Function SqlFilter(ByVal SqlCommand As String, Optional ByVal Opsi As String = "") As String
+        Dim str As String
+        str = SqlCommand & " " & Opsi
+        If Not IO.File.Exists(Environment.CurrentDirectory & "\filter.txt") Then
+            'IO.File.Create(Environment.CurrentDirectory & "\filter.txt")
+            IO.File.WriteAllText(Environment.CurrentDirectory & "\filter.txt", str)
+            ' CodeLibs.CodeMethod.EncryptTextFile(Environment.CurrentDirectory & "\filter.txt", mdlstring.defaultKey)
+        Else
+            IO.File.WriteAllText(Environment.CurrentDirectory & "\filter.txt", str)
+        End If
+        Return IO.File.ReadAllText(Environment.CurrentDirectory & "\filter.txt")
+    End Function
 End Class

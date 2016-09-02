@@ -231,13 +231,12 @@ Public Class rFormListPelanggan
     End Sub
 
     Private Sub btnFilter_Click(sender As Object, e As EventArgs) Handles btnFilter.Click
-        If rDropInvoiceType.SelectedIndex = 0 Then
-            LoadDataPelanggan(" WHERE `Client_IdTax` Like '%" & txFilter.Text.Trim() & "%'")
-        ElseIf rDropInvoiceType.SelectedIndex = 1 Then
-            LoadDataPelanggan(" WHERE `Client_Name` Like '%" & txFilter.Text.Trim() & "%'")
-        ElseIf rDropInvoiceType.SelectedIndex = 1 Then
+        'If rDropInvoiceType.SelectedIndex = 0 Then
+        '    LoadDataPelanggan(" WHERE `Client_IdTax` Like '%" & txFilter.Text.Trim() & "%'")
+        'ElseIf rDropInvoiceType.SelectedIndex = 1 Then
+        '    LoadDataPelanggan(" WHERE `Client_Name` Like '%" & txFilter.Text.Trim() & "%'")
+        'End If
 
-        End If
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
