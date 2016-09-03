@@ -114,7 +114,11 @@ Public Class rFormDataListInvoice
 
             sqlreader.Close()
 
-            Label1.Text = String.Format("Total Record : {0}", dg.Rows.Count)
+            If txFilter.Text <> "" Then
+                Label1.Text = String.Format("Total  Record (Filter): {0}", dg.Rows.Count)
+            Else
+                Label1.Text = String.Format("Total Record : {0}", dg.Rows.Count)
+            End If
 
             If dg.Rows.Count > 0 Then
                 Dim stringInvoice As String() = Strings.Split(dg.Rows(dg.Rows.Count - 1).Cells(2).Value, "/", -1, CompareMethod.Binary)
@@ -122,6 +126,7 @@ Public Class rFormDataListInvoice
             End If
 
         Catch ex As Exception
+            sqlreader = Nothing
             ProjectData.SetProjectError(ex)
 
             RadMessageBox.Show("Error, failed_getlistInvoice : " & ex.Source & vbNewLine &

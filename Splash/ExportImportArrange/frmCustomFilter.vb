@@ -31,7 +31,7 @@ Public Class FrmCustomFilter
             Return
         Else
             strQryLoad = rFormDataListInvoice.txTemp.Text.Split(New String() {";"}, StringSplitOptions.RemoveEmptyEntries)
-            RadListControl2.Items.AddRange((eList))
+            RadListControl2.Items.AddRange((IO.File.ReadAllLines(Environment.CurrentDirectory & "\filter.txt")))
         End If
     End Sub
 
@@ -177,13 +177,16 @@ Public Class FrmCustomFilter
 
         rFormDataListInvoice.txTemp.Text = querybuildervalue()
 
-        Dim listquery As Integer = RadListControl2.Items.Count - 1
+        Dim listquery As Integer = RadListControl2.Items.Count
 
-        Dim item As String() = New String(listquery - 1) {}
+        Dim item As String() = New String((listquery - 1)) {}
 
-        For i As Integer = 0 To (RadListControl2.Items.Count - 1)
-            item(i) = RadListControl2.Items(i).Text
-        Next i
+        Dim i As Integer = 0
+
+        Do While Not (i = listquery)
+            item(i) = RadListControl2.Items(i).Text.ToString
+            Interlocked.Increment(i)
+        Loop
 
         IO.File.WriteAllLines(Environment.CurrentDirectory & "\filter.txt", item)
 
