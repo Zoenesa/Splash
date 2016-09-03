@@ -35,12 +35,12 @@ Partial Class rFormDataListInvoice
         Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
         Me.btnFilter = New Telerik.WinControls.UI.RadButton()
         Me.RadStatusStrip1 = New Telerik.WinControls.UI.RadStatusStrip()
+        Me.Label1 = New Telerik.WinControls.UI.RadLabelElement()
         Me.btnErase = New Telerik.WinControls.UI.RadButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.RadCheckBox1 = New Telerik.WinControls.UI.RadCheckBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.txTemp = New Telerik.WinControls.UI.RadTextBox()
-        Me.Label1 = New Telerik.WinControls.UI.RadLabelElement()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txFilter, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnEdit, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,11 +115,11 @@ Partial Class rFormDataListInvoice
         Me.txFilter.Enabled = False
         Me.txFilter.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txFilter.ForeColor = System.Drawing.Color.Black
-        Me.txFilter.Location = New System.Drawing.Point(5, 4)
+        Me.txFilter.Location = New System.Drawing.Point(118, 4)
         Me.txFilter.Name = "txFilter"
         Me.txFilter.NullText = "Filter"
         Me.txFilter.Padding = New System.Windows.Forms.Padding(3, 0, 0, 1)
-        Me.txFilter.Size = New System.Drawing.Size(451, 23)
+        Me.txFilter.Size = New System.Drawing.Size(338, 23)
         Me.txFilter.TabIndex = 2
         Me.txFilter.ThemeName = "Office2010Black"
         CType(Me.txFilter.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.SystemColors.Control
@@ -238,12 +238,21 @@ Partial Class rFormDataListInvoice
         '
         Me.RadStatusStrip1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.RadStatusStrip1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.Label1})
-        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 368)
+        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 366)
         Me.RadStatusStrip1.Name = "RadStatusStrip1"
-        Me.RadStatusStrip1.Size = New System.Drawing.Size(966, 23)
+        Me.RadStatusStrip1.Size = New System.Drawing.Size(966, 29)
         Me.RadStatusStrip1.TabIndex = 5
         Me.RadStatusStrip1.Text = "RadStatusStrip1"
         Me.RadStatusStrip1.ThemeName = "Office2010Black"
+        '
+        'Label1
+        '
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Padding = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.RadStatusStrip1.SetSpring(Me.Label1, True)
+        Me.Label1.Text = "Total Records"
+        Me.Label1.TextWrap = True
         '
         'btnErase
         '
@@ -267,6 +276,7 @@ Partial Class rFormDataListInvoice
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.txTemp)
         Me.Panel1.Controls.Add(Me.dg)
         Me.Panel1.Controls.Add(Me.RadCheckBox1)
         Me.Panel1.Controls.Add(Me.RadPanel1)
@@ -311,33 +321,23 @@ Partial Class rFormDataListInvoice
         Me.txTemp.BackColor = System.Drawing.Color.Transparent
         Me.txTemp.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txTemp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.txTemp.Location = New System.Drawing.Point(12, 60)
+        Me.txTemp.Location = New System.Drawing.Point(27, 217)
         Me.txTemp.Name = "txTemp"
         Me.txTemp.NullText = "Filter"
         Me.txTemp.Padding = New System.Windows.Forms.Padding(3, 0, 0, 1)
-        Me.txTemp.Size = New System.Drawing.Size(339, 23)
+        Me.txTemp.Size = New System.Drawing.Size(544, 23)
         Me.txTemp.TabIndex = 3
         Me.txTemp.TabStop = False
         Me.txTemp.ThemeName = "Office2010Black"
-        '
-        'Label1
-        '
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Padding = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.RadStatusStrip1.SetSpring(Me.Label1, True)
-        Me.Label1.Text = "Total Records"
-        Me.Label1.TextWrap = True
         '
         'rFormDataListInvoice
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(966, 391)
+        Me.ClientSize = New System.Drawing.Size(966, 395)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.RadStatusStrip1)
-        Me.Controls.Add(Me.txTemp)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.KeyPreview = True
         Me.MinimizeBox = False

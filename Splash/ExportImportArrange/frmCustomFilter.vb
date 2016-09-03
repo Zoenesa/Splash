@@ -103,39 +103,50 @@ Public Class FrmCustomFilter
     Private Sub RadButton4_Click(sender As Object, e As EventArgs) Handles RadButton4.Click
         Dim StrAdd As String = ""
         Dim strTemp As String = ""
-        If txExpresion.Text.Trim() <> "" Then
-            If RadDropDownList1.SelectedItem.Text = "Like" Then
-                StrAdd = String.Format("{0} {1} {2} '%{3}%'", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
-                strTemp = String.Format("{0} {1} {2} {3}", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+        If RadListControl1.SelectedIndex >= 0 Then
+            If txExpresion.Text.Trim() <> "" Then
+                If RadDropDownList1.SelectedItem.Text = "Like" Then
+                    StrAdd = String.Format("{0} {1} {2} '%{3}%'", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+                    strTemp = String.Format("{0} {1} {2} '%{3}%'", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+
+                Else
+                    StrAdd = String.Format("{0} {1} {2} {3}", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+                    strTemp = String.Format("{0} {1} {2} {3}", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+
+                End If
+                RadListControl2.Items.Add(strTemp)
             Else
-                StrAdd = String.Format("{0} {1} {2} {3}", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
-                strTemp = String.Format("{0} {1} {2} {3}", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+                RadMessageBox.Show("AND Expression NULL", "", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
+                Return
             End If
         Else
-            RadMessageBox.Show("AND Expression NULL", "", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
+            RadMessageBox.Show("SELECT FIELD NULL", "", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
             Return
         End If
-
-        RadListControl2.Items.Add(strTemp)
         'eList.AddRange(RadListControl2.Items)
     End Sub
 
     Private Sub RadButton5_Click(sender As Object, e As EventArgs) Handles RadButton5.Click
         Dim StrAdd As String = ""
         Dim strTemp As String = ""
-        If txExpresion.Text.Trim <> "" Then
-            If RadDropDownList1.SelectedItem.Text = "Like" Then
-                StrAdd = String.Format("{0} {1} {2} '%{3}%'", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
-                strTemp = String.Format("{0} {1} {2} {3}", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+        If RadListControl1.SelectedIndex >= 0 Then
+            If txExpresion.Text.Trim <> "" Then
+                If RadDropDownList1.SelectedItem.Text = "Like" Then
+                    StrAdd = String.Format("{0} {1} {2} '%{3}%'", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+                    strTemp = String.Format("{0} {1} {2} {3}", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+                Else
+                    StrAdd = String.Format("{0} {1} {2} {3}", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+                    strTemp = String.Format("{0} {1} {2} {3}", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+                End If
+                RadListControl2.Items.Add(strTemp)
             Else
-                StrAdd = String.Format("{0} {1} {2} {3}", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
-                strTemp = String.Format("{0} {1} {2} {3}", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+                RadMessageBox.Show("OR Expression NULL", "", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
+                Return
             End If
         Else
-            RadMessageBox.Show("OR Expression NULL", "", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
+            RadMessageBox.Show("SELECT FIELD NULL", "", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
             Return
         End If
-        RadListControl2.Items.Add(strTemp)
         'eList.AddRange(RadListControl2.Items)
     End Sub
 
@@ -168,7 +179,6 @@ Public Class FrmCustomFilter
         For Each Str2 As Telerik.WinControls.UI.RadListDataItem In RadListControl2.Items
             Sb.Append(Str2.Text).AppendLine()
         Next
-        eList.AddRange(RadListControl2.Items)
         querybuildervalue = LTrim(RTrim(Replace(Sb.ToString, ";", ";", 1, -1, CompareMethod.Binary)))
     End Function
 
