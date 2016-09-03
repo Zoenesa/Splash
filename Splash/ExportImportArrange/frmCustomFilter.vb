@@ -8,12 +8,19 @@ Imports Telerik.WinControls.UI.Data
 
 Public Class FrmCustomFilter
 
+    Public Shared LoadTabel As String = "invoicedata"
+
     Private Sub FrmCustomFilter_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
         'rFormMain.LoadIcon(True, Me)
-        GetInvData()
-        LoadField(rFormDataListInvoice, rFormDataListInvoice.dg)
+        'GetInvData()
+        'LoadField(rFormDataListInvoice, rFormDataListInvoice.dg)
         'LoadDataColumn()
+
+        SqlSelectKolom(LoadTabel)
+
+        RadListControl1.Items.AddRange(FieldNamaKolom)
+
         RadDropDownList1.ReadOnly = False
         Dim strQryLoad As String()
         Dim StrFilter As String
@@ -93,7 +100,7 @@ Public Class FrmCustomFilter
             strTemp = String.Format("{0} {1} {2} {3}", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
         End If
         RadListControl2.Items.Add(strTemp)
-        eList.AddRange(RadListControl2.Items)
+        'eList.AddRange(RadListControl2.Items)
     End Sub
 
     Private Sub RadButton5_Click(sender As Object, e As EventArgs) Handles RadButton5.Click
@@ -107,12 +114,12 @@ Public Class FrmCustomFilter
             strTemp = String.Format("{0} {1} {2} {3}", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
         End If
         RadListControl2.Items.Add(strTemp)
-        eList.AddRange(RadListControl2.Items)
+        'eList.AddRange(RadListControl2.Items)
     End Sub
 
     Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
         RadListControl2.Items.Remove(RadListControl2.SelectedItem)
-        eList.Remove(RadListControl2.SelectedItem)
+        'eList.Remove(RadListControl2.SelectedItem)
     End Sub
 
     Public ListTable As List(Of String)
@@ -154,6 +161,7 @@ Public Class FrmCustomFilter
         mdlstring.SqlFilter(sbFilter.ToString)
         Me.Dispose()
     End Sub
+
     Dim FieldNamaKolom As New List(Of String)
     Dim FieldKolomKomen As New List(Of String)
 
@@ -178,10 +186,13 @@ Public Class FrmCustomFilter
                 FieldKolomKomen.Add(sqlAdapter.Item("Column_Comment"))
             Loop
 
-            RadListControl1.Items.AddRange(FieldNamaKolom)
+            'RadListControl1.Items.AddRange(FieldNamaKolom)
+
+            sqlAdapter.Close()
 
         Catch ex As Exception
             sqlAdapter = Nothing
+            mdlCom.ShowError(ex.Message.ToString)
         End Try
     End Sub
 
