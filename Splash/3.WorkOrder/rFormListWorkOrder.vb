@@ -1,7 +1,7 @@
 ﻿Imports Telerik, Telerik.WinControls, Telerik.WinControls.UI
 Imports Microsoft.VisualBasic.CompilerServices, MySql.Data.MySqlClient
 Imports System.Threading
-Imports Splash.mdlstring
+Imports Splash.Konektor.mdlstring
 Imports System.Runtime.CompilerServices
 Imports Splash.Konektor
 

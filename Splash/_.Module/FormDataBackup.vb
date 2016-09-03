@@ -6,7 +6,8 @@ Imports MySql.Data.MySqlClient
 Imports System.Security.Cryptography, System.Security.Cryptography.CipherMode
 Imports System.Text
 Imports System.ComponentModel
-
+Imports Splash.Konektor.mdlstring
+Imports Splash.Konektor
 
 Public Class FormDataBackup
 
@@ -93,7 +94,7 @@ Public Class FormDataBackup
                 Me.chAutoSave.Checked = False
             End If
         Catch ex As Exception
-            RadMessageBox.Show(("Gagal Load Setting File" & _
+            RadMessageBox.Show(("Gagal Load Setting File" &
                              Environment.NewLine & Environment.NewLine & ex.Message), "Invalid Directory", MessageBoxButtons.OK, RadMessageIcon.Exclamation, MessageBoxDefaultButton.Button1)
         End Try
     End Sub
@@ -123,7 +124,7 @@ Public Class FormDataBackup
             End If
             Return True
         Catch exception As Exception
-            RadMessageBox.Show(("File Path yang di tentukan tidak valid. Tekan [Select SQL] untuk menentukan file sql." & _
+            RadMessageBox.Show(("File Path yang di tentukan tidak valid. Tekan [Select SQL] untuk menentukan file sql." &
                              Environment.NewLine & Environment.NewLine & exception.Message), "Invalid Directory", MessageBoxButtons.OK, RadMessageIcon.Exclamation, MessageBoxDefaultButton.Button1)
             Return False
         End Try
@@ -221,7 +222,7 @@ Public Class FormDataBackup
                 If (lastError Is Nothing) Then
                     RadMessageBox.Show("Sukses Import Database.", "Import/Restore Database", MessageBoxButtons.OK, RadMessageIcon.Info, MessageBoxDefaultButton.Button1)
                 Else
-                    RadMessageBox.Show("Sukses Import Database, terdapat Error." & vbNewLine & _
+                    RadMessageBox.Show("Sukses Import Database, terdapat Error." & vbNewLine &
                                        lastError.ToString, "Import/Restore Database", MessageBoxButtons.OK, RadMessageIcon.Exclamation, MessageBoxDefaultButton.Button1)
                 End If
             Catch ex As Exception
@@ -369,10 +370,10 @@ Public Class FormDataBackup
         ElseIf (Me.mb.LastError Is Nothing) Then
             Me.pbRowInAllTable.Value1 = Me.pbRowInAllTable.Maximum
             Me.pbRowInCurTable.Value1 = Me.pbRowInCurTable.Maximum
-            Me.pbTable.Value1 = Me.pbTable.Maximum
+            Me.pbtable.Value1 = Me.pbtable.Maximum
             Me.pbRowInCurTable.Text = (Me.pbRowInCurTable.Value1 & " of " & Me.pbRowInCurTable.Maximum)
             Me.pbRowInAllTable.Text = (Me.pbRowInAllTable.Value1 & " of " & Me.pbRowInAllTable.Maximum)
-            Me.pbTable.Text = (Me._currentTableIndex & " of " & Me._totalTables)
+            Me.pbtable.Text = (Me._currentTableIndex & " of " & Me._totalTables)
             Me.Refresh()
             RadMessageBox.Show(("Sukses Dump database, tersimpan pada:" & vbNewLine & "" & FormDataBackup.targetFile), "Informasi",
                                MessageBoxButtons.OK, RadMessageIcon.Info,

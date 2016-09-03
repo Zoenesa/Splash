@@ -1,5 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-Imports Splash.mdlstring
+Imports Splash.Konektor.mdlstring
 Imports Microsoft.VisualBasic
 Imports Microsoft.VisualBasic.CompilerServices
 Imports System

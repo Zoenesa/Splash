@@ -3,7 +3,7 @@ Imports System, System.Threading, System.Runtime, System.Runtime.InteropServices
 Imports Microsoft, Microsoft.VisualBasic, Microsoft.VisualBasic.CompilerServices
 Imports System.Data.OleDb
 Imports MySql.Data.MySqlClient
-Imports Splash.mdlstring
+Imports Splash.Konektor.mdlstring
 Imports System.Data.Common
 Imports Telerik.WinControls.UI.Data
 Imports Splash.Konektor
