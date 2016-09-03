@@ -289,7 +289,6 @@
     <Compile Include="_.Module\InisialisasiPasswordMeter.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="_.Module\mdlCom.vb" />
     <Compile Include="_.Module\mdlstring.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -476,6 +475,12 @@
     <Content Include="Libs\TelerikCommon.dll" />
     <Content Include="Resources\160820004354.sql" />
     <Content Include="Resources\160827080321.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Konektor\Konektor\Konektor.vbproj">
+      <Project>{f7fbb2bb-8c7f-4f4b-b451-e7f7b96cfd01}</Project>
+      <Name>Konektor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="..\packages\Fody.1.29.4\build\dotnet\Fody.targets" Condition="Exists('..\packages\Fody.1.29.4\build\dotnet\Fody.targets')" />

@@ -1,5 +1,6 @@
 ﻿Imports Setting.Config.Profile.Profile
 Imports Telerik, Telerik.WinControls, Telerik.WinControls.UI
+Imports Splash.Konektor
 
 Public Class rFormInisialisasiKoneksi
 
@@ -151,9 +152,9 @@ Public Class rFormInisialisasiKoneksi
         mdlCom.cPort = txPort.Text
         mdlCom.cDbname = txdbname.Text
         mdlCom.cPass = txPass.Text
-        Dim flag As Boolean = Splash.mdlCom.CekKoneksiSql
-        If flag = True Then
-            RadMessageBox.Show("Koneksi ke database Sukses." & vbNewLine & _
+        Dim flag As Boolean = mdlCom.CekKoneksiSql
+        If flag Then
+            RadMessageBox.Show("Koneksi ke database Sukses." & vbNewLine &
                                 "Informasi Koneksi :" & vbNewLine &
                                 "Server: " & mdlCom.uhost & vbNewLine &
                                 "Database: " & mdlCom.cDbname,

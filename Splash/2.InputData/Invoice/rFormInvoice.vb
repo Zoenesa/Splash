@@ -4,7 +4,7 @@ Imports Microsoft, Microsoft.VisualBasic, Microsoft.VisualBasic.CompilerServices
 Imports System.Data.OleDb
 Imports MySql.Data.MySqlClient
 Imports Splash.mdlstring
-
+Imports Splash.Konektor
 
 Public Class rFormInvoice
 

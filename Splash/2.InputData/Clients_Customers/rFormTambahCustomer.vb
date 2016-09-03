@@ -3,6 +3,7 @@ Imports System, System.Threading, System.Runtime, System.Runtime.InteropServices
 Imports Microsoft, Microsoft.VisualBasic, Microsoft.VisualBasic.CompilerServices
 Imports System.Data.OleDb
 Imports MySql.Data.MySqlClient
+Imports Splash.Konektor
 
 Public Class rFormTambahCustomer
 
@@ -70,7 +71,7 @@ Public Class rFormTambahCustomer
 
         Dim strAlamat As String
         Dim strJalan As String = txAlamat.Text.Trim()
- 
+
         Dim strTelpon As String = "(" & txTelpon1.Text.Trim() & " " & txTelpon2.Text.Trim() & ")"
         strAlamat = String.Format("{0};Kel.0: {1};Propinsi: {2};Kec.: {3};Telpon.: {4};KodePos: {5};email: {6}",
                                   strJalan, Kabupaten.Text.Trim(), Propinsi.Text.Trim(),
@@ -188,5 +189,5 @@ Public Class rFormTambahCustomer
     Private Sub Kabupaten_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles Kabupaten.SelectedIndexChanged
         LoadDistricts("WHERE `regency_id` = " & Kabupaten.SelectedValue & "")
     End Sub
-     
+
 End Class

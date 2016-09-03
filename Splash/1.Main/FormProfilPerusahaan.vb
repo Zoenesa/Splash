@@ -3,6 +3,7 @@ Imports Microsoft.VisualBasic.CompilerServices
 Imports MySql.Data.MySqlClient
 Imports System.Threading
 Imports System.Text
+Imports Splash.Konektor
 
 Public Class FormProfilPerusahaan
     Private isEdit As Boolean

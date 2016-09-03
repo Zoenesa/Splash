@@ -3,6 +3,7 @@ Imports System.Runtime.CompilerServices, System.Windows.Forms, Microsoft.VisualB
 Imports System.Threading
 Imports System.IO
 Imports MySql.Data.MySqlClient
+Imports Splash.Konektor
 
 Public Class rFormListPelanggan
     Private ModePilih As Boolean
@@ -138,13 +139,13 @@ Public Class rFormListPelanggan
                     Conversions.ToBoolean(
                         Me.dg.CurrentRow.Cells.Item(0).Value), False, True))
         ParseDataAlamat(dg.CurrentRow.Cells.Item(4).Value)
-        Dim strMessageDetail As String = ("Alamat: " & ParsedAlamat(0) & vbNewLine & _
-                           "Kel.: " & ParsedAlamat(1) & vbNewLine & _
-                           "Kec.: " & ParsedAlamat(2) & vbNewLine & _
-                           "Kab./Kota: " & ParsedAlamat(3) & vbNewLine & _
-                           "Propinsi: " & ParsedAlamat(4) & vbNewLine & _
+        Dim strMessageDetail As String = ("Alamat: " & ParsedAlamat(0) & vbNewLine &
+                           "Kel.: " & ParsedAlamat(1) & vbNewLine &
+                           "Kec.: " & ParsedAlamat(2) & vbNewLine &
+                           "Kab./Kota: " & ParsedAlamat(3) & vbNewLine &
+                           "Propinsi: " & ParsedAlamat(4) & vbNewLine &
                            "KodePos: " & ParsedAlamat(5))
-        RadMessageBox.Show("Current Row: " & dg.CurrentRow.Cells.Item(1).Value & ", Nama: " & dg.CurrentRow.Cells.Item(3).Value, "Informasi", _
+        RadMessageBox.Show("Current Row: " & dg.CurrentRow.Cells.Item(1).Value & ", Nama: " & dg.CurrentRow.Cells.Item(3).Value, "Informasi",
                            MessageBoxButtons.OK, RadMessageIcon.Info, strMessageDetail)
     End Sub
 
@@ -165,7 +166,7 @@ Public Class rFormListPelanggan
             Me.DialogResult = System.Windows.Forms.DialogResult.No
             Me.Close()
         End If
-       
+
     End Sub
 
     Private Sub rFormListPelanggan_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -197,7 +198,7 @@ Public Class rFormListPelanggan
     End Sub
 
     Private Sub btnSelect_Click(sender As Object, e As EventArgs) Handles btnSelect.Click
-        
+
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click

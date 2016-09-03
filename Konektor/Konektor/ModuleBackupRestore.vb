@@ -15,7 +15,7 @@ Public NotInheritable Class ModuleBackupRestore
         Telerik.WinControls.RadMessageBox.Instance.AllowTheming = True
         Telerik.WinControls.RadMessageBox.Instance.ControlBox = False
         Telerik.WinControls.RadMessageBox.ShowInTaskbar = False
-        Telerik.WinControls.RadMessageBox.ThemeName = Splash.Modul.mdlCom.office2010BlackTheme1.ThemeName
+        Telerik.WinControls.RadMessageBox.ThemeName = Splash.Konektor.mdlCom.office2010BlackTheme1.ThemeName
 
     End Sub
 

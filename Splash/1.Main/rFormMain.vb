@@ -4,6 +4,7 @@ Imports MySql.Data.MySqlClient
 Imports System.Threading, System.Reflection
 Imports System.Text
 Imports System.IO
+Imports Splash.Konektor
 
 Public Class rFormMain
 

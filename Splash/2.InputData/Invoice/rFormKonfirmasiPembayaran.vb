@@ -6,6 +6,7 @@ Imports MySql.Data.MySqlClient
 Imports Splash.mdlstring
 Imports System.Data.Common
 Imports Telerik.WinControls.UI.Data
+Imports Splash.Konektor
 
 Public Class rFormKonfirmasiPembayaran
 

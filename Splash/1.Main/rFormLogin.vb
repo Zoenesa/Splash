@@ -1,6 +1,7 @@
 ﻿Imports Telerik, Telerik.WinControls, Telerik.WinControls.UI
 Imports Microsoft.VisualBasic.CompilerServices
 Imports MySql.Data.MySqlClient
+Imports Splash.Konektor
 
 Public Class rFormLogin
     Public Sub New()

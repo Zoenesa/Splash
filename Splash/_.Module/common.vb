@@ -10,6 +10,7 @@ Imports System.Diagnostics
 Imports System.Runtime.CompilerServices
 Imports System.Data.SqlClient
 Imports System.Threading
+Imports Splash.Konektor
 
 Public Class common
     <DebuggerNonUserCode> _

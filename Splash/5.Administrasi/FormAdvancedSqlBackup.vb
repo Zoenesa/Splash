@@ -8,6 +8,7 @@ Imports System.Threading
 Imports System.Windows.Forms
 Imports FastColoredTextBoxNS
 Imports MySql.Data.MySqlClient
+Imports Splash.Konektor
 Imports Telerik
 Imports Telerik.WinControls
 Imports Telerik.WinControls.UI
@@ -326,7 +327,7 @@ Public Class FormAdvancedSqlBackup
             RadGridView1.Columns.Clear()
 
             sqlDT = New DataTable
-            Dim sqlstring As String = txsqlCommandtext.Text.Trim()
+            Dim sqlstring As String = txSqlCommandText.Text.Trim()
             Dim sqllower As String = sqlstring.ToLower
             Dim isExecution As Boolean = False
             Using conn As New MySqlConnection(ModuleBackupRestore.SqldbConnectionString)

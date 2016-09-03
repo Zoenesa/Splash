@@ -3,6 +3,7 @@ Imports Microsoft.VisualBasic.CompilerServices, MySql.Data.MySqlClient
 Imports System.Threading
 Imports Splash.mdlstring
 Imports System.Runtime.CompilerServices
+Imports Splash.Konektor
 
 Public Class rFormListWorkOrder
     Private iduserEdit As String

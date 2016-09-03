@@ -8,8 +8,8 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Konektor")> 
-<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyTitle("Konektor")>
+<Assembly: AssemblyDescription("Database Konektor")>
 <Assembly: AssemblyCompany("")> 
 <Assembly: AssemblyProduct("Konektor")> 
 <Assembly: AssemblyCopyright("Copyright ©  2016")> 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("3.0.0.0")>
-<Assembly: AssemblyFileVersion("3.0.0.0")>
+<Assembly: AssemblyVersion("3.1.0.0")>
+<Assembly: AssemblyFileVersion("3.1.0.0")>

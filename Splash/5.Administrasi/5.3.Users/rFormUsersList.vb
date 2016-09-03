@@ -2,6 +2,7 @@
 Imports Telerik, Telerik.WinControls, Telerik.WinControls.UI
 Imports System.Threading
 Imports System.Runtime.CompilerServices
+Imports Splash.Konektor
 
 Public Class rFormUsersList
 
@@ -210,16 +211,16 @@ Public Class rFormUsersList
     'End Sub
 
     Public Sub SelAllRow(ByVal GridView As DataGridView, ByVal ColumnName As String)
-        Dim UnCheckedItems = From Rows In GridView.Rows.Cast(Of DataGridViewRow)() _
-                    Where CBool(Rows.Cells(ColumnName).Value) = False
+        Dim UnCheckedItems = From Rows In GridView.Rows.Cast(Of DataGridViewRow)()
+                             Where CBool(Rows.Cells(ColumnName).Value) = False
         For Each item In UnCheckedItems
             item.Cells(ColumnName).Value = True
         Next
     End Sub
 
     Public Sub ClearAllRow(ByVal GridView As DataGridView, ByVal ColumnName As String)
-        Dim UnCheckedItems = From Rows In GridView.Rows.Cast(Of DataGridViewRow)() _
-                    Where CBool(Rows.Cells(ColumnName).Value) = True
+        Dim UnCheckedItems = From Rows In GridView.Rows.Cast(Of DataGridViewRow)()
+                             Where CBool(Rows.Cells(ColumnName).Value) = True
         For Each item In UnCheckedItems
             item.Cells(ColumnName).Value = False
         Next

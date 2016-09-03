@@ -3,6 +3,7 @@
      Telerik, Telerik.WinControls, Telerik.WinControls.UI, MySql.Data.MySqlClient
 Imports MySql.Data.MySqlClient.MySqlBackup
 Imports System.Data.Odbc
+Imports Splash.Konektor
 
 Public Class rFormImport
 
@@ -24,7 +25,7 @@ Public Class rFormImport
         If (nfile = "") Then
             Me.RadTextBox3.Text = ""
         ElseIf (Not (IO.File.Exists(nfile))) Then
-            RadMessageBox.Show("File tidak ditemukan / kosong!." & vbNewLine & _
+            RadMessageBox.Show("File tidak ditemukan / kosong!." & vbNewLine &
                                nfile, "Preview CSV", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
         Else
             Try
@@ -33,7 +34,7 @@ Public Class rFormImport
                 Me.RadTextBox3.Text = IO.File.ReadAllText(nfile)
                 MyBase.ResumeLayout()
             Catch ex As Exception
-                RadMessageBox.Show("Error." & ex.Source & vbNewLine & _
+                RadMessageBox.Show("Error." & ex.Source & vbNewLine &
                                    "Message : ", "Error", MessageBoxButtons.OK, RadMessageIcon.Error)
             End Try
         End If
@@ -141,7 +142,7 @@ Public Class rFormImport
                         Next
                         TextFileTable.Rows.Add(Row)
                     End If
-                Catch ex As  _
+                Catch ex As _
                 Microsoft.VisualBasic.FileIO.MalformedLineException
                     MsgBox("Line " & ex.Message & _
                     "is not valid and will be skipped.")

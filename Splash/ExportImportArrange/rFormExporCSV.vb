@@ -2,6 +2,7 @@
     System.Threading, Microsoft.VisualBasic.CompilerServices, _
      Telerik, Telerik.WinControls, Telerik.WinControls.UI, MySql.Data.MySqlClient
 Imports MySql.Data.MySqlClient.MySqlBackup
+Imports Splash.Konektor
 
 Public Class rFormExportCSV
 

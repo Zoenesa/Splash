@@ -1,10 +1,12 @@
 ﻿Imports PasswordMeter
 Imports Telerik, Telerik.WinControls, Telerik.WinControls.UI
 Imports Microsoft.VisualBasic.CompilerServices, MySql.Data.MySqlClient
+Imports Splash.Konektor
+
 Public Class rFormGantiPassword
 
     Public Sub New()
-         
+
         InitializeComponent()
         Telerik.WinControls.RadMessageBox.Instance.AllowTheming = True
         Telerik.WinControls.RadMessageBox.Instance.ControlBox = False
@@ -26,7 +28,7 @@ Public Class rFormGantiPassword
                 Exit Select
         End Select
     End Sub
-     
+
     Private Sub txPassNext_TextChanged(sender As Object, e As EventArgs) Handles txPassNext.TextChanged
         'Dim pwdStreng As PasswordMeter.PasswordStrength = New PasswordStrength
         'pwdStreng.SetPassword(txPassNew.Text.Trim())

@@ -4,6 +4,7 @@ Imports System, System.Threading, System.Runtime, System.Runtime.InteropServices
 Imports Microsoft, Microsoft.VisualBasic, Microsoft.VisualBasic.CompilerServices
 Imports System.Data.OleDb
 Imports MySql.Data.MySqlClient
+Imports Splash.Konektor
 
 Public Class FormBAST
     Private isPilih As Boolean

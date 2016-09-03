@@ -4,6 +4,7 @@ Imports MySql.Data.MySqlClient
 Imports System.Threading, System.Reflection
 Imports System.Text
 Imports System.IO
+Imports Splash.Konektor
 
 Public Class FormTambahInvoice
 
@@ -97,7 +98,7 @@ Public Class FormTambahInvoice
         If RadPageView1.SelectedPage Is RadPageViewPage1 Then
             RadPageView1.SelectedPage = RadPageViewPage2
             RadButton2.Text = "&Lanjut"
-        ElseIf RadPageView1.SelectedPage Is RadPageViewpage2 Then
+        ElseIf RadPageView1.SelectedPage Is RadPageViewPage2 Then
             RadPageView1.SelectedPage = RadPageViewPage3
             RadButton2.Text = "&Lanjut"
         ElseIf RadPageView1.SelectedPage Is RadPageViewPage3 Then

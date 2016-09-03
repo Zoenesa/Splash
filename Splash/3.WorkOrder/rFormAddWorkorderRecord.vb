@@ -4,7 +4,7 @@ Imports System.Runtime.CompilerServices
 Imports Microsoft.VisualBasic, Microsoft.VisualBasic.CompilerServices
 Imports Telerik.WinControls
 Imports Splash.mdlstring
-
+Imports Splash.Konektor
 
 Public Class rFormAddWorkorderRecord
 

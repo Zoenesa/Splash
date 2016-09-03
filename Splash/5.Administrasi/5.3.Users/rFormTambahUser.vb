@@ -1,5 +1,6 @@
 ﻿Imports Telerik, Telerik.WinControls, Telerik.WinControls.UI
 Imports Microsoft.VisualBasic.CompilerServices
+Imports Splash.Konektor
 
 Public Class rFormTambahUser
     Private EditMode As Boolean

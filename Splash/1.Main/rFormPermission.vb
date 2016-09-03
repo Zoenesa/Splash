@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports Telerik, Telerik.WinControls, Telerik.WinControls.UI
 Imports Microsoft.VisualBasic.CompilerServices
+Imports Splash.Konektor
 
 Public Class rFormPermission
 
@@ -29,7 +30,7 @@ Public Class rFormPermission
                     rFormMain.BukaFormChild(rForm)
                 Else
                     Beep()
-                    Dim Result As DialogResult = RadMessageBox.Show("Password Administrator Anda Salah!                 " & vbNewLine & _
+                    Dim Result As DialogResult = RadMessageBox.Show("Password Administrator Anda Salah!                 " & vbNewLine &
                     "Apakah anda ingin mengulang lagi?                 ", "Perhatian", MessageBoxButtons.YesNo, RadMessageIcon.Question)
                     If Result = System.Windows.Forms.DialogResult.Yes Then
                         rTxPassword.Focus()
@@ -42,7 +43,7 @@ Public Class rFormPermission
                     End If
                 End If
             Else
-                RadMessageBox.Show("Password tidak ditemukan!" & vbNewLine & _
+                RadMessageBox.Show("Password tidak ditemukan!" & vbNewLine &
                 "UserRole Nothing!", "Error", MessageBoxButtons.OK, RadMessageIcon.Error)
                 sqlreader.Close()
                 rTxPassword.Focus()
@@ -76,7 +77,7 @@ Public Class rFormPermission
             e.Cancel = True
         End If
     End Sub
- 
+
     Private Sub rFormPermission_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
         rFormMain.LoadIcon(True, Me)

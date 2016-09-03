@@ -4,6 +4,7 @@ Imports Microsoft, Microsoft.VisualBasic, Microsoft.VisualBasic.CompilerServices
 Imports System.Data.OleDb
 Imports MySql.Data.MySqlClient
 Imports System.ComponentModel
+Imports Splash.Konektor
 
 Public Class FrmCustomerReference
     Private isEdit As Boolean

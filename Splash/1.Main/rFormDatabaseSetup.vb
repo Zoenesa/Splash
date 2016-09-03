@@ -1,10 +1,10 @@
-﻿Imports Splash.mdlCom
+﻿Imports Splash.Konektor.mdlCom
 Imports MySql.Data.MySqlClient
-'Imports Setting.IniFile
 Imports System.IO, Microsoft.VisualBasic.CompilerServices
 Imports Setting.Config.Profile.Profile
 Imports System.Windows.Forms
 Imports Telerik, Telerik.WinControls, Telerik.WinControls.UI
+Imports Splash.Konektor
 
 Public Class rFormDatabaseSetup
 
@@ -26,7 +26,7 @@ Public Class rFormDatabaseSetup
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim flag As Boolean = mdlCom.CekKoneksiSql
         If flag = True Then
-            RadMessageBox.Show("Koneksi ke database Sukses." & vbNewLine & _
+            RadMessageBox.Show("Koneksi ke database Sukses." & vbNewLine &
                                 "Informasi Koneksi :" & vbNewLine &
                                 "Server: " & mdlCom.uhost & vbNewLine &
                                 "Database: " & mdlCom.cDbname,
@@ -124,7 +124,7 @@ Public Class rFormDatabaseSetup
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Me.Dispose()
     End Sub
-     
+
     Private Sub ComboBox1_Click(sender As Object, e As EventArgs) Handles cbDropDbFile.Click
         cbDropDbFile.ShowDropDown()
     End Sub
@@ -169,9 +169,9 @@ Public Class rFormDatabaseSetup
                 myProcess.Start()
                 myProcess.WaitForExit()
 
-                RadMessageBox.Show("Sukses membackup database." & vbNewLine & newfiledb & _
-                               vbNewLine & "Pada:" & vbNewLine & _
-                               "Server: " & mdlCom.uhost & vbNewLine & _
+                RadMessageBox.Show("Sukses membackup database." & vbNewLine & newfiledb &
+                               vbNewLine & "Pada:" & vbNewLine &
+                               "Server: " & mdlCom.uhost & vbNewLine &
                                  vbNewLine & "Database: " & cbDropDbFile.Text.Trim(), "Backup Database", MessageBoxButtons.OK, RadMessageIcon.Info)
 
             Catch ex As Exception
@@ -212,9 +212,9 @@ Public Class rFormDatabaseSetup
                 myProcess.Start()
                 myProcess.WaitForExit()
 
-                RadMessageBox.Show("Restore database sukses." & vbNewLine & getEnvFile & _
+                RadMessageBox.Show("Restore database sukses." & vbNewLine & getEnvFile &
                                    vbNewLine & "Pada:" & vbNewLine _
-                                   & "Server: " & mdlCom.uhost & vbNewLine & _
+                                   & "Server: " & mdlCom.uhost & vbNewLine &
                                    "Database: " & cbDropDbFile.Text.Trim(), "Restore Database", MessageBoxButtons.OK, RadMessageIcon.Info)
 
             Catch ex As Exception
@@ -326,7 +326,7 @@ Public Class rFormDatabaseSetup
             txPass.PasswordChar = ""
         End If
     End Sub
-  
+
     Private Sub btnSetFolder_Click(sender As Object, e As EventArgs) Handles btnSetFolder.Click
         Dim nOFDialog As New FolderBrowserDialog
         nOFDialog.Description = "Pilih Folder backup"

@@ -1,5 +1,6 @@
 ﻿Imports Telerik, Telerik.WinControls, Telerik.WinControls.UI
 Imports MySql.Data.MySqlClient, Microsoft.VisualBasic.CompilerServices
+Imports Splash.Konektor
 
 Public Class rFormBackupdb
 

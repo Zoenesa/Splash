@@ -3,6 +3,7 @@ Imports System.Threading
 Imports System.Security.Cryptography
 Imports System.Text
 Imports CodeLibs
+Imports Splash.Konektor
 
 Friend NotInheritable Class mdlstring
 
