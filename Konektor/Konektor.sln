@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Splash", "Splash\Splash.vbproj", "{D7B7738C-00EA-4F5E-A92A-F7698482DBAF}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Konektor", "Konektor\Konektor.vbproj", "{F7FBB2BB-8C7F-4F4B-B451-E7F7B96CFD01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D7B7738C-00EA-4F5E-A92A-F7698482DBAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D7B7738C-00EA-4F5E-A92A-F7698482DBAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D7B7738C-00EA-4F5E-A92A-F7698482DBAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D7B7738C-00EA-4F5E-A92A-F7698482DBAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7FBB2BB-8C7F-4F4B-B451-E7F7B96CFD01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7FBB2BB-8C7F-4F4B-B451-E7F7B96CFD01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7FBB2BB-8C7F-4F4B-B451-E7F7B96CFD01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7FBB2BB-8C7F-4F4B-B451-E7F7B96CFD01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
