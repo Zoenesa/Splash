@@ -5,7 +5,6 @@ Imports Microsoft, Microsoft.VisualBasic, Microsoft.VisualBasic.CompilerServices
 Imports MySql.Data.MySqlClient
 Imports Splash.Konektor
 Imports Telerik, Telerik.WinControls
-Imports Telerik.WinControls.UI.Data
 
 Public Class FrmCustomFilter
 
@@ -23,6 +22,7 @@ Public Class FrmCustomFilter
         RadListControl1.Items.AddRange(FieldNamaKolom)
 
         RadDropDownList1.ReadOnly = False
+
         Dim strQryLoad As String()
         Dim StrFilter As String
         RadDropDownList1.SelectedIndex = 0
@@ -31,7 +31,7 @@ Public Class FrmCustomFilter
             Return
         Else
             strQryLoad = rFormDataListInvoice.txTemp.Text.Split(New String() {";"}, StringSplitOptions.RemoveEmptyEntries)
-            RadListControl2.Items.AddRange((strQryLoad))
+            RadListControl2.Items.AddRange((eList))
         End If
     End Sub
 
@@ -86,6 +86,16 @@ Public Class FrmCustomFilter
 
     End Sub
 
+    Public Function FormSqlFilter(ByVal tablename As String) As DialogResult
+        Dim dlg As DialogResult
+        Try
+
+        Catch ex As Exception
+
+        End Try
+        Return dlg
+    End Function
+
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Dispose()
     End Sub
@@ -93,13 +103,19 @@ Public Class FrmCustomFilter
     Private Sub RadButton4_Click(sender As Object, e As EventArgs) Handles RadButton4.Click
         Dim StrAdd As String = ""
         Dim strTemp As String = ""
-        If RadDropDownList1.SelectedItem.Text = "Like" Then
-            StrAdd = String.Format("{0} {1} {2} '%{3}%'", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
-            strTemp = String.Format("{0} {1} {2} {3}", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+        If txExpresion.Text.Trim() <> "" Then
+            If RadDropDownList1.SelectedItem.Text = "Like" Then
+                StrAdd = String.Format("{0} {1} {2} '%{3}%'", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+                strTemp = String.Format("{0} {1} {2} {3}", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+            Else
+                StrAdd = String.Format("{0} {1} {2} {3}", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+                strTemp = String.Format("{0} {1} {2} {3}", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+            End If
         Else
-            StrAdd = String.Format("{0} {1} {2} {3}", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
-            strTemp = String.Format("{0} {1} {2} {3}", "AND", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+            RadMessageBox.Show("AND Expression NULL", "", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
         End If
+
         RadListControl2.Items.Add(strTemp)
         'eList.AddRange(RadListControl2.Items)
     End Sub
@@ -107,12 +123,17 @@ Public Class FrmCustomFilter
     Private Sub RadButton5_Click(sender As Object, e As EventArgs) Handles RadButton5.Click
         Dim StrAdd As String = ""
         Dim strTemp As String = ""
-        If RadDropDownList1.SelectedItem.Text = "Like" Then
-            StrAdd = String.Format("{0};{1};{2};'%{3}%'", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
-            strTemp = String.Format("{0} {1} {2} {3}", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+        If txExpresion.Text.Trim <> "" Then
+            If RadDropDownList1.SelectedItem.Text = "Like" Then
+                StrAdd = String.Format("{0} {1} {2} '%{3}%'", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+                strTemp = String.Format("{0} {1} {2} {3}", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+            Else
+                StrAdd = String.Format("{0} {1} {2} {3}", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+                strTemp = String.Format("{0} {1} {2} {3}", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+            End If
         Else
-            StrAdd = String.Format("{0};{1};{2};{3};", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
-            strTemp = String.Format("{0} {1} {2} {3}", "OR", RadListControl1.SelectedItem.Text, RadDropDownList1.SelectedItem.Text, txExpresion.Text)
+            RadMessageBox.Show("OR Expression NULL", "", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
+            Return
         End If
         RadListControl2.Items.Add(strTemp)
         'eList.AddRange(RadListControl2.Items)
@@ -142,24 +163,41 @@ Public Class FrmCustomFilter
         End If
     End Sub
 
-    Public Function QrBuilderValue() As String
+    Public Function querybuildervalue() As String
         Dim Sb As New StringBuilder()
         For Each Str2 As Telerik.WinControls.UI.RadListDataItem In RadListControl2.Items
-            Sb.Append(Str2.Text).Append(";")
+            Sb.Append(Str2.Text).AppendLine()
         Next
-        QrBuilderValue = LTrim(RTrim(Replace(Sb.ToString, ";", ";", 1, -1, CompareMethod.Binary)))
+        eList.AddRange(RadListControl2.Items)
+        querybuildervalue = LTrim(RTrim(Replace(Sb.ToString, ";", ";", 1, -1, CompareMethod.Binary)))
     End Function
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         rFormDataListInvoice.txTemp.Clear()
-        rFormDataListInvoice.txTemp.Text = QrBuilderValue()
+
+        rFormDataListInvoice.txTemp.Text = querybuildervalue()
+
+        Dim listquery As Integer = RadListControl2.Items.Count - 1
+
+        Dim item As String() = New String(listquery - 1) {}
+
+        For i As Integer = 0 To (RadListControl2.Items.Count - 1)
+            item(i) = RadListControl2.Items(i).Text
+        Next i
+
+        IO.File.WriteAllLines(Environment.CurrentDirectory & "\filter.txt", item)
+
+        'Dim sbFilter As New StringBuilder
+
+        'For Each st As Telerik.WinControls.UI.RadListDataItem In RadListControl2.Items
+        '    sbFilter.Append(st).AppendLine()
+        'Next
+
+        'mdlstring.SqlFilter(sbFilter.ToString)
+
         rFormDataListInvoice.txFilter.Clear()
-        rFormDataListInvoice.txFilter.Text = LTrim(RTrim(Replace(rFormDataListInvoice.txTemp.Text, ";", " ", 1, -1, CompareMethod.Binary)))
-        Dim sbFilter As New StringBuilder
-        For Each st As Telerik.WinControls.UI.RadListDataItem In RadListControl2.Items
-            sbFilter.Append(st).Append(" ")
-        Next
-        mdlstring.SqlFilter(sbFilter.ToString)
+        rFormDataListInvoice.txFilter.Text = IO.File.ReadAllText(Environment.CurrentDirectory & "\filter.txt") 'LTrim(RTrim(Replace(rFormDataListInvoice.txTemp.Text, ";", " ", 1, -1, CompareMethod.Binary)))
+
         Me.Dispose()
     End Sub
 
@@ -197,7 +235,7 @@ Public Class FrmCustomFilter
         End Try
     End Sub
 
-    Private Sub RadListControl1_SelectedIndexChanged(sender As Object, e As PositionChangedEventArgs) Handles RadListControl1.SelectedIndexChanged
+    Private Sub RadListControl1_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles RadListControl1.SelectedIndexChanged
         RadTextBox1.Text = FieldKolomKomen.Item(RadListControl1.SelectedIndex)
     End Sub
 End Class

@@ -68,7 +68,7 @@ Partial Class FrmCustomFilter
         Me.RadListControl1.Location = New System.Drawing.Point(3, 23)
         Me.RadListControl1.Name = "RadListControl1"
         Me.TableLayoutPanel1.SetRowSpan(Me.RadListControl1, 7)
-        Me.RadListControl1.Size = New System.Drawing.Size(201, 218)
+        Me.RadListControl1.Size = New System.Drawing.Size(210, 218)
         Me.RadListControl1.TabIndex = 0
         Me.RadListControl1.Text = "RadListControl1"
         Me.RadListControl1.ThemeName = "Office2010Black"
@@ -96,11 +96,11 @@ Partial Class FrmCustomFilter
         Me.RadDropDownList1.Items.Add(RadListDataItem6)
         Me.RadDropDownList1.Items.Add(RadListDataItem7)
         Me.RadDropDownList1.Items.Add(RadListDataItem8)
-        Me.RadDropDownList1.Location = New System.Drawing.Point(210, 23)
+        Me.RadDropDownList1.Location = New System.Drawing.Point(219, 23)
         Me.RadDropDownList1.Name = "RadDropDownList1"
         Me.RadDropDownList1.Padding = New System.Windows.Forms.Padding(0, 2, 0, 2)
         Me.RadDropDownList1.ReadOnly = True
-        Me.RadDropDownList1.Size = New System.Drawing.Size(203, 24)
+        Me.RadDropDownList1.Size = New System.Drawing.Size(215, 24)
         Me.RadDropDownList1.TabIndex = 1
         Me.RadDropDownList1.ThemeName = "Office2010Black"
         CType(Me.RadDropDownList1.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).Padding = New System.Windows.Forms.Padding(0, 2, 0, 2)
@@ -118,11 +118,11 @@ Partial Class FrmCustomFilter
         Me.RadTextBox1.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.SetColumnSpan(Me.RadTextBox1, 3)
         Me.RadTextBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RadTextBox1.Location = New System.Drawing.Point(210, 73)
+        Me.RadTextBox1.Location = New System.Drawing.Point(219, 73)
         Me.RadTextBox1.Multiline = True
         Me.RadTextBox1.Name = "RadTextBox1"
         Me.RadTextBox1.ReadOnly = True
-        Me.RadTextBox1.Size = New System.Drawing.Size(203, 74)
+        Me.RadTextBox1.Size = New System.Drawing.Size(215, 74)
         Me.RadTextBox1.TabIndex = 2
         Me.RadTextBox1.ThemeName = "Office2010Black"
         CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).StretchVertically = True
@@ -134,7 +134,7 @@ Partial Class FrmCustomFilter
         '
         Me.Label1.AutoSize = True
         Me.TableLayoutPanel1.SetColumnSpan(Me.Label1, 3)
-        Me.Label1.Location = New System.Drawing.Point(210, 0)
+        Me.Label1.Location = New System.Drawing.Point(219, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(54, 15)
         Me.Label1.TabIndex = 3
@@ -145,7 +145,7 @@ Partial Class FrmCustomFilter
         '
         Me.Label2.AutoSize = True
         Me.TableLayoutPanel1.SetColumnSpan(Me.Label2, 3)
-        Me.Label2.Location = New System.Drawing.Point(210, 50)
+        Me.Label2.Location = New System.Drawing.Point(219, 50)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(67, 15)
         Me.Label2.TabIndex = 3
@@ -158,11 +158,11 @@ Partial Class FrmCustomFilter
         Me.txExpresion.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.SetColumnSpan(Me.txExpresion, 3)
         Me.txExpresion.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txExpresion.Location = New System.Drawing.Point(210, 173)
+        Me.txExpresion.Location = New System.Drawing.Point(219, 173)
         Me.txExpresion.Multiline = True
         Me.txExpresion.Name = "txExpresion"
         Me.TableLayoutPanel1.SetRowSpan(Me.txExpresion, 2)
-        Me.txExpresion.Size = New System.Drawing.Size(203, 38)
+        Me.txExpresion.Size = New System.Drawing.Size(215, 38)
         Me.txExpresion.TabIndex = 2
         Me.txExpresion.ThemeName = "Office2010Black"
         CType(Me.txExpresion.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).StretchVertically = True
@@ -175,9 +175,9 @@ Partial Class FrmCustomFilter
         Me.Label3.AutoSize = True
         Me.TableLayoutPanel1.SetColumnSpan(Me.Label3, 3)
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label3.Location = New System.Drawing.Point(210, 150)
+        Me.Label3.Location = New System.Drawing.Point(219, 150)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(203, 20)
+        Me.Label3.Size = New System.Drawing.Size(215, 20)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Expressions"
         '
@@ -185,9 +185,9 @@ Partial Class FrmCustomFilter
         '
         Me.RadButton1.BackColor = System.Drawing.Color.Transparent
         Me.RadButton1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RadButton1.Location = New System.Drawing.Point(348, 217)
+        Me.RadButton1.Location = New System.Drawing.Point(363, 217)
         Me.RadButton1.Name = "RadButton1"
-        Me.RadButton1.Size = New System.Drawing.Size(65, 24)
+        Me.RadButton1.Size = New System.Drawing.Size(71, 24)
         Me.RadButton1.TabIndex = 4
         Me.RadButton1.Text = "&DEL"
         Me.RadButton1.ThemeName = "Office2010Black"
@@ -229,7 +229,7 @@ Partial Class FrmCustomFilter
         Me.TableLayoutPanel1.Controls.Add(Me.RadTextBox1, 3, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.RadButton5, 4, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.Label3, 3, 4)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 5)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(2, 3)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 12
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
@@ -244,7 +244,7 @@ Partial Class FrmCustomFilter
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(416, 383)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(437, 381)
         Me.TableLayoutPanel1.TabIndex = 5
         '
         'btnClose
@@ -252,9 +252,9 @@ Partial Class FrmCustomFilter
         Me.btnClose.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.SetColumnSpan(Me.btnClose, 3)
         Me.btnClose.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnClose.Location = New System.Drawing.Point(210, 350)
+        Me.btnClose.Location = New System.Drawing.Point(219, 350)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(203, 30)
+        Me.btnClose.Size = New System.Drawing.Size(215, 28)
         Me.btnClose.TabIndex = 7
         Me.btnClose.Text = "&Keluar"
         Me.btnClose.ThemeName = "Office2010Black"
@@ -269,7 +269,7 @@ Partial Class FrmCustomFilter
         Me.btnSave.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnSave.Location = New System.Drawing.Point(3, 350)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(201, 30)
+        Me.btnSave.Size = New System.Drawing.Size(210, 28)
         Me.btnSave.TabIndex = 6
         Me.btnSave.Text = "&Simpan"
         Me.btnSave.ThemeName = "Office2010Black"
@@ -285,7 +285,7 @@ Partial Class FrmCustomFilter
         Me.RadListControl2.Location = New System.Drawing.Point(3, 267)
         Me.RadListControl2.Name = "RadListControl2"
         Me.TableLayoutPanel1.SetRowSpan(Me.RadListControl2, 2)
-        Me.RadListControl2.Size = New System.Drawing.Size(410, 77)
+        Me.RadListControl2.Size = New System.Drawing.Size(431, 77)
         Me.RadListControl2.TabIndex = 5
         Me.RadListControl2.Text = "RadListControl1"
         Me.RadListControl2.ThemeName = "Office2010Black"
@@ -297,7 +297,7 @@ Partial Class FrmCustomFilter
         Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label5.Location = New System.Drawing.Point(3, 244)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(410, 20)
+        Me.Label5.Size = New System.Drawing.Size(431, 20)
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "Query Expressions"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -306,9 +306,9 @@ Partial Class FrmCustomFilter
         '
         Me.RadButton4.BackColor = System.Drawing.Color.Transparent
         Me.RadButton4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RadButton4.Location = New System.Drawing.Point(210, 217)
+        Me.RadButton4.Location = New System.Drawing.Point(219, 217)
         Me.RadButton4.Name = "RadButton4"
-        Me.RadButton4.Size = New System.Drawing.Size(63, 24)
+        Me.RadButton4.Size = New System.Drawing.Size(66, 24)
         Me.RadButton4.TabIndex = 4
         Me.RadButton4.Text = "&AND"
         Me.RadButton4.ThemeName = "Office2010Black"
@@ -320,9 +320,9 @@ Partial Class FrmCustomFilter
         '
         Me.RadButton5.BackColor = System.Drawing.Color.Transparent
         Me.RadButton5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RadButton5.Location = New System.Drawing.Point(279, 217)
+        Me.RadButton5.Location = New System.Drawing.Point(291, 217)
         Me.RadButton5.Name = "RadButton5"
-        Me.RadButton5.Size = New System.Drawing.Size(63, 24)
+        Me.RadButton5.Size = New System.Drawing.Size(66, 24)
         Me.RadButton5.TabIndex = 4
         Me.RadButton5.Text = "&OR"
         Me.RadButton5.ThemeName = "Office2010Black"
@@ -334,7 +334,7 @@ Partial Class FrmCustomFilter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(440, 400)
+        Me.ClientSize = New System.Drawing.Size(440, 385)
         Me.ControlBox = False
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)

@@ -71,7 +71,7 @@ Public Class rFormDataListInvoice
         End Try
     End Sub
 
-    Private Sub LoadListInvoice(Optional ByVal opsi As String = "")
+    Private Sub LoadListInvoice(Optional ByVal Opsi As String = "")
         Dim sqlreader As MySqlDataReader
 
         Try
@@ -84,7 +84,7 @@ Public Class rFormDataListInvoice
                                                                  ", `InvoiceWorkOrderSPK`, `InvoiceLisence`, `InvoiceProgress`, `InvoiceTerm`, `InvoiceItemsRecords`" &
                                                                  ", `InvoiceTotalItems`, `InvoicePaymentsRecord`, `InvoiceAfterTermyn`, `InvoiceTaxPrice`, `InvoiceTerbilang`" &
                                                                  ", `IndexProject`, `UserPerekam`, `TanggalRekam`, `UserUpdate`, `TanggalUpdate` FROM `invoicedata`" &
-                                                                 opsi & " ORDER BY `RecordNo` ASC"), mdlCom.vConn)
+                                                                 Opsi & " ORDER BY `RecordNo` ASC"), mdlCom.vConn)
             Dim values As String() = New String((20 + 1) - 1) {}
             sqlreader = command.ExecuteReader
             Do While sqlreader.Read
@@ -115,7 +115,6 @@ Public Class rFormDataListInvoice
             sqlreader.Close()
 
             Label1.Text = String.Format("Total Record : {0}", dg.Rows.Count)
-            RadDropDownList1.SelectedIndex = 0
 
             If dg.Rows.Count > 0 Then
                 Dim stringInvoice As String() = Strings.Split(dg.Rows(dg.Rows.Count - 1).Cells(2).Value, "/", -1, CompareMethod.Binary)
@@ -130,7 +129,6 @@ Public Class rFormDataListInvoice
 
             ProjectData.ClearProjectError()
         End Try
-
     End Sub
 
     Private Sub FrmListInvoiceKeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
@@ -144,6 +142,7 @@ Public Class rFormDataListInvoice
         rFormMain.LoadIcon(True, Me)
 
         BufferMethod.DoubleBuffered(dg, True)
+
         LoadData()
     End Sub
 
@@ -252,46 +251,53 @@ Public Class rFormDataListInvoice
         Dim num As Integer = 0
         Dim num1 As Integer = dg.Rows.Count - 1
         Do While num <= num1
-
             Interlocked.Increment(num)
         Loop
         LoadListInvoice("")
     End Sub
 
-    Private Sub btnFilter_Click(sender As Object, e As EventArgs) Handles btnFilter.Click
-        Try
-            Dim StrOpsi As String = ""
-            Dim strFilterType As String
-            Dim strFilterDate As String
-            Dim strFilterClient As String
-            Dim strFilterProject As String
-            Dim strFilterCustom As String
-            If RadDropDownList1.SelectedIndex = 0 Then
-                strFilterType = "INVOICETYPE LIKE '%" & txFilter.Text & "%'"
-                StrOpsi = " WHERE " & strFilterType
-                txFilter.NullText = "Filter Invoice Type"
-            ElseIf RadDropDownList1.SelectedIndex = 1 Then
-                strFilterDate = "INVOICEDATE LIKE '%" & txFilter.Text & "%'"
-                StrOpsi = " WHERE " & strFilterDate
-                txFilter.NullText = "Filter Invoice Date"
-            ElseIf RadDropDownList1.SelectedIndex = 2 Then
-                strFilterClient = "INVOICECLIENT LIKE '%" & txFilter.Text & "%'"
-                StrOpsi = " WHERE " & strFilterClient
-                txFilter.NullText = "Filter Invoice Client"
-            ElseIf RadDropDownList1.SelectedIndex = 3 Then
-                strFilterProject = "IndexProject LIKE '%" & txFilter.Text & "%'"
-                StrOpsi = " WHERE " & strFilterProject
-                txFilter.NullText = "Filter Invoice Project"
-            ElseIf RadDropDownList1.SelectedIndex = 4 Then
-                strFilterCustom = " WHERE RecordNo Like '%" & String.Empty & "%'" & " " & txFilter.Text
-                StrOpsi = strFilterCustom
-                txFilter.NullText = "Filter Invoice Custom"
-            End If
-            Me.LoadListInvoice(StrOpsi)
-        Catch ex As Exception
-            RadMessageBox.Show("Tidak dapat memfilter!, " &
-                               ex.Source & "." & ex.Message, "FILTER INVOICE", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
-        End Try
+    Private Sub btnFilter_Click(sender As Object, e As EventArgs) Handles btnFilter.Click, RadButton1.Click
+        'Try
+        '    Dim StrOpsi As String = ""
+        '    Dim strFilterType As String
+        '    Dim strFilterDate As String
+        '    Dim strFilterClient As String
+        '    Dim strFilterProject As String
+        '    Dim strFilterCustom As String
+        '    If RadDropDownList1.SelectedIndex = 0 Then
+        '        strFilterType = "INVOICETYPE LIKE '%" & txFilter.Text & "%'"
+        '        StrOpsi = " WHERE " & strFilterType
+        '        txFilter.NullText = "Filter Invoice Type"
+        '    ElseIf RadDropDownList1.SelectedIndex = 1 Then
+        '        strFilterDate = "INVOICEDATE LIKE '%" & txFilter.Text & "%'"
+        '        StrOpsi = " WHERE " & strFilterDate
+        '        txFilter.NullText = "Filter Invoice Date"
+        '    ElseIf RadDropDownList1.SelectedIndex = 2 Then
+        '        strFilterClient = "INVOICECLIENT LIKE '%" & txFilter.Text & "%'"
+        '        StrOpsi = " WHERE " & strFilterClient
+        '        txFilter.NullText = "Filter Invoice Client"
+        '    ElseIf RadDropDownList1.SelectedIndex = 3 Then
+        '        strFilterProject = "IndexProject LIKE '%" & txFilter.Text & "%'"
+        '        StrOpsi = " WHERE " & strFilterProject
+        '        txFilter.NullText = "Filter Invoice Project"
+        '    ElseIf RadDropDownList1.SelectedIndex = 4 Then
+        '        strFilterCustom = " WHERE RecordNo Like '%" & String.Empty & "%'" & " " & txFilter.Text
+        '        StrOpsi = strFilterCustom
+        '        txFilter.NullText = "Filter Invoice Custom"
+        '    End If
+        '    Me.LoadListInvoice(StrOpsi)
+        'Catch ex As Exception
+        '    RadMessageBox.Show("Tidak dapat memfilter!, " &
+        '                       ex.Source & "." & ex.Message, "FILTER INVOICE", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+        'End Try
+
+        'Dim sqlFilter As New FrmCustomFilter
+        'sqlFilter.FormSqlFilter("`invoicedata`")
+
+        FrmCustomFilter.ShowDialog()
+
+        Me.LoadListInvoice(" WHERE (`recordNo` not like 'null') " & txTemp.Text)
+
     End Sub
 
     Private Sub dg_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg.CellContentClick
@@ -350,29 +356,29 @@ Public Class rFormDataListInvoice
         'frmReport.ShowDialog()
     End Sub
 
-    Private Sub RadDropDownList1_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles RadDropDownList1.SelectedIndexChanged
-        If RadDropDownList1.SelectedIndex = 0 Then
-            txFilter.Text = ""
-            txFilter.Enabled = True
-            txFilter.NullText = "Filter Invoice Type"
-        ElseIf RadDropDownList1.SelectedIndex = 1 Then
-            txFilter.Text = ""
-            txFilter.Enabled = True
-            txFilter.NullText = "Filter Invoice Date"
-        ElseIf RadDropDownList1.SelectedIndex = 2 Then
-            txFilter.Text = ""
-            txFilter.Enabled = True
-            txFilter.NullText = "Filter Invoice Client"
-        ElseIf RadDropDownList1.SelectedIndex = 3 Then
-            txFilter.Text = ""
-            txFilter.Enabled = True
-            txFilter.NullText = "Filter Invoice Project"
-        ElseIf RadDropDownList1.SelectedIndex = 4 Then
-            txFilter.Text = ""
-            txFilter.Enabled = False
-            txFilter.NullText = "Filter Invoice Custom"
-            FrmCustomFilter.ShowDialog()
-        End If
+    Private Sub RadDropDownList1_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs)
+        'If RadDropDownList1.SelectedIndex = 0 Then
+        '    txFilter.Text = ""
+        '    txFilter.Enabled = True
+        '    txFilter.NullText = "Filter Invoice Type"
+        'ElseIf RadDropDownList1.SelectedIndex = 1 Then
+        '    txFilter.Text = ""
+        '    txFilter.Enabled = True
+        '    txFilter.NullText = "Filter Invoice Date"
+        'ElseIf RadDropDownList1.SelectedIndex = 2 Then
+        '    txFilter.Text = ""
+        '    txFilter.Enabled = True
+        '    txFilter.NullText = "Filter Invoice Client"
+        'ElseIf RadDropDownList1.SelectedIndex = 3 Then
+        '    txFilter.Text = ""
+        '    txFilter.Enabled = True
+        '    txFilter.NullText = "Filter Invoice Project"
+        'ElseIf RadDropDownList1.SelectedIndex = 4 Then
+        '    txFilter.Text = ""
+        '    txFilter.Enabled = False
+        '    txFilter.NullText = "Filter Invoice Custom"
+        '    FrmCustomFilter.ShowDialog()
+        'End If
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
