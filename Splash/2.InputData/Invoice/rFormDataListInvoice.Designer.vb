@@ -38,9 +38,9 @@ Partial Class rFormDataListInvoice
         Me.Label1 = New Telerik.WinControls.UI.RadLabelElement()
         Me.btnErase = New Telerik.WinControls.UI.RadButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txTemp = New Telerik.WinControls.UI.RadTextBox()
         Me.RadCheckBox1 = New Telerik.WinControls.UI.RadCheckBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.txTemp = New Telerik.WinControls.UI.RadTextBox()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txFilter, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnEdit, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,9 +54,9 @@ Partial Class rFormDataListInvoice
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnErase, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.txTemp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadCheckBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
-        CType(Me.txTemp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -115,11 +115,11 @@ Partial Class rFormDataListInvoice
         Me.txFilter.Enabled = False
         Me.txFilter.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txFilter.ForeColor = System.Drawing.Color.Black
-        Me.txFilter.Location = New System.Drawing.Point(118, 4)
+        Me.txFilter.Location = New System.Drawing.Point(5, 4)
         Me.txFilter.Name = "txFilter"
         Me.txFilter.NullText = "Filter"
         Me.txFilter.Padding = New System.Windows.Forms.Padding(3, 0, 0, 1)
-        Me.txFilter.Size = New System.Drawing.Size(338, 23)
+        Me.txFilter.Size = New System.Drawing.Size(451, 23)
         Me.txFilter.TabIndex = 2
         Me.txFilter.ThemeName = "Office2010Black"
         CType(Me.txFilter.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.SystemColors.Control
@@ -238,9 +238,9 @@ Partial Class rFormDataListInvoice
         '
         Me.RadStatusStrip1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.RadStatusStrip1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.Label1})
-        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 366)
+        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 372)
         Me.RadStatusStrip1.Name = "RadStatusStrip1"
-        Me.RadStatusStrip1.Size = New System.Drawing.Size(966, 29)
+        Me.RadStatusStrip1.Size = New System.Drawing.Size(966, 23)
         Me.RadStatusStrip1.TabIndex = 5
         Me.RadStatusStrip1.Text = "RadStatusStrip1"
         Me.RadStatusStrip1.ThemeName = "Office2010Black"
@@ -276,14 +276,29 @@ Partial Class rFormDataListInvoice
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel1.Controls.Add(Me.txTemp)
         Me.Panel1.Controls.Add(Me.dg)
         Me.Panel1.Controls.Add(Me.RadCheckBox1)
         Me.Panel1.Controls.Add(Me.RadPanel1)
+        Me.Panel1.Controls.Add(Me.txTemp)
         Me.Panel1.Location = New System.Drawing.Point(3, 4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(960, 315)
         Me.Panel1.TabIndex = 1
+        '
+        'txTemp
+        '
+        Me.txTemp.AutoSize = False
+        Me.txTemp.BackColor = System.Drawing.Color.Transparent
+        Me.txTemp.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txTemp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.txTemp.Location = New System.Drawing.Point(7, 80)
+        Me.txTemp.Name = "txTemp"
+        Me.txTemp.NullText = "Filter"
+        Me.txTemp.Padding = New System.Windows.Forms.Padding(3, 0, 0, 1)
+        Me.txTemp.Size = New System.Drawing.Size(544, 23)
+        Me.txTemp.TabIndex = 3
+        Me.txTemp.TabStop = False
+        Me.txTemp.ThemeName = "Office2010Black"
         '
         'RadCheckBox1
         '
@@ -314,21 +329,6 @@ Partial Class rFormDataListInvoice
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(966, 32)
         Me.TableLayoutPanel1.TabIndex = 4
-        '
-        'txTemp
-        '
-        Me.txTemp.AutoSize = False
-        Me.txTemp.BackColor = System.Drawing.Color.Transparent
-        Me.txTemp.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txTemp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.txTemp.Location = New System.Drawing.Point(27, 217)
-        Me.txTemp.Name = "txTemp"
-        Me.txTemp.NullText = "Filter"
-        Me.txTemp.Padding = New System.Windows.Forms.Padding(3, 0, 0, 1)
-        Me.txTemp.Size = New System.Drawing.Size(544, 23)
-        Me.txTemp.TabIndex = 3
-        Me.txTemp.TabStop = False
-        Me.txTemp.ThemeName = "Office2010Black"
         '
         'rFormDataListInvoice
         '
@@ -367,9 +367,9 @@ Partial Class rFormDataListInvoice
         CType(Me.btnErase, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.txTemp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadCheckBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
-        CType(Me.txTemp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
