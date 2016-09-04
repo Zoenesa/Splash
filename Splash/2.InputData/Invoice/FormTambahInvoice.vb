@@ -8,9 +8,21 @@ Imports Splash.Konektor
 
 Public Class FormTambahInvoice
 
+    Private Const MinW_Size As Integer = 731
+    Private Const MinH_Size As Integer = 365
+    Private Const MaxW_Size As Integer = 731
+    Private Const MaxH_Size As Integer = 525
+
     Public Sub New()
 
         InitializeComponent()
+
+        RadPageView1.DefaultPage = RadPageViewPage1
+
+        Me.MinimumSize = New Size(MinW_Size, MinH_Size)
+        Me.MaximumSize = New Size(MaxW_Size, MaxH_Size)
+
+        Me.Size = Me.MinimumSize
 
         Telerik.WinControls.RadMessageBox.Instance.AllowTheming = True
         Telerik.WinControls.RadMessageBox.Instance.ControlBox = False
@@ -66,22 +78,30 @@ Public Class FormTambahInvoice
     Private Sub RadPageView1_SelectedPageChanged(sender As Object, e As EventArgs) Handles RadPageView1.SelectedPageChanged
         Dim strdetail As String = Nothing
         If RadPageView1.SelectedPage Is RadPageViewPage1 Then
-            strdetail = ""
-            strdetail = "Penanggalan Invoice"
+            Me.SuspendLayout()
+            Me.Size = MinimumSize
+            strdetail = "Detail Penerbitan & Penomoran Tagihan"
             Panel3.Parent = RadPageViewPage1
+            Me.ResumeLayout()
         ElseIf RadPageView1.SelectedPage Is RadPageViewPage2 Then
+            Me.SuspendLayout()
+            Me.Size = MinimumSize
             Panel3.Parent = RadPageViewPage2
-            strdetail = ""
-            strdetail = "Register Sales Order && Serah Terima"
+            strdetail = "Detail Penagihan"
             LoadPurchaseOrder()
+            Me.ResumeLayout()
         ElseIf RadPageView1.SelectedPage Is RadPageViewPage3 Then
+            Me.SuspendLayout()
+            Me.Size = MinimumSize
             Panel3.Parent = RadPageViewPage3
-            strdetail = ""
-            strdetail = "Register Item Barang/Jasa"
+            strdetail = "Register Item Barang/JasaRegister Sales Order(Purchase Order) && Serah Terima(Hand Over)"
+            Me.ResumeLayout()
         ElseIf RadPageView1.SelectedPage Is RadPageViewPage4 Then
+            Me.SuspendLayout()
+            Me.Size = MaximumSize
             Panel3.Parent = RadPageViewPage4
-            strdetail = ""
-            strdetail = "Register Pembayaran"
+            strdetail = "Register Transaksi Item Barang/Jasa"
+            Me.ResumeLayout()
         End If
         RadLabel1.Text = String.Format("{0}: {1}", RadPageView1.SelectedPage.Text, strdetail)
     End Sub

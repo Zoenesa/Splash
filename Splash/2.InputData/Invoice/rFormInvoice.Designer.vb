@@ -24,7 +24,7 @@ Partial Class rFormInvoice
     Private Sub InitializeComponent()
         Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.RadRadioButton2 = New Telerik.WinControls.UI.RadRadioButton()
         Me.RadRadioButton1 = New Telerik.WinControls.UI.RadRadioButton()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
@@ -972,7 +972,7 @@ Partial Class rFormInvoice
         Me.RadPageView1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadPageView1.Location = New System.Drawing.Point(0, -1)
         Me.RadPageView1.Name = "RadPageView1"
-        Me.RadPageView1.SelectedPage = Me.RadPageViewPage1
+        Me.RadPageView1.SelectedPage = Me.RadPageViewPage4
         Me.RadPageView1.Size = New System.Drawing.Size(654, 450)
         Me.RadPageView1.TabIndex = 0
         Me.RadPageView1.Text = "RadPageView1"
@@ -1186,9 +1186,9 @@ Partial Class rFormInvoice
         '
         'Col3
         '
-        DataGridViewCellStyle2.Format = "d"
-        DataGridViewCellStyle2.NullValue = "__/__/____"
-        Me.Col3.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Format = "d"
+        DataGridViewCellStyle4.NullValue = "__/__/____"
+        Me.Col3.DefaultCellStyle = DataGridViewCellStyle4
         Me.Col3.FillWeight = 60.0!
         Me.Col3.HeaderText = "Date"
         Me.Col3.Name = "Col3"
