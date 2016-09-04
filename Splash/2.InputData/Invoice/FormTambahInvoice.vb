@@ -80,7 +80,7 @@ Public Class FormTambahInvoice
         If RadPageView1.SelectedPage Is RadPageViewPage1 Then
             Me.SuspendLayout()
             Me.Size = MinimumSize
-            strdetail = "Detail Penerbitan & Penomoran Tagihan"
+            strdetail = "Detail Penerbitan && Penomoran Tagihan"
             Panel3.Parent = RadPageViewPage1
             Me.ResumeLayout()
         ElseIf RadPageView1.SelectedPage Is RadPageViewPage2 Then
@@ -94,7 +94,7 @@ Public Class FormTambahInvoice
             Me.SuspendLayout()
             Me.Size = MinimumSize
             Panel3.Parent = RadPageViewPage3
-            strdetail = "Register Item Barang/JasaRegister Sales Order(Purchase Order) && Serah Terima(Hand Over)"
+            strdetail = "Register Sales Order(Purchase Order) && Serah Terima(Hand Over)"
             Me.ResumeLayout()
         ElseIf RadPageView1.SelectedPage Is RadPageViewPage4 Then
             Me.SuspendLayout()
