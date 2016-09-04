@@ -22,8 +22,8 @@ Partial Class FormTambahInvoice
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
         Me.rDropInvoiceType = New Telerik.WinControls.UI.RadDropDownList()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
@@ -188,10 +188,10 @@ Partial Class FormTambahInvoice
         Me.rDropInvoiceType.AutoSize = False
         Me.rDropInvoiceType.BackColor = System.Drawing.Color.Transparent
         Me.rDropInvoiceType.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RadListDataItem3.Text = "Baru"
-        RadListDataItem4.Text = "Revisi"
-        Me.rDropInvoiceType.Items.Add(RadListDataItem3)
-        Me.rDropInvoiceType.Items.Add(RadListDataItem4)
+        RadListDataItem1.Text = "Baru"
+        RadListDataItem2.Text = "Revisi"
+        Me.rDropInvoiceType.Items.Add(RadListDataItem1)
+        Me.rDropInvoiceType.Items.Add(RadListDataItem2)
         Me.rDropInvoiceType.Location = New System.Drawing.Point(115, 36)
         Me.rDropInvoiceType.Name = "rDropInvoiceType"
         Me.rDropInvoiceType.NullText = "Jenis Invoice"
@@ -362,7 +362,7 @@ Partial Class FormTambahInvoice
         '
         'RadStatusStrip1
         '
-        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 307)
+        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 311)
         Me.RadStatusStrip1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.RadStatusStrip1.Name = "RadStatusStrip1"
         Me.RadStatusStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 4, 2)
@@ -384,7 +384,7 @@ Partial Class FormTambahInvoice
         Me.TableLayoutPanel1.Controls.Add(Me.RadButton3, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.RadButton4, 0, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 274)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 278)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -458,10 +458,10 @@ Partial Class FormTambahInvoice
         '
         Me.RadPageViewPage1.Controls.Add(Me.Panel3)
         Me.RadPageViewPage1.Controls.Add(Me.Panel1)
-        Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(83.0!, 30.0!)
-        Me.RadPageViewPage1.Location = New System.Drawing.Point(6, 34)
+        Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(71.0!, 28.0!)
+        Me.RadPageViewPage1.Location = New System.Drawing.Point(5, 32)
         Me.RadPageViewPage1.Name = "RadPageViewPage1"
-        Me.RadPageViewPage1.Size = New System.Drawing.Size(743, 230)
+        Me.RadPageViewPage1.Size = New System.Drawing.Size(745, 233)
         Me.RadPageViewPage1.Text = "Invoice 1/4"
         '
         'Panel3
@@ -476,7 +476,7 @@ Partial Class FormTambahInvoice
         'RadPageViewPage2
         '
         Me.RadPageViewPage2.Controls.Add(Me.Panel4)
-        Me.RadPageViewPage2.ItemSize = New System.Drawing.SizeF(83.0!, 30.0!)
+        Me.RadPageViewPage2.ItemSize = New System.Drawing.SizeF(71.0!, 28.0!)
         Me.RadPageViewPage2.Location = New System.Drawing.Point(6, 34)
         Me.RadPageViewPage2.Name = "RadPageViewPage2"
         Me.RadPageViewPage2.Size = New System.Drawing.Size(743, 230)
@@ -586,7 +586,7 @@ Partial Class FormTambahInvoice
         'RadPageViewPage3
         '
         Me.RadPageViewPage3.Controls.Add(Me.Panel2)
-        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(83.0!, 30.0!)
+        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(71.0!, 28.0!)
         Me.RadPageViewPage3.Location = New System.Drawing.Point(6, 34)
         Me.RadPageViewPage3.Name = "RadPageViewPage3"
         Me.RadPageViewPage3.Size = New System.Drawing.Size(743, 390)
@@ -908,7 +908,7 @@ Partial Class FormTambahInvoice
         'RadPageViewPage4
         '
         Me.RadPageViewPage4.Controls.Add(Me.Panel5)
-        Me.RadPageViewPage4.ItemSize = New System.Drawing.SizeF(83.0!, 30.0!)
+        Me.RadPageViewPage4.ItemSize = New System.Drawing.SizeF(71.0!, 28.0!)
         Me.RadPageViewPage4.Location = New System.Drawing.Point(6, 34)
         Me.RadPageViewPage4.Name = "RadPageViewPage4"
         Me.RadPageViewPage4.Size = New System.Drawing.Size(743, 390)
@@ -1322,7 +1322,7 @@ Partial Class FormTambahInvoice
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(755, 331)
+        Me.ClientSize = New System.Drawing.Size(755, 335)
         Me.Controls.Add(Me.RadPageView1)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.RadStatusStrip1)

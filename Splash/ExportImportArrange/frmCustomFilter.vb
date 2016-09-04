@@ -4,6 +4,8 @@ Imports System.Runtime, System.Runtime.CompilerServices, System.Runtime.InteropS
 Imports Microsoft, Microsoft.VisualBasic, Microsoft.VisualBasic.CompilerServices
 Imports MySql.Data.MySqlClient
 Imports Splash.Konektor
+Imports Splash.Konektor.Setting
+Imports iniSettings
 Imports Telerik, Telerik.WinControls
 
 Public Class FrmCustomFilter
@@ -77,6 +79,8 @@ Public Class FrmCustomFilter
 
     Public Sub New()
 
+        Me.datSetingFile = New iniSettings(Environment.CurrentDirectory & "\filter.ini")
+
         InitializeComponent()
 
         Telerik.WinControls.RadMessageBox.Instance.AllowTheming = True
@@ -95,6 +99,16 @@ Public Class FrmCustomFilter
         End Try
         Return dlg
     End Function
+
+    Private datSetingFile As iniSettings
+
+    Private Sub SimpanDataFilter(ByVal filepath As String)
+        If Not IO.File.Exists(filepath) Then
+            Dim sw As New IO.StreamWriter(filepath)
+            sw.WriteLine()
+            sw.Close()
+        End If
+    End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Dispose()
@@ -115,6 +129,24 @@ Public Class FrmCustomFilter
 
                 End If
                 RadListControl2.Items.Add(strTemp)
+                Dim i As Integer = RadListControl2.Items.Count
+                Dim filepath = (Environment.CurrentDirectory & "\filter.ini")
+                If Not IO.File.Exists(filepath) Then
+                    Dim sw As New IO.StreamWriter(filepath)
+                    sw.WriteLine()
+                    sw.Close()
+
+                    Me.datSetingFile.WriteValue("Query" & i, "Function", "AND")
+                    Me.datSetingFile.WriteValue("Query" & i, "FieldName", RadListControl1.SelectedItem.Text)
+                    Me.datSetingFile.WriteValue("Query" & i, "Qualifier", RadDropDownList1.SelectedItem.Text)
+                    Me.datSetingFile.WriteValue("Query" & i, "Value", txExpresion.Text.Trim())
+                Else
+                    Me.datSetingFile.WriteValue("Query" & i, "Function", "AND")
+                    Me.datSetingFile.WriteValue("Query" & i, "FieldName", RadListControl1.SelectedItem.Text)
+                    Me.datSetingFile.WriteValue("Query" & i, "Qualifier", RadDropDownList1.SelectedItem.Text)
+                    Me.datSetingFile.WriteValue("Query" & i, "Value", txExpresion.Text.Trim())
+                End If
+
             Else
                 RadMessageBox.Show("AND Expression NULL", "", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
                 Return

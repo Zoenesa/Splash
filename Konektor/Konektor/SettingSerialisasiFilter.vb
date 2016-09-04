@@ -5,11 +5,11 @@ Imports System.Text
 Namespace Splash.Konektor.Setting
     Public Class SettingSerialisasiFilter
 
-        Public Property LokasiFile As String
+        Public Property Path As String
 
         Public Sub New(ByVal FilePath As String)
             MyBase.New()
-            Me.LokasiFile = FilePath
+            Me.Path = FilePath
         End Sub
 
         <DllImport("kernel32.dll", CharSet:=CharSet.[Ansi], EntryPoint:="GetPrivateProfileStringA", ExactSpelling:=True, SetLastError:=True)>
@@ -17,11 +17,11 @@ Namespace Splash.Konektor.Setting
         End Function
 
         Public Function ReadValue(ByVal Section As String, ByVal Key As String) As String
-            Dim sb As StringBuilder = New StringBuilder(2048)
+            Dim sb As StringBuilder = New StringBuilder(255)
             Dim str As String = ""
-            Dim Path As String = Me.LokasiFile
-            Dim privateProfilString As Integer = SettingSerialisasiFilter.GetPrivateProfileString(Section, Key, str, sb, 2048, Path)
-            Me.LokasiFile = Path
+            Dim Path As String = Me.Path
+            Me.Path = Path
+            SettingSerialisasiFilter.GetPrivateProfileString(Section, Key, str, sb, 255, Path)
             Return sb.ToString()
         End Function
 
@@ -30,9 +30,9 @@ Namespace Splash.Konektor.Setting
         End Function
 
         Public Sub WriteValue(ByVal section As String, ByVal key As String, ByVal value As String)
-            Dim path As String = Me.LokasiFile
+            Dim path As String = Me.Path
             SettingSerialisasiFilter.WritePrivateProfileString(section, key, value, path)
-            Me.LokasiFile = path
+            Me.Path = path
         End Sub
     End Class
 End Namespace
