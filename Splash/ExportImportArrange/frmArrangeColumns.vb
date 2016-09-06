@@ -17,7 +17,7 @@ Public Class FrmArrangeColumns
     Private Sub FrmArrangeColumns_Load(sender As Object, e As EventArgs) Handles Me.Load
         'btnRemAll.Visible = False
         'btnAppAll.Visible = False
-        BufferMethod.DoubleBuffered(rFormDataListInvoice.dg, True)
+        ControlEkstensi.DoubleBuffered(rFormDataListInvoice.dg, True)
         CurrentList.Items.Clear()
         'frmListInvoice.DataColumns()
         For i As Integer = 0 To rFormDataListInvoice.dg.Columns.Count - 1
@@ -94,18 +94,6 @@ Public Class FrmArrangeColumns
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
-    End Sub
-End Class
-
-''' <summary>
-''' method for remove any flickering on form loading
-''' </summary>
-''' <remarks></remarks>
-Public NotInheritable Class BufferMethod
-    Public Shared Sub DoubleBuffered(dgView As DataGridView, Setting As Boolean)
-        Dim dgvType As Type = dgView.[GetType]()
-        Dim propInfo As PropertyInfo = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance Or BindingFlags.NonPublic)
-        propInfo.SetValue(dgView, Setting, Nothing)
     End Sub
 End Class
 
