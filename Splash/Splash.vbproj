@@ -479,6 +479,7 @@
     <Content Include="Libs\TelerikCommon.dll" />
     <Content Include="Resources\160820004354.sql" />
     <Content Include="Resources\160827080321.sql" />
+    <Content Include="Resources\Dump20160907.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="..\packages\Fody.1.29.4\build\dotnet\Fody.targets" Condition="Exists('..\packages\Fody.1.29.4\build\dotnet\Fody.targets')" />
