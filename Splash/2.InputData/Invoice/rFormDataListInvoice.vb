@@ -146,7 +146,7 @@ Public Class rFormDataListInvoice
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
         rFormMain.LoadIcon(True, Me)
 
-        BufferMethod.DoubleBuffered(dg, True)
+        ControlEkstensi.DoubleBuffered(dg, True)
 
         LoadData()
     End Sub
