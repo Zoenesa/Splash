@@ -2,18 +2,31 @@
 Imports System.Threading
 Imports System.Security.Cryptography
 Imports System.Text
+Imports Splash.Konektor.SettingOpsi
 
 Namespace Splash.Konektor
+
     Public NotInheritable Class mdlstring
 
         Public Shared defaultKey As String = "MyKey@AG"
 
-        Public Shared Function ADD_QUOTE_ON_SQL(str As String) As String
+        Public Overloads Shared Function ADD_QUOTE_ON_SQL(str As String) As String
             If Operators.CompareString(str.Trim(), "", False) = 0 Then
                 Return ""
             Else
                 Return Strings.Replace(str, "'", " ", 1, -1, CompareMethod.Binary)
             End If
+        End Function
+
+        Public Overloads Shared Function ADD_QUOTE_ON_SQL(ByVal Value As String, Optional ByVal Qualifier As SettingOpsi.Limiter = SettingOpsi.Limiter.DoubleQoute) As String
+            Dim ReturnString As String = Nothing
+            Select Case Qualifier
+                Case Limiter.DoubleQoute
+                    ReturnString = String.Concat(Chr(34), Value, Chr(34))
+                Case Limiter.SingleQuote
+                    Return String.Concat(Chr(39), Value, Chr(39))
+            End Select
+            Return ReturnString
         End Function
 
         Public Shared Function FORMAT_NPWP(str As String) As String

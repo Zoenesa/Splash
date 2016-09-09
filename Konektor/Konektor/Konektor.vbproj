@@ -106,6 +106,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SetelanPengguna.vb" />
+    <Compile Include="SettingOpsi.vb" />
     <Compile Include="SettingSerialisasiFilter.vb" />
   </ItemGroup>
   <ItemGroup>
