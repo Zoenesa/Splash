@@ -79,6 +79,7 @@ Partial Class rFormMain
         Me.RadDateAndTimeStatus = New Telerik.WinControls.UI.RadLabelElement()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.RadMenuItem1 = New Telerik.WinControls.UI.RadMenuItem()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -135,7 +136,7 @@ Partial Class rFormMain
         Me.rMenuPurchase.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.rMenuPurchase.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMenuPurchaseOrderItem, Me.rMenuImportPurchaseItem, Me.rMenuExportPurchaseItem})
         Me.rMenuPurchase.Name = "rMenuPurchase"
-        Me.rMenuPurchase.Text = "&Purchasing"
+        Me.rMenuPurchase.Text = "&Purchasing / Pemesanan Barang"
         '
         'rMenuPurchaseOrderItem
         '
@@ -252,7 +253,7 @@ Partial Class rFormMain
         Me.rMenuCustomer.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.rMenuCustomer.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMenuCustomerListItem, Me.rMenuImportCustomerItem, Me.rMenuExportCustomerItem})
         Me.rMenuCustomer.Name = "rMenuCustomer"
-        Me.rMenuCustomer.Text = "Data &Customer"
+        Me.rMenuCustomer.Text = "Data &Customer / Pelanggan"
         '
         'rMenuCustomerListItem
         '
@@ -274,7 +275,7 @@ Partial Class rFormMain
         '
         'rDataTeknis
         '
-        Me.rDataTeknis.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMenuDataProject, Me.rMenuResumeOrder})
+        Me.rDataTeknis.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMenuDataProject, Me.rMenuResumeOrder, Me.RadMenuItem1})
         Me.rDataTeknis.Name = "rDataTeknis"
         Me.rDataTeknis.Padding = New System.Windows.Forms.Padding(8, 1, 8, 1)
         Me.rDataTeknis.Text = "&Data Teknis"
@@ -427,9 +428,9 @@ Partial Class rFormMain
         '
         Me.RadStatusStrip1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadStatusStrip1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.StatusVersi, Me.CommandBarSeparator1, Me.RadStatusDeskripsi, Me.CommandBarSeparator2, Me.RadDateAndTimeStatus})
-        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 416)
+        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 322)
         Me.RadStatusStrip1.Name = "RadStatusStrip1"
-        Me.RadStatusStrip1.Size = New System.Drawing.Size(1229, 22)
+        Me.RadStatusStrip1.Size = New System.Drawing.Size(804, 22)
         Me.RadStatusStrip1.TabIndex = 5
         Me.RadStatusStrip1.Text = "RadStatusStrip1"
         Me.RadStatusStrip1.ThemeName = "Office2010Black"
@@ -479,7 +480,7 @@ Partial Class rFormMain
         Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMainMenu, Me.rMenuInputData, Me.rDataTeknis, Me.rMenuAdministrasi, Me.rAbout})
         Me.RadMenu1.Location = New System.Drawing.Point(0, 0)
         Me.RadMenu1.Name = "RadMenu1"
-        Me.RadMenu1.Size = New System.Drawing.Size(1229, 22)
+        Me.RadMenu1.Size = New System.Drawing.Size(804, 22)
         Me.RadMenu1.TabIndex = 3
         Me.RadMenu1.Text = "RadMenu1"
         Me.RadMenu1.ThemeName = "Office2010Black"
@@ -488,13 +489,19 @@ Partial Class rFormMain
         '
         Me.Timer1.Interval = 120
         '
+        'RadMenuItem1
+        '
+        Me.RadMenuItem1.Name = "RadMenuItem1"
+        Me.RadMenuItem1.Text = "&Hitung Volume"
+        '
         'rFormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1229, 438)
+        Me.ClientSize = New System.Drawing.Size(804, 344)
         Me.Controls.Add(Me.RadStatusStrip1)
         Me.Controls.Add(Me.RadMenu1)
+        Me.EnableKeyMap = True
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.IsMdiContainer = True
         Me.Name = "rFormMain"
@@ -570,4 +577,5 @@ Partial Class rFormMain
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents RadGridView1 As Telerik.WinControls.UI.RadGridView
     Friend WithEvents RadMenuItemCompanyProfile As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents RadMenuItem1 As Telerik.WinControls.UI.RadMenuItem
 End Class

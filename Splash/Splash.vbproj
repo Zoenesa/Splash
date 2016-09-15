@@ -475,7 +475,7 @@
     <Content Include="Libs\Telerik.WinControls.Themes.Office2010Black.dll" />
     <Content Include="Libs\Telerik.WinControls.UI.dll" />
     <Content Include="Libs\TelerikCommon.dll" />
-    <Content Include="Resources\Dump20160909.sql" />
+    <EmbeddedResource Include="Resources\backup.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="..\packages\Fody.1.29.4\build\dotnet\Fody.targets" Condition="Exists('..\packages\Fody.1.29.4\build\dotnet\Fody.targets')" />

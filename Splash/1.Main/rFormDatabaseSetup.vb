@@ -78,6 +78,22 @@ Public Class rFormDatabaseSetup
     Private Sub rFormDatabaseSetup_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
         rFormMain.LoadIcon(True, Me)
+        Try
+            If Not (IO.File.Exists(IO.Path.Combine(Environment.CurrentDirectory, "backup", "backup.sql"))) Then
+
+                IO.Directory.CreateDirectory(IO.Path.Combine(Environment.CurrentDirectory, "backup"))
+
+                Dim FilePath As String = IO.Path.GetFullPath(IO.Path.Combine(Environment.CurrentDirectory, "backup", "backup.sql"))
+
+                rFormMain.SaveResource("backup.sql", FilePath)
+
+            End If
+        Catch ex As Exception
+            ProjectData.SetProjectError(ex)
+            Dim Excep As Exception = ex
+            mdlCom.ShowError("Error." & Excep.Message)
+            ProjectData.ClearProjectError()
+        End Try
 
         Me.RadPageView1.SelectedPage = RadPageView1.Pages.Item(0)
 

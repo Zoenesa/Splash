@@ -40,7 +40,6 @@ Public Class rFormMain
 
                 mprofile.SetValue("General", Entry, "myIco.ico")
 
-
             Else
 
                 ImgIcon = New Icon(IO.Path.Combine(Environment.CurrentDirectory, "Images", "myico.ico"))
