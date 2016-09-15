@@ -261,48 +261,9 @@ Public Class rFormDataListInvoice
         LoadListInvoice("")
     End Sub
 
-    Private Sub btnFilter_Click(sender As Object, e As EventArgs) Handles btnFilter.Click, RadButton1.Click
-        'Try
-        '    Dim StrOpsi As String = ""
-        '    Dim strFilterType As String
-        '    Dim strFilterDate As String
-        '    Dim strFilterClient As String
-        '    Dim strFilterProject As String
-        '    Dim strFilterCustom As String
-        '    If RadDropDownList1.SelectedIndex = 0 Then
-        '        strFilterType = "INVOICETYPE LIKE '%" & txFilter.Text & "%'"
-        '        StrOpsi = " WHERE " & strFilterType
-        '        txFilter.NullText = "Filter Invoice Type"
-        '    ElseIf RadDropDownList1.SelectedIndex = 1 Then
-        '        strFilterDate = "INVOICEDATE LIKE '%" & txFilter.Text & "%'"
-        '        StrOpsi = " WHERE " & strFilterDate
-        '        txFilter.NullText = "Filter Invoice Date"
-        '    ElseIf RadDropDownList1.SelectedIndex = 2 Then
-        '        strFilterClient = "INVOICECLIENT LIKE '%" & txFilter.Text & "%'"
-        '        StrOpsi = " WHERE " & strFilterClient
-        '        txFilter.NullText = "Filter Invoice Client"
-        '    ElseIf RadDropDownList1.SelectedIndex = 3 Then
-        '        strFilterProject = "IndexProject LIKE '%" & txFilter.Text & "%'"
-        '        StrOpsi = " WHERE " & strFilterProject
-        '        txFilter.NullText = "Filter Invoice Project"
-        '    ElseIf RadDropDownList1.SelectedIndex = 4 Then
-        '        strFilterCustom = " WHERE RecordNo Like '%" & String.Empty & "%'" & " " & txFilter.Text
-        '        StrOpsi = strFilterCustom
-        '        txFilter.NullText = "Filter Invoice Custom"
-        '    End If
-        '    Me.LoadListInvoice(StrOpsi)
-        'Catch ex As Exception
-        '    RadMessageBox.Show("Tidak dapat memfilter!, " &
-        '                       ex.Source & "." & ex.Message, "FILTER INVOICE", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
-        'End Try
-
-        'Dim sqlFilter As New FrmCustomFilter
-        'sqlFilter.FormSqlFilter("`invoicedata`")
-
+    Private Sub btnFilter_Click(sender As Object, e As EventArgs) Handles btnFilter.Click
         FrmCustomFilter.ShowDialog()
-
         Me.LoadListInvoice(" WHERE (`recordNo` not like 'null') " & txTemp.Text)
-
     End Sub
 
     Private Sub dg_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg.CellContentClick
@@ -416,5 +377,9 @@ Public Class rFormDataListInvoice
             BtnEditDeleteEnable()
             ClearAllRow(dg, "Col1")
         End If
+    End Sub
+
+    Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
+        Me.LoadListInvoice(" WHERE (`recordNo` not like 'null') " & txTemp.Text)
     End Sub
 End Class

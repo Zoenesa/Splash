@@ -9,7 +9,7 @@ Imports Splash.Konektor
 Public Class FormTambahInvoice
 
     Private Const MinW_Size As Integer = 763
-    Private Const MinH_Size As Integer = 365
+    Private Const MinH_Size As Integer = 270
     Private Const MaxW_Size As Integer = 763
     Private Const MaxH_Size As Integer = 525
 
@@ -71,7 +71,7 @@ Public Class FormTambahInvoice
         'Me.Width = MinW_Size
         'Me.Height = MinH_Size
 
-        Me.Size = New Size(763, 525)
+        Me.Size = New Size(763, 270)
 
         LoadRefClient()
 
@@ -89,7 +89,7 @@ Public Class FormTambahInvoice
         ElseIf RadPageView1.SelectedPage Is RadPageViewPage2 Then
             Me.SuspendLayout()
             Me.Width = MinW_Size
-            Me.Height = MinH_Size
+            Me.Height = 315
             Panel3.Parent = RadPageViewPage2
             strdetail = "Detail Penagihan"
             LoadPurchaseOrder()
@@ -97,7 +97,7 @@ Public Class FormTambahInvoice
         ElseIf RadPageView1.SelectedPage Is RadPageViewPage3 Then
             Me.SuspendLayout()
             Me.Width = MinW_Size
-            Me.Height = MinH_Size
+            Me.Height = 365
             Panel3.Parent = RadPageViewPage3
             strdetail = "Register Sales Order(Purchase Order) && Serah Terima(Hand Over)"
             Me.ResumeLayout()

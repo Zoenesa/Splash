@@ -38,8 +38,8 @@ Partial Class rFormDataListInvoice
         Me.Label1 = New Telerik.WinControls.UI.RadLabelElement()
         Me.btnErase = New Telerik.WinControls.UI.RadButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.txTemp = New Telerik.WinControls.UI.RadTextBox()
         Me.RadCheckBox1 = New Telerik.WinControls.UI.RadCheckBox()
+        Me.txTemp = New Telerik.WinControls.UI.RadTextBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txFilter, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,8 +54,8 @@ Partial Class rFormDataListInvoice
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnErase, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.txTemp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadCheckBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txTemp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -285,6 +285,14 @@ Partial Class rFormDataListInvoice
         Me.Panel1.Size = New System.Drawing.Size(960, 315)
         Me.Panel1.TabIndex = 1
         '
+        'RadCheckBox1
+        '
+        Me.RadCheckBox1.Location = New System.Drawing.Point(7, 10)
+        Me.RadCheckBox1.Name = "RadCheckBox1"
+        Me.RadCheckBox1.Size = New System.Drawing.Size(66, 18)
+        Me.RadCheckBox1.TabIndex = 6
+        Me.RadCheckBox1.Text = "Select All"
+        '
         'txTemp
         '
         Me.txTemp.AutoSize = False
@@ -299,14 +307,6 @@ Partial Class rFormDataListInvoice
         Me.txTemp.TabIndex = 3
         Me.txTemp.TabStop = False
         Me.txTemp.ThemeName = "Office2010Black"
-        '
-        'RadCheckBox1
-        '
-        Me.RadCheckBox1.Location = New System.Drawing.Point(7, 10)
-        Me.RadCheckBox1.Name = "RadCheckBox1"
-        Me.RadCheckBox1.Size = New System.Drawing.Size(66, 18)
-        Me.RadCheckBox1.TabIndex = 6
-        Me.RadCheckBox1.Text = "Select All"
         '
         'TableLayoutPanel1
         '
@@ -367,8 +367,8 @@ Partial Class rFormDataListInvoice
         CType(Me.btnErase, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.txTemp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadCheckBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txTemp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

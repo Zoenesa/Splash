@@ -75,9 +75,6 @@
     <Reference Include="PasswordMeter">
       <HintPath>Libs\PasswordMeter.dll</HintPath>
     </Reference>
-    <Reference Include="Setting">
-      <HintPath>D:\Data ASUS-X550\DATA G\VB\Splash\Splash\bin\Release\Libs\Setting.dll</HintPath>
-    </Reference>
     <Reference Include="Setting.Config.Profile, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc9895b3df706583, processorArchitecture=MSIL">
       <HintPath>bin\Release\Libs\Setting.Config.Profile.dll</HintPath>
     </Reference>

@@ -23,11 +23,6 @@ Partial Class rFormMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim SortDescriptor1 As Telerik.WinControls.Data.SortDescriptor = New Telerik.WinControls.Data.SortDescriptor()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.rMainMenu = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuKoneksiDb = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuLogout = New Telerik.WinControls.UI.RadMenuItem()
@@ -84,27 +79,8 @@ Partial Class rFormMain
         Me.RadDateAndTimeStatus = New Telerik.WinControls.UI.RadLabelElement()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.RadDock1 = New Telerik.WinControls.UI.Docking.RadDock()
-        Me.ToolWindow1 = New Telerik.WinControls.UI.Docking.ToolWindow()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.RadDateTimePicker1 = New Telerik.WinControls.UI.RadDateTimePicker()
-        Me.dgcounter = New Telerik.WinControls.UI.RadGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.DocumentContainer1 = New Telerik.WinControls.UI.Docking.DocumentContainer()
-        Me.ToolTabStrip1 = New Telerik.WinControls.UI.Docking.ToolTabStrip()
-        Me.Splitter1 = New System.Windows.Forms.Splitter()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RadDock1.SuspendLayout()
-        Me.ToolWindow1.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        CType(Me.RadDateTimePicker1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgcounter, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgcounter.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DocumentContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ToolTabStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ToolTabStrip1.SuspendLayout()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -512,208 +488,11 @@ Partial Class rFormMain
         '
         Me.Timer1.Interval = 120
         '
-        'RadDock1
-        '
-        Me.RadDock1.ActiveWindow = Me.ToolWindow1
-        Me.RadDock1.AutoHideAnimation = Telerik.WinControls.UI.Docking.AutoHideAnimateMode.Both
-        Me.RadDock1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.RadDock1.CausesValidation = False
-        Me.RadDock1.Controls.Add(Me.DocumentContainer1)
-        Me.RadDock1.Controls.Add(Me.ToolTabStrip1)
-        Me.RadDock1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.RadDock1.DragDropAllowedDockStates = Telerik.WinControls.UI.Docking.AllowedDockState.AutoHide
-        Me.RadDock1.EnableFloatingWindowSnapping = True
-        Me.RadDock1.EnableGestures = False
-        Me.RadDock1.IsCleanUpTarget = True
-        Me.RadDock1.Location = New System.Drawing.Point(864, 22)
-        Me.RadDock1.MainDocumentContainer = Me.DocumentContainer1
-        Me.RadDock1.MainDocumentContainerVisible = False
-        Me.RadDock1.MdiChildrenDockType = Telerik.WinControls.UI.Docking.DockType.ToolWindow
-        Me.RadDock1.Name = "RadDock1"
-        Me.RadDock1.Padding = New System.Windows.Forms.Padding(0)
-        Me.RadDock1.QuickNavigatorSettings.ColumnSpacing = 2
-        Me.RadDock1.QuickNavigatorSettings.ShowDocumentPanes = False
-        Me.RadDock1.QuickNavigatorSettings.ShowFooter = False
-        Me.RadDock1.QuickNavigatorSettings.ShowHeader = False
-        '
-        '
-        '
-        Me.RadDock1.RootElement.MinSize = New System.Drawing.Size(0, 0)
-        Me.RadDock1.SingleScreen = True
-        Me.RadDock1.Size = New System.Drawing.Size(365, 394)
-        Me.RadDock1.TabIndex = 7
-        Me.RadDock1.TabStop = False
-        Me.RadDock1.Text = "RadDock1"
-        Me.RadDock1.ThemeName = "Office2010Black"
-        Me.RadDock1.ToolTabsAlignment = Telerik.WinControls.UI.TabStripAlignment.Top
-        '
-        'ToolWindow1
-        '
-        Me.ToolWindow1.AutoScroll = True
-        Me.ToolWindow1.Caption = "DATABASE COUNTER                                    "
-        Me.ToolWindow1.Controls.Add(Me.Panel1)
-        Me.ToolWindow1.DefaultFloatingSize = New System.Drawing.Size(350, 300)
-        Me.ToolWindow1.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.ActiveWindowList
-        Me.ToolWindow1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolWindow1.ForeColor = System.Drawing.Color.Blue
-        Me.ToolWindow1.Location = New System.Drawing.Point(1, 22)
-        Me.ToolWindow1.Name = "ToolWindow1"
-        Me.ToolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked
-        Me.ToolWindow1.Size = New System.Drawing.Size(363, 370)
-        Me.ToolWindow1.Text = "DATABASE COUNTER                                    "
-        Me.ToolWindow1.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.AutoHide
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.RadDateTimePicker1)
-        Me.Panel1.Controls.Add(Me.dgcounter)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Location = New System.Drawing.Point(3, 3)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(353, 344)
-        Me.Panel1.TabIndex = 11
-        '
-        'RadDateTimePicker1
-        '
-        Me.RadDateTimePicker1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.RadDateTimePicker1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.RadDateTimePicker1.Location = New System.Drawing.Point(3, 320)
-        Me.RadDateTimePicker1.MaxDate = New Date(2090, 12, 31, 0, 0, 0, 0)
-        Me.RadDateTimePicker1.Name = "RadDateTimePicker1"
-        Me.RadDateTimePicker1.Size = New System.Drawing.Size(110, 21)
-        Me.RadDateTimePicker1.TabIndex = 10
-        Me.RadDateTimePicker1.TabStop = False
-        Me.RadDateTimePicker1.Text = "19/08/2016"
-        Me.RadDateTimePicker1.ThemeName = "Office2010Black"
-        Me.RadDateTimePicker1.Value = New Date(2016, 8, 19, 23, 19, 16, 894)
-        '
-        'dgcounter
-        '
-        Me.dgcounter.AllowShowFocusCues = True
-        Me.dgcounter.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgcounter.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.dgcounter.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgcounter.EnableAnalytics = False
-        Me.dgcounter.EnableGestures = False
-        Me.dgcounter.EnableKineticScrolling = True
-        Me.dgcounter.EnterKeyMode = Telerik.WinControls.UI.RadGridViewEnterKeyMode.EnterMovesToNextRow
-        Me.dgcounter.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgcounter.ForeColor = System.Drawing.Color.Black
-        Me.dgcounter.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgcounter.Location = New System.Drawing.Point(3, 5)
-        '
-        '
-        '
-        Me.dgcounter.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom
-        Me.dgcounter.MasterTemplate.AllowAddNewRow = False
-        Me.dgcounter.MasterTemplate.AllowCellContextMenu = False
-        Me.dgcounter.MasterTemplate.AllowColumnChooser = False
-        Me.dgcounter.MasterTemplate.AllowColumnHeaderContextMenu = False
-        Me.dgcounter.MasterTemplate.AllowColumnReorder = False
-        Me.dgcounter.MasterTemplate.AllowDeleteRow = False
-        Me.dgcounter.MasterTemplate.AllowDragToGroup = False
-        Me.dgcounter.MasterTemplate.AllowEditRow = False
-        Me.dgcounter.MasterTemplate.AllowRowHeaderContextMenu = False
-        Me.dgcounter.MasterTemplate.AllowSearchRow = True
-        Me.dgcounter.MasterTemplate.CaseSensitive = True
-        GridViewTextBoxColumn1.EnableExpressionEditor = False
-        GridViewTextBoxColumn1.HeaderText = "Data TABLE"
-        GridViewTextBoxColumn1.Name = "column1"
-        GridViewTextBoxColumn1.ReadOnly = True
-        GridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn1.Width = 165
-        GridViewTextBoxColumn2.EnableExpressionEditor = False
-        GridViewTextBoxColumn2.HeaderText = "Total"
-        GridViewTextBoxColumn2.Name = "column2"
-        GridViewTextBoxColumn2.ReadOnly = True
-        GridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn2.Width = 55
-        GridViewTextBoxColumn3.HeaderText = "Tanggal Update"
-        GridViewTextBoxColumn3.Name = "column4"
-        GridViewTextBoxColumn3.Width = 115
-        Me.dgcounter.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3})
-        Me.dgcounter.MasterTemplate.EnableAlternatingRowColor = True
-        Me.dgcounter.MasterTemplate.EnableGrouping = False
-        Me.dgcounter.MasterTemplate.ShowHeaderCellButtons = True
-        SortDescriptor1.PropertyName = "column3"
-        Me.dgcounter.MasterTemplate.SortDescriptors.AddRange(New Telerik.WinControls.Data.SortDescriptor() {SortDescriptor1})
-        Me.dgcounter.MasterTemplate.ViewDefinition = TableViewDefinition1
-        Me.dgcounter.Name = "dgcounter"
-        Me.dgcounter.ReadOnly = True
-        Me.dgcounter.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgcounter.ShowGroupPanel = False
-        Me.dgcounter.ShowGroupPanelScrollbars = False
-        Me.dgcounter.ShowHeaderCellButtons = True
-        Me.dgcounter.ShowRowErrors = False
-        Me.dgcounter.Size = New System.Drawing.Size(347, 308)
-        Me.dgcounter.TabIndex = 0
-        Me.dgcounter.Text = "RadGridView1"
-        Me.dgcounter.ThemeName = "Office2010Black"
-        Me.dgcounter.UseScrollbarsInHierarchy = True
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(119, 319)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(231, 23)
-        Me.Button1.TabIndex = 9
-        Me.Button1.Text = "&REFRESH COUNTER"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'DocumentContainer1
-        '
-        Me.DocumentContainer1.CausesValidation = False
-        Me.DocumentContainer1.Collapsed = True
-        Me.DocumentContainer1.EnableGestures = False
-        Me.DocumentContainer1.Name = "DocumentContainer1"
-        '
-        '
-        '
-        Me.DocumentContainer1.RootElement.MinSize = New System.Drawing.Size(0, 0)
-        Me.DocumentContainer1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill
-        Me.DocumentContainer1.ThemeName = "Office2010Black"
-        '
-        'ToolTabStrip1
-        '
-        Me.ToolTabStrip1.AutoHidePosition = Telerik.WinControls.UI.Docking.AutoHidePosition.Right
-        Me.ToolTabStrip1.CanUpdateChildIndex = True
-        Me.ToolTabStrip1.Controls.Add(Me.ToolWindow1)
-        Me.ToolTabStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolTabStrip1.Name = "ToolTabStrip1"
-        '
-        '
-        '
-        Me.ToolTabStrip1.RootElement.MinSize = New System.Drawing.Size(0, 0)
-        Me.ToolTabStrip1.SelectedIndex = 0
-        Me.ToolTabStrip1.Size = New System.Drawing.Size(365, 394)
-        Me.ToolTabStrip1.SizeInfo.AbsoluteSize = New System.Drawing.Size(350, 450)
-        Me.ToolTabStrip1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Absolute
-        Me.ToolTabStrip1.TabIndex = 3
-        Me.ToolTabStrip1.TabStop = False
-        Me.ToolTabStrip1.TabStripAlignment = Telerik.WinControls.UI.TabStripAlignment.Top
-        Me.ToolTabStrip1.ThemeName = "Office2010Black"
-        '
-        'Splitter1
-        '
-        Me.Splitter1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Splitter1.Location = New System.Drawing.Point(861, 22)
-        Me.Splitter1.Name = "Splitter1"
-        Me.Splitter1.Size = New System.Drawing.Size(3, 394)
-        Me.Splitter1.TabIndex = 9
-        Me.Splitter1.TabStop = False
-        '
         'rFormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1229, 438)
-        Me.Controls.Add(Me.Splitter1)
-        Me.Controls.Add(Me.RadDock1)
         Me.Controls.Add(Me.RadStatusStrip1)
         Me.Controls.Add(Me.RadMenu1)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
@@ -729,17 +508,6 @@ Partial Class rFormMain
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RadDock1.ResumeLayout(False)
-        Me.ToolWindow1.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        CType(Me.RadDateTimePicker1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgcounter.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgcounter, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DocumentContainer1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ToolTabStrip1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ToolTabStrip1.ResumeLayout(False)
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -800,15 +568,6 @@ Partial Class rFormMain
     Friend WithEvents RadMenuSeparatorItem4 As Telerik.WinControls.UI.RadMenuSeparatorItem
     Friend WithEvents RadMenuItemBAST As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
-    Friend WithEvents RadDock1 As Telerik.WinControls.UI.Docking.RadDock
-    Friend WithEvents DocumentContainer1 As Telerik.WinControls.UI.Docking.DocumentContainer
     Friend WithEvents RadGridView1 As Telerik.WinControls.UI.RadGridView
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents ToolWindow1 As Telerik.WinControls.UI.Docking.ToolWindow
-    Friend WithEvents dgcounter As Telerik.WinControls.UI.RadGridView
-    Friend WithEvents RadDateTimePicker1 As Telerik.WinControls.UI.RadDateTimePicker
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents ToolTabStrip1 As Telerik.WinControls.UI.Docking.ToolTabStrip
     Friend WithEvents RadMenuItemCompanyProfile As Telerik.WinControls.UI.RadMenuItem
-    Friend WithEvents Splitter1 As Splitter
 End Class
