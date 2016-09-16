@@ -124,7 +124,7 @@ Partial Class rFormDatabaseSetup
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Label9.Location = New System.Drawing.Point(35, 63)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(63, 15)
+        Me.Label9.Size = New System.Drawing.Size(62, 15)
         Me.Label9.TabIndex = 6
         Me.Label9.Text = "Data Table"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -159,11 +159,11 @@ Partial Class rFormDatabaseSetup
         Me.TableLayoutPanel2.Controls.Add(Me.btnBackup, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.btnRestore, 1, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 195)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 205)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 1
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(517, 32)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(527, 32)
         Me.TableLayoutPanel2.TabIndex = 4
         '
         'btnBackup
@@ -174,7 +174,7 @@ Partial Class rFormDatabaseSetup
         Me.btnBackup.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnBackup.Location = New System.Drawing.Point(3, 3)
         Me.btnBackup.Name = "btnBackup"
-        Me.btnBackup.Size = New System.Drawing.Size(252, 26)
+        Me.btnBackup.Size = New System.Drawing.Size(257, 26)
         Me.btnBackup.TabIndex = 12
         Me.btnBackup.Text = "&Backup database"
         Me.btnBackup.ThemeName = "Office2010Black"
@@ -188,9 +188,9 @@ Partial Class rFormDatabaseSetup
         Me.btnRestore.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRestore.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnRestore.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnRestore.Location = New System.Drawing.Point(261, 3)
+        Me.btnRestore.Location = New System.Drawing.Point(266, 3)
         Me.btnRestore.Name = "btnRestore"
-        Me.btnRestore.Size = New System.Drawing.Size(253, 26)
+        Me.btnRestore.Size = New System.Drawing.Size(258, 26)
         Me.btnRestore.TabIndex = 12
         Me.btnRestore.Text = "&Restore database"
         Me.btnRestore.ThemeName = "Office2010Black"
@@ -302,10 +302,10 @@ Partial Class rFormDatabaseSetup
         Me.RadPageViewPage2.Controls.Add(Me.Label13)
         Me.RadPageViewPage2.Controls.Add(Me.Label14)
         Me.RadPageViewPage2.Controls.Add(Me.cbProfile)
-        Me.RadPageViewPage2.ItemSize = New System.Drawing.SizeF(27.0!, 239.0!)
-        Me.RadPageViewPage2.Location = New System.Drawing.Point(98, 30)
+        Me.RadPageViewPage2.ItemSize = New System.Drawing.SizeF(32.0!, 247.0!)
+        Me.RadPageViewPage2.Location = New System.Drawing.Point(97, 29)
         Me.RadPageViewPage2.Name = "RadPageViewPage2"
-        Me.RadPageViewPage2.Size = New System.Drawing.Size(517, 227)
+        Me.RadPageViewPage2.Size = New System.Drawing.Size(527, 237)
         Me.RadPageViewPage2.Text = "General"
         '
         'RadCheckBox1
@@ -549,10 +549,10 @@ Partial Class rFormDatabaseSetup
         Me.RadPageViewPage1.Controls.Add(Me.Label5)
         Me.RadPageViewPage1.Controls.Add(Me.Label9)
         Me.RadPageViewPage1.Controls.Add(Me.Label6)
-        Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(27.0!, 239.0!)
-        Me.RadPageViewPage1.Location = New System.Drawing.Point(98, 30)
+        Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(32.0!, 247.0!)
+        Me.RadPageViewPage1.Location = New System.Drawing.Point(97, 29)
         Me.RadPageViewPage1.Name = "RadPageViewPage1"
-        Me.RadPageViewPage1.Size = New System.Drawing.Size(517, 227)
+        Me.RadPageViewPage1.Size = New System.Drawing.Size(527, 237)
         Me.RadPageViewPage1.Text = "Utilities"
         '
         'RadButton1
@@ -634,10 +634,10 @@ Partial Class rFormDatabaseSetup
         '
         'RadPageViewPage3
         '
-        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(27.0!, 239.0!)
-        Me.RadPageViewPage3.Location = New System.Drawing.Point(97, 29)
+        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(32.0!, 247.0!)
+        Me.RadPageViewPage3.Location = New System.Drawing.Point(98, 30)
         Me.RadPageViewPage3.Name = "RadPageViewPage3"
-        Me.RadPageViewPage3.Size = New System.Drawing.Size(493, 237)
+        Me.RadPageViewPage3.Size = New System.Drawing.Size(517, 227)
         Me.RadPageViewPage3.Text = "Other"
         '
         'rFormDatabaseSetup

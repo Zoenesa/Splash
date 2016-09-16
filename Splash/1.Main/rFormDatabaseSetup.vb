@@ -79,6 +79,7 @@ Public Class rFormDatabaseSetup
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
         rFormMain.LoadIcon(True, Me)
         Try
+
             If Not (IO.File.Exists(IO.Path.Combine(Environment.CurrentDirectory, "backup", "backup.sql"))) Then
 
                 IO.Directory.CreateDirectory(IO.Path.Combine(Environment.CurrentDirectory, "backup"))
@@ -88,6 +89,8 @@ Public Class rFormDatabaseSetup
                 rFormMain.SaveResource("backup.sql", FilePath)
 
             End If
+
+
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim Excep As Exception = ex
