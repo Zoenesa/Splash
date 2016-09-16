@@ -63,7 +63,36 @@ Public Class rFormAddWorkorderRecord
             norekam = rFormListWorkOrder.dg.Rows.Count + 1
             rTxID.Text = norekam
         End If
+        GetListPelanggan()
     End Sub
+
+    Private Sub GetListPelanggan(Optional ByVal Opsi As String = "")
+        Dim mysqlreader As MySqlDataReader
+        Dim sqlCommand As MySqlCommand = New MySqlCommand
+        Try
+            sqlCommand.CommandText = ("SELECT `Client_Name` FROM `ref_client`")
+            sqlCommand.Connection = Konektor.mdlCom.vConn
+
+            mysqlreader = sqlCommand.ExecuteReader
+            Do While mysqlreader.Read
+                Dim item As New Telerik.WinControls.UI.RadListDataItem
+                rCbClient.Items.Add(New UI.RadListDataItem(mysqlreader.Item("Client_Name")))
+            Loop
+            mysqlreader.Close()
+            sqlCommand = Nothing
+        Catch ex As Exception
+            ProjectData.SetProjectError(ex)
+            Dim Excep As Exception = ex
+            mysqlreader = Nothing
+            sqlCommand = Nothing
+            mdlCom.ShowError("Gagal Mendapatkan Data Pelanggan." & vbNewLine & Excep.Message)
+            ProjectData.ClearProjectError()
+        Finally
+            mysqlreader = Nothing
+            sqlCommand = Nothing
+        End Try
+    End Sub
+
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If Me.cekValue Then
@@ -178,5 +207,30 @@ Public Class rFormAddWorkorderRecord
     Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
         Me.Close()
         rFormListWorkOrder.LoadWorkorder()
+    End Sub
+
+    Private Sub rCbClient_Leave(sender As Object, e As EventArgs) Handles rCbClient.Leave
+        Dim common As New common
+        Dim errMsg As String = ""
+        If rCbClient.Text <> "" Then
+            If common.GetCustomerName(errMsg, rCbClient.Text.Trim()) Then
+                Return
+            Else
+                If errMsg = "Nama Pelanggan Belum Terdaftar" Then
+                    Beep()
+                    Dim Pesan As DialogResult = RadMessageBox.Show(errMsg & vbNewLine &
+                                                                   "Apakah Anda ingin Input Pelanggan Baru?" & vbNewLine &
+                                                                   "Pilih Button [Yes] untuk Tambah Pelanggan, Pilih Button [No] Keluar", "Perhatian", MessageBoxButtons.YesNo, RadMessageIcon.Question, MessageBoxDefaultButton.Button1)
+                    If Pesan = DialogResult.Yes Then
+                        Dim tambahPelanggan As New rFormTambahCustomer
+                        tambahPelanggan.ShowDialog()
+                    Else
+                        Me.Close()
+                    End If
+                Else
+                    RadMessageBox.Show(errMsg, "Perhatian", MessageBoxButtons.YesNo, RadMessageIcon.Question, MessageBoxDefaultButton.Button1)
+                End If
+            End If
+        End If
     End Sub
 End Class

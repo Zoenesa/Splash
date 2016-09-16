@@ -24,8 +24,8 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim exception As Exception = ex
-                mdlCom.ShowError("Failed (open_help). Message : " + exception.Message)
-                mdlCom.INSERTLOG("Failed (open_help). Message : " + exception.Message, "")
+                mdlCom.ShowError("Gagal. (open_help). Message : " + exception.Message)
+                mdlCom.INSERTLOG("Gagal. (open_help). Message : " + exception.Message, "")
                 ProjectData.ClearProjectError()
             End Try
         End Sub
@@ -71,8 +71,8 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim exception As Exception = ex
-                mdlCom.ShowError("Failed (cek_npwp). Message : " + exception.Message)
-                mdlCom.INSERTLOG("Failed (cek_npwp). Message : " + exception.Message, "")
+                mdlCom.ShowError("Gagal. (cek_npwp). Message : " + exception.Message)
+                mdlCom.INSERTLOG("Gagal. (cek_npwp). Message : " + exception.Message, "")
                 ProjectData.ClearProjectError()
             End Try
             Return flag
@@ -93,7 +93,7 @@ Namespace Splash.Konektor
                 flag2 = flag1
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
-                mdlCom.INSERTLOG("Failed (cek_profile). Message : " + ex.Message, "")
+                mdlCom.INSERTLOG("Gagal. (cek_profile). Message : " + ex.Message, "")
                 flag2 = False
                 ProjectData.ClearProjectError()
             End Try
@@ -110,7 +110,7 @@ Namespace Splash.Konektor
             }.ExecuteNonQuery() > 0
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
-                mdlCom.INSERTLOG("Failed (add_user). Message : " + ex.Message, "")
+                mdlCom.INSERTLOG("Gagal. (add_user). Message : " + ex.Message, "")
                 flag = False
                 ProjectData.ClearProjectError()
             End Try
@@ -125,7 +125,7 @@ Namespace Splash.Konektor
                 2) + "', `nip_user` = '" + role + "' WHERE `Username` = '" + uname + "'")}.ExecuteNonQuery() > 0
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
-                mdlCom.INSERTLOG("Failed (update_user). Message : " + ex.Message, "")
+                mdlCom.INSERTLOG("Gagal. (update_user). Message : " + ex.Message, "")
                 flag = False
                 ProjectData.ClearProjectError()
             End Try
@@ -146,7 +146,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim exception As Exception = ex
-                errMsg = "Failed (get_password). Message : " + exception.Message
+                errMsg = "Gagal. (get_password). Message : " + exception.Message
                 mdlCom.INSERTLOG(errMsg, "")
                 flag1 = False
                 ProjectData.ClearProjectError()
@@ -172,7 +172,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim exception As Exception = ex
-                errMsg = "Failed (get_password). Message : " + exception.Message
+                errMsg = "Gagal. (get_password). Message : " + exception.Message
                 mdlCom.INSERTLOG(errMsg, "")
                 flag1 = False
                 ProjectData.ClearProjectError()
@@ -189,7 +189,7 @@ Namespace Splash.Konektor
             }.ExecuteNonQuery() > 0
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
-                mdlCom.INSERTLOG("Failed (update_password). Message : " + ex.Message, "")
+                mdlCom.INSERTLOG("Gagal. (update_password). Message : " + ex.Message, "")
                 flag = False
                 mdlCom.ShowError(ex.Message)
                 ProjectData.ClearProjectError()
@@ -208,7 +208,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim exception As Exception = ex
-                errMsg = "Failed (common_SQLQUERY). Message : " + exception.Message
+                errMsg = "Gagal. (common_SQLQUERY). Message : " + exception.Message
                 mdlCom.INSERTLOG(errMsg, "")
                 flag = False
                 ProjectData.ClearProjectError()
@@ -227,7 +227,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim exception As Exception = ex
-                errMsg = "Failed (common_get_user). Message : " + exception.Message
+                errMsg = "Gagal. (common_get_user). Message : " + exception.Message
                 mdlCom.INSERTLOG(errMsg, "")
                 flag = False
                 ProjectData.ClearProjectError()
@@ -261,7 +261,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim exception As Exception = ex
-                errMsg = "Failed (get_info). Message : " + exception.Message
+                errMsg = "Gagal. (get_info). Message : " + exception.Message
                 mdlCom.INSERTLOG(errMsg, "")
                 flag = False
                 ProjectData.ClearProjectError()
@@ -280,7 +280,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim exception As Exception = ex
-                errMsg = "Failed (common_Load_table" & tablename & "). Message : " + exception.Message
+                errMsg = "Gagal. (common_Load_table" & tablename & "). Message : " + exception.Message
                 mdlCom.INSERTLOG(errMsg, "")
                 flag = False
                 ProjectData.ClearProjectError()
@@ -299,7 +299,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim exception As Exception = ex
-                errMsg = "Failed (common_getSqlInvoiceData). Message : " + exception.Message
+                errMsg = "Gagal. (common_getSqlInvoiceData). Message : " + exception.Message
                 mdlCom.INSERTLOG(errMsg, "")
                 flag = False
                 ProjectData.ClearProjectError()
@@ -318,7 +318,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim exception As Exception = ex
-                errMsg = "Failed (common_get_dataSchema). Message : " + exception.Message
+                errMsg = "Gagal. (common_get_dataSchema). Message : " + exception.Message
                 mdlCom.INSERTLOG(errMsg, "")
                 flag = False
                 ProjectData.ClearProjectError()
@@ -336,7 +336,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim exception As Exception = ex
-                errmsg = "Failed (get_data_CustomersSupplier). Message : " + exception.Message
+                errmsg = "Gagal. (get_data_CustomersSupplier). Message : " + exception.Message
                 mdlCom.INSERTLOG(errmsg, "")
                 flag = False
                 ProjectData.ClearProjectError()
@@ -354,14 +354,37 @@ Namespace Splash.Konektor
                                          .ExecuteNonQuery() > 0
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
-                mdlCom.INSERTLOG("Failed (Update_Supplier). Message : " + ex.Message, "")
+                mdlCom.INSERTLOG("Gagal. (Update_Supplier). Message : " + ex.Message, "")
                 flag = False
                 ProjectData.ClearProjectError()
             End Try
             Return flag
         End Function
 
-
+        Public Function GetCustomerName(ByRef errMsg As String, ByVal Nama As String) As Boolean
+            Dim flag1 As Boolean
+            Try
+                Dim flag2 As Boolean = False
+                Dim sqlAdapter As New MySqlDataAdapter("SELECT `Client_Name` FROM `ref_client` WHERE `Client_Name` = '" & Nama & "'", mdlCom.vConn)
+                Dim dtTable As New DataTable()
+                DirectCast(sqlAdapter, MySqlDataAdapter).Fill(dtTable)
+                If dtTable.Rows.Count > 0 Then
+                    flag2 = True
+                Else
+                    flag2 = False
+                    errMsg = "Nama Pelanggan Belum Terdaftar"
+                End If
+                flag1 = flag2
+            Catch ex As Exception
+                ProjectData.SetProjectError(ex)
+                Dim exception As Exception = ex
+                errMsg = "Gagal (get_Pelanggan). Message : " + exception.Message
+                mdlCom.INSERTLOG(errMsg, "")
+                flag1 = False
+                ProjectData.ClearProjectError()
+            End Try
+            Return flag1
+        End Function
         Public Function TambahCustomerSupplier(ByVal ID As Object, ByVal npwp As Object,
                                            ByVal Customer As Object, ByVal alamat As Object, ByVal Propinsi As Object,
                                 ByVal Kota As Object, ByVal kecamatan As Object, ByVal telpon As Object, ByVal kodepos As Object) As Boolean
@@ -376,7 +399,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim exception As Exception = ex
-                mdlCom.INSERTLOG("Failed (get_Insert_CustomersSupplier). Message : " + exception.Message, "")
+                mdlCom.INSERTLOG("Gagal. (get_Insert_CustomersSupplier). Message : " + exception.Message, "")
                 flag = False
                 ProjectData.ClearProjectError()
             End Try
@@ -400,7 +423,7 @@ Namespace Splash.Konektor
                                                  "`CLIENT_UPDATE` = '" & ADD_QUOTE_ON_SQL(DateTime.Now.ToString("dd/MM/yyyy")) & "' WHERE `ID_NUM` = '", ADD_QUOTE_ON_SQL(RecordNo), "'"})}.ExecuteNonQuery() > 0
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
-                mdlCom.INSERTLOG("Failed (update_Supplier). Message : " + ex.Message, "")
+                mdlCom.INSERTLOG("Gagal. (update_Supplier). Message : " + ex.Message, "")
                 flag = False
                 ProjectData.ClearProjectError()
             End Try
@@ -420,7 +443,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 errMsg = ("(Gagal mendapatkan dataPelanggan). Message: " & ex.Message)
-                mdlCom.INSERTLOG("Failed (update_Supplier). Message : " + ex.Message, "")
+                mdlCom.INSERTLOG("Gagal. (update_Supplier). Message : " + ex.Message, "")
                 flag = False
                 ProjectData.ClearProjectError()
             End Try
@@ -438,7 +461,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim excep As Exception = ex
-                errMsg = ("Failed(common_get_workorder).Message:" & ex.Message)
+                errMsg = ("Gagal.(common_get_workorder).Message:" & ex.Message)
                 mdlCom.INSERTLOG(errMsg, "")
                 flag = False
                 ProjectData.ClearProjectError()
@@ -458,7 +481,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim excep As Exception = ex
-                errMsg = ("Failed(common_get_BAST).Message:" & ex.Message)
+                errMsg = ("Gagal.(common_get_BAST).Message:" & ex.Message)
                 mdlCom.INSERTLOG(errMsg, "")
                 flag = False
                 ProjectData.ClearProjectError()
@@ -478,7 +501,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim excep As Exception = ex
-                mdlCom.INSERTLOG(("Failed (validasi.Tanggal).Message:" & excep.Message), "")
+                mdlCom.INSERTLOG(("Gagal. (validasi.Tanggal).Message:" & excep.Message), "")
                 flag = False
                 ProjectData.ClearProjectError()
                 Return flag
@@ -508,7 +531,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim excep As Exception = ex
-                errMsg = ("(Failed (read_csv).Message: " & excep.Message)
+                errMsg = ("(Gagal. (read_csv).Message: " & excep.Message)
                 mdlCom.INSERTLOG(errMsg, "")
                 flag = False
                 ProjectData.ClearProjectError()
@@ -574,8 +597,8 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim excep As Exception = ex
-                errParsing = ("Failed (parsing_line). Message : " & excep.Message)
-                mdlCom.INSERTLOG("Failed (parsing_line). Message : " + excep.Message, "")
+                errParsing = ("Gagal. (parsing_line). Message : " & excep.Message)
+                mdlCom.INSERTLOG("Gagal. (parsing_line). Message : " + excep.Message, "")
                 flag = False
                 ProjectData.ClearProjectError()
                 Return flag
@@ -597,7 +620,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim excep As Exception = ex
-                mdlCom.INSERTLOG("Failed (cek_existing_Invoice).Message : " + excep.Message, "")
+                mdlCom.INSERTLOG("Gagal. (cek_existing_Invoice).Message : " + excep.Message, "")
                 flag = False
                 ProjectData.ClearProjectError()
                 Return flag
@@ -656,7 +679,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim excep As Exception = ex
-                mdlCom.INSERTLOG("Failed (cek_existing_Invoice).Message : " + excep.Message, "")
+                mdlCom.INSERTLOG("Gagal. (cek_existing_Invoice).Message : " + excep.Message, "")
                 flag = False
                 ProjectData.ClearProjectError()
                 Return flag
@@ -676,7 +699,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim exception As Exception = ex
-                errMsg = "Failed (common_get_provinces). Message : " + exception.Message
+                errMsg = "Gagal. (common_get_provinces). Message : " + exception.Message
                 mdlCom.INSERTLOG(errMsg, "")
                 flag = False
                 ProjectData.ClearProjectError()
@@ -695,7 +718,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim exception As Exception = ex
-                errMsg = "Failed (common_get_provinces). Message : " + exception.Message
+                errMsg = "Gagal. (common_get_provinces). Message : " + exception.Message
                 mdlCom.INSERTLOG(errMsg, "")
                 flag = False
                 ProjectData.ClearProjectError()
@@ -714,7 +737,7 @@ Namespace Splash.Konektor
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
                 Dim exception As Exception = ex
-                errMsg = "Failed (common_get_provinces). Message : " + exception.Message
+                errMsg = "Gagal. (common_get_provinces). Message : " + exception.Message
                 mdlCom.INSERTLOG(errMsg, "")
                 flag = False
                 ProjectData.ClearProjectError()

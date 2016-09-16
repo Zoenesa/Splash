@@ -32,15 +32,32 @@ Partial Class rFormAddWorkorderRecord
         Me.RadLabel4 = New Telerik.WinControls.UI.RadLabel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
+        Me.RadButton2 = New Telerik.WinControls.UI.RadButton()
+        Me.RadButton3 = New Telerik.WinControls.UI.RadButton()
         Me.RadLabel5 = New Telerik.WinControls.UI.RadLabel()
         Me.RadPageView1 = New Telerik.WinControls.UI.RadPageView()
         Me.JobOrderPage1 = New Telerik.WinControls.UI.RadPageViewPage()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.RadLabel6 = New Telerik.WinControls.UI.RadLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.RadTextBox1 = New Telerik.WinControls.UI.RadTextBox()
         Me.JobOrderPage2 = New Telerik.WinControls.UI.RadPageViewPage()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.RadGroupBox6 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.RadTextBox9 = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadTextBox10 = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadTextBox5 = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadTextBox7 = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadTextBox4 = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadTextBox6 = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadTextBox3 = New Telerik.WinControls.UI.RadTextBox()
+        Me.btnCount = New Telerik.WinControls.UI.RadButton()
+        Me.RadLabel13 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel17 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel18 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel16 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel14 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel15 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel19 = New Telerik.WinControls.UI.RadLabel()
         Me.RadButton8 = New Telerik.WinControls.UI.RadButton()
         Me.RadTextBox8 = New Telerik.WinControls.UI.RadTextBox()
@@ -48,24 +65,7 @@ Partial Class rFormAddWorkorderRecord
         Me.RadButton7 = New Telerik.WinControls.UI.RadButton()
         Me.RadButton6 = New Telerik.WinControls.UI.RadButton()
         Me.RadButton9 = New Telerik.WinControls.UI.RadButton()
-        Me.RadLabel15 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel14 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel16 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel18 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel17 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel13 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadTextBox3 = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadTextBox10 = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadTextBox6 = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadTextBox4 = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadTextBox7 = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadTextBox5 = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadTextBox9 = New Telerik.WinControls.UI.RadTextBox()
-        Me.btnCount = New Telerik.WinControls.UI.RadButton()
-        Me.RadTextBox1 = New Telerik.WinControls.UI.RadTextBox()
         Me.RadStatusStrip1 = New Telerik.WinControls.UI.RadStatusStrip()
-        Me.RadButton2 = New Telerik.WinControls.UI.RadButton()
-        Me.RadButton3 = New Telerik.WinControls.UI.RadButton()
         CType(Me.btnSave, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rTxID, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rWONum, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,6 +76,8 @@ Partial Class rFormAddWorkorderRecord
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadButton2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadButton3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPageView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPageView1.SuspendLayout()
@@ -83,10 +85,25 @@ Partial Class rFormAddWorkorderRecord
         Me.Panel3.SuspendLayout()
         CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.JobOrderPage2.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.RadGroupBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox6.SuspendLayout()
+        CType(Me.RadTextBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadTextBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadTextBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadTextBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadTextBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadTextBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadTextBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnCount, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel17, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel18, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel16, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadButton8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadTextBox8, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -94,24 +111,7 @@ Partial Class rFormAddWorkorderRecord
         CType(Me.RadButton7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadButton6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadButton9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel15, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel14, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel16, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel18, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel17, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnCount, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadButton2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadButton3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -181,10 +181,10 @@ Partial Class rFormAddWorkorderRecord
         Me.rTxMaskDate.Size = New System.Drawing.Size(121, 23)
         Me.rTxMaskDate.TabIndex = 7
         Me.rTxMaskDate.TabStop = False
-        Me.rTxMaskDate.Text = "__/__/____"
+        Me.rTxMaskDate.Text = "__-__-____"
         Me.rTxMaskDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.rTxMaskDate.ThemeName = "Office2010Black"
-        CType(Me.rTxMaskDate.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "__/__/____"
+        CType(Me.rTxMaskDate.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "__-__-____"
         CType(Me.rTxMaskDate.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Padding = New System.Windows.Forms.Padding(2, 2, 2, 3)
         CType(Me.rTxMaskDate.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "_"
         CType(Me.rTxMaskDate.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
@@ -273,6 +273,36 @@ Partial Class rFormAddWorkorderRecord
         CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         '
+        'RadButton2
+        '
+        Me.RadButton2.BackColor = System.Drawing.Color.Transparent
+        Me.RadButton2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RadButton2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadButton2.Location = New System.Drawing.Point(305, 3)
+        Me.RadButton2.Name = "RadButton2"
+        Me.RadButton2.Size = New System.Drawing.Size(145, 27)
+        Me.RadButton2.TabIndex = 1
+        Me.RadButton2.Text = "&Kembali"
+        Me.RadButton2.ThemeName = "Office2010Black"
+        CType(Me.RadButton2.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Kembali"
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        '
+        'RadButton3
+        '
+        Me.RadButton3.BackColor = System.Drawing.Color.Transparent
+        Me.RadButton3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RadButton3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadButton3.Location = New System.Drawing.Point(456, 3)
+        Me.RadButton3.Name = "RadButton3"
+        Me.RadButton3.Size = New System.Drawing.Size(145, 27)
+        Me.RadButton3.TabIndex = 1
+        Me.RadButton3.Text = "&Lanjut"
+        Me.RadButton3.ThemeName = "Office2010Black"
+        CType(Me.RadButton3.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Lanjut"
+        CType(Me.RadButton3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.RadButton3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        '
         'RadLabel5
         '
         Me.RadLabel5.BackColor = System.Drawing.Color.Transparent
@@ -300,7 +330,7 @@ Partial Class rFormAddWorkorderRecord
         Me.RadPageView1.Text = "RadPageView1"
         Me.RadPageView1.ThemeName = "Office2010Black"
         CType(Me.RadPageView1.GetChildAt(0), Telerik.WinControls.UI.RadPageViewStripElement).StripButtons = Telerik.WinControls.UI.StripViewButtons.None
-        CType(Me.RadPageView1.GetChildAt(0), Telerik.WinControls.UI.RadPageViewStripElement).Padding = New System.Windows.Forms.Padding(0, 0, 0, 0)
+        CType(Me.RadPageView1.GetChildAt(0), Telerik.WinControls.UI.RadPageViewStripElement).Padding = New System.Windows.Forms.Padding(0)
         '
         'JobOrderPage1
         '
@@ -348,8 +378,30 @@ Partial Class rFormAddWorkorderRecord
         Me.Panel1.Controls.Add(Me.RadLabel5)
         Me.Panel1.Location = New System.Drawing.Point(0, 42)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(745, 116)
+        Me.Panel1.Size = New System.Drawing.Size(743, 113)
         Me.Panel1.TabIndex = 11
+        '
+        'RadTextBox1
+        '
+        Me.RadTextBox1.AutoSize = False
+        Me.RadTextBox1.BackColor = System.Drawing.Color.Transparent
+        Me.RadTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadTextBox1.Location = New System.Drawing.Point(296, 28)
+        Me.RadTextBox1.Multiline = True
+        Me.RadTextBox1.Name = "RadTextBox1"
+        Me.RadTextBox1.Padding = New System.Windows.Forms.Padding(8, 3, 0, 2)
+        Me.RadTextBox1.ReadOnly = True
+        Me.RadTextBox1.Size = New System.Drawing.Size(380, 74)
+        Me.RadTextBox1.TabIndex = 1
+        Me.RadTextBox1.ThemeName = "Office2010Black"
+        CType(Me.RadTextBox1.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(8, 3, 0, 2)
+        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = ""
+        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).StretchVertically = True
+        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
+        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
+        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'JobOrderPage2
         '
@@ -407,6 +459,282 @@ Partial Class rFormAddWorkorderRecord
         Me.RadGroupBox6.Text = " Input Items "
         Me.RadGroupBox6.ThemeName = "Office2010Black"
         CType(Me.RadGroupBox6.GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        '
+        'RadTextBox9
+        '
+        Me.RadTextBox9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadTextBox9.AutoSize = False
+        Me.RadTextBox9.BackColor = System.Drawing.Color.Transparent
+        Me.RadTextBox9.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadTextBox9.Location = New System.Drawing.Point(605, 254)
+        Me.RadTextBox9.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
+        Me.RadTextBox9.MaxLength = 6
+        Me.RadTextBox9.Name = "RadTextBox9"
+        Me.RadTextBox9.NullText = "0,00"
+        Me.RadTextBox9.Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
+        Me.RadTextBox9.ReadOnly = True
+        Me.RadTextBox9.Size = New System.Drawing.Size(123, 23)
+        Me.RadTextBox9.TabIndex = 20
+        Me.RadTextBox9.TabStop = False
+        Me.RadTextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.RadTextBox9.ThemeName = "Office2010Black"
+        CType(Me.RadTextBox9.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadTextBox9.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
+        CType(Me.RadTextBox9.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "0,00"
+        CType(Me.RadTextBox9.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadTextBox9.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.RadTextBox9.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        CType(Me.RadTextBox9.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        '
+        'RadTextBox10
+        '
+        Me.RadTextBox10.AutoSize = False
+        Me.RadTextBox10.BackColor = System.Drawing.Color.Transparent
+        Me.RadTextBox10.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadTextBox10.Location = New System.Drawing.Point(5, 299)
+        Me.RadTextBox10.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
+        Me.RadTextBox10.MaxLength = 6
+        Me.RadTextBox10.Multiline = True
+        Me.RadTextBox10.Name = "RadTextBox10"
+        Me.RadTextBox10.NullText = "# TERBILANG #"
+        Me.RadTextBox10.Padding = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.RadTextBox10.ReadOnly = True
+        Me.RadTextBox10.Size = New System.Drawing.Size(723, 52)
+        Me.RadTextBox10.TabIndex = 20
+        Me.RadTextBox10.TabStop = False
+        Me.RadTextBox10.ThemeName = "Office2010Black"
+        CType(Me.RadTextBox10.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Text = ""
+        CType(Me.RadTextBox10.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadTextBox10.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        CType(Me.RadTextBox10.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "# TERBILANG #"
+        CType(Me.RadTextBox10.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).StretchVertically = True
+        CType(Me.RadTextBox10.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadTextBox10.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.RadTextBox10.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        CType(Me.RadTextBox10.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        '
+        'RadTextBox5
+        '
+        Me.RadTextBox5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadTextBox5.AutoSize = False
+        Me.RadTextBox5.BackColor = System.Drawing.Color.Transparent
+        Me.RadTextBox5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadTextBox5.Location = New System.Drawing.Point(393, 254)
+        Me.RadTextBox5.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
+        Me.RadTextBox5.MaxLength = 6
+        Me.RadTextBox5.Name = "RadTextBox5"
+        Me.RadTextBox5.NullText = "0,00"
+        Me.RadTextBox5.Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
+        Me.RadTextBox5.ReadOnly = True
+        Me.RadTextBox5.Size = New System.Drawing.Size(123, 23)
+        Me.RadTextBox5.TabIndex = 20
+        Me.RadTextBox5.TabStop = False
+        Me.RadTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.RadTextBox5.ThemeName = "Office2010Black"
+        CType(Me.RadTextBox5.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadTextBox5.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
+        CType(Me.RadTextBox5.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "0,00"
+        CType(Me.RadTextBox5.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadTextBox5.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.RadTextBox5.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        CType(Me.RadTextBox5.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        '
+        'RadTextBox7
+        '
+        Me.RadTextBox7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadTextBox7.AutoSize = False
+        Me.RadTextBox7.BackColor = System.Drawing.Color.Transparent
+        Me.RadTextBox7.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadTextBox7.Location = New System.Drawing.Point(605, 225)
+        Me.RadTextBox7.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
+        Me.RadTextBox7.MaxLength = 6
+        Me.RadTextBox7.Name = "RadTextBox7"
+        Me.RadTextBox7.NullText = "0,00"
+        Me.RadTextBox7.Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
+        Me.RadTextBox7.ReadOnly = True
+        Me.RadTextBox7.Size = New System.Drawing.Size(123, 23)
+        Me.RadTextBox7.TabIndex = 20
+        Me.RadTextBox7.TabStop = False
+        Me.RadTextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.RadTextBox7.ThemeName = "Office2010Black"
+        CType(Me.RadTextBox7.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadTextBox7.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
+        CType(Me.RadTextBox7.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "0,00"
+        CType(Me.RadTextBox7.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadTextBox7.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.RadTextBox7.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        CType(Me.RadTextBox7.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        '
+        'RadTextBox4
+        '
+        Me.RadTextBox4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadTextBox4.AutoSize = False
+        Me.RadTextBox4.BackColor = System.Drawing.Color.Transparent
+        Me.RadTextBox4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadTextBox4.Location = New System.Drawing.Point(393, 225)
+        Me.RadTextBox4.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
+        Me.RadTextBox4.MaxLength = 6
+        Me.RadTextBox4.Name = "RadTextBox4"
+        Me.RadTextBox4.NullText = "0,00"
+        Me.RadTextBox4.Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
+        Me.RadTextBox4.ReadOnly = True
+        Me.RadTextBox4.Size = New System.Drawing.Size(123, 23)
+        Me.RadTextBox4.TabIndex = 20
+        Me.RadTextBox4.TabStop = False
+        Me.RadTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.RadTextBox4.ThemeName = "Office2010Black"
+        CType(Me.RadTextBox4.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadTextBox4.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
+        CType(Me.RadTextBox4.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "0,00"
+        CType(Me.RadTextBox4.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadTextBox4.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.RadTextBox4.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        CType(Me.RadTextBox4.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        '
+        'RadTextBox6
+        '
+        Me.RadTextBox6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadTextBox6.AutoSize = False
+        Me.RadTextBox6.BackColor = System.Drawing.Color.Transparent
+        Me.RadTextBox6.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadTextBox6.Location = New System.Drawing.Point(605, 196)
+        Me.RadTextBox6.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
+        Me.RadTextBox6.MaxLength = 6
+        Me.RadTextBox6.Name = "RadTextBox6"
+        Me.RadTextBox6.NullText = "0,00"
+        Me.RadTextBox6.Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
+        Me.RadTextBox6.ReadOnly = True
+        Me.RadTextBox6.Size = New System.Drawing.Size(123, 23)
+        Me.RadTextBox6.TabIndex = 20
+        Me.RadTextBox6.TabStop = False
+        Me.RadTextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.RadTextBox6.ThemeName = "Office2010Black"
+        CType(Me.RadTextBox6.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadTextBox6.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
+        CType(Me.RadTextBox6.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "0,00"
+        CType(Me.RadTextBox6.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadTextBox6.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.RadTextBox6.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        CType(Me.RadTextBox6.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        '
+        'RadTextBox3
+        '
+        Me.RadTextBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadTextBox3.AutoSize = False
+        Me.RadTextBox3.BackColor = System.Drawing.Color.Transparent
+        Me.RadTextBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadTextBox3.Location = New System.Drawing.Point(393, 196)
+        Me.RadTextBox3.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
+        Me.RadTextBox3.MaxLength = 6
+        Me.RadTextBox3.Name = "RadTextBox3"
+        Me.RadTextBox3.NullText = "0,00"
+        Me.RadTextBox3.Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
+        Me.RadTextBox3.ReadOnly = True
+        Me.RadTextBox3.Size = New System.Drawing.Size(123, 23)
+        Me.RadTextBox3.TabIndex = 20
+        Me.RadTextBox3.TabStop = False
+        Me.RadTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.RadTextBox3.ThemeName = "Office2010Black"
+        CType(Me.RadTextBox3.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadTextBox3.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
+        CType(Me.RadTextBox3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "0,00"
+        CType(Me.RadTextBox3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        CType(Me.RadTextBox3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        CType(Me.RadTextBox3.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        CType(Me.RadTextBox3.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
+        '
+        'btnCount
+        '
+        Me.btnCount.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCount.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnCount.Location = New System.Drawing.Point(5, 198)
+        Me.btnCount.Name = "btnCount"
+        Me.btnCount.Size = New System.Drawing.Size(180, 79)
+        Me.btnCount.TabIndex = 8
+        Me.btnCount.Text = "&Posting Transaksi"
+        Me.btnCount.ThemeName = "Office2010Black"
+        '
+        'RadLabel13
+        '
+        Me.RadLabel13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadLabel13.BackColor = System.Drawing.Color.Transparent
+        Me.RadLabel13.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadLabel13.ForeColor = System.Drawing.Color.Black
+        Me.RadLabel13.Location = New System.Drawing.Point(529, 258)
+        Me.RadLabel13.Name = "RadLabel13"
+        Me.RadLabel13.Size = New System.Drawing.Size(70, 19)
+        Me.RadLabel13.TabIndex = 19
+        Me.RadLabel13.Text = "Grand Total"
+        Me.RadLabel13.ThemeName = "Office2010Black"
+        '
+        'RadLabel17
+        '
+        Me.RadLabel17.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadLabel17.BackColor = System.Drawing.Color.Transparent
+        Me.RadLabel17.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadLabel17.ForeColor = System.Drawing.Color.Black
+        Me.RadLabel17.Location = New System.Drawing.Point(300, 200)
+        Me.RadLabel17.Name = "RadLabel17"
+        Me.RadLabel17.Size = New System.Drawing.Size(87, 19)
+        Me.RadLabel17.TabIndex = 9
+        Me.RadLabel17.Text = "Total Transaksi"
+        Me.RadLabel17.TextAlignment = System.Drawing.ContentAlignment.BottomRight
+        Me.RadLabel17.ThemeName = "Office2010Black"
+        '
+        'RadLabel18
+        '
+        Me.RadLabel18.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadLabel18.BackColor = System.Drawing.Color.Transparent
+        Me.RadLabel18.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadLabel18.ForeColor = System.Drawing.Color.Black
+        Me.RadLabel18.Location = New System.Drawing.Point(313, 258)
+        Me.RadLabel18.Name = "RadLabel18"
+        Me.RadLabel18.Size = New System.Drawing.Size(74, 19)
+        Me.RadLabel18.TabIndex = 13
+        Me.RadLabel18.Text = "Pembayaran"
+        Me.RadLabel18.ThemeName = "Office2010Black"
+        '
+        'RadLabel16
+        '
+        Me.RadLabel16.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadLabel16.AutoSize = False
+        Me.RadLabel16.BackColor = System.Drawing.Color.Transparent
+        Me.RadLabel16.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadLabel16.ForeColor = System.Drawing.Color.Black
+        Me.RadLabel16.Location = New System.Drawing.Point(224, 229)
+        Me.RadLabel16.Name = "RadLabel16"
+        Me.RadLabel16.Size = New System.Drawing.Size(163, 19)
+        Me.RadLabel16.TabIndex = 11
+        Me.RadLabel16.Text = "Nilai Termin "
+        Me.RadLabel16.TextAlignment = System.Drawing.ContentAlignment.BottomRight
+        Me.RadLabel16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.RadLabel16.ThemeName = "Office2010Black"
+        '
+        'RadLabel14
+        '
+        Me.RadLabel14.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadLabel14.BackColor = System.Drawing.Color.Transparent
+        Me.RadLabel14.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadLabel14.ForeColor = System.Drawing.Color.Black
+        Me.RadLabel14.Location = New System.Drawing.Point(541, 200)
+        Me.RadLabel14.Name = "RadLabel14"
+        Me.RadLabel14.Size = New System.Drawing.Size(58, 19)
+        Me.RadLabel14.TabIndex = 15
+        Me.RadLabel14.Text = "Sub Total"
+        Me.RadLabel14.ThemeName = "Office2010Black"
+        '
+        'RadLabel15
+        '
+        Me.RadLabel15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadLabel15.BackColor = System.Drawing.Color.Transparent
+        Me.RadLabel15.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadLabel15.ForeColor = System.Drawing.Color.Black
+        Me.RadLabel15.Location = New System.Drawing.Point(574, 229)
+        Me.RadLabel15.Name = "RadLabel15"
+        Me.RadLabel15.Size = New System.Drawing.Size(25, 19)
+        Me.RadLabel15.TabIndex = 17
+        Me.RadLabel15.Text = "Tax"
+        Me.RadLabel15.ThemeName = "Office2010Black"
         '
         'RadLabel19
         '
@@ -506,304 +834,6 @@ Partial Class rFormAddWorkorderRecord
         Me.RadButton9.TextWrap = True
         Me.RadButton9.ThemeName = "Office2010Black"
         '
-        'RadLabel15
-        '
-        Me.RadLabel15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel15.BackColor = System.Drawing.Color.Transparent
-        Me.RadLabel15.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadLabel15.ForeColor = System.Drawing.Color.Black
-        Me.RadLabel15.Location = New System.Drawing.Point(574, 229)
-        Me.RadLabel15.Name = "RadLabel15"
-        Me.RadLabel15.Size = New System.Drawing.Size(25, 19)
-        Me.RadLabel15.TabIndex = 17
-        Me.RadLabel15.Text = "Tax"
-        Me.RadLabel15.ThemeName = "Office2010Black"
-        '
-        'RadLabel14
-        '
-        Me.RadLabel14.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel14.BackColor = System.Drawing.Color.Transparent
-        Me.RadLabel14.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadLabel14.ForeColor = System.Drawing.Color.Black
-        Me.RadLabel14.Location = New System.Drawing.Point(541, 200)
-        Me.RadLabel14.Name = "RadLabel14"
-        Me.RadLabel14.Size = New System.Drawing.Size(58, 19)
-        Me.RadLabel14.TabIndex = 15
-        Me.RadLabel14.Text = "Sub Total"
-        Me.RadLabel14.ThemeName = "Office2010Black"
-        '
-        'RadLabel16
-        '
-        Me.RadLabel16.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel16.AutoSize = False
-        Me.RadLabel16.BackColor = System.Drawing.Color.Transparent
-        Me.RadLabel16.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadLabel16.ForeColor = System.Drawing.Color.Black
-        Me.RadLabel16.Location = New System.Drawing.Point(224, 229)
-        Me.RadLabel16.Name = "RadLabel16"
-        Me.RadLabel16.Size = New System.Drawing.Size(163, 19)
-        Me.RadLabel16.TabIndex = 11
-        Me.RadLabel16.Text = "Nilai Termin "
-        Me.RadLabel16.TextAlignment = System.Drawing.ContentAlignment.BottomRight
-        Me.RadLabel16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.RadLabel16.ThemeName = "Office2010Black"
-        '
-        'RadLabel18
-        '
-        Me.RadLabel18.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel18.BackColor = System.Drawing.Color.Transparent
-        Me.RadLabel18.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadLabel18.ForeColor = System.Drawing.Color.Black
-        Me.RadLabel18.Location = New System.Drawing.Point(313, 258)
-        Me.RadLabel18.Name = "RadLabel18"
-        Me.RadLabel18.Size = New System.Drawing.Size(74, 19)
-        Me.RadLabel18.TabIndex = 13
-        Me.RadLabel18.Text = "Pembayaran"
-        Me.RadLabel18.ThemeName = "Office2010Black"
-        '
-        'RadLabel17
-        '
-        Me.RadLabel17.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel17.BackColor = System.Drawing.Color.Transparent
-        Me.RadLabel17.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadLabel17.ForeColor = System.Drawing.Color.Black
-        Me.RadLabel17.Location = New System.Drawing.Point(300, 200)
-        Me.RadLabel17.Name = "RadLabel17"
-        Me.RadLabel17.Size = New System.Drawing.Size(87, 19)
-        Me.RadLabel17.TabIndex = 9
-        Me.RadLabel17.Text = "Total Transaksi"
-        Me.RadLabel17.TextAlignment = System.Drawing.ContentAlignment.BottomRight
-        Me.RadLabel17.ThemeName = "Office2010Black"
-        '
-        'RadLabel13
-        '
-        Me.RadLabel13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel13.BackColor = System.Drawing.Color.Transparent
-        Me.RadLabel13.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadLabel13.ForeColor = System.Drawing.Color.Black
-        Me.RadLabel13.Location = New System.Drawing.Point(529, 258)
-        Me.RadLabel13.Name = "RadLabel13"
-        Me.RadLabel13.Size = New System.Drawing.Size(70, 19)
-        Me.RadLabel13.TabIndex = 19
-        Me.RadLabel13.Text = "Grand Total"
-        Me.RadLabel13.ThemeName = "Office2010Black"
-        '
-        'RadTextBox3
-        '
-        Me.RadTextBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadTextBox3.AutoSize = False
-        Me.RadTextBox3.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadTextBox3.Location = New System.Drawing.Point(393, 196)
-        Me.RadTextBox3.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
-        Me.RadTextBox3.MaxLength = 6
-        Me.RadTextBox3.Name = "RadTextBox3"
-        Me.RadTextBox3.NullText = "0,00"
-        Me.RadTextBox3.Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
-        Me.RadTextBox3.ReadOnly = True
-        Me.RadTextBox3.Size = New System.Drawing.Size(123, 23)
-        Me.RadTextBox3.TabIndex = 20
-        Me.RadTextBox3.TabStop = False
-        Me.RadTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.RadTextBox3.ThemeName = "Office2010Black"
-        CType(Me.RadTextBox3.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        CType(Me.RadTextBox3.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
-        CType(Me.RadTextBox3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "0,00"
-        CType(Me.RadTextBox3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        CType(Me.RadTextBox3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        CType(Me.RadTextBox3.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
-        CType(Me.RadTextBox3.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        '
-        'RadTextBox10
-        '
-        Me.RadTextBox10.AutoSize = False
-        Me.RadTextBox10.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox10.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadTextBox10.Location = New System.Drawing.Point(5, 299)
-        Me.RadTextBox10.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
-        Me.RadTextBox10.MaxLength = 6
-        Me.RadTextBox10.Multiline = True
-        Me.RadTextBox10.Name = "RadTextBox10"
-        Me.RadTextBox10.NullText = "# TERBILANG #"
-        Me.RadTextBox10.Padding = New System.Windows.Forms.Padding(4, 1, 4, 1)
-        Me.RadTextBox10.ReadOnly = True
-        Me.RadTextBox10.Size = New System.Drawing.Size(723, 52)
-        Me.RadTextBox10.TabIndex = 20
-        Me.RadTextBox10.TabStop = False
-        Me.RadTextBox10.ThemeName = "Office2010Black"
-        CType(Me.RadTextBox10.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Text = ""
-        CType(Me.RadTextBox10.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        CType(Me.RadTextBox10.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(4, 1, 4, 1)
-        CType(Me.RadTextBox10.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "# TERBILANG #"
-        CType(Me.RadTextBox10.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).StretchVertically = True
-        CType(Me.RadTextBox10.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        CType(Me.RadTextBox10.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        CType(Me.RadTextBox10.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
-        CType(Me.RadTextBox10.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        '
-        'RadTextBox6
-        '
-        Me.RadTextBox6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadTextBox6.AutoSize = False
-        Me.RadTextBox6.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox6.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadTextBox6.Location = New System.Drawing.Point(605, 196)
-        Me.RadTextBox6.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
-        Me.RadTextBox6.MaxLength = 6
-        Me.RadTextBox6.Name = "RadTextBox6"
-        Me.RadTextBox6.NullText = "0,00"
-        Me.RadTextBox6.Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
-        Me.RadTextBox6.ReadOnly = True
-        Me.RadTextBox6.Size = New System.Drawing.Size(123, 23)
-        Me.RadTextBox6.TabIndex = 20
-        Me.RadTextBox6.TabStop = False
-        Me.RadTextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.RadTextBox6.ThemeName = "Office2010Black"
-        CType(Me.RadTextBox6.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        CType(Me.RadTextBox6.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
-        CType(Me.RadTextBox6.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "0,00"
-        CType(Me.RadTextBox6.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        CType(Me.RadTextBox6.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        CType(Me.RadTextBox6.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
-        CType(Me.RadTextBox6.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        '
-        'RadTextBox4
-        '
-        Me.RadTextBox4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadTextBox4.AutoSize = False
-        Me.RadTextBox4.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadTextBox4.Location = New System.Drawing.Point(393, 225)
-        Me.RadTextBox4.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
-        Me.RadTextBox4.MaxLength = 6
-        Me.RadTextBox4.Name = "RadTextBox4"
-        Me.RadTextBox4.NullText = "0,00"
-        Me.RadTextBox4.Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
-        Me.RadTextBox4.ReadOnly = True
-        Me.RadTextBox4.Size = New System.Drawing.Size(123, 23)
-        Me.RadTextBox4.TabIndex = 20
-        Me.RadTextBox4.TabStop = False
-        Me.RadTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.RadTextBox4.ThemeName = "Office2010Black"
-        CType(Me.RadTextBox4.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        CType(Me.RadTextBox4.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
-        CType(Me.RadTextBox4.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "0,00"
-        CType(Me.RadTextBox4.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        CType(Me.RadTextBox4.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        CType(Me.RadTextBox4.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
-        CType(Me.RadTextBox4.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        '
-        'RadTextBox7
-        '
-        Me.RadTextBox7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadTextBox7.AutoSize = False
-        Me.RadTextBox7.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox7.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadTextBox7.Location = New System.Drawing.Point(605, 225)
-        Me.RadTextBox7.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
-        Me.RadTextBox7.MaxLength = 6
-        Me.RadTextBox7.Name = "RadTextBox7"
-        Me.RadTextBox7.NullText = "0,00"
-        Me.RadTextBox7.Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
-        Me.RadTextBox7.ReadOnly = True
-        Me.RadTextBox7.Size = New System.Drawing.Size(123, 23)
-        Me.RadTextBox7.TabIndex = 20
-        Me.RadTextBox7.TabStop = False
-        Me.RadTextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.RadTextBox7.ThemeName = "Office2010Black"
-        CType(Me.RadTextBox7.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        CType(Me.RadTextBox7.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
-        CType(Me.RadTextBox7.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "0,00"
-        CType(Me.RadTextBox7.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        CType(Me.RadTextBox7.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        CType(Me.RadTextBox7.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
-        CType(Me.RadTextBox7.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        '
-        'RadTextBox5
-        '
-        Me.RadTextBox5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadTextBox5.AutoSize = False
-        Me.RadTextBox5.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadTextBox5.Location = New System.Drawing.Point(393, 254)
-        Me.RadTextBox5.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
-        Me.RadTextBox5.MaxLength = 6
-        Me.RadTextBox5.Name = "RadTextBox5"
-        Me.RadTextBox5.NullText = "0,00"
-        Me.RadTextBox5.Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
-        Me.RadTextBox5.ReadOnly = True
-        Me.RadTextBox5.Size = New System.Drawing.Size(123, 23)
-        Me.RadTextBox5.TabIndex = 20
-        Me.RadTextBox5.TabStop = False
-        Me.RadTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.RadTextBox5.ThemeName = "Office2010Black"
-        CType(Me.RadTextBox5.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        CType(Me.RadTextBox5.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
-        CType(Me.RadTextBox5.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "0,00"
-        CType(Me.RadTextBox5.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        CType(Me.RadTextBox5.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        CType(Me.RadTextBox5.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
-        CType(Me.RadTextBox5.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        '
-        'RadTextBox9
-        '
-        Me.RadTextBox9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadTextBox9.AutoSize = False
-        Me.RadTextBox9.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox9.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadTextBox9.Location = New System.Drawing.Point(605, 254)
-        Me.RadTextBox9.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
-        Me.RadTextBox9.MaxLength = 6
-        Me.RadTextBox9.Name = "RadTextBox9"
-        Me.RadTextBox9.NullText = "0,00"
-        Me.RadTextBox9.Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
-        Me.RadTextBox9.ReadOnly = True
-        Me.RadTextBox9.Size = New System.Drawing.Size(123, 23)
-        Me.RadTextBox9.TabIndex = 20
-        Me.RadTextBox9.TabStop = False
-        Me.RadTextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.RadTextBox9.ThemeName = "Office2010Black"
-        CType(Me.RadTextBox9.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        CType(Me.RadTextBox9.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(0, 0, 6, 1)
-        CType(Me.RadTextBox9.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "0,00"
-        CType(Me.RadTextBox9.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        CType(Me.RadTextBox9.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        CType(Me.RadTextBox9.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
-        CType(Me.RadTextBox9.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        '
-        'btnCount
-        '
-        Me.btnCount.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCount.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnCount.Location = New System.Drawing.Point(5, 198)
-        Me.btnCount.Name = "btnCount"
-        Me.btnCount.Size = New System.Drawing.Size(180, 79)
-        Me.btnCount.TabIndex = 8
-        Me.btnCount.Text = "&Posting Transaksi"
-        Me.btnCount.ThemeName = "Office2010Black"
-        '
-        'RadTextBox1
-        '
-        Me.RadTextBox1.AutoSize = False
-        Me.RadTextBox1.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadTextBox1.Location = New System.Drawing.Point(296, 28)
-        Me.RadTextBox1.Multiline = True
-        Me.RadTextBox1.Name = "RadTextBox1"
-        Me.RadTextBox1.Padding = New System.Windows.Forms.Padding(8, 3, 0, 2)
-        Me.RadTextBox1.ReadOnly = True
-        Me.RadTextBox1.Size = New System.Drawing.Size(380, 74)
-        Me.RadTextBox1.TabIndex = 1
-        Me.RadTextBox1.ThemeName = "Office2010Black"
-        CType(Me.RadTextBox1.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(8, 3, 0, 2)
-        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = ""
-        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).StretchVertically = True
-        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
-        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
-        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
-        CType(Me.RadTextBox1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
-        '
         'RadStatusStrip1
         '
         Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 243)
@@ -813,36 +843,6 @@ Partial Class rFormAddWorkorderRecord
         Me.RadStatusStrip1.TabIndex = 17
         Me.RadStatusStrip1.Text = "RadStatusStrip1"
         Me.RadStatusStrip1.ThemeName = "Office2010Black"
-        '
-        'RadButton2
-        '
-        Me.RadButton2.BackColor = System.Drawing.Color.Transparent
-        Me.RadButton2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RadButton2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadButton2.Location = New System.Drawing.Point(305, 3)
-        Me.RadButton2.Name = "RadButton2"
-        Me.RadButton2.Size = New System.Drawing.Size(145, 27)
-        Me.RadButton2.TabIndex = 1
-        Me.RadButton2.Text = "&Kembali"
-        Me.RadButton2.ThemeName = "Office2010Black"
-        CType(Me.RadButton2.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Kembali"
-        CType(Me.RadButton2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
-        CType(Me.RadButton2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
-        '
-        'RadButton3
-        '
-        Me.RadButton3.BackColor = System.Drawing.Color.Transparent
-        Me.RadButton3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RadButton3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadButton3.Location = New System.Drawing.Point(456, 3)
-        Me.RadButton3.Name = "RadButton3"
-        Me.RadButton3.Size = New System.Drawing.Size(145, 27)
-        Me.RadButton3.TabIndex = 1
-        Me.RadButton3.Text = "&Lanjut"
-        Me.RadButton3.ThemeName = "Office2010Black"
-        CType(Me.RadButton3.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Lanjut"
-        CType(Me.RadButton3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
-        CType(Me.RadButton3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         '
         'rFormAddWorkorderRecord
         '
@@ -876,6 +876,8 @@ Partial Class rFormAddWorkorderRecord
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadButton2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadButton3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPageView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadPageView1.ResumeLayout(False)
@@ -885,11 +887,26 @@ Partial Class rFormAddWorkorderRecord
         CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.JobOrderPage2.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         CType(Me.RadGroupBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox6.ResumeLayout(False)
         Me.RadGroupBox6.PerformLayout()
+        CType(Me.RadTextBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadTextBox10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadTextBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadTextBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadTextBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadTextBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadTextBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnCount, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel17, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel18, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel16, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel15, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadButton8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadTextBox8, System.ComponentModel.ISupportInitialize).EndInit()
@@ -897,24 +914,7 @@ Partial Class rFormAddWorkorderRecord
         CType(Me.RadButton7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadButton6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadButton9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel15, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel14, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel16, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel18, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel17, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnCount, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadButton2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadButton3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

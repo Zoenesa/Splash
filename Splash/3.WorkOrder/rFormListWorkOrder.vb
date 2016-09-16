@@ -69,37 +69,46 @@ Public Class rFormListWorkOrder
     End Sub
 
     Public Sub LoadWorkorder(Optional ByVal Opsi As String = "")
+        Dim sqlreaderWO As MySqlDataReader = Nothing
+        Dim mysqlcommand As MySqlCommand = New MySqlCommand
         Try
             dg.Rows.Clear()
             Dim strCommand As String = "SELECT * FROM `listworkorder` " & Opsi & " ORDER BY `ID`;"
             'mdlCom.BukaKoneksi()
-            Dim sqlreaderWO As MySqlDataReader = New MySqlCommand((strCommand), mdlCom.vConn).ExecuteReader
-            If sqlreaderWO.HasRows Then
-                Dim strField As String() = New String(9 - 1) {}
-                Do While sqlreaderWO.Read
-                    strField(0) = Conversions.ToString(False)
-                    strField(1) = Conversions.ToString(sqlreaderWO.Item("ID"))
-                    strField(2) = Conversions.ToString(sqlreaderWO.Item("WO_CLIENTNAME"))
-                    strField(3) = Conversions.ToString(sqlreaderWO.Item("WO_NO"))
-                    strField(4) = Conversions.ToString(sqlreaderWO.Item("WO_DATE"))
-                    strField(5) = Conversions.ToString(sqlreaderWO.Item("UserRecorder"))
-                    strField(6) = Conversions.ToString(sqlreaderWO.Item("DateRecorded"))
-                    strField(7) = Conversions.ToString(sqlreaderWO.Item("UserUpdated"))
-                    strField(8) = Conversions.ToString(sqlreaderWO.Item("RecordUpdated"))
-                    dg.Rows.Add(strField)
-                Loop
-                sqlreaderWO.Close()
-                sqlreaderWO.Dispose()
-                RadDropDownList1.SelectedIndex = 0
-            Else
-                RadMessageBox.Show("Belum ada Data WorkOrder " & _
-                                   "pada Database!", "Informasi", MessageBoxButtons.OK, RadMessageIcon.Info)
-            End If
+            mysqlcommand.CommandText = strCommand
+            mysqlcommand.Connection = Konektor.mdlCom.vConn
+            sqlreaderWO = mysqlcommand.ExecuteReader
+            'If sqlreaderWO.HasRows Then
+            Dim strField As String() = New String(9 - 1) {}
+            Do While sqlreaderWO.Read
+                strField(0) = Conversions.ToString(False)
+                strField(1) = Conversions.ToString(sqlreaderWO.Item("ID"))
+                strField(2) = Conversions.ToString(sqlreaderWO.Item("WO_CLIENTNAME"))
+                strField(3) = Conversions.ToString(sqlreaderWO.Item("WO_NO"))
+                strField(4) = Conversions.ToString(sqlreaderWO.Item("WO_DATE"))
+                strField(5) = Conversions.ToString(sqlreaderWO.Item("UserPerekam"))
+                strField(6) = Conversions.ToString(sqlreaderWO.Item("TanggalRekam"))
+                strField(7) = Conversions.ToString(sqlreaderWO.Item("UserUpdate"))
+                strField(8) = Conversions.ToString(sqlreaderWO.Item("TanggalUpdate"))
+                dg.Rows.Add(strField)
+            Loop
+            sqlreaderWO.Close()
+            'mysqlcommand.Connection.Dispose()
+            RadDropDownList1.SelectedIndex = 0
+            'Else
+            'RadMessageBox.Show("Belum ada Data WorkOrder " & _
+            '"pada Database!", "Informasi", MessageBoxButtons.OK, RadMessageIcon.Info)
+            'End If
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
-            RadMessageBox.Show("Error, Failed GetLoadWorkorder:" & ex.Source & vbNewLine & _
+            sqlreaderWO = Nothing
+            mysqlcommand = Nothing
+            RadMessageBox.Show("Error, Failed GetLoadWorkorder:" & ex.Source & vbNewLine &
                                "Cek &Details Untuk Info Lengkap Error", "db LoadWorkorder", MessageBoxButtons.OK, RadMessageIcon.Error, ex.Message)
             ProjectData.ClearProjectError()
+        Finally
+            sqlreaderWO = Nothing
+            mysqlcommand = Nothing
         End Try
     End Sub
 
