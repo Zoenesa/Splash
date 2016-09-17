@@ -66,6 +66,7 @@ Partial Class rFormAddWorkorderRecord
         Me.RadButton6 = New Telerik.WinControls.UI.RadButton()
         Me.RadButton9 = New Telerik.WinControls.UI.RadButton()
         Me.RadStatusStrip1 = New Telerik.WinControls.UI.RadStatusStrip()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         CType(Me.btnSave, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rTxID, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rWONum, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -112,6 +113,7 @@ Partial Class rFormAddWorkorderRecord
         CType(Me.RadButton6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadButton9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel2.SuspendLayout()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -121,9 +123,10 @@ Partial Class rFormAddWorkorderRecord
         Me.TableLayoutPanel1.SetColumnSpan(Me.btnSave, 2)
         Me.btnSave.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnSave.Location = New System.Drawing.Point(3, 3)
+        Me.btnSave.Location = New System.Drawing.Point(2, 2)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(296, 27)
+        Me.btnSave.Size = New System.Drawing.Size(300, 29)
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "&Simpan"
         Me.btnSave.ThemeName = "Office2010Black"
@@ -242,6 +245,7 @@ Partial Class rFormAddWorkorderRecord
         Me.TableLayoutPanel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel1.ColumnCount = 5
+        Me.TableLayoutPanel2.SetColumnSpan(Me.TableLayoutPanel1, 2)
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
@@ -251,21 +255,23 @@ Partial Class rFormAddWorkorderRecord
         Me.TableLayoutPanel1.Controls.Add(Me.RadButton1, 4, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.RadButton2, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.RadButton3, 3, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(2, 206)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 209)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(759, 33)
-        Me.TableLayoutPanel1.TabIndex = 8
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(763, 33)
+        Me.TableLayoutPanel1.TabIndex = 26
         '
         'RadButton1
         '
         Me.RadButton1.BackColor = System.Drawing.Color.Transparent
         Me.RadButton1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RadButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadButton1.Location = New System.Drawing.Point(607, 3)
+        Me.RadButton1.Location = New System.Drawing.Point(610, 2)
+        Me.RadButton1.Margin = New System.Windows.Forms.Padding(2)
         Me.RadButton1.Name = "RadButton1"
-        Me.RadButton1.Size = New System.Drawing.Size(149, 27)
+        Me.RadButton1.Size = New System.Drawing.Size(151, 29)
         Me.RadButton1.TabIndex = 1
         Me.RadButton1.Text = "&Batal"
         Me.RadButton1.ThemeName = "Office2010Black"
@@ -278,9 +284,10 @@ Partial Class rFormAddWorkorderRecord
         Me.RadButton2.BackColor = System.Drawing.Color.Transparent
         Me.RadButton2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RadButton2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadButton2.Location = New System.Drawing.Point(305, 3)
+        Me.RadButton2.Location = New System.Drawing.Point(306, 2)
+        Me.RadButton2.Margin = New System.Windows.Forms.Padding(2)
         Me.RadButton2.Name = "RadButton2"
-        Me.RadButton2.Size = New System.Drawing.Size(145, 27)
+        Me.RadButton2.Size = New System.Drawing.Size(148, 29)
         Me.RadButton2.TabIndex = 1
         Me.RadButton2.Text = "&Kembali"
         Me.RadButton2.ThemeName = "Office2010Black"
@@ -293,9 +300,10 @@ Partial Class rFormAddWorkorderRecord
         Me.RadButton3.BackColor = System.Drawing.Color.Transparent
         Me.RadButton3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RadButton3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadButton3.Location = New System.Drawing.Point(456, 3)
+        Me.RadButton3.Location = New System.Drawing.Point(458, 2)
+        Me.RadButton3.Margin = New System.Windows.Forms.Padding(2)
         Me.RadButton3.Name = "RadButton3"
-        Me.RadButton3.Size = New System.Drawing.Size(145, 27)
+        Me.RadButton3.Size = New System.Drawing.Size(148, 29)
         Me.RadButton3.TabIndex = 1
         Me.RadButton3.Text = "&Lanjut"
         Me.RadButton3.ThemeName = "Office2010Black"
@@ -318,14 +326,15 @@ Partial Class rFormAddWorkorderRecord
         Me.RadPageView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel2.SetColumnSpan(Me.RadPageView1, 2)
         Me.RadPageView1.Controls.Add(Me.JobOrderPage1)
         Me.RadPageView1.Controls.Add(Me.JobOrderPage2)
         Me.RadPageView1.DefaultPage = Me.JobOrderPage1
-        Me.RadPageView1.Location = New System.Drawing.Point(2, 3)
+        Me.RadPageView1.Location = New System.Drawing.Point(0, 0)
         Me.RadPageView1.Margin = New System.Windows.Forms.Padding(0)
         Me.RadPageView1.Name = "RadPageView1"
         Me.RadPageView1.SelectedPage = Me.JobOrderPage1
-        Me.RadPageView1.Size = New System.Drawing.Size(757, 200)
+        Me.RadPageView1.Size = New System.Drawing.Size(763, 205)
         Me.RadPageView1.TabIndex = 16
         Me.RadPageView1.Text = "RadPageView1"
         Me.RadPageView1.ThemeName = "Office2010Black"
@@ -339,18 +348,20 @@ Partial Class rFormAddWorkorderRecord
         Me.JobOrderPage1.ItemSize = New System.Drawing.SizeF(132.0!, 30.0!)
         Me.JobOrderPage1.Location = New System.Drawing.Point(6, 34)
         Me.JobOrderPage1.Name = "JobOrderPage1"
-        Me.JobOrderPage1.Size = New System.Drawing.Size(745, 160)
+        Me.JobOrderPage1.Size = New System.Drawing.Size(751, 165)
         Me.JobOrderPage1.Text = "Info Detail Job Order"
         '
         'Panel3
         '
+        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.Controls.Add(Me.RadLabel6)
         Me.Panel3.Controls.Add(Me.rTxID)
         Me.Panel3.Controls.Add(Me.RadLabel4)
         Me.Panel3.Controls.Add(Me.rTxMaskDate)
         Me.Panel3.Location = New System.Drawing.Point(0, 3)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(743, 33)
+        Me.Panel3.Size = New System.Drawing.Size(747, 33)
         Me.Panel3.TabIndex = 12
         '
         'RadLabel6
@@ -361,7 +372,7 @@ Partial Class rFormAddWorkorderRecord
         Me.RadLabel6.Font = New System.Drawing.Font("Segoe UI", 9.5!)
         Me.RadLabel6.Location = New System.Drawing.Point(3, 6)
         Me.RadLabel6.Name = "RadLabel6"
-        Me.RadLabel6.Size = New System.Drawing.Size(114, 20)
+        Me.RadLabel6.Size = New System.Drawing.Size(118, 20)
         Me.RadLabel6.TabIndex = 0
         Me.RadLabel6.Text = "No. Rekam Data"
         '
@@ -378,7 +389,7 @@ Partial Class rFormAddWorkorderRecord
         Me.Panel1.Controls.Add(Me.RadLabel5)
         Me.Panel1.Location = New System.Drawing.Point(0, 42)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(743, 113)
+        Me.Panel1.Size = New System.Drawing.Size(747, 122)
         Me.Panel1.TabIndex = 11
         '
         'RadTextBox1
@@ -409,7 +420,7 @@ Partial Class rFormAddWorkorderRecord
         Me.JobOrderPage2.ItemSize = New System.Drawing.SizeF(103.0!, 30.0!)
         Me.JobOrderPage2.Location = New System.Drawing.Point(6, 34)
         Me.JobOrderPage2.Name = "JobOrderPage2"
-        Me.JobOrderPage2.Size = New System.Drawing.Size(745, 160)
+        Me.JobOrderPage2.Size = New System.Drawing.Size(749, 163)
         Me.JobOrderPage2.Text = "Item Job Order"
         '
         'Panel5
@@ -418,16 +429,15 @@ Partial Class rFormAddWorkorderRecord
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel5.Controls.Add(Me.RadGroupBox6)
-        Me.Panel5.Location = New System.Drawing.Point(0, 42)
+        Me.Panel5.Location = New System.Drawing.Point(0, 3)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(745, 118)
+        Me.Panel5.Size = New System.Drawing.Size(749, 159)
         Me.Panel5.TabIndex = 12
         '
         'RadGroupBox6
         '
         Me.RadGroupBox6.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me.RadGroupBox6.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.RadGroupBox6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadGroupBox6.Controls.Add(Me.RadTextBox9)
         Me.RadGroupBox6.Controls.Add(Me.RadTextBox10)
@@ -454,7 +464,7 @@ Partial Class rFormAddWorkorderRecord
         Me.RadGroupBox6.HeaderText = " Input Items "
         Me.RadGroupBox6.Location = New System.Drawing.Point(7, 4)
         Me.RadGroupBox6.Name = "RadGroupBox6"
-        Me.RadGroupBox6.Size = New System.Drawing.Size(733, 109)
+        Me.RadGroupBox6.Size = New System.Drawing.Size(737, 346)
         Me.RadGroupBox6.TabIndex = 1
         Me.RadGroupBox6.Text = " Input Items "
         Me.RadGroupBox6.ThemeName = "Office2010Black"
@@ -466,7 +476,7 @@ Partial Class rFormAddWorkorderRecord
         Me.RadTextBox9.AutoSize = False
         Me.RadTextBox9.BackColor = System.Drawing.Color.Transparent
         Me.RadTextBox9.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadTextBox9.Location = New System.Drawing.Point(605, 254)
+        Me.RadTextBox9.Location = New System.Drawing.Point(609, 254)
         Me.RadTextBox9.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
         Me.RadTextBox9.MaxLength = 6
         Me.RadTextBox9.Name = "RadTextBox9"
@@ -488,10 +498,11 @@ Partial Class rFormAddWorkorderRecord
         '
         'RadTextBox10
         '
+        Me.RadTextBox10.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadTextBox10.AutoSize = False
         Me.RadTextBox10.BackColor = System.Drawing.Color.Transparent
         Me.RadTextBox10.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadTextBox10.Location = New System.Drawing.Point(5, 299)
+        Me.RadTextBox10.Location = New System.Drawing.Point(5, 284)
         Me.RadTextBox10.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
         Me.RadTextBox10.MaxLength = 6
         Me.RadTextBox10.Multiline = True
@@ -499,7 +510,7 @@ Partial Class rFormAddWorkorderRecord
         Me.RadTextBox10.NullText = "# TERBILANG #"
         Me.RadTextBox10.Padding = New System.Windows.Forms.Padding(4, 1, 4, 1)
         Me.RadTextBox10.ReadOnly = True
-        Me.RadTextBox10.Size = New System.Drawing.Size(723, 52)
+        Me.RadTextBox10.Size = New System.Drawing.Size(727, 56)
         Me.RadTextBox10.TabIndex = 20
         Me.RadTextBox10.TabStop = False
         Me.RadTextBox10.ThemeName = "Office2010Black"
@@ -519,7 +530,7 @@ Partial Class rFormAddWorkorderRecord
         Me.RadTextBox5.AutoSize = False
         Me.RadTextBox5.BackColor = System.Drawing.Color.Transparent
         Me.RadTextBox5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadTextBox5.Location = New System.Drawing.Point(393, 254)
+        Me.RadTextBox5.Location = New System.Drawing.Point(397, 254)
         Me.RadTextBox5.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
         Me.RadTextBox5.MaxLength = 6
         Me.RadTextBox5.Name = "RadTextBox5"
@@ -545,7 +556,7 @@ Partial Class rFormAddWorkorderRecord
         Me.RadTextBox7.AutoSize = False
         Me.RadTextBox7.BackColor = System.Drawing.Color.Transparent
         Me.RadTextBox7.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadTextBox7.Location = New System.Drawing.Point(605, 225)
+        Me.RadTextBox7.Location = New System.Drawing.Point(609, 225)
         Me.RadTextBox7.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
         Me.RadTextBox7.MaxLength = 6
         Me.RadTextBox7.Name = "RadTextBox7"
@@ -571,7 +582,7 @@ Partial Class rFormAddWorkorderRecord
         Me.RadTextBox4.AutoSize = False
         Me.RadTextBox4.BackColor = System.Drawing.Color.Transparent
         Me.RadTextBox4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadTextBox4.Location = New System.Drawing.Point(393, 225)
+        Me.RadTextBox4.Location = New System.Drawing.Point(397, 225)
         Me.RadTextBox4.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
         Me.RadTextBox4.MaxLength = 6
         Me.RadTextBox4.Name = "RadTextBox4"
@@ -597,7 +608,7 @@ Partial Class rFormAddWorkorderRecord
         Me.RadTextBox6.AutoSize = False
         Me.RadTextBox6.BackColor = System.Drawing.Color.Transparent
         Me.RadTextBox6.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadTextBox6.Location = New System.Drawing.Point(605, 196)
+        Me.RadTextBox6.Location = New System.Drawing.Point(609, 196)
         Me.RadTextBox6.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
         Me.RadTextBox6.MaxLength = 6
         Me.RadTextBox6.Name = "RadTextBox6"
@@ -623,7 +634,7 @@ Partial Class rFormAddWorkorderRecord
         Me.RadTextBox3.AutoSize = False
         Me.RadTextBox3.BackColor = System.Drawing.Color.Transparent
         Me.RadTextBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadTextBox3.Location = New System.Drawing.Point(393, 196)
+        Me.RadTextBox3.Location = New System.Drawing.Point(397, 196)
         Me.RadTextBox3.Margin = New System.Windows.Forms.Padding(3, 3, 3, 4)
         Me.RadTextBox3.MaxLength = 6
         Me.RadTextBox3.Name = "RadTextBox3"
@@ -660,7 +671,7 @@ Partial Class rFormAddWorkorderRecord
         Me.RadLabel13.BackColor = System.Drawing.Color.Transparent
         Me.RadLabel13.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadLabel13.ForeColor = System.Drawing.Color.Black
-        Me.RadLabel13.Location = New System.Drawing.Point(529, 258)
+        Me.RadLabel13.Location = New System.Drawing.Point(533, 258)
         Me.RadLabel13.Name = "RadLabel13"
         Me.RadLabel13.Size = New System.Drawing.Size(70, 19)
         Me.RadLabel13.TabIndex = 19
@@ -673,7 +684,7 @@ Partial Class rFormAddWorkorderRecord
         Me.RadLabel17.BackColor = System.Drawing.Color.Transparent
         Me.RadLabel17.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadLabel17.ForeColor = System.Drawing.Color.Black
-        Me.RadLabel17.Location = New System.Drawing.Point(300, 200)
+        Me.RadLabel17.Location = New System.Drawing.Point(304, 200)
         Me.RadLabel17.Name = "RadLabel17"
         Me.RadLabel17.Size = New System.Drawing.Size(87, 19)
         Me.RadLabel17.TabIndex = 9
@@ -687,7 +698,7 @@ Partial Class rFormAddWorkorderRecord
         Me.RadLabel18.BackColor = System.Drawing.Color.Transparent
         Me.RadLabel18.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadLabel18.ForeColor = System.Drawing.Color.Black
-        Me.RadLabel18.Location = New System.Drawing.Point(313, 258)
+        Me.RadLabel18.Location = New System.Drawing.Point(317, 258)
         Me.RadLabel18.Name = "RadLabel18"
         Me.RadLabel18.Size = New System.Drawing.Size(74, 19)
         Me.RadLabel18.TabIndex = 13
@@ -701,7 +712,7 @@ Partial Class rFormAddWorkorderRecord
         Me.RadLabel16.BackColor = System.Drawing.Color.Transparent
         Me.RadLabel16.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadLabel16.ForeColor = System.Drawing.Color.Black
-        Me.RadLabel16.Location = New System.Drawing.Point(224, 229)
+        Me.RadLabel16.Location = New System.Drawing.Point(228, 229)
         Me.RadLabel16.Name = "RadLabel16"
         Me.RadLabel16.Size = New System.Drawing.Size(163, 19)
         Me.RadLabel16.TabIndex = 11
@@ -716,7 +727,7 @@ Partial Class rFormAddWorkorderRecord
         Me.RadLabel14.BackColor = System.Drawing.Color.Transparent
         Me.RadLabel14.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadLabel14.ForeColor = System.Drawing.Color.Black
-        Me.RadLabel14.Location = New System.Drawing.Point(541, 200)
+        Me.RadLabel14.Location = New System.Drawing.Point(545, 200)
         Me.RadLabel14.Name = "RadLabel14"
         Me.RadLabel14.Size = New System.Drawing.Size(58, 19)
         Me.RadLabel14.TabIndex = 15
@@ -729,7 +740,7 @@ Partial Class rFormAddWorkorderRecord
         Me.RadLabel15.BackColor = System.Drawing.Color.Transparent
         Me.RadLabel15.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadLabel15.ForeColor = System.Drawing.Color.Black
-        Me.RadLabel15.Location = New System.Drawing.Point(574, 229)
+        Me.RadLabel15.Location = New System.Drawing.Point(578, 229)
         Me.RadLabel15.Name = "RadLabel15"
         Me.RadLabel15.Size = New System.Drawing.Size(25, 19)
         Me.RadLabel15.TabIndex = 17
@@ -784,18 +795,16 @@ Partial Class rFormAddWorkorderRecord
         Me.dgItem.AllowUserToDeleteRows = False
         Me.dgItem.AllowUserToResizeColumns = False
         Me.dgItem.AllowUserToResizeRows = False
-        Me.dgItem.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgItem.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgItem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgItem.Location = New System.Drawing.Point(5, 51)
+        Me.dgItem.Location = New System.Drawing.Point(5, 56)
         Me.dgItem.MultiSelect = False
         Me.dgItem.Name = "dgItem"
         Me.dgItem.ReadOnly = True
         Me.dgItem.RowHeadersVisible = False
         Me.dgItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgItem.Size = New System.Drawing.Size(723, 0)
+        Me.dgItem.Size = New System.Drawing.Size(727, 134)
         Me.dgItem.TabIndex = 7
         '
         'RadButton7
@@ -836,7 +845,8 @@ Partial Class rFormAddWorkorderRecord
         '
         'RadStatusStrip1
         '
-        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 243)
+        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 242)
+        Me.RadStatusStrip1.Margin = New System.Windows.Forms.Padding(0)
         Me.RadStatusStrip1.Name = "RadStatusStrip1"
         Me.RadStatusStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 4, 2)
         Me.RadStatusStrip1.Size = New System.Drawing.Size(763, 24)
@@ -844,24 +854,43 @@ Partial Class rFormAddWorkorderRecord
         Me.RadStatusStrip1.Text = "RadStatusStrip1"
         Me.RadStatusStrip1.ThemeName = "Office2010Black"
         '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.ColumnCount = 2
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.RadPageView1, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel1, 0, 1)
+        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 2
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(763, 242)
+        Me.TableLayoutPanel2.TabIndex = 27
+        '
         'rFormAddWorkorderRecord
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(146, Byte), Integer), CType(CType(146, Byte), Integer), CType(CType(146, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(763, 267)
+        Me.ClientSize = New System.Drawing.Size(763, 266)
         Me.ControlBox = False
+        Me.Controls.Add(Me.TableLayoutPanel2)
         Me.Controls.Add(Me.RadStatusStrip1)
-        Me.Controls.Add(Me.RadPageView1)
-        Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(771, 508)
         Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(771, 300)
         Me.Name = "rFormAddWorkorderRecord"
         '
         '
         '
         Me.RootElement.ApplyShapeToControl = True
+        Me.RootElement.MaxSize = New System.Drawing.Size(771, 508)
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Input Data Workorder/SPK/Salesorder"
@@ -915,6 +944,7 @@ Partial Class rFormAddWorkorderRecord
         CType(Me.RadButton6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadButton9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel2.ResumeLayout(False)
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -964,4 +994,5 @@ Partial Class rFormAddWorkorderRecord
     Friend WithEvents RadStatusStrip1 As Telerik.WinControls.UI.RadStatusStrip
     Friend WithEvents RadButton2 As Telerik.WinControls.UI.RadButton
     Friend WithEvents RadButton3 As Telerik.WinControls.UI.RadButton
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
 End Class

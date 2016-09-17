@@ -46,7 +46,7 @@ Public Class rFormTambahCustomer
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError("Failed to (load_FuncCustomers).Message: " & ex.Message)
+            mdlCom.ShowError("Gagal to (load_FuncCustomers).Message: " & ex.Message)
             ProjectData.ClearProjectError()
         End Try
         'LoadProvince()
@@ -61,7 +61,7 @@ Public Class rFormTambahCustomer
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError("Failed to show form." & vbNewLine & ex.Message)
+            mdlCom.ShowError("Gagal to show form." & vbNewLine & ex.Message)
             ProjectData.ClearProjectError()
         End Try
         Return Result
@@ -89,6 +89,7 @@ Public Class rFormTambahCustomer
         End If
         Return flag
     End Function
+
     Private Sub SimpanDataCustomer(ByVal alamat As String, ByVal strTelpon As String)
         Dim common As New common
         Dim errMsg As String = ""
@@ -130,8 +131,8 @@ Public Class rFormTambahCustomer
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError(("Failed(LoadProvinces).Message:" & excep.Message))
-            mdlCom.INSERTLOG(("Failed(LoadProvinces).Message:" & excep.Message), "")
+            mdlCom.ShowError(("Gagal(LoadProvinces).Message:" & excep.Message))
+            mdlCom.INSERTLOG(("Gagal(LoadProvinces).Message:" & excep.Message), "")
             ProjectData.ClearProjectError()
             Return
             ProjectData.ClearProjectError()
@@ -152,20 +153,20 @@ Public Class rFormTambahCustomer
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError(("Failed(LoadResidences).Message:" & excep.Message))
-            mdlCom.INSERTLOG(("Failed(LoadResidences).Message:" & excep.Message), "")
+            mdlCom.ShowError(("Gagal(LoadResidences).Message:" & excep.Message))
+            mdlCom.INSERTLOG(("Gagal(LoadResidences).Message:" & excep.Message), "")
             ProjectData.ClearProjectError()
             Return
             ProjectData.ClearProjectError()
         End Try
     End Sub
 
-    Private Sub LoadDistricts(Optional ByVal Opsi As String = "")
+    Private Sub LoadDistricts(ByVal strCommand As String, Optional ByVal Opsi As String = "")
         Try
             Dim commonn As New common
             Dim dtKecamatan As New DataTable
             Dim errMsg As String = ""
-            If commonn.GetKecamatan(errMsg, dtKecamatan, Opsi) Then
+            If commonn.GetKecamatan(errMsg, dtKecamatan, strCommand, Opsi) Then
                 Kecamatan.DataSource = dtKecamatan
                 Kecamatan.SuspendLayout()
             End If
@@ -174,8 +175,8 @@ Public Class rFormTambahCustomer
         Catch ex As MySqlException
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError(("Failed(LoadResidences).Message:" & excep.Message))
-            mdlCom.INSERTLOG(("Failed(LoadResidences).Message:" & excep.Message), "")
+            mdlCom.ShowError(("Gagal(LoadResidences).Message:" & excep.Message))
+            mdlCom.INSERTLOG(("Gagal(LoadResidences).Message:" & excep.Message), "")
             ProjectData.ClearProjectError()
             Return
             ProjectData.ClearProjectError()
@@ -184,10 +185,21 @@ Public Class rFormTambahCustomer
 
     Private Sub Propinsi_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles Propinsi.SelectedIndexChanged
         LoadResidence("WHERE `province_id` = " & Propinsi.SelectedValue & "")
+
+        Dim cmd As String = "SELECT regencies.id, regencies.province_id, regencies.name, 
+        districts.id, districts.regency_id, districts.name
+        FROM regencies Inner Join districts WHERE regencies.province_id = " & Propinsi.SelectedValue & "
+        HAVING regencies.province_id = " & Propinsi.SelectedValue & " AND districts.regency_id =  regencies.id"
+
+        LoadDistricts(cmd, "WHERE `regency_id` = " & Kabupaten.SelectedValue & "")
     End Sub
 
     Private Sub Kabupaten_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles Kabupaten.SelectedIndexChanged
-        LoadDistricts("WHERE `regency_id` = " & Kabupaten.SelectedValue & "")
+        Dim cmd As String = "Select * FROM `districts` "
+        LoadDistricts(cmd, "WHERE `regency_id` = " & Kabupaten.SelectedValue & "")
     End Sub
 
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Close()
+    End Sub
 End Class

@@ -21,6 +21,8 @@ Public Class rFormAddWorkorderRecord
         Telerik.WinControls.RadMessageBox.ThemeName = rFormMain.Office2010BlackTheme1.ThemeName
         Dim strTheme As String = rFormMain.Office2010BlackTheme1.ThemeName
         rFormMain.SetTheme(Me, strTheme)
+
+        Me.Size = New Size(771, 300)
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
@@ -41,6 +43,8 @@ Public Class rFormAddWorkorderRecord
     End Function
 
     Private Sub rFormAddWorkorderRecord_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Location = New Point((rFormMain.Width / 2) - (Me.Width / 2), (50))
+
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
         rFormMain.LoadIcon(True, Me)
 
@@ -232,5 +236,17 @@ Public Class rFormAddWorkorderRecord
                 End If
             End If
         End If
+    End Sub
+
+    Private Sub RadPageView1_SelectedPageChanged(sender As Object, e As EventArgs) Handles RadPageView1.SelectedPageChanged
+        If RadPageView1.SelectedPage Is JobOrderPage1 Then
+            Me.Size = New Size(771, 300)
+        ElseIf RadPageView1.SelectedPage Is JobOrderPage2
+            Me.Size = New Size(771, 508)
+        End If
+    End Sub
+
+    Private Sub rFormAddWorkorderRecord_LocationChanged(sender As Object, e As EventArgs) Handles Me.LocationChanged
+        Me.Text = String.Format("Lokasi {0};{1} Width:{2};Length{3}", Me.Location.X, Me.Location.Y, Me.Width, Me.Height)
     End Sub
 End Class

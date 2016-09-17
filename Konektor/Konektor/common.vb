@@ -726,11 +726,11 @@ Namespace Splash.Konektor
             Return flag
         End Function
 
-        Public Function GetKecamatan(ByRef errMsg As String, ByRef dtKabupaten As DataTable, Optional opsi As String = "") As Boolean
+        Public Function GetKecamatan(ByRef errMsg As String, ByRef dtKabupaten As DataTable, ByVal Command As String, Optional opsi As String = "") As Boolean
             errMsg = ""
             Dim flag As Boolean
             Try
-                Dim sqlAdapter As New MySqlDataAdapter("SELECT * FROM `districts` " + opsi, mdlCom.vConn)
+                Dim sqlAdapter As New MySqlDataAdapter(Command + opsi, mdlCom.vConn)
                 dtKabupaten = New DataTable()
                 DirectCast(sqlAdapter, DbDataAdapter).Fill(dtKabupaten)
                 flag = True

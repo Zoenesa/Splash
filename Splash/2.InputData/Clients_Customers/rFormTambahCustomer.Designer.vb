@@ -84,6 +84,7 @@ Partial Class rFormTambahCustomer
         'Propinsi
         '
         Me.Propinsi.AllowShowFocusCues = True
+        Me.Propinsi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.Propinsi.AutoSize = False
         Me.Propinsi.BackColor = System.Drawing.Color.Transparent
         Me.Propinsi.DisplayMember = "name"
@@ -172,6 +173,7 @@ Partial Class rFormTambahCustomer
         'Kecamatan
         '
         Me.Kecamatan.AllowShowFocusCues = True
+        Me.Kecamatan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.Kecamatan.AutoSize = False
         Me.Kecamatan.BackColor = System.Drawing.Color.Transparent
         Me.Kecamatan.DisplayMember = "name"
@@ -189,6 +191,7 @@ Partial Class rFormTambahCustomer
         'Kabupaten
         '
         Me.Kabupaten.AllowShowFocusCues = True
+        Me.Kabupaten.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.Kabupaten.AutoSize = False
         Me.Kabupaten.BackColor = System.Drawing.Color.Transparent
         Me.Kabupaten.DisplayMember = "name"
@@ -224,7 +227,6 @@ Partial Class rFormTambahCustomer
         Me.txNPWP.AllowShowFocusCues = True
         Me.txNPWP.AutoSize = False
         Me.txNPWP.BackColor = System.Drawing.Color.Transparent
-        Me.txNPWP.Culture = New System.Globalization.CultureInfo("en-US")
         Me.txNPWP.EnableKeyMap = True
         Me.txNPWP.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txNPWP.Location = New System.Drawing.Point(81, 19)
@@ -285,6 +287,7 @@ Partial Class rFormTambahCustomer
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "&Simpan Data"
         Me.btnSave.ThemeName = "Office2010Black"
+        CType(Me.btnSave.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Simpan Data"
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor3 = System.Drawing.SystemColors.ControlDark
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
@@ -301,6 +304,7 @@ Partial Class rFormTambahCustomer
         Me.btnClose.TabIndex = 1
         Me.btnClose.Text = "&Keluar"
         Me.btnClose.ThemeName = "Office2010Black"
+        CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Keluar"
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(225, Byte), Integer))
         '
