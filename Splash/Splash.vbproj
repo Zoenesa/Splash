@@ -176,6 +176,30 @@
     <Compile Include="3.WorkOrder\FormBAST.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="3.WorkOrder\FormInputItemOrder.Designer.vb">
+      <DependentUpon>FormInputItemOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="3.WorkOrder\FormInputItemOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5.Administrasi\5.1.Items\FormPilihBarang.Designer.vb">
+      <DependentUpon>FormPilihBarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="5.Administrasi\5.1.Items\FormPilihBarang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5.Administrasi\5.1.Items\rFormDaftarBarang.Designer.vb">
+      <DependentUpon>rFormDaftarBarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="5.Administrasi\5.1.Items\rFormDaftarBarang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5.Administrasi\5.1.Items\TambahBarangInventori.Designer.vb">
+      <DependentUpon>TambahBarangInventori.vb</DependentUpon>
+    </Compile>
+    <Compile Include="5.Administrasi\5.1.Items\TambahBarangInventori.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="5.Administrasi\5.3.Users\rFormGantiPassword.Designer.vb">
       <DependentUpon>rFormGantiPassword.vb</DependentUpon>
     </Compile>
@@ -361,6 +385,18 @@
     <EmbeddedResource Include="3.WorkOrder\FormBAST.resx">
       <DependentUpon>FormBAST.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="3.WorkOrder\FormInputItemOrder.resx">
+      <DependentUpon>FormInputItemOrder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5.Administrasi\5.1.Items\FormPilihBarang.resx">
+      <DependentUpon>FormPilihBarang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5.Administrasi\5.1.Items\rFormDaftarBarang.resx">
+      <DependentUpon>rFormDaftarBarang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5.Administrasi\5.1.Items\TambahBarangInventori.resx">
+      <DependentUpon>TambahBarangInventori.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="5.Administrasi\5.3.Users\rFormGantiPassword.resx">
       <DependentUpon>rFormGantiPassword.vb</DependentUpon>
     </EmbeddedResource>
@@ -460,7 +496,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="4.Teknis\" />
-    <Folder Include="5.Administrasi\5.1.Items\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />

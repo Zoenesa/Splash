@@ -62,8 +62,7 @@ Public Class rFormListWorkOrder
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim exception As Exception = ex
-            mdlCom.ShowError("Failed (edit_delete). Message : " + exception.Message)
-            mdlCom.INSERTLOG("Failed (edit_delete). Message : " + exception.Message, "")
+            mdlCom.ShowError("Gagal (edit_delete). Message : " + exception.Message)
             ProjectData.ClearProjectError()
         End Try
     End Sub
@@ -82,7 +81,7 @@ Public Class rFormListWorkOrder
             Dim strField As String() = New String(9 - 1) {}
             Do While sqlreaderWO.Read
                 strField(0) = Conversions.ToString(False)
-                strField(1) = Conversions.ToString(sqlreaderWO.Item("ID"))
+                strField(1) = Conversions.ToDouble(sqlreaderWO.Item("ID"))
                 strField(2) = Conversions.ToString(sqlreaderWO.Item("WO_CLIENTNAME"))
                 strField(3) = Conversions.ToString(sqlreaderWO.Item("WO_NO"))
                 strField(4) = Conversions.ToString(sqlreaderWO.Item("WO_DATE"))
@@ -93,12 +92,9 @@ Public Class rFormListWorkOrder
                 dg.Rows.Add(strField)
             Loop
             sqlreaderWO.Close()
-            'mysqlcommand.Connection.Dispose()
+
             RadDropDownList1.SelectedIndex = 0
-            'Else
-            'RadMessageBox.Show("Belum ada Data WorkOrder " & _
-            '"pada Database!", "Informasi", MessageBoxButtons.OK, RadMessageIcon.Info)
-            'End If
+
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             sqlreaderWO = Nothing
@@ -112,7 +108,7 @@ Public Class rFormListWorkOrder
         End Try
     End Sub
 
-    Private Sub ParseDataColumn()
+    Private Sub ParseDataColumn(ByVal Optional strOpsi As String = "")
 
         Dim StrColName As String() = New String(6) {}
 
@@ -121,23 +117,30 @@ Public Class rFormListWorkOrder
         Dim num3 As Integer = num1
 
         StrColName(0) = "Nama Customer"
-        StrColName(1) = "WorkOrder No."
-        StrColName(2) = "Tanggal Workorder"
+
+        StrColName(1) = "No. Job Order / SPK / Sales Order"
+        StrColName(2) = "Tanggal Job Order"
         StrColName(3) = "User Perekam"
         StrColName(4) = "Tanggal Rekam"
         StrColName(5) = "User Update"
         StrColName(6) = "Tanggal Update"
 
+        'dg.Columns.Clear()
+
         While Not (num3 = num2)
+
             Dim NamaField As String = "xField" & Conversions.ToString(num3)
             Dim NamaHeader As String = StrColName(num3)
             With dg
                 .Columns.Add(NamaField, NamaHeader)
-
             End With
+
             Interlocked.Increment(num3)
+
         End While
-        Me.LoadWorkorder()
+
+        Me.LoadWorkorder(strOpsi)
+
     End Sub
 
     Private Sub rFormListWorkOrder_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -147,6 +150,7 @@ Public Class rFormListWorkOrder
         'btnPDF.Visible = False
 
         ControlEkstensi.DoubleBuffered(dg, True)
+
         ParseDataColumn()
     End Sub
 
@@ -205,5 +209,14 @@ Public Class rFormListWorkOrder
             mdlCom.INSERTLOG("Failed (delete_Client data). Message : " + exception.Message, "")
             ProjectData.ClearProjectError()
         End Try
+    End Sub
+
+    Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
+        Dim opsi As String = txFilter.Text.Trim()
+        If String.IsNullOrEmpty(opsi) Or String.IsNullOrWhiteSpace(opsi) Then
+            LoadWorkorder("")
+        Else
+            LoadWorkorder(opsi)
+        End If
     End Sub
 End Class

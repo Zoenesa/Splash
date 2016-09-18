@@ -68,6 +68,12 @@ Public Class rFormAddWorkorderRecord
             rTxID.Text = norekam
         End If
         GetListPelanggan()
+
+        'GetDataItemJobOrder("SELECT `nomor_workorder` AS 'Nomor Job Order', " &
+        '                    "`Nama_Barang` AS 'Nama Item/Barang', `kuantitas` AS 'Kuantitas', " &
+        '                    "`harga_satuan` AS 'Harga Satuan', `Jumlah_harga` AS 'Jumlah Harga', " &
+        '                    "`UserPerekam` AS 'User Perekam', `TanggalRekam` AS 'Tanggal Rekam', " &
+        '                    "`UserUpdate` AS 'User Update', `TanggalUpdate` AS 'Tanggal Update' FROM `daftar_item_joborder` WHERE `nomor_workorder` = '" & rWONum.Text.Trim() & "'")
     End Sub
 
     Private Sub GetListPelanggan(Optional ByVal Opsi As String = "")
@@ -243,10 +249,50 @@ Public Class rFormAddWorkorderRecord
             Me.Size = New Size(771, 300)
         ElseIf RadPageView1.SelectedPage Is JobOrderPage2
             Me.Size = New Size(771, 508)
+            GetDataItemJobOrder("SELECT `nomor_workorder` AS 'Nomor Job Order', " &
+                           "`Nama_Barang` AS 'Nama Item/Barang', `kuantitas` AS 'Kuantitas', " &
+                           "`harga_satuan` AS 'Harga Satuan', `Jumlah_harga` AS 'Jumlah Harga', " &
+                           "`UserPerekam` AS 'User Perekam', `TanggalRekam` AS 'Tanggal Rekam', " &
+                           "`UserUpdate` AS 'User Update', `TanggalUpdate` AS 'Tanggal Update' " &
+                           "FROM `temp_items` WHERE `nomor_workorder` = '" & Me.rWONum.Text.Trim() & "'", " ORDER BY `ID`")
         End If
     End Sub
 
-    Private Sub rFormAddWorkorderRecord_LocationChanged(sender As Object, e As EventArgs) Handles Me.LocationChanged
-        Me.Text = String.Format("Lokasi {0};{1} Width:{2};Length{3}", Me.Location.X, Me.Location.Y, Me.Width, Me.Height)
+    Private Sub RadButton9_Click(sender As Object, e As EventArgs) Handles RadButton9.Click
+        Dim InputOrderBaru As New FormInputItemOrder
+        InputOrderBaru.DialogInputItemOrder(rWONum.Text.Trim())
+        InputOrderBaru.Dispose()
+        InputOrderBaru = Nothing
+        GetDataItemJobOrder("SELECT `nomor_workorder` AS 'Nomor Job Order', " &
+                            "`Nama_Barang` AS 'Nama Item/Barang', `kuantitas` AS 'Kuantitas', " &
+                            "`harga_satuan` AS 'Harga Satuan', `Jumlah_harga` AS 'Jumlah Harga', " &
+                            "`UserPerekam` AS 'User Perekam', `TanggalRekam` AS 'Tanggal Rekam', " &
+                            "`UserUpdate` AS 'User Update', `TanggalUpdate` AS 'Tanggal Update' " &
+                            "FROM `temp_items` WHERE `nomor_workorder` = '" & Me.rWONum.Text.Trim() & "'", " ORDER BY `ID`")
     End Sub
+
+    Private Sub GetDataItemJobOrder(ByVal QueryCommand As String, ByVal Optional Opsi As String = "")
+        Dim sqlAdapter As MySqlDataAdapter = Nothing
+        Dim sqlcommand As New MySqlCommand
+        Dim errmsg As String = Nothing
+        Dim dt As New DataTable
+        Dim common As New Konektor.common
+
+        Try
+            'dgItem.Rows.Clear()
+            'dgItem.Columns.Clear()
+
+            If common.SqlCustomQuery(errmsg, QueryCommand, dt, Opsi) Then
+                dgItem.DataSource = dt
+            Else
+                mdlCom.ShowError("Gagal Mendapatkan Data Item Order, Message: " & errmsg)
+            End If
+        Catch ex As Exception
+            ProjectData.SetProjectError(ex)
+            Dim excep As Exception = ex
+            mdlCom.ShowError("Gagal Mendapatkan Data Item Order, Message: " & excep.Message)
+            ProjectData.ClearProjectError()
+        End Try
+    End Sub
+
 End Class

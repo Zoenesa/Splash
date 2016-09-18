@@ -105,7 +105,7 @@ Namespace Splash.Konektor
             Try
                 flag = New MySqlCommand() With {
                 .Connection = mdlCom.vConn,
-                .CommandText = ("INSERT INTO `user` (`Username`, `Password`, `kdgroup`, `nip_user`, `UserFname`, `uaktif`, `UserRole`, `JobDesk`) VALUES('" +
+                .CommandText = ("INSERT INTO `user` (`Username`, `Password`, `kdgroup`, `nip_user`, `UserFname`, `uaktif`, `UserRole`, `JobDesk`) VALUES ('" +
                                 uname + "', '" + password + "','" + Strings.Mid(role, 1, 2) + "','" + role + "','" + UserFName + "','" + "T" + "', '" + Strings.Mid(role, 1, 2) + "', '" + Jabatan + "')")
             }.ExecuteNonQuery() > 0
             Catch ex As Exception
@@ -744,5 +744,26 @@ Namespace Splash.Konektor
             End Try
             Return flag
         End Function
+
+        Public Function LoadDataBarang(ByRef errMsg As String, ByRef dtTabel As DataTable, ByVal command As String, Optional ByVal Opsi As String = "") As Boolean
+            errMsg = Nothing
+            Dim flag As Boolean
+            Try
+                Dim sqlAdapter As New MySqlDataAdapter(command & " " & Opsi, Konektor.mdlCom.vConn)
+                dtTabel = New DataTable()
+                DirectCast(sqlAdapter, MySqlDataAdapter).Fill(dtTabel)
+                flag = True
+            Catch ex As Exception
+                ProjectData.SetProjectError(ex)
+                Dim exception As Exception = ex
+                errMsg = "Gagal. (common_LoadDataBarang). Message : " + exception.Message
+                mdlCom.INSERTLOG(errMsg, "")
+                flag = False
+                ProjectData.ClearProjectError()
+            End Try
+            Return flag
+        End Function
+
+
     End Class
 End Namespace

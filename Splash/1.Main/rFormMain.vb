@@ -342,7 +342,8 @@ Public Class rFormMain
     End Sub
 
     Private Sub rMenuItemBarang_Click(sender As Object, e As EventArgs) Handles rMenuItemBarang.Click
-
+        Dim formDaftarBarang As New rFormDaftarBarang
+        rFormMain.BukaFormChild(formDaftarBarang)
     End Sub
 
     Private Sub rMenuRefCustomer_Click(sender As Object, e As EventArgs) Handles rMenuRefCustomer.Click
