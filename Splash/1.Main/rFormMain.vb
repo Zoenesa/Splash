@@ -60,13 +60,98 @@ Public Class rFormMain
                 sw.Flush()
                 sw.Close()
 
+                ModulSetting.SetValue(MainSectionSetting, "Setting", "myIco")
+
             End If
+
         Catch ex As Exception
             RadMessageBox.Show("Gagal Validasi Setting, Error: " & ex.Message, "Perhatian", MessageBoxButtons.OK, RadMessageIcon.Exclamation, MessageBoxDefaultButton.Button1)
             Return False
         End Try
         Return True
     End Function
+
+    Private Sub CekFolderAplikasi()
+        Dim flag1 As Boolean
+
+        flag1 = IO.Directory.Exists(IO.Path.Combine(Environment.CurrentDirectory, "Config"))
+
+        If Not flag1 Then
+            GoTo LabelFolderConfig
+        End If
+
+        Dim flag2 As Boolean
+
+        flag2 = IO.Directory.Exists(IO.Path.Combine(Environment.CurrentDirectory, "Images"))
+
+        If Not flag2 Then
+            GoTo LabelFolderImage
+        End If
+
+        Dim flag3 As Boolean
+
+        flag3 = IO.Directory.Exists(IO.Path.Combine(Environment.CurrentDirectory, "Libs"))
+
+        If Not flag3 Then
+            GoTo LabelFolderImage
+        End If
+
+        Dim flag4 As Boolean
+
+        If Not flag4 Then
+
+        End If
+
+LabelFolderConfig:
+        IO.Directory.CreateDirectory(IO.Path.Combine(Environment.CurrentDirectory, "Config"))
+        ValidasiConfigPertama()
+        Return
+LabelFolderImage:
+        IO.Directory.CreateDirectory(IO.Path.Combine(Environment.CurrentDirectory, "Images"))
+        Return
+LabelFolderLibs:
+        IO.Directory.CreateDirectory(IO.Path.Combine(Environment.CurrentDirectory, "Libs"))
+        Return
+LabelFolderBackup:
+        IO.Directory.CreateDirectory(IO.Path.Combine(Environment.CurrentDirectory, "backups"))
+
+        Return
+    End Sub
+
+    Private Sub ValidasiConfigPertama()
+        Try
+            Dim sw As New IO.StreamWriter(IO.Path.Combine(Environment.CurrentDirectory, "Config"))
+            sw.WriteLine("\\PROGRAM SPLASH DATA PROJECT")
+            sw.WriteLine("\\DO NOT DELETE OR CHANGE CONTENT ON THIS CONFIG FILE")
+            sw.WriteLine("\\RISK CHANGING OR DELETING WILL CAUSE DAMAGE OR CORRUPTION DATA")
+            sw.WriteLine("\\DILARANG MERUBAH ATAUPUN MENGHAPUS KONTEN DI FILE CONFIG INI")
+            sw.WriteLine("\\RESIKO MENGUBAH ATAUPUN MENGHAPUS KONTEN DI FILE INI AKAN MENYEBABKAN KERUSAKAN ATAUPUN")
+            sw.WriteLine("Aplikasi " & My.Application.Info.AssemblyName)
+            sw.WriteLine("Versi " & My.Application.Info.Version.ToString)
+            sw.WriteLine("OS " & If(Environment.Is64BitOperatingSystem, "X64", "X86") & " " & Environment.OSVersion.ToString)
+            sw.WriteLine("Machine " & Environment.MachineName.ToString)
+            sw.Flush()
+            sw.Close()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub ValidasiImagePertama()
+        Try
+            SaveResource("Splash.My.Resources.Resource.myIco", (IO.Path.Combine(Environment.CurrentDirectory, "myIco.ico")))
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub ValidasiLibsPertama()
+        Try
+            SaveResource("Splash", (IO.Path.Combine(Environment.CurrentDirectory, "myIco.ico")))
+        Catch ex As Exception
+
+        End Try
+    End Sub
 
     Public Shared Sub LoadIcon(ByVal flagIcon As Boolean, ByVal form As RadForm)
         Dim FilePath As String = IO.Path.GetFullPath(IO.Path.Combine(ImageFolder, "myIco.ico"))
