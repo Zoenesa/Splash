@@ -8,7 +8,6 @@ Namespace Splash.Konektor.Setting
         Public Property Path As String
 
         Public Sub New(ByVal FilePath As String)
-            MyBase.New()
             Me.Path = FilePath
         End Sub
 

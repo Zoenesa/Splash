@@ -34,7 +34,7 @@ Namespace My
         Protected Overrides Sub OnCreateMainForm()
             Dim mForm As New Global.Splash.rFormMain
 
-            Me.MainForm = mForm
+            Me.MainForm = rFormMain
 
         End Sub
     End Class

@@ -18,6 +18,8 @@ Public Class rFormMain
 
     Public Sub New()
 
+        MyBase.New()
+
         ImageFolder = (IO.Path.Combine(Environment.CurrentDirectory, "Image"))
 
         InitializeComponent()
@@ -108,6 +110,7 @@ LabelFolderConfig:
         Return
 LabelFolderImage:
         IO.Directory.CreateDirectory(IO.Path.Combine(Environment.CurrentDirectory, "Images"))
+
         Return
 LabelFolderLibs:
         IO.Directory.CreateDirectory(IO.Path.Combine(Environment.CurrentDirectory, "Libs"))
@@ -132,6 +135,7 @@ LabelFolderBackup:
             sw.WriteLine("Machine " & Environment.MachineName.ToString)
             sw.Flush()
             sw.Close()
+
         Catch ex As Exception
 
         End Try
@@ -335,8 +339,6 @@ LabelFolderBackup:
         StatusVersi.Text = My.Application.Info.Title.ToString & " V" & My.Application.Info.Version.ToString
         RadDateAndTimeStatus.Text = DateTime.Now.ToString("dddd, dd-MM-yy")
 
-        mdlGlobal.SimpanSetting(mdlGlobal.PilihanProfile.Aplikasi, "Setting", Me.Text)
-        mdlGlobal.SimpanSetting(mdlGlobal.PilihanProfile.Konektor, "Konektor", Me.ProductVersion)
         Call rMenuKoneksiDb_Click(Me, e)
     End Sub
 

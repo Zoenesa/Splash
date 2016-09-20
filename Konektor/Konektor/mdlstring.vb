@@ -2,13 +2,38 @@
 Imports System.Threading
 Imports System.Security.Cryptography
 Imports System.Text
-Imports Splash.Konektor.SettingOpsi
+'Imports Splash.Konektor.SettingOpsi
 
 Namespace Splash.Konektor
 
     Public NotInheritable Class mdlstring
 
         Public Shared defaultKey As String = "MyKey@AG"
+
+        Enum Limiter
+            DoubleQoute = 34
+            SingleQuote = 39
+            OEM = 96
+            Makro = 124
+            Tab = 10
+            HashTag = 35
+            SignD = 36
+        End Enum
+
+        Public Overloads Shared Function SQL_QUERY_FROM_FILE(ByVal fileName As String) As String
+            Dim strValue As String = Nothing
+            Dim lines As String() = IO.File.ReadAllLines(fileName)
+            Try
+                If Not IO.File.Exists(fileName) Then
+                    Throw New Exception("Error File Not Exists")
+                Else
+                    strValue = String.Concat(lines)
+                    Return strValue
+                End If
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
 
         Public Overloads Shared Function ADD_QUOTE_ON_SQL(str As String) As String
             If Operators.CompareString(str.Trim(), "", False) = 0 Then
@@ -18,13 +43,30 @@ Namespace Splash.Konektor
             End If
         End Function
 
-        Public Overloads Shared Function ADD_QUOTE_ON_SQL(ByVal Value As String, Optional ByVal Qualifier As SettingOpsi.Limiter = SettingOpsi.Limiter.DoubleQoute) As String
+        Public Overloads Shared Function ADD_QUOTE_ON_SQL(ByVal Value As String, Optional ByVal Qualifier As Limiter = Limiter.DoubleQoute) As String
             Dim ReturnString As String = Nothing
             Select Case Qualifier
                 Case Limiter.DoubleQoute
-                    ReturnString = String.Concat(Chr(34), Value, Chr(34))
+                    ReturnString = String.Concat(Chr(34), Value.Trim().Replace(Chr(34), ""), Chr(34))
+                    Exit Select
                 Case Limiter.SingleQuote
-                    Return String.Concat(Chr(39), Value, Chr(39))
+                    ReturnString = String.Concat(Chr(39), Value.Trim().Replace(Chr(39), ""), Chr(39))
+                    Exit Select
+                Case Limiter.OEM
+                    ReturnString = String.Concat(Chr(96), Value.Trim().Replace(Chr(96), ""), Chr(96))
+                    Exit Select
+                Case Limiter.Makro
+                    ReturnString = String.Concat(Chr(124), Value.Trim().Replace(Chr(124), ""), Chr(124))
+                    Exit Select
+                Case Limiter.Tab
+                    ReturnString = String.Concat(Chr(10), Value.Trim().Replace(Chr(10), ""), Chr(10))
+                    Exit Select
+                Case Limiter.HashTag
+                    ReturnString = String.Concat(Chr(35), Value.Trim().Replace(Chr(35), ""), Chr(35))
+                    Exit Select
+                Case Limiter.SignD = 36
+                    ReturnString = String.Concat(Chr(36), Value.Trim().Replace(Chr(36), ""), Chr(36))
+                    Exit Select
             End Select
             Return ReturnString
         End Function

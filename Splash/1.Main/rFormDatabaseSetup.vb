@@ -1,7 +1,7 @@
 ﻿Imports Splash.Konektor.mdlCom
 Imports MySql.Data.MySqlClient
 Imports System.IO, Microsoft.VisualBasic.CompilerServices
-Imports Setting.Config.Profile.Profile
+Imports Setting.Config.Profile
 Imports System.Windows.Forms
 Imports Telerik, Telerik.WinControls, Telerik.WinControls.UI
 Imports Splash.Konektor
@@ -90,7 +90,6 @@ Public Class rFormDatabaseSetup
 
             End If
 
-
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim Excep As Exception = ex
@@ -102,7 +101,7 @@ Public Class rFormDatabaseSetup
 
         Me.MProfiles = New Setting.Config.Profile.Profile(1 - 1) {}
 
-        Me.MProfiles(0) = New Setting.Config.Profile.Ini
+        Me.MProfiles(0) = New Setting.Config.Profile.Ini()
 
         cbProfile.Items.Add("INI--" & Me.MProfiles(0).Name)
 
@@ -137,7 +136,6 @@ Public Class rFormDatabaseSetup
     Private Sub UpdateSettings()
         Dim flag As Boolean = (Me.cbSection.Text <> "")
         Dim flag2 As Boolean = (flag AndAlso Me.SelectedProfile.HasSection(Me.cbSection.Text))
-
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
