@@ -10,8 +10,15 @@ Public Class rFormMain
 
     Public Shared tempForm As Form
 
+    Public Shared ModulSetting As Setting.Config.Profile.Profile
+
+    Private Const FileiniSetting As String = "Config.ini"
+
+    Public Shared ImageFolder As String = (IO.Path.Combine(Environment.CurrentDirectory, "Image"))
 
     Public Sub New()
+
+        ImageFolder = (IO.Path.Combine(Environment.CurrentDirectory, "Image"))
 
         InitializeComponent()
 
@@ -21,10 +28,48 @@ Public Class rFormMain
         Telerik.WinControls.RadMessageBox.ThemeName = Me.Office2010BlackTheme1.ThemeName
 
         Me.Logout()
+
+        ModulSetting = New Setting.Config.Profile.Ini(IO.Path.Combine(Environment.CurrentDirectory, "Config", FileiniSetting))
+
     End Sub
 
+    Public Shared MainSectionSetting As String = "Splash"
+    Public Shared MainEntryAplikasiName As String = "NamaAplikasi"
+    Public Shared MainEntryVersiName As String = "Versi"
+    Public Shared MainEntryDeskripsiName As String = "Deskripsi"
+
+    Public Shared Function ValidasiFileSetting() As Boolean
+        Try
+            If IO.File.Exists(IO.Path.Combine(Environment.CurrentDirectory, "Config", FileiniSetting)) Then
+
+            Else
+                If Not IO.Directory.Exists(IO.Path.Combine(Environment.CurrentDirectory, "Config")) Then
+                    IO.Directory.CreateDirectory(IO.Path.Combine(Environment.CurrentDirectory, "Config"))
+                End If
+
+                Dim sw As New IO.StreamWriter(IO.Path.Combine(Environment.CurrentDirectory, "Config", FileiniSetting))
+                sw.WriteLine("\\PROGRAM SPLASH DATA PROJECT")
+                sw.WriteLine("\\DO NOT DELETE OR CHANGE CONTENT ON THIS CONFIG FILE")
+                sw.WriteLine("\\RISK CHANGING OR DELETING WILL CAUSE DAMAGE OR CORRUPTION DATA")
+                sw.WriteLine("\\DILARANG MERUBAH ATAUPUN MENGHAPUS KONTEN DI FILE CONFIG INI")
+                sw.WriteLine("\\RESIKO MENGUBAH ATAUPUN MENGHAPUS KONTEN DI FILE INI AKAN MENYEBABKAN KERUSAKAN ATAUPUN")
+                sw.WriteLine("Aplikasi " & My.Application.Info.AssemblyName)
+                sw.WriteLine("Versi " & My.Application.Info.Version.ToString)
+                sw.WriteLine("OS " & If(Environment.Is64BitOperatingSystem, "X64", "X86") & " " & Environment.OSVersion.ToString)
+                sw.WriteLine("Machine " & Environment.MachineName.ToString)
+                sw.Flush()
+                sw.Close()
+
+            End If
+        Catch ex As Exception
+            RadMessageBox.Show("Gagal Validasi Setting, Error: " & ex.Message, "Perhatian", MessageBoxButtons.OK, RadMessageIcon.Exclamation, MessageBoxDefaultButton.Button1)
+            Return False
+        End Try
+        Return True
+    End Function
+
     Public Shared Sub LoadIcon(ByVal flagIcon As Boolean, ByVal form As RadForm)
-        Dim FilePath As String = IO.Path.GetFullPath(Environment.CurrentDirectory & "\Images\myIco.ico")
+        Dim FilePath As String = IO.Path.GetFullPath(IO.Path.Combine(ImageFolder, "myIco.ico"))
         Dim ImgIcon As Icon = Nothing
         Dim mprofile As Setting.Config.Profile.Ini = New Setting.Config.Profile.Ini
         Dim Entry As String = "Icons"
@@ -36,9 +81,9 @@ Public Class rFormMain
 
                 IO.Directory.CreateDirectory(Environment.CurrentDirectory & "\Images\")
 
-                SaveResource("myIco.ico", FilePath)
+                SaveResource("Splash.My.Resources.Resources.myIco", FilePath)
 
-                mprofile.SetValue("General", Entry, "myIco.ico")
+                ModulSetting.SetValue("General", "Icons", "myIco.ico")
 
             Else
 
@@ -46,7 +91,7 @@ Public Class rFormMain
 
                 form.Icon = ImgIcon
 
-                mprofile.GetValue("General", Entry)
+                ModulSetting.GetValue("General", Entry)
 
             End If
         Else
@@ -86,7 +131,7 @@ Public Class rFormMain
     Public Sub KeluarAplikasi()
         Dim errMsg As String = ""
         Try
-            If mdlCom.CloseDb(errMsg) Then
+            If Konektor.mdlCom.CloseDb(errMsg) Then
                 KeluarAplikasi()
             ElseIf RadMessageBox.Show("Gagal menutup koneksi database." & errMsg & vbNewLine & "Apakah anda tetap keluar?", "Konfirmasi", MessageBoxButtons.OKCancel, RadMessageIcon.Question, MessageBoxDefaultButton.Button2) <> System.Windows.Forms.DialogResult.OK Then
                 KeluarAplikasi()
@@ -98,7 +143,7 @@ Public Class rFormMain
     End Sub
 
     Public Sub BukaPilihanKoneksi()
-        If mdlCom.IsLogin Then
+        If Konektor.mdlCom.IsLogin Then
             Beep()
             If (RadMessageBox.Show("Dengan Memilih database lain, session ini akan otomatis logout," & vbNewLine & "Apakah anda ingin logout?", "Perhatian", MessageBoxButtons.YesNo, RadMessageIcon.Question, MessageBoxDefaultButton.Button2) = System.Windows.Forms.DialogResult.Yes) AndAlso Me.Logout Then
                 Dim formPilih As New rFormInisialisasiKoneksi
@@ -146,7 +191,7 @@ Public Class rFormMain
             rMenuLogout.Enabled = flag
 
         End If
-        mdlCom.IsLogin = flag
+        Konektor.mdlCom.IsLogin = flag
     End Sub
 
     Private Function Logout() As Boolean
@@ -155,7 +200,7 @@ Public Class rFormMain
             Return False
         End If
         Dim errMsg As String = ""
-        If mdlCom.CloseDb(errMsg) Then
+        If Konektor.mdlCom.CloseDb(errMsg) Then
             Me.EnableMenu(False, False)
             Return True
         End If
@@ -197,11 +242,16 @@ Public Class rFormMain
 
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.SuspendLayout()
-        LoadIcon(True, Me)
+        If ValidasiFileSetting() Then
+            LoadIcon(True, Me)
+        End If
+        Me.ResumeLayout()
         StatusVersi.Text = ""
         StatusVersi.Text = My.Application.Info.Title.ToString & " V" & My.Application.Info.Version.ToString
         RadDateAndTimeStatus.Text = DateTime.Now.ToString("dddd, dd-MM-yy")
-        Me.ResumeLayout()
+
+        mdlGlobal.SimpanSetting(mdlGlobal.PilihanProfile.Aplikasi, "Setting", Me.Text)
+        mdlGlobal.SimpanSetting(mdlGlobal.PilihanProfile.Konektor, "Konektor", Me.ProductVersion)
         Call rMenuKoneksiDb_Click(Me, e)
     End Sub
 
@@ -215,13 +265,13 @@ Public Class rFormMain
 
     Private Sub rMenuSetingdb_Click(sender As Object, e As EventArgs) Handles rMenuSetingdb.Click
         rFormMain.tempForm = rFormDatabaseSetup
-        If (mdlCom.V_Role(3) <> "1") Then
-            If (Not mdlCom.UserRole = "Administrator") Then
+        If (Konektor.mdlCom.V_Role(3) <> "1") Then
+            If (Not Konektor.mdlCom.UserRole = "Administrator") Then
                 RadMessageBox.Show("Hanya ADMINISTRATOR yang berhak mengakses menu ini.", "Perhatian", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
                 Exit Sub
             End If
             Beep()
-            Dim Result As DialogResult = RadMessageBox.Show("Anda memerlukan Permission dari Administrator!" & vbNewLine & _
+            Dim Result As DialogResult = RadMessageBox.Show("Anda memerlukan Permission dari Administrator!" & vbNewLine &
                                                             "Dengan memilih Yes, Silahkan hubungi Administrator untuk input Permission" & vbNewLine _
                                                             & "Pilih No untuk membatalkan", "Perhatian", MessageBoxButtons.OKCancel, RadMessageIcon.Question, MessageBoxDefaultButton.Button2)
             If Result = System.Windows.Forms.DialogResult.Cancel Then
@@ -240,7 +290,7 @@ Public Class rFormMain
     End Sub
 
     Private Sub rMenuInvoiceItem_Click(sender As Object, e As EventArgs) Handles rMenuInvoiceItem.Click
-        If (mdlCom.JobDesk = "Administrator") Or (mdlCom.JobDesk = "Pemasaran") Or (mdlCom.JobDesk = "Superuser") Or (mdlCom.UserRole = "Administrator") Then
+        If (Konektor.mdlCom.JobDesk = "Administrator") Or (Konektor.mdlCom.JobDesk = "Pemasaran") Or (Konektor.mdlCom.JobDesk = "Superuser") Or (Konektor.mdlCom.UserRole = "Administrator") Then
             BukaFormChild(rFormDataListInvoice)
         Else
             RadMessageBox.Show("Anda tidak berhak mengakses Menu ini!", "Perhatian", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
@@ -259,8 +309,8 @@ Public Class rFormMain
 
     Private Sub rMenuImportInvoiceItem_Click(sender As Object, e As EventArgs) Handles rMenuImportInvoiceItem.Click
         rFormMain.tempForm = rFormImport
-        If Not (mdlCom.UserRole = "Administrator") Then
-            Dim Result As DialogResult = RadMessageBox.Show("Anda memerlukan Permission dari Administrator!" & vbNewLine & _
+        If Not (Konektor.mdlCom.UserRole = "Administrator") Then
+            Dim Result As DialogResult = RadMessageBox.Show("Anda memerlukan Permission dari Administrator!" & vbNewLine &
                                                                        "Dengan memilih Yes, Silahkan hubungi Administrator untuk input Permission" & vbNewLine _
                                                                        & "Pilih No untuk membatalkan", "Perhatian", MessageBoxButtons.OKCancel, RadMessageIcon.Question, MessageBoxDefaultButton.Button2)
             If Result = System.Windows.Forms.DialogResult.Cancel Then
@@ -351,8 +401,8 @@ Public Class rFormMain
     End Sub
 
     Private Sub rMenuUserDataItem_Click(sender As Object, e As EventArgs) Handles rMenuUserDataItem.Click
-        If (Not mdlCom.V_Role(0) = "00") Then
-            If (Not mdlCom.UserRole = "Administrator") Then
+        If (Not Konektor.mdlCom.V_Role(0) = "00") Then
+            If (Not Konektor.mdlCom.UserRole = "Administrator") Then
                 RadMessageBox.Show("Hanya ADMINISTRATOR yang berhak mengakses menu ini.", "Perhatian", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
                 Exit Sub
             End If
@@ -387,8 +437,8 @@ Public Class rFormMain
     End Sub
 
     Private Sub rMenuPembayaran_Click(sender As Object, e As EventArgs) Handles rMenuPembayaran.Click
-        If (Not mdlCom.V_Role(0) = "00") Then
-            If (Not mdlCom.UserRole = "Administrator") Then
+        If (Not Konektor.mdlCom.V_Role(0) = "00") Then
+            If (Not Konektor.mdlCom.UserRole = "Administrator") Then
                 RadMessageBox.Show("Hanya ADMINISTRATOR yang berhak mengakses menu ini.", "Perhatian", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
                 Exit Sub
             End If
@@ -403,7 +453,7 @@ Public Class rFormMain
     Private Sub Countersql(ByVal NamaField As String, ByVal tableName As String, Optional ByVal Opsi As String = "")
         Dim sqlCommand As New MySqlCommand
         sqlCommand.CommandText = String.Format("SELECT TABLE_NAME, TABLE_ROWS, CREATE_TIME,  FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = " & Opsi)
-        sqlCommand.Connection = mdlCom.vConn
+        sqlCommand.Connection = Konektor.mdlCom.vConn
         Dim sqlreader As MySqlDataReader
         sqlreader = sqlCommand.ExecuteReader
         Dim fieldNames As String() = New String(3 - 1) {}
@@ -432,7 +482,7 @@ Public Class rFormMain
                     Dim row As DataRow = dt.Rows.Item(i)
                     values(0) = Conversions.ToString(row.Item("TABLE_NAME"))
                     values(1) = Conversions.ToString(row.Item("TABLE_ROWS"))
-                    Dim cmd As New MySqlCommand("SELECT COUNT(*) FROM " & dt.Rows.Count, mdlCom.vConn)
+                    Dim cmd As New MySqlCommand("SELECT COUNT(*) FROM " & dt.Rows.Count, Konektor.mdlCom.vConn)
                     Dim sqlreader As MySqlDataReader
                     sqlreader = cmd.ExecuteReader
                     sqlreader.Read()
@@ -441,7 +491,7 @@ Public Class rFormMain
                     RadGridView1.Rows.Add(values)
                 Loop
             Else
-                mdlCom.ShowError(errmsg)
+                Konektor.mdlCom.ShowError(errmsg)
             End If
         Catch ex As Exception
             RadMessageBox.Show(ex.Message)

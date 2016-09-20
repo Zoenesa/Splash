@@ -29,7 +29,7 @@ Public Class FormProfilPerusahaan
             List.Clear()
 
             sqlcmd.CommandText = "SELECt * FROM `CompanyProfile` " & Opsi
-            sqlcmd.Connection = mdlCom.vConn
+            sqlcmd.Connection = Konektor.mdlCom.vConn
             sqlreader = sqlcmd.ExecuteReader
             sqlreader.Read()
 

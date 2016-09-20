@@ -5,27 +5,24 @@ Imports Telerik.WinControls
 Public Class FormInputItemOrder
 
     Private Sub RadTextBox8_Leave(sender As Object, e As EventArgs) Handles RadTextBox8.Leave
-        If (RadTextBox2.Text.Trim() Is Nothing) Or String.IsNullOrEmpty(RadTextBox2.Text.Trim()) Then
+        'If String.IsNullOrEmpty(RadTextBox2.Text.Trim()) Then
+        '    RadMessageBox.Show("")
+        'End If
+        'Dim common As New Konektor.common
+        'Dim errmsg As String = Nothing
+        'Dim dt As New DataTable()
+        'If common.LoadTable(errmsg, dt, "") Then
 
-            RadMessageBox.Show("")
+        'Else
+        '    Beep()
+        '    Dim pesan As DialogResult = RadMessageBox.Show("")
 
-        End If
+        '    If pesan = DialogResult.Yes Then
 
-        Dim common As New Konektor.common
-        Dim errmsg As String = Nothing
-        Dim dt As New DataTable()
-        If common.LoadTable(errmsg, dt, "") Then
+        '    Else
 
-        Else
-            Beep()
-            Dim pesan As DialogResult = RadMessageBox.Show("")
-
-            If pesan = DialogResult.Yes Then
-
-            Else
-
-            End If
-        End If
+        '    End If
+        'End If
 
     End Sub
 
@@ -49,6 +46,9 @@ Public Class FormInputItemOrder
     Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
         Me.Close()
     End Sub
+
+
+    Private EditMode As Boolean
 
     Public Function DialogInputItemOrder(ByVal Value As String)
         Dim dlg As DialogResult

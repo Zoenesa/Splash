@@ -8,8 +8,8 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Splash Database")> 
-<Assembly: AssemblyDescription("Aplikasi Database")> 
+<Assembly: AssemblyTitle("Splash Database")>
+<Assembly: AssemblyDescription("Aplikasi Sistem Informasi Data Project")>
 <Assembly: AssemblyCompany("AgungJawata")> 
 <Assembly: AssemblyProduct("Splash™")> 
 <Assembly: AssemblyCopyright("Copyright ©  2016")> 
