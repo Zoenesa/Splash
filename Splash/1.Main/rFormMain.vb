@@ -14,13 +14,13 @@ Public Class rFormMain
 
     Private Const FileiniSetting As String = "Config.ini"
 
-    Public Shared ImageFolder As String = (IO.Path.Combine(Environment.CurrentDirectory, "Image"))
+    Public Shared ImageFolder As String = (IO.Path.Combine(Environment.CurrentDirectory, "Images"))
 
     Public Sub New()
 
         MyBase.New()
 
-        ImageFolder = (IO.Path.Combine(Environment.CurrentDirectory, "Image"))
+        ImageFolder = (IO.Path.Combine(Environment.CurrentDirectory, "Images"))
 
         InitializeComponent()
 
@@ -158,6 +158,7 @@ LabelFolderBackup:
     End Sub
 
     Public Shared Sub LoadIcon(ByVal flagIcon As Boolean, ByVal form As RadForm)
+
         Dim FilePath As String = IO.Path.GetFullPath(IO.Path.Combine(ImageFolder, "myIco.ico"))
         Dim ImgIcon As Icon = Nothing
         Dim mprofile As Setting.Config.Profile.Ini = New Setting.Config.Profile.Ini
@@ -167,28 +168,38 @@ LabelFolderBackup:
         If flagIcon Then
             form.ShowIcon = True
             If Not (IO.File.Exists(FilePath)) Then
-
-                IO.Directory.CreateDirectory(Environment.CurrentDirectory & "\Images\")
-
-                SaveResource("Splash.My.Resources.Resources.myIco", FilePath)
-
+                If Not IO.Directory.Exists(ImageFolder) Then
+                    IO.Directory.CreateDirectory(ImageFolder)
+                End If
+                SaveResource("myIco.ico", FilePath)
                 ModulSetting.SetValue("General", "Icons", "myIco.ico")
-
+                ImgIcon = GetEmbedIconResource("Splash.My.Resources.Resources.myIco.ico")
             Else
-
-                ImgIcon = New Icon(IO.Path.Combine(Environment.CurrentDirectory, "Images", "myico.ico"))
-
-                form.Icon = ImgIcon
-
-                ModulSetting.GetValue("General", Entry)
-
+                Dim FileIcon As String = ModulSetting.GetValue("General", "Icons")
+                If ModulSetting.HasEntry("General", "Icons") Then
+                    If Not String.IsNullOrWhiteSpace(FileIcon) Then
+                        ImgIcon = New Icon(IO.Path.Combine(ImageFolder, FileIcon))
+                    End If
+                Else
+                    ImgIcon = GetEmbedIconResource("myIco.ico")
+                End If
             End If
+            form.Icon = ImgIcon
+            Dim strArray As Array = GetEmbedResource("Splash.My.Resources")
         Else
             form.ShowIcon = False
         End If
-
     End Sub
 
+    Private Shared Function GetEmbedResource(ByVal ResourceName As String) As Array
+        Return System.Reflection.Assembly.GetExecutingAssembly.GetManifestResourceNames
+    End Function
+
+    Private Shared Function GetEmbedIconResource(ByVal IconName As String) As Icon
+        Return New Icon(System.Reflection.Assembly.
+                        GetExecutingAssembly.
+                        GetManifestResourceStream(IconName))
+    End Function
     Public Shared Sub SaveResource(ByVal resName As String, filename As String)
         ' Get a reference to the running application.
         Dim assy As [Assembly] = [Assembly].GetExecutingAssembly()
@@ -330,6 +341,7 @@ LabelFolderBackup:
     End Sub
 
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
+
         Me.SuspendLayout()
         If ValidasiFileSetting() Then
             LoadIcon(True, Me)
