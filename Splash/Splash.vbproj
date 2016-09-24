@@ -300,6 +300,12 @@
     <Compile Include="ExportImportArrange\rFormImport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormStartUp.Designer.vb">
+      <DependentUpon>FormStartUp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormStartUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="_.Module\ClassPesan.vb" />
     <Compile Include="_.Module\clsExportToCSV.vb" />
     <Compile Include="_.Module\FormDataBackup.Designer.vb">
@@ -439,6 +445,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ExportImportArrange\rFormImport.resx">
       <DependentUpon>rFormImport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStartUp.resx">
+      <DependentUpon>FormStartUp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="1.Main\rFormMain.resx">
