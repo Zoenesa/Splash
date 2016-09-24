@@ -97,19 +97,23 @@ Public Class FormStartUp
     End Sub
 
     Private Sub SetReferenceInternal()
-        If m_bDTSet = False Then
-            m_bDTSet = True
-            m_dtStart = DateTime.Now
-            ReadIncrements()
+        If Not Me.m_bDTSet Then
+            Me.m_bDTSet = True
+            Me.m_dtStart = DateTime.Now
+            Me.ReadIncrements()
         End If
-        Dim dblMilliseconds As Double = ElapsedMilliSeconds()
-        m_alActualTimes.Add(dblMilliseconds)
-        m_dblLastCompletionFraction = m_dblCompletionFraction
-        If Not (m_alPreviousCompletionFraction Is Nothing) AndAlso m_iIndex < m_alPreviousCompletionFraction.Count Then
-            m_dblCompletionFraction = DirectCast(m_alPreviousCompletionFraction(System.Math.Max(System.Threading.Interlocked.Increment(m_iIndex), m_iIndex - 1)), Double)
+
+        Dim num As Double = Me.ElapsedMilliSeconds
+        Me.m_alActualTimes.Add(num)
+        Me.m_dblLastCompletionFraction = Me.m_dblCompletionFraction
+        If ((Not Me.m_alPreviousCompletionFraction Is Nothing) AndAlso (Me.m_iIndex < Me.m_alPreviousCompletionFraction.Count)) Then
+            Dim iIndex As Integer = Me.m_iIndex
+            Me.m_iIndex = (iIndex + 1)
+            Me.m_dblCompletionFraction = CDbl(Me.m_alPreviousCompletionFraction.Item(iIndex))
         Else
-            m_dblCompletionFraction = If((m_iIndex > 0), 1, 0)
+            Me.m_dblCompletionFraction = If((Me.m_iIndex > 0), CDbl(1), CDbl(0))
         End If
+
     End Sub
 
     Private Function ElapsedMilliSeconds() As Double
@@ -213,7 +217,7 @@ Public Class FormStartUp
                     graphics.Dispose()
                 End If
                 Dim num6 As Integer = (1 + (CInt((50 * ((1 - Me.m_dblLastCompletionFraction) / Me.m_dblPBIncrementPerTimerInterval))) / 1000))
-                Me.m_sTimeRemaining = If((num6 = 1), String.Format("1 second remaining", New Object(0 - 1) {}), String.Format("{0} seconds remaining", num6))
+                Me.m_sTimeRemaining = If((num6 = 1), String.Format("Mohon Tunggu... 1 Detik Lagi", New Object(0 - 1) {}), String.Format("Mohon Tunggu... {0} detik waktu tersisa", num6))
             End If
         End If
         Me.lblTimeRemaining.Text = Me.m_sTimeRemaining

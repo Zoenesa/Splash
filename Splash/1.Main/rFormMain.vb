@@ -6,6 +6,7 @@ Imports System.Text
 Imports System.IO
 Imports Splash.Konektor
 
+
 Public Class rFormMain
 
     Public Shared tempForm As Form
@@ -20,7 +21,12 @@ Public Class rFormMain
 
         MyBase.New()
 
+        m_bLayoutCall = False
+
+
+
         ImageFolder = (IO.Path.Combine(Environment.CurrentDirectory, "Images"))
+        AddHandler MyBase.Layout, New LayoutEventHandler(AddressOf Me.CallLayout)
 
         InitializeComponent()
 
@@ -33,12 +39,20 @@ Public Class rFormMain
 
         ModulSetting = New Setting.Config.Profile.Ini(IO.Path.Combine(Environment.CurrentDirectory, "Config", FileiniSetting))
 
+        CallLayout()
+
+        InisialShorcutMenu()
     End Sub
 
     Public Shared MainSectionSetting As String = "Splash"
     Public Shared MainEntryAplikasiName As String = "NamaAplikasi"
     Public Shared MainEntryVersiName As String = "Versi"
     Public Shared MainEntryDeskripsiName As String = "Deskripsi"
+
+    <STAThread>
+    Public Shared Sub InisialisasiStartUp()
+
+    End Sub
 
     Public Shared Function ValidasiFileSetting() As Boolean
         Try
@@ -173,7 +187,7 @@ LabelFolderBackup:
                 End If
                 SaveResource("myIco.ico", FilePath)
                 ModulSetting.SetValue("General", "Icons", "myIco.ico")
-                ImgIcon = GetEmbedIconResource("Splash.My.Resources.Resources.myIco.ico")
+                ImgIcon = GetEmbedIconResource("Splash.My.Resources.Resources.myIco")
             Else
                 Dim FileIcon As String = ModulSetting.GetValue("General", "Icons")
                 If ModulSetting.HasEntry("General", "Icons") Then
@@ -200,6 +214,7 @@ LabelFolderBackup:
                         GetExecutingAssembly.
                         GetManifestResourceStream(IconName))
     End Function
+
     Public Shared Sub SaveResource(ByVal resName As String, filename As String)
         ' Get a reference to the running application.
         Dim assy As [Assembly] = [Assembly].GetExecutingAssembly()
@@ -325,7 +340,7 @@ LabelFolderBackup:
     Public Shared Sub SetTheme(ByVal sControl As Control, ByVal sTheme As String)
         Try
             sTheme = rFormMain.Office2010BlackTheme1.ThemeName
-            Dim iRadControl As IComponentTreeHandler = _
+            Dim iRadControl As IComponentTreeHandler =
                 TryCast(sControl, IComponentTreeHandler)
             If iRadControl IsNot Nothing Then
                 iRadControl.ThemeName = sTheme
@@ -335,9 +350,20 @@ LabelFolderBackup:
             Next
         Catch ex As Exception
             RadMessageBox.Show("Could not load setup theme :" & vbNewLine _
-                                               & ex.Source & vbNewLine & "Click &Details for more Information", _
+                                               & ex.Source & vbNewLine & "Click &Details for more Information",
                                                "Error", MessageBoxButtons.OK, RadMessageIcon.Error, ex.Message)
         End Try
+    End Sub
+
+    Private m_bLayoutCall As Boolean
+    Private m_dt As DateTime
+
+    Private Sub CallLayout()
+        If Not Me.m_bLayoutCall Then
+            Me.m_bLayoutCall = True
+            Me.m_dt = DateTime.Now
+            FormStartUp.CloseForm()
+        End If
     End Sub
 
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -624,5 +650,18 @@ LabelFolderBackup:
     Private Sub rMenudbUtility_Click(sender As Object, e As EventArgs) Handles rMenudbUtility.Click
         Dim advDBbackup As New FormAdvancedSqlBackup
         BukaFormChild(advDBbackup)
+    End Sub
+
+    Private Sub rMenuCloseAllmdiClient_Click(sender As Object, e As EventArgs) Handles rMenuCloseAllmdiClient.Click
+        For Each frm As Form In Me.MdiChildren
+            frm.Close()
+        Next frm
+    End Sub
+
+    Private Sub InisialShorcutMenu()
+        rMenuKoneksiDb.Shortcuts.Add(New RadShortcut(Keys.Control, Keys.K))
+        rMenuSetingdb.Shortcuts.Add(New RadShortcut(Keys.Control, Keys.A))
+        rMenuExit.Shortcuts.Add(New RadShortcut(Keys.Alt, Keys.F4))
+        rMenuInvoiceItem.Shortcuts.Add(New RadShortcut(Keys.Control, Keys.Shift, Keys.C))
     End Sub
 End Class
