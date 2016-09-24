@@ -29,13 +29,10 @@ Namespace My
             Me.SaveMySettingsOnExit = true
             Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses
         End Sub
-
-        <Global.System.Diagnostics.DebuggerStepThroughAttribute()>
+        
+        <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Dim mForm As New Global.Splash.rFormMain
-
-            Me.MainForm = rFormMain
-
+            Me.MainForm = Global.Splash.FormStartUp
         End Sub
     End Class
 End Namespace
