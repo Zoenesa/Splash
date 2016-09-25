@@ -23,8 +23,6 @@ Public Class rFormMain
 
         m_bLayoutCall = False
 
-
-
         ImageFolder = (IO.Path.Combine(Environment.CurrentDirectory, "Images"))
         AddHandler MyBase.Layout, New LayoutEventHandler(AddressOf Me.CallLayout)
 
@@ -42,6 +40,7 @@ Public Class rFormMain
         CallLayout()
 
         InisialShorcutMenu()
+
     End Sub
 
     Public Shared MainSectionSetting As String = "Splash"
@@ -49,10 +48,9 @@ Public Class rFormMain
     Public Shared MainEntryVersiName As String = "Versi"
     Public Shared MainEntryDeskripsiName As String = "Deskripsi"
 
-    <STAThread>
-    Public Shared Sub InisialisasiStartUp()
+    Public Shared Function InisialisasiStartUp() As Boolean
 
-    End Sub
+    End Function
 
     Public Shared Function ValidasiFileSetting() As Boolean
         Try
