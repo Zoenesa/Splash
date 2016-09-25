@@ -173,7 +173,7 @@ Public Class FrmCustomerReference
 
     Private Sub FrmClientsRefrence_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
-        rFormMain.LoadIcon(True, Me)
+        rFormMain.UserSettingIcon(True, Me)
         If RadMessageBox.Show("~ REF_CLIENT FIELD ID_NUM SET VALUES ROW BASED ON DATAGRIDVIEW ROWS COUNT" & vbNewLine &
                            vbNewLine & "~ REMOVING FIELD ID_NUM" & vbNewLine &
                            vbNewLine & "~ SET INDEX PRIMARYKEY AS CLIENT_IDTAX", "NEXT DEVELOPMENT", MessageBoxButtons.OK, RadMessageIcon.Exclamation) <> System.Windows.Forms.DialogResult.Yes Then

@@ -101,7 +101,7 @@ Public Class rFormKonfirmasiPembayaran
 
     Private Sub rFormKonfirmasiPembayaran_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
-        rFormMain.LoadIcon(True, Me)
+        rFormMain.UserSettingIcon(True, Me)
         GetClient()
     End Sub
 

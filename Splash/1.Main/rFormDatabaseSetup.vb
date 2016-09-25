@@ -77,7 +77,7 @@ Public Class rFormDatabaseSetup
 
     Private Sub rFormDatabaseSetup_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
-        rFormMain.LoadIcon(True, Me)
+        rFormMain.UserSettingIcon(True, Me)
         Try
 
             If Not (IO.File.Exists(IO.Path.Combine(Environment.CurrentDirectory, "backup", "backup.sql"))) Then

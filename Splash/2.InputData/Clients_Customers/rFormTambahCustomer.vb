@@ -12,7 +12,7 @@ Public Class rFormTambahCustomer
 
     Private Sub rFormTambahCustomer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
-        rFormMain.LoadIcon(True, Me)
+        rFormMain.UserSettingIcon(True, Me)
         Try
             If Me.EditMode Then
                 Me.Text = "Ubah Data Customer / Supplier"

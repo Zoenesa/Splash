@@ -33,7 +33,7 @@ Public Class rFormInvoice
 
     Private Sub frmInvoice_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
-        rFormMain.LoadIcon(True, Me)
+        rFormMain.UserSettingIcon(True, Me)
         ' Me.Size = New Size(662, 577)
 
         btnNext.Parent = RadPageView1.Pages.Item(0)

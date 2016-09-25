@@ -22,7 +22,7 @@ Public Class rFormDaftarBarang
     End Sub
 
     Private Sub rFormDaftarBarang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        rFormMain.LoadIcon(True, Me)
+        rFormMain.UserSettingIcon(True, Me)
         LoadDataInventori()
     End Sub
 

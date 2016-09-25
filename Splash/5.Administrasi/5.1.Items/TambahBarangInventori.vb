@@ -131,7 +131,7 @@ LabelPesanError: If errMsg = "" Then
     End Sub
 
     Private Sub TambahBarangInventori_Load(sender As Object, e As EventArgs) Handles Me.Load
-        rFormMain.LoadIcon(True, Me)
+        rFormMain.UserSettingIcon(True, Me)
         LoadListSatuan()
         'Dim flag As Boolean
         'Dim errMsg As String = Nothing

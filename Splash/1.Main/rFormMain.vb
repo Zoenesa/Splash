@@ -164,7 +164,25 @@ LabelFolderBackup:
         End Try
     End Sub
 
-    Public Shared Sub LoadIcon(ByVal flagIcon As Boolean, ByRef form As RadForm)
+    Public Shared Sub UserSettingIcon(ByVal flagIcon As Boolean, ByRef form As RadForm)
+        Try
+            Dim UserIcon As Icon
+            Dim strFlag As String = If((ModulSetting.GetValue("General", "LogoIcon") = 1), True, False)
+            flagIcon = Conversions.ToBoolean(strFlag)
+            If flagIcon Then
+                UserIcon = New Icon(IO.Path.Combine(Environment.CurrentDirectory, spControl.GetDataSetting(spControl.PilihanProfile.Aplikasi, "General", "Icons")))
+            Else
+                UserIcon = New Icon(IO.Path.Combine(Environment.CurrentDirectory, "DefaultLogo.ico"))
+            End If
+            form.Icon = UserIcon
+            form.ShowIcon = True
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Public Shared Function GenerateApplicationIcon() As Boolean
+        Dim flagicon As Boolean
         Try
             Dim MyIcon As Icon
             Dim strFlag As String = If((ModulSetting.GetValue("General", "LogoIcon") = 1), True, False)
@@ -176,16 +194,17 @@ LabelFolderBackup:
                     GoTo loadDefaultLogoIcon
                 End If
                 MyIcon = New Icon(IO.Path.Combine(Environment.CurrentDirectory, IconName))
+                flagicon = True
             Else
 loadDefaultLogoIcon:
                 MyIcon = New Icon(IO.Path.Combine(Environment.CurrentDirectory, "DefaultLogo.ico"))
+                flagicon = False
             End If
-            form.Icon = MyIcon
-            form.ShowIcon = True
         Catch ex As Exception
             RadMessageBox.Show(ex.Message)
         End Try
-    End Sub
+        Return flagicon
+    End Function
 
     Private Shared Function GetEmbedResource(ByVal ResourceName As String) As Array
         Return System.Reflection.Assembly.GetExecutingAssembly.GetManifestResourceNames
@@ -351,9 +370,10 @@ loadDefaultLogoIcon:
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         Me.SuspendLayout()
-        If ValidasiFileSetting() Then
-            'LoadIcon(True, Me)
+        If GenerateApplicationIcon() Then
+            UserSettingIcon(True, Me)
         End If
+
         Me.ResumeLayout()
         StatusVersi.Text = ""
         StatusVersi.Text = My.Application.Info.Title.ToString & " V" & My.Application.Info.Version.ToString

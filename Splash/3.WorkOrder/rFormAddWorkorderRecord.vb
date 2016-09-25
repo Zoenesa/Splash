@@ -46,7 +46,7 @@ Public Class rFormAddWorkorderRecord
         Me.Location = New Point((rFormMain.Width / 2) - (Me.Width / 2), (50))
 
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
-        rFormMain.LoadIcon(True, Me)
+        rFormMain.UserSettingIcon(True, Me)
 
         If Me.EditMode Then
             Me.Text = "Ubah Record"

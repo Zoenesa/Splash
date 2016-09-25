@@ -63,7 +63,7 @@ Public Class FormTambahInvoice
 
     Private Sub FormTambahInvoice_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
-        rFormMain.LoadIcon(True, Me)
+        rFormMain.UserSettingIcon(True, Me)
 
         Me.MinimumSize = New Size(MinW_Size, MinH_Size)
         Me.MaximumSize = New Size(MaxW_Size, MaxH_Size)

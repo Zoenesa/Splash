@@ -1,4 +1,7 @@
 ﻿
+Imports System.Drawing
+Imports Microsoft.VisualBasic.CompilerServices
+
 Public NotInheritable Class spControl
 
     Public Shared ControlSettingAplikasi As Setting.Config.Profile.Profile = New Setting.Config.Profile.Ini(IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config.ini"))
@@ -110,18 +113,25 @@ Public NotInheritable Class spControl
         Return flag
     End Function
 
-    Public Shared Function SettingLogoIconName(ByVal IconFileName As String) As String
-        Dim IconPath As String
-        Dim BaseImagesPath As String = IO.Path.Combine(Environment.CurrentDirectory, "Images")
-        Dim AppPAth As String = Environment.CurrentDirectory
+    Public Shared DefaultIconFileName As System.Drawing.Icon
 
-        Dim strRelative As String = spGlobal.AppsGetRelativePath(AppPAth, IO.Path.Combine(BaseImagesPath)) & "\" & IconFileName
-        If String.Compare(GetDataSetting(PilihanProfile.Aplikasi, "General", "Icons"), strRelative) Then
-            IconPath = IO.Path.Combine(AppPAth, BaseImagesPath, IconFileName)
+    Public Shared BaseAppFolder As String
+
+    Public Shared Function SettingLogoIconName(ByVal IconFileName As String) As Boolean
+        Dim flag As Boolean = False
+        Dim FolderParent As String = IO.Path.GetDirectoryName(IO.Path.Combine(Environment.CurrentDirectory, IconFileName))
+
+        Dim flag2 As Boolean = Conversions.ToBoolean(IO.File.Exists(IO.Path.Combine(SettingDefaultImageFolder, FolderParent)))
+        If flag2 Then
+            flag = flag2
+            DefaultIconFileName = New Icon(IO.Path.Combine(Environment.CurrentDirectory, GetDataSetting(PilihanProfile.Aplikasi, "General", "Icons")))
         Else
-            IconPath = IO.Path.Combine(AppPAth, BaseImagesPath, "myIco.Ico")
+            DefaultIconFileName = New Icon(System.Reflection.Assembly.
+                        GetExecutingAssembly.
+                        GetManifestResourceStream("DefaultLogo.ico"))
+            flag = False
         End If
-        Return IconPath
+        Return flag
     End Function
 
 End Class

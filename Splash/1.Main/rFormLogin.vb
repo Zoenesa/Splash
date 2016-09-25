@@ -53,16 +53,18 @@ Public Class rFormLogin
         End If
 
         If mdlCom.DataLogin(sUser, sPass, retmsg, errmsg, False) Then
-            RadMessageBox.Show(rFormMain, "Welcome " & vbNewLine & mdlCom.UserLogin.ToString.ToUpper & vbNewLine,
-                               "Splash DB" & Me.Text, MessageBoxButtons.OK, RadMessageIcon.Info, MessageBoxDefaultButton.Button1)
-            '"Current Project are : ", "Splash DB" & Me.Text, MessageBoxButtons.OK, RadMessageIcon.Info, MessageBoxDefaultButton.Button1)
-            Me.DialogResult = System.Windows.Forms.DialogResult.OK
-            rFormMain.IsMdiContainer = True
-            rFormMain.RadStatusDeskripsi.Text = String.Concat(New String() {
+            Dim UserLoginDetail As String = String.Concat(New String() {
             "[", "Sign In As: ", Strings.UCase(mdlCom.UserLogin), "; ", "Nama: ", Strings.UCase(mdlCom.UserFName),
             "; Title: ", mdlCom.UserRole, "]",
             "; ", "[Server: ", mdlCom.uhost, "; Database: ", mdlCom.cDbname, "]"
             })
+
+            RadMessageBox.Show(rFormMain, "Selamat Datang Kembali" & vbNewLine & UserLoginDetail,
+                               "Splash DB" & Me.Text, MessageBoxButtons.OK, RadMessageIcon.Info, MessageBoxDefaultButton.Button1)
+            '"Current Project are : ", "Splash DB" & Me.Text, MessageBoxButtons.OK, RadMessageIcon.Info, MessageBoxDefaultButton.Button1)
+            Me.DialogResult = System.Windows.Forms.DialogResult.OK
+            rFormMain.IsMdiContainer = True
+            rFormMain.RadStatusDeskripsi.Text = UserLoginDetail
         ElseIf (errmsg = "0") Then
             If (retmsg = "ProfileNull") Then
                 Me.DialogResult = System.Windows.Forms.DialogResult.Yes
@@ -91,7 +93,7 @@ Public Class rFormLogin
 
     Private Sub rFormLogin_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
-        rFormMain.LoadIcon(True, Me)
+        rFormMain.UserSettingIcon(True, Me)
         rTxUsername.Focus()
         rTxUsername.SelectAll()
     End Sub
@@ -108,4 +110,5 @@ Public Class rFormLogin
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Login("Guest", "guest")
     End Sub
+
 End Class
