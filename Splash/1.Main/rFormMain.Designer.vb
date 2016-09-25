@@ -23,6 +23,7 @@ Partial Class rFormMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rFormMain))
         Me.rMainMenu = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuKoneksiDb = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuLogout = New Telerik.WinControls.UI.RadMenuItem()
@@ -531,6 +532,7 @@ Partial Class rFormMain
         Me.Controls.Add(Me.RadMenu1)
         Me.EnableKeyMap = True
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.Name = "rFormMain"
         '

@@ -82,6 +82,7 @@ Public Class spGlobal
             ReturnPath += AbsolutePath.Substring(CommonPart.Length)
         Catch ex As Exception
             Throw New NotImplementedException(ex.Message)
+            ReturnPath = Nothing
         End Try
         Return ReturnPath
     End Function
@@ -95,6 +96,7 @@ Public Class spGlobal
     Public Shared Property EnumerateResx As List(Of String)
         Get
             Dim resname As String = "CodeLibs.dll"
+
             ' Get a reference to the running application.
             Dim assy As [Assembly] = [Assembly].GetEntryAssembly()
             ' Loop through each resource, looking for the image name (case-insensitive).

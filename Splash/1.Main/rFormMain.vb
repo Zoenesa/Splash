@@ -19,8 +19,6 @@ Public Class rFormMain
 
     Public Sub New()
 
-        MyBase.New()
-
         m_bLayoutCall = False
 
         ImageFolder = (IO.Path.Combine(Environment.CurrentDirectory, "Images"))
@@ -47,10 +45,6 @@ Public Class rFormMain
     Public Shared MainEntryAplikasiName As String = "NamaAplikasi"
     Public Shared MainEntryVersiName As String = "Versi"
     Public Shared MainEntryDeskripsiName As String = "Deskripsi"
-
-    Public Shared Function InisialisasiStartUp() As Boolean
-
-    End Function
 
     Public Shared Function ValidasiFileSetting() As Boolean
         Try
@@ -86,6 +80,7 @@ Public Class rFormMain
     End Function
 
     Private Sub CekFolderAplikasi()
+        Dim flag As Boolean = False
         Dim flag1 As Boolean
 
         flag1 = IO.Directory.Exists(IO.Path.Combine(Environment.CurrentDirectory, "Config"))
@@ -169,38 +164,27 @@ LabelFolderBackup:
         End Try
     End Sub
 
-    Public Shared Sub LoadIcon(ByVal flagIcon As Boolean, ByVal form As RadForm)
-
-        Dim FilePath As String = IO.Path.GetFullPath(IO.Path.Combine(ImageFolder, "myIco.ico"))
-        Dim ImgIcon As Icon = Nothing
-        Dim mprofile As Setting.Config.Profile.Ini = New Setting.Config.Profile.Ini
-        Dim Entry As String = "Icons"
-        Dim settingValue As String = "myico.ico"
-
-        If flagIcon Then
-            form.ShowIcon = True
-            If Not (IO.File.Exists(FilePath)) Then
-                If Not IO.Directory.Exists(ImageFolder) Then
-                    IO.Directory.CreateDirectory(ImageFolder)
+    Public Shared Sub LoadIcon(ByVal flagIcon As Boolean, ByRef form As RadForm)
+        Try
+            Dim MyIcon As Icon
+            Dim strFlag As String = If((ModulSetting.GetValue("General", "LogoIcon") = 1), True, False)
+            flagIcon = Conversions.ToBoolean(strFlag)
+            Dim IconName As String = ModulSetting.GetValue("General", "Icons")
+            If flagIcon Then
+                If Not IO.File.Exists(IO.Path.Combine(Environment.CurrentDirectory, IconName)) Then
+                    SaveResource("DefaultLogo.ico", IO.Path.Combine(Environment.CurrentDirectory, ImageFolder, "DefaultLogo.ico"))
+                    GoTo loadDefaultLogoIcon
                 End If
-                SaveResource("myIco.ico", FilePath)
-                ModulSetting.SetValue("General", "Icons", "myIco.ico")
-                ImgIcon = GetEmbedIconResource("Splash.My.Resources.Resources.myIco")
+                MyIcon = New Icon(IO.Path.Combine(Environment.CurrentDirectory, IconName))
             Else
-                Dim FileIcon As String = ModulSetting.GetValue("General", "Icons")
-                If ModulSetting.HasEntry("General", "Icons") Then
-                    If Not String.IsNullOrWhiteSpace(FileIcon) Then
-                        ImgIcon = New Icon(IO.Path.Combine(ImageFolder, FileIcon))
-                    End If
-                Else
-                    ImgIcon = GetEmbedIconResource("myIco.ico")
-                End If
+loadDefaultLogoIcon:
+                MyIcon = New Icon(IO.Path.Combine(Environment.CurrentDirectory, "DefaultLogo.ico"))
             End If
-            form.Icon = ImgIcon
-            Dim strArray As Array = GetEmbedResource("Splash.My.Resources")
-        Else
-            form.ShowIcon = False
-        End If
+            form.Icon = MyIcon
+            form.ShowIcon = True
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message)
+        End Try
     End Sub
 
     Private Shared Function GetEmbedResource(ByVal ResourceName As String) As Array
@@ -360,7 +344,7 @@ LabelFolderBackup:
         If Not Me.m_bLayoutCall Then
             Me.m_bLayoutCall = True
             Me.m_dt = DateTime.Now
-            FormStartUp.CloseForm()
+            'FormStartUp.CloseForm()
         End If
     End Sub
 
@@ -368,7 +352,7 @@ LabelFolderBackup:
 
         Me.SuspendLayout()
         If ValidasiFileSetting() Then
-            LoadIcon(True, Me)
+            'LoadIcon(True, Me)
         End If
         Me.ResumeLayout()
         StatusVersi.Text = ""
@@ -662,4 +646,5 @@ LabelFolderBackup:
         rMenuExit.Shortcuts.Add(New RadShortcut(Keys.Alt, Keys.F4))
         rMenuInvoiceItem.Shortcuts.Add(New RadShortcut(Keys.Control, Keys.Shift, Keys.C))
     End Sub
+
 End Class

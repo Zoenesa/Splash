@@ -30,6 +30,7 @@ Namespace My
             Me.ShutdownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses
         End Sub
 
+        <STAThread>
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>
         Protected Overrides Sub OnCreateMainForm()
             newMain()
@@ -117,43 +118,8 @@ Namespace My
 
             FormStartUp.SetStatus("Inisialisasi Sukses...")
             Thread.Sleep(700)
+            FormStartUp.CloseForm()
         End Sub
-
-        Private Shared Function ParseStatusStartup() As String
-            Dim Value As String
-            Dim list As New List(Of String)
-            Dim Libs As String = IO.Path.Combine(Environment.CurrentDirectory, "Libs")
-            Dim Config As String = IO.Path.Combine(Environment.CurrentDirectory, "Config")
-            Dim Konektor As String = IO.Path.Combine(Environment.CurrentDirectory, "Config")
-
-            list = spGlobal.GetLibrariFile(Libs, spGlobal.FileReadOnlyKonfig)
-
-            Splash.spGlobal.ListOfFileLibrari = list.Count
-
-            Dim num1 As Integer = 0
-            Dim num2 As Integer = list.Count
-            Dim num3 As Integer = num1
-
-            Dim Flag2 As Boolean = IO.File.Exists(IO.Path.Combine(Libs, list(0)))
-            Dim tempValue As String = (String.Format("{0} ..\\{1} {2}", "Librari ", IO.Path.GetFullPath(IO.Path.GetDirectoryName(list(num3))), If(Flag2, "OK", "")))
-            Dim BasePath As String = IO.Directory.GetParent(Environment.CurrentDirectory).FullName
-            Dim StrRelative As String = spGlobal.AppsGetRelativePath(BasePath, Libs)
-
-            Do While Not (num3 <= num2)
-
-                Dim Flag1 As Boolean = IO.File.Exists(list(num3))
-                If Flag1 Then
-                    'tempValue = (String.Format("{0} ..\\{1} {2}", "Librari ", StrRelative & (IO.Path.GetFileName(list(num3))), If(Flag1, "OK", "")))
-                    Value = spGlobal.ParseDirektoriString("Librari", StrRelative & (IO.Path.GetFileName(list(num3))), If(Flag1, "OK", ""))
-                Else
-                    tempValue = (String.Format("{0} ..\\{1} {2}", "Ekstraksi File ", StrRelative & (IO.Path.GetFileName(list(num3))), If(Flag1, "", "OK")))
-                End If
-
-                Interlocked.Increment(num3)
-
-            Loop
-            Return spGlobal.ParseDirektoriString("", "", "")
-        End Function
 
     End Class
 End Namespace

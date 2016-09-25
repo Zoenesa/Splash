@@ -53,7 +53,7 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\myIco.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\DefaultLogo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CodeLibs, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -488,7 +488,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <EmbeddedResource Include="Resources\myIco.ico" />
+    <EmbeddedResource Include="Resources\DefaultLogo.ico" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="4.Teknis\" />

@@ -78,4 +78,50 @@ Public NotInheritable Class spControl
         Return DataSetting
     End Function
 
+    Public Shared Function CekSettingAplikasi() As Boolean
+        Dim flag As Boolean, flag1 As Boolean, flag2 As Boolean, flag3 As Boolean
+        Dim BasePath As String = IO.Path.GetFullPath(AppDomain.CurrentDomain.BaseDirectory)
+        Dim ConfigFolder As String = IO.Path.Combine(BasePath, "Config")
+        Dim KonektorFolder As String = IO.Path.Combine(BasePath, "Config")
+        Dim LibFolder As String = IO.Path.Combine(BasePath, "Libs")
+        Dim ImageFolder As String = IO.Path.Combine(BasePath, "Images")
+
+        Dim ConfigFile As String = "Config.ini"
+        Dim konektorFile As String = "Konektor.ini"
+
+
+        flag1 = IO.Directory.Exists(ConfigFolder)
+        flag2 = IO.Directory.Exists(LibFolder)
+        flag3 = IO.Directory.Exists(ImageFolder)
+
+        If flag1 Then
+            flag = flag1
+        Else
+            'buat config file
+            Using sw As IO.StreamWriter = New IO.StreamWriter(IO.Path.Combine(BasePath, "Config"))
+                sw.WriteLine("")
+
+            End Using
+        End If
+
+
+
+
+        Return flag
+    End Function
+
+    Public Shared Function SettingLogoIconName(ByVal IconFileName As String) As String
+        Dim IconPath As String
+        Dim BaseImagesPath As String = IO.Path.Combine(Environment.CurrentDirectory, "Images")
+        Dim AppPAth As String = Environment.CurrentDirectory
+
+        Dim strRelative As String = spGlobal.AppsGetRelativePath(AppPAth, IO.Path.Combine(BaseImagesPath)) & "\" & IconFileName
+        If String.Compare(GetDataSetting(PilihanProfile.Aplikasi, "General", "Icons"), strRelative) Then
+            IconPath = IO.Path.Combine(AppPAth, BaseImagesPath, IconFileName)
+        Else
+            IconPath = IO.Path.Combine(AppPAth, BaseImagesPath, "myIco.Ico")
+        End If
+        Return IconPath
+    End Function
+
 End Class
