@@ -58,7 +58,9 @@ Partial Class rFormMain
         Me.rMenuSwitchProjectItem = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuResumeOrder = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuCreatePenawaranItem = New Telerik.WinControls.UI.RadMenuItem()
-        Me.RadMenuItem1 = New Telerik.WinControls.UI.RadMenuItem()
+        Me.rMenuDataLokasi = New Telerik.WinControls.UI.RadMenuItem()
+        Me.rMenuInputDataLokasi = New Telerik.WinControls.UI.RadMenuItem()
+        Me.rMenuDataHGB = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuAdministrasi = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuItemBarang = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuRefCustomer = New Telerik.WinControls.UI.RadMenuItem()
@@ -84,6 +86,8 @@ Partial Class rFormMain
         Me.rMenuCloseAllmdiClient = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenuSeparatorItem5 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
+        Me.rMenuDaftarKavling = New Telerik.WinControls.UI.RadMenuItem()
+        Me.RadMenuSeparatorItem6 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -279,7 +283,7 @@ Partial Class rFormMain
         '
         'rDataTeknis
         '
-        Me.rDataTeknis.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMenuDataProject, Me.rMenuResumeOrder, Me.RadMenuItem1})
+        Me.rDataTeknis.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMenuDataProject, Me.rMenuResumeOrder, Me.rMenuDataLokasi})
         Me.rDataTeknis.Name = "rDataTeknis"
         Me.rDataTeknis.Padding = New System.Windows.Forms.Padding(8, 1, 8, 1)
         Me.rDataTeknis.Text = "&Data Teknis"
@@ -322,10 +326,23 @@ Partial Class rFormMain
         Me.rMenuCreatePenawaranItem.Name = "rMenuCreatePenawaranItem"
         Me.rMenuCreatePenawaranItem.Text = "Buat &Penawaran"
         '
-        'RadMenuItem1
+        'rMenuDataLokasi
         '
-        Me.RadMenuItem1.Name = "RadMenuItem1"
-        Me.RadMenuItem1.Text = "&Hitung Volume"
+        Me.rMenuDataLokasi.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMenuDaftarKavling, Me.RadMenuSeparatorItem6, Me.rMenuDataHGB, Me.rMenuInputDataLokasi})
+        Me.rMenuDataLokasi.Name = "rMenuDataLokasi"
+        Me.rMenuDataLokasi.Text = "&Data Lokasi"
+        '
+        'rMenuInputDataLokasi
+        '
+        Me.rMenuInputDataLokasi.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.rMenuInputDataLokasi.Name = "rMenuInputDataLokasi"
+        Me.rMenuInputDataLokasi.Text = "Input Data Lokasi"
+        '
+        'rMenuDataHGB
+        '
+        Me.rMenuDataHGB.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.rMenuDataHGB.Name = "rMenuDataHGB"
+        Me.rMenuDataHGB.Text = "Input Data HGB"
         '
         'rMenuAdministrasi
         '
@@ -523,6 +540,19 @@ Partial Class rFormMain
         Me.RadMenu1.Text = "RadMenu1"
         Me.RadMenu1.ThemeName = "Office2010Black"
         '
+        'rMenuDaftarKavling
+        '
+        Me.rMenuDaftarKavling.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.rMenuDaftarKavling.Name = "rMenuDaftarKavling"
+        Me.rMenuDaftarKavling.Text = "Daftar &Kavling Tersedia"
+        '
+        'RadMenuSeparatorItem6
+        '
+        Me.RadMenuSeparatorItem6.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadMenuSeparatorItem6.Name = "RadMenuSeparatorItem6"
+        Me.RadMenuSeparatorItem6.Text = "RadMenuSeparatorItem6"
+        Me.RadMenuSeparatorItem6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'rFormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -606,9 +636,13 @@ Partial Class rFormMain
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents RadGridView1 As Telerik.WinControls.UI.RadGridView
     Friend WithEvents RadMenuItemCompanyProfile As Telerik.WinControls.UI.RadMenuItem
-    Friend WithEvents RadMenuItem1 As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents rMenuDataLokasi As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents rMenuWindowItm As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents rMenuCloseAllmdiClient As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents RadMenuSeparatorItem5 As Telerik.WinControls.UI.RadMenuSeparatorItem
     Friend WithEvents RadMenu1 As Telerik.WinControls.UI.RadMenu
+    Friend WithEvents rMenuInputDataLokasi As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents rMenuDataHGB As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents rMenuDaftarKavling As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents RadMenuSeparatorItem6 As Telerik.WinControls.UI.RadMenuSeparatorItem
 End Class

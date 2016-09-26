@@ -179,6 +179,12 @@
     <Compile Include="3.WorkOrder\FormInputItemOrder.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="4.Teknis\rFormInputHGB.Designer.vb">
+      <DependentUpon>rFormInputHGB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="4.Teknis\rFormInputHGB.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="5.Administrasi\5.1.Items\FormPilihBarang.Designer.vb">
       <DependentUpon>FormPilihBarang.vb</DependentUpon>
     </Compile>
@@ -386,6 +392,9 @@
     <EmbeddedResource Include="3.WorkOrder\FormInputItemOrder.resx">
       <DependentUpon>FormInputItemOrder.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="4.Teknis\rFormInputHGB.resx">
+      <DependentUpon>rFormInputHGB.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="5.Administrasi\5.1.Items\FormPilihBarang.resx">
       <DependentUpon>FormPilihBarang.vb</DependentUpon>
     </EmbeddedResource>
@@ -490,9 +499,7 @@
     <None Include="packages.config" />
     <EmbeddedResource Include="Resources\DefaultLogo.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="4.Teknis\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
     <EmbeddedResource Include="Libs\CodeLibs.dll">

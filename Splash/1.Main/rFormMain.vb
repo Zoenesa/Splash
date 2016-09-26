@@ -667,4 +667,5 @@ loadDefaultLogoIcon:
         rMenuInvoiceItem.Shortcuts.Add(New RadShortcut(Keys.Control, Keys.Shift, Keys.C))
     End Sub
 
+
 End Class
