@@ -493,6 +493,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Config\Config.ini" />
+    <None Include="Config\Konektor.ini" />
     <None Include="Libs\Splash.vshost.exe.ini" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
