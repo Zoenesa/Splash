@@ -88,6 +88,7 @@ Partial Class rFormMain
         Me.rMenuCloseAllmdiClient = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenuSeparatorItem5 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
+        Me.Office2010BlueTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -645,4 +646,5 @@ Partial Class rFormMain
     Friend WithEvents rMenuDataHGB As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents rMenuDaftarKavling As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents RadMenuSeparatorItem6 As Telerik.WinControls.UI.RadMenuSeparatorItem
+    Friend WithEvents Office2010BlueTheme1 As Telerik.WinControls.Themes.Office2010BlueTheme
 End Class

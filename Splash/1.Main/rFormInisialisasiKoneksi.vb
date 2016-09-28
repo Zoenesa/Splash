@@ -141,7 +141,7 @@ Public Class rFormInisialisasiKoneksi
     End Sub
 
     Private Sub FrmInisialisasiKoneksi_Load(sender As Object, e As EventArgs) Handles Me.Load
-        rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        rFormMain.SetTheme(Me, (rFormMain.ModulSetting.GetValue("General", "Skin")))
         rFormMain.UserSettingIcon(True, Me)
         LoadSetting()
     End Sub

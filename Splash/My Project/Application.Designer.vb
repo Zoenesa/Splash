@@ -11,6 +11,7 @@ Option Explicit On
 '------------------------------------------------------------------------------
 
 Imports System.Threading
+Imports Microsoft.VisualBasic.CompilerServices
 
 Namespace My
 
@@ -33,8 +34,47 @@ Namespace My
         <STAThread>
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>
         Protected Overrides Sub OnCreateMainForm()
-            If spControl.GetDataSetting(spControl.PilihanProfile.Aplikasi, "General", "StartUp") = "1" Then
+
+            Dim SettingNotExists As Setting.Config.Profile.Profile = New Setting.Config.Profile.Ini((IO.Path.Combine(Environment.CurrentDirectory, "Config", "Config.ini")))
+
+
+            'Dim Lines2 As String() = IO.File.ReadAllLines(IO.Path.Combine(Environment.CurrentDirectory, "Config", "Config.ini"))
+
+            If Not IO.File.Exists(IO.Path.Combine(Environment.CurrentDirectory, "Config", "Config.ini")) Then
+                Dim Lines1 As String() = New String(9 - 1) {"\\PROGRAM SPLASH DATA PROJECT", "\\DO NOT DELETE OR CHANGE CONTENT ON THIS CONFIG FILE", "\\RISK CHANGING OR DELETING WILL CAUSE DAMAGE OR CORRUPTION DATA", "\\DILARANG MERUBAH ATAUPUN MENGHAPUS KONTEN DI FILE CONFIG INI", "\\RESIKO MENGUBAH ATAUPUN MENGHAPUS KONTEN DI FILE INI AKAN MENYEBABKAN KERUSAKAN ATAUPUN", "Aplikasi " & My.Application.Info.AssemblyName, "Versi " & My.Application.Info.Version.ToString, ("OS " & If(Environment.Is64BitOperatingSystem, "X64", "X86") & " " & Environment.OSVersion.ToString), ("Machine " & Environment.MachineName.ToString)}
+
+                Dim sw As New IO.StreamWriter(IO.Path.Combine(Environment.CurrentDirectory, "Config", "Config.ini"))
+                sw.WriteLine(Lines1(0))
+                sw.WriteLine(Lines1(1))
+                sw.WriteLine(Lines1(2))
+                sw.WriteLine(Lines1(3))
+                sw.WriteLine(Lines1(4))
+                sw.WriteLine(Lines1(5))
+                sw.WriteLine(Lines1(6))
+                sw.WriteLine(Lines1(7))
+                sw.WriteLine(Lines1(8))
+                sw.Flush()
+                sw.Close()
+
+
+                SettingNotExists.SetValue("General", "Appdir", Environment.CurrentDirectory)
+                SettingNotExists.SetValue("General", "StartUp", "1")
+                SettingNotExists.SetValue("General", "LogoIcon", "1")
+                SettingNotExists.SetValue("General", "Icons", "Images\DefaultLogo.ico")
+                SettingNotExists.SetValue("General", "Skin", "Black")
+            End If
+
+            Dim starAp As String
+            starAp = SettingNotExists.GetValue("General", "StartUp", "")
+
+            If starAp = Nothing Then
+                SettingNotExists.SetValue("General", "StartUp", 1)
+            End If
+
+            If starAp = "1" Then
                 newMain()
+            Else
+                SettingNotExists.SetValue("General", "StartUp", "0")
             End If
 
             Me.MainForm = Global.Splash.rFormMain
@@ -48,6 +88,8 @@ Namespace My
             Thread.Sleep(500)
             FormStartUp.SetStatus("Loading Module Control")
             Thread.Sleep(300)
+            FormStartUp.SetStatus("Inisialisasi Config")
+            Thread.Sleep(500)
             FormStartUp.SetStatus("Loading Module Konektor")
             Thread.Sleep(300)
             FormStartUp.SetStatus("Loading Module Splash")
@@ -68,7 +110,7 @@ Namespace My
 
             Dim list As List(Of String) = spGlobal.GetLibrariFile(Libs, spGlobal.FileReadOnlyLibrari)
 
-            Splash.spGlobal.ListOfFileLibrari = List.Count
+            Splash.spGlobal.ListOfFileLibrari = list.Count
 
             Dim num1 As Integer = 0
             Dim num2 As Integer = list.Count - 1

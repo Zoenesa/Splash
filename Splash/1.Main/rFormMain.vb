@@ -185,8 +185,8 @@ LabelFolderBackup:
         Dim flagicon As Boolean
         Try
             Dim MyIcon As Icon
-            Dim strFlag As String = If((ModulSetting.GetValue("General", "LogoIcon") = 1), True, False)
-            flagIcon = Conversions.ToBoolean(strFlag)
+            Dim strFlag As String = If((ModulSetting.GetValue("General", "LogoIcon") = "1"), True, False)
+            flagicon = Conversions.ToBoolean(strFlag)
             Dim IconName As String = ModulSetting.GetValue("General", "Icons")
             If flagIcon Then
                 If Not IO.File.Exists(IO.Path.Combine(Environment.CurrentDirectory, IconName)) Then
@@ -340,7 +340,18 @@ loadDefaultLogoIcon:
 
     Public Shared Sub SetTheme(ByVal sControl As Control, ByVal sTheme As String)
         Try
-            sTheme = rFormMain.Office2010BlackTheme1.ThemeName
+            Select Case sTheme
+                Case "Black"
+                    sTheme = rFormMain.Office2010BlackTheme1.ThemeName
+                    Exit Select
+                Case "Blue"
+                    sTheme = rFormMain.Office2010BlueTheme1.ThemeName
+                    Exit Select
+                Case Else
+                    sTheme = rFormMain.Office2010BlackTheme1.ThemeName
+                    Exit Select
+            End Select
+
             Dim iRadControl As IComponentTreeHandler =
                 TryCast(sControl, IComponentTreeHandler)
             If iRadControl IsNot Nothing Then
@@ -368,8 +379,12 @@ loadDefaultLogoIcon:
     End Sub
 
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.SuspendLayout()
+
+        rFormMain.SetTheme(Me, (ModulSetting.GetValue("General", "Skin")))
 
         Me.SuspendLayout()
+
         If GenerateApplicationIcon() Then
             UserSettingIcon(True, Me)
         End If
