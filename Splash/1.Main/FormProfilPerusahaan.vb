@@ -29,7 +29,7 @@ Public Class FormProfilPerusahaan
             List.Clear()
 
             sqlcmd.CommandText = "SELECt * FROM `CompanyProfile` " & Opsi
-            sqlcmd.Connection = Konektor.mdlCom.vConn
+            sqlcmd.Connection = Konektor.mdlSQL.vConn
             sqlreader = sqlcmd.ExecuteReader
             sqlreader.Read()
 
@@ -68,7 +68,7 @@ Public Class FormProfilPerusahaan
             RadDropDownList1.Enabled = False
             btnSave.Text = "&OK"
             RadDropDownList1.Text = List.Item(0)
-            txNPWP.Text = mdlstring.FORMAT_NPWP(List.Item(1))
+            txNPWP.Text = stringSQL.FORMAT_NPWP(List.Item(1))
             RadTextBox1.Text = List.Item(2)
             Propinsi.Text = List.Item(3)
             Kabupaten.Text = List.Item(4)

@@ -1,7 +1,7 @@
 ﻿Imports Telerik, Telerik.WinControls, Telerik.WinControls.UI
 Imports Microsoft.VisualBasic.CompilerServices, MySql.Data.MySqlClient
 Imports System.Threading
-Imports Splash.Konektor.mdlstring
+Imports Splash.Konektor.stringSQL
 Imports System.Runtime.CompilerServices
 Imports Splash.Konektor
 
@@ -62,7 +62,7 @@ Public Class rFormListWorkOrder
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim exception As Exception = ex
-            mdlCom.ShowError("Gagal (edit_delete). Message : " + exception.Message)
+            mdlSQL.ShowError("Gagal (edit_delete). Message : " + exception.Message)
             ProjectData.ClearProjectError()
         End Try
     End Sub
@@ -75,7 +75,7 @@ Public Class rFormListWorkOrder
             Dim strCommand As String = "SELECT * FROM `listworkorder` " & Opsi & " ORDER BY `ID`;"
             'mdlCom.BukaKoneksi()
             mysqlcommand.CommandText = strCommand
-            mysqlcommand.Connection = Konektor.mdlCom.vConn
+            mysqlcommand.Connection = Konektor.mdlSQL.vConn
             sqlreaderWO = mysqlcommand.ExecuteReader
             'If sqlreaderWO.HasRows Then
             Dim strField As String() = New String(9 - 1) {}
@@ -189,7 +189,7 @@ Public Class rFormListWorkOrder
         Dim Num3 As Integer = 0
         Try
             Dim sqlcommand As New MySqlCommand()
-            sqlcommand.Connection = mdlCom.vConn
+            sqlcommand.Connection = mdlSQL.vConn
             Dim Num4 As Integer = dg.Rows.Count - 1
             Dim Index2 As Integer = Num3
             While Index2 <= Num4
@@ -206,7 +206,7 @@ Public Class rFormListWorkOrder
             ProjectData.SetProjectError(ex)
             Dim exception As Exception = ex
             RadMessageBox.Show("Failed (delete_Client data). Message : " + exception.Message)
-            mdlCom.INSERTLOG("Failed (delete_Client data). Message : " + exception.Message, "")
+            mdlSQL.INSERTLOG("Failed (delete_Client data). Message : " + exception.Message, "")
             ProjectData.ClearProjectError()
         End Try
     End Sub

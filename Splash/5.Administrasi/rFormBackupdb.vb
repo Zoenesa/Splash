@@ -50,14 +50,14 @@ Public Class rFormBackupdb
         If TargetDirValid() Then
             Try
                 Dim sConn As String
-                sConn = mdlCom.KoneksiString
+                sConn = mdlSQL.KoneksiString
                 sConn = "server=localhost;user=SUPERVISOR;password=di5t0rti0n;database=db_apps;"
                 'Dim nFileName As String = My.Application.Info.DirectoryPath & "\backups\" & DateTime.Now.ToString("dd-MMM-yy@HH-mm-ss") & "@_local.sql"
                 Dim nfile As String = "d:\backups.sql"
                 Using sqlcon As MySqlConnection = New MySqlConnection(sConn)
                     Using Command As MySqlCommand = New MySqlCommand()
                         Using backup As MySqlBackup = New MySqlBackup()
-                            Command.Connection = mdlCom.vConn
+                            Command.Connection = mdlSQL.vConn
                             backup.Command = Command
                             sqlcon.Open()
                             backup.ExportInfo.AddCreateDatabase = Me.rchkAddCreate.Checked
@@ -85,7 +85,7 @@ Public Class rFormBackupdb
                 ProjectData.SetProjectError(ex)
                 Dim excep As Exception = ex
                 errmsg = "Error.Message: " & excep.Message
-                mdlCom.INSERTLOG(errmsg, "")
+                mdlSQL.INSERTLOG(errmsg, "")
                 RadMessageBox.Show("Error" & ex.Source & vbNewLine & ex.Message, "Error", MessageBoxButtons.OK, RadMessageIcon.Error)
                 ProjectData.ClearProjectError()
             End Try

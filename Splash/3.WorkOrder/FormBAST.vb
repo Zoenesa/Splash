@@ -25,7 +25,7 @@ Public Class FormBAST
     Private Sub LoadClientName(Optional ByVal Opsi As String = "")
         Try
             RadDropDownList1.Items.Clear()
-            Dim mysqlcommand As New MySql.Data.MySqlClient.MySqlCommand("SELECT `client_name` FROM `ref_client`;" & Opsi, mdlCom.vConn)
+            Dim mysqlcommand As New MySql.Data.MySqlClient.MySqlCommand("SELECT `client_name` FROM `ref_client`;" & Opsi, mdlSQL.vConn)
             Dim sqlreader As MySql.Data.MySqlClient.MySqlDataReader
 
             sqlreader = mysqlcommand.ExecuteReader
@@ -50,7 +50,7 @@ Public Class FormBAST
     Private Sub LoadDataBAST(Optional ByVal Opsi As String = "")
         Try
             RadGridView1.Rows.Clear()
-            Dim common As New common
+            Dim common As New SQLcommon
             Dim dt As New DataTable
             Dim errMsg As String = Nothing
             If common.GetDataBAST(errMsg, dt, Opsi) Then
@@ -67,13 +67,13 @@ Public Class FormBAST
                     Interlocked.Increment(i)
                 Loop
             Else
-                mdlCom.ShowWarning(errMsg)
+                mdlSQL.ShowWarning(errMsg)
             End If
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError(("Failed(LoadUserData).Message:" & excep.Message))
-            mdlCom.INSERTLOG(("Failed(LoadUserData).Message:" & excep.Message), "")
+            mdlSQL.ShowError(("Failed(LoadUserData).Message:" & excep.Message))
+            mdlSQL.INSERTLOG(("Failed(LoadUserData).Message:" & excep.Message), "")
             ProjectData.ClearProjectError()
         End Try
     End Sub

@@ -33,7 +33,9 @@ Namespace My
         <STAThread>
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>
         Protected Overrides Sub OnCreateMainForm()
-            newMain()
+            If spControl.GetDataSetting(spControl.PilihanProfile.Aplikasi, "General", "StartUp") = "1" Then
+                newMain()
+            End If
 
             Me.MainForm = Global.Splash.rFormMain
         End Sub

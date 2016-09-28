@@ -179,10 +179,16 @@
     <Compile Include="3.WorkOrder\FormInputItemOrder.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="4.Teknis\rFormInputHGB.Designer.vb">
-      <DependentUpon>rFormInputHGB.vb</DependentUpon>
+    <Compile Include="4.Teknis\rFormDaftarLokasiKavling.Designer.vb">
+      <DependentUpon>rFormDaftarLokasiKavling.vb</DependentUpon>
     </Compile>
-    <Compile Include="4.Teknis\rFormInputHGB.vb">
+    <Compile Include="4.Teknis\rFormDaftarLokasiKavling.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="4.Teknis\rFormTambahHGB.Designer.vb">
+      <DependentUpon>rFormTambahHGB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="4.Teknis\rFormTambahHGB.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="5.Administrasi\5.1.Items\FormPilihBarang.Designer.vb">
@@ -392,8 +398,11 @@
     <EmbeddedResource Include="3.WorkOrder\FormInputItemOrder.resx">
       <DependentUpon>FormInputItemOrder.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="4.Teknis\rFormInputHGB.resx">
-      <DependentUpon>rFormInputHGB.vb</DependentUpon>
+    <EmbeddedResource Include="4.Teknis\rFormDaftarLokasiKavling.resx">
+      <DependentUpon>rFormDaftarLokasiKavling.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="4.Teknis\rFormTambahHGB.resx">
+      <DependentUpon>rFormTambahHGB.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="5.Administrasi\5.1.Items\FormPilihBarang.resx">
       <DependentUpon>FormPilihBarang.vb</DependentUpon>

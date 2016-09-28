@@ -31,15 +31,15 @@ Public Class FormTambahInvoice
         Try
             'RadDropDownPelanggan.Items.Clear()
             Dim errMsg As String = Nothing
-            Dim common As New common
+            Dim common As New SQLcommon
             Dim dt As New DataTable()
             RadDropDownPelanggan.DisplayMember = "client_name"
-            If common.SqlCustomQuery(errMsg, "SELECT CLIENT_NAME FROM `REF_CLIENT` ", dt, " ORDER BY ID_NUM ASC") Then
+            If common.sql_Custom_Query(errMsg, "SELECT CLIENT_NAME FROM `REF_CLIENT` ", dt, " ORDER BY ID_NUM ASC") Then
                 RadDropDownPelanggan.DataSource = dt
 
                 RadDropDownPelanggan.SelectedItem = Nothing
             Else
-                mdlCom.ShowWarning(errMsg)
+                mdlSQL.ShowWarning(errMsg)
             End If
         Catch ex As Exception
             RadMessageBox.Show(ex.Message, "Kesalahan", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
@@ -48,15 +48,15 @@ Public Class FormTambahInvoice
 
     Private Sub LoadPurchaseOrder(ByVal Optional Opsi As String = "")
         Dim errMsg As String = Nothing
-        Dim common As New common
+        Dim common As New SQLcommon
         Dim dt As New DataTable()
         RadDropDownPO.DisplayMember = "WO_NO"
 
-        If common.SqlCustomQuery(errMsg, "SELECT WO_NO FROM `listworkorder` ", dt, "WHERE WO_CLIENTNAME = '" & RadDropDownPelanggan.Text.Trim() & "'" & " ORDER BY ID ASC") Then
+        If common.sql_Custom_Query(errMsg, "SELECT WO_NO FROM `listworkorder` ", dt, "WHERE WO_CLIENTNAME = '" & RadDropDownPelanggan.Text.Trim() & "'" & " ORDER BY ID ASC") Then
             RadDropDownPO.DataSource = dt
 
         Else
-            mdlCom.ShowWarning(errMsg)
+            mdlSQL.ShowWarning(errMsg)
         End If
 
     End Sub
@@ -155,10 +155,10 @@ Public Class FormTambahInvoice
     Private Sub RadDropDownList1_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles RadDropDownPO.SelectedIndexChanged
 
         Dim errmsg As String = Nothing
-        Dim common As New common
+        Dim common As New SQLcommon
         Dim dt2 As New DataTable()
         RadDateTimePickerSO.ReadOnly = True
-        If common.SqlCustomQuery(errmsg, "SELECT WO_DATE FROM `listworkorder` ", dt2, "WHERE WO_NO = '" & RadDropDownPO.Text.Trim() & "'") Then
+        If common.sql_Custom_Query(errmsg, "SELECT WO_DATE FROM `listworkorder` ", dt2, "WHERE WO_NO = '" & RadDropDownPO.Text.Trim() & "'") Then
 
             If dt2.Rows.Count > 0 Then
                 Dim dr As DataRow = dt2.Rows.Item(0)
@@ -171,7 +171,7 @@ Public Class FormTambahInvoice
             End If
 
         Else
-            mdlCom.ShowWarning(errmsg)
+            mdlSQL.ShowWarning(errmsg)
         End If
     End Sub
 

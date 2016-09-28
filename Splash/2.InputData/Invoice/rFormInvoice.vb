@@ -3,7 +3,7 @@ Imports System, System.Threading, System.Runtime, System.Runtime.InteropServices
 Imports Microsoft, Microsoft.VisualBasic, Microsoft.VisualBasic.CompilerServices
 Imports System.Data.OleDb
 Imports MySql.Data.MySqlClient
-Imports Splash.Konektor.mdlstring
+Imports Splash.Konektor.stringSQL
 Imports Splash.Konektor
 
 Public Class rFormInvoice
@@ -173,13 +173,13 @@ Public Class rFormInvoice
     Private Sub LoadWorkOrder(Optional ByVal Opsi As String = "")
         Try
             dgWo.Rows.Clear()
-            mdlCom.BukaKoneksi()
+            mdlSQL.BukaKoneksi()
             Dim command As String = "SELECT `WO_INVOICE`, `WO_NO`, `WO_DATE` FROM `temp_workorder` " & Opsi & " ORDER BY `ID`;"
 
-            Dim reader As MySqlDataReader = New MySqlCommand((command), mdlCom.vConn).ExecuteReader
+            Dim reader As MySqlDataReader = New MySqlCommand((command), mdlSQL.vConn).ExecuteReader
             Dim sqlCmd As New MySqlCommand
             sqlCmd.CommandText = command
-            sqlCmd.Connection = mdlCom.vConn
+            sqlCmd.Connection = mdlSQL.vConn
 
             reader.Read()
             Dim fieldNames As String() = New String(2) {}
@@ -279,15 +279,15 @@ Public Class rFormInvoice
 
     Private Sub InsertDataWO()
         Dim StrInsert As String = String.Concat(New String() {"INSERT INTO `temp_workorder` (`WO_INVOICE`, `WO_NO`, `WO_DATE`)" & _
-                                                       " VALUES ('" & mdlstring.ADD_QUOTE_ON_SQL( _
+                                                       " VALUES ('" & stringSQL.ADD_QUOTE_ON_SQL( _
                                                        txInvoiceNum.Text.Trim()) & _
-                                                       "', '" & mdlstring.ADD_QUOTE_ON_SQL( _
+                                                       "', '" & stringSQL.ADD_QUOTE_ON_SQL( _
                                                        txWo.Text.Trim()) & _
-                                                       "', '" & mdlstring.ADD_QUOTE_ON_SQL( _
+                                                       "', '" & stringSQL.ADD_QUOTE_ON_SQL( _
                                                        woDate.Text.Trim().ToString) & "')"})
 
         Dim command As New MySqlCommand With { _
-            .Connection = mdlCom.vConn}
+            .Connection = mdlSQL.vConn}
         command.CommandText = StrInsert
         command.ExecuteNonQuery()
     End Sub
@@ -313,14 +313,14 @@ Public Class rFormInvoice
                         "', '" & rTxTermyn.Text.Trim() & "', '" & itmCount &
                         "', '" & "')"})
         Dim cmd As New MySqlCommand With {
-            .Connection = mdlCom.vConn}
+            .Connection = mdlSQL.vConn}
         cmd.CommandText = cmdDataInvoice
         cmd.ExecuteNonQuery()
     End Sub
 
 
     Private Sub InsertDataInvoiceItem()
-        Dim SqlAdapter As New MySqlDataAdapter("SELECT * FROM `items_invoice`", mdlCom.vConn)
+        Dim SqlAdapter As New MySqlDataAdapter("SELECT * FROM `items_invoice`", mdlSQL.vConn)
         Dim dt As New DataTable()
         dt.BeginLoadData()
         SqlAdapter.Fill(dt)
@@ -328,22 +328,22 @@ Public Class rFormInvoice
         Dim rwCount As Integer = dt.Rows.Count
         Dim cmdDataItems As String = String.Format("INSERT INTO ITEMS_INVOICE (RecordId, InvoiceNo, Items, Quantity, Price, TotalPrice)" &
                                                    " VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", rwCount + 1, "", "")
-        Dim cmd As New MySqlCommand With {.Connection = mdlCom.vConn}
+        Dim cmd As New MySqlCommand With {.Connection = mdlSQL.vConn}
         cmd.CommandText = cmdDataItems
         cmd.ExecuteNonQuery()
     End Sub
 
     Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
         Dim StrInsert As String = String.Concat(New String() {"INSERT INTO TEMP_WORKORDER (WO_INVOICE, WO_NO, WO_DATE)" & _
-                                                " VALUES ('" & mdlstring.ADD_QUOTE_ON_SQL( _
+                                                " VALUES ('" & stringSQL.ADD_QUOTE_ON_SQL( _
                                                 txInvoiceNum.Text.Trim()) & _
-                                                "', '" & mdlstring.ADD_QUOTE_ON_SQL( _
+                                                "', '" & stringSQL.ADD_QUOTE_ON_SQL( _
                                                 txWo.Text.Trim()) & _
-                                                "', '" & mdlstring.ADD_QUOTE_ON_SQL( _
+                                                "', '" & stringSQL.ADD_QUOTE_ON_SQL( _
                                                 woDate.Text.Trim().ToString) & "')"})
 
         Dim command As New MySqlCommand With { _
-            .Connection = mdlCom.vConn}
+            .Connection = mdlSQL.vConn}
         command.CommandText = StrInsert
         command.ExecuteNonQuery()
         LoadWorkOrder()
@@ -363,10 +363,10 @@ Public Class rFormInvoice
         'Return
         If dgItem.Rows.Count > 0 Then
 
-            RadTextBox5.Text = FormatNumber(mdlstring.CountSumTotalPrice(dgItem, "ItemCol4"), 2)
+            RadTextBox5.Text = FormatNumber(stringSQL.CountSumTotalPrice(dgItem, "ItemCol4"), 2)
             RadTextBox6.Text = FormatNumber((RadTextBox5.Text * Val(rTxTermyn.Text) / 100), 2)
             RadTextBox1.Text = FormatNumber((RadTextBox6.Text - RadTextBox7.Text), 2)
-            RadTextBox3.Text = FormatNumber(mdlstring.MathRoundUp((RadTextBox1.Text * 0.1), 0), 2)
+            RadTextBox3.Text = FormatNumber(stringSQL.MathRoundUp((RadTextBox1.Text * 0.1), 0), 2)
             Dim d1 As Double = RadTextBox1.Text
             Dim d2 As Double = RadTextBox3.Text
             RadTextBox4.Text = FormatNumber((d1 + d2), 2)
@@ -376,7 +376,7 @@ Public Class rFormInvoice
             RadTextBox5.Text = FormatNumber(d, 2)
             RadTextBox6.Text = RadTextBox5.Text * Val(rTxTermyn.Text)
             RadTextBox1.Text = FormatNumber((RadTextBox6.Text - RadTextBox7.Text), 2)
-            RadTextBox3.Text = FormatNumber(mdlstring.MathRoundUp((RadTextBox1.Text * 0.1), 0), 2)
+            RadTextBox3.Text = FormatNumber(stringSQL.MathRoundUp((RadTextBox1.Text * 0.1), 0), 2)
             RadTextBox5.Text = FormatNumber(Val(RadTextBox1.Text + RadTextBox4.Text), 2)
             Return
         End If

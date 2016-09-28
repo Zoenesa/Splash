@@ -21,7 +21,7 @@ Public Class FrmCustomerReference
             dlgResult = MyBase.ShowDialog()
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
-            mdlCom.ShowError("Failed to show form.")
+            mdlSQL.ShowError("Failed to show form.")
             ProjectData.ClearProjectError()
         End Try
         Return dlgResult
@@ -62,9 +62,9 @@ Public Class FrmCustomerReference
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim EKsepsi As Exception = ex
-            mdlCom.ShowError("Failed (edit or delete)." & EKsepsi.Source _
+            mdlSQL.ShowError("Failed (edit or delete)." & EKsepsi.Source _
                                & " : " & EKsepsi.Message)
-            mdlCom.INSERTLOG("Failed (edit or delete)." & EKsepsi.Source _
+            mdlSQL.INSERTLOG("Failed (edit or delete)." & EKsepsi.Source _
                                & " : " & EKsepsi.Message)
             ProjectData.ClearProjectError()
         End Try
@@ -76,14 +76,14 @@ Public Class FrmCustomerReference
         Try
             EditDeleteEnable()
             dg.Rows.Clear()
-            mdlCom.BukaKoneksi()
+            mdlSQL.BukaKoneksi()
             Dim command As String = "SELECT `ID_NUM`, `CLIENT_IDTAX`, `CLIENT_NAME`, `CLIENT_ADDRESS`, `CLIENT_STATE`," &
                             "`CLIENT_CITY`, `CLIENT_ZIPCODE`, `CLIENT_PHONE`, `CLIENT_MAIL`, `CLIENT_USERINPUT`," &
                             "`CLIENT_INPUTDATE`, `CLIENT_USEREDIT`, `CLIENT_UPDATE` FROM `ref_client`" &
                             Opsi & " ORDER BY `ID_NUM` ASC"
 
             sqlcommand.CommandText = command
-            sqlcommand.Connection = mdlCom.vConn
+            sqlcommand.Connection = mdlSQL.vConn
 
             sqldTReader = sqlcommand.ExecuteReader
 
@@ -101,7 +101,7 @@ Public Class FrmCustomerReference
                 strConcat = String.Concat(New String() {strST_Addr, " ", "City :", strCity, " ", "State : ", strState, " ", "Zipcode : ", StrZipCode})
                 StrCol(0) = Conversions.ToString(False)
                 StrCol(1) = Conversions.ToString(sqldTReader.Item("ID_NUM"))
-                StrCol(2) = Conversions.ToString(mdlstring.FORMAT_NPWP(sqldTReader.Item("CLIENT_IDTAX")))
+                StrCol(2) = Conversions.ToString(stringSQL.FORMAT_NPWP(sqldTReader.Item("CLIENT_IDTAX")))
                 StrCol(3) = Conversions.ToString(sqldTReader.Item("CLIENT_NAME"))
                 StrCol(4) = Conversions.ToString(strConcat)
                 'StrCol(4) = Conversions.ToString(sqldtReader.Item("CLIENT_ADDRESS"))
@@ -139,7 +139,7 @@ Public Class FrmCustomerReference
             Dim strCommand As String = "SELECT * FROM `ref_Client` " & Opsi
 
             sqlCommand.CommandText = strCommand
-            sqlCommand.Connection = mdlCom.vConn
+            sqlCommand.Connection = mdlSQL.vConn
             sqlReader = sqlCommand.ExecuteReader
 
             If sqlReader.HasRows Then
@@ -270,7 +270,7 @@ Public Class FrmCustomerReference
         Dim Num3 As Integer = 0
         Try
             Dim sqlcommand As New MySqlCommand()
-            sqlcommand.Connection = mdlCom.vConn
+            sqlcommand.Connection = mdlSQL.vConn
             Dim Num4 As Integer = dg.Rows.Count - 1
             Dim Index2 As Integer = Num3
             While Index2 <= Num4
@@ -287,7 +287,7 @@ Public Class FrmCustomerReference
             ProjectData.SetProjectError(ex)
             Dim exception As Exception = ex
             RadMessageBox.Show("Failed (delete_Client data). Message : " + exception.Message)
-            mdlCom.INSERTLOG("Failed (delete_Client data). Message : " + exception.Message, "")
+            mdlSQL.INSERTLOG("Failed (delete_Client data). Message : " + exception.Message, "")
             ProjectData.ClearProjectError()
         End Try
     End Sub
@@ -336,7 +336,7 @@ Public Class FrmCustomerReference
                 ClientIDTax = Me.dg.CurrentRow.Cells(2).Value
                 ClientName = Me.dg.CurrentRow.Cells(3).Value
                 ClientAddr = Me.dg.CurrentRow.Cells(4).Value
-                StrtaxID = mdlstring.FORMAT_NPWP(ClientIDTax)
+                StrtaxID = stringSQL.FORMAT_NPWP(ClientIDTax)
                 strClientName = Conversions.ToString(ClientName)
                 strClientAddr = ClientAddr
             End If

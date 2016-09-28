@@ -46,8 +46,8 @@ Public Class rFormUsersList
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim exception As Exception = ex
-            mdlCom.ShowError("Failed (edit_delete). Message : " + exception.Message)
-            mdlCom.INSERTLOG("Failed (edit_delete). Message : " + exception.Message, "")
+            mdlSQL.ShowError("Failed (edit_delete). Message : " + exception.Message)
+            mdlSQL.INSERTLOG("Failed (edit_delete). Message : " + exception.Message, "")
             ProjectData.ClearProjectError()
         End Try
     End Sub
@@ -56,7 +56,7 @@ Public Class rFormUsersList
         Try
             Me.EditDeleteEnable()
             Me.dg.Rows.Clear()
-            Dim comon As New common
+            Dim comon As New SQLcommon
             Dim dt As New DataTable
             Dim errMsg As String = Nothing
             If comon.getUsers(errMsg, dt, opsi) Then
@@ -102,13 +102,13 @@ Public Class rFormUsersList
                     Interlocked.Increment(i)
                 Loop
             Else
-                mdlCom.ShowError(errMsg)
+                mdlSQL.ShowError(errMsg)
             End If
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError(("Failed(LoadUserData).Message:" & excep.Message))
-            mdlCom.INSERTLOG(("Failed(LoadUserData).Message:" & excep.Message), "")
+            mdlSQL.ShowError(("Failed(LoadUserData).Message:" & excep.Message))
+            mdlSQL.INSERTLOG(("Failed(LoadUserData).Message:" & excep.Message), "")
             ProjectData.ClearProjectError()
             Return
             ProjectData.ClearProjectError()
@@ -177,7 +177,7 @@ Public Class rFormUsersList
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Dim tambah As New rFormTambahUser
-        tambah.OpenDialog(False, "-1")
+        tambah.BukaDialogFormTambahUser(False, "-1")
         tambah.Dispose()
         tambah = Nothing
         Me.LoadUserData()
@@ -185,7 +185,7 @@ Public Class rFormUsersList
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         Dim detail As New rFormTambahUser
-        detail.OpenDialog(True, Me.idUserEdit)
+        detail.BukaDialogFormTambahUser(True, Me.idUserEdit)
         detail.Dispose()
         detail = Nothing
         Me.LoadUserData()
@@ -245,7 +245,7 @@ Public Class rFormUsersList
             If Result = System.Windows.Forms.DialogResult.Yes Then
                 Dim num As Integer = 0
                 Dim command As New MySqlCommand With {
-                    .Connection = mdlCom.vConn}
+                    .Connection = mdlSQL.vConn}
                 Dim num3 As Integer = (Me.dg.Rows.Count - 1)
                 Dim i As Integer = 0
                 Do While (i <= num3)
@@ -262,8 +262,8 @@ Public Class rFormUsersList
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError("Failed (delete_user).Message: " & excep.Message)
-            mdlCom.INSERTLOG(("Failed (delete_user).Message: " & excep.Message), "")
+            mdlSQL.ShowError("Failed (delete_user).Message: " & excep.Message)
+            mdlSQL.INSERTLOG(("Failed (delete_user).Message: " & excep.Message), "")
             ProjectData.ClearProjectError()
         End Try
     End Sub

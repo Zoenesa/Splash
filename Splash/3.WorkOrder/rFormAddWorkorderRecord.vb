@@ -3,7 +3,7 @@ Imports MySql.Data.MySqlClient
 Imports System.Runtime.CompilerServices
 Imports Microsoft.VisualBasic, Microsoft.VisualBasic.CompilerServices
 Imports Telerik.WinControls
-Imports Splash.Konektor.mdlstring
+Imports Splash.Konektor.stringSQL
 Imports Splash.Konektor
 
 Public Class rFormAddWorkorderRecord
@@ -36,7 +36,7 @@ Public Class rFormAddWorkorderRecord
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim Excep As Exception = ex
-            mdlCom.ShowError("Failed to show form.")
+            mdlSQL.ShowError("Failed to show form.")
             ProjectData.ClearProjectError()
         End Try
         Return Result
@@ -50,7 +50,7 @@ Public Class rFormAddWorkorderRecord
 
         If Me.EditMode Then
             Me.Text = "Ubah Record"
-            Dim cmn As New common
+            Dim cmn As New SQLcommon
             Dim dt As New DataTable
             Dim errMsg As String = Nothing
             If cmn.getListWO(errMsg, dt, ("WHERE `WO_NO`='" & Me.idUser & "'")) Then
@@ -60,7 +60,7 @@ Public Class rFormAddWorkorderRecord
                 Me.rWONum.Text = Conversions.ToString(row.Item("WO_NO"))
                 Me.rTxMaskDate.Text = Conversions.ToString(row.Item("WO_DATE"))
             Else
-                mdlCom.ShowError(errMsg)
+                mdlSQL.ShowError(errMsg)
             End If
         Else
             Dim norekam As Integer
@@ -81,7 +81,7 @@ Public Class rFormAddWorkorderRecord
         Dim sqlCommand As MySqlCommand = New MySqlCommand
         Try
             sqlCommand.CommandText = ("SELECT `Client_Name` FROM `ref_client`")
-            sqlCommand.Connection = Konektor.mdlCom.vConn
+            sqlCommand.Connection = Konektor.mdlSQL.vConn
 
             mysqlreader = sqlCommand.ExecuteReader
             Do While mysqlreader.Read
@@ -95,7 +95,7 @@ Public Class rFormAddWorkorderRecord
             Dim Excep As Exception = ex
             mysqlreader = Nothing
             sqlCommand = Nothing
-            mdlCom.ShowError("Gagal Mendapatkan Data Pelanggan." & vbNewLine & Excep.Message)
+            mdlSQL.ShowError("Gagal Mendapatkan Data Pelanggan." & vbNewLine & Excep.Message)
             ProjectData.ClearProjectError()
         Finally
             mysqlreader = Nothing
@@ -111,7 +111,7 @@ Public Class rFormAddWorkorderRecord
     End Sub
 
     Private Function cekValue() As Boolean
-        Dim cmn As New common
+        Dim cmn As New SQLcommon
         If rCbClient.Text = "" Then
             RadMessageBox.Show("Client Belum dipilih!", "Perhatian", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
             rCbClient.Focus()
@@ -168,7 +168,7 @@ Public Class rFormAddWorkorderRecord
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError("Save Failed.Message:" & excep.Message)
+            mdlSQL.ShowError("Save Failed.Message:" & excep.Message)
             ProjectData.ClearProjectError()
         End Try
     End Sub
@@ -183,19 +183,19 @@ Public Class rFormAddWorkorderRecord
         Try
             Dim strCommand As String
 
-            Dim sqlCmd As New MySqlCommand With {.Connection = mdlCom.vConn}
+            Dim sqlCmd As New MySqlCommand With {.Connection = mdlSQL.vConn}
 
             If EditMode Then
-                strCommand = String.Concat(New String() {"UPDATE `listworkorder` SET `WO_NO` = '", ADD_QUOTE_ON_SQL(rWONum.Text.Trim()), "', `WO_CLIENTNAME` = '", Client, "', `WO_DATE` = '", Tanggal, "', `UserUpdated` = '", mdlCom.UserLogin, "', `RecordUpdated` = '" & DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "' WHERE `ID` = '", ADD_QUOTE_ON_SQL(ID), "'"})
+                strCommand = String.Concat(New String() {"UPDATE `listworkorder` SET `WO_NO` = '", ADD_QUOTE_ON_SQL(rWONum.Text.Trim()), "', `WO_CLIENTNAME` = '", Client, "', `WO_DATE` = '", Tanggal, "', `UserUpdated` = '", mdlSQL.UserLogin, "', `RecordUpdated` = '" & DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "' WHERE `ID` = '", ADD_QUOTE_ON_SQL(ID), "'"})
             Else
                 strCommand = String.Concat(New String() {"INSERT INTO `listworkorder` (`ID`, `WO_CLIENTNAME`, `WO_NO`, `WO_DATE`, `UserRecorder`, `DateRecorded`, `UserUpdated`, `RecordUpdated`) " &
                             "VALUES ('", ADD_QUOTE_ON_SQL(ID), "', '",
                             ADD_QUOTE_ON_SQL(Client), "', '",
                             ADD_QUOTE_ON_SQL(Nomor), "', '",
                             ADD_QUOTE_ON_SQL(Tanggal), "', '",
-                            ADD_QUOTE_ON_SQL(mdlCom.UserLogin), "', '",
+                            ADD_QUOTE_ON_SQL(mdlSQL.UserLogin), "', '",
                             ADD_QUOTE_ON_SQL(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")), "', '",
-                            ADD_QUOTE_ON_SQL(mdlCom.UserLogin), "', '", ADD_QUOTE_ON_SQL(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")), "');"})
+                            ADD_QUOTE_ON_SQL(mdlSQL.UserLogin), "', '", ADD_QUOTE_ON_SQL(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")), "');"})
             End If
             sqlCmd.CommandText = strCommand
             If (sqlCmd.ExecuteNonQuery > 0) Then
@@ -205,7 +205,7 @@ Public Class rFormAddWorkorderRecord
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError("Save Failed.Message:" & excep.Message)
+            mdlSQL.ShowError("Save Failed.Message:" & excep.Message)
             obj = False
             ProjectData.ClearProjectError()
             Return obj
@@ -220,7 +220,7 @@ Public Class rFormAddWorkorderRecord
     End Sub
 
     Private Sub rCbClient_Leave(sender As Object, e As EventArgs) Handles rCbClient.Leave
-        Dim common As New common
+        Dim common As New SQLcommon
         Dim errMsg As String = ""
         If rCbClient.Text <> "" Then
             If common.GetCustomerName(errMsg, rCbClient.Text.Trim()) Then
@@ -276,21 +276,21 @@ Public Class rFormAddWorkorderRecord
         Dim sqlcommand As New MySqlCommand
         Dim errmsg As String = Nothing
         Dim dt As New DataTable
-        Dim common As New Konektor.common
+        Dim common As New Konektor.SQLcommon
 
         Try
             'dgItem.Rows.Clear()
             'dgItem.Columns.Clear()
 
-            If common.SqlCustomQuery(errmsg, QueryCommand, dt, Opsi) Then
+            If common.sql_Custom_Query(errmsg, QueryCommand, dt, Opsi) Then
                 dgItem.DataSource = dt
             Else
-                mdlCom.ShowError("Gagal Mendapatkan Data Item Order, Message: " & errmsg)
+                mdlSQL.ShowError("Gagal Mendapatkan Data Item Order, Message: " & errmsg)
             End If
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError("Gagal Mendapatkan Data Item Order, Message: " & excep.Message)
+            mdlSQL.ShowError("Gagal Mendapatkan Data Item Order, Message: " & excep.Message)
             ProjectData.ClearProjectError()
         End Try
     End Sub

@@ -247,7 +247,7 @@ loadDefaultLogoIcon:
     Public Sub KeluarAplikasi()
         Dim errMsg As String = ""
         Try
-            If Konektor.mdlCom.CloseDb(errMsg) Then
+            If Konektor.mdlSQL.CloseDb(errMsg) Then
                 KeluarAplikasi()
             ElseIf RadMessageBox.Show("Gagal menutup koneksi database." & errMsg & vbNewLine & "Apakah anda tetap keluar?", "Konfirmasi", MessageBoxButtons.OKCancel, RadMessageIcon.Question, MessageBoxDefaultButton.Button2) <> System.Windows.Forms.DialogResult.OK Then
                 KeluarAplikasi()
@@ -259,7 +259,7 @@ loadDefaultLogoIcon:
     End Sub
 
     Public Sub BukaPilihanKoneksi()
-        If Konektor.mdlCom.IsLogin Then
+        If Konektor.mdlSQL.IsLogin Then
             Beep()
             If (RadMessageBox.Show("Dengan Memilih database lain, session ini akan otomatis logout," & vbNewLine & "Apakah anda ingin logout?", "Perhatian", MessageBoxButtons.YesNo, RadMessageIcon.Question, MessageBoxDefaultButton.Button2) = System.Windows.Forms.DialogResult.Yes) AndAlso Me.Logout Then
                 Dim formPilih As New rFormInisialisasiKoneksi
@@ -307,7 +307,7 @@ loadDefaultLogoIcon:
             rMenuLogout.Enabled = flag
 
         End If
-        Konektor.mdlCom.IsLogin = flag
+        Konektor.mdlSQL.IsLogin = flag
     End Sub
 
     Private Function Logout() As Boolean
@@ -316,7 +316,7 @@ loadDefaultLogoIcon:
             Return False
         End If
         Dim errMsg As String = ""
-        If Konektor.mdlCom.CloseDb(errMsg) Then
+        If Konektor.mdlSQL.CloseDb(errMsg) Then
             Me.EnableMenu(False, False)
             Return True
         End If
@@ -392,8 +392,8 @@ loadDefaultLogoIcon:
 
     Private Sub rMenuSetingdb_Click(sender As Object, e As EventArgs) Handles rMenuSetingdb.Click
         rFormMain.tempForm = rFormDatabaseSetup
-        If (Konektor.mdlCom.V_Role(3) <> "1") Then
-            If (Not Konektor.mdlCom.UserRole = "Administrator") Then
+        If (Konektor.mdlSQL.V_Role(3) <> "1") Then
+            If (Not Konektor.mdlSQL.UserRole = "Administrator") Then
                 RadMessageBox.Show("Hanya ADMINISTRATOR yang berhak mengakses menu ini.", "Perhatian", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
                 Exit Sub
             End If
@@ -417,7 +417,7 @@ loadDefaultLogoIcon:
     End Sub
 
     Private Sub rMenuInvoiceItem_Click(sender As Object, e As EventArgs) Handles rMenuInvoiceItem.Click
-        If (Konektor.mdlCom.JobDesk = "Administrator") Or (Konektor.mdlCom.JobDesk = "Pemasaran") Or (Konektor.mdlCom.JobDesk = "Superuser") Or (Konektor.mdlCom.UserRole = "Administrator") Then
+        If (Konektor.mdlSQL.JobDesk = "Administrator") Or (Konektor.mdlSQL.JobDesk = "Pemasaran") Or (Konektor.mdlSQL.JobDesk = "Superuser") Or (Konektor.mdlSQL.UserRole = "Administrator") Then
             BukaFormChild(rFormDataListInvoice)
         Else
             RadMessageBox.Show("Anda tidak berhak mengakses Menu ini!", "Perhatian", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
@@ -436,7 +436,7 @@ loadDefaultLogoIcon:
 
     Private Sub rMenuImportInvoiceItem_Click(sender As Object, e As EventArgs) Handles rMenuImportInvoiceItem.Click
         rFormMain.tempForm = rFormImport
-        If Not (Konektor.mdlCom.UserRole = "Administrator") Then
+        If Not (Konektor.mdlSQL.UserRole = "Administrator") Then
             Dim Result As DialogResult = RadMessageBox.Show("Anda memerlukan Permission dari Administrator!" & vbNewLine &
                                                                        "Dengan memilih Yes, Silahkan hubungi Administrator untuk input Permission" & vbNewLine _
                                                                        & "Pilih No untuk membatalkan", "Perhatian", MessageBoxButtons.OKCancel, RadMessageIcon.Question, MessageBoxDefaultButton.Button2)
@@ -528,8 +528,8 @@ loadDefaultLogoIcon:
     End Sub
 
     Private Sub rMenuUserDataItem_Click(sender As Object, e As EventArgs) Handles rMenuUserDataItem.Click
-        If (Not Konektor.mdlCom.V_Role(0) = "00") Then
-            If (Not Konektor.mdlCom.UserRole = "Administrator") Then
+        If (Not Konektor.mdlSQL.V_Role(0) = "00") Then
+            If (Not Konektor.mdlSQL.UserRole = "Administrator") Then
                 RadMessageBox.Show("Hanya ADMINISTRATOR yang berhak mengakses menu ini.", "Perhatian", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
                 Exit Sub
             End If
@@ -564,8 +564,8 @@ loadDefaultLogoIcon:
     End Sub
 
     Private Sub rMenuPembayaran_Click(sender As Object, e As EventArgs) Handles rMenuPembayaran.Click
-        If (Not Konektor.mdlCom.V_Role(0) = "00") Then
-            If (Not Konektor.mdlCom.UserRole = "Administrator") Then
+        If (Not Konektor.mdlSQL.V_Role(0) = "00") Then
+            If (Not Konektor.mdlSQL.UserRole = "Administrator") Then
                 RadMessageBox.Show("Hanya ADMINISTRATOR yang berhak mengakses menu ini.", "Perhatian", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
                 Exit Sub
             End If
@@ -580,7 +580,7 @@ loadDefaultLogoIcon:
     Private Sub Countersql(ByVal NamaField As String, ByVal tableName As String, Optional ByVal Opsi As String = "")
         Dim sqlCommand As New MySqlCommand
         sqlCommand.CommandText = String.Format("SELECT TABLE_NAME, TABLE_ROWS, CREATE_TIME,  FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = " & Opsi)
-        sqlCommand.Connection = Konektor.mdlCom.vConn
+        sqlCommand.Connection = Konektor.mdlSQL.vConn
         Dim sqlreader As MySqlDataReader
         sqlreader = sqlCommand.ExecuteReader
         Dim fieldNames As String() = New String(3 - 1) {}
@@ -599,7 +599,7 @@ loadDefaultLogoIcon:
         Try
             RadGridView1.Rows.Clear()
             Dim dt As New DataTable
-            Dim common As New common
+            Dim common As New SQLcommon
             If common.LoadTableSchema(errmsg, dt, NamaSchema, Opsi) Then
                 Dim values As String() = New String(2 - 1) {}
                 Dim num As Integer = (dt.Rows.Count - 1)
@@ -609,7 +609,7 @@ loadDefaultLogoIcon:
                     Dim row As DataRow = dt.Rows.Item(i)
                     values(0) = Conversions.ToString(row.Item("TABLE_NAME"))
                     values(1) = Conversions.ToString(row.Item("TABLE_ROWS"))
-                    Dim cmd As New MySqlCommand("SELECT COUNT(*) FROM " & dt.Rows.Count, Konektor.mdlCom.vConn)
+                    Dim cmd As New MySqlCommand("SELECT COUNT(*) FROM " & dt.Rows.Count, Konektor.mdlSQL.vConn)
                     Dim sqlreader As MySqlDataReader
                     sqlreader = cmd.ExecuteReader
                     sqlreader.Read()
@@ -618,7 +618,7 @@ loadDefaultLogoIcon:
                     RadGridView1.Rows.Add(values)
                 Loop
             Else
-                Konektor.mdlCom.ShowError(errmsg)
+                Konektor.mdlSQL.ShowError(errmsg)
             End If
         Catch ex As Exception
             RadMessageBox.Show(ex.Message)
@@ -667,5 +667,11 @@ loadDefaultLogoIcon:
         rMenuInvoiceItem.Shortcuts.Add(New RadShortcut(Keys.Control, Keys.Shift, Keys.C))
     End Sub
 
+    Private Sub rMenuDaftarKavling_Click(sender As Object, e As EventArgs) Handles rMenuDaftarKavling.Click
+        rFormMain.BukaFormChild(rFormDaftarLokasiKavling)
+    End Sub
 
+    Private Sub rMenuDataHGB_Click(sender As Object, e As EventArgs) Handles rMenuDataHGB.Click
+        rFormMain.BukaFormChild(rFormTambahHGB)
+    End Sub
 End Class

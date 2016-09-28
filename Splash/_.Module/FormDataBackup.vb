@@ -6,7 +6,7 @@ Imports MySql.Data.MySqlClient
 Imports System.Security.Cryptography, System.Security.Cryptography.CipherMode
 Imports System.Text
 Imports System.ComponentModel
-Imports Splash.Konektor.mdlstring
+Imports Splash.Konektor.stringSQL
 Imports Splash.Konektor
 
 Public Class FormDataBackup
@@ -71,10 +71,10 @@ Public Class FormDataBackup
             End If
             If forceSave Then
                 File.WriteAllText(Me.KoneksiSettingFile, Me.txSettingKoneksi.Text.Trim())
-                mdlstring.EncryptRansText(Me.KoneksiSettingFile, mdlstring.defaultKey)
+                stringSQL.EncryptRansText(Me.KoneksiSettingFile, stringSQL.defaultKey)
             ElseIf File.Exists(Me.KoneksiSettingFile) Then
                 File.WriteAllText(Me.KoneksiSettingFile, Me.txSettingKoneksi.Text.Trim())
-                mdlstring.EncryptRansText(Me.KoneksiSettingFile, mdlstring.defaultKey)
+                stringSQL.EncryptRansText(Me.KoneksiSettingFile, stringSQL.defaultKey)
             End If
             Return True
         Catch ex As Exception
@@ -86,7 +86,7 @@ Public Class FormDataBackup
 
     Private Sub LoadSettings()
         Try
-            mdlstring.DecryptRansText(Me.KoneksiSettingFile, mdlstring.defaultKey)
+            stringSQL.DecryptRansText(Me.KoneksiSettingFile, stringSQL.defaultKey)
             If File.Exists(Me.KoneksiSettingFile) Then
                 Me.txSettingKoneksi.Text = File.ReadAllText(Me.KoneksiSettingFile)
                 Me.chAutoSave.Checked = True

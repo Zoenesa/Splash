@@ -52,11 +52,11 @@ Public Class rFormLogin
             Exit Sub
         End If
 
-        If mdlCom.DataLogin(sUser, sPass, retmsg, errmsg, False) Then
+        If mdlSQL.DataLogin(sUser, sPass, retmsg, errmsg, False) Then
             Dim UserLoginDetail As String = String.Concat(New String() {
-            "[", "Sign In As: ", Strings.UCase(mdlCom.UserLogin), "; ", "Nama: ", Strings.UCase(mdlCom.UserFName),
-            "; Title: ", mdlCom.UserRole, "]",
-            "; ", "[Server: ", mdlCom.uhost, "; Database: ", mdlCom.cDbname, "]"
+            "[", "Sign In As: ", Strings.UCase(mdlSQL.UserLogin), "; ", "Nama: ", Strings.UCase(mdlSQL.UserFName),
+            "; Title: ", mdlSQL.UserRole, "]",
+            "; ", "[Server: ", mdlSQL.uhost, "; Database: ", mdlSQL.cDbname, "]"
             })
 
             RadMessageBox.Show(rFormMain, "Selamat Datang Kembali" & vbNewLine & UserLoginDetail,
@@ -85,7 +85,7 @@ Public Class rFormLogin
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim tempPassword As String = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(rTxPassword.Text.Trim(), mdlstring.defaultKey)
+        Dim tempPassword As String = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(rTxPassword.Text.Trim(), stringSQL.defaultKey)
 
         'Login(rTxUsername.Text.Trim(), rTxPassword.Text.Trim())
         Login(rTxUsername.Text.Trim(), tempPassword)

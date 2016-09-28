@@ -190,7 +190,7 @@ Public Class FrmCustomFilter
     Public ListTable As List(Of String)
     Public Sub GetInvData(Optional ByVal Opsi As String = "")
         Dim errMsg As String = ""
-        Dim Common As New common
+        Dim Common As New SQLcommon
         Dim dt As New DataTable
         ListTable = New List(Of String)
         If Common.GetSqlInvoiceData(errMsg, dt, Opsi) Then
@@ -259,7 +259,7 @@ Public Class FrmCustomFilter
             Dim comandpilih As String = "SELECT Column_Name, Column_Comment FROM information_schema.Columns WHERE table_name = '" & tableName & "'" & Opsi
             Dim sqlCmd As New MySqlCommand()
             sqlCmd.CommandText = comandpilih
-            sqlCmd.Connection = mdlCom.vConn
+            sqlCmd.Connection = mdlSQL.vConn
             Dim dt As New DataTable()
             sqlAdapter = sqlCmd.ExecuteReader
             FieldNamaKolom.Clear()
@@ -276,7 +276,7 @@ Public Class FrmCustomFilter
 
         Catch ex As Exception
             sqlAdapter = Nothing
-            mdlCom.ShowError(ex.Message.ToString)
+            mdlSQL.ShowError(ex.Message.ToString)
         End Try
     End Sub
 

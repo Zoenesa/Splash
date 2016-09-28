@@ -18,12 +18,12 @@ Public Class rFormInisialisasiKoneksi
 
     Public Sub PilihDb(ByVal inp As Boolean)
         Dim errMsg As String = ""
-        mdlCom.cName = txUser.Text
-        mdlCom.uhost = txserver.Text
-        mdlCom.cPort = txPort.Text
-        mdlCom.cDbname = txdbname.Text
-        mdlCom.cPass = txPass.Text
-        If mdlCom.ConnectDb(errMsg) Then
+        mdlSQL.cName = txUser.Text
+        mdlSQL.uhost = txserver.Text
+        mdlSQL.cPort = txPort.Text
+        mdlSQL.cDbname = txdbname.Text
+        mdlSQL.cPass = txPass.Text
+        If mdlSQL.ConnectDb(errMsg) Then
             Me.isOk = True
             If Not inp Then
                 Me.Close()
@@ -88,7 +88,7 @@ Public Class rFormInisialisasiKoneksi
 
             Dim tempPass As String = mprofile.GetValue(strSection, "Password")
 
-            Dim ImportPassword As String = CodeLibs.CodeMethod.Decrypt_TRIPLEDES(tempPass, mdlstring.defaultKey)
+            Dim ImportPassword As String = CodeLibs.CodeMethod.Decrypt_TRIPLEDES(tempPass, stringSQL.defaultKey)
 
             txdbname.Text = mprofile.GetValue(strSection, "DatabaseName")
             txserver.Text = mprofile.GetValue(strSection, "server")
@@ -109,27 +109,27 @@ Public Class rFormInisialisasiKoneksi
         fs = IO.File.Create(filepath)
         Try
 
-            mdlstring.WriteGeneralSetting(True, fs, "\\PROGRAM SPLASH DATA PROJECT")
-            mdlstring.WriteGeneralSetting(True, fs, "\\DO NOT DELETE OR CHANGE CONTENT ON THIS CONFIG FILE")
-            mdlstring.WriteGeneralSetting(True, fs, "\\RISK CHANGING OR DELETING WILL CAUSE DAMAGE OR CORRUPTION DATA")
-            mdlstring.WriteGeneralSetting(True, fs, "\\DILARANG MERUBAH ATAUPUN MENGHAPUS KONTEN DI FILE CONFIG INI")
-            mdlstring.WriteGeneralSetting(True, fs, "\\RESIKO MENGUBAH ATAUPUN MENGHAPUS KONTEN DI FILE INI AKAN MENYEBABKAN KERUSAKAN ATAUPUN DATA KORUP")
-            mdlstring.WriteGeneralSetting(True, fs, "Aplikasi:" & My.Application.Info.AssemblyName)
-            mdlstring.WriteGeneralSetting(True, fs, "Versi:" & My.Application.Info.Version.ToString)
-            mdlstring.WriteGeneralSetting(True, fs, "OS:" & My.Computer.Info.OSFullName)
-            mdlstring.WriteGeneralSetting(True, fs, "Komputer:" & My.Computer.Name)
-            mdlstring.WriteGeneralSetting(True, fs, "[General]")
-            mdlstring.WriteGeneralSetting(True, fs, "ConnectionName=Splash_Connection")
-            mdlstring.WriteGeneralSetting(True, fs, "DatabaseName=db_apps")
-            mdlstring.WriteGeneralSetting(True, fs, "Server=localhost")
-            mdlstring.WriteGeneralSetting(True, fs, "User=SUPERVISOR")
-            mdlstring.WriteGeneralSetting(True, fs, "Password=di5t0rti0n")
-            mdlstring.WriteGeneralSetting(True, fs, "Port=3306")
-            mdlstring.WriteGeneralSetting(True, fs, "defaultsetting=True")
-            mdlstring.WriteGeneralSetting(True, fs, "SettingName=0")
-            mdlstring.WriteGeneralSetting(True, fs, "SectionName=General")
-            mdlstring.WriteGeneralSetting(True, fs, "BackupLocation=\backups")
-            mdlstring.WriteGeneralSetting(True, fs, "Icons=myico.ico")
+            stringSQL.WriteGeneralSetting(True, fs, "\\PROGRAM SPLASH DATA PROJECT")
+            stringSQL.WriteGeneralSetting(True, fs, "\\DO NOT DELETE OR CHANGE CONTENT ON THIS CONFIG FILE")
+            stringSQL.WriteGeneralSetting(True, fs, "\\RISK CHANGING OR DELETING WILL CAUSE DAMAGE OR CORRUPTION DATA")
+            stringSQL.WriteGeneralSetting(True, fs, "\\DILARANG MERUBAH ATAUPUN MENGHAPUS KONTEN DI FILE CONFIG INI")
+            stringSQL.WriteGeneralSetting(True, fs, "\\RESIKO MENGUBAH ATAUPUN MENGHAPUS KONTEN DI FILE INI AKAN MENYEBABKAN KERUSAKAN ATAUPUN DATA KORUP")
+            stringSQL.WriteGeneralSetting(True, fs, "Aplikasi:" & My.Application.Info.AssemblyName)
+            stringSQL.WriteGeneralSetting(True, fs, "Versi:" & My.Application.Info.Version.ToString)
+            stringSQL.WriteGeneralSetting(True, fs, "OS:" & My.Computer.Info.OSFullName)
+            stringSQL.WriteGeneralSetting(True, fs, "Komputer:" & My.Computer.Name)
+            stringSQL.WriteGeneralSetting(True, fs, "[General]")
+            stringSQL.WriteGeneralSetting(True, fs, "ConnectionName=Splash_Connection")
+            stringSQL.WriteGeneralSetting(True, fs, "DatabaseName=db_apps")
+            stringSQL.WriteGeneralSetting(True, fs, "Server=localhost")
+            stringSQL.WriteGeneralSetting(True, fs, "User=SUPERVISOR")
+            stringSQL.WriteGeneralSetting(True, fs, "Password=di5t0rti0n")
+            stringSQL.WriteGeneralSetting(True, fs, "Port=3306")
+            stringSQL.WriteGeneralSetting(True, fs, "defaultsetting=True")
+            stringSQL.WriteGeneralSetting(True, fs, "SettingName=0")
+            stringSQL.WriteGeneralSetting(True, fs, "SectionName=General")
+            stringSQL.WriteGeneralSetting(True, fs, "BackupLocation=\backups")
+            stringSQL.WriteGeneralSetting(True, fs, "Icons=myico.ico")
 
             fs.Close()
 
@@ -147,17 +147,17 @@ Public Class rFormInisialisasiKoneksi
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        mdlCom.cName = txUser.Text
-        mdlCom.uhost = txserver.Text
-        mdlCom.cPort = txPort.Text
-        mdlCom.cDbname = txdbname.Text
-        mdlCom.cPass = txPass.Text
-        Dim flag As Boolean = mdlCom.CekKoneksiSql
+        mdlSQL.cName = txUser.Text
+        mdlSQL.uhost = txserver.Text
+        mdlSQL.cPort = txPort.Text
+        mdlSQL.cDbname = txdbname.Text
+        mdlSQL.cPass = txPass.Text
+        Dim flag As Boolean = mdlSQL.CekKoneksiSql
         If flag Then
             RadMessageBox.Show("Koneksi ke database Sukses." & vbNewLine &
                                 "Informasi Koneksi :" & vbNewLine &
-                                "Server: " & mdlCom.uhost & vbNewLine &
-                                "Database: " & mdlCom.cDbname,
+                                "Server: " & mdlSQL.uhost & vbNewLine &
+                                "Database: " & mdlSQL.cDbname,
                                 "Database Connection", MessageBoxButtons.OK, RadMessageIcon.Info)
         Else
             Exit Sub

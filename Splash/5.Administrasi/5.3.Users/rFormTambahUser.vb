@@ -18,7 +18,7 @@ Public Class rFormTambahUser
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
     End Sub
 
-    Public Function OpenDialog(Optional ByVal isEdit As Boolean = False, Optional ByVal idEdit As String = "") As DialogResult
+    Public Function BukaDialogFormTambahUser(Optional ByVal isEdit As Boolean = False, Optional ByVal idEdit As String = "") As DialogResult
         Dim Result As DialogResult
         Try
             Me.EditMode = isEdit
@@ -27,7 +27,7 @@ Public Class rFormTambahUser
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError("Failed to show form.")
+            mdlSQL.ShowError("Failed to show form.")
             ProjectData.ClearProjectError()
         End Try
         Return Result
@@ -40,7 +40,7 @@ Public Class rFormTambahUser
     End Sub
 
     Private Sub SimpanUsertodb()
-        Dim comon As New common
+        Dim comon As New SQLcommon
         Dim errMsg As String = ""
         If (Me.txPassword.Text.Trim() = txKonfirmasi.Text.Trim()) Then
             Dim flag As Boolean
@@ -68,25 +68,25 @@ Public Class rFormTambahUser
                          Operators.ConcatenateObject(Interaction.IIf(Me.chk8.Checked, "1", "0"), ";"))),
                          Operators.ConcatenateObject(Interaction.IIf(Me.chk9.Checked, "1", "0"), ";")))
             End If
-            Dim tempPass As String = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(txKonfirmasi.Text.Trim(), mdlstring.defaultKey)
+            Dim tempPass As String = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(txKonfirmasi.Text.Trim(), stringSQL.defaultKey)
             If Not Me.EditMode Then
                 If comon.unameOke(errMsg, Me.txUsername.Text.Trim) Then
 
                     flag = comon.tambahUname(Me.txUsername.Text.Trim(), tempPass, str2, txUserFname.Text.Trim(), rCbJobdesk.Text.Trim())
                 Else
-                    mdlCom.ShowWarning("Username sudah terdaftar.")
+                    mdlSQL.ShowWarning("Username sudah terdaftar.")
                 End If
             Else
                 flag = comon.updateUser(tempPass, Me.txUsername.Text.Trim(), str2)
             End If
             If flag Then
-                mdlCom.ShowInfo("Username berhasil disimpan.")
+                mdlSQL.ShowInfo("Username berhasil disimpan.")
                 Me.Close()
             Else
-                mdlCom.ShowWarning("Error simpan database.")
+                mdlSQL.ShowWarning("Error simpan database.")
             End If
         Else
-            mdlCom.ShowWarning("Password dan Konfirmasi harus sama.")
+            mdlSQL.ShowWarning("Password dan Konfirmasi harus sama.")
         End If
     End Sub
 
@@ -192,7 +192,7 @@ Public Class rFormTambahUser
                 Me.Text = "Ubah Data User"
                 Me.btnSave.Text = "&Simpan"
                 Me.txUsername.ReadOnly = True
-                Dim comon As New common
+                Dim comon As New SQLcommon
                 Dim dt As New DataTable
                 Dim errMsg As String = ""
                 If comon.getUsers(errMsg, dt, ("WHERE `Username` = '" & IdUser & "'")) Then
@@ -201,7 +201,7 @@ Public Class rFormTambahUser
                     Me.txPassword.Text = Conversions.ToString(row.Item("Password"))
                     Me.txKonfirmasi.Text = Conversions.ToString(row.Item("Password"))
                     Me.txUserFname.Text = Conversions.ToString(row.Item("UserFname"))
-                    Me.txJabatan.Text = mdlCom.UserRole
+                    Me.txJabatan.Text = mdlSQL.UserRole
                     Me.rCbJobdesk.Text = Conversions.ToString(row.Item("JobDesk"))
 
                     If Operators.CompareObjectEqual(row.Item("kdgroup"), "00", False) Then
@@ -233,13 +233,13 @@ Public Class rFormTambahUser
                     End If
                     row = Nothing
                 Else
-                    mdlCom.ShowError(errMsg)
+                    mdlSQL.ShowError(errMsg)
                 End If
             End If
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError("Failed to (load_form).Message: " & ex.Message)
+            mdlSQL.ShowError("Failed to (load_form).Message: " & ex.Message)
             ProjectData.ClearProjectError()
         End Try
         Try

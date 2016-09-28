@@ -19,7 +19,7 @@ Public Class rFormListPelanggan
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError("Failed to show form." & vbNewLine & ex.Message)
+            mdlSQL.ShowError("Failed to show form." & vbNewLine & ex.Message)
             ProjectData.ClearProjectError()
         End Try
         Return dlg
@@ -41,7 +41,7 @@ Public Class rFormListPelanggan
             dg.Rows.Clear()
             Dim dt As New DataTable
             Dim errMsg As String = Nothing
-            Dim Common As New common
+            Dim Common As New SQLcommon
             Dim DataField As String() = New String((10 + 1) - 1) {}
 
             If Common.GetPelangganSupplier(errMsg, dt, Opsi) Then
@@ -52,7 +52,7 @@ Public Class rFormListPelanggan
                     DataField(0) = Conversions.ToString(False)
                     DataField(1) = Conversions.ToInteger(CInt(i + 1))
                     DataField(2) = Conversions.ToString(
-                        mdlstring.FORMAT_NPWP(
+                        stringSQL.FORMAT_NPWP(
                             row.Item("Client_IdTax")))
                     Dim strAlamat As String
                     DataField(3) = Conversions.ToString(row.Item("client_name"))
@@ -72,7 +72,7 @@ Public Class rFormListPelanggan
                 Loop
 
             Else
-                mdlCom.ShowWarning(errMsg)
+                mdlSQL.ShowWarning(errMsg)
 
             End If
         Catch ex As Exception

@@ -18,10 +18,10 @@ Public Class rFormPermission
     End Sub
     Private Sub KonfirmasiPermission(ByVal rForm As Form)
         Try
-            mdlCom.BukaKoneksi()
+            mdlSQL.BukaKoneksi()
             Dim sqlreader As MySqlDataReader = New MySqlCommand("SELECT `Password`, `KdGroup`, `JobTitle` FROM `user` WHERE `Kdgroup` = '" &
-                                                                mdlstring.ADD_QUOTE_ON_SQL("00") & "' AND `Password` = '" &
-                                                                rTxPassword.Text & "'", mdlCom.vConn).ExecuteReader
+                                                                stringSQL.ADD_QUOTE_ON_SQL("00") & "' AND `Password` = '" &
+                                                                rTxPassword.Text & "'", mdlSQL.vConn).ExecuteReader
             If sqlreader.HasRows Then
                 sqlreader.Read()
                 If Operators.CompareObjectEqual(rTxPassword.Text.Trim(), sqlreader.Item("Password").ToString, False) Then

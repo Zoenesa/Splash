@@ -107,7 +107,7 @@ Public Class FormAdvancedSqlBackup
         rFormMain.UserSettingIcon(True, Me)
 
         stopWrite = False
-        txKoneksi.Text = mdlCom.KoneksiString
+        txKoneksi.Text = mdlSQL.KoneksiString
     End Sub
 
     Private Sub OpenForm(formType As Type)

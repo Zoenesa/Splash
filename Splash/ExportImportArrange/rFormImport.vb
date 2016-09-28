@@ -50,8 +50,8 @@ Public Class rFormImport
 
     Private Sub btnSelectFile_Click(sender As Object, e As EventArgs) Handles btnSelectFile.Click
         Dim dialog As New OpenFileDialog
-        If (mdlCom.DefaultFolderName <> "") Then
-            dialog.InitialDirectory = mdlCom.DefaultFolderName
+        If (mdlSQL.DefaultFolderName <> "") Then
+            dialog.InitialDirectory = mdlSQL.DefaultFolderName
         End If
         If dialog.ShowDialog = Windows.Forms.DialogResult.OK Then
             CSVFolder = IO.Path.GetDirectoryName(dialog.FileName)

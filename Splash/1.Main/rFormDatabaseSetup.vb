@@ -1,4 +1,4 @@
-﻿Imports Splash.Konektor.mdlCom
+﻿Imports Splash.Konektor.mdlSQL
 Imports MySql.Data.MySqlClient
 Imports System.IO, Microsoft.VisualBasic.CompilerServices
 Imports Setting.Config.Profile
@@ -24,12 +24,12 @@ Public Class rFormDatabaseSetup
     'Dim configFile As String
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim flag As Boolean = mdlCom.CekKoneksiSql
+        Dim flag As Boolean = mdlSQL.CekKoneksiSql
         If flag = True Then
             RadMessageBox.Show("Koneksi ke database Sukses." & vbNewLine &
                                 "Informasi Koneksi :" & vbNewLine &
-                                "Server: " & mdlCom.uhost & vbNewLine &
-                                "Database: " & mdlCom.cDbname,
+                                "Server: " & mdlSQL.uhost & vbNewLine &
+                                "Database: " & mdlSQL.cDbname,
                                 "Database Connection", MessageBoxButtons.OK, RadMessageIcon.Info)
         Else
             Exit Sub
@@ -43,7 +43,7 @@ Public Class rFormDatabaseSetup
             Me.SelectedProfile.SetValue(cbSection.Text, "Server", txHost.Text.Trim())
             Me.SelectedProfile.SetValue(cbSection.Text, "User", txUser.Text.Trim())
             Me.SelectedProfile.SetValue(cbSection.Text, "Port", txPort.Text.Trim())
-            Dim convertPassword As String = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(txPass.Text.Trim(), mdlstring.defaultKey)
+            Dim convertPassword As String = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(txPass.Text.Trim(), stringSQL.defaultKey)
             Me.SelectedProfile.SetValue(cbSection.Text, "Password", convertPassword)
             Me.SelectedProfile.SetValue("General", "BackupLocation", txBackupFolderPath.Text.Trim())
 
@@ -63,7 +63,7 @@ Public Class rFormDatabaseSetup
     Private Sub ReadConfig()
         Dim tempPass As String = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "Password")
 
-        Dim ImportPassword As String = CodeLibs.CodeMethod.Decrypt_TRIPLEDES(tempPass, mdlstring.defaultKey)
+        Dim ImportPassword As String = CodeLibs.CodeMethod.Decrypt_TRIPLEDES(tempPass, stringSQL.defaultKey)
 
         txConStr.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "ConnectionName")
         txdbname.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "DatabaseName")
@@ -93,7 +93,7 @@ Public Class rFormDatabaseSetup
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim Excep As Exception = ex
-            mdlCom.ShowError("Error." & Excep.Message)
+            mdlSQL.ShowError("Error." & Excep.Message)
             ProjectData.ClearProjectError()
         End Try
 
@@ -166,7 +166,7 @@ Public Class rFormDatabaseSetup
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim Excep As Exception = ex
-            mdlCom.ShowError("Error." & Excep.Message)
+            mdlSQL.ShowError("Error." & Excep.Message)
             ProjectData.ClearProjectError()
         End Try
     End Sub
@@ -181,19 +181,19 @@ Public Class rFormDatabaseSetup
             Try
                 myProcess.StartInfo.FileName = "mysqldumpx86.exe"
                 myProcess.StartInfo.WorkingDirectory = strWorkdir
-                myProcess.StartInfo.Arguments = "--host=" & mdlCom.uhost & " --user=" & mdlCom.cName & " --password=" & mdlCom.cPass & " " & mdlCom.cDbname & " -r " & newfiledb
+                myProcess.StartInfo.Arguments = "--host=" & mdlSQL.uhost & " --user=" & mdlSQL.cName & " --password=" & mdlSQL.cPass & " " & mdlSQL.cDbname & " -r " & newfiledb
                 myProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
                 myProcess.Start()
                 myProcess.WaitForExit()
 
                 RadMessageBox.Show("Sukses membackup database." & vbNewLine & newfiledb &
                                vbNewLine & "Pada:" & vbNewLine &
-                               "Server: " & mdlCom.uhost & vbNewLine &
+                               "Server: " & mdlSQL.uhost & vbNewLine &
                                  vbNewLine & "Database: " & cbDropDbFile.Text.Trim(), "Backup Database", MessageBoxButtons.OK, RadMessageIcon.Info)
 
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
-                mdlCom.INSERTLOG(ex.Message, "")
+                mdlSQL.INSERTLOG(ex.Message, "")
                 RadMessageBox.Show("Error." & ex.Source & newfiledb, "ERROR", MessageBoxButtons.OK, RadMessageIcon.Error, ex.Message)
                 ProjectData.ClearProjectError()
             Finally
@@ -224,19 +224,19 @@ Public Class rFormDatabaseSetup
             Try
                 myProcess.StartInfo.FileName = "mysqldumpx86.exe"
                 myProcess.StartInfo.WorkingDirectory = strWorkdir
-                myProcess.StartInfo.Arguments = "--user=" & mdlCom.cName & "--password=" & mdlCom.cPass & " -h" & mdlCom.uhost & " " & mdlCom.cDbname & " < """ & getEnvFile & """"
+                myProcess.StartInfo.Arguments = "--user=" & mdlSQL.cName & "--password=" & mdlSQL.cPass & " -h" & mdlSQL.uhost & " " & mdlSQL.cDbname & " < """ & getEnvFile & """"
                 myProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
                 myProcess.Start()
                 myProcess.WaitForExit()
 
                 RadMessageBox.Show("Restore database sukses." & vbNewLine & getEnvFile &
                                    vbNewLine & "Pada:" & vbNewLine _
-                                   & "Server: " & mdlCom.uhost & vbNewLine &
+                                   & "Server: " & mdlSQL.uhost & vbNewLine &
                                    "Database: " & cbDropDbFile.Text.Trim(), "Restore Database", MessageBoxButtons.OK, RadMessageIcon.Info)
 
             Catch ex As Exception
                 ProjectData.SetProjectError(ex)
-                mdlCom.INSERTLOG(ex.Message, "")
+                mdlSQL.INSERTLOG(ex.Message, "")
                 RadMessageBox.Show("Error." & ex.Source, "ERROR", MessageBoxButtons.OK, RadMessageIcon.Error, ex.Message)
                 ProjectData.ClearProjectError()
             Finally
@@ -265,8 +265,8 @@ Public Class rFormDatabaseSetup
     Private Sub cbDropDbFile_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbDropDbFile.SelectedIndexChanged
         listTbl.Items.Clear()
         If cbDropDbFile.Text <> "" Then
-            mdlCom.BukaKoneksi()
-            Dim sqlCmdTable As New MySqlCommand("SHOW TABLES", mdlCom.vConn)
+            mdlSQL.BukaKoneksi()
+            Dim sqlCmdTable As New MySqlCommand("SHOW TABLES", mdlSQL.vConn)
             Dim drTables As MySqlDataReader
             drTables = sqlCmdTable.ExecuteReader
             Do While drTables.Read
@@ -298,7 +298,7 @@ Public Class rFormDatabaseSetup
             txUser.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "User")
             Dim tempPass As String = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "Password")
 
-            Dim ImportPassword As String = CodeLibs.CodeMethod.Decrypt_TRIPLEDES(tempPass, mdlstring.defaultKey)
+            Dim ImportPassword As String = CodeLibs.CodeMethod.Decrypt_TRIPLEDES(tempPass, stringSQL.defaultKey)
 
             'txPass.Text = Me.SelectedProfile.GetValue(Me.cbSection.SelectedItem.Text, "Password")
             txPass.Text = ImportPassword
@@ -311,12 +311,12 @@ Public Class rFormDatabaseSetup
     Private Sub RadPageView1_SelectedPageChanging(sender As Object, e As RadPageViewCancelEventArgs) Handles RadPageView1.SelectedPageChanging
         If e.Page Is RadPageViewPage2 Then
             Try
-                mdlCom.BukaKoneksi()
+                mdlSQL.BukaKoneksi()
                 Dim command As String
                 Dim tblCount As Integer
                 command = "Select Distinct Table_Schema From information_schema.tables"
                 Dim adapter As MySqlDataAdapter
-                adapter = New MySqlDataAdapter(command, mdlCom.vConn)
+                adapter = New MySqlDataAdapter(command, mdlSQL.vConn)
                 Dim dt As New DataTable
                 adapter.Fill(dt)
                 tblCount = 0
@@ -326,7 +326,7 @@ Public Class rFormDatabaseSetup
                     Threading.Interlocked.Increment(tblCount)
                 End While
                 'cbDropDbFile.SelectedIndex = 0
-                mdlCom.vConn.Close()
+                mdlSQL.vConn.Close()
                 dt.Dispose()
                 adapter.Dispose()
             Catch ex As Exception
@@ -360,7 +360,7 @@ Public Class rFormDatabaseSetup
     End Sub
 
     Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
-        If Not mdlCom.UserLogin <> "Administrator" Then
+        If Not mdlSQL.UserLogin <> "Administrator" Then
             RadMessageBox.Show("Anda Tidak Berhak Mengakses Menu ini.", "Akses", MessageBoxButtons.OK, RadMessageIcon.Exclamation, MessageBoxDefaultButton.Button1)
         Else
             Dim EncForm As New CodeLibs.FrmEncryptDecrypt

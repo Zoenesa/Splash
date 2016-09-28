@@ -111,7 +111,7 @@ Public Class rFormExportCSV
 
                     If Not Convert.IsDBNull(dr(irow)) Then
                         Dim valu As String = dr(irow).ToString
-                        writer.Write(mdlstring.ADD_QUOTE_ON_SQL(valu))
+                        writer.Write(stringSQL.ADD_QUOTE_ON_SQL(valu))
                     End If
 
                     If irow < iColCount - 1 Then
@@ -183,7 +183,7 @@ Public Class rFormExportCSV
 
     Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
         Dim nFilename As String = ""
-        If mdlCom.TargetDirIsValid Then
+        If mdlSQL.TargetDirIsValid Then
             If valDelimiterQuote() Then
                 Me.NewExpor()
             End If
@@ -220,16 +220,16 @@ Public Class rFormExportCSV
 
     Private Sub NewExpor()
         tableName = "invoicedata"
-        mdlCom.BukaKoneksi()
+        mdlSQL.BukaKoneksi()
         'Dim tableName As String = dg.CurrentRow.Cells.Item(0).Value
-        Dim da As New MySqlDataAdapter("SELECT * FROM `" & tableName & "`;", mdlCom.vConn)
+        Dim da As New MySqlDataAdapter("SELECT * FROM `" & tableName & "`;", mdlSQL.vConn)
         Dim ds As New DataSet
 
         da.Fill(ds, tableName)
         Dim dt As DataTable = ds.Tables(tableName)
 
         Dim nFilename As String = ""
-        nFilename = mdlCom.targetFile
+        nFilename = mdlSQL.targetFile
         If Directory.Exists(Path.GetDirectoryName(nFilename)) = False Then
             Directory.CreateDirectory(Path.GetDirectoryName(nFilename))
         End If
@@ -266,16 +266,16 @@ Public Class rFormExportCSV
 
     Private Sub RadButton2_Click(sender As Object, e As EventArgs) Handles RadButton2.Click
         Dim Dialog As New SaveFileDialog
-        If (mdlCom.DefaultFolderName <> "") Then
-            Dialog.InitialDirectory = mdlCom.DefaultFolderName
+        If (mdlSQL.DefaultFolderName <> "") Then
+            Dialog.InitialDirectory = mdlSQL.DefaultFolderName
         End If
         Dialog.Filter = "SQL Dump File (*.sql)|*.sql| CSV Comma delimiter (*.csv)|*.csv"
         Dialog.FilterIndex = 2
         Dialog.FileName = (String.Concat(New String() {"exported", "_", "invoicedate", DateTime.Now.ToString("yyyy-MM-dd HHmmss"), ".sql"}))
         If (DialogResult.OK = Dialog.ShowDialog) Then
             Me.RadTextBox1.Text = Dialog.FileName
-            mdlCom.DefaultFolderName = Path.GetDirectoryName(Me.RadTextBox1.Text)
-            mdlCom.targetFile = Me.RadTextBox1.Text
+            mdlSQL.DefaultFolderName = Path.GetDirectoryName(Me.RadTextBox1.Text)
+            mdlSQL.targetFile = Me.RadTextBox1.Text
         End If
     End Sub
 

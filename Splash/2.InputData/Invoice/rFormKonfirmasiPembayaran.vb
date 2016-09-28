@@ -3,7 +3,7 @@ Imports System, System.Threading, System.Runtime, System.Runtime.InteropServices
 Imports Microsoft, Microsoft.VisualBasic, Microsoft.VisualBasic.CompilerServices
 Imports System.Data.OleDb
 Imports MySql.Data.MySqlClient
-Imports Splash.Konektor.mdlstring
+Imports Splash.Konektor.stringSQL
 Imports System.Data.Common
 Imports Telerik.WinControls.UI.Data
 Imports Splash.Konektor
@@ -34,7 +34,7 @@ Public Class rFormKonfirmasiPembayaran
             Dim str As String = ("SELECT `invoiceno`, `invoiceClient` FROM `invoicedata`" & opsi & " ORDER BY `RecordNo`;")
             Using cmd As MySqlCommand = New MySqlCommand()
                 cmd.CommandText = str
-                cmd.Connection = mdlCom.vConn
+                cmd.Connection = mdlSQL.vConn
                 Using sqlreader As MySqlDataReader = cmd.ExecuteReader
                     Dim Values As String() = New String(1) {}
                     If sqlreader.HasRows Then
@@ -58,7 +58,7 @@ Public Class rFormKonfirmasiPembayaran
         Dim myreader As MySqlDataReader
         Try
             Dim command As MySqlCommand = New MySqlCommand(("SELECT * FROM `ref_client` " &
-                                                            opsi), mdlCom.vConn)
+                                                            opsi), mdlSQL.vConn)
 
             myreader = command.ExecuteReader
             Dim values As String() = New String(1) {}
@@ -78,7 +78,7 @@ Public Class rFormKonfirmasiPembayaran
         Dim sqladapter As MySqlDataAdapter
         Dim sqlcommand As MySqlCommand = New MySqlCommand(("SELECT `invoiceNo`, `invoiceClient` FROM `invoicedata` " & Opsi & " ORDER BY `RecordNo` ASC"))
         Dim dt As New DataTable
-        sqlcommand.Connection = mdlCom.vConn
+        sqlcommand.Connection = mdlSQL.vConn
         sqladapter = New MySqlDataAdapter With {.SelectCommand = sqlcommand}
 
         DirectCast(sqladapter, DbDataAdapter).Fill(dt)

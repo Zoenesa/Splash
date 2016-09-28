@@ -59,8 +59,10 @@ Partial Class rFormMain
         Me.rMenuResumeOrder = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuCreatePenawaranItem = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuDataLokasi = New Telerik.WinControls.UI.RadMenuItem()
-        Me.rMenuInputDataLokasi = New Telerik.WinControls.UI.RadMenuItem()
+        Me.rMenuDaftarKavling = New Telerik.WinControls.UI.RadMenuItem()
+        Me.RadMenuSeparatorItem6 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         Me.rMenuDataHGB = New Telerik.WinControls.UI.RadMenuItem()
+        Me.rMenuInputDataLokasi = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuAdministrasi = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuItemBarang = New Telerik.WinControls.UI.RadMenuItem()
         Me.rMenuRefCustomer = New Telerik.WinControls.UI.RadMenuItem()
@@ -86,8 +88,6 @@ Partial Class rFormMain
         Me.rMenuCloseAllmdiClient = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenuSeparatorItem5 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
-        Me.rMenuDaftarKavling = New Telerik.WinControls.UI.RadMenuItem()
-        Me.RadMenuSeparatorItem6 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -332,17 +332,30 @@ Partial Class rFormMain
         Me.rMenuDataLokasi.Name = "rMenuDataLokasi"
         Me.rMenuDataLokasi.Text = "&Data Lokasi"
         '
-        'rMenuInputDataLokasi
+        'rMenuDaftarKavling
         '
-        Me.rMenuInputDataLokasi.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.rMenuInputDataLokasi.Name = "rMenuInputDataLokasi"
-        Me.rMenuInputDataLokasi.Text = "Input Data Lokasi"
+        Me.rMenuDaftarKavling.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.rMenuDaftarKavling.Name = "rMenuDaftarKavling"
+        Me.rMenuDaftarKavling.Text = "Daftar &Kavling Tersedia"
+        '
+        'RadMenuSeparatorItem6
+        '
+        Me.RadMenuSeparatorItem6.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadMenuSeparatorItem6.Name = "RadMenuSeparatorItem6"
+        Me.RadMenuSeparatorItem6.Text = "RadMenuSeparatorItem6"
+        Me.RadMenuSeparatorItem6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
         '
         'rMenuDataHGB
         '
         Me.rMenuDataHGB.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.rMenuDataHGB.Name = "rMenuDataHGB"
         Me.rMenuDataHGB.Text = "Input Data HGB"
+        '
+        'rMenuInputDataLokasi
+        '
+        Me.rMenuInputDataLokasi.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.rMenuInputDataLokasi.Name = "rMenuInputDataLokasi"
+        Me.rMenuInputDataLokasi.Text = "Input Data Lokasi"
         '
         'rMenuAdministrasi
         '
@@ -454,9 +467,9 @@ Partial Class rFormMain
         '
         Me.RadStatusStrip1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadStatusStrip1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.StatusVersi, Me.CommandBarSeparator1, Me.RadStatusDeskripsi, Me.CommandBarSeparator2, Me.RadDateAndTimeStatus})
-        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 322)
+        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 216)
         Me.RadStatusStrip1.Name = "RadStatusStrip1"
-        Me.RadStatusStrip1.Size = New System.Drawing.Size(804, 22)
+        Me.RadStatusStrip1.Size = New System.Drawing.Size(764, 22)
         Me.RadStatusStrip1.TabIndex = 5
         Me.RadStatusStrip1.Text = "RadStatusStrip1"
         Me.RadStatusStrip1.ThemeName = "Office2010Black"
@@ -535,29 +548,16 @@ Partial Class rFormMain
         Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMainMenu, Me.rMenuInputData, Me.rDataTeknis, Me.rMenuAdministrasi, Me.rMenuWindowItm, Me.rAbout})
         Me.RadMenu1.Location = New System.Drawing.Point(0, 0)
         Me.RadMenu1.Name = "RadMenu1"
-        Me.RadMenu1.Size = New System.Drawing.Size(804, 22)
+        Me.RadMenu1.Size = New System.Drawing.Size(764, 22)
         Me.RadMenu1.TabIndex = 3
         Me.RadMenu1.Text = "RadMenu1"
         Me.RadMenu1.ThemeName = "Office2010Black"
-        '
-        'rMenuDaftarKavling
-        '
-        Me.rMenuDaftarKavling.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.rMenuDaftarKavling.Name = "rMenuDaftarKavling"
-        Me.rMenuDaftarKavling.Text = "Daftar &Kavling Tersedia"
-        '
-        'RadMenuSeparatorItem6
-        '
-        Me.RadMenuSeparatorItem6.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadMenuSeparatorItem6.Name = "RadMenuSeparatorItem6"
-        Me.RadMenuSeparatorItem6.Text = "RadMenuSeparatorItem6"
-        Me.RadMenuSeparatorItem6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
         '
         'rFormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(804, 344)
+        Me.ClientSize = New System.Drawing.Size(764, 238)
         Me.Controls.Add(Me.RadStatusStrip1)
         Me.Controls.Add(Me.RadMenu1)
         Me.EnableKeyMap = True

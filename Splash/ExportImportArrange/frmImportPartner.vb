@@ -64,13 +64,13 @@ Public Class frmImportPartner
             Dim num2 As Integer = 0
 
             Dim List As New List(Of String)
-            Dim partner As New common
+            Dim partner As New SQLcommon
             Dim errParsing As String = ""
             If partner.ReadCSVImport(errMsg, List, sFilePath) Then
                 If ((List.Count - 1) > 65000) Then
-                    mdlCom.ShowError("Jumlah Data Melebihi batas maksimal 65.000 baris!.")
+                    mdlSQL.ShowError("Jumlah Data Melebihi batas maksimal 65.000 baris!.")
                 Else
-                    mdlCom.ShowInfo(("Jumlah Data : " & Conversions.ToString(CInt((List.Count - 1))) & " Baris."))
+                    mdlSQL.ShowInfo(("Jumlah Data : " & Conversions.ToString(CInt((List.Count - 1))) & " Baris."))
                     Me.pBar.Minimum = 0
                     Me.pBar.Maximum = (List.Count - 1)
                     Me.pBar.Value = 0
@@ -94,13 +94,13 @@ Public Class frmImportPartner
                     Me.btnImport.Enabled = True
                 End If
             Else
-                mdlCom.ShowError(errMsg)
+                mdlSQL.ShowError(errMsg)
             End If
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim exception As Exception = ex
-            mdlCom.ShowError(("Failed (load_file). Message : " & exception.Message))
-            mdlCom.INSERTLOG(("Failed (load_file). Message : " & exception.Message), "")
+            mdlSQL.ShowError(("Failed (load_file). Message : " & exception.Message))
+            mdlSQL.INSERTLOG(("Failed (load_file). Message : " & exception.Message), "")
             ProjectData.ClearProjectError()
 
         End Try
@@ -138,8 +138,8 @@ Public Class frmImportPartner
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim exception As Exception = ex
-            mdlCom.ShowError(("Failed (browse_file). Message : " & exception.Message))
-            mdlCom.INSERTLOG(("Failed (browse_file). Message : " & exception.Message), "")
+            mdlSQL.ShowError(("Failed (browse_file). Message : " & exception.Message))
+            mdlSQL.INSERTLOG(("Failed (browse_file). Message : " & exception.Message), "")
             ProjectData.ClearProjectError()
         End Try
     End Sub
@@ -147,7 +147,7 @@ Public Class frmImportPartner
     Private Sub btnImport_Click(sender As Object, e As EventArgs) Handles btnImport.Click
         Try
             Dim values As String() = New String(4 - 1) {}
-            Dim partner As New common
+            Dim partner As New SQLcommon
             Dim num As Integer = 0
             Me.dgErr.Rows.Clear()
             Me.pBar.Minimum = 0
@@ -169,7 +169,7 @@ Public Class frmImportPartner
                                           row.Cells.Item(0).Value, row.Cells.Item(0).Value,
                                           row.Cells.Item(0).Value, row.Cells.Item(0).Value,
                                           editmode, "exported", DateTime.Now.ToString("dd/MM/YY"),
-                                          mdlCom.UserLogin, DateTime.Now.ToString("dd/MM/YY")))) Then
+                                          mdlSQL.UserLogin, DateTime.Now.ToString("dd/MM/YY")))) Then
                     num += 1
                     values(0) = Conversions.ToString(num)
                     values(1) = Conversions.ToString(CInt((i + 1)))
@@ -180,13 +180,13 @@ Public Class frmImportPartner
                 Me.pBar.Value += 1
                 i += 1
             Loop
-            mdlCom.ShowInfo(String.Concat(New String() {"Hasil Import CSV Invoice : " & "Jumlah Data = " & Conversions.ToString(Me.dg.Rows.Count), " baris." & vbNewLine & "Berhasil Load = ", Conversions.ToString(CInt(Me.dg.Rows.Count - num)), " Baris." & vbNewLine & "Gagal Load = ", Conversions.ToString(num), " Baris."}))
+            mdlSQL.ShowInfo(String.Concat(New String() {"Hasil Import CSV Invoice : " & "Jumlah Data = " & Conversions.ToString(Me.dg.Rows.Count), " baris." & vbNewLine & "Berhasil Load = ", Conversions.ToString(CInt(Me.dg.Rows.Count - num)), " Baris." & vbNewLine & "Gagal Load = ", Conversions.ToString(num), " Baris."}))
             Me.btnImport.Enabled = False
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim exception As Exception = ex
-            mdlCom.ShowError(("Failed (import). Message : " & exception.Message))
-            mdlCom.INSERTLOG(("Failed (import). Message : " & exception.Message), "")
+            mdlSQL.ShowError(("Failed (import). Message : " & exception.Message))
+            mdlSQL.INSERTLOG(("Failed (import). Message : " & exception.Message), "")
             Me.btnImport.Enabled = False
             ProjectData.ClearProjectError()
         End Try

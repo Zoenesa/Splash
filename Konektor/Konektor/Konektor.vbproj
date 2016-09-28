@@ -95,12 +95,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="common.vb" />
+    <Compile Include="SQLcommon.vb" />
     <Compile Include="ControlEkstensi.vb" />
     <Compile Include="Globals.vb" />
     <Compile Include="ISetelan.vb" />
-    <Compile Include="mdlcom.vb" />
-    <Compile Include="mdlstring.vb" />
+    <Compile Include="mdlSQL.vb" />
+    <Compile Include="stringSQL.vb" />
     <Compile Include="ModuleBackupRestore.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

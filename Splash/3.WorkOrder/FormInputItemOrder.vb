@@ -59,7 +59,7 @@ Public Class FormInputItemOrder
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim exception As Exception = ex
-            Konektor.mdlCom.ShowError("Gagal.(Buka Form Input Item Job Order). Message : " + exception.Message)
+            Konektor.mdlSQL.ShowError("Gagal.(Buka Form Input Item Job Order). Message : " + exception.Message)
             ProjectData.ClearProjectError()
         End Try
         Return dlg
@@ -75,18 +75,18 @@ Public Class FormInputItemOrder
         Try
             Dim StrInsert As String = "INSERT INTO `temp_items` (`nomor_workorder`, " &
                 "`nama_barang`, `kuantitas`, `harga_satuan`, `jumlah_harga`, `userperekam`, " &
-                "`tanggalrekam`, `userupdate`, `tanggalupdate`) VALUES ('" & Konektor.mdlstring.ADD_QUOTE_ON_SQL(IDJoborder) & "', '" &
-                Konektor.mdlstring.ADD_QUOTE_ON_SQL(NamaItem) & "','" & Konektor.mdlstring.ADD_QUOTE_ON_SQL(Kuantiti) & "', '" &
-                Konektor.mdlstring.ADD_QUOTE_ON_SQL(HargaSatuan) & "', '" & JumlahHarga & "', '" & Konektor.mdlCom.UserLogin & "', '" &
-                DateTime.Now.ToString("dd/mm/yyyy") & "', '" & Konektor.mdlCom.UserLogin & "', '" & DateTime.Now.ToString("dd/mm/yyyy") & "')"
+                "`tanggalrekam`, `userupdate`, `tanggalupdate`) VALUES ('" & Konektor.stringSQL.ADD_QUOTE_ON_SQL(IDJoborder) & "', '" &
+                Konektor.stringSQL.ADD_QUOTE_ON_SQL(NamaItem) & "','" & Konektor.stringSQL.ADD_QUOTE_ON_SQL(Kuantiti) & "', '" &
+                Konektor.stringSQL.ADD_QUOTE_ON_SQL(HargaSatuan) & "', '" & JumlahHarga & "', '" & Konektor.mdlSQL.UserLogin & "', '" &
+                DateTime.Now.ToString("dd/mm/yyyy") & "', '" & Konektor.mdlSQL.UserLogin & "', '" & DateTime.Now.ToString("dd/mm/yyyy") & "')"
             flag = New MySqlCommand() With {
-                .Connection = Konektor.mdlCom.vConn,
+                .Connection = Konektor.mdlSQL.vConn,
                 .CommandText = (StrInsert)}.ExecuteNonQuery() > 0
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim exception As Exception = ex
-            Konektor.mdlCom.ShowError("Gagal.(Query Tambah Job Order). Message : " + exception.Message)
-            Konektor.mdlCom.INSERTLOG("Gagal.(Query Tambah Job Order). Message : " + exception.Message, "")
+            Konektor.mdlSQL.ShowError("Gagal.(Query Tambah Job Order). Message : " + exception.Message)
+            Konektor.mdlSQL.INSERTLOG("Gagal.(Query Tambah Job Order). Message : " + exception.Message, "")
             ProjectData.ClearProjectError()
         End Try
         Return flag

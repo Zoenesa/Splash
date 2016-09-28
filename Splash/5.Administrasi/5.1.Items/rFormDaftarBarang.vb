@@ -37,7 +37,7 @@ Public Class rFormDaftarBarang
             command.CommandText = "SELECT `ITMCOL_CODE` AS 'KODE BARANG', `ITMCOL_DESCRIPTIONS` AS 'DESKRIPSI NAMA BARANG', " &
                         "`ITMCOL_QTY` AS 'KUANTITAS', `USERPEREKAM` AS 'USER PEREKAM', `TANGGALREKAM` AS 'TANGGAL REKAM', " &
                         "`USERUPDATE` AS 'USER UPDATE', `TANGGALUPDATE` AS 'TANGGAL UPDATE' FROM `ITEMS_REF`" & Opsi
-            command.Connection = Konektor.mdlCom.vConn
+            command.Connection = Konektor.mdlSQL.vConn
             sqlAdapter.SelectCommand = command
             DirectCast(sqlAdapter, MySqlDataAdapter).Fill(dt)
             dgItem.DataSource = dt
@@ -45,7 +45,7 @@ Public Class rFormDaftarBarang
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
 
-            Konektor.mdlCom.ShowError("Gagal Load Data Barang, Error: " & excep.Message)
+            Konektor.mdlSQL.ShowError("Gagal Load Data Barang, Error: " & excep.Message)
             ProjectData.ClearProjectError()
         End Try
     End Sub

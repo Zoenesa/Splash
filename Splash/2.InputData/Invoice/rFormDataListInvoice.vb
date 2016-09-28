@@ -65,8 +65,8 @@ Public Class rFormDataListInvoice
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim exception As Exception = ex
-            mdlCom.ShowError("Failed (edit_delete). Message : " + exception.Message)
-            mdlCom.INSERTLOG("Failed (edit_delete). Message : " + exception.Message, "")
+            mdlSQL.ShowError("Failed (edit_delete). Message : " + exception.Message)
+            mdlSQL.INSERTLOG("Failed (edit_delete). Message : " + exception.Message, "")
             ProjectData.ClearProjectError()
         End Try
     End Sub
@@ -77,14 +77,14 @@ Public Class rFormDataListInvoice
         Try
             dg.Rows.Clear()
             BtnEditDeleteEnable()
-            If mdlCom.vConn.State = ConnectionState.Closed Then
-                mdlCom.BukaKoneksi()
+            If mdlSQL.vConn.State = ConnectionState.Closed Then
+                mdlSQL.BukaKoneksi()
             End If
             Dim command As MySqlCommand = New MySqlCommand(("SELECT `RecordNo`, `InvoiceNo`, `InvoiceDate`, `InvoiceType`, `InvoiceClient`" &
                                                                  ", `InvoiceWorkOrderSPK`, `InvoiceLisence`, `InvoiceProgress`, `InvoiceTerm`, `InvoiceItemsRecords`" &
                                                                  ", `InvoiceTotalItems`, `InvoicePaymentsRecord`, `InvoiceAfterTermyn`, `InvoiceTaxPrice`, `InvoiceTerbilang`" &
                                                                  ", `IndexProject`, `UserPerekam`, `TanggalRekam`, `UserUpdate`, `TanggalUpdate` FROM `invoicedata`" &
-                                                                 Opsi & " ORDER BY `RecordNo` ASC"), mdlCom.vConn)
+                                                                 Opsi & " ORDER BY `RecordNo` ASC"), mdlSQL.vConn)
             Dim values As String() = New String((20 + 1) - 1) {}
             sqlreader = command.ExecuteReader
             Do While sqlreader.Read

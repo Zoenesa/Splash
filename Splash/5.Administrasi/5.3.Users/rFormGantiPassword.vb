@@ -49,23 +49,23 @@ Public Class rFormGantiPassword
         Dim result As DialogResult = RadMessageBox.Show("Anda akan merubah password lama dengan password baru!" & vbNewLine & _
                                                         "Untuk menyimpan pilih Yes, No untuk mengulang?", "Konfirmasi", MessageBoxButtons.YesNo, RadMessageIcon.Question, MessageBoxDefaultButton.Button1)
         If result = System.Windows.Forms.DialogResult.Yes Then
-            Dim comon As New common
+            Dim comon As New SQLcommon
             Dim errMsg As String = ""
-            Dim tempOldPass As String = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(txoldPass.Text.Trim(), mdlstring.defaultKey)
-            If comon.passwordOke(errMsg, tempOldPass, mdlCom.UserLogin) Then
+            Dim tempOldPass As String = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(txoldPass.Text.Trim(), stringSQL.defaultKey)
+            If comon.passwordOke(errMsg, tempOldPass, mdlSQL.UserLogin) Then
                 If (Me.txPassNew.Text.Trim() = Me.txPassNext.Text.Trim()) Then
-                    Dim tempPass As String = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(txPassNew.Text.Trim(), mdlstring.defaultKey)
-                    If comon.updatePassword(tempPass, mdlCom.UserLogin) Then
-                        mdlCom.ShowInfo("Password berhasil diubah.")
+                    Dim tempPass As String = CodeLibs.CodeMethod.Encrypt_TRIPLEDES(txPassNew.Text.Trim(), stringSQL.defaultKey)
+                    If comon.updatePassword(tempPass, mdlSQL.UserLogin) Then
+                        mdlSQL.ShowInfo("Password berhasil diubah.")
                         Me.Close()
                     Else
-                        mdlCom.ShowWarning("Error Update database." & errMsg)
+                        mdlSQL.ShowWarning("Error Update database." & errMsg)
                     End If
                 Else
-                    mdlCom.ShowWarning("Password Baru dan Konfirmasi harus Sama!.")
+                    mdlSQL.ShowWarning("Password Baru dan Konfirmasi harus Sama!.")
                 End If
             Else
-                mdlCom.ShowWarning("Password Lama Salah!.")
+                mdlSQL.ShowWarning("Password Lama Salah!.")
             End If
         Else
             Return

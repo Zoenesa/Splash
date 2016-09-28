@@ -17,7 +17,7 @@ Public Class rFormTambahCustomer
             If Me.EditMode Then
                 Me.Text = "Ubah Data Customer / Supplier"
                 Me.btnSave.Text = "&Simpan"
-                Dim cmn As New common
+                Dim cmn As New SQLcommon
                 Dim dtCustomers As New DataTable
                 Dim errMsg As String = ""
                 If cmn.getCustomerSupplier(errMsg, dtCustomers, ("WHERE `Client_Name` = '" & Me.strEdit & "';")) Then
@@ -35,7 +35,7 @@ Public Class rFormTambahCustomer
                     Me.txEmail.Text = Conversions.ToString(row.Item("Client_Mail"))
                     Me.txNomorRecord.Text = Conversions.ToString(row.Item("ID_NUM"))
                 Else
-                    mdlCom.ShowError(errMsg)
+                    mdlSQL.ShowError(errMsg)
                 End If
             Else
                 txNomorRecord.ReadOnly = True
@@ -46,7 +46,7 @@ Public Class rFormTambahCustomer
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError("Gagal to (load_FuncCustomers).Message: " & ex.Message)
+            mdlSQL.ShowError("Gagal to (load_FuncCustomers).Message: " & ex.Message)
             ProjectData.ClearProjectError()
         End Try
         'LoadProvince()
@@ -61,7 +61,7 @@ Public Class rFormTambahCustomer
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError("Gagal to show form." & vbNewLine & ex.Message)
+            mdlSQL.ShowError("Gagal to show form." & vbNewLine & ex.Message)
             ProjectData.ClearProjectError()
         End Try
         Return Result
@@ -91,7 +91,7 @@ Public Class rFormTambahCustomer
     End Function
 
     Private Sub SimpanDataCustomer(ByVal alamat As String, ByVal strTelpon As String)
-        Dim common As New common
+        Dim common As New SQLcommon
         Dim errMsg As String = ""
         Dim flag As Boolean
         If Not Me.EditMode Then
@@ -110,15 +110,15 @@ Public Class rFormTambahCustomer
                                                  strTelpon, txEmail.Text.Trim())
         End If
         If flag Then
-            mdlCom.ShowInfo("Sukses menambahkan data Pelanggan baru.")
+            mdlSQL.ShowInfo("Sukses menambahkan data Pelanggan baru.")
         Else
-            mdlCom.ShowError("Tidak dapat menambahkan Pelanggan baru.")
+            mdlSQL.ShowError("Tidak dapat menambahkan Pelanggan baru.")
         End If
     End Sub
 
     Private Sub LoadProvince(Optional ByVal Opsi As String = "")
         Try
-            Dim common As New common
+            Dim common As New SQLcommon
             Dim dt As New DataTable
             Dim errMsg As String = ""
             If common.GetPropinsi(errMsg, dt, "") Then
@@ -131,8 +131,8 @@ Public Class rFormTambahCustomer
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError(("Gagal(LoadProvinces).Message:" & excep.Message))
-            mdlCom.INSERTLOG(("Gagal(LoadProvinces).Message:" & excep.Message), "")
+            mdlSQL.ShowError(("Gagal(LoadProvinces).Message:" & excep.Message))
+            mdlSQL.INSERTLOG(("Gagal(LoadProvinces).Message:" & excep.Message), "")
             ProjectData.ClearProjectError()
             Return
             ProjectData.ClearProjectError()
@@ -141,7 +141,7 @@ Public Class rFormTambahCustomer
 
     Private Sub LoadResidence(Optional ByVal Opsi As String = "")
         Try
-            Dim comon As New common
+            Dim comon As New SQLcommon
             Dim dtKab As New DataTable
             Dim errMsg As String = ""
             If comon.GetKabupaten(errMsg, dtKab, Opsi) Then
@@ -153,8 +153,8 @@ Public Class rFormTambahCustomer
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError(("Gagal(LoadResidences).Message:" & excep.Message))
-            mdlCom.INSERTLOG(("Gagal(LoadResidences).Message:" & excep.Message), "")
+            mdlSQL.ShowError(("Gagal(LoadResidences).Message:" & excep.Message))
+            mdlSQL.INSERTLOG(("Gagal(LoadResidences).Message:" & excep.Message), "")
             ProjectData.ClearProjectError()
             Return
             ProjectData.ClearProjectError()
@@ -163,7 +163,7 @@ Public Class rFormTambahCustomer
 
     Private Sub LoadDistricts(ByVal strCommand As String, Optional ByVal Opsi As String = "")
         Try
-            Dim commonn As New common
+            Dim commonn As New SQLcommon
             Dim dtKecamatan As New DataTable
             Dim errMsg As String = ""
             If commonn.GetKecamatan(errMsg, dtKecamatan, strCommand, Opsi) Then
@@ -175,8 +175,8 @@ Public Class rFormTambahCustomer
         Catch ex As MySqlException
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            mdlCom.ShowError(("Gagal(LoadResidences).Message:" & excep.Message))
-            mdlCom.INSERTLOG(("Gagal(LoadResidences).Message:" & excep.Message), "")
+            mdlSQL.ShowError(("Gagal(LoadResidences).Message:" & excep.Message))
+            mdlSQL.INSERTLOG(("Gagal(LoadResidences).Message:" & excep.Message), "")
             ProjectData.ClearProjectError()
             Return
             ProjectData.ClearProjectError()

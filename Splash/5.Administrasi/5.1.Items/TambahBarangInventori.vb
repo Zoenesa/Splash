@@ -28,14 +28,14 @@ Public Class TambahBarangInventori
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            Konektor.mdlCom.ShowError("Gagal membuka Form Tambah Barang, Error: " & excep.Message)
+            Konektor.mdlSQL.ShowError("Gagal membuka Form Tambah Barang, Error: " & excep.Message)
             ProjectData.ClearProjectError()
         End Try
         Return ResultDialogTambahBarang
     End Function
 
     Private Sub LoadListSatuan(Optional ByVal Opsi As String = "")
-        Dim common As New Konektor.common
+        Dim common As New Konektor.SQLcommon
         Dim dt As New DataTable()
         Dim errmsg As String = ""
         Try
@@ -75,7 +75,7 @@ Public Class TambahBarangInventori
         Catch ex As Exception
             ProjectData.SetProjectError(ex)
             Dim excep As Exception = ex
-            Konektor.mdlCom.ShowError("Gagal Load Data Satuan, Error: " & excep.Message)
+            Konektor.mdlSQL.ShowError("Gagal Load Data Satuan, Error: " & excep.Message)
             ProjectData.ClearProjectError()
         End Try
     End Sub
@@ -90,7 +90,7 @@ Public Class TambahBarangInventori
             Dim excep As Exception = ex
             sqlReader.Close()
             sqlCommand = Nothing
-            Konektor.mdlCom.ShowError("Gagal Menyimpan Data Barang, Error: " & excep.Message)
+            Konektor.mdlSQL.ShowError("Gagal Menyimpan Data Barang, Error: " & excep.Message)
             ProjectData.ClearProjectError()
         Finally
             sqlReader.Close()
