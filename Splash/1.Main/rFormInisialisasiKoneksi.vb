@@ -143,6 +143,9 @@ Public Class rFormInisialisasiKoneksi
     Private Sub FrmInisialisasiKoneksi_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, (rFormMain.ModulSetting.GetValue("General", "Skin")))
         rFormMain.UserSettingIcon(True, Me)
+        Button3.Image = spControl.GetImageFromFolder("Sync.png")
+        Button1.Image = spControl.GetImageFromFolder("Create.png")
+        Button2.Image = spControl.GetImageFromFolder("Exit.png")
         LoadSetting()
     End Sub
 

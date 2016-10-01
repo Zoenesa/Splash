@@ -30,13 +30,15 @@ Partial Class FormStartUp
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblVersi = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblTimeRemaining = New System.Windows.Forms.Label()
         Me.lblStatus = New System.Windows.Forms.TextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -55,9 +57,10 @@ Partial Class FormStartUp
         '
         Me.pnlStatus.BackColor = System.Drawing.Color.Transparent
         Me.pnlStatus.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlStatus.Location = New System.Drawing.Point(3, 195)
+        Me.pnlStatus.Location = New System.Drawing.Point(0, 0)
+        Me.pnlStatus.Margin = New System.Windows.Forms.Padding(1)
         Me.pnlStatus.Name = "pnlStatus"
-        Me.pnlStatus.Size = New System.Drawing.Size(157, 24)
+        Me.pnlStatus.Size = New System.Drawing.Size(153, 20)
         Me.pnlStatus.TabIndex = 3
         '
         'TableLayoutPanel1
@@ -66,10 +69,10 @@ Partial Class FormStartUp
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.34331!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.65668!))
         Me.TableLayoutPanel1.Controls.Add(Me.PictureBox1, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.pnlStatus, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.lblTimeRemaining, 1, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.lblStatus, 1, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 2)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -87,7 +90,7 @@ Partial Class FormStartUp
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.08475!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.91525!))
         Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.Label3, 1, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.lblVersi, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label4, 0, 1)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(166, 3)
@@ -110,18 +113,18 @@ Partial Class FormStartUp
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "SPLASH" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "APLIKASI DATABASE"
         '
-        'Label3
+        'lblVersi
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(229, 0)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 3, 4)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(177, 59)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Versi"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.lblVersi.AutoSize = True
+        Me.lblVersi.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblVersi.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVersi.Location = New System.Drawing.Point(229, 0)
+        Me.lblVersi.Margin = New System.Windows.Forms.Padding(4, 0, 3, 4)
+        Me.lblVersi.Name = "lblVersi"
+        Me.lblVersi.Size = New System.Drawing.Size(177, 59)
+        Me.lblVersi.TabIndex = 1
+        Me.lblVersi.Text = "Versi"
+        Me.lblVersi.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'Label4
         '
@@ -152,14 +155,29 @@ Partial Class FormStartUp
         '
         Me.lblStatus.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.lblStatus.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lblStatus.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.lblStatus.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblStatus.Enabled = False
         Me.lblStatus.ForeColor = System.Drawing.Color.White
+        Me.lblStatus.HideSelection = False
         Me.lblStatus.Location = New System.Drawing.Point(166, 195)
         Me.lblStatus.Multiline = True
         Me.lblStatus.Name = "lblStatus"
         Me.lblStatus.ReadOnly = True
         Me.lblStatus.Size = New System.Drawing.Size(409, 24)
         Me.lblStatus.TabIndex = 5
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.pnlStatus)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(4, 196)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(155, 22)
+        Me.Panel1.TabIndex = 6
         '
         'FormStartUp
         '
@@ -180,6 +198,7 @@ Partial Class FormStartUp
         Me.TableLayoutPanel1.PerformLayout()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -190,8 +209,9 @@ Partial Class FormStartUp
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents lblTimeRemaining As Label
     Friend WithEvents lblStatus As TextBox
+    Friend WithEvents lblVersi As Label
+    Friend WithEvents Panel1 As Panel
 End Class

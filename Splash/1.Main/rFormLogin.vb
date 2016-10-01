@@ -94,6 +94,8 @@ Public Class rFormLogin
     Private Sub rFormLogin_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
         rFormMain.UserSettingIcon(True, Me)
+        Button2.Image = spControl.GetImageFromFolder("Exit.png")
+        Button1.Image = spControl.GetImageFromFolder("Key.png")
         rTxUsername.Focus()
         rTxUsername.SelectAll()
     End Sub

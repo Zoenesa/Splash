@@ -41,10 +41,13 @@ Partial Class rFormPermission
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Button1.Location = New System.Drawing.Point(3, 3)
         Me.Button1.Name = "Button1"
+        Me.Button1.Padding = New System.Windows.Forms.Padding(105, 1, 105, 1)
         Me.Button1.Size = New System.Drawing.Size(276, 28)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "&OK"
         Me.Button1.ThemeName = "Office2010Black"
+        CType(Me.Button1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&OK"
+        CType(Me.Button1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(105, 1, 105, 1)
         CType(Me.Button1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.Button1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -62,6 +65,7 @@ Partial Class rFormPermission
         Me.rTxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.rTxPassword.ThemeName = "Office2010Black"
         Me.rTxPassword.UseSystemPasswordChar = True
+        CType(Me.rTxPassword.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(8, 3, 0, 2)
         CType(Me.rTxPassword.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Password"
         CType(Me.rTxPassword.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.rTxPassword.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
@@ -83,6 +87,8 @@ Partial Class rFormPermission
         Me.rTxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.rTxUsername.ThemeName = "Office2010Black"
         Me.rTxUsername.WordWrap = False
+        CType(Me.rTxUsername.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Text = "Input Password Administrator dibawah"
+        CType(Me.rTxUsername.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(8, 3, 0, 2)
         CType(Me.rTxUsername.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.rTxUsername.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
         CType(Me.rTxUsername.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear

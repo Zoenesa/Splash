@@ -1,5 +1,7 @@
 ﻿
 Imports System.Drawing
+Imports System.IO
+Imports System.Reflection
 Imports Microsoft.VisualBasic.CompilerServices
 
 Public NotInheritable Class spControl
@@ -133,5 +135,45 @@ Public NotInheritable Class spControl
         End If
         Return flag
     End Function
+
+    Public Shared Function GetImageFromFolder(ByVal ImageName As String) As System.Drawing.Image
+        Dim Img As System.Drawing.Image
+
+        If Not IO.File.Exists(IO.Path.Combine(Environment.CurrentDirectory, "Images", ImageName)) Then
+            SaveResource(ImageName, IO.Path.Combine(Environment.CurrentDirectory, "Images", ImageName))
+        End If
+
+        Img = Image.FromFile(IO.Path.Combine(Environment.CurrentDirectory, "Images", ImageName))
+
+        Return Img
+    End Function
+
+    Public Shared Sub SaveResource(ByVal resName As String, filename As String)
+        ' Get a reference to the running application.
+        Dim assy As [Assembly] = [Assembly].GetExecutingAssembly()
+        ' Loop through each resource, looking for the image name (case-insensitive).
+        For Each resource As String In assy.GetManifestResourceNames()
+            If resource.ToLower().IndexOf(resName.ToLower) <> -1 Then
+                ' Get the embedded file from the assembly as a MemoryStream.
+                Using resourceStream As System.IO.Stream = assy.GetManifestResourceStream(resource)
+                    If resourceStream IsNot Nothing Then
+                        Using reader As New BinaryReader(resourceStream)
+                            ' Read the bytes from the input stream.
+                            Dim buffer() As Byte = reader.ReadBytes(CInt(resourceStream.Length))
+                            Using outputStream As New FileStream(filename, FileMode.Create)
+                                Using writer As New BinaryWriter(outputStream)
+                                    ' Write the bytes to the output stream.
+                                    writer.Write(buffer)
+                                End Using
+                            End Using
+                        End Using
+                    End If
+                End Using
+                Exit For
+            End If
+        Next resource
+        'Subrutin / Caller
+        'SaveToDisk([Resource Name with Extension-use the same case as used in the filename], [Output path with FileName & extension])
+    End Sub
 
 End Class

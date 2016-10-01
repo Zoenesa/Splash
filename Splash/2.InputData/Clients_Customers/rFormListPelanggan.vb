@@ -70,10 +70,8 @@ Public Class rFormListPelanggan
                     dg.Rows.Add(DataField)
                     Interlocked.Increment(i)
                 Loop
-
             Else
                 mdlSQL.ShowWarning(errMsg)
-
             End If
         Catch ex As Exception
             RadMessageBox.Show(ex.Message)
@@ -172,7 +170,11 @@ Public Class rFormListPelanggan
     Private Sub rFormListPelanggan_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
         rFormMain.UserSettingIcon(True, Me)
-
+        btnRefresh.Image = spControl.GetImageFromFolder("refresh.png")
+        btnFilter.Image = spControl.GetImageFromFolder("Find.png")
+        btnBukaFormTambahCustomer.Image = spControl.GetImageFromFolder("Create.png")
+        btnEdit.Image = spControl.GetImageFromFolder("Notes.png")
+        btnErase.Image = spControl.GetImageFromFolder("Erase.png")
         If Not Me.ModePilih Then
             Me.SuspendLayout()
             Me.Text = "List Data Pelanggan"
@@ -228,19 +230,23 @@ Public Class rFormListPelanggan
                     e.Handled = False
                     Exit Select
                 End If
+            Case Chr(13)
+                txFilter.Focus()
+                e.Handled = False
+                Exit Select
         End Select
     End Sub
 
     Private Sub btnFilter_Click(sender As Object, e As EventArgs) Handles btnFilter.Click
-        'If rDropInvoiceType.SelectedIndex = 0 Then
-        '    LoadDataPelanggan(" WHERE `Client_IdTax` Like '%" & txFilter.Text.Trim() & "%'")
-        'ElseIf rDropInvoiceType.SelectedIndex = 1 Then
-        '    LoadDataPelanggan(" WHERE `Client_Name` Like '%" & txFilter.Text.Trim() & "%'")
-        'End If
-
+        If txFilter.Text = String.Empty Or (String.IsNullOrWhiteSpace(txFilter.Text)) Then
+            Exit Sub
+        End If
+        LoadDataPelanggan(" WHERE `Client_Name` Like '%" & txFilter.Text.Trim() & "%'")
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
+
+
 End Class

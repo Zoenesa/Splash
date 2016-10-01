@@ -36,11 +36,14 @@ Public Class FormStartUp
     Shared Sub New()
         ms_frmSplash = Nothing
         ms_oThread = Nothing
+
     End Sub
 
     Public Sub New()
         InitializeComponent()
         Me.Opacity = 0.0
+
+        lblVersi.Text = "Versi " & IO.File.ReadAllText(IO.Path.Combine(Environment.CurrentDirectory, "version.txt"))
         UpdateTimer.Interval = TIMER_INTERVAL
         UpdateTimer.Start()
     End Sub
@@ -212,8 +215,10 @@ Public Class FormStartUp
                 Me.m_rProgress = New Rectangle(x, y, width, height)
                 If Not Me.pnlStatus.IsDisposed Then
                     Dim graphics As Graphics = Me.pnlStatus.CreateGraphics
-                    Dim brush As New LinearGradientBrush(Me.m_rProgress, Color.FromArgb(58, 96, 151), Color.FromArgb(181, 237, 254), LinearGradientMode.Horizontal)
-                    graphics.FillRectangle(brush, Me.m_rProgress)
+                    Dim brush As New LinearGradientBrush(Me.m_rProgress, Color.FromArgb(76, 117, 155), Color.FromArgb(53, 97, 137), LinearGradientMode.Vertical)
+                    'Dim brush2 As New LinearGradientBrush(Me.m_rProgress, Color.FromArgb(75, 116, 152), Color.FromArgb(53, 97, 137), LinearGradientMode.ForwardDiagonal)
+                    graphics.FillRectangle(Brush, Me.m_rProgress)
+                    'graphics.FillRectangle(brush2, Me.m_rProgress)
                     graphics.Dispose()
                 End If
                 Dim num6 As Integer = (1 + (CInt((50 * ((1 - Me.m_dblLastCompletionFraction) / Me.m_dblPBIncrementPerTimerInterval))) / 1000))
@@ -239,6 +244,7 @@ Public Class FormStartUp
                 SetValue("Percents", Value)
             End Set
         End Property
+
         ' Get or set how much time passes between updates.
         Public Shared Property Interval() As String
             Get

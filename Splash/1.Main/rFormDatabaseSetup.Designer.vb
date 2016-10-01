@@ -202,10 +202,10 @@ Partial Class rFormDatabaseSetup
         '
         Me.TableLayoutPanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel1.ColumnCount = 4
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 236.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Button4, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Button2, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnSave, 2, 0)
@@ -222,13 +222,15 @@ Partial Class rFormDatabaseSetup
         Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Button4.Location = New System.Drawing.Point(474, 3)
+        Me.Button4.Location = New System.Drawing.Point(495, 3)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(155, 26)
+        Me.Button4.Padding = New System.Windows.Forms.Padding(25, 1, 28, 1)
+        Me.Button4.Size = New System.Drawing.Size(134, 26)
         Me.Button4.TabIndex = 25
         Me.Button4.Text = "&Keluar"
         Me.Button4.ThemeName = "Office2010Black"
         CType(Me.Button4.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Keluar"
+        CType(Me.Button4.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(25, 1, 28, 1)
         CType(Me.Button4.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.Button4.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -240,11 +242,13 @@ Partial Class rFormDatabaseSetup
         Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Button2.Location = New System.Drawing.Point(3, 3)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(230, 26)
+        Me.Button2.Padding = New System.Windows.Forms.Padding(20, 1, 8, 1)
+        Me.Button2.Size = New System.Drawing.Size(134, 26)
         Me.Button2.TabIndex = 12
         Me.Button2.Text = "&Test Koneksi"
         Me.Button2.ThemeName = "Office2010Black"
         CType(Me.Button2.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Test Koneksi"
+        CType(Me.Button2.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(20, 1, 8, 1)
         CType(Me.Button2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.Button2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -254,13 +258,15 @@ Partial Class rFormDatabaseSetup
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSave.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnSave.Location = New System.Drawing.Point(313, 3)
+        Me.btnSave.Location = New System.Drawing.Point(355, 3)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(155, 26)
+        Me.btnSave.Padding = New System.Windows.Forms.Padding(16, 1, 2, 1)
+        Me.btnSave.Size = New System.Drawing.Size(134, 26)
         Me.btnSave.TabIndex = 24
         Me.btnSave.Text = "&Simpan Seting"
         Me.btnSave.ThemeName = "Office2010Black"
         CType(Me.btnSave.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Simpan Seting"
+        CType(Me.btnSave.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(16, 1, 2, 1)
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -276,7 +282,7 @@ Partial Class rFormDatabaseSetup
         Me.RadPageView1.ItemSizeMode = CType((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth Or Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight), Telerik.WinControls.UI.PageViewItemSizeMode)
         Me.RadPageView1.Location = New System.Drawing.Point(2, 2)
         Me.RadPageView1.Name = "RadPageView1"
-        Me.RadPageView1.SelectedPage = Me.RadPageViewPage1
+        Me.RadPageView1.SelectedPage = Me.RadPageViewPage2
         Me.RadPageView1.Size = New System.Drawing.Size(629, 271)
         Me.RadPageView1.TabIndex = 3
         Me.RadPageView1.Text = "RadPageView1"
@@ -302,10 +308,10 @@ Partial Class rFormDatabaseSetup
         Me.RadPageViewPage2.Controls.Add(Me.Label13)
         Me.RadPageViewPage2.Controls.Add(Me.Label14)
         Me.RadPageViewPage2.Controls.Add(Me.cbProfile)
-        Me.RadPageViewPage2.ItemSize = New System.Drawing.SizeF(32.0!, 247.0!)
-        Me.RadPageViewPage2.Location = New System.Drawing.Point(97, 29)
+        Me.RadPageViewPage2.ItemSize = New System.Drawing.SizeF(27.0!, 239.0!)
+        Me.RadPageViewPage2.Location = New System.Drawing.Point(98, 30)
         Me.RadPageViewPage2.Name = "RadPageViewPage2"
-        Me.RadPageViewPage2.Size = New System.Drawing.Size(527, 237)
+        Me.RadPageViewPage2.Size = New System.Drawing.Size(517, 227)
         Me.RadPageViewPage2.Text = "General"
         '
         'RadCheckBox1
@@ -549,7 +555,7 @@ Partial Class rFormDatabaseSetup
         Me.RadPageViewPage1.Controls.Add(Me.Label5)
         Me.RadPageViewPage1.Controls.Add(Me.Label9)
         Me.RadPageViewPage1.Controls.Add(Me.Label6)
-        Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(32.0!, 247.0!)
+        Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(27.0!, 239.0!)
         Me.RadPageViewPage1.Location = New System.Drawing.Point(97, 29)
         Me.RadPageViewPage1.Name = "RadPageViewPage1"
         Me.RadPageViewPage1.Size = New System.Drawing.Size(527, 237)
@@ -634,7 +640,7 @@ Partial Class rFormDatabaseSetup
         '
         'RadPageViewPage3
         '
-        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(32.0!, 247.0!)
+        Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(27.0!, 239.0!)
         Me.RadPageViewPage3.Location = New System.Drawing.Point(98, 30)
         Me.RadPageViewPage3.Name = "RadPageViewPage3"
         Me.RadPageViewPage3.Size = New System.Drawing.Size(517, 227)

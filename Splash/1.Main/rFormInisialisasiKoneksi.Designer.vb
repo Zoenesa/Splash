@@ -54,16 +54,16 @@ Partial Class rFormInisialisasiKoneksi
         Me.TableLayoutPanel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel1.ColumnCount = 3
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.77946!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.22053!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Button3, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Button1, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Button2, 2, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 154)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(357, 34)
         Me.TableLayoutPanel1.TabIndex = 8
         '
@@ -75,11 +75,13 @@ Partial Class rFormInisialisasiKoneksi
         Me.Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Button3.Location = New System.Drawing.Point(3, 3)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(163, 28)
+        Me.Button3.Padding = New System.Windows.Forms.Padding(26, 1, 10, 1)
+        Me.Button3.Size = New System.Drawing.Size(141, 28)
         Me.Button3.TabIndex = 0
         Me.Button3.Text = "Cek &Koneksi"
         Me.Button3.ThemeName = "Office2010Black"
         CType(Me.Button3.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "Cek &Koneksi"
+        CType(Me.Button3.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(26, 1, 10, 1)
         CType(Me.Button3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.Button3.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -90,13 +92,15 @@ Partial Class rFormInisialisasiKoneksi
         Me.Button1.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Button1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Button1.Location = New System.Drawing.Point(172, 3)
+        Me.Button1.Location = New System.Drawing.Point(150, 3)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(81, 28)
+        Me.Button1.Padding = New System.Windows.Forms.Padding(24, 1, 8, 1)
+        Me.Button1.Size = New System.Drawing.Size(99, 28)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "&OK"
         Me.Button1.ThemeName = "Office2010Black"
         CType(Me.Button1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&OK"
+        CType(Me.Button1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(24, 1, 8, 1)
         CType(Me.Button1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.Button1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -107,13 +111,15 @@ Partial Class rFormInisialisasiKoneksi
         Me.Button2.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Button2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Button2.Location = New System.Drawing.Point(259, 3)
+        Me.Button2.Location = New System.Drawing.Point(255, 3)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(95, 28)
+        Me.Button2.Padding = New System.Windows.Forms.Padding(24, 1, 8, 1)
+        Me.Button2.Size = New System.Drawing.Size(99, 28)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "&Batal"
         Me.Button2.ThemeName = "Office2010Black"
         CType(Me.Button2.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Batal"
+        CType(Me.Button2.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(24, 1, 8, 1)
         CType(Me.Button2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.Button2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -155,7 +161,7 @@ Partial Class rFormInisialisasiKoneksi
         Me.txdbname.Name = "txdbname"
         Me.txdbname.NullText = "database"
         Me.txdbname.Padding = New System.Windows.Forms.Padding(6, 2, 6, 3)
-        Me.txdbname.Size = New System.Drawing.Size(245, 23)
+        Me.txdbname.Size = New System.Drawing.Size(245, 25)
         Me.txdbname.TabIndex = 1
         Me.txdbname.ThemeName = "Office2010Black"
         CType(Me.txdbname.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.SystemColors.Control

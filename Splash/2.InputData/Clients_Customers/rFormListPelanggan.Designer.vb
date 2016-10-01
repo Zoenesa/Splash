@@ -22,16 +22,13 @@ Partial Class rFormListPelanggan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txFilter = New Telerik.WinControls.UI.RadMaskedEditBox()
-        Me.rDropInvoiceType = New Telerik.WinControls.UI.RadDropDownList()
         Me.btnFilter = New Telerik.WinControls.UI.RadButton()
         Me.RadStatusStrip1 = New Telerik.WinControls.UI.RadStatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dg = New System.Windows.Forms.DataGridView()
-        Me.Coll1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Coll2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnRefresh = New Telerik.WinControls.UI.RadButton()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnBukaFormTambahCustomer = New Telerik.WinControls.UI.RadButton()
@@ -39,8 +36,9 @@ Partial Class rFormListPelanggan
         Me.btnErase = New Telerik.WinControls.UI.RadButton()
         Me.btnSelect = New Telerik.WinControls.UI.RadButton()
         Me.btnClose = New Telerik.WinControls.UI.RadButton()
+        Me.Coll1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Coll2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.txFilter, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.rDropInvoiceType, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnFilter, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -60,42 +58,24 @@ Partial Class rFormListPelanggan
         Me.txFilter.AcceptsReturn = True
         Me.txFilter.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txFilter.AutoSize = False
         Me.txFilter.BackColor = System.Drawing.Color.Transparent
-        Me.txFilter.Culture = New System.Globalization.CultureInfo("en-US")
+        Me.txFilter.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txFilter.EnableKeyMap = True
         Me.txFilter.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txFilter.Location = New System.Drawing.Point(134, 3)
+        Me.txFilter.Location = New System.Drawing.Point(109, 3)
         Me.txFilter.Name = "txFilter"
-        Me.txFilter.NullText = "Filter Key"
-        Me.txFilter.Size = New System.Drawing.Size(297, 23)
+        Me.txFilter.NullText = "Cari Nama Pelanggan"
+        Me.txFilter.Padding = New System.Windows.Forms.Padding(4, 3, 90, 2)
+        Me.txFilter.Size = New System.Drawing.Size(357, 23)
         Me.txFilter.TabIndex = 1
         Me.txFilter.TabStop = False
-        Me.txFilter.Text = Nothing
         Me.txFilter.ThemeName = "Office2010Black"
-        CType(Me.txFilter.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Padding = New System.Windows.Forms.Padding(2, 2, 2, 3)
-        CType(Me.txFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Filter Key"
+        CType(Me.txFilter.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = ""
+        CType(Me.txFilter.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Padding = New System.Windows.Forms.Padding(4, 3, 90, 2)
+        CType(Me.txFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Cari Nama Pelanggan"
         CType(Me.txFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.txFilter.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.txFilter.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
-        '
-        'rDropInvoiceType
-        '
-        Me.rDropInvoiceType.AutoSize = False
-        Me.rDropInvoiceType.BackColor = System.Drawing.Color.Transparent
-        Me.rDropInvoiceType.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RadListDataItem3.Text = "Client ID Tax"
-        RadListDataItem4.Text = "Client Name"
-        Me.rDropInvoiceType.Items.Add(RadListDataItem3)
-        Me.rDropInvoiceType.Items.Add(RadListDataItem4)
-        Me.rDropInvoiceType.Location = New System.Drawing.Point(0, 3)
-        Me.rDropInvoiceType.Name = "rDropInvoiceType"
-        Me.rDropInvoiceType.NullText = "Filter Field"
-        Me.rDropInvoiceType.Size = New System.Drawing.Size(128, 23)
-        Me.rDropInvoiceType.TabIndex = 0
-        Me.rDropInvoiceType.ThemeName = "Office2010Black"
-        CType(Me.rDropInvoiceType.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).BackColor = System.Drawing.SystemColors.Control
-        CType(Me.rDropInvoiceType.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnFilter
         '
@@ -103,13 +83,16 @@ Partial Class rFormListPelanggan
         Me.btnFilter.BackColor = System.Drawing.Color.Transparent
         Me.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnFilter.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnFilter.Location = New System.Drawing.Point(437, 3)
+        Me.btnFilter.Location = New System.Drawing.Point(379, 3)
         Me.btnFilter.Name = "btnFilter"
+        Me.btnFilter.Padding = New System.Windows.Forms.Padding(5, 1, 0, 1)
         Me.btnFilter.Size = New System.Drawing.Size(87, 23)
         Me.btnFilter.TabIndex = 2
-        Me.btnFilter.Text = "[F2] Filter"
+        Me.btnFilter.Text = "[F3] Cari"
         Me.btnFilter.ThemeName = "Office2010Black"
-        CType(Me.btnFilter.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "[F2] Filter"
+        CType(Me.btnFilter.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
+        CType(Me.btnFilter.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "[F3] Cari"
+        CType(Me.btnFilter.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(5, 1, 0, 1)
         CType(Me.btnFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -144,8 +127,25 @@ Partial Class rFormListPelanggan
         Me.dg.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Coll1, Me.Coll2})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg.DefaultCellStyle = DataGridViewCellStyle2
         Me.dg.Location = New System.Drawing.Point(3, 3)
         Me.dg.MultiSelect = False
         Me.dg.Name = "dg"
@@ -155,35 +155,22 @@ Partial Class rFormListPelanggan
         Me.dg.Size = New System.Drawing.Size(620, 271)
         Me.dg.TabIndex = 1
         '
-        'Coll1
-        '
-        Me.Coll1.HeaderText = "Select"
-        Me.Coll1.MinimumWidth = 25
-        Me.Coll1.Name = "Coll1"
-        Me.Coll1.ReadOnly = True
-        Me.Coll1.Width = 55
-        '
-        'Coll2
-        '
-        Me.Coll2.HeaderText = "Record No."
-        Me.Coll2.MinimumWidth = 65
-        Me.Coll2.Name = "Coll2"
-        Me.Coll2.ReadOnly = True
-        Me.Coll2.Width = 65
-        '
         'btnRefresh
         '
         Me.btnRefresh.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnRefresh.BackColor = System.Drawing.Color.Transparent
         Me.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRefresh.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnRefresh.Location = New System.Drawing.Point(530, 3)
+        Me.btnRefresh.Location = New System.Drawing.Point(507, 3)
         Me.btnRefresh.Name = "btnRefresh"
-        Me.btnRefresh.Size = New System.Drawing.Size(100, 23)
+        Me.btnRefresh.Padding = New System.Windows.Forms.Padding(8, 1, 8, 1)
+        Me.btnRefresh.Size = New System.Drawing.Size(118, 23)
         Me.btnRefresh.TabIndex = 0
         Me.btnRefresh.Text = "[F5] Refresh"
         Me.btnRefresh.ThemeName = "Office2010Black"
+        CType(Me.btnRefresh.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
         CType(Me.btnRefresh.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "[F5] Refresh"
+        CType(Me.btnRefresh.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(8, 1, 8, 1)
         CType(Me.btnRefresh.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnRefresh.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -216,11 +203,14 @@ Partial Class rFormListPelanggan
         Me.btnBukaFormTambahCustomer.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnBukaFormTambahCustomer.Location = New System.Drawing.Point(3, 3)
         Me.btnBukaFormTambahCustomer.Name = "btnBukaFormTambahCustomer"
+        Me.btnBukaFormTambahCustomer.Padding = New System.Windows.Forms.Padding(20, 1, 12, 1)
         Me.btnBukaFormTambahCustomer.Size = New System.Drawing.Size(120, 26)
         Me.btnBukaFormTambahCustomer.TabIndex = 0
         Me.btnBukaFormTambahCustomer.Text = "&Tambah"
         Me.btnBukaFormTambahCustomer.ThemeName = "Office2010Black"
+        CType(Me.btnBukaFormTambahCustomer.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
         CType(Me.btnBukaFormTambahCustomer.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Tambah"
+        CType(Me.btnBukaFormTambahCustomer.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(20, 1, 12, 1)
         CType(Me.btnBukaFormTambahCustomer.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnBukaFormTambahCustomer.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -232,11 +222,14 @@ Partial Class rFormListPelanggan
         Me.btnEdit.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnEdit.Location = New System.Drawing.Point(129, 3)
         Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Padding = New System.Windows.Forms.Padding(20, 1, 12, 1)
         Me.btnEdit.Size = New System.Drawing.Size(120, 26)
         Me.btnEdit.TabIndex = 1
         Me.btnEdit.Text = "&Ubah"
         Me.btnEdit.ThemeName = "Office2010Black"
+        CType(Me.btnEdit.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
         CType(Me.btnEdit.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Ubah"
+        CType(Me.btnEdit.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(20, 1, 12, 1)
         CType(Me.btnEdit.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnEdit.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -248,11 +241,14 @@ Partial Class rFormListPelanggan
         Me.btnErase.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnErase.Location = New System.Drawing.Point(255, 3)
         Me.btnErase.Name = "btnErase"
+        Me.btnErase.Padding = New System.Windows.Forms.Padding(20, 1, 12, 1)
         Me.btnErase.Size = New System.Drawing.Size(120, 26)
         Me.btnErase.TabIndex = 2
         Me.btnErase.Text = "&Hapus"
         Me.btnErase.ThemeName = "Office2010Black"
+        CType(Me.btnErase.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
         CType(Me.btnErase.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Hapus"
+        CType(Me.btnErase.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(20, 1, 12, 1)
         CType(Me.btnErase.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnErase.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -264,12 +260,15 @@ Partial Class rFormListPelanggan
         Me.btnSelect.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnSelect.Location = New System.Drawing.Point(381, 3)
         Me.btnSelect.Name = "btnSelect"
+        Me.btnSelect.Padding = New System.Windows.Forms.Padding(20, 1, 12, 1)
         Me.btnSelect.Size = New System.Drawing.Size(120, 26)
         Me.btnSelect.TabIndex = 3
         Me.btnSelect.Text = "&Pilih"
         Me.btnSelect.ThemeName = "Office2010Black"
         Me.btnSelect.Visible = False
+        CType(Me.btnSelect.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
         CType(Me.btnSelect.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Pilih"
+        CType(Me.btnSelect.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(20, 1, 12, 1)
         CType(Me.btnSelect.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnSelect.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -281,13 +280,32 @@ Partial Class rFormListPelanggan
         Me.btnClose.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnClose.Location = New System.Drawing.Point(507, 3)
         Me.btnClose.Name = "btnClose"
+        Me.btnClose.Padding = New System.Windows.Forms.Padding(20, 1, 12, 1)
         Me.btnClose.Size = New System.Drawing.Size(120, 26)
         Me.btnClose.TabIndex = 4
         Me.btnClose.Text = "&Keluar"
         Me.btnClose.ThemeName = "Office2010Black"
+        CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
         CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Keluar"
+        CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(20, 1, 12, 1)
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
+        '
+        'Coll1
+        '
+        Me.Coll1.HeaderText = "Select"
+        Me.Coll1.MinimumWidth = 25
+        Me.Coll1.Name = "Coll1"
+        Me.Coll1.ReadOnly = True
+        Me.Coll1.Width = 55
+        '
+        'Coll2
+        '
+        Me.Coll2.HeaderText = "No. Rekam"
+        Me.Coll2.MinimumWidth = 65
+        Me.Coll2.Name = "Coll2"
+        Me.Coll2.ReadOnly = True
+        Me.Coll2.Width = 65
         '
         'rFormListPelanggan
         '
@@ -299,7 +317,6 @@ Partial Class rFormListPelanggan
         Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.txFilter)
         Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.Controls.Add(Me.rDropInvoiceType)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.RadStatusStrip1)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
@@ -317,7 +334,6 @@ Partial Class rFormListPelanggan
         Me.Text = "Daftar Pelanggan"
         Me.ThemeName = "Office2010Black"
         CType(Me.txFilter, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.rDropInvoiceType, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnFilter, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
@@ -335,13 +351,10 @@ Partial Class rFormListPelanggan
 
     End Sub
     Friend WithEvents txFilter As Telerik.WinControls.UI.RadMaskedEditBox
-    Friend WithEvents rDropInvoiceType As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents btnFilter As Telerik.WinControls.UI.RadButton
     Friend WithEvents RadStatusStrip1 As Telerik.WinControls.UI.RadStatusStrip
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents dg As System.Windows.Forms.DataGridView
-    Friend WithEvents Coll1 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents Coll2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents btnRefresh As Telerik.WinControls.UI.RadButton
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents btnBukaFormTambahCustomer As Telerik.WinControls.UI.RadButton
@@ -349,4 +362,6 @@ Partial Class rFormListPelanggan
     Friend WithEvents btnErase As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnSelect As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnClose As Telerik.WinControls.UI.RadButton
+    Friend WithEvents Coll1 As DataGridViewCheckBoxColumn
+    Friend WithEvents Coll2 As DataGridViewTextBoxColumn
 End Class

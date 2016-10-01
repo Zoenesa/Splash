@@ -65,6 +65,19 @@ Public Class FormTambahInvoice
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
         rFormMain.UserSettingIcon(True, Me)
 
+        RadButton1.Image = spControl.GetImageFromFolder("Exit.png")
+        RadButton2.Image = spControl.GetImageFromFolder("Forward.png")
+        RadButton3.Image = spControl.GetImageFromFolder("Back.png")
+        RadButton4.Image = spControl.GetImageFromFolder("disk.png")
+        RadButton5.Image = spControl.GetImageFromFolder("Search.png")
+        btnWorkOrderSerahterima.Image = spControl.GetImageFromFolder("Find.png")
+        btnTambahSalesOrder.Image = spControl.GetImageFromFolder("Find.png")
+        btnCount.Image = spControl.GetImageFromFolder("Sync.png")
+        RadButton8.Image = spControl.GetImageFromFolder("Filter.png")
+        RadButton6.Image = spControl.GetImageFromFolder("Create.png")
+        RadButton7.Image = spControl.GetImageFromFolder("Notes.png")
+        RadButton9.Image = spControl.GetImageFromFolder("Erase.png")
+
         Me.MinimumSize = New Size(MinW_Size, MinH_Size)
         Me.MaximumSize = New Size(MaxW_Size, MaxH_Size)
 

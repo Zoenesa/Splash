@@ -77,11 +77,13 @@ Partial Class rFormLogin
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Button1.Location = New System.Drawing.Point(2, 96)
         Me.Button1.Name = "Button1"
+        Me.Button1.Padding = New System.Windows.Forms.Padding(18, 1, 6, 1)
         Me.Button1.Size = New System.Drawing.Size(96, 30)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "&Log In"
         Me.Button1.ThemeName = "Office2010Black"
         CType(Me.Button1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Log In"
+        CType(Me.Button1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(18, 1, 6, 1)
         CType(Me.Button1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.Button1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -92,11 +94,13 @@ Partial Class rFormLogin
         Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Button2.Location = New System.Drawing.Point(188, 96)
         Me.Button2.Name = "Button2"
+        Me.Button2.Padding = New System.Windows.Forms.Padding(18, 1, 6, 1)
         Me.Button2.Size = New System.Drawing.Size(96, 30)
         Me.Button2.TabIndex = 3
         Me.Button2.Text = "&Batal"
         Me.Button2.ThemeName = "Office2010Black"
         CType(Me.Button2.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Batal"
+        CType(Me.Button2.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(18, 1, 6, 1)
         CType(Me.Button2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.Button2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '

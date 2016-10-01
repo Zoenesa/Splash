@@ -150,7 +150,7 @@ LabelFolderBackup:
 
     Private Sub ValidasiImagePertama()
         Try
-            SaveResource("Splash.My.Resources.Resource.myIco", (IO.Path.Combine(Environment.CurrentDirectory, "myIco.ico")))
+            spControl.SaveResource("Splash.My.Resources.Resource.myIco", (IO.Path.Combine(Environment.CurrentDirectory, "myIco.ico")))
         Catch ex As Exception
 
         End Try
@@ -158,7 +158,7 @@ LabelFolderBackup:
 
     Private Sub ValidasiLibsPertama()
         Try
-            SaveResource("Splash", (IO.Path.Combine(Environment.CurrentDirectory, "myIco.ico")))
+            spControl.SaveResource("Splash", (IO.Path.Combine(Environment.CurrentDirectory, "myIco.ico")))
         Catch ex As Exception
 
         End Try
@@ -190,7 +190,7 @@ LabelFolderBackup:
             Dim IconName As String = ModulSetting.GetValue("General", "Icons")
             If flagIcon Then
                 If Not IO.File.Exists(IO.Path.Combine(Environment.CurrentDirectory, IconName)) Then
-                    SaveResource("DefaultLogo.ico", IO.Path.Combine(Environment.CurrentDirectory, ImageFolder, "DefaultLogo.ico"))
+                    spControl.SaveResource("DefaultLogo.ico", IO.Path.Combine(Environment.CurrentDirectory, ImageFolder, "DefaultLogo.ico"))
                     GoTo loadDefaultLogoIcon
                 End If
                 MyIcon = New Icon(IO.Path.Combine(Environment.CurrentDirectory, IconName))
@@ -215,34 +215,6 @@ loadDefaultLogoIcon:
                         GetExecutingAssembly.
                         GetManifestResourceStream(IconName))
     End Function
-
-    Public Shared Sub SaveResource(ByVal resName As String, filename As String)
-        ' Get a reference to the running application.
-        Dim assy As [Assembly] = [Assembly].GetExecutingAssembly()
-        ' Loop through each resource, looking for the image name (case-insensitive).
-        For Each resource As String In assy.GetManifestResourceNames()
-            If resource.ToLower().IndexOf(resName.ToLower) <> -1 Then
-                ' Get the embedded file from the assembly as a MemoryStream.
-                Using resourceStream As System.IO.Stream = assy.GetManifestResourceStream(resource)
-                    If resourceStream IsNot Nothing Then
-                        Using reader As New BinaryReader(resourceStream)
-                            ' Read the bytes from the input stream.
-                            Dim buffer() As Byte = reader.ReadBytes(CInt(resourceStream.Length))
-                            Using outputStream As New FileStream(filename, FileMode.Create)
-                                Using writer As New BinaryWriter(outputStream)
-                                    ' Write the bytes to the output stream.
-                                    writer.Write(buffer)
-                                End Using
-                            End Using
-                        End Using
-                    End If
-                End Using
-                Exit For
-            End If
-        Next resource
-        'Subrutin / Caller
-        'SaveToDisk([Resource Name with Extension-use the same case as used in the filename], [Output path with FileName & extension])
-    End Sub
 
     Public Sub KeluarAplikasi()
         Dim errMsg As String = ""
@@ -340,18 +312,7 @@ loadDefaultLogoIcon:
 
     Public Shared Sub SetTheme(ByVal sControl As Control, ByVal sTheme As String)
         Try
-            Select Case sTheme
-                Case "Black"
-                    sTheme = rFormMain.Office2010BlackTheme1.ThemeName
-                    Exit Select
-                Case "Blue"
-                    sTheme = rFormMain.Office2010BlueTheme1.ThemeName
-                    Exit Select
-                Case Else
-                    sTheme = rFormMain.Office2010BlackTheme1.ThemeName
-                    Exit Select
-            End Select
-
+            sTheme = rFormMain.Office2010BlackTheme1.ThemeName
             Dim iRadControl As IComponentTreeHandler =
                 TryCast(sControl, IComponentTreeHandler)
             If iRadControl IsNot Nothing Then
@@ -688,5 +649,21 @@ loadDefaultLogoIcon:
 
     Private Sub rMenuDataHGB_Click(sender As Object, e As EventArgs) Handles rMenuDataHGB.Click
         rFormMain.BukaFormChild(rFormTambahHGB)
+    End Sub
+
+    Private Sub rMenuInvoiceData_Click(sender As Object, e As EventArgs) Handles rMenuInvoiceData.Click
+
+    End Sub
+
+    Private Sub rMenuWorkSalesOrder_Click(sender As Object, e As EventArgs) Handles rMenuWorkSalesOrder.Click
+
+    End Sub
+
+    Private Sub rMenuCustomer_Click(sender As Object, e As EventArgs) Handles rMenuCustomer.Click
+
+    End Sub
+
+    Private Sub rFormMain_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
+
     End Sub
 End Class

@@ -28,6 +28,7 @@ Partial Class FormProfilPerusahaan
         Me.RadGroupBox2 = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadTextBox1 = New Telerik.WinControls.UI.RadTextBox()
         Me.txTelpon2 = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadDropDownList2 = New Telerik.WinControls.UI.RadDropDownList()
         Me.Kecamatan = New Telerik.WinControls.UI.RadDropDownList()
         Me.txTelpon1 = New Telerik.WinControls.UI.RadTextBox()
         Me.Kabupaten = New Telerik.WinControls.UI.RadDropDownList()
@@ -38,12 +39,12 @@ Partial Class FormProfilPerusahaan
         Me.btnSave = New Telerik.WinControls.UI.RadButton()
         Me.btnClose = New Telerik.WinControls.UI.RadButton()
         Me.RadDropDownList1 = New Telerik.WinControls.UI.RadDropDownList()
-        Me.RadDropDownList2 = New Telerik.WinControls.UI.RadDropDownList()
         CType(Me.txNPWP, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox2.SuspendLayout()
         CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txTelpon2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadDropDownList2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Kecamatan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txTelpon1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Kabupaten, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,7 +55,6 @@ Partial Class FormProfilPerusahaan
         CType(Me.btnSave, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadDropDownList2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -64,7 +64,6 @@ Partial Class FormProfilPerusahaan
         Me.txNPWP.AllowShowFocusCues = True
         Me.txNPWP.AutoSize = False
         Me.txNPWP.BackColor = System.Drawing.Color.Transparent
-        Me.txNPWP.Culture = New System.Globalization.CultureInfo("en-US")
         Me.txNPWP.EnableKeyMap = True
         Me.txNPWP.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txNPWP.Location = New System.Drawing.Point(53, 34)
@@ -152,6 +151,23 @@ Partial Class FormProfilPerusahaan
         CType(Me.txTelpon2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.txTelpon2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
         CType(Me.txTelpon2.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
+        '
+        'RadDropDownList2
+        '
+        Me.RadDropDownList2.AllowShowFocusCues = True
+        Me.RadDropDownList2.AutoSize = False
+        Me.RadDropDownList2.BackColor = System.Drawing.Color.Transparent
+        Me.RadDropDownList2.DisplayMember = "name"
+        Me.RadDropDownList2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadDropDownList2.Location = New System.Drawing.Point(235, 85)
+        Me.RadDropDownList2.Name = "RadDropDownList2"
+        Me.RadDropDownList2.NullText = "Kelurahan"
+        Me.RadDropDownList2.Size = New System.Drawing.Size(220, 23)
+        Me.RadDropDownList2.TabIndex = 14
+        Me.RadDropDownList2.ThemeName = "Office2010Black"
+        Me.RadDropDownList2.ValueMember = "id"
+        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'Kecamatan
         '
@@ -279,11 +295,13 @@ Partial Class FormProfilPerusahaan
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnSave.Location = New System.Drawing.Point(3, 3)
         Me.btnSave.Name = "btnSave"
+        Me.btnSave.Padding = New System.Windows.Forms.Padding(70, 1, 44, 1)
         Me.btnSave.Size = New System.Drawing.Size(229, 27)
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "&Simpan Data"
         Me.btnSave.ThemeName = "Office2010Black"
         CType(Me.btnSave.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Simpan Data"
+        CType(Me.btnSave.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(70, 1, 44, 1)
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -295,11 +313,13 @@ Partial Class FormProfilPerusahaan
         Me.btnClose.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnClose.Location = New System.Drawing.Point(238, 3)
         Me.btnClose.Name = "btnClose"
+        Me.btnClose.Padding = New System.Windows.Forms.Padding(84, 1, 60, 1)
         Me.btnClose.Size = New System.Drawing.Size(229, 27)
         Me.btnClose.TabIndex = 1
         Me.btnClose.Text = "&Keluar"
         Me.btnClose.ThemeName = "Office2010Black"
         CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Keluar"
+        CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(84, 1, 60, 1)
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -319,23 +339,6 @@ Partial Class FormProfilPerusahaan
         Me.RadDropDownList1.ValueMember = "id"
         CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
         CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
-        '
-        'RadDropDownList2
-        '
-        Me.RadDropDownList2.AllowShowFocusCues = True
-        Me.RadDropDownList2.AutoSize = False
-        Me.RadDropDownList2.BackColor = System.Drawing.Color.Transparent
-        Me.RadDropDownList2.DisplayMember = "name"
-        Me.RadDropDownList2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadDropDownList2.Location = New System.Drawing.Point(235, 85)
-        Me.RadDropDownList2.Name = "RadDropDownList2"
-        Me.RadDropDownList2.NullText = "Kelurahan"
-        Me.RadDropDownList2.Size = New System.Drawing.Size(220, 23)
-        Me.RadDropDownList2.TabIndex = 14
-        Me.RadDropDownList2.ThemeName = "Office2010Black"
-        Me.RadDropDownList2.ValueMember = "id"
-        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
-        CType(Me.RadDropDownList2.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'FormProfilPerusahaan
         '
@@ -363,6 +366,7 @@ Partial Class FormProfilPerusahaan
         Me.RadGroupBox2.ResumeLayout(False)
         CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txTelpon2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadDropDownList2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Kecamatan, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txTelpon1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Kabupaten, System.ComponentModel.ISupportInitialize).EndInit()
@@ -373,7 +377,6 @@ Partial Class FormProfilPerusahaan
         CType(Me.btnSave, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadDropDownList2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

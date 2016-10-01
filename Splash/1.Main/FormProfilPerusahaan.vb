@@ -57,6 +57,8 @@ Public Class FormProfilPerusahaan
     Private Sub FormProfilPerusahaan_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
         rFormMain.UserSettingIcon(True, Me)
+        btnSave.Image = spControl.GetImageFromFolder("disk.png")
+        btnClose.Image = spControl.GetImageFromFolder("Exit.png")
         If Me.isEdit Then
             Me.Text = "Ubah Profil Perusahaan"
             btnSave.Text = "&Simpan"

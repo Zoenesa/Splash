@@ -13,6 +13,8 @@ Public Class rFormTambahCustomer
     Private Sub rFormTambahCustomer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
         rFormMain.UserSettingIcon(True, Me)
+        btnSave.Image = spControl.GetImageFromFolder("disk.png")
+        btnClose.Image = spControl.GetImageFromFolder("Exit.png")
         Try
             If Me.EditMode Then
                 Me.Text = "Ubah Data Customer / Supplier"

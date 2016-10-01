@@ -78,6 +78,9 @@ Public Class rFormDatabaseSetup
     Private Sub rFormDatabaseSetup_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
         rFormMain.UserSettingIcon(True, Me)
+        Button2.Image = spControl.GetImageFromFolder("Sync.png")
+        btnSave.Image = spControl.GetImageFromFolder("Disk.png")
+        Button4.Image = spControl.GetImageFromFolder("Home.png")
         Try
 
             If Not (IO.File.Exists(IO.Path.Combine(Environment.CurrentDirectory, "backup", "backup.sql"))) Then
@@ -86,7 +89,7 @@ Public Class rFormDatabaseSetup
 
                 Dim FilePath As String = IO.Path.GetFullPath(IO.Path.Combine(Environment.CurrentDirectory, "backup", "backup.sql"))
 
-                rFormMain.SaveResource("backup.sql", FilePath)
+                spControl.SaveResource("backup.sql", FilePath)
 
             End If
 

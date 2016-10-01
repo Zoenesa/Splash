@@ -174,7 +174,7 @@ Partial Class FormTambahInvoice
         '
         'RadStatusStrip1
         '
-        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 212)
+        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 264)
         Me.RadStatusStrip1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.RadStatusStrip1.Name = "RadStatusStrip1"
         Me.RadStatusStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 4, 2)
@@ -196,7 +196,7 @@ Partial Class FormTambahInvoice
         Me.TableLayoutPanel1.Controls.Add(Me.RadButton3, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.RadButton4, 0, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 179)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 231)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -209,6 +209,7 @@ Partial Class FormTambahInvoice
         Me.RadButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadButton1.Location = New System.Drawing.Point(640, 3)
         Me.RadButton1.Name = "RadButton1"
+        Me.RadButton1.Padding = New System.Windows.Forms.Padding(28, 1, 10, 1)
         Me.RadButton1.Size = New System.Drawing.Size(114, 27)
         Me.RadButton1.TabIndex = 11
         Me.RadButton1.Text = "&Batal"
@@ -218,8 +219,10 @@ Partial Class FormTambahInvoice
         '
         Me.RadButton2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RadButton2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadButton2.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
         Me.RadButton2.Location = New System.Drawing.Point(520, 3)
         Me.RadButton2.Name = "RadButton2"
+        Me.RadButton2.Padding = New System.Windows.Forms.Padding(6, 1, 24, 1)
         Me.RadButton2.Size = New System.Drawing.Size(114, 27)
         Me.RadButton2.TabIndex = 11
         Me.RadButton2.Text = "&Lanjut"
@@ -231,6 +234,7 @@ Partial Class FormTambahInvoice
         Me.RadButton3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadButton3.Location = New System.Drawing.Point(400, 3)
         Me.RadButton3.Name = "RadButton3"
+        Me.RadButton3.Padding = New System.Windows.Forms.Padding(20, 1, 2, 1)
         Me.RadButton3.Size = New System.Drawing.Size(114, 27)
         Me.RadButton3.TabIndex = 11
         Me.RadButton3.Text = "&Kembali"
@@ -238,10 +242,13 @@ Partial Class FormTambahInvoice
         '
         'RadButton4
         '
+        Me.RadButton4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadButton4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadButton4.Location = New System.Drawing.Point(3, 3)
         Me.RadButton4.Name = "RadButton4"
-        Me.RadButton4.Size = New System.Drawing.Size(114, 24)
+        Me.RadButton4.Padding = New System.Windows.Forms.Padding(14, 1, 0, 1)
+        Me.RadButton4.Size = New System.Drawing.Size(138, 27)
         Me.RadButton4.TabIndex = 11
         Me.RadButton4.Text = "&Simpan Invoice"
         Me.RadButton4.ThemeName = "Office2010Black"
@@ -252,7 +259,7 @@ Partial Class FormTambahInvoice
         Me.RadPageViewPage4.ItemSize = New System.Drawing.SizeF(83.0!, 30.0!)
         Me.RadPageViewPage4.Location = New System.Drawing.Point(7, 35)
         Me.RadPageViewPage4.Name = "RadPageViewPage4"
-        Me.RadPageViewPage4.Size = New System.Drawing.Size(743, 133)
+        Me.RadPageViewPage4.Size = New System.Drawing.Size(743, 181)
         Me.RadPageViewPage4.Text = "Invoice 4/4"
         '
         'Panel5
@@ -263,7 +270,7 @@ Partial Class FormTambahInvoice
         Me.Panel5.Controls.Add(Me.RadGroupBox6)
         Me.Panel5.Location = New System.Drawing.Point(0, 42)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(743, 91)
+        Me.Panel5.Size = New System.Drawing.Size(743, 139)
         Me.Panel5.TabIndex = 12
         '
         'RadGroupBox6
@@ -297,7 +304,7 @@ Partial Class FormTambahInvoice
         Me.RadGroupBox6.HeaderText = " Input Items "
         Me.RadGroupBox6.Location = New System.Drawing.Point(7, 4)
         Me.RadGroupBox6.Name = "RadGroupBox6"
-        Me.RadGroupBox6.Size = New System.Drawing.Size(731, 84)
+        Me.RadGroupBox6.Size = New System.Drawing.Size(731, 132)
         Me.RadGroupBox6.TabIndex = 1
         Me.RadGroupBox6.Text = " Input Items "
         Me.RadGroupBox6.ThemeName = "Office2010Black"
@@ -446,7 +453,7 @@ Partial Class FormTambahInvoice
         Me.RadTextBox10.NullText = "# TERBILANG #"
         Me.RadTextBox10.Padding = New System.Windows.Forms.Padding(4, 1, 4, 1)
         Me.RadTextBox10.ReadOnly = True
-        Me.RadTextBox10.Size = New System.Drawing.Size(721, 52)
+        Me.RadTextBox10.Size = New System.Drawing.Size(721, 45)
         Me.RadTextBox10.TabIndex = 20
         Me.RadTextBox10.TabStop = False
         Me.RadTextBox10.ThemeName = "Office2010Black"
@@ -492,6 +499,7 @@ Partial Class FormTambahInvoice
         Me.btnCount.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnCount.Location = New System.Drawing.Point(5, 198)
         Me.btnCount.Name = "btnCount"
+        Me.btnCount.Padding = New System.Windows.Forms.Padding(34, 4, 6, 4)
         Me.btnCount.Size = New System.Drawing.Size(180, 79)
         Me.btnCount.TabIndex = 8
         Me.btnCount.Text = "&Posting Transaksi"
@@ -595,11 +603,12 @@ Partial Class FormTambahInvoice
         '
         Me.RadButton8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.RadButton8.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadButton8.Location = New System.Drawing.Point(297, 22)
+        Me.RadButton8.Location = New System.Drawing.Point(251, 22)
         Me.RadButton8.Name = "RadButton8"
-        Me.RadButton8.Size = New System.Drawing.Size(65, 23)
+        Me.RadButton8.Padding = New System.Windows.Forms.Padding(6, 1, 0, 1)
+        Me.RadButton8.Size = New System.Drawing.Size(90, 23)
         Me.RadButton8.TabIndex = 6
-        Me.RadButton8.Text = "[F3] Cari"
+        Me.RadButton8.Text = "[F3] Filter"
         Me.RadButton8.ThemeName = "Office2010Black"
         '
         'RadTextBox8
@@ -607,13 +616,16 @@ Partial Class FormTambahInvoice
         Me.RadTextBox8.AutoSize = False
         Me.RadTextBox8.BackColor = System.Drawing.Color.Transparent
         Me.RadTextBox8.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadTextBox8.Location = New System.Drawing.Point(47, 22)
+        Me.RadTextBox8.Location = New System.Drawing.Point(44, 22)
         Me.RadTextBox8.Name = "RadTextBox8"
         Me.RadTextBox8.NullText = "Nama Transaksi"
-        Me.RadTextBox8.Size = New System.Drawing.Size(244, 23)
+        Me.RadTextBox8.Padding = New System.Windows.Forms.Padding(4, 0, 94, 0)
+        Me.RadTextBox8.Size = New System.Drawing.Size(297, 23)
         Me.RadTextBox8.TabIndex = 5
         Me.RadTextBox8.ThemeName = "Office2010Black"
+        CType(Me.RadTextBox8.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Text = ""
         CType(Me.RadTextBox8.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.Transparent
+        CType(Me.RadTextBox8.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Padding = New System.Windows.Forms.Padding(4, 0, 94, 0)
         CType(Me.RadTextBox8.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Nama Transaksi"
         CType(Me.RadTextBox8.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.RadTextBox8.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 9.0!)
@@ -627,8 +639,7 @@ Partial Class FormTambahInvoice
         Me.dgItem.AllowUserToDeleteRows = False
         Me.dgItem.AllowUserToResizeColumns = False
         Me.dgItem.AllowUserToResizeRows = False
-        Me.dgItem.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.dgItem.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgItem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -638,18 +649,20 @@ Partial Class FormTambahInvoice
         Me.dgItem.ReadOnly = True
         Me.dgItem.RowHeadersVisible = False
         Me.dgItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgItem.Size = New System.Drawing.Size(721, 0)
+        Me.dgItem.Size = New System.Drawing.Size(721, 141)
         Me.dgItem.TabIndex = 7
         '
         'RadButton7
         '
         Me.RadButton7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.RadButton7.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadButton7.Location = New System.Drawing.Point(593, 22)
+        Me.RadButton7.Location = New System.Drawing.Point(603, 22)
         Me.RadButton7.Name = "RadButton7"
-        Me.RadButton7.Size = New System.Drawing.Size(95, 23)
+        Me.RadButton7.Padding = New System.Windows.Forms.Padding(9, 1, 6, 1)
+        Me.RadButton7.Size = New System.Drawing.Size(123, 23)
         Me.RadButton7.TabIndex = 2
         Me.RadButton7.Text = "&Hapus Transaksi"
+        Me.RadButton7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
         Me.RadButton7.TextWrap = True
         Me.RadButton7.ThemeName = "Office2010Black"
         '
@@ -657,11 +670,13 @@ Partial Class FormTambahInvoice
         '
         Me.RadButton6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.RadButton6.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadButton6.Location = New System.Drawing.Point(492, 22)
+        Me.RadButton6.Location = New System.Drawing.Point(481, 22)
         Me.RadButton6.Name = "RadButton6"
-        Me.RadButton6.Size = New System.Drawing.Size(95, 23)
+        Me.RadButton6.Padding = New System.Windows.Forms.Padding(10, 1, 4, 1)
+        Me.RadButton6.Size = New System.Drawing.Size(116, 23)
         Me.RadButton6.TabIndex = 1
         Me.RadButton6.Text = "&Ubah Transaksi"
+        Me.RadButton6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
         Me.RadButton6.TextWrap = True
         Me.RadButton6.ThemeName = "Office2010Black"
         '
@@ -669,11 +684,13 @@ Partial Class FormTambahInvoice
         '
         Me.RadButton9.Cursor = System.Windows.Forms.Cursors.Hand
         Me.RadButton9.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadButton9.Location = New System.Drawing.Point(376, 22)
+        Me.RadButton9.Location = New System.Drawing.Point(347, 22)
         Me.RadButton9.Name = "RadButton9"
-        Me.RadButton9.Size = New System.Drawing.Size(109, 23)
+        Me.RadButton9.Padding = New System.Windows.Forms.Padding(6, 1, 4, 1)
+        Me.RadButton9.Size = New System.Drawing.Size(128, 23)
         Me.RadButton9.TabIndex = 0
         Me.RadButton9.Text = "&Tambah Transaksi"
+        Me.RadButton9.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
         Me.RadButton9.TextWrap = True
         Me.RadButton9.ThemeName = "Office2010Black"
         '
@@ -683,7 +700,7 @@ Partial Class FormTambahInvoice
         Me.RadPageViewPage3.ItemSize = New System.Drawing.SizeF(83.0!, 30.0!)
         Me.RadPageViewPage3.Location = New System.Drawing.Point(7, 35)
         Me.RadPageViewPage3.Name = "RadPageViewPage3"
-        Me.RadPageViewPage3.Size = New System.Drawing.Size(743, 228)
+        Me.RadPageViewPage3.Size = New System.Drawing.Size(743, 384)
         Me.RadPageViewPage3.Text = "Invoice 3/4"
         '
         'Panel2
@@ -727,7 +744,7 @@ Partial Class FormTambahInvoice
         Me.rTanggalSO.Size = New System.Drawing.Size(106, 23)
         Me.rTanggalSO.TabIndex = 13
         Me.rTanggalSO.TabStop = False
-        Me.rTanggalSO.Text = "__/__/____"
+        Me.rTanggalSO.Text = "__-__-____"
         Me.rTanggalSO.ThemeName = "Office2010Black"
         '
         'RadDropDownPO
@@ -742,7 +759,7 @@ Partial Class FormTambahInvoice
         '
         '
         Me.RadDropDownPO.RootElement.ControlDefaultSize = New System.Drawing.Size(0, 23)
-        Me.RadDropDownPO.Size = New System.Drawing.Size(260, 23)
+        Me.RadDropDownPO.Size = New System.Drawing.Size(242, 23)
         Me.RadDropDownPO.TabIndex = 8
         Me.RadDropDownPO.ThemeName = "Office2010Black"
         CType(Me.RadDropDownPO.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).BackColor = System.Drawing.Color.Transparent
@@ -788,9 +805,10 @@ Partial Class FormTambahInvoice
         'btnTambahSalesOrder
         '
         Me.btnTambahSalesOrder.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnTambahSalesOrder.Location = New System.Drawing.Point(274, 24)
+        Me.btnTambahSalesOrder.Location = New System.Drawing.Point(254, 24)
         Me.btnTambahSalesOrder.Name = "btnTambahSalesOrder"
-        Me.btnTambahSalesOrder.Size = New System.Drawing.Size(70, 24)
+        Me.btnTambahSalesOrder.Padding = New System.Windows.Forms.Padding(6, 1, 0, 1)
+        Me.btnTambahSalesOrder.Size = New System.Drawing.Size(90, 24)
         Me.btnTambahSalesOrder.TabIndex = 11
         Me.btnTambahSalesOrder.Text = "[F3] Cari"
         Me.btnTambahSalesOrder.ThemeName = "Office2010Black"
@@ -918,9 +936,9 @@ Partial Class FormTambahInvoice
         Me.RadMaskedEditBox2.Size = New System.Drawing.Size(106, 23)
         Me.RadMaskedEditBox2.TabIndex = 13
         Me.RadMaskedEditBox2.TabStop = False
-        Me.RadMaskedEditBox2.Text = "__/__/____"
+        Me.RadMaskedEditBox2.Text = "__-__-____"
         Me.RadMaskedEditBox2.ThemeName = "Office2010Black"
-        CType(Me.RadMaskedEditBox2.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "__/__/____"
+        CType(Me.RadMaskedEditBox2.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "__-__-____"
         CType(Me.RadMaskedEditBox2.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Padding = New System.Windows.Forms.Padding(4, 2, 4, 3)
         CType(Me.RadMaskedEditBox2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.RadMaskedEditBox2.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
@@ -958,7 +976,7 @@ Partial Class FormTambahInvoice
         '
         '
         Me.RadDropDownHO.RootElement.ControlDefaultSize = New System.Drawing.Size(0, 23)
-        Me.RadDropDownHO.Size = New System.Drawing.Size(260, 23)
+        Me.RadDropDownHO.Size = New System.Drawing.Size(242, 23)
         Me.RadDropDownHO.TabIndex = 8
         Me.RadDropDownHO.ThemeName = "Office2010Black"
         CType(Me.RadDropDownHO.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).BackColor = System.Drawing.Color.Transparent
@@ -983,9 +1001,10 @@ Partial Class FormTambahInvoice
         'btnWorkOrderSerahterima
         '
         Me.btnWorkOrderSerahterima.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnWorkOrderSerahterima.Location = New System.Drawing.Point(274, 24)
+        Me.btnWorkOrderSerahterima.Location = New System.Drawing.Point(254, 24)
         Me.btnWorkOrderSerahterima.Name = "btnWorkOrderSerahterima"
-        Me.btnWorkOrderSerahterima.Size = New System.Drawing.Size(70, 24)
+        Me.btnWorkOrderSerahterima.Padding = New System.Windows.Forms.Padding(6, 1, 0, 1)
+        Me.btnWorkOrderSerahterima.Size = New System.Drawing.Size(90, 24)
         Me.btnWorkOrderSerahterima.TabIndex = 11
         Me.btnWorkOrderSerahterima.Text = "[F3] Cari"
         Me.btnWorkOrderSerahterima.ThemeName = "Office2010Black"
@@ -1005,7 +1024,7 @@ Partial Class FormTambahInvoice
         Me.RadPageViewPage2.ItemSize = New System.Drawing.SizeF(83.0!, 30.0!)
         Me.RadPageViewPage2.Location = New System.Drawing.Point(7, 35)
         Me.RadPageViewPage2.Name = "RadPageViewPage2"
-        Me.RadPageViewPage2.Size = New System.Drawing.Size(743, 133)
+        Me.RadPageViewPage2.Size = New System.Drawing.Size(743, 181)
         Me.RadPageViewPage2.Text = "Invoice 2/4"
         '
         'Panel4
@@ -1017,7 +1036,7 @@ Partial Class FormTambahInvoice
         Me.Panel4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Panel4.Location = New System.Drawing.Point(0, 42)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(743, 91)
+        Me.Panel4.Size = New System.Drawing.Size(743, 139)
         Me.Panel4.TabIndex = 12
         '
         'RadGroupBox2
@@ -1036,7 +1055,7 @@ Partial Class FormTambahInvoice
         Me.RadGroupBox2.HeaderText = " Ditagihkan Kepada Pelanggan : "
         Me.RadGroupBox2.Location = New System.Drawing.Point(7, 4)
         Me.RadGroupBox2.Name = "RadGroupBox2"
-        Me.RadGroupBox2.Size = New System.Drawing.Size(563, 82)
+        Me.RadGroupBox2.Size = New System.Drawing.Size(563, 131)
         Me.RadGroupBox2.TabIndex = 9
         Me.RadGroupBox2.Text = " Ditagihkan Kepada Pelanggan : "
         Me.RadGroupBox2.ThemeName = "Office2010Black"
@@ -1145,8 +1164,10 @@ Partial Class FormTambahInvoice
         'RadButton5
         '
         Me.RadButton5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.RadButton5.ImageAlignment = System.Drawing.ContentAlignment.TopCenter
         Me.RadButton5.Location = New System.Drawing.Point(463, 25)
         Me.RadButton5.Name = "RadButton5"
+        Me.RadButton5.Padding = New System.Windows.Forms.Padding(1, 22, 1, 4)
         Me.RadButton5.Size = New System.Drawing.Size(67, 95)
         Me.RadButton5.TabIndex = 11
         Me.RadButton5.Text = "[F3] Cari"
@@ -1159,7 +1180,7 @@ Partial Class FormTambahInvoice
         Me.RadPageViewPage1.ItemSize = New System.Drawing.SizeF(83.0!, 30.0!)
         Me.RadPageViewPage1.Location = New System.Drawing.Point(7, 35)
         Me.RadPageViewPage1.Name = "RadPageViewPage1"
-        Me.RadPageViewPage1.Size = New System.Drawing.Size(743, 133)
+        Me.RadPageViewPage1.Size = New System.Drawing.Size(743, 181)
         Me.RadPageViewPage1.Text = "Invoice 1/4"
         '
         'Panel3
@@ -1217,7 +1238,7 @@ Partial Class FormTambahInvoice
         Me.Panel1.Controls.Add(Me.RadGroupBox1)
         Me.Panel1.Location = New System.Drawing.Point(0, 42)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(743, 91)
+        Me.Panel1.Size = New System.Drawing.Size(743, 139)
         Me.Panel1.TabIndex = 11
         '
         'RadGroupBox1
@@ -1250,9 +1271,9 @@ Partial Class FormTambahInvoice
         Me.RadMaskedEditBox1.Size = New System.Drawing.Size(106, 23)
         Me.RadMaskedEditBox1.TabIndex = 10
         Me.RadMaskedEditBox1.TabStop = False
-        Me.RadMaskedEditBox1.Text = "__/__/____"
+        Me.RadMaskedEditBox1.Text = "__-__-____"
         Me.RadMaskedEditBox1.ThemeName = "Office2010Black"
-        CType(Me.RadMaskedEditBox1.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "__/__/____"
+        CType(Me.RadMaskedEditBox1.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "__-__-____"
         CType(Me.RadMaskedEditBox1.GetChildAt(0), Telerik.WinControls.UI.RadMaskedEditBoxElement).Padding = New System.Windows.Forms.Padding(4, 2, 4, 3)
         CType(Me.RadMaskedEditBox1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.SystemColors.Control
         CType(Me.RadMaskedEditBox1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
@@ -1337,12 +1358,13 @@ Partial Class FormTambahInvoice
         Me.RadPageView1.Controls.Add(Me.RadPageViewPage2)
         Me.RadPageView1.Controls.Add(Me.RadPageViewPage3)
         Me.RadPageView1.Controls.Add(Me.RadPageViewPage4)
+        Me.RadPageView1.DefaultPage = Me.RadPageViewPage1
         Me.RadPageView1.Location = New System.Drawing.Point(0, 1)
         Me.RadPageView1.Margin = New System.Windows.Forms.Padding(0)
         Me.RadPageView1.Name = "RadPageView1"
         Me.RadPageView1.Padding = New System.Windows.Forms.Padding(1)
         Me.RadPageView1.SelectedPage = Me.RadPageViewPage1
-        Me.RadPageView1.Size = New System.Drawing.Size(757, 175)
+        Me.RadPageView1.Size = New System.Drawing.Size(757, 223)
         Me.RadPageView1.TabIndex = 15
         Me.RadPageView1.Text = "RadPageView1"
         Me.RadPageView1.ThemeName = "Office2010Black"
@@ -1353,7 +1375,7 @@ Partial Class FormTambahInvoice
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(757, 236)
+        Me.ClientSize = New System.Drawing.Size(757, 288)
         Me.Controls.Add(Me.RadPageView1)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.RadStatusStrip1)
