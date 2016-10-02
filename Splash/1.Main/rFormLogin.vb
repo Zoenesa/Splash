@@ -59,28 +59,31 @@ Public Class rFormLogin
             "; ", "[Server: ", mdlSQL.uhost, "; Database: ", mdlSQL.cDbname, "]"
             })
 
-            RadMessageBox.Show(rFormMain, "Selamat Datang Kembali" & vbNewLine & UserLoginDetail,
+            RadMessageBox.Show(FormUtama, "Selamat Datang Kembali" & vbNewLine & UserLoginDetail,
                                "Splash DB" & Me.Text, MessageBoxButtons.OK, RadMessageIcon.Info, MessageBoxDefaultButton.Button1)
             '"Current Project are : ", "Splash DB" & Me.Text, MessageBoxButtons.OK, RadMessageIcon.Info, MessageBoxDefaultButton.Button1)
             Me.DialogResult = System.Windows.Forms.DialogResult.OK
-            rFormMain.IsMdiContainer = True
-            rFormMain.RadStatusDeskripsi.Text = UserLoginDetail
+            FormUtama.IsMdiContainer = True
+            FormUtama.RadStatusDeskripsi.Text = UserLoginDetail
         ElseIf (errmsg = "0") Then
             If (retmsg = "ProfileNull") Then
                 Me.DialogResult = System.Windows.Forms.DialogResult.Yes
             Else
                 If retmsg = "Password tidak sesuai." Then
-                    Dim num As Integer = DirectCast(RadMessageBox.Show(retmsg, "Perhatian", MessageBoxButtons.OK, RadMessageIcon.Exclamation, MessageBoxDefaultButton.Button1), Integer)
+                    Dim num As Integer = DirectCast(RadMessageBox.Show(retmsg, "Perhatian", MessageBoxButtons.OK,
+                                                                       RadMessageIcon.Exclamation, MessageBoxDefaultButton.Button1), Integer)
                     rTxPassword.Focus()
                     rTxPassword.SelectAll()
                 Else
-                    Dim num As Integer = DirectCast(RadMessageBox.Show(retmsg, "Perhatian", MessageBoxButtons.OK, RadMessageIcon.Exclamation, MessageBoxDefaultButton.Button1), Integer)
+                    Dim num As Integer = DirectCast(RadMessageBox.Show(retmsg, "Perhatian", MessageBoxButtons.OK,
+                                                                       RadMessageIcon.Exclamation, MessageBoxDefaultButton.Button1), Integer)
                     rTxUsername.Focus()
                     rTxUsername.SelectAll()
                 End If
             End If
         Else
-            Dim num1 As Integer = DirectCast(RadMessageBox.Show(retmsg, "Error", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1), Integer)
+            Dim num1 As Integer = DirectCast(RadMessageBox.Show(retmsg, "Error", MessageBoxButtons.OK,
+                                                                RadMessageIcon.Error, MessageBoxDefaultButton.Button1), Integer)
         End If
     End Sub
 
@@ -114,7 +117,7 @@ Public Class rFormLogin
         rFormInisialisasiKoneksi.PilihDb(False)
         Me.Dispose()
 
-        rFormMain.BukaPilihanKoneksi()
+        FormUtama.CommandPilihanKoneksiDatabase()
 
     End Sub
 

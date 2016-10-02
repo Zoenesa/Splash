@@ -29,7 +29,9 @@ Public Class rFormInisialisasiKoneksi
                 Me.Close()
             End If
         Else
-            Dim num As Integer = DirectCast(RadMessageBox.Show("Error." & errMsg, "Error", MessageBoxButtons.OK, RadMessageIcon.Exclamation, MessageBoxDefaultButton.Button1), Integer)
+            Dim num As Integer = DirectCast(RadMessageBox.Show("Error." & errMsg, "Error",
+                                                               MessageBoxButtons.OK, RadMessageIcon.Exclamation,
+                                                               MessageBoxDefaultButton.Button1), Integer)
             Me.isOk = False
             txdbname.Focus()
         End If
@@ -101,7 +103,8 @@ Public Class rFormInisialisasiKoneksi
 
         Catch ex As Exception
             RadMessageBox.Show("Kesalahan, Kode: " & ex.Source & vbNewLine &
-                               ex.Message.ToString, "LOAD SETTING", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
+                               ex.Message.ToString, "LOAD SETTING", MessageBoxButtons.OK,
+                               RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
         End Try
     End Sub
 
@@ -109,7 +112,6 @@ Public Class rFormInisialisasiKoneksi
         Dim fs As IO.FileStream
         fs = IO.File.Create(filepath)
         Try
-
             stringSQL.WriteGeneralSetting(True, fs, "\\PROGRAM SPLASH DATA PROJECT")
             stringSQL.WriteGeneralSetting(True, fs, "\\DO NOT DELETE OR CHANGE CONTENT ON THIS CONFIG FILE")
             stringSQL.WriteGeneralSetting(True, fs, "\\RISK CHANGING OR DELETING WILL CAUSE DAMAGE OR CORRUPTION DATA")
@@ -131,13 +133,13 @@ Public Class rFormInisialisasiKoneksi
             stringSQL.WriteGeneralSetting(True, fs, "SectionName=General")
             stringSQL.WriteGeneralSetting(True, fs, "BackupLocation=\backups")
             'stringSQL.WriteGeneralSetting(True, fs, "Icons=myico.ico")
-
-            fs.Close()
-
+            'fs.Close()
         Catch ex As Exception
             fs.Close()
-            RadMessageBox.Show("Kesalahan Fatal!" & vbNewLine & "Error." & ex.Message.ToString, "SET DEFAULT SETTING", MessageBoxButtons.OK,
+            RadMessageBox.Show("Kesalahan Fatal!" & vbNewLine & "Error." & ex.Message.ToString, FormUtama.CaptionEkslamasi, MessageBoxButtons.OK,
                                RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
+        Finally
+            fs.Close()
         End Try
     End Sub
 
@@ -159,7 +161,7 @@ Public Class rFormInisialisasiKoneksi
         Dim flag As Boolean = mdlSQL.CekKoneksiSql
         If flag Then
             RadMessageBox.Show("Koneksi ke database Sukses." & vbNewLine &
-                                "Informasi Koneksi :" & vbNewLine &
+                                "Informasi Koneksi" & vbNewLine &
                                 "Server: " & mdlSQL.uhost & vbNewLine &
                                 "Database: " & mdlSQL.cDbname,
                                 "Database Connection", MessageBoxButtons.OK, RadMessageIcon.Info)

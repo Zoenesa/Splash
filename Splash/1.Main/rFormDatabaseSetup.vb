@@ -363,11 +363,11 @@ Public Class rFormDatabaseSetup
     End Sub
 
     Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
-        If Not mdlSQL.UserLogin <> "Administrator" Then
+        If Not mdlSQL.UserRole = "Administrator" Then
             RadMessageBox.Show("Anda Tidak Berhak Mengakses Menu ini.", "Akses", MessageBoxButtons.OK, RadMessageIcon.Exclamation, MessageBoxDefaultButton.Button1)
         Else
             Dim EncForm As New CodeLibs.FrmEncryptDecrypt
-            EncForm.MdiParent = rFormMain
+            EncForm.MdiParent = FormUtama
             EncForm.Show()
         End If
     End Sub

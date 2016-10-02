@@ -22,12 +22,14 @@ Partial Class rFormListPelanggan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txFilter = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.btnFilter = New Telerik.WinControls.UI.RadButton()
         Me.RadStatusStrip1 = New Telerik.WinControls.UI.RadStatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dg = New System.Windows.Forms.DataGridView()
+        Me.Coll1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Coll2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnRefresh = New Telerik.WinControls.UI.RadButton()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnBukaFormTambahCustomer = New Telerik.WinControls.UI.RadButton()
@@ -35,8 +37,7 @@ Partial Class rFormListPelanggan
         Me.btnErase = New Telerik.WinControls.UI.RadButton()
         Me.btnSelect = New Telerik.WinControls.UI.RadButton()
         Me.btnClose = New Telerik.WinControls.UI.RadButton()
-        Me.Coll1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Coll2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         CType(Me.txFilter, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnFilter, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,6 +50,7 @@ Partial Class rFormListPelanggan
         CType(Me.btnErase, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnSelect, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -61,11 +63,11 @@ Partial Class rFormListPelanggan
         Me.txFilter.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txFilter.EnableKeyMap = True
         Me.txFilter.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txFilter.Location = New System.Drawing.Point(109, 3)
+        Me.txFilter.Location = New System.Drawing.Point(90, 2)
         Me.txFilter.Name = "txFilter"
         Me.txFilter.NullText = "Cari Nama Pelanggan"
         Me.txFilter.Padding = New System.Windows.Forms.Padding(4, 3, 90, 2)
-        Me.txFilter.Size = New System.Drawing.Size(357, 23)
+        Me.txFilter.Size = New System.Drawing.Size(407, 23)
         Me.txFilter.TabIndex = 1
         Me.txFilter.TabStop = False
         Me.txFilter.ThemeName = "Office2010Black"
@@ -82,7 +84,7 @@ Partial Class rFormListPelanggan
         Me.btnFilter.BackColor = System.Drawing.Color.Transparent
         Me.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnFilter.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnFilter.Location = New System.Drawing.Point(379, 3)
+        Me.btnFilter.Location = New System.Drawing.Point(410, 2)
         Me.btnFilter.Name = "btnFilter"
         Me.btnFilter.Padding = New System.Windows.Forms.Padding(5, 1, 0, 1)
         Me.btnFilter.Size = New System.Drawing.Size(87, 23)
@@ -102,6 +104,7 @@ Partial Class rFormListPelanggan
         Me.RadStatusStrip1.Name = "RadStatusStrip1"
         Me.RadStatusStrip1.Padding = New System.Windows.Forms.Padding(0, 1, 0, 2)
         Me.RadStatusStrip1.Size = New System.Drawing.Size(630, 24)
+        Me.RadStatusStrip1.SizingGrip = False
         Me.RadStatusStrip1.TabIndex = 5
         Me.RadStatusStrip1.Text = "RadStatusStrip1"
         Me.RadStatusStrip1.ThemeName = "Office2010Black"
@@ -113,9 +116,9 @@ Partial Class rFormListPelanggan
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.dg)
-        Me.Panel1.Location = New System.Drawing.Point(0, 28)
+        Me.Panel1.Location = New System.Drawing.Point(0, 39)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(630, 281)
+        Me.Panel1.Size = New System.Drawing.Size(630, 270)
         Me.Panel1.TabIndex = 3
         '
         'dg
@@ -126,15 +129,15 @@ Partial Class rFormListPelanggan
         Me.dg.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.Padding = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Coll1, Me.Coll2})
         Me.dg.Location = New System.Drawing.Point(3, 3)
@@ -143,8 +146,24 @@ Partial Class rFormListPelanggan
         Me.dg.ReadOnly = True
         Me.dg.RowHeadersVisible = False
         Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(620, 271)
+        Me.dg.Size = New System.Drawing.Size(620, 260)
         Me.dg.TabIndex = 1
+        '
+        'Coll1
+        '
+        Me.Coll1.HeaderText = "Select"
+        Me.Coll1.MinimumWidth = 25
+        Me.Coll1.Name = "Coll1"
+        Me.Coll1.ReadOnly = True
+        Me.Coll1.Width = 55
+        '
+        'Coll2
+        '
+        Me.Coll2.HeaderText = "No. Rekam"
+        Me.Coll2.MinimumWidth = 65
+        Me.Coll2.Name = "Coll2"
+        Me.Coll2.ReadOnly = True
+        Me.Coll2.Width = 65
         '
         'btnRefresh
         '
@@ -152,7 +171,7 @@ Partial Class rFormListPelanggan
         Me.btnRefresh.BackColor = System.Drawing.Color.Transparent
         Me.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRefresh.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnRefresh.Location = New System.Drawing.Point(507, 3)
+        Me.btnRefresh.Location = New System.Drawing.Point(505, 2)
         Me.btnRefresh.Name = "btnRefresh"
         Me.btnRefresh.Padding = New System.Windows.Forms.Padding(8, 1, 8, 1)
         Me.btnRefresh.Size = New System.Drawing.Size(118, 23)
@@ -282,21 +301,16 @@ Partial Class rFormListPelanggan
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
-        'Coll1
+        'Panel2
         '
-        Me.Coll1.HeaderText = "Select"
-        Me.Coll1.MinimumWidth = 25
-        Me.Coll1.Name = "Coll1"
-        Me.Coll1.ReadOnly = True
-        Me.Coll1.Width = 55
-        '
-        'Coll2
-        '
-        Me.Coll2.HeaderText = "No. Rekam"
-        Me.Coll2.MinimumWidth = 65
-        Me.Coll2.Name = "Coll2"
-        Me.Coll2.ReadOnly = True
-        Me.Coll2.Width = 65
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel2.Controls.Add(Me.btnRefresh)
+        Me.Panel2.Controls.Add(Me.btnFilter)
+        Me.Panel2.Controls.Add(Me.txFilter)
+        Me.Panel2.Location = New System.Drawing.Point(0, 5)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(630, 31)
+        Me.Panel2.TabIndex = 6
         '
         'rFormListPelanggan
         '
@@ -304,9 +318,7 @@ Partial Class rFormListPelanggan
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(630, 371)
         Me.ControlBox = False
-        Me.Controls.Add(Me.btnFilter)
-        Me.Controls.Add(Me.btnRefresh)
-        Me.Controls.Add(Me.txFilter)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.RadStatusStrip1)
@@ -336,6 +348,8 @@ Partial Class rFormListPelanggan
         CType(Me.btnErase, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnSelect, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -355,4 +369,5 @@ Partial Class rFormListPelanggan
     Friend WithEvents btnClose As Telerik.WinControls.UI.RadButton
     Friend WithEvents Coll1 As DataGridViewCheckBoxColumn
     Friend WithEvents Coll2 As DataGridViewTextBoxColumn
+    Friend WithEvents Panel2 As Panel
 End Class

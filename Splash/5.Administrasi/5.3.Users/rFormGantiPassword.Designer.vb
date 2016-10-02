@@ -67,10 +67,15 @@ Partial Class rFormGantiPassword
         Me.RadButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadButton1.Location = New System.Drawing.Point(152, 3)
         Me.RadButton1.Name = "RadButton1"
+        Me.RadButton1.Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
         Me.RadButton1.Size = New System.Drawing.Size(143, 26)
         Me.RadButton1.TabIndex = 1
         Me.RadButton1.Text = "&Batal"
+        Me.RadButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.RadButton1.ThemeName = "Office2010Black"
+        CType(Me.RadButton1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        CType(Me.RadButton1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Batal"
+        CType(Me.RadButton1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
         CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -81,10 +86,15 @@ Partial Class rFormGantiPassword
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnSave.Location = New System.Drawing.Point(3, 3)
         Me.btnSave.Name = "btnSave"
+        Me.btnSave.Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
         Me.btnSave.Size = New System.Drawing.Size(143, 26)
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "&Simpan"
+        Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSave.ThemeName = "Office2010Black"
+        CType(Me.btnSave.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        CType(Me.btnSave.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Simpan"
+        CType(Me.btnSave.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '

@@ -14,10 +14,25 @@ Public Class rFormGantiPassword
         RadMessageBox.Instance.StartPosition = FormStartPosition.CenterScreen
 
     End Sub
+
     Private Sub rFormGantiPassword_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PasswordStrengthControl1.Visible = False
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
         rFormMain.UserSettingIcon(True, Me)
+        Me.SuspendLayout()
+
+        btnSave.Image = spControl.GetImageFromFolder("disk.png")
+        RadButton1.Image = spControl.GetImageFromFolder("Exit.png")
+
+        btnSave.Padding = New Padding(
+            ((spControl.SetSisiPaddingTombol(btnSave)) - 4), 1,
+            ((spControl.SetSisiPaddingTombol(btnSave)) - 4), 1)
+
+        RadButton1.Padding = New Padding(
+            ((spControl.SetSisiPaddingTombol(RadButton1)) - 4), 1,
+            ((spControl.SetSisiPaddingTombol(RadButton1)) - 4), 1)
+
+        Me.ResumeLayout()
     End Sub
 
     Private Sub txPassNext_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txPassNext.KeyPress

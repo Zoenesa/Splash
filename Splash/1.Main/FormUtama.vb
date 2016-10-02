@@ -68,7 +68,6 @@ Public Class FormUtama
         ElseIf (My.Forms.rFormInisialisasiKoneksi.ShowDialog() = System.Windows.Forms.DialogResult.OK) Then
             Me.SetelMenu()
         End If
-        Me.IsMdiContainer = True
     End Sub
 
     Public Shared Sub CommandBukaFormMdi(ByVal ChildForm As Form)
@@ -370,6 +369,14 @@ labelCekUserRole:
 
     Private Sub rMenuItemBarang_Click(sender As Object, e As EventArgs) Handles rMenuItemBarang.Click
         CommandBukaFormStandarUser(rFormDaftarBarang)
+    End Sub
+
+    Private Sub rMenuUserDataItem_Click(sender As Object, e As EventArgs) Handles rMenuUserDataItem.Click
+        CommandBukaFormSebagaiAdministrator(rFormUsersList)
+    End Sub
+
+    Private Sub rMenuChangePassword_Click(sender As Object, e As EventArgs) Handles rMenuChangePassword.Click
+        CommandBukaFormStandarUser(rFormGantiPassword)
     End Sub
 
 

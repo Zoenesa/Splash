@@ -95,9 +95,10 @@ Partial Class FormUtama
         '
         Me.RadStatusStrip1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadStatusStrip1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.StatusVersi, Me.CommandBarSeparator1, Me.RadStatusDeskripsi, Me.CommandBarSeparator2, Me.RadDateAndTimeStatus})
-        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 396)
+        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 394)
         Me.RadStatusStrip1.Name = "RadStatusStrip1"
-        Me.RadStatusStrip1.Size = New System.Drawing.Size(875, 22)
+        Me.RadStatusStrip1.Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
+        Me.RadStatusStrip1.Size = New System.Drawing.Size(875, 24)
         Me.RadStatusStrip1.TabIndex = 6
         Me.RadStatusStrip1.Text = "RadStatusStrip1"
         Me.RadStatusStrip1.ThemeName = "Office2010Black"
