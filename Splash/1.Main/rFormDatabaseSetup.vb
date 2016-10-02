@@ -104,7 +104,7 @@ Public Class rFormDatabaseSetup
 
         Me.MProfiles = New Setting.Config.Profile.Profile(1 - 1) {}
 
-        Me.MProfiles(0) = New Setting.Config.Profile.Ini()
+        Me.MProfiles(0) = New Setting.Config.Profile.Ini(IO.Path.Combine(Environment.CurrentDirectory, "Config", "Konektor.ini"))
 
         cbProfile.Items.Add("INI--" & Me.MProfiles(0).Name)
 

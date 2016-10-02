@@ -2,6 +2,7 @@
 Imports System.Drawing
 Imports System.IO
 Imports System.Reflection
+Imports System.Windows.Forms
 Imports Microsoft.VisualBasic.CompilerServices
 
 Public NotInheritable Class spControl
@@ -175,5 +176,19 @@ Public NotInheritable Class spControl
         'Subrutin / Caller
         'SaveToDisk([Resource Name with Extension-use the same case as used in the filename], [Output path with FileName & extension])
     End Sub
+
+    Public Shared Function SetSisiPaddingTombol(control As System.Windows.Forms.Control) As Int32
+        Dim int As Int32
+        Dim IntPad As Int32
+        int = (GetSizeControlTextSize(control).Width) + (16) + (8)
+        IntPad = (((control.Width) - int) / 2)
+        Return IntPad
+    End Function
+
+    Public Shared Function GetSizeControlTextSize(control As System.Windows.Forms.Control) As Size
+        Dim _size As Size = TextRenderer.MeasureText(control.Text, control.Font)
+        Return _size
+    End Function
+
 
 End Class

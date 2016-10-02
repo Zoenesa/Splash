@@ -295,13 +295,12 @@ Partial Class FormProfilPerusahaan
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnSave.Location = New System.Drawing.Point(3, 3)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Padding = New System.Windows.Forms.Padding(70, 1, 44, 1)
         Me.btnSave.Size = New System.Drawing.Size(229, 27)
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "&Simpan Data"
         Me.btnSave.ThemeName = "Office2010Black"
         CType(Me.btnSave.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Simpan Data"
-        CType(Me.btnSave.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(70, 1, 44, 1)
+        CType(Me.btnSave.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(0)
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnSave.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -313,13 +312,12 @@ Partial Class FormProfilPerusahaan
         Me.btnClose.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnClose.Location = New System.Drawing.Point(238, 3)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Padding = New System.Windows.Forms.Padding(84, 1, 60, 1)
         Me.btnClose.Size = New System.Drawing.Size(229, 27)
         Me.btnClose.TabIndex = 1
         Me.btnClose.Text = "&Keluar"
         Me.btnClose.ThemeName = "Office2010Black"
         CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Keluar"
-        CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(84, 1, 60, 1)
+        CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(0)
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -351,6 +349,7 @@ Partial Class FormProfilPerusahaan
         Me.Controls.Add(Me.txNPWP)
         Me.Controls.Add(Me.RadDropDownList1)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormProfilPerusahaan"
         '

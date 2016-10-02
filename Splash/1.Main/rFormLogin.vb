@@ -93,9 +93,18 @@ Public Class rFormLogin
 
     Private Sub rFormLogin_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        Me.SuspendLayout()
         rFormMain.UserSettingIcon(True, Me)
+
         Button2.Image = spControl.GetImageFromFolder("Exit.png")
         Button1.Image = spControl.GetImageFromFolder("Key.png")
+        Button1.Padding = New Padding(
+            ((spControl.SetSisiPaddingTombol(Button1)) - 4), 1,
+            ((spControl.SetSisiPaddingTombol(Button1)) - 4), 1)
+        Button2.Padding = New Padding(
+            ((spControl.SetSisiPaddingTombol(Button2)) - 4), 1,
+            ((spControl.SetSisiPaddingTombol(Button2)) - 4), 1)
+        Me.ResumeLayout()
         rTxUsername.Focus()
         rTxUsername.SelectAll()
     End Sub

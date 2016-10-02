@@ -23,7 +23,6 @@ Partial Class rFormListPelanggan
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txFilter = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.btnFilter = New Telerik.WinControls.UI.RadButton()
         Me.RadStatusStrip1 = New Telerik.WinControls.UI.RadStatusStrip()
@@ -138,14 +137,6 @@ Partial Class rFormListPelanggan
         Me.dg.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Coll1, Me.Coll2})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg.DefaultCellStyle = DataGridViewCellStyle2
         Me.dg.Location = New System.Drawing.Point(3, 3)
         Me.dg.MultiSelect = False
         Me.dg.Name = "dg"

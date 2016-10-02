@@ -148,6 +148,18 @@ Public Class rFormDataListInvoice
 
         ControlEkstensi.DoubleBuffered(dg, True)
 
+        btnAdd.TextAlignment = ContentAlignment.MiddleCenter
+        btnEdit.TextAlignment = ContentAlignment.MiddleCenter
+        btnErase.TextAlignment = ContentAlignment.MiddleCenter
+        btnPDF.TextAlignment = ContentAlignment.MiddleCenter
+        btnClose.TextAlignment = ContentAlignment.MiddleCenter
+
+        btnAdd.Image = spControl.GetImageFromFolder("Create.png")
+        btnEdit.Image = spControl.GetImageFromFolder("Notes.png")
+        btnErase.Image = spControl.GetImageFromFolder("Erase.png")
+        btnPDF.Image = spControl.GetImageFromFolder("Report.png")
+        btnClose.Image = spControl.GetImageFromFolder("Exit.png")
+
         LoadData()
     End Sub
 
@@ -382,4 +394,28 @@ Public Class rFormDataListInvoice
     Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
         Me.LoadListInvoice(" WHERE (`recordNo` not like 'null') " & txTemp.Text)
     End Sub
+
+    Private Sub rFormDataListInvoice_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
+        'btnAdd.TextAlignment = ContentAlignment.MiddleCenter
+        btnAdd.Padding = New Padding(
+            ((spControl.SetSisiPaddingTombol(btnAdd)) - 4), 1,
+            ((spControl.SetSisiPaddingTombol(btnAdd)) - 4), 1)
+        'btnEdit.TextAlignment = ContentAlignment.MiddleCenter
+        btnEdit.Padding = New Padding(
+            ((spControl.SetSisiPaddingTombol(btnEdit)) - 4), 1,
+            ((spControl.SetSisiPaddingTombol(btnEdit)) - 4), 1)
+        'btnErase.TextAlignment = ContentAlignment.MiddleCenter
+        btnErase.Padding = New Padding(
+            ((spControl.SetSisiPaddingTombol(btnErase)) - 4), 1,
+            ((spControl.SetSisiPaddingTombol(btnErase)) - 4), 1)
+        btnPDF.Padding = New Padding(
+            ((spControl.SetSisiPaddingTombol(btnPDF)) - 4), 1,
+            ((spControl.SetSisiPaddingTombol(btnPDF)) - 4), 1)
+
+        btnClose.Padding = New Padding(
+            ((spControl.SetSisiPaddingTombol(btnClose)) - 4), 1,
+            ((spControl.SetSisiPaddingTombol(btnClose)) - 4), 1)
+
+    End Sub
+
 End Class

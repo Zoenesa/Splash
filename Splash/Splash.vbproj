@@ -138,6 +138,12 @@
     <Compile Include="1.Main\FormProfilPerusahaan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="1.Main\FormUtama.Designer.vb">
+      <DependentUpon>FormUtama.vb</DependentUpon>
+    </Compile>
+    <Compile Include="1.Main\FormUtama.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="2.InputData\Clients_Customers\rFormListPelanggan.Designer.vb">
       <DependentUpon>rFormListPelanggan.vb</DependentUpon>
     </Compile>
@@ -377,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="1.Main\FormProfilPerusahaan.resx">
       <DependentUpon>FormProfilPerusahaan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1.Main\FormUtama.resx">
+      <DependentUpon>FormUtama.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="2.InputData\Clients_Customers\rFormListPelanggan.resx">
       <DependentUpon>rFormListPelanggan.vb</DependentUpon>

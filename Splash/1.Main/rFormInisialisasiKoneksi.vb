@@ -45,13 +45,14 @@ Public Class rFormInisialisasiKoneksi
 
     Private Sub LoadSetting()
 
-        Dim mprofile As Setting.Config.Profile.Ini = New Setting.Config.Profile.Ini
+        Dim mprofile As Setting.Config.Profile.Ini = New Setting.Config.Profile.Ini(IO.Path.Combine(Environment.CurrentDirectory, "Config", "Konektor.ini"))
 
         Dim strSection As String = Nothing
 
         Try
-            If Not IO.File.Exists(IO.Path.Combine(Environment.CurrentDirectory, mprofile.Name)) Then
-                SetDefaultSettings(IO.Path.Combine(Environment.CurrentDirectory, mprofile.Name))
+            If Not IO.File.Exists(IO.Path.Combine(Environment.CurrentDirectory, "Config", "Konektor.ini")) Then
+
+                SetDefaultSettings(IO.Path.Combine(Environment.CurrentDirectory, "Config", "Konektor.ini"))
 
                 'Dim sw As New IO.StreamWriter(IO.Path.Combine(Environment.CurrentDirectory, mprofile.Name))
                 'sw.WriteLine("\\PROGRAM SPLASH DATA PROJECT")
@@ -123,13 +124,13 @@ Public Class rFormInisialisasiKoneksi
             stringSQL.WriteGeneralSetting(True, fs, "DatabaseName=db_apps")
             stringSQL.WriteGeneralSetting(True, fs, "Server=localhost")
             stringSQL.WriteGeneralSetting(True, fs, "User=SUPERVISOR")
-            stringSQL.WriteGeneralSetting(True, fs, "Password=di5t0rti0n")
+            stringSQL.WriteGeneralSetting(True, fs, "Password=Zwn4dCEXN0YmoU2hAoY5mf2+MbbtmI2BdBETeAt9QAxGse7jX+BdaY1frJ2GAeeF")
             stringSQL.WriteGeneralSetting(True, fs, "Port=3306")
             stringSQL.WriteGeneralSetting(True, fs, "defaultsetting=True")
             stringSQL.WriteGeneralSetting(True, fs, "SettingName=0")
             stringSQL.WriteGeneralSetting(True, fs, "SectionName=General")
             stringSQL.WriteGeneralSetting(True, fs, "BackupLocation=\backups")
-            stringSQL.WriteGeneralSetting(True, fs, "Icons=myico.ico")
+            'stringSQL.WriteGeneralSetting(True, fs, "Icons=myico.ico")
 
             fs.Close()
 

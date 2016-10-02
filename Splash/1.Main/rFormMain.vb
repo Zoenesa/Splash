@@ -19,10 +19,11 @@ Public Class rFormMain
 
     Public Sub New()
 
-        m_bLayoutCall = False
+        'm_bLayoutCall = False
 
         ImageFolder = (IO.Path.Combine(Environment.CurrentDirectory, "Images"))
-        AddHandler MyBase.Layout, New LayoutEventHandler(AddressOf Me.CallLayout)
+
+        'AddHandler MyBase.Layout, New LayoutEventHandler(AddressOf Me.CallLayout)
 
         InitializeComponent()
 
@@ -35,7 +36,7 @@ Public Class rFormMain
 
         ModulSetting = New Setting.Config.Profile.Ini(IO.Path.Combine(Environment.CurrentDirectory, "Config", FileiniSetting))
 
-        CallLayout()
+        'CallLayout()
 
         InisialShorcutMenu()
 
@@ -201,7 +202,19 @@ loadDefaultLogoIcon:
                 flagicon = False
             End If
         Catch ex As Exception
-            RadMessageBox.Show(ex.Message)
+            Beep()
+            RadMessageBox.Show(ex.Message, "K E S A L A H A N", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1)
+        Finally
+            Dim Result As DialogResult = RadMessageBox.Show("Folder Images tidak terdeteksi" & vbNewLine &
+                               "Pilih [Yes] untuk setelan Folder Images, sekarang" &
+                               vbNewLine & "[No] Aplikasi akan menggenerasi secara otomatis.", "I N F O R M A S I", MessageBoxButtons.YesNo)
+            If Result = DialogResult.Yes Then
+                Dim fd As New FolderBrowserDialog
+                fd.Description = "Pilih Folder Images"
+                fd.ShowNewFolderButton = False
+            Else
+
+            End If
         End Try
         Return flagicon
     End Function
@@ -277,7 +290,6 @@ loadDefaultLogoIcon:
             rDataTeknis.Enabled = flag
         Else
             rMenuLogout.Enabled = flag
-
         End If
         Konektor.mdlSQL.IsLogin = flag
     End Sub

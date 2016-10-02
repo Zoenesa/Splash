@@ -79,9 +79,7 @@ Partial Class rFormMain
         Me.rAppInfo = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadStatusStrip1 = New Telerik.WinControls.UI.RadStatusStrip()
         Me.StatusVersi = New Telerik.WinControls.UI.RadLabelElement()
-        Me.CommandBarSeparator1 = New Telerik.WinControls.UI.CommandBarSeparator()
         Me.RadStatusDeskripsi = New Telerik.WinControls.UI.RadLabelElement()
-        Me.CommandBarSeparator2 = New Telerik.WinControls.UI.CommandBarSeparator()
         Me.RadDateAndTimeStatus = New Telerik.WinControls.UI.RadLabelElement()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.rMenuWindowItm = New Telerik.WinControls.UI.RadMenuItem()
@@ -488,10 +486,10 @@ Partial Class rFormMain
         'RadStatusStrip1
         '
         Me.RadStatusStrip1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.RadStatusStrip1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.StatusVersi, Me.CommandBarSeparator1, Me.RadStatusDeskripsi, Me.CommandBarSeparator2, Me.RadDateAndTimeStatus})
-        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 704)
+        Me.RadStatusStrip1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.StatusVersi, Me.RadStatusDeskripsi, Me.RadDateAndTimeStatus})
+        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 673)
         Me.RadStatusStrip1.Name = "RadStatusStrip1"
-        Me.RadStatusStrip1.Size = New System.Drawing.Size(1360, 22)
+        Me.RadStatusStrip1.Size = New System.Drawing.Size(1358, 21)
         Me.RadStatusStrip1.TabIndex = 5
         Me.RadStatusStrip1.Text = "RadStatusStrip1"
         Me.RadStatusStrip1.ThemeName = "Office2010Black"
@@ -504,14 +502,6 @@ Partial Class rFormMain
         Me.StatusVersi.Text = "Status"
         Me.StatusVersi.TextWrap = True
         '
-        'CommandBarSeparator1
-        '
-        Me.CommandBarSeparator1.AccessibleDescription = "CommandBarSeparator1"
-        Me.CommandBarSeparator1.AccessibleName = "CommandBarSeparator1"
-        Me.CommandBarSeparator1.Name = "CommandBarSeparator1"
-        Me.RadStatusStrip1.SetSpring(Me.CommandBarSeparator1, False)
-        Me.CommandBarSeparator1.VisibleInOverflowMenu = False
-        '
         'RadStatusDeskripsi
         '
         Me.RadStatusDeskripsi.Name = "RadStatusDeskripsi"
@@ -519,14 +509,6 @@ Partial Class rFormMain
         Me.RadStatusStrip1.SetSpring(Me.RadStatusDeskripsi, True)
         Me.RadStatusDeskripsi.Text = "Deskripsi"
         Me.RadStatusDeskripsi.TextWrap = True
-        '
-        'CommandBarSeparator2
-        '
-        Me.CommandBarSeparator2.AccessibleDescription = "CommandBarSeparator2"
-        Me.CommandBarSeparator2.AccessibleName = "CommandBarSeparator2"
-        Me.CommandBarSeparator2.Name = "CommandBarSeparator2"
-        Me.RadStatusStrip1.SetSpring(Me.CommandBarSeparator2, False)
-        Me.CommandBarSeparator2.VisibleInOverflowMenu = False
         '
         'RadDateAndTimeStatus
         '
@@ -572,17 +554,17 @@ Partial Class rFormMain
         Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMainMenu, Me.rMenuInputData, Me.rDataTeknis, Me.rMenuAdministrasi, Me.rMenuWindowItm, Me.rAbout})
         Me.RadMenu1.Location = New System.Drawing.Point(0, 0)
         Me.RadMenu1.Name = "RadMenu1"
-        Me.RadMenu1.Size = New System.Drawing.Size(1360, 22)
+        Me.RadMenu1.Size = New System.Drawing.Size(1358, 22)
         Me.RadMenu1.TabIndex = 3
         Me.RadMenu1.Text = "RadMenu1"
         Me.RadMenu1.ThemeName = "Office2010Black"
         '
         'rFormMain
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1360, 726)
+        Me.AllowShowFocusCues = True
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(1358, 694)
         Me.Controls.Add(Me.RadStatusStrip1)
         Me.Controls.Add(Me.RadMenu1)
         Me.EnableKeyMap = True
@@ -605,6 +587,7 @@ Partial Class rFormMain
         Me.PerformLayout()
 
     End Sub
+
     Friend WithEvents rMainMenu As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents rMenuKoneksiDb As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents rMenuSetingdb As Telerik.WinControls.UI.RadMenuItem
@@ -648,9 +631,7 @@ Partial Class rFormMain
     Friend WithEvents rMenuChangePassword As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents RadStatusStrip1 As Telerik.WinControls.UI.RadStatusStrip
     Friend WithEvents StatusVersi As Telerik.WinControls.UI.RadLabelElement
-    Friend WithEvents CommandBarSeparator1 As Telerik.WinControls.UI.CommandBarSeparator
     Friend WithEvents RadStatusDeskripsi As Telerik.WinControls.UI.RadLabelElement
-    Friend WithEvents CommandBarSeparator2 As Telerik.WinControls.UI.CommandBarSeparator
     Friend WithEvents RadDateAndTimeStatus As Telerik.WinControls.UI.RadLabelElement
     Friend WithEvents rMenuLogout As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents rMenudbUtility As Telerik.WinControls.UI.RadMenuItem

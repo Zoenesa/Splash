@@ -101,7 +101,7 @@ Public Class rFormListPelanggan
                 With dg
                     .Columns.Add(("Field" & Conversions.ToString(num3)), (KolomHeader(num3)))
                     .Columns(1).Width = 95
-                    .Columns(num3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+                    '.Columns(num3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
                 End With
                 Interlocked.Increment(num3)
             Loop
@@ -175,6 +175,7 @@ Public Class rFormListPelanggan
         btnBukaFormTambahCustomer.Image = spControl.GetImageFromFolder("Create.png")
         btnEdit.Image = spControl.GetImageFromFolder("Notes.png")
         btnErase.Image = spControl.GetImageFromFolder("Erase.png")
+        btnClose.Image = spControl.GetImageFromFolder("Exit.png")
         If Not Me.ModePilih Then
             Me.SuspendLayout()
             Me.Text = "List Data Pelanggan"

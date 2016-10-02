@@ -57,6 +57,8 @@ Public Class FormProfilPerusahaan
     Private Sub FormProfilPerusahaan_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
         rFormMain.UserSettingIcon(True, Me)
+        btnSave.TextAlignment = ContentAlignment.MiddleCenter
+        btnClose.TextAlignment = ContentAlignment.MiddleCenter
         btnSave.Image = spControl.GetImageFromFolder("disk.png")
         btnClose.Image = spControl.GetImageFromFolder("Exit.png")
         If Me.isEdit Then
@@ -80,5 +82,14 @@ Public Class FormProfilPerusahaan
             txEmail.Text = List.Item(8)
 
         End If
+    End Sub
+
+    Private Sub FormProfilPerusahaan_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
+        btnSave.Padding = New Padding(
+         ((spControl.SetSisiPaddingTombol(btnSave)) - 4), 1,
+         ((spControl.SetSisiPaddingTombol(btnSave)) - 4), 1)
+        btnClose.Padding = New Padding(
+         ((spControl.SetSisiPaddingTombol(btnClose)) - 4), 1,
+         ((spControl.SetSisiPaddingTombol(btnClose)) - 4), 1)
     End Sub
 End Class

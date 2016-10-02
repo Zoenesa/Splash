@@ -33,8 +33,8 @@ Partial Class rFormDataListInvoice
         Me.btnPDF = New Telerik.WinControls.UI.RadButton()
         Me.btnAdd = New Telerik.WinControls.UI.RadButton()
         Me.RadPanel1 = New Telerik.WinControls.UI.RadPanel()
-        Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
         Me.btnFilter = New Telerik.WinControls.UI.RadButton()
+        Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
         Me.RadStatusStrip1 = New Telerik.WinControls.UI.RadStatusStrip()
         Me.Label1 = New Telerik.WinControls.UI.RadLabelElement()
         Me.btnErase = New Telerik.WinControls.UI.RadButton()
@@ -50,8 +50,8 @@ Partial Class rFormDataListInvoice
         CType(Me.btnAdd, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPanel1.SuspendLayout()
-        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnFilter, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnErase, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -73,14 +73,14 @@ Partial Class rFormDataListInvoice
         Me.dg.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dg.ColumnHeadersHeight = 30
         Me.dg.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Col1, Me.Col2, Me.Col3})
-        Me.dg.Location = New System.Drawing.Point(3, 39)
+        Me.dg.Location = New System.Drawing.Point(3, 38)
         Me.dg.MultiSelect = False
         Me.dg.Name = "dg"
         Me.dg.ReadOnly = True
         Me.dg.RowHeadersVisible = False
         Me.dg.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(950, 281)
+        Me.dg.Size = New System.Drawing.Size(950, 282)
         Me.dg.TabIndex = 0
         '
         'Col1
@@ -116,11 +116,11 @@ Partial Class rFormDataListInvoice
         Me.txFilter.Enabled = False
         Me.txFilter.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txFilter.ForeColor = System.Drawing.Color.Black
-        Me.txFilter.Location = New System.Drawing.Point(5, 4)
+        Me.txFilter.Location = New System.Drawing.Point(108, 3)
         Me.txFilter.Name = "txFilter"
         Me.txFilter.NullText = "Filter"
         Me.txFilter.Padding = New System.Windows.Forms.Padding(3, 0, 98, 1)
-        Me.txFilter.Size = New System.Drawing.Size(451, 23)
+        Me.txFilter.Size = New System.Drawing.Size(643, 23)
         Me.txFilter.TabIndex = 2
         Me.txFilter.ThemeName = "Office2010Black"
         CType(Me.txFilter.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.SystemColors.Control
@@ -136,17 +136,15 @@ Partial Class rFormDataListInvoice
         Me.btnEdit.BackColor = System.Drawing.Color.Transparent
         Me.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnEdit.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnEdit.Image = CType(resources.GetObject("btnEdit.Image"), System.Drawing.Image)
         Me.btnEdit.Location = New System.Drawing.Point(196, 3)
         Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Padding = New System.Windows.Forms.Padding(72, 1, 36, 1)
-        Me.btnEdit.Size = New System.Drawing.Size(187, 28)
+        Me.btnEdit.Size = New System.Drawing.Size(187, 24)
         Me.btnEdit.TabIndex = 1
         Me.btnEdit.Text = "&Ubah"
         Me.btnEdit.ThemeName = "Office2010Black"
-        CType(Me.btnEdit.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        CType(Me.btnEdit.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
         CType(Me.btnEdit.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Ubah"
-        CType(Me.btnEdit.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(72, 1, 36, 1)
+        CType(Me.btnEdit.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(0)
         CType(Me.btnEdit.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnEdit.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -155,17 +153,15 @@ Partial Class rFormDataListInvoice
         Me.btnClose.BackColor = System.Drawing.Color.Transparent
         Me.btnClose.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnClose.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnClose.Image = CType(resources.GetObject("btnClose.Image"), System.Drawing.Image)
         Me.btnClose.Location = New System.Drawing.Point(775, 3)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Padding = New System.Windows.Forms.Padding(72, 1, 36, 1)
-        Me.btnClose.Size = New System.Drawing.Size(188, 28)
+        Me.btnClose.Size = New System.Drawing.Size(188, 24)
         Me.btnClose.TabIndex = 4
         Me.btnClose.Text = "&Keluar"
         Me.btnClose.ThemeName = "Office2010Black"
-        CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
+        CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
         CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Keluar"
-        CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(72, 1, 36, 1)
+        CType(Me.btnClose.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(0)
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnClose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -174,17 +170,15 @@ Partial Class rFormDataListInvoice
         Me.btnPDF.BackColor = System.Drawing.Color.Transparent
         Me.btnPDF.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnPDF.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnPDF.Image = CType(resources.GetObject("btnPDF.Image"), System.Drawing.Image)
         Me.btnPDF.Location = New System.Drawing.Point(582, 3)
         Me.btnPDF.Name = "btnPDF"
-        Me.btnPDF.Padding = New System.Windows.Forms.Padding(72, 0, 42, 0)
-        Me.btnPDF.Size = New System.Drawing.Size(187, 28)
+        Me.btnPDF.Size = New System.Drawing.Size(187, 24)
         Me.btnPDF.TabIndex = 3
         Me.btnPDF.Text = "&PDF"
         Me.btnPDF.ThemeName = "Office2010Black"
-        CType(Me.btnPDF.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
+        CType(Me.btnPDF.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
         CType(Me.btnPDF.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&PDF"
-        CType(Me.btnPDF.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(72, 0, 42, 0)
+        CType(Me.btnPDF.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(0)
         CType(Me.btnPDF.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnPDF.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -193,17 +187,15 @@ Partial Class rFormDataListInvoice
         Me.btnAdd.BackColor = System.Drawing.Color.Transparent
         Me.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnAdd.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnAdd.Image = CType(resources.GetObject("btnAdd.Image"), System.Drawing.Image)
         Me.btnAdd.Location = New System.Drawing.Point(3, 3)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Padding = New System.Windows.Forms.Padding(56, 1, 40, 1)
-        Me.btnAdd.Size = New System.Drawing.Size(187, 28)
+        Me.btnAdd.Size = New System.Drawing.Size(187, 24)
         Me.btnAdd.TabIndex = 0
         Me.btnAdd.Text = "&Tambah"
         Me.btnAdd.ThemeName = "Office2010Black"
-        CType(Me.btnAdd.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = CType(resources.GetObject("resource.Image3"), System.Drawing.Image)
+        CType(Me.btnAdd.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
         CType(Me.btnAdd.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Tambah"
-        CType(Me.btnAdd.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(56, 1, 40, 1)
+        CType(Me.btnAdd.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(0)
         CType(Me.btnAdd.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnAdd.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -213,32 +205,14 @@ Partial Class rFormDataListInvoice
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadPanel1.BackColor = System.Drawing.Color.Transparent
         Me.RadPanel1.Controls.Add(Me.btnFilter)
+        Me.RadPanel1.Controls.Add(Me.RadCheckBox1)
         Me.RadPanel1.Controls.Add(Me.txFilter)
         Me.RadPanel1.Controls.Add(Me.RadButton1)
-        Me.RadPanel1.Location = New System.Drawing.Point(109, 3)
+        Me.RadPanel1.Location = New System.Drawing.Point(3, 3)
         Me.RadPanel1.Name = "RadPanel1"
-        Me.RadPanel1.Size = New System.Drawing.Size(655, 32)
+        Me.RadPanel1.Size = New System.Drawing.Size(950, 29)
         Me.RadPanel1.TabIndex = 0
         Me.RadPanel1.ThemeName = "Office2010Black"
-        '
-        'RadButton1
-        '
-        Me.RadButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadButton1.BackColor = System.Drawing.Color.Transparent
-        Me.RadButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadButton1.Image = CType(resources.GetObject("RadButton1.Image"), System.Drawing.Image)
-        Me.RadButton1.Location = New System.Drawing.Point(529, 4)
-        Me.RadButton1.Name = "RadButton1"
-        Me.RadButton1.Padding = New System.Windows.Forms.Padding(18, 1, 0, 1)
-        Me.RadButton1.Size = New System.Drawing.Size(121, 23)
-        Me.RadButton1.TabIndex = 3
-        Me.RadButton1.Text = "[F5] Refresh"
-        Me.RadButton1.ThemeName = "Office2010Black"
-        CType(Me.RadButton1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = CType(resources.GetObject("resource.Image5"), System.Drawing.Image)
-        CType(Me.RadButton1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "[F5] Refresh"
-        CType(Me.RadButton1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(18, 1, 0, 1)
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
         'btnFilter
         '
@@ -246,26 +220,46 @@ Partial Class rFormDataListInvoice
         Me.btnFilter.BackColor = System.Drawing.Color.Transparent
         Me.btnFilter.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFilter.Image = CType(resources.GetObject("btnFilter.Image"), System.Drawing.Image)
-        Me.btnFilter.Location = New System.Drawing.Point(361, 4)
+        Me.btnFilter.Location = New System.Drawing.Point(656, 3)
         Me.btnFilter.Name = "btnFilter"
         Me.btnFilter.Padding = New System.Windows.Forms.Padding(8, 1, 0, 1)
         Me.btnFilter.Size = New System.Drawing.Size(95, 23)
         Me.btnFilter.TabIndex = 3
         Me.btnFilter.Text = "[F3] Filter"
         Me.btnFilter.ThemeName = "Office2010Black"
-        CType(Me.btnFilter.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = CType(resources.GetObject("resource.Image4"), System.Drawing.Image)
+        CType(Me.btnFilter.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
         CType(Me.btnFilter.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "[F3] Filter"
         CType(Me.btnFilter.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(8, 1, 0, 1)
         CType(Me.btnFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
+        'RadButton1
+        '
+        Me.RadButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadButton1.BackColor = System.Drawing.Color.Transparent
+        Me.RadButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadButton1.Image = CType(resources.GetObject("RadButton1.Image"), System.Drawing.Image)
+        Me.RadButton1.Location = New System.Drawing.Point(824, 3)
+        Me.RadButton1.Name = "RadButton1"
+        Me.RadButton1.Padding = New System.Windows.Forms.Padding(18, 1, 0, 1)
+        Me.RadButton1.Size = New System.Drawing.Size(121, 23)
+        Me.RadButton1.TabIndex = 3
+        Me.RadButton1.Text = "[F5] Refresh"
+        Me.RadButton1.ThemeName = "Office2010Black"
+        CType(Me.RadButton1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
+        CType(Me.RadButton1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "[F5] Refresh"
+        CType(Me.RadButton1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(18, 1, 0, 1)
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
+        '
         'RadStatusStrip1
         '
         Me.RadStatusStrip1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.RadStatusStrip1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.Label1})
-        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 372)
+        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 370)
         Me.RadStatusStrip1.Name = "RadStatusStrip1"
-        Me.RadStatusStrip1.Size = New System.Drawing.Size(966, 23)
+        Me.RadStatusStrip1.Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
+        Me.RadStatusStrip1.Size = New System.Drawing.Size(966, 25)
         Me.RadStatusStrip1.TabIndex = 5
         Me.RadStatusStrip1.Text = "RadStatusStrip1"
         Me.RadStatusStrip1.ThemeName = "Office2010Black"
@@ -284,17 +278,15 @@ Partial Class rFormDataListInvoice
         Me.btnErase.BackColor = System.Drawing.Color.Transparent
         Me.btnErase.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnErase.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnErase.Image = CType(resources.GetObject("btnErase.Image"), System.Drawing.Image)
         Me.btnErase.Location = New System.Drawing.Point(389, 3)
         Me.btnErase.Name = "btnErase"
-        Me.btnErase.Padding = New System.Windows.Forms.Padding(72, 1, 36, 1)
-        Me.btnErase.Size = New System.Drawing.Size(187, 28)
+        Me.btnErase.Size = New System.Drawing.Size(187, 24)
         Me.btnErase.TabIndex = 2
         Me.btnErase.Text = "&Hapus"
         Me.btnErase.ThemeName = "Office2010Black"
-        CType(Me.btnErase.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = CType(resources.GetObject("resource.Image6"), System.Drawing.Image)
+        CType(Me.btnErase.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
         CType(Me.btnErase.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Hapus"
-        CType(Me.btnErase.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(72, 1, 36, 1)
+        CType(Me.btnErase.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Padding = New System.Windows.Forms.Padding(0)
         CType(Me.btnErase.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnErase.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
@@ -306,17 +298,16 @@ Partial Class rFormDataListInvoice
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.dg)
-        Me.Panel1.Controls.Add(Me.RadCheckBox1)
         Me.Panel1.Controls.Add(Me.RadPanel1)
         Me.Panel1.Controls.Add(Me.txTemp)
-        Me.Panel1.Location = New System.Drawing.Point(3, 4)
+        Me.Panel1.Location = New System.Drawing.Point(3, 6)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(960, 327)
         Me.Panel1.TabIndex = 1
         '
         'RadCheckBox1
         '
-        Me.RadCheckBox1.Location = New System.Drawing.Point(7, 10)
+        Me.RadCheckBox1.Location = New System.Drawing.Point(7, 5)
         Me.RadCheckBox1.Name = "RadCheckBox1"
         Me.RadCheckBox1.Size = New System.Drawing.Size(66, 18)
         Me.RadCheckBox1.TabIndex = 6
@@ -352,11 +343,12 @@ Partial Class rFormDataListInvoice
         Me.TableLayoutPanel1.Controls.Add(Me.btnErase, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnClose, 4, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnPDF, 3, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 335)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 338)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(966, 34)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(966, 30)
         Me.TableLayoutPanel1.TabIndex = 4
         '
         'rFormDataListInvoice
@@ -390,12 +382,12 @@ Partial Class rFormDataListInvoice
         CType(Me.btnAdd, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadPanel1.ResumeLayout(False)
-        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel1.PerformLayout()
         CType(Me.btnFilter, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnErase, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         CType(Me.RadCheckBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txTemp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)

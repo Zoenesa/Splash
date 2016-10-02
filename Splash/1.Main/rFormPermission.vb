@@ -80,8 +80,13 @@ Public Class rFormPermission
 
     Private Sub rFormPermission_Load(sender As Object, e As EventArgs) Handles Me.Load
         rFormMain.SetTheme(Me, rFormMain.Office2010BlackTheme1.ThemeName.ToString)
+        Me.SuspendLayout()
         rFormMain.UserSettingIcon(True, Me)
         Button1.Image = spControl.GetImageFromFolder("_OK.png")
+        Button1.Padding = New Padding(
+            ((spControl.SetSisiPaddingTombol(Button1)) - 4), 1,
+            ((spControl.SetSisiPaddingTombol(Button1)) - 4), 1)
+        Me.ResumeLayout()
         rTxPassword.Focus()
         rTxPassword.SelectAll()
     End Sub
