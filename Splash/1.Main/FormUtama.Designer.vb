@@ -148,6 +148,9 @@ Partial Class FormUtama
         '
         'RadMenu1
         '
+        Me.RadMenu1.DropDownAnimationEasing = Telerik.WinControls.RadEasingType.OutCircular
+        Me.RadMenu1.DropDownAnimationEnabled = True
+        Me.RadMenu1.DropDownAnimationFrames = 8
         Me.RadMenu1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.rMainMenu, Me.rMenuInputData, Me.rDataTeknis, Me.rMenuAdministrasi, Me.rMenuWindowItm, Me.rAbout})
         Me.RadMenu1.Location = New System.Drawing.Point(0, 0)

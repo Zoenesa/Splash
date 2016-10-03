@@ -379,6 +379,34 @@ labelCekUserRole:
         CommandBukaFormStandarUser(rFormGantiPassword)
     End Sub
 
+    Private Sub rMenuWorkOrderItem_Click(sender As Object, e As EventArgs) Handles rMenuWorkOrderItem.Click
+
+    End Sub
+
+    Private Sub rMenuDaftarKavling_Click(sender As Object, e As EventArgs) Handles rMenuDaftarKavling.Click
+
+    End Sub
+
+    Private Sub rMenudbUtility_Click(sender As Object, e As EventArgs) Handles rMenudbUtility.Click
+
+    End Sub
+
+    Private Sub RadMenuItemCompanyProfile_Click(sender As Object, e As EventArgs) Handles RadMenuItemCompanyProfile.Click
+
+    End Sub
+
+    Private Sub rMenuCloseAllmdiClient_Click(sender As Object, e As EventArgs) Handles rMenuCloseAllmdiClient.Click
+
+    End Sub
+
+    Private Sub rHelp_Click(sender As Object, e As EventArgs) Handles rHelp.Click
+
+    End Sub
+
+    Private Sub rUpdate_Click(sender As Object, e As EventArgs) Handles rUpdate.Click
+
+    End Sub
+
 
 #End Region
 End Class
