@@ -95,10 +95,10 @@ Partial Class FormUtama
         '
         Me.RadStatusStrip1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.RadStatusStrip1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.StatusVersi, Me.CommandBarSeparator1, Me.RadStatusDeskripsi, Me.CommandBarSeparator2, Me.RadDateAndTimeStatus})
-        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 394)
+        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 416)
         Me.RadStatusStrip1.Name = "RadStatusStrip1"
         Me.RadStatusStrip1.Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
-        Me.RadStatusStrip1.Size = New System.Drawing.Size(875, 24)
+        Me.RadStatusStrip1.Size = New System.Drawing.Size(951, 24)
         Me.RadStatusStrip1.TabIndex = 6
         Me.RadStatusStrip1.Text = "RadStatusStrip1"
         Me.RadStatusStrip1.ThemeName = "Office2010Black"
@@ -156,7 +156,7 @@ Partial Class FormUtama
         Me.RadMenu1.Location = New System.Drawing.Point(0, 0)
         Me.RadMenu1.Name = "RadMenu1"
         Me.RadMenu1.Padding = New System.Windows.Forms.Padding(4, 2, 4, 0)
-        Me.RadMenu1.Size = New System.Drawing.Size(875, 26)
+        Me.RadMenu1.Size = New System.Drawing.Size(951, 26)
         Me.RadMenu1.TabIndex = 7
         Me.RadMenu1.Text = "RadMenu1"
         Me.RadMenu1.ThemeName = "Office2010Black"
@@ -589,7 +589,7 @@ Partial Class FormUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(875, 418)
+        Me.ClientSize = New System.Drawing.Size(951, 440)
         Me.Controls.Add(Me.RadMenu1)
         Me.Controls.Add(Me.RadStatusStrip1)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)

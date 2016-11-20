@@ -184,7 +184,11 @@ Namespace Splash.Konektor
             Return flag2
         End Function
 
-        Public Shared Function DataLogin(ByVal uname As String, upwd As String, ByRef retMsg As String, ByRef errMsg As String, Optional ByVal loginFromProfile As Boolean = False) As Boolean
+        Public Shared Function DataLogin(ByVal uname As String,
+                                         upwd As String, ByRef retMsg As String,
+                                         ByRef errMsg As String,
+                                         Optional ByVal loginFromProfile As Boolean =
+                                         False) As Boolean
             Dim flag1 As Boolean
             Try
                 errMsg = "0"
@@ -324,7 +328,10 @@ Namespace Splash.Konektor
                 If Not My.Computer.FileSystem.DirectoryExists(mdlSQL.logpath) Then
                     My.Computer.FileSystem.CreateDirectory(mdlSQL.logpath)
                 End If
-                Dim writer As New IO.StreamWriter(String.Concat(New String() {mdlSQL.logpath, "\", DateAndTime.Today.ToString("yyyy-MM-dd"), JnsLog, ".log"}), True)
+                Dim writer As New IO.StreamWriter(String.Concat(New String() {
+                mdlSQL.logpath, "\",
+                DateAndTime.Today.ToString("yyyy-MM-dd"),
+                JnsLog, ".log"}), True)
                 writer.WriteLine(("[" & DateAndTime.Now.ToString("yyyy-MM-dd HH:mm:ss") & "]" & msg))
                 writer.WriteLine()
                 writer.Flush()
