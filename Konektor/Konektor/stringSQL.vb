@@ -150,6 +150,7 @@ Namespace Splash.Konektor
 
 
         Public Shared komaDesimal As Integer
+
         Public Shared DesimalSeparator As String
 
         ''' <summary>

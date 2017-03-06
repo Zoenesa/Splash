@@ -34,12 +34,12 @@ Partial Class rFormDataListInvoice
         Me.btnAdd = New Telerik.WinControls.UI.RadButton()
         Me.RadPanel1 = New Telerik.WinControls.UI.RadPanel()
         Me.btnFilter = New Telerik.WinControls.UI.RadButton()
+        Me.RadCheckBox1 = New Telerik.WinControls.UI.RadCheckBox()
         Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
         Me.RadStatusStrip1 = New Telerik.WinControls.UI.RadStatusStrip()
         Me.Label1 = New Telerik.WinControls.UI.RadLabelElement()
         Me.btnErase = New Telerik.WinControls.UI.RadButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.RadCheckBox1 = New Telerik.WinControls.UI.RadCheckBox()
         Me.txTemp = New Telerik.WinControls.UI.RadTextBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,11 +51,11 @@ Partial Class rFormDataListInvoice
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPanel1.SuspendLayout()
         CType(Me.btnFilter, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadCheckBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnErase, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.RadCheckBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txTemp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -233,6 +233,14 @@ Partial Class rFormDataListInvoice
         CType(Me.btnFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Linear
         CType(Me.btnFilter.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.SystemColors.Control
         '
+        'RadCheckBox1
+        '
+        Me.RadCheckBox1.Location = New System.Drawing.Point(7, 5)
+        Me.RadCheckBox1.Name = "RadCheckBox1"
+        Me.RadCheckBox1.Size = New System.Drawing.Size(66, 18)
+        Me.RadCheckBox1.TabIndex = 6
+        Me.RadCheckBox1.Text = "Select All"
+        '
         'RadButton1
         '
         Me.RadButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -305,14 +313,6 @@ Partial Class rFormDataListInvoice
         Me.Panel1.Size = New System.Drawing.Size(960, 327)
         Me.Panel1.TabIndex = 1
         '
-        'RadCheckBox1
-        '
-        Me.RadCheckBox1.Location = New System.Drawing.Point(7, 5)
-        Me.RadCheckBox1.Name = "RadCheckBox1"
-        Me.RadCheckBox1.Size = New System.Drawing.Size(66, 18)
-        Me.RadCheckBox1.TabIndex = 6
-        Me.RadCheckBox1.Text = "Select All"
-        '
         'txTemp
         '
         Me.txTemp.AutoSize = False
@@ -384,11 +384,11 @@ Partial Class rFormDataListInvoice
         Me.RadPanel1.ResumeLayout(False)
         Me.RadPanel1.PerformLayout()
         CType(Me.btnFilter, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadCheckBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnErase, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
-        CType(Me.RadCheckBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txTemp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
